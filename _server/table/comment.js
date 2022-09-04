@@ -121,6 +121,14 @@ var comment_c456ea59_6018_45ef_8bcc_211a24c627dc = {
 					"_string": true,
 					"_data": "名称"
 				},
+				"type": {
+					"_leaf": true,
+					"_type": "select",
+					"_select": {
+						"values": core.plugin.Army.concat(core.plugin.Navy).concat(core.plugin.Luftwaffe)
+					},
+					"_data": "兵种"
+				},
 				"description": {
 					"_leaf": true,
 					"_type": "textarea",
@@ -171,6 +179,41 @@ var comment_c456ea59_6018_45ef_8bcc_211a24c627dc = {
 					"_leaf": true,
 					"_type": "textarea",
 					"_data": "防御力"
+				},
+				"ap": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_data": "穿甲"
+				},
+				"arm": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_data": "装甲"
+				},
+				"top": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_data": "雷击"
+				},
+				"bom": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_data": "空袭"
+				},
+				"tpn": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_data": "鱼雷管"
+				},
+				"dod": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_data": "闪避数"
+				},
+				"gro": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_data": "集群数量"
 				},
 				"money": {
 					"_leaf": true,

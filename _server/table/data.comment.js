@@ -264,6 +264,21 @@ var data_comment_c456ea59_6018_45ef_8bcc_211a24c627dc = {
 							"_type": "textarea",
 							"_data": "初始防御"
 						},
+						"ap": {
+							"_leaf": true,
+							"_type": "textarea",
+							"_data": "初始穿甲"
+						},
+						"arm": {
+							"_leaf": true,
+							"_type": "textarea",
+							"_data": "初始装甲"
+						},
+						"top": {
+							"_leaf": true,
+							"_type": "textarea",
+							"_data": "初始雷击"
+						},
 						"mdef": {
 							"_leaf": true,
 							"_type": "textarea",

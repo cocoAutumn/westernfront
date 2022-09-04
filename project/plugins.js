@@ -2,6 +2,11 @@
 var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 {
 	"init": function () {
+		this.Army = ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'];
+		this.Navy = ['潜艇', '鱼雷艇', '商船', '驱逐', '轻巡', '重巡', '战列', '航母'];
+		this.Luftwaffe = ['战斗机', '重型战斗机', '攻击机', '俯冲轰炸机', '鱼雷轰炸机', '中型轰炸机', '导弹'];
+		this.getHeroPerDamage = function () { };
+		this.getEnemyPerDamage = function () { };
 		this._afterLoadResources = function () {
 			// 本函数将在所有资源加载完毕后，游戏开启前被执行
 		}
@@ -838,14 +843,14 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		var originDrawBook = core.ui._drawBook_drawName;
 		core.ui._drawBook_drawName = function (index, enemy, top, left, width) {
 			// 如果没有境界，则直接调用原始代码绘制
-			if (!enemy.level) return originDrawBook.call(core.ui, index, enemy, top, left, width);
+			if (!enemy.type) return originDrawBook.call(core.ui, index, enemy, top, left, width);
 			// 存在境界，则额外进行绘制
 			core.setTextAlign('ui', 'center');
 			if (enemy.specialText.length == 0) {
 				core.fillText('ui', enemy.name, left + width / 2,
 					top + 27, '#DDDDDD', this._buildFont(17, true));
-				core.fillText('ui', enemy.level, left + width / 2,
-					top + 51, core.arrayToRGBA(levelToColors[enemy.level] || '#DDDDDD'), this._buildFont(14, true));
+				core.fillText('ui', enemy.type, left + width / 2,
+					top + 51, core.arrayToRGBA(levelToColors[enemy.type] || '#DDDDDD'), this._buildFont(14, true));
 			} else {
 				core.fillText('ui', enemy.name, left + width / 2,
 					top + 20, '#DDDDDD', this._buildFont(17, true), width);
@@ -873,8 +878,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 						core.fillText('ui', '多属性...', left + width / 2,
 							top + 38, '#FF6A6A', this._buildFont(14, true), width);
 				}
-				core.fillText('ui', enemy.level, left + width / 2,
-					top + 56, core.arrayToRGBA(levelToColors[enemy.level] || '#DDDDDD'), this._buildFont(14, true));
+				core.fillText('ui', enemy.type, left + width / 2,
+					top + 56, core.arrayToRGBA(levelToColors[enemy.type] || '#DDDDDD'), this._buildFont(14, true));
 			}
 		}
 

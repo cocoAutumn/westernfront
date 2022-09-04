@@ -3317,7 +3317,7 @@ control.prototype.resize = function () {
         statusBarHeightInVertical: core.domStyle.isVertical ? (32 * col + 6) * core.domStyle.scale + 2 * BORDER : 0,
         toolbarHeightInVertical: core.domStyle.isVertical ? 38 * core.domStyle.scale + 2 * BORDER : 0,
         extendToolbar: extendToolbar,
-        is15x15: false
+        is15x15: true
     };
 
     this._doResize(obj);
