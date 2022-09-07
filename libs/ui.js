@@ -2656,7 +2656,7 @@ ui.prototype._drawToolbox = function (index) {
     var line1 = core._PY_ - 306;
     this._drawToolbox_drawLine(line1, "消耗道具");
     var line2 = core._PY_ - 146;
-    this._drawToolbox_drawLine(line2, "永久道具");
+    this._drawToolbox_drawLine(line2 + 9, "永久道具");
 
     this._drawToolbox_drawDescription(info, line1);
 
@@ -2922,7 +2922,7 @@ ui.prototype._drawEquipbox_drawStatusChanged_draw = function (text, color, obj) 
 
 ui.prototype._drawEquipbox_drawEquiped = function (info, line) {
     core.setTextAlign('ui', 'center');
-    var per_line = core._HALF_WIDTH_ - 3, width = Math.floor(core._PX_ / (per_line + 0.25));
+    var per_line = Math.ceil(core.status.globalAttribute.equipName.length / 2), width = Math.floor(core._PX_ / (per_line + 0.25));
     // 当前装备
     for (var i = 0; i < info.equipLength; i++) {
         var equipId = info.equipEquipment[i] || null;
