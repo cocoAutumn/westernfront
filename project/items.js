@@ -303,16 +303,16 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"book": {
 		"cls": "constants",
-		"name": "怪物手册",
-		"text": "可以查看当前楼层各怪物属性",
+		"name": "敌军情报",
+		"text": "可以查看当前战场内各敌人属性",
 		"hideInToolbox": true,
 		"useItemEffect": "core.ui.drawBook(0);",
 		"canUseItemEffect": "true"
 	},
 	"fly": {
 		"cls": "constants",
-		"name": "楼层传送器",
-		"text": "可以自由往来去过的楼层",
+		"name": "战场传送器",
+		"text": "可以在当前区域内已到过的战场地图之间进行快捷传送，需要在出入口旁使用",
 		"hideInReplay": true,
 		"hideInToolbox": true,
 		"useItemEffect": "core.ui.drawFly(core.floorIds.indexOf(core.status.floorId));",

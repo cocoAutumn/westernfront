@@ -2,13 +2,16 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 {
 	"main": {
 		"floorIds": [
-			"sample0",
-			"sample1",
-			"MT0"
+			"title",
+			"MT2",
+			"MT3",
+			"MT4",
+			"MT5"
 		],
 		"floorPartitions": [],
 		"images": [
 			"15.png",
+			"aircraft1.png",
 			"america.png",
 			"auchinleck.png",
 			"bg.jpg",
@@ -215,7 +218,15 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 					0,
 					1
 				],
-				"action": []
+				"action": [
+					"\t[神剧难度]难度系数：0。几乎等同于无敌版，赠送大量福利，几乎不需要动脑子就能通关，毫无游戏体验。适合只想看剧情或体验乱杀快感的玩家。",
+					{
+						"type": "confirm",
+						"text": "确定选择神剧难度？",
+						"yes": [],
+						"no": []
+					}
+				]
 			},
 			{
 				"title": "街机",
@@ -227,11 +238,13 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 					255,
 					1
 				],
-				"action": []
+				"action": [
+					"\t[街机难度]难度系数：1。赠送适量福利，虽不至于无脑乱撞但依旧比较亲民，大多数人能够顺利通关。相比常规蓝海塔的简单难度可能还要简单一些……"
+				]
 			},
 			{
 				"title": "历史",
-				"name": "Historical",
+				"name": "History",
 				"hard": 2,
 				"color": [
 					255,
@@ -239,7 +252,23 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 					0,
 					1
 				],
-				"action": []
+				"action": [
+					"\t[历史难度]难度系数：3。没有任何福利的正常难度。"
+				]
+			},
+			{
+				"title": "炼狱",
+				"name": "Hell",
+				"hard": 2,
+				"color": [
+					160,
+					0,
+					0,
+					1
+				],
+				"action": [
+					"\t[炼狱难度]难度系数：5。暂未调试完成。大佬可能有机会通关，但至少作者本人是打不过了。"
+				]
 			}
 		],
 		"equipName": [
@@ -257,19 +286,20 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"startVerticalBackground": "project/images/bg.jpg",
 			"startLogoStyle": "color: black",
 			"startButtonsStyle": "background-color: #32369F; opacity: 0.85; color: #FFFFFF; border: #FFFFFF 2px solid; caret-color: #FFD700;",
-			"statusLeftBackground": "url(project/materials/ground.png) repeat",
-			"statusTopBackground": "url(project/materials/ground.png) repeat",
+			"statusLeftBackground": "url(project/images/status.png) repeat",
+			"statusTopBackground": "url(project/images/status.png) repeat",
 			"toolsBackground": "black",
-			"borderColor": [
-				0,
-				0,
-				0,
-				1
-			],
+			"floorChangingStyle": "background-color: black; color: white",
 			"statusBarColor": [
 				255,
 				255,
 				255,
+				1
+			],
+			"borderColor": [
+				0,
+				0,
+				0,
 				1
 			],
 			"selectColor": [
@@ -278,7 +308,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				0,
 				1
 			],
-			"floorChangingStyle": "background-color: black; color: white",
 			"font": "Verdana"
 		},
 		"splitImages": []
@@ -287,7 +316,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"title": "铁血战将：落日余晖",
 		"name": "westernfront",
 		"version": "Ver 2.10.0",
-		"floorId": "sample0",
+		"floorId": "MT2",
 		"hero": {
 			"image": "hero.png",
 			"animate": false,
@@ -313,18 +342,68 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			},
 			"loc": {
 				"direction": "down",
-				"x": 6,
-				"y": 10
+				"x": 7,
+				"y": 14
 			},
 			"flags": {},
 			"followers": [],
 			"steps": 0
 		},
-		"startCanvas": [],
-		"startText": [
+		"startCanvas": [
 			{
 				"type": "setText",
-				"background": "winskin.png"
+				"position": "down",
+				"offset": 10,
+				"bold": false,
+				"background": "15.png",
+				"time": 40
+			},
+			{
+				"type": "setCurtain",
+				"color": [
+					0,
+					0,
+					0,
+					1
+				],
+				"time": 500,
+				"keep": true
+			},
+			{
+				"type": "changeFloor",
+				"floorId": "title",
+				"loc": [
+					-1,
+					-1
+				],
+				"time": 0
+			}
+		],
+		"startText": [
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "playSound",
+				"name": "item.mp3"
+			},
+			"\t[系统提示]强烈建议使用PC端游玩。本游戏无任何盈利成分。大部分音频和图片素材均非原创，素材来源将在游戏结尾注明，侵权必删（除非忘写了）。",
+			{
+				"type": "setValue",
+				"name": "item:book",
+				"operator": "+=",
+				"value": "1"
+			},
+			{
+				"type": "setValue",
+				"name": "item:fly",
+				"operator": "+=",
+				"value": "1"
+			},
+			{
+				"type": "sleep",
+				"time": 500
 			},
 			"1918年，第一次世界大战终于以德国的战败而告终。",
 			"但，那绝不是永恒的结束。",
