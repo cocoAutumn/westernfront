@@ -1,30 +1,30 @@
 main.floors.MT3=
 {
-"floorId": "MT3",
-"title": "主塔 3 层",
-"name": "3",
-"width": 15,
-"height": 15,
-"canFlyTo": true,
-"canFlyFrom": true,
-"canUseQuickShop": true,
-"cannotViewMap": false,
-"images": [],
-"ratio": 1,
-"defaultGround": "ground",
-"firstArrive": [],
-"eachArrive": [],
-"parallelDo": "",
-"events": {},
-"changeFloor": {},
-"beforeBattle": {},
-"afterBattle": {},
-"afterGetItem": {},
-"afterOpenDoor": {},
-"autoEvent": {},
-"cannotMove": {},
-"cannotMoveIn": {},
-"map": [
+    "floorId": "MT3",
+    "title": "训练场",
+    "name": "训练场",
+    "width": 15,
+    "height": 15,
+    "canFlyTo": true,
+    "canFlyFrom": true,
+    "canUseQuickShop": true,
+    "cannotViewMap": false,
+    "images": [],
+    "ratio": 1,
+    "defaultGround": "ground",
+    "firstArrive": [],
+    "eachArrive": [],
+    "parallelDo": "",
+    "events": {},
+    "changeFloor": {},
+    "beforeBattle": {},
+    "afterBattle": {},
+    "afterGetItem": {},
+    "afterOpenDoor": {},
+    "autoEvent": {},
+    "cannotMove": {},
+    "cannotMoveIn": {},
+    "map": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
@@ -41,4 +41,10 @@ main.floors.MT3=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
 ],
+    "bgmap": [
+
+],
+    "fgmap": [
+
+]
 }

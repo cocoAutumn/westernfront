@@ -21,25 +21,25 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"redGem": {
 		"cls": "items",
 		"name": "红宝石",
-		"text": "攻击+${core.values.redGem}",
-		"itemEffect": "core.status.hero.atk += core.values.redGem * core.status.thisMap.ratio",
-		"itemEffectTip": "，攻击+${core.values.redGem * core.status.thisMap.ratio}",
-		"useItemEffect": "core.status.hero.atk += core.values.redGem",
+		"text": ",攻击+1",
+		"itemEffect": "core.status.hero.atk += 1;",
+		"itemEffectTip": "，攻击+1",
+		"useItemEffect": "core.status.hero.atk += 1;",
 		"canUseItemEffect": "true"
 	},
 	"blueGem": {
 		"cls": "items",
 		"name": "蓝宝石",
-		"text": "，防御+${core.values.blueGem}",
-		"itemEffect": "core.status.hero.def += core.values.blueGem * core.status.thisMap.ratio",
-		"itemEffectTip": "，防御+${core.values.blueGem * core.status.thisMap.ratio}",
-		"useItemEffect": "core.status.hero.def += core.values.blueGem",
+		"text": "，指挥点数+5",
+		"itemEffect": "core.status.hero.mana += 5;",
+		"itemEffectTip": "，指挥点+5",
+		"useItemEffect": "core.status.hero.mana += 5;",
 		"canUseItemEffect": "true"
 	},
 	"greenGem": {
 		"cls": "items",
 		"name": "绿宝石",
-		"text": "，护盾+${core.values.greenGem}",
+		"text": "，补给+5",
 		"itemEffect": "core.status.hero.mdef += core.values.greenGem * core.status.thisMap.ratio",
 		"itemEffectTip": "，护盾+${core.values.greenGem * core.status.thisMap.ratio}",
 		"useItemEffect": "core.status.hero.mdef += core.values.greenGem",
@@ -48,49 +48,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"yellowGem": {
 		"cls": "items",
 		"name": "黄宝石",
-		"text": "可以进行加点",
-		"itemEffect": "core.status.hero.hp+=1000;core.status.hero.atk+=6;core.status.hero.def+=6;core.status.hero.mdef+=10;",
-		"itemEffectTip": "，全属性提升",
-		"useItemEvent": [
-			{
-				"type": "choices",
-				"choices": [
-					{
-						"text": "攻击+1",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "status:atk",
-								"operator": "+=",
-								"value": "1"
-							}
-						]
-					},
-					{
-						"text": "防御+2",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "status:def",
-								"operator": "+=",
-								"value": "2"
-							}
-						]
-					},
-					{
-						"text": "生命+200",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "status:hp",
-								"operator": "+=",
-								"value": "200"
-							}
-						]
-					}
-				]
-			}
-		],
+		"text": ",血量及血限+50",
+		"itemEffect": "core.status.hero.hpmax += 50;\ncore.status.hero.hp += 50;",
+		"itemEffectTip": "，血量及血限+50",
+		"useItemEvent": null,
 		"canUseItemEffect": "true"
 	},
 	"redPotion": {

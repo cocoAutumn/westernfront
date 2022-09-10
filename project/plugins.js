@@ -1,7 +1,6 @@
-///<reference path='../runtime.d.ts'/>
-var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
+var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 = 
 {
-	"init": function () {
+    "init": function () {
 		this.Army = ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'];
 		this.Navy = ['潜艇', '鱼雷艇', '商船', '驱逐', '轻巡', '重巡', '战列', '航母'];
 		this.Luftwaffe = ['战斗机', '重型战斗机', '攻击机', '俯冲轰炸机', '鱼雷轰炸机', '中型轰炸机', '导弹'];
@@ -11,7 +10,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			// 本函数将在所有资源加载完毕后，游戏开启前被执行
 		}
 	},
-	"drawLight": function () {
+    "drawLight": function () {
 
 		// 绘制灯光/漆黑层效果。调用方式 core.plugin.drawLight(...)
 		// 【参数说明】
@@ -72,7 +71,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			// 可以在任何地方（如afterXXX或自定义脚本事件）调用函数，方法为  core.plugin.xxx();
 		}
 	},
-	"shop": function () {
+    "shop": function () {
 		// 【全局商店】相关的功能
 		// 
 		// 打开一个全局商店
@@ -267,7 +266,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			return false;
 		}, 60);
 	},
-	"removeMap": function () {
+    "removeMap": function () {
 		// 高层塔砍层插件，删除后不会存入存档，不可浏览地图也不可飞到。
 		// 推荐用法：
 		// 对于超高层或分区域塔，当在1区时将2区以后的地图删除；1区结束时恢复2区，进二区时删除1区地图，以此类推
@@ -354,7 +353,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			});
 		}
 	},
-	"fiveLayers": function () {
+    "fiveLayers": function () {
 		// 是否启用五图层（增加背景2层和前景2层） 将__enable置为true即会启用；启用后请保存后刷新编辑器
 		// 背景层2将会覆盖背景层 被事件层覆盖 前景层2将会覆盖前景层
 		// 另外 请注意加入两个新图层 会让大地图的性能降低一些
@@ -508,7 +507,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			};
 		}
 	},
-	"itemShop": function () {
+    "itemShop": function () {
 		// 道具商店相关的插件
 		// 可在全塔属性-全局商店中使用「道具商店」事件块进行编辑（如果找不到可以在入口方块中找）
 
@@ -814,93 +813,93 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 
 	},
-	"enemyLevel": function () {
-		// 此插件将提供怪物手册中的怪物境界显示
-		// 使用此插件需要先给每个怪物定义境界，方法如下：
-		// 点击怪物的【配置表格】，找到“【怪物】相关的表格配置”，然后在【名称】仿照增加境界定义：
-		/*
-		 "level": {
-			  "_leaf": true,
-			  "_type": "textarea",
-			  "_string": true,
-			  "_data": "境界"
-		 },
-		 */
-		// 然后保存刷新，可以看到怪物的属性定义中出现了【境界】。再开启本插件即可。
+    "enemyLevel": function () {
+	// 此插件将提供怪物手册中的怪物境界显示
+	// 使用此插件需要先给每个怪物定义境界，方法如下：
+	// 点击怪物的【配置表格】，找到“【怪物】相关的表格配置”，然后在【名称】仿照增加境界定义：
+	/*
+	 "level": {
+		  "_leaf": true,
+		  "_type": "textarea",
+		  "_string": true,
+		  "_data": "境界"
+	 },
+	 */
+	// 然后保存刷新，可以看到怪物的属性定义中出现了【境界】。再开启本插件即可。
 
-		// 是否开启本插件，默认禁用；将此改成 true 将启用本插件。
-		var __enable = false;
-		if (!__enable) return;
+	// 是否开启本插件，默认禁用；将此改成 true 将启用本插件。
+	var __enable = true;
+	if (!__enable) return;
 
-		// 这里定义每个境界的显示颜色；可以写'red', '#RRGGBB' 或者[r,g,b,a]四元数组
-		var levelToColors = {
-			"萌新一阶": "red",
-			"萌新二阶": "#FF0000",
-			"萌新三阶": [255, 0, 0, 1],
-		};
+	// 这里定义每个境界的显示颜色；可以写'red', '#RRGGBB' 或者[r,g,b,a]四元数组
+	var levelToColors = {
+		"萌新一阶": "red",
+		"萌新二阶": "#FF0000",
+		"萌新三阶": [255, 0, 0, 1],
+	};
 
-		// 复写 _drawBook_drawName
-		var originDrawBook = core.ui._drawBook_drawName;
-		core.ui._drawBook_drawName = function (index, enemy, top, left, width) {
-			// 如果没有境界，则直接调用原始代码绘制
-			if (!enemy.type) return originDrawBook.call(core.ui, index, enemy, top, left, width);
-			// 存在境界，则额外进行绘制
-			core.setTextAlign('ui', 'center');
-			if (enemy.specialText.length == 0) {
-				core.fillText('ui', enemy.name, left + width / 2,
-					top + 27, '#DDDDDD', this._buildFont(17, true));
-				core.fillText('ui', enemy.type, left + width / 2,
-					top + 51, core.arrayToRGBA(levelToColors[enemy.type] || '#DDDDDD'), this._buildFont(14, true));
-			} else {
-				core.fillText('ui', enemy.name, left + width / 2,
-					top + 20, '#DDDDDD', this._buildFont(17, true), width);
-				switch (enemy.specialText.length) {
-					case 1:
-						core.fillText('ui', enemy.specialText[0], left + width / 2,
-							top + 38, core.arrayToRGBA((enemy.specialColor || [])[0] || '#FF6A6A'),
-							this._buildFont(14, true), width);
-						break;
-					case 2:
-						// Step 1: 计算字体
-						var text = enemy.specialText[0] + "  " + enemy.specialText[1];
-						core.setFontForMaxWidth('ui', text, width, this._buildFont(14, true));
-						// Step 2: 计算总宽度
-						var totalWidth = core.calWidth('ui', text);
-						var leftWidth = core.calWidth('ui', enemy.specialText[0]);
-						var rightWidth = core.calWidth('ui', enemy.specialText[1]);
-						// Step 3: 绘制
-						core.fillText('ui', enemy.specialText[0], left + (width + leftWidth - totalWidth) / 2,
-							top + 38, core.arrayToRGBA((enemy.specialColor || [])[0] || '#FF6A6A'));
-						core.fillText('ui', enemy.specialText[1], left + (width + totalWidth - rightWidth) / 2,
-							top + 38, core.arrayToRGBA((enemy.specialColor || [])[1] || '#FF6A6A'));
-						break;
-					default:
-						core.fillText('ui', '多属性...', left + width / 2,
-							top + 38, '#FF6A6A', this._buildFont(14, true), width);
-				}
-				core.fillText('ui', enemy.type, left + width / 2,
-					top + 56, core.arrayToRGBA(levelToColors[enemy.type] || '#DDDDDD'), this._buildFont(14, true));
+	// 复写 _drawBook_drawName
+	var originDrawBook = core.ui._drawBook_drawName;
+	core.ui._drawBook_drawName = function (index, enemy, top, left, width) {
+		// 如果没有境界，则直接调用原始代码绘制
+		if (!enemy.type) return originDrawBook.call(core.ui, index, enemy, top, left, width);
+		// 存在境界，则额外进行绘制
+		core.setTextAlign('ui', 'center');
+		if (enemy.specialText.length == 0) {
+			core.fillText('ui', enemy.name, left + width / 2,
+				top + 27, '#DDDDDD', this._buildFont(17, true));
+			core.fillText('ui', enemy.type, left + width / 2,
+				top + 51, core.arrayToRGBA(levelToColors[enemy.type] || '#DDDDDD'), this._buildFont(14, true));
+		} else {
+			core.fillText('ui', enemy.name, left + width / 2,
+				top + 20, '#DDDDDD', this._buildFont(17, true), width);
+			switch (enemy.specialText.length) {
+			case 1:
+				core.fillText('ui', enemy.specialText[0], left + width / 2,
+					top + 38, core.arrayToRGBA((enemy.specialColor || [])[0] || '#FF6A6A'),
+					this._buildFont(14, true), width);
+				break;
+			case 2:
+				// Step 1: 计算字体
+				var text = enemy.specialText[0] + "  " + enemy.specialText[1];
+				core.setFontForMaxWidth('ui', text, width, this._buildFont(14, true));
+				// Step 2: 计算总宽度
+				var totalWidth = core.calWidth('ui', text);
+				var leftWidth = core.calWidth('ui', enemy.specialText[0]);
+				var rightWidth = core.calWidth('ui', enemy.specialText[1]);
+				// Step 3: 绘制
+				core.fillText('ui', enemy.specialText[0], left + (width + leftWidth - totalWidth) / 2,
+					top + 38, core.arrayToRGBA((enemy.specialColor || [])[0] || '#FF6A6A'));
+				core.fillText('ui', enemy.specialText[1], left + (width + totalWidth - rightWidth) / 2,
+					top + 38, core.arrayToRGBA((enemy.specialColor || [])[1] || '#FF6A6A'));
+				break;
+			default:
+				core.fillText('ui', '多属性...', left + width / 2,
+					top + 38, '#FF6A6A', this._buildFont(14, true), width);
 			}
+			core.fillText('ui', enemy.type, left + width / 2,
+				top + 56, core.arrayToRGBA(levelToColors[enemy.type] || '#DDDDDD'), this._buildFont(14, true));
 		}
+	}
 
-		// 也可以复写其他的属性颜色如怪物攻防等，具体参见下面的例子的注释部分
-		core.ui._drawBook_drawRow1 = function (index, enemy, top, left, width, position) {
-			// 绘制第一行
-			core.setTextAlign('ui', 'left');
-			var b13 = this._buildFont(13, true),
-				f13 = this._buildFont(13, false);
-			var col1 = left,
-				col2 = left + width * 9 / 25,
-				col3 = left + width * 17 / 25;
-			core.fillText('ui', '生命', col1, position, '#DDDDDD', f13);
-			core.fillText('ui', core.formatBigNumber(enemy.hp || 0), col1 + 30, position, /*'red' */ null, b13);
-			core.fillText('ui', '攻击', col2, position, null, f13);
-			core.fillText('ui', core.formatBigNumber(enemy.atk || 0), col2 + 30, position, /* '#FF0000' */ null, b13);
-			core.fillText('ui', '防御', col3, position, null, f13);
-			core.fillText('ui', core.formatBigNumber(enemy.def || 0), col3 + 30, position, /* [255, 0, 0, 1] */ null, b13);
-		}
-	},
-	"multiHeros": function () {
+	// 也可以复写其他的属性颜色如怪物攻防等，具体参见下面的例子的注释部分
+	core.ui._drawBook_drawRow1 = function (index, enemy, top, left, width, position) {
+		// 绘制第一行
+		core.setTextAlign('ui', 'left');
+		var b13 = this._buildFont(13, true),
+			f13 = this._buildFont(13, false);
+		var col1 = left,
+			col2 = left + width * 9 / 25,
+			col3 = left + width * 17 / 25;
+		core.fillText('ui', '生命', col1, position, '#DDDDDD', f13);
+		core.fillText('ui', core.formatBigNumber(enemy.hp || 0), col1 + 30, position, /*'red' */ null, b13);
+		core.fillText('ui', '攻击', col2, position, null, f13);
+		core.fillText('ui', core.formatBigNumber(enemy.atk || 0), col2 + 30, position, /* '#FF0000' */ null, b13);
+		core.fillText('ui', '防御', col3, position, null, f13);
+		core.fillText('ui', core.formatBigNumber(enemy.def || 0), col3 + 30, position, /* [255, 0, 0, 1] */ null, b13);
+	}
+},
+    "multiHeros": function () {
 		// 多角色插件
 		// Step 1: 启用本插件
 		// Step 2: 定义每个新的角色各项初始数据（参见下方注释）
@@ -1046,7 +1045,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			core.setFlag("heroId", toHeroId); // 保存切换到的角色ID
 		}
 	},
-	"heroFourFrames": function () {
+    "heroFourFrames": function () {
 		// 样板的勇士/跟随者移动时只使用2、4两帧，观感较差。本插件可以将四帧全用上。
 
 		// 是否启用本插件
@@ -1099,7 +1098,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			return false;
 		}
 	},
-	"routeFixing": function () {
+    "routeFixing": function () {
 		// 是否开启本插件，true 表示启用，false 表示禁用。
 		var __enable = true;
 		if (!__enable) return;
@@ -1190,7 +1189,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			}
 		}, 100);
 	},
-	"numpad": function () {
+    "numpad": function () {
 		// 样板自带的整数输入事件为白屏弹窗且可以误输入任意非法内容但不支持负整数，观感较差。本插件可以将其美化成仿RM样式，使其支持负整数同时带有音效
 		// 另一方面，4399等第三方平台不允许使用包括 core.myprompt() 和 core.myconfirm() 在内的弹窗，因此也需要此插件来替代，不然类似生命魔杖的道具就不好实现了
 		// 关于负整数输入，V2.8.2原生支持其录像的压缩和解压，只是默认的 core.events._action_input() 函数将负数取了绝对值，可以只复写下面的 core.isReplaying() 部分来取消
@@ -1365,7 +1364,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			}
 		}
 	},
-	"sprites": function () {
+    "sprites": function () {
 		// 基于canvas的sprite化，摘编整理自万宁魔塔
 		// 
 		// ---------------------------------------- 第一部分 js代码 （必装） --------------------------------------- //
