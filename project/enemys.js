@@ -44,7 +44,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"me109e4": {"name":"ME109E-4","hp":100,"atk":120,"def":0,"money":2,"exp":0,"point":0,"special":[1],"type":"战斗机"},
 	"me110c": {"name":"ME110C破坏者","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"重型战斗机"},
 	"ju87b": {"name":"JU87B斯图卡","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"俯冲轰炸机"},
-	"transship": {"name":"商船","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"商船"},
+	"transship": {"name":"靶舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"轻巡"},
 	"italydd1": {"name":"帕莱斯特罗级驱逐舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"驱逐"},
 	"italydd2": {"name":"角宿一星级驱逐舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"驱逐"},
 	"italycl1": {"name":"罗马统帅级轻巡洋舰","hp":200,"atk":100,"def":50,"money":0,"exp":0,"point":0,"special":8,"type":"轻巡"},
@@ -80,5 +80,8 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"attankinf": {"name":"德国反坦克排","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"步兵"},
 	"me110g": {"name":"ME110G破坏者","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"重型战斗机"},
 	"tigerking": {"name":"虎王坦克","hp":150,"atk":100,"def":0,"money":0,"exp":0,"point":0,"special":[1,5,7,8],"type":"重坦"},
-	"pak44": {"name":"Pak44反坦克炮","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"反坦克炮"}
+	"pak44": {"name":"Pak44反坦克炮","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"反坦克炮"},
+	"veneto": {"name":"维内托级战列舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},
+	"scharnhost": {"name":"沙恩霍斯特级战列舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},
+	"bismark": {"name":"俾斯麦级战列舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]}
 }

@@ -489,5 +489,87 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "钱袋",
 		"itemEffect": "core.status.hero.money += 500",
 		"itemEffectTip": "，金币+500"
+	},
+	"I334": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I335": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I336": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I337": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I338": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I339": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I340": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I341": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I342": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I343": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I344": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"orangeGem": {
+		"cls": "items",
+		"name": "橙宝石",
+		"canUseItemEffect": "true",
+		"text": "，增加10雷击",
+		"itemEffectTip": "，增加10雷击"
+	},
+	"pinkGem": {
+		"cls": "items",
+		"name": "粉宝石",
+		"canUseItemEffect": "true",
+		"text": "，增加5空袭",
+		"itemEffectTip": "，增加5空袭"
+	},
+	"medal": {
+		"cls": "items",
+		"name": "勋章",
+		"canUseItemEffect": "true",
+		"text": "，全属性提升",
+		"itemEffectTip": "，全属性提升",
+		"useItemEvent": [
+			{
+				"type": "playSound",
+				"name": "xinxinbazhe.mp3"
+			}
+		]
 	}
 }

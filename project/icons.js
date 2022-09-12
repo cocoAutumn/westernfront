@@ -197,7 +197,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"attankinf": 66,
 		"me110g": 67,
 		"tigerking": 68,
-		"pak44": 69
+		"pak44": 69,
+		"veneto": 73,
+		"scharnhost": 74,
+		"bismark": 75
 	},
 	"enemy48": {
 		"angel": 0,
@@ -260,7 +263,21 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"jumpShoes": 49,
 		"skill1": 30,
 		"wand": 10,
-		"pack": 46
+		"pack": 46,
+		"I334": 5,
+		"I335": 7,
+		"I336": 26,
+		"I337": 31,
+		"I338": 32,
+		"I339": 34,
+		"I340": 35,
+		"I341": 36,
+		"I342": 37,
+		"I343": 38,
+		"I344": 39,
+		"orangeGem": 62,
+		"pinkGem": 63,
+		"medal": 64
 	},
 	"autotile": {
 		"autotile": 0,
