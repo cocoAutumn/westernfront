@@ -63,7 +63,19 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"sWallBLR": 31,
 		"sWallTLR": 32,
 		"sWallTBR": 33,
-		"sWallTBL": 34
+		"sWallTBL": 34,
+		"T349": 36,
+		"T350": 37,
+		"T352": 39,
+		"T353": 40,
+		"sand": 35,
+		"rock": 38,
+		"snowtree": 41,
+		"tree": 42,
+		"grass3": 43,
+		"ground4": 44,
+		"ground5": 45,
+		"ground6": 46
 	},
 	"animates": {
 		"star": 0,
@@ -94,7 +106,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"rightPortal": 25,
 		"upPortal": 26,
 		"ice": 27,
-		"magentaWall": 28
+		"magentaWall": 28,
+		"mine": 29
 	},
 	"npcs": {
 		"man": 0,
@@ -283,6 +296,17 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"autotile": 0,
 		"autotile1": 0,
 		"autotile2": 0,
-		"autotile3": 0
+		"autotile3": 0,
+		"autotile4": 0,
+		"autotile5": 0,
+		"autotile6": 0,
+		"autotile7": 0,
+		"autotile8": 0,
+		"autotile9": 0,
+		"autotile10": 0,
+		"autotile11": 0,
+		"autotile12": 0,
+		"autotile13": 0,
+		"autotile14": 0
 	}
 }

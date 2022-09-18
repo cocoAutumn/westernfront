@@ -1,6 +1,6 @@
-main.floors.MT4=
+main.floors.train3=
 {
-    "floorId": "MT4",
+    "floorId": "train3",
     "title": "训练场",
     "name": "训练场",
     "width": 15,
@@ -11,7 +11,7 @@ main.floors.MT4=
     "cannotViewMap": true,
     "images": [],
     "ratio": 1,
-    "defaultGround": "grass",
+    "defaultGround": "sand",
     "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",
