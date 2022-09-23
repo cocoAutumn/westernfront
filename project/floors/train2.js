@@ -120,7 +120,15 @@ main.floors.train2=
     "eachArrive": [],
     "parallelDo": "",
     "events": {},
-    "changeFloor": {},
+    "changeFloor": {
+        "7,13": {
+            "floorId": "train3",
+            "loc": [
+                7,
+                1
+            ]
+        }
+    },
     "beforeBattle": {},
     "afterBattle": {
         "7,3": [
