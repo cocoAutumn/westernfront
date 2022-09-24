@@ -571,5 +571,390 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"name": "xinxinbazhe.mp3"
 			}
 		]
+	},
+	"I413": {
+		"cls": "equips",
+		"name": "雷诺FT17",
+		"canUseItemEffect": "true"
+	},
+	"I414": {
+		"cls": "equips",
+		"name": "哈奇开斯H35",
+		"canUseItemEffect": "true"
+	},
+	"I415": {
+		"cls": "equips",
+		"name": "索玛S35",
+		"canUseItemEffect": "true"
+	},
+	"I416": {
+		"cls": "equips",
+		"name": "十字军巡洋坦克",
+		"canUseItemEffect": "true"
+	},
+	"I417": {
+		"cls": "equips",
+		"name": "瓦伦丁步兵坦克",
+		"canUseItemEffect": "true"
+	},
+	"I418": {
+		"cls": "equips",
+		"name": "克伦威尔巡洋坦克",
+		"canUseItemEffect": "true"
+	},
+	"I419": {
+		"cls": "equips",
+		"name": "玛蒂尔达步兵坦克",
+		"canUseItemEffect": "true"
+	},
+	"I420": {
+		"cls": "equips",
+		"name": "丘吉尔MK3型",
+		"canUseItemEffect": "true"
+	},
+	"I421": {
+		"cls": "equips",
+		"name": "M3格兰特",
+		"canUseItemEffect": "true"
+	},
+	"I422": {
+		"cls": "equips",
+		"name": "M4A1谢尔曼",
+		"canUseItemEffect": "true"
+	},
+	"I423": {
+		"cls": "equips",
+		"name": "M4A2谢尔曼",
+		"canUseItemEffect": "true"
+	},
+	"I424": {
+		"cls": "equips",
+		"name": "M4A3谢尔曼",
+		"canUseItemEffect": "true"
+	},
+	"I425": {
+		"cls": "equips",
+		"name": "M4A3E2“巨无霸”",
+		"canUseItemEffect": "true"
+	},
+	"I426": {
+		"cls": "equips",
+		"name": "谢尔曼“萤火虫”",
+		"canUseItemEffect": "true"
+	},
+	"I427": {
+		"cls": "equips",
+		"name": "A34彗星",
+		"canUseItemEffect": "true"
+	},
+	"I428": {
+		"cls": "equips",
+		"name": "丘吉尔MK7型",
+		"canUseItemEffect": "true"
+	},
+	"I429": {
+		"cls": "equips",
+		"name": "M26潘兴",
+		"canUseItemEffect": "true"
+	},
+	"I430": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I431": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I432": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I433": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I434": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I435": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I436": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I437": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I438": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I439": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I440": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I441": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I442": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I443": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I444": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I445": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I446": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I447": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I448": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I449": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I450": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I451": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I452": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I453": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I454": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I455": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I456": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I457": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I458": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I459": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I460": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I461": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I462": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I463": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I464": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I465": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I466": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I467": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I468": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I469": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I470": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I471": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I472": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I473": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I474": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I475": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I476": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I477": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I478": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I479": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I480": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I481": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I482": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I483": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I484": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I485": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I486": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I487": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I488": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
+	},
+	"I489": {
+		"cls": "items",
+		"name": "新物品",
+		"canUseItemEffect": "true"
 	}
 }
