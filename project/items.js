@@ -572,389 +572,384 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			}
 		]
 	},
-	"I413": {
+	"ft17": {
 		"cls": "equips",
 		"name": "雷诺FT17",
 		"canUseItemEffect": "true"
 	},
-	"I414": {
+	"h35": {
 		"cls": "equips",
 		"name": "哈奇开斯H35",
 		"canUseItemEffect": "true"
 	},
-	"I415": {
+	"s35": {
 		"cls": "equips",
 		"name": "索玛S35",
 		"canUseItemEffect": "true"
 	},
-	"I416": {
+	"crusades": {
 		"cls": "equips",
 		"name": "十字军巡洋坦克",
 		"canUseItemEffect": "true"
 	},
-	"I417": {
+	"valentine": {
 		"cls": "equips",
 		"name": "瓦伦丁步兵坦克",
 		"canUseItemEffect": "true"
 	},
-	"I418": {
+	"cromwell": {
 		"cls": "equips",
 		"name": "克伦威尔巡洋坦克",
 		"canUseItemEffect": "true"
 	},
-	"I419": {
+	"matilda": {
 		"cls": "equips",
 		"name": "玛蒂尔达步兵坦克",
 		"canUseItemEffect": "true"
 	},
-	"I420": {
+	"churchillmk3": {
 		"cls": "equips",
 		"name": "丘吉尔MK3型",
 		"canUseItemEffect": "true"
 	},
-	"I421": {
+	"m3grant": {
 		"cls": "equips",
 		"name": "M3格兰特",
 		"canUseItemEffect": "true"
 	},
-	"I422": {
+	"m4a1": {
 		"cls": "equips",
 		"name": "M4A1谢尔曼",
 		"canUseItemEffect": "true"
 	},
-	"I423": {
+	"m4a2": {
 		"cls": "equips",
 		"name": "M4A2谢尔曼",
 		"canUseItemEffect": "true"
 	},
-	"I424": {
+	"m4a3": {
 		"cls": "equips",
 		"name": "M4A3谢尔曼",
 		"canUseItemEffect": "true"
 	},
-	"I425": {
+	"m4a3e2": {
 		"cls": "equips",
 		"name": "M4A3E2“巨无霸”",
 		"canUseItemEffect": "true"
 	},
-	"I426": {
+	"firefly": {
 		"cls": "equips",
 		"name": "谢尔曼“萤火虫”",
 		"canUseItemEffect": "true"
 	},
-	"I427": {
+	"a34comet": {
 		"cls": "equips",
 		"name": "A34彗星",
 		"canUseItemEffect": "true"
 	},
-	"I428": {
+	"churchillmk7": {
 		"cls": "equips",
 		"name": "丘吉尔MK7型",
 		"canUseItemEffect": "true"
 	},
-	"I429": {
+	"m26pershing": {
 		"cls": "equips",
 		"name": "M26潘兴",
 		"canUseItemEffect": "true"
 	},
-	"I430": {
-		"cls": "items",
-		"name": "新物品",
+	"classe": {
+		"cls": "equips",
+		"name": "E级驱逐舰",
 		"canUseItemEffect": "true"
 	},
-	"I431": {
-		"cls": "items",
-		"name": "新物品",
+	"mahan": {
+		"cls": "equips",
+		"name": "马汉级驱逐舰",
 		"canUseItemEffect": "true"
 	},
-	"I432": {
-		"cls": "items",
-		"name": "新物品",
+	"classj": {
+		"cls": "equips",
+		"name": "J级驱逐舰",
 		"canUseItemEffect": "true"
 	},
-	"I433": {
-		"cls": "items",
-		"name": "新物品",
+	"gridley": {
+		"cls": "equips",
+		"name": "格里德利级驱逐舰",
 		"canUseItemEffect": "true"
 	},
-	"I434": {
-		"cls": "items",
-		"name": "新物品",
+	"classv": {
+		"cls": "equips",
+		"name": "V级驱逐舰",
 		"canUseItemEffect": "true"
 	},
-	"I435": {
-		"cls": "items",
-		"name": "新物品",
+	"flecher": {
+		"cls": "equips",
+		"name": "弗莱彻级驱逐舰",
 		"canUseItemEffect": "true"
 	},
-	"I436": {
-		"cls": "items",
-		"name": "新物品",
+	"edinburgh": {
+		"cls": "equips",
+		"name": "轻巡·爱丁堡号",
 		"canUseItemEffect": "true"
 	},
-	"I437": {
-		"cls": "items",
-		"name": "新物品",
+	"sheffield": {
+		"cls": "equips",
+		"name": "轻巡·谢菲尔德号",
 		"canUseItemEffect": "true"
 	},
-	"I438": {
-		"cls": "items",
-		"name": "新物品",
+	"norfolk": {
+		"cls": "equips",
+		"name": "重巡·诺福克号",
 		"canUseItemEffect": "true"
 	},
-	"I439": {
-		"cls": "items",
-		"name": "新物品",
+	"dorsetshire": {
+		"cls": "equips",
+		"name": "重巡·多塞特郡号",
 		"canUseItemEffect": "true"
 	},
-	"I440": {
-		"cls": "items",
-		"name": "新物品",
+	"benson": {
+		"cls": "equips",
+		"name": "本森级驱逐舰",
 		"canUseItemEffect": "true"
 	},
-	"I441": {
-		"cls": "items",
-		"name": "新物品",
+	"cleveland": {
+		"cls": "equips",
+		"name": "轻巡·克利夫兰号",
 		"canUseItemEffect": "true"
 	},
-	"I442": {
-		"cls": "items",
-		"name": "新物品",
+	"alaska": {
+		"cls": "equips",
+		"name": "重巡·阿拉斯加",
 		"canUseItemEffect": "true"
 	},
-	"I443": {
-		"cls": "items",
-		"name": "新物品",
+	"hood": {
+		"cls": "equips",
+		"name": "胡德号战列巡洋舰",
 		"canUseItemEffect": "true"
 	},
-	"I444": {
-		"cls": "items",
-		"name": "新物品",
+	"warspite": {
+		"cls": "equips",
+		"name": "厌战号战列舰",
 		"canUseItemEffect": "true"
 	},
-	"I445": {
-		"cls": "items",
-		"name": "新物品",
+	"kinggeorge5": {
+		"cls": "equips",
+		"name": "乔治五世号战列舰",
 		"canUseItemEffect": "true"
 	},
-	"I446": {
-		"cls": "items",
-		"name": "新物品",
+	"northcarolina": {
+		"cls": "equips",
+		"name": "北卡罗莱纳号战列舰",
 		"canUseItemEffect": "true"
 	},
-	"I447": {
-		"cls": "items",
-		"name": "新物品",
+	"iowa": {
+		"cls": "equips",
+		"name": "衣阿华级战列舰",
 		"canUseItemEffect": "true"
 	},
-	"I448": {
-		"cls": "items",
-		"name": "新物品",
+	"illustrious": {
+		"cls": "equips",
+		"name": "光辉号航空母舰",
 		"canUseItemEffect": "true"
 	},
-	"I449": {
-		"cls": "items",
-		"name": "新物品",
+	"eagle": {
+		"cls": "equips",
+		"name": "鹰号航空母舰",
 		"canUseItemEffect": "true"
 	},
-	"I450": {
-		"cls": "items",
-		"name": "新物品",
+	"raider": {
+		"cls": "equips",
+		"name": "突击者号航空母舰",
 		"canUseItemEffect": "true"
 	},
-	"I451": {
-		"cls": "items",
-		"name": "新物品",
+	"essex": {
+		"cls": "equips",
+		"name": "埃塞克斯号航空母舰",
 		"canUseItemEffect": "true"
 	},
-	"I452": {
-		"cls": "items",
-		"name": "新物品",
+	"enterprise": {
+		"cls": "equips",
+		"name": "企业号航空母舰",
 		"canUseItemEffect": "true"
 	},
-	"I453": {
-		"cls": "items",
-		"name": "新物品",
+	"wrestler": {
+		"cls": "equips",
+		"name": "斗士MK2型",
 		"canUseItemEffect": "true"
 	},
-	"I454": {
-		"cls": "items",
-		"name": "新物品",
+	"p40b": {
+		"cls": "equips",
+		"name": "P40B战斧",
 		"canUseItemEffect": "true"
 	},
-	"I455": {
-		"cls": "items",
-		"name": "新物品",
+	"hurricanemk1": {
+		"cls": "equips",
+		"name": "飓风MK1",
 		"canUseItemEffect": "true"
 	},
-	"I456": {
-		"cls": "items",
-		"name": "新物品",
+	"spitfiremk1": {
+		"cls": "equips",
+		"name": "喷火MK1",
 		"canUseItemEffect": "true"
 	},
-	"I457": {
-		"cls": "items",
-		"name": "新物品",
+	"p40e": {
+		"cls": "equips",
+		"name": "P40E战鹰",
 		"canUseItemEffect": "true"
 	},
-	"I458": {
-		"cls": "items",
-		"name": "新物品",
+	"hurricanemk2": {
+		"cls": "equips",
+		"name": "飓风MK2",
 		"canUseItemEffect": "true"
 	},
-	"I459": {
-		"cls": "items",
-		"name": "新物品",
+	"spitfiremk2": {
+		"cls": "equips",
+		"name": "喷火MK2",
 		"canUseItemEffect": "true"
 	},
-	"I460": {
-		"cls": "items",
-		"name": "新物品",
+	"f4f3": {
+		"cls": "equips",
+		"name": "F4F-3野猫",
 		"canUseItemEffect": "true"
 	},
-	"I461": {
-		"cls": "items",
-		"name": "新物品",
+	"f6f5": {
+		"cls": "equips",
+		"name": "F6F-5地狱猫",
 		"canUseItemEffect": "true"
 	},
-	"I462": {
-		"cls": "items",
-		"name": "新物品",
+	"spitfiremk5": {
+		"cls": "equips",
+		"name": "喷火MK5",
 		"canUseItemEffect": "true"
 	},
-	"I463": {
-		"cls": "items",
-		"name": "新物品",
+	"spitfiremk16": {
+		"cls": "equips",
+		"name": "喷火MK16",
 		"canUseItemEffect": "true"
 	},
-	"I464": {
-		"cls": "items",
-		"name": "新物品",
+	"seafury": {
+		"cls": "equips",
+		"name": "海怒",
 		"canUseItemEffect": "true"
 	},
-	"I465": {
-		"cls": "items",
-		"name": "新物品",
+	"f4u": {
+		"cls": "equips",
+		"name": "F4U-4B海盗",
 		"canUseItemEffect": "true"
 	},
-	"I466": {
-		"cls": "items",
-		"name": "新物品",
+	"p51d": {
+		"cls": "equips",
+		"name": "P51D野马",
 		"canUseItemEffect": "true"
 	},
-	"I467": {
-		"cls": "items",
-		"name": "新物品",
+	"skua": {
+		"cls": "equips",
+		"name": "贼鸥式轰炸机",
 		"canUseItemEffect": "true"
 	},
-	"I468": {
-		"cls": "items",
-		"name": "新物品",
+	"sbd3": {
+		"cls": "equips",
+		"name": "SBD-3无畏",
 		"canUseItemEffect": "true"
 	},
-	"I469": {
-		"cls": "items",
-		"name": "新物品",
+	"beautifighter": {
+		"cls": "equips",
+		"name": "英俊战士MK6C",
 		"canUseItemEffect": "true"
 	},
-	"I470": {
-		"cls": "items",
-		"name": "新物品",
+	"p38": {
+		"cls": "equips",
+		"name": "P38闪电",
 		"canUseItemEffect": "true"
 	},
-	"I471": {
-		"cls": "items",
-		"name": "新物品",
+	"torch": {
+		"cls": "equips",
+		"name": "火把式攻击机",
 		"canUseItemEffect": "true"
 	},
-	"I472": {
-		"cls": "items",
-		"name": "新物品",
+	"mosquito": {
+		"cls": "equips",
+		"name": "蚊式战斗机",
 		"canUseItemEffect": "true"
 	},
-	"I473": {
-		"cls": "items",
-		"name": "新物品",
+	"p47d": {
+		"cls": "equips",
+		"name": "P47D雷电",
 		"canUseItemEffect": "true"
 	},
-	"I474": {
-		"cls": "items",
-		"name": "新物品",
+	"sb2c": {
+		"cls": "equips",
+		"name": "SB2C地狱俯冲者",
 		"canUseItemEffect": "true"
 	},
-	"I475": {
-		"cls": "items",
-		"name": "新物品",
+	"tempest": {
+		"cls": "equips",
+		"name": "暴风式攻击机",
 		"canUseItemEffect": "true"
 	},
-	"I476": {
-		"cls": "items",
-		"name": "新物品",
+	"p61": {
+		"cls": "equips",
+		"name": "P61黑寡妇",
 		"canUseItemEffect": "true"
 	},
-	"I477": {
-		"cls": "items",
-		"name": "新物品",
+	"swordfish": {
+		"cls": "equips",
+		"name": "箭鱼式鱼雷机",
 		"canUseItemEffect": "true"
 	},
-	"I478": {
-		"cls": "items",
-		"name": "新物品",
+	"tbd": {
+		"cls": "equips",
+		"name": "TBD蹂躏者",
 		"canUseItemEffect": "true"
 	},
-	"I479": {
-		"cls": "items",
-		"name": "新物品",
+	"blenheim": {
+		"cls": "equips",
+		"name": "布伦海姆轰炸机",
 		"canUseItemEffect": "true"
 	},
-	"I480": {
-		"cls": "items",
-		"name": "新物品",
+	"b25": {
+		"cls": "equips",
+		"name": "B25米切尔",
 		"canUseItemEffect": "true"
 	},
-	"I481": {
-		"cls": "items",
-		"name": "新物品",
+	"barracuda": {
+		"cls": "equips",
+		"name": "梭鱼式轰炸机",
 		"canUseItemEffect": "true"
 	},
-	"I482": {
-		"cls": "items",
-		"name": "新物品",
+	"tbf": {
+		"cls": "equips",
+		"name": "TBF复仇者",
 		"canUseItemEffect": "true"
 	},
-	"I483": {
-		"cls": "items",
-		"name": "新物品",
+	"a26": {
+		"cls": "equips",
+		"name": "B26入侵者",
 		"canUseItemEffect": "true"
 	},
-	"I484": {
-		"cls": "items",
-		"name": "新物品",
+	"sterling": {
+		"cls": "equips",
+		"name": "斯特林MK1",
 		"canUseItemEffect": "true"
 	},
-	"I485": {
-		"cls": "items",
-		"name": "新物品",
+	"b17": {
+		"cls": "equips",
+		"name": "B17空中堡垒",
 		"canUseItemEffect": "true"
 	},
-	"I486": {
-		"cls": "items",
-		"name": "新物品",
+	"b24": {
+		"cls": "equips",
+		"name": "B24解放者",
 		"canUseItemEffect": "true"
 	},
-	"I487": {
+	"lancaster": {
 		"cls": "items",
-		"name": "新物品",
+		"name": "兰开斯特轰炸机",
 		"canUseItemEffect": "true"
 	},
-	"I488": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I489": {
-		"cls": "items",
-		"name": "新物品",
+	"b29": {
+		"cls": "equips",
+		"name": "B29超级空中堡垒",
 		"canUseItemEffect": "true"
 	}
 }
