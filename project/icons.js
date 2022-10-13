@@ -75,7 +75,12 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"grass3": 43,
 		"ground4": 44,
 		"ground5": 45,
-		"ground6": 46
+		"ground6": 46,
+		"usa": 47,
+		"cccp": 48,
+		"italy": 49,
+		"england": 50,
+		"france": 51
 	},
 	"animates": {
 		"star": 0,
@@ -123,7 +128,26 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"moneyShop": 10,
 		"princess": 11,
 		"greenMan": 12,
-		"blueTrader": 13
+		"blueTrader": 13,
+		"N494": 14,
+		"N495": 15,
+		"N496": 16,
+		"N497": 17,
+		"N498": 18,
+		"N499": 19,
+		"N500": 20,
+		"N501": 21,
+		"N502": 22,
+		"N503": 23,
+		"N504": 24,
+		"N505": 25,
+		"N506": 26,
+		"N507": 27,
+		"N508": 28,
+		"N509": 29,
+		"N510": 30,
+		"N511": 31,
+		"N512": 32
 	},
 	"npc48": {
 		"npc0": 0,

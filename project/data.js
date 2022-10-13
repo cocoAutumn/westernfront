@@ -5,7 +5,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"train1",
 			"train2",
 			"train3",
-			"MT5"
+			"MT0"
 		],
 		"floorPartitions": [],
 		"images": [
