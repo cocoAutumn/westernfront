@@ -5,7 +5,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"train1",
 			"train2",
 			"train3",
-			"MT0"
+			"MT0",
+			"MT1",
+			"MT2",
+			"MT3",
+			"MT4",
+			"MT5"
 		],
 		"floorPartitions": [],
 		"images": [
@@ -86,6 +91,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"bgm4.mp3",
 			"bgm5.mp3",
 			"bgm6.mp3",
+			"bgm7.mp3",
 			"desert1.mp3",
 			"desert2.mp3",
 			"desert3.mp3",

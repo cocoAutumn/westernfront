@@ -112,7 +112,7 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"upPortal": 26,
 		"ice": 27,
 		"magentaWall": 28,
-		"mine": 29
+		"A360": 29
 	},
 	"npcs": {
 		"man": 0,
