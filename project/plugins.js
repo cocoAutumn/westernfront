@@ -1,15 +1,89 @@
 var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 = 
 {
     "init": function () {
-		this.Army = ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'];
-		this.Navy = ['潜艇', '鱼雷艇', '商船', '驱逐', '轻巡', '重巡', '战列', '航母'];
-		this.Luftwaffe = ['战斗机', '重型战斗机', '攻击机', '俯冲轰炸机', '鱼雷轰炸机', '中型轰炸机', '导弹'];
-		this.getHeroPerDamage = function () { };
-		this.getEnemyPerDamage = function () { };
-		this._afterLoadResources = function () {
-			// 本函数将在所有资源加载完毕后，游戏开启前被执行
+	this.Army = ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'];
+	this.Navy = ['潜艇', '鱼雷艇', '商船', '驱逐', '轻巡', '重巡', '战列', '航母'];
+	this.Luftwaffe = ['战斗机', '重型战斗机', '攻击机', '俯冲轰炸机', '鱼雷轰炸机', '中型轰炸机', '导弹'];
+	this.getHeroPerDamage = function (enemyInfo, hero, x, y, floorId, nthTurn) {
+		hero = hero || core.status.hero;
+		floorId = floorId || core.status.floorId;
+		if (typeof enemyInfo === 'string') enemyInfo = core.getEnemyInfo(enemyInfo, hero, x, y, floorId);
+		var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
+			hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
+			hero_def = core.getRealStatusOrDefault(hero, 'def'),
+			hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
+			hero_ap = core.getRealStatusOrDefault(hero, 'ap'),
+			hero_arm = core.getRealStatusOrDefault(hero, 'arm'),
+			hero_top = core.getRealStatusOrDefault(hero, 'top'),
+			hero_bom = core.getRealStatusOrDefault(hero, 'bom'),
+			hero_tpn = core.getRealStatusOrDefault(hero, 'tpn'),
+			hero_dod = core.getRealStatusOrDefault(hero, 'dod'),
+			hero_gro = core.getRealStatusOrDefault(hero, 'gro');
+		var mon_hp = enemyInfo.hp,
+			mon_atk = enemyInfo.atk,
+			mon_def = enemyInfo.def,
+			mon_special = enemyInfo.special,
+			mon_ap = enemyInfo.ap,
+			mon_arm = enemyInfo.arm,
+			mon_top = enemyInfo.top,
+			mon_bom = enemyInfo.bom,
+			mon_tpn = enemyInfo.tpn,
+			mon_dod = enemyInfo.dod,
+			mon_gro = enemyInfo.gro;
+		var damage = hero_atk;
+		if (this.Army.includes(enemyInfo.type)) { // 陆战
+			if (hero_ap <= mon_arm && hero_arm < mon_ap) { // 无法击穿
+				if (nthTurn <= 5) damage = 0;
+				else damage *= 0.8;
+			}
+		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
+			if (nthTurn % 10 === 0) damage += hero_top * hero_tpn; // TODO: dod的作用
+		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
+			damage += hero_bom;
 		}
-	},
+	}
+	this.getEnemyPerDamage = function (enemyInfo, hero, x, y, floorId, nthTurn) {
+		hero = hero || core.status.hero;
+		floorId = floorId || core.status.floorId;
+		if (typeof enemyInfo === 'string') enemyInfo = core.getEnemyInfo(enemyInfo, hero, x, y, floorId);
+		var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
+			hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
+			hero_def = core.getRealStatusOrDefault(hero, 'def'),
+			hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
+			hero_ap = core.getRealStatusOrDefault(hero, 'ap'),
+			hero_arm = core.getRealStatusOrDefault(hero, 'arm'),
+			hero_top = core.getRealStatusOrDefault(hero, 'top'),
+			hero_bom = core.getRealStatusOrDefault(hero, 'bom'),
+			hero_tpn = core.getRealStatusOrDefault(hero, 'tpn'),
+			hero_dod = core.getRealStatusOrDefault(hero, 'dod'),
+			hero_gro = core.getRealStatusOrDefault(hero, 'gro');
+		var mon_hp = enemyInfo.hp,
+			mon_atk = enemyInfo.atk,
+			mon_def = enemyInfo.def,
+			mon_special = enemyInfo.special,
+			mon_ap = enemyInfo.ap,
+			mon_arm = enemyInfo.arm,
+			mon_top = enemyInfo.top,
+			mon_bom = enemyInfo.bom,
+			mon_tpn = enemyInfo.tpn,
+			mon_dod = enemyInfo.dod,
+			mon_gro = enemyInfo.gro;
+		var damage = mon_atk;
+		if (this.Army.includes(enemyInfo.type)) { // 陆战
+			if (hero_ap > mon_arm && hero_arm >= mon_ap) { // 击穿
+				if (nthTurn <= 5) damage = 0;
+				else damage *= 0.8;
+			}
+		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
+			if (nthTurn % 10 === 0) damage += mon_top * mon_tpn; // TODO: dod的作用
+		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
+			damage += mon_bom;
+		}
+	}
+	this._afterLoadResources = function () {
+		// 本函数将在所有资源加载完毕后，游戏开启前被执行
+	}
+},
     "drawLight": function () {
 
 		// 绘制灯光/漆黑层效果。调用方式 core.plugin.drawLight(...)
