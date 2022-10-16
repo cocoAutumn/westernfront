@@ -12,11 +12,21 @@ main.floors.MT5=
     "images": [],
     "ratio": 1,
     "defaultGround": "grass",
-    "firstArrive": [],
+    "firstArrive": [
+        "\t[重要消息]\r[red]荷兰  投降！"
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},
-    "changeFloor": {},
+    "changeFloor": {
+        "0,7": {
+            "floorId": "MT4",
+            "loc": [
+                14,
+                7
+            ]
+        }
+    },
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},

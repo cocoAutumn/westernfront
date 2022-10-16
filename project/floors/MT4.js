@@ -16,7 +16,22 @@ main.floors.MT4=
     "eachArrive": [],
     "parallelDo": "",
     "events": {},
-    "changeFloor": {},
+    "changeFloor": {
+        "0,0": {
+            "floorId": "MT3",
+            "loc": [
+                14,
+                0
+            ]
+        },
+        "14,7": {
+            "floorId": "MT5",
+            "loc": [
+                0,
+                7
+            ]
+        }
+    },
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},

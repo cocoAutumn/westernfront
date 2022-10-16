@@ -12,11 +12,28 @@ main.floors.MT3=
     "images": [],
     "ratio": 1,
     "defaultGround": "grass",
-    "firstArrive": [],
+    "firstArrive": [
+        "\t[重要消息]\r[red]比利时  战败！"
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},
-    "changeFloor": {},
+    "changeFloor": {
+        "0,11": {
+            "floorId": "MT2",
+            "loc": [
+                14,
+                11
+            ]
+        },
+        "14,0": {
+            "floorId": "MT4",
+            "loc": [
+                0,
+                0
+            ]
+        }
+    },
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
