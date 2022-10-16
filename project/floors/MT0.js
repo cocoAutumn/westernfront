@@ -308,6 +308,7 @@ main.floors.MT0=
             ],
             "time": 500,
             "keep": true,
+            "async": true,
             "steps": [
                 "left:1"
             ]

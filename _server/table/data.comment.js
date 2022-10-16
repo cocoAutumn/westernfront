@@ -279,6 +279,26 @@ var data_comment_c456ea59_6018_45ef_8bcc_211a24c627dc = {
 							"_type": "textarea",
 							"_data": "初始雷击"
 						},
+						"bom": {
+							"_leaf": true,
+							"_type": "textarea",
+							"_data": "初始空袭"
+						},
+						"tpn": {
+							"_leaf": true,
+							"_type": "textarea",
+							"_data": "初始雷管"
+						},
+						"dod": {
+							"_leaf": true,
+							"_type": "textarea",
+							"_data": "初始闪避"
+						},
+						"gro": {
+							"_leaf": true,
+							"_type": "textarea",
+							"_data": "初始集群"
+						},
 						"mdef": {
 							"_leaf": true,
 							"_type": "textarea",
