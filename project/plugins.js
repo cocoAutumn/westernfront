@@ -41,6 +41,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 			damage += hero_bom;
 		}
+		return damage;
 	}
 	this.getEnemyPerDamage = function (enemyInfo, hero, x, y, floorId, nthTurn) {
 		hero = hero || core.status.hero;
@@ -79,6 +80,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 			damage += mon_bom;
 		}
+		return damage;
 	}
 	this._afterLoadResources = function () {
 		// 本函数将在所有资源加载完毕后，游戏开启前被执行

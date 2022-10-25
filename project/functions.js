@@ -1,8 +1,7 @@
-///<reference path='../runtime.d.ts'/>
-var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
+var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a = 
 {
-	"events": {
-		"resetGame": function (hero, hard, floorId, maps, values) {
+    "events": {
+        "resetGame": function (hero, hard, floorId, maps, values) {
 			// 重置整个游戏；此函数将在游戏开始时，或者每次读档时最先被调用
 			// hero：勇士信息；hard：难度；floorId：当前楼层ID；maps：地图信息；values：全局数值信息
 
@@ -52,7 +51,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			// 隐藏右下角的音乐按钮
 			core.dom.musicBtn.style.display = 'none';
 		},
-		"win": function (reason, norank, noexit) {
+        "win": function (reason, norank, noexit) {
 			// 游戏获胜事件
 			// 请注意，成绩统计时是按照hp进行上传并排名
 			// 可以先在这里对最终分数进行计算，比如将2倍攻击和5倍黄钥匙数量加到分数上
@@ -81,7 +80,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				})
 			});
 		},
-		"lose": function (reason) {
+        "lose": function (reason) {
 			// 游戏失败事件
 			core.ui.closePanel();
 			var replaying = core.isReplaying();
@@ -94,7 +93,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				});
 			})
 		},
-		"changingFloor": function (floorId, heroLoc) {
+        "changingFloor": function (floorId, heroLoc) {
 			// 正在切换楼层过程中执行的操作；此函数的执行时间是“屏幕完全变黑“的那一刻
 			// floorId为要切换到的楼层ID；heroLoc表示勇士切换到的位置
 
@@ -162,7 +161,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			// ...可以新增一些其他内容，比如创建个画布在右上角显示什么内容等等
 
 		},
-		"afterChangeFloor": function (floorId) {
+        "afterChangeFloor": function (floorId) {
 			// 转换楼层结束的事件；此函数会在整个楼层切换完全结束后再执行
 			// floorId是切换到的楼层
 
@@ -181,7 +180,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				}
 			}
 		},
-		"flyTo": function (toId, callback) {
+        "flyTo": function (toId, callback) {
 			// 楼层传送器的使用，从当前楼层飞往toId
 			// 如果不能飞行请返回false
 
@@ -224,7 +223,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			return true;
 		},
-		"beforeBattle": function (enemyId, x, y) {
+        "beforeBattle": function (enemyId, x, y) {
 			// 战斗前触发的事件，可以加上一些战前特效（详见下面支援的例子）
 			// 此函数在“检测能否战斗和自动存档”【之后】执行。如果需要更早的战前事件，请在插件中覆重写 core.events.doSystemEvent 函数。
 			// 返回true则将继续战斗，返回false将不再战斗。
@@ -255,7 +254,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			return true;
 		},
-		"afterBattle": function (enemyId, x, y) {
+        "afterBattle": function (enemyId, x, y) {
 			// 战斗结束后触发的事件
 
 			var enemy = core.material.enemys[enemyId];
@@ -426,7 +425,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				core.clearContinueAutomaticRoute();
 
 		},
-		"afterOpenDoor": function (doorId, x, y) {
+        "afterOpenDoor": function (doorId, x, y) {
 			// 开一个门后触发的事件
 
 			var todo = [];
@@ -447,7 +446,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			else
 				core.clearContinueAutomaticRoute();
 		},
-		"afterGetItem": function (itemId, x, y, isGentleClick) {
+        "afterGetItem": function (itemId, x, y, isGentleClick) {
 			// 获得一个道具后触发的事件
 			// itemId：获得的道具ID；x和y是该道具所在的坐标
 			// isGentleClick：是否是轻按触发的
@@ -469,7 +468,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			if (todo.length > 0) core.insertAction(todo, x, y);
 		},
-		"afterPushBox": function () {
+        "afterPushBox": function () {
 			// 推箱子后的事件
 			if (core.searchBlock('box').length == 0) {
 				// 可以通过if语句来进行开门操作
@@ -482,9 +481,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				*/
 			}
 		}
-	},
-	"enemys": {
-		"getSpecials": function () {
+    },
+    "enemys": {
+        "getSpecials": function () {
 			// 获得怪物的特殊属性，每一行定义一个特殊属性。
 			// 分为五项，第一项为该特殊属性的数字，第二项为特殊属性的名字，第三项为特殊属性的描述
 			// 第四项为该特殊属性的颜色，可以写十六进制 #RRGGBB 或者 [r,g,b,a] 四元数组
@@ -547,7 +546,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				[55, "沙漠军团", "不会受到“炎热debuff”的负面影响"]
 			];
 		},
-		"getEnemyInfo": function (enemy, hero, x, y, floorId) {
+        "getEnemyInfo": function (enemy, hero, x, y, floorId) {
 			// 获得某个怪物变化后的数据；该函数将被伤害计算和怪物手册使用
 			// 例如：坚固、模仿、仿攻等等
 			// 
@@ -677,167 +676,61 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				"type": enemy.type
 			};
 		},
-		"getDamageInfo": function (enemy, hero, x, y, floorId) {
-			// 获得战斗伤害信息（实际伤害计算函数）
-			// 
-			// 参数说明：
-			// enemy：该怪物信息
-			// hero：勇士的当前数据；如果对应项不存在则会从core.status.hero中取。
-			// x,y：该怪物的坐标（查看手册和强制战斗时为undefined）
-			// floorId：该怪物所在的楼层
-			// 后面三个参数主要是可以在光环等效果上可以适用
-			floorId = floorId || core.status.floorId;
+        "getDamageInfo": function (enemy, hero, x, y, floorId) {
+	// 获得战斗伤害信息（实际伤害计算函数）
+	// 
+	// 参数说明：
+	// enemy：该怪物信息
+	// hero：勇士的当前数据；如果对应项不存在则会从core.status.hero中取。
+	// x,y：该怪物的坐标（查看手册和强制战斗时为undefined）
+	// floorId：该怪物所在的楼层
+	// 后面三个参数主要是可以在光环等效果上可以适用
+	floorId = floorId || core.status.floorId;
 
-			var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
-				hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
-				hero_def = core.getRealStatusOrDefault(hero, 'def'),
-				hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
-				origin_hero_hp = core.getStatusOrDefault(hero, 'hp'),
-				origin_hero_atk = core.getStatusOrDefault(hero, 'atk'),
-				origin_hero_def = core.getStatusOrDefault(hero, 'def');
+	var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
+		hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
+		hero_def = core.getRealStatusOrDefault(hero, 'def'),
+		hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
+		origin_hero_hp = core.getStatusOrDefault(hero, 'hp'),
+		origin_hero_atk = core.getStatusOrDefault(hero, 'atk'),
+		origin_hero_def = core.getStatusOrDefault(hero, 'def');
 
-			// 勇士的负属性都按0计算
-			hero_hp = Math.max(0, hero_hp);
-			hero_atk = Math.max(0, hero_atk);
-			hero_def = Math.max(0, hero_def);
-			hero_mdef = Math.max(0, hero_mdef);
+	// 勇士的负属性都按0计算
+	hero_hp = Math.max(0, hero_hp);
+	hero_atk = Math.max(0, hero_atk);
+	hero_def = Math.max(0, hero_def);
+	hero_mdef = Math.max(0, hero_mdef);
 
-			// 怪物的各项数据
-			// 对坚固模仿等处理扔到了脚本编辑-getEnemyInfo之中
-			var enemyInfo = core.enemys.getEnemyInfo(enemy, hero, x, y, floorId);
-			var mon_hp = enemyInfo.hp,
-				mon_atk = enemyInfo.atk,
-				mon_def = enemyInfo.def,
-				mon_special = enemyInfo.special;
+	// 怪物的各项数据
+	// 对坚固模仿等处理扔到了脚本编辑-getEnemyInfo之中
+	var enemyInfo = core.enemys.getEnemyInfo(enemy, hero, x, y, floorId);
+	var mon_hp = enemyInfo.hp,
+		mon_atk = enemyInfo.atk,
+		mon_def = enemyInfo.def,
+		mon_special = enemyInfo.special;
 
-			// 技能的处理
-			if (core.getFlag('skill', 0) == 1) { // 开启了技能1：二倍斩
-				hero_atk *= 2; // 计算时攻击力翻倍	
-			}
+	//回合制战斗
+	var curr_hp = mon_hp,
+		turn = 0,
+		damage = 0;
+	while (curr_hp > 0) {
+		++turn; // 进入下一回合
+		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn);
+		if (curr_hp > 0)
+			damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);
+	}
 
-			// 如果是无敌属性，且勇士未持有十字架
-			if (core.hasSpecial(mon_special, 20) && !core.hasItem("cross"))
-				return null; // 不可战斗
-
-			// 战前造成的额外伤害（可被护盾抵消）
-			var init_damage = 0;
-
-			// 吸血
-			if (core.hasSpecial(mon_special, 11)) {
-				var vampire_damage = hero_hp * enemy.vampire;
-
-				// 如果有神圣盾免疫吸血等可以在这里写
-				// 也可以用hasItem和hasEquip来判定装备
-				// if (core.hasFlag('shield5')) vampire_damage = 0;
-
-				vampire_damage = Math.floor(vampire_damage) || 0;
-				// 加到自身
-				if (enemy.add) // 如果加到自身
-					mon_hp += vampire_damage;
-
-				init_damage += vampire_damage;
-			}
-
-			// 每回合怪物对勇士造成的战斗伤害
-			var per_damage = mon_atk - hero_def;
-			// 魔攻：战斗伤害就是怪物攻击力
-			if (core.hasSpecial(mon_special, 2)) per_damage = mon_atk;
-			// 战斗伤害不能为负值
-			if (per_damage < 0) per_damage = 0;
-
-			// 2连击 & 3连击 & N连击
-			if (core.hasSpecial(mon_special, 4)) per_damage *= 2;
-			if (core.hasSpecial(mon_special, 5)) per_damage *= 3;
-			if (core.hasSpecial(mon_special, 6)) per_damage *= (enemy.n || 4);
-
-			// 每回合的反击伤害；反击是按照勇士的攻击次数来计算回合
-			var counterDamage = 0;
-			if (core.hasSpecial(mon_special, 8))
-				counterDamage += Math.floor((enemy.counterAttack || core.values.counterAttack) * hero_atk);
-
-			// 先攻
-			if (core.hasSpecial(mon_special, 1)) init_damage += per_damage;
-
-			// 破甲
-			if (core.hasSpecial(mon_special, 7))
-				init_damage += Math.floor((enemy.breakArmor || core.values.breakArmor) * hero_def);
-
-			// 净化
-			if (core.hasSpecial(mon_special, 9))
-				init_damage += Math.floor((enemy.purify || core.values.purify) * hero_mdef);
-
-			// 勇士每回合对怪物造成的伤害
-			var hero_per_damage = Math.max(hero_atk - mon_def, 0);
-
-			// 如果没有破防，则不可战斗
-			if (hero_per_damage <= 0) return null;
-
-			// 勇士的攻击回合数；为怪物生命除以每回合伤害向上取整
-			var turn = Math.ceil(mon_hp / hero_per_damage);
-
-			// ------ 支援 ----- //
-			// 这个递归最好想明白为什么，flag:__extraTurn__是怎么用的
-			var guards = core.getFlag("__guards__" + x + "_" + y, enemyInfo.guards);
-			var guard_before_current_enemy = false; // ------ 支援怪是先打(true)还是后打(false)？
-			turn += core.getFlag("__extraTurn__", 0);
-			if (guards.length > 0) {
-				if (!guard_before_current_enemy) { // --- 先打当前怪物，记录当前回合数
-					core.setFlag("__extraTurn__", turn);
-				}
-				// 获得那些怪物组成小队战斗
-				for (var i = 0; i < guards.length; i++) {
-					var gx = guards[i][0],
-						gy = guards[i][1],
-						gid = guards[i][2];
-					// 递归计算支援怪伤害信息，这里不传x,y保证不会重复调用
-					// 这里的mdef传0，因为护盾应该只会被计算一次
-					var info = core.enemys.getDamageInfo(core.material.enemys[gid], { hp: origin_hero_hp, atk: origin_hero_atk, def: origin_hero_def, mdef: 0 });
-					if (info == null) { // 小队中任何一个怪物不可战斗，直接返回null
-						core.removeFlag("__extraTurn__");
-						return null;
-					}
-					// 已经进行的回合数
-					core.setFlag("__extraTurn__", info.turn);
-					init_damage += info.damage;
-				}
-				if (guard_before_current_enemy) { // --- 先打支援怪物，增加当前回合数
-					turn += core.getFlag("__extraTurn__", 0);
-				}
-			}
-			core.removeFlag("__extraTurn__");
-			// ------ 支援END ------ //
-
-			// 最终伤害：初始伤害 + 怪物对勇士造成的伤害 + 反击伤害
-			var damage = init_damage + (turn - 1) * per_damage + turn * counterDamage;
-			// 再扣去护盾
-			damage -= hero_mdef;
-
-			// 检查是否允许负伤
-			if (!core.flags.enableNegativeDamage)
-				damage = Math.max(0, damage);
-
-			// 最后处理仇恨和固伤（因为这两个不能被护盾减伤）
-			if (core.hasSpecial(mon_special, 17)) { // 仇恨
-				damage += core.getFlag('hatred', 0);
-			}
-			if (core.hasSpecial(mon_special, 22)) { // 固伤
-				damage += enemy.damage || 0;
-			}
-
-			return {
-				"mon_hp": Math.floor(mon_hp),
-				"mon_atk": Math.floor(mon_atk),
-				"mon_def": Math.floor(mon_def),
-				"init_damage": Math.floor(init_damage),
-				"per_damage": Math.floor(per_damage),
-				"hero_per_damage": Math.floor(hero_per_damage),
-				"turn": Math.floor(turn),
-				"damage": Math.floor(damage)
-			};
-		}
-	},
-	"actions": {
-		"onKeyUp": function (keyCode, altKey) {
+	return {
+		"mon_hp": Math.floor(mon_hp),
+		"mon_atk": Math.floor(mon_atk),
+		"mon_def": Math.floor(mon_def),
+		"turn": Math.floor(turn),
+		"damage": Math.floor(damage)
+	};
+}
+    },
+    "actions": {
+        "onKeyUp": function (keyCode, altKey) {
 			// 键盘按键处理，可以在这里自定义快捷键列表
 			// keyCode：当前按键的keyCode（每个键的keyCode自行百度）
 			// altKey：Alt键是否被按下，为true代表同时按下了Alt键
@@ -988,7 +881,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 
 		},
-		"onStatusBarClick": function (px, py, vertical) {
+        "onStatusBarClick": function (px, py, vertical) {
 			// 点击状态栏时触发的事件，仅在自绘状态栏开启时生效
 			// px和py为点击的像素坐标
 			// vertical为录像播放过程中的横竖屏信息
@@ -1056,9 +949,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			*/
 
 		}
-	},
-	"control": {
-		"saveData": function () {
+    },
+    "control": {
+        "saveData": function () {
 			// 存档操作，此函数应该返回“具体要存档的内容”
 
 			// 差异化存储values
@@ -1083,7 +976,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			return data;
 		},
-		"loadData": function (data, callback) {
+        "loadData": function (data, callback) {
 			// 读档操作；从存储中读取了内容后的行为
 
 			// 重置游戏和路线
@@ -1122,7 +1015,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				if (callback) callback();
 			});
 		},
-		"getStatusLabel": function (name) {
+        "getStatusLabel": function (name) {
 			// 返回某个状态英文名的对应中文标签，如atk -> 攻击，def -> 防御等。
 			// 请注意此项仅影响 libs/ 下的内容（如绘制怪物手册、数据统计等）
 			// 自行定义的（比如获得道具效果）中用到的“攻击+3”等需要自己去对应地方修改
@@ -1143,7 +1036,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				steps: "步数",
 			}[name] || name;
 		},
-		"triggerDebuff": function (action, type) {
+        "triggerDebuff": function (action, type) {
 			// 毒衰咒效果的获得与解除
 			// action：获得还是解除；'get'表示获得，'remove'表示解除
 			// type：一个数组表示获得了哪些毒衰咒效果；poison, weak，curse
@@ -1200,7 +1093,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				if (success) core.playSound('回血');
 			}
 		},
-		"updateStatusBar": function () {
+        "updateStatusBar": function () {
 			// 更新状态栏
 
 			// 检查等级
@@ -1283,7 +1176,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			// updateDamage只能在此处执行！！更新全地图显伤
 			core.updateDamage();
 		},
-		"updateCheckBlock": function (floorId) {
+        "updateCheckBlock": function (floorId) {
 			// 领域、夹击、阻击等的伤害值计算
 			floorId = floorId || core.status.floorId;
 			if (!floorId || !core.status.maps) return;
@@ -1494,7 +1387,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				cache: {} // clear cache
 			};
 		},
-		"moveOneStep": function (callback) {
+        "moveOneStep": function (callback) {
 			// 勇士每走一步后执行的操作。callback为行走完毕后的回调
 			// 这个函数执行在“刚走完”的时候，即还没有检查该点的事件和领域伤害等。
 			// 请注意：瞬间移动不会执行该函数。如果要控制能否瞬间移动有三种方法：
@@ -1557,7 +1450,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			// 如需强行终止行走可以在这里条件判定：
 			// core.stopAutomaticRoute();
 		},
-		"moveDirectly": function (x, y, ignoreSteps) {
+        "moveDirectly": function (x, y, ignoreSteps) {
 			// 瞬间移动；x,y为要瞬间移动的点；ignoreSteps为减少的步数，可能之前已经被计算过
 			// 返回true代表成功瞬移，false代表没有成功瞬移
 
@@ -1596,7 +1489,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			return false;
 		},
-		"parallelDo": function (timestamp) {
+        "parallelDo": function (timestamp) {
 			// 并行事件处理，可以在这里写任何需要并行处理的脚本或事件
 			// 该函数将被系统反复执行，每次执行间隔视浏览器或设备性能而定，一般约为16.6ms一次
 			// 参数timestamp为“从游戏资源加载完毕到当前函数执行时”的时间差，以毫秒为单位
@@ -1613,9 +1506,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				}
 			}
 		}
-	},
-	"ui": {
-		"getToolboxItems": function (cls) {
+    },
+    "ui": {
+        "getToolboxItems": function (cls) {
 			// 获得道具栏中当前某类型道具的显示项和显示顺序
 			// cls为道具类型，只可能是 tools, constants 和 equips
 			// 返回一个数组，代表当前某类型道具的显示内容和顺序
@@ -1625,7 +1518,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				.filter(function (id) { return !core.material.items[id].hideInToolbox; })
 				.sort( /*function (id1, id2) { return core.material.items[id1].name <= core.material.items[id2].name ? -1 : 1 }*/);
 		},
-		"drawStatusBar": function () {
+        "drawStatusBar": function () {
 			var ctx, fill = function (text, x, y, style) {
 				core.ui.setFont(ctx, (/\w+/.test(text) ? 'italic ' : '') + 'bold 18px Verdana');
 				core.ui.fillBoldText(ctx, text, x, y, style);
@@ -1695,7 +1588,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				fill(core.setTwoDigits(core.itemCount('redKey')), 81 + offset, 267, '#FF8888');
 			}
 		},
-		"drawStatistics": function () {
+        "drawStatistics": function () {
 			// 浏览地图时参与的统计项目
 
 			return [
@@ -1711,7 +1604,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				// 在这里可以增加新的ID来进行统计个数，只能增加道具ID
 			];
 		},
-		"drawAbout": function () {
+        "drawAbout": function () {
 			// 绘制“关于”界面
 			core.ui.closePanel();
 			core.lockControl();
@@ -1739,5 +1632,5 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			// TODO: 写自己的“关于”页面，每次增加32像素即可
 			core.playSound('打开界面');
 		}
-	}
+    }
 }
