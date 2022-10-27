@@ -580,7 +580,17 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"h35": {
 		"cls": "equips",
 		"name": "哈奇开斯H35",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+20，穿20装5",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 20,
+				"ap": 20,
+				"arm": 8
+			},
+			"percentage": {}
+		}
 	},
 	"s35": {
 		"cls": "equips",
@@ -655,12 +665,23 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"m26pershing": {
 		"cls": "equips",
 		"name": "M26潘兴",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+5000，穿120装90。被动技能待定。"
 	},
 	"classe": {
 		"cls": "equips",
 		"name": "E级驱逐舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。",
+		"equip": {
+			"type": 1,
+			"value": {
+				"tpn": 3,
+				"top": 100,
+				"atk": 100
+			},
+			"percentage": {}
+		}
 	},
 	"mahan": {
 		"cls": "equips",
@@ -690,7 +711,17 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"edinburgh": {
 		"cls": "equips",
 		"name": "轻巡·爱丁堡号",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+150，雷击+50，鱼雷管+1。",
+		"equip": {
+			"type": 2,
+			"value": {
+				"tpn": 1,
+				"top": 50,
+				"atk": 150
+			},
+			"percentage": {}
+		}
 	},
 	"sheffield": {
 		"cls": "equips",
@@ -730,7 +761,15 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"warspite": {
 		"cls": "equips",
 		"name": "厌战号战列舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+500。闪避鱼雷数-1。\n每3回合额外发射一轮主炮，对敌方水面战舰造成1倍攻击力的伤害。",
+		"equip": {
+			"type": 3,
+			"value": {
+				"atk": 500
+			},
+			"percentage": {}
+		}
 	},
 	"kinggeorge5": {
 		"cls": "equips",
@@ -750,12 +789,19 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"illustrious": {
 		"cls": "equips",
 		"name": "光辉号航空母舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "舰载机：喷火MK2、火把式攻击机、梭鱼式鱼雷机。闪避鱼雷数-1，且装备时主角攻击力减少200点。\n被动：装甲航母：在海上遭遇敌方空袭时，减少40%炸弹伤害。"
 	},
 	"eagle": {
 		"cls": "equips",
 		"name": "鹰号航空母舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "舰载机：飓风MK1、贼鸥式轰炸机、箭鱼式鱼雷机。闪避鱼雷数-1。\n受到敌方鱼雷伤害增加20%。",
+		"equip": {
+			"type": 3,
+			"value": {},
+			"percentage": {}
+		}
 	},
 	"raider": {
 		"cls": "equips",
@@ -785,7 +831,15 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"hurricanemk1": {
 		"cls": "equips",
 		"name": "飓风MK1",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+40。战斗中，主角对敌方造成伤害时，追加80点伤害，对轰炸机追加200点伤害。",
+		"equip": {
+			"type": 4,
+			"value": {
+				"atk": 40
+			},
+			"percentage": {}
+		}
 	},
 	"spitfiremk1": {
 		"cls": "equips",
@@ -845,7 +899,15 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"skua": {
 		"cls": "equips",
 		"name": "贼鸥式轰炸机",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+20。挂载：1×500磅炸弹。\n每4个回合投弹，造成2倍攻击力的伤害。",
+		"equip": {
+			"type": 5,
+			"value": {
+				"atk": 20
+			},
+			"percentage": {}
+		}
 	},
 	"sbd3": {
 		"cls": "equips",
@@ -855,7 +917,15 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"beautifighter": {
 		"cls": "equips",
 		"name": "英俊战士MK6C",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻击+300。挂载：8×RP-3火箭弹。攻击轰炸机时增伤30%。\n对地攻击时率先发射1轮火箭弹，每发火箭弹的伤害为0.2倍攻击力。\n被动：机载雷达：敌人的“先攻”技能无效且我方额外先攻2次。",
+		"equip": {
+			"type": 5,
+			"value": {
+				"atk": 300
+			},
+			"percentage": {}
+		}
 	},
 	"p38": {
 		"cls": "equips",
@@ -895,7 +965,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"swordfish": {
 		"cls": "equips",
 		"name": "箭鱼式鱼雷机",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "无属性加成。挂载：1×鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放一枚鱼雷。对地攻击时，每3回合投放一次炸弹，每颗炸弹伤害为0.6倍攻击力.",
+		"equip": {
+			"type": 6,
+			"value": {},
+			"percentage": {}
+		}
 	},
 	"tbd": {
 		"cls": "equips",

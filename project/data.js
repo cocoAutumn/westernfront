@@ -368,7 +368,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"animate": false,
 			"name": "盟军指挥官",
 			"lv": 1,
-			"hpmax": 1000,
+			"hpmax": 2000,
 			"hp": 1000,
 			"manamax": -1,
 			"mana": 0,
@@ -393,7 +393,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			},
 			"flags": {},
 			"followers": [],
-			"steps": 0
+			"steps": 0,
+			"bom": 0,
+			"tpn": 0,
+			"dod": 0,
+			"gro": 0
 		},
 		"startCanvas": [
 			{

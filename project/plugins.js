@@ -78,7 +78,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
 			if (nthTurn % 10 === 0) damage += mon_top * mon_tpn; // TODO: dod的作用
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
-			damage += mon_bom;
+
 		}
 		return damage;
 	}
