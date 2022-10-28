@@ -360,5 +360,6 @@ main.floors.train1=
     "fgmap": [
 
 ],
-    "bgm": "allthis.mp3"
+    "bgm": "allthis.mp3",
+    "area": "陆地"
 }

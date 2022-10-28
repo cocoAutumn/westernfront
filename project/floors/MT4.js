@@ -62,5 +62,6 @@ main.floors.MT4=
     "fgmap": [
 
 ],
-    "bgm": "7days4.mp3"
+    "bgm": "7days4.mp3",
+    "area": "陆地"
 }

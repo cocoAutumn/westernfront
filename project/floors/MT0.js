@@ -629,5 +629,6 @@ main.floors.MT0=
     "fgmap": [
 
 ],
-    "bgm": null
+    "bgm": null,
+    "area": "陆地"
 }

@@ -434,5 +434,6 @@ main.floors.train3=
     "fgmap": [
 
 ],
-    "bgm": "allthis.mp3"
+    "bgm": "allthis.mp3",
+    "area": "浅滩"
 }
