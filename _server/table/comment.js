@@ -566,6 +566,20 @@ var comment_c456ea59_6018_45ef_8bcc_211a24c627dc = {
 							"_docs": "状态栏显示",
 							"_data": "显示在状态栏中的层数"
 						},
+						"area": {
+							"_leaf": true,
+							"_type": "select",
+							"_select": {
+								"values": [
+									"陆地",
+									"浅滩",
+									"海洋",
+									"天空"
+								]
+							},
+							"_docs": "地形",
+							"_data": "影响出没的兵种"
+						},
 						"width": {
 							"_leaf": true,
 							"_type": "disable",
