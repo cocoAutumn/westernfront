@@ -29,6 +29,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			mon_bom = enemyInfo.bom,
 			mon_tpn = enemyInfo.tpn,
 			mon_dod = enemyInfo.dod,
+			mon_cd = enemyInfo.cd,
+			mon_ammo = enemyInfo.ammo,
+			mon_spd = enemyInfo.spd,
 			mon_gro = enemyInfo.gro;
 		var damage = hero_atk;
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
@@ -68,15 +71,30 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			mon_bom = enemyInfo.bom,
 			mon_tpn = enemyInfo.tpn,
 			mon_dod = enemyInfo.dod,
+			mon_cd = enemyInfo.cd,
+			mon_ammo = enemyInfo.ammo,
+			mon_spd = enemyInfo.spd,
 			mon_gro = enemyInfo.gro;
 		var damage = mon_atk;
+
+		if (core.hasSpecial(mon_special, 4)) { //二连击
+			damage *= 2;
+		}
+		if (core.hasSpecial(mon_special, 5)) { //三连击
+			damage *= 3;
+		}
+		//注：如果以后有人使用本模板继续造塔，请至多在同一个怪物身上放置一个连击类技能！比如不要同时有2连击和3连击！
+		if (core.hasSpecial(mon_special, 6)) {
+			damage *= enemyInfo.n;
+		}
+
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
 			if (hero_ap > mon_arm && hero_arm >= mon_ap) { // 击穿
 				if (nthTurn <= 5) damage = 0;
 				else damage *= 0.8;
 			}
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-			if (nthTurn % 10 === 0) damage += mon_top * mon_tpn; // TODO: dod的作用
+			if (nthTurn > 0 && nthTurn % mon_cd === 0) damage += mon_top * mon_tpn; // TODO: dod的作用
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 
 		}

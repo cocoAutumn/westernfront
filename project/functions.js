@@ -484,198 +484,188 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
     },
     "enemys": {
         "getSpecials": function () {
-			// 获得怪物的特殊属性，每一行定义一个特殊属性。
-			// 分为五项，第一项为该特殊属性的数字，第二项为特殊属性的名字，第三项为特殊属性的描述
-			// 第四项为该特殊属性的颜色，可以写十六进制 #RRGGBB 或者 [r,g,b,a] 四元数组
-			// 第五项为该特殊属性的标记；目前 1 代表是地图类技能（需要进行遍历全图）
-			// 名字和描述可以直接写字符串，也可以写个function将怪物传进去
-			return [
-				[1, "突袭", "敌人首先攻击", "#ffcc33"],
-				[2, "魔攻", "怪物无视角色的防御", "#bbb0ff"],
-				[3, "坚固", "怪物防御不小于角色攻击-1", "#c0b088"],
-				[4, "2连击", "怪物每回合攻击2次", "#ffee77"],
-				[5, "3连击", "怪物每回合攻击3次", "#ffee77"],
-				[6, function (enemy) { return (enemy.n || '') + "连击"; }, function (enemy) { return "怪物每回合攻击" + (enemy.n || 4) + "次"; }, "#ffee77"],
-				[7, "破甲", function (enemy) { return "战斗前，怪物附加角色防御的" + Math.floor(100 * (enemy.breakArmor || core.values.breakArmor || 0)) + "%作为伤害"; }, "#88c0ff"],
-				[8, "反击", function (enemy) { return "战斗时，怪物每回合附加角色攻击的" + Math.floor(100 * (enemy.counterAttack || core.values.counterAttack || 0)) + "%作为伤害，无视角色防御"; }, "#ffaa44"],
-				[9, "净化", function (enemy) { return "战斗前，怪物附加角色护盾的" + (enemy.purify || core.values.purify) + "倍作为伤害"; }, "#80eed6"],
-				[10, "模仿", "怪物的攻防和角色攻防相等", "#b0c0dd"],
-				[11, "吸血", function (enemy) { return "战斗前，怪物首先吸取角色的" + Math.floor(100 * enemy.vampire || 0) + "%生命（约" + Math.floor((enemy.vampire || 0) * core.getStatus('hp')) + "点）作为伤害" + (enemy.add ? "，并把伤害数值加到自身生命上" : ""); }, "#dd4448"],
-				[12, "中毒", "战斗后，角色陷入中毒状态，每一步损失生命" + core.values.poisonDamage + "点", "#99ee88"],
-				[13, "衰弱", "战斗后，角色陷入衰弱状态，攻防暂时下降" + (core.values.weakValue >= 1 ? core.values.weakValue + "点" : parseInt(core.values.weakValue * 100) + "%"), "#f0bbcc"],
-				[14, "诅咒", "战斗后，角色陷入诅咒状态，战斗无法获得金币和经验", "#bbeef0"],
-				[15, "炮击", function (enemy) { return "经过怪物周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "范围内" + (enemy.range || 1) + "格时自动减生命" + (enemy.zone || 0) + "点"; }, "#c677dd"],
-				[16, "夹击", "经过两只相同的怪物中间，角色生命值变成一半", "#bb99ee"],
-				[17, "仇恨", "战斗前，怪物附加之前积累的仇恨值作为伤害；战斗后，释放一半的仇恨值。（每杀死一个怪物获得" + (core.values.hatred || 0) + "点仇恨值）", "#b0b666"],
-				[18, "阻击", function (enemy) { return "经过怪物周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "时自动减生命" + (enemy.repulse || 0) + "点，同时怪物后退一格"; }, "#8888e6"],
-				[19, "自爆", "战斗后角色的生命值变成1", "#ff6666"],
-				[20, "无敌", "角色无法打败怪物，除非拥有十字架", "#aaaaaa"],
-				[21, "退化", function (enemy) { return "战斗后角色永久下降" + (enemy.atkValue || 0) + "点攻击和" + (enemy.defValue || 0) + "点防御"; }],
-				[22, "固伤", function (enemy) { return "战斗前，怪物对角色造成" + (enemy.damage || 0) + "点固定伤害，未开启负伤时无视角色护盾。"; }, "#ff9977"],
-				[23, "重生", "怪物被击败后，角色转换楼层则怪物将再次出现", "#a0e0ff"],
-				[24, "狙击", function (enemy) { return "经过怪物同行或同列时自动减生命" + (enemy.laser || 0) + "点"; }, "#dda0dd"],
-				[25, "指挥", function (enemy) { return (enemy.range != null ? ((enemy.haloSquare ? "该怪物九宫格" : "该怪物十字") + enemy.haloRange + "格范围内") : "同楼层所有") + "怪物生命提升" + (enemy.hpBuff || 0) + "%，攻击提升" + (enemy.atkBuff || 0) + "%，防御提升" + (enemy.defBuff || 0) + "%，" + (enemy.haloAdd ? "可叠加" : "不可叠加"); }, "#e6e099", 1],
-				[26, "支援", "当周围一圈的怪物受到攻击时将上前支援，并组成小队战斗。", "#77c0b6", 1],
-				[27, "捕捉", function (enemy) { return "当走到怪物周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "时会强制进行战斗。"; }, "#c0ddbb"],
-				[28, "航弹", "每n回合投放x枚航空炸弹，造成的伤害计为“炸弹伤害”"],
-				[29, "鱼雷", "每n回合投放x枚鱼雷，每发鱼雷伤害等于雷击伤害。造成的伤害计为“鱼雷伤害”"],
-				[30, "航炮", "每个偶数回合额外造成一次2倍攻击力的伤害"],
-				[31, "280mm舰炮", "每3回合额外发射一轮主炮，伤害等于3倍攻击力"],
-				[32, "380mm舰炮", "每4回合额外发射一轮主炮，伤害等于6倍攻击力"],
-				[33, "潜行", "受到主角攻击力伤害减少70%"],
-				[34, "惊雷", "战斗开始时，发起先手鱼雷攻击。发射鱼雷数量以及伤害等同于正常的鱼雷袭击"],
-				[35, "闪避", "主角发起鱼雷攻击时，闪避其中的n枚"],
-				[36, "俯冲轰炸", "航空炸弹造成的伤害增加50%，且第一枚炸弹命中后，主角攻击力降低5%，持续到战斗结束"],
-				[37, "跨射", "强大的舰炮具有更远的射程。若主角未装备战列舰，该敌人以3倍攻击力攻击主角3次"],
-				[38, "精锐", "对主角造成的伤害翻倍"],
-				[39, "集群", "主角同时与n个该敌人进行战斗"],
-				[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害，且防空领域内无法空降"],
-				[41, "反制", "与该敌人战斗时，主角无法使用技能"],
-				[42, "截断", "该敌人在场时，主角补给值失效"],
-				[43, "超压", "该陆军单位的穿甲值大于主角装甲值时，造成的回合伤害额外提升40%"],
-				[44, "雷达", "每个存活的雷达能够为全图轴心国部队提供10%伤害加成"],
-				[45, "警戒", "若主角与该敌人发生战斗，则永久为全图轴心国部队提供10%的攻击力加成。该敌人自带1点固伤"],
-				[46, "夜枭", "存活时，周围8格内轴心国部队攻击力提升30%"],
-				[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角在战斗期间每回合额外流失当前生命值的5%，每进行一场战斗就解除一层该debuff。该敌人自带1点固伤"],
-				[48, "V1导弹", "巡航导弹，不会主动攻击。若主角未能在10回合内成功拦截该导弹，则立即爆炸并造成等同于自身攻击力的伤害。若成功拦截，则只造成50%攻击力伤害"],
-				[49, "弗里茨X", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍攻击力的伤害，否则失控坠毁，不会造成伤害"],
-				[50, "遥控", "该敌人控制着“弗里茨X”导弹进行攻击。被摧毁后，“弗里茨X”就会失控坠毁"],
-				[51, "失踪", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡。该敌人自带1点固伤"],
-				[52, "包围", "主角站在两个该敌人中间时，攻击力减少30%。该敌人自带1点固伤"],
-				[54, "间谍", "战后额外扣除主角10点mp。若mp不足则杀死主角。该敌人自带1点固伤"],
-				[55, "沙漠军团", "不会受到“炎热debuff”的负面影响"]
-			];
-		},
+	// 获得怪物的特殊属性，每一行定义一个特殊属性。
+	// 分为五项，第一项为该特殊属性的数字，第二项为特殊属性的名字，第三项为特殊属性的描述
+	// 第四项为该特殊属性的颜色，可以写十六进制 #RRGGBB 或者 [r,g,b,a] 四元数组
+	// 第五项为该特殊属性的标记；目前 1 代表是地图类技能（需要进行遍历全图）
+	// 名字和描述可以直接写字符串，也可以写个function将怪物传进去
+	return [
+		[1, "突袭", "该敌人首先攻击", "#ffcc33"],
+		[4, "2连击", "每回合攻击2次", "#ffee77"],
+		[5, "3连击", "每回合攻击3次", "#ffee77"],
+		[6, function (enemy) { return (enemy.n || '') + "连击"; }, function (enemy) { return "每回合攻击" + (enemy.n || 4) + "次"; }, "#ffee77"],
+		[15, "炮击", function (enemy) { return "经过敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "范围内" + (enemy.range || 1) + "格时遭受炮击，生命减少" + (enemy.zone || 0) + "点"; }, "#c677dd"],
+		[16, "夹击", "经过两只相同的怪物中间，角色生命值变成一半", "#bb99ee"],
+		[22, "固伤", function (enemy) { return "敌人对角色造成" + (enemy.damage || 0) + "点固定伤害，可被后勤值抵消。"; }, "#ff9977"],
+		[24, "狙击", function (enemy) { return "经过敌人同行或同列时遭受远距离攻击，伤害为" + (enemy.laser || 0) + "点"; }, "#dda0dd"],
+		[25, "指挥", function (enemy) { return (enemy.range != null ? ((enemy.haloSquare ? "自身九宫格" : "自身十字") + enemy.haloRange + "格范围内") : "同楼层所有") + "轴心国军队生命提升" + (enemy.hpBuff || 0) + "%，攻击提升" + (enemy.atkBuff || 0) + "%，防御提升" + (enemy.defBuff || 0) + "%，" + (enemy.haloAdd ? "可叠加" : "不可叠加"); }, "#e6e099", 1],
+		[28, "航弹", "每（破甲比例）回合投放（反击比例）枚航空炸弹，每颗炸弹伤害为（吸血比例）倍空袭值。造成的伤害计为“炸弹伤害”"],
+		[29, "鱼雷", "每（阻击伤害）回合投放（鱼雷管）枚鱼雷，每发鱼雷伤害等于雷击伤害。造成的伤害计为“鱼雷伤害”"],
+		[30, "航炮", "每个偶数回合额外造成一次2倍攻击力的伤害"],
+		[31, "280mm舰炮", "每3回合额外发射一轮主炮，伤害等于3倍攻击力"],
+		[32, "380mm舰炮", "每4回合额外发射一轮主炮，伤害等于6倍攻击力"],
+		[33, "潜行", "受到主角攻击力伤害减少70%"],
+		[34, "惊雷", "战斗开始时，发起先手鱼雷攻击。发射鱼雷数量以及伤害等同于正常的鱼雷袭击"],
+		[35, "闪避", "主角发起鱼雷攻击时，闪避其中的n枚"],
+		[36, "俯冲轰炸", "航空炸弹造成的伤害增加50%，且第一枚炸弹命中后，主角攻击力降低5%，持续到战斗结束"],
+		[37, "跨射", "强大的舰炮具有更远的射程。若主角未装备战列舰，该敌人以3倍攻击力攻击主角3次"],
+		[38, "精锐", "对主角造成的伤害翻倍"],
+		[39, "集群", "主角同时与n个该敌人进行战斗"],
+		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害，且防空领域内无法空降"],
+		[41, "反制", "与该敌人战斗时，主角无法使用技能"],
+		[42, "截断", "该敌人在场时，主角后勤值失效"],
+		[43, "超压", "该陆军单位的穿甲值大于主角装甲值时，造成的回合伤害额外提升40%"],
+		[44, "雷达", "每个存活的雷达能够为全图轴心国部队提供10%伤害加成"],
+		[45, "警戒", "若主角与该敌人发生战斗，则永久为全图轴心国部队提供10%的攻击力加成。该敌人自带1点固伤"],
+		[46, "夜枭", "存活时，周围8格内轴心国部队攻击力提升30%"],
+		[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角在战斗期间每回合额外流失当前生命值的5%，每进行一场战斗就解除一层该debuff。该敌人自带1点固伤"],
+		[48, "V1导弹", "巡航导弹，不会主动攻击。若主角未能在10回合内成功拦截该导弹，则立即爆炸并造成等同于自身攻击力的伤害。若成功拦截，则只造成50%攻击力伤害"],
+		[49, "弗里茨X", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍攻击力的伤害，否则失控坠毁，不会造成伤害"],
+		[50, "遥控", "该敌人控制着“弗里茨X”导弹进行攻击。被摧毁后，“弗里茨X”就会失控坠毁"],
+		[51, "失踪", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡。该敌人自带1点固伤"],
+		[52, "包围", "主角站在两个该敌人中间时，攻击力减少30%。该敌人自带1点固伤"],
+		[54, "间谍", "战后额外扣除主角10点mp。若mp不足则杀死主角。该敌人自带1点固伤"],
+		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响"]
+	];
+},
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
-			// 获得某个怪物变化后的数据；该函数将被伤害计算和怪物手册使用
-			// 例如：坚固、模仿、仿攻等等
-			// 
-			// 参数说明：
-			// enemy：该怪物信息
-			// hero_hp,hero_atk,hero_def,hero_mdef：勇士的生命攻防护盾数据
-			// x,y：该怪物的坐标（查看手册和强制战斗时为undefined）
-			// floorId：该怪物所在的楼层
-			// 后面三个参数主要是可以在光环等效果上可以适用（也可以按需制作部分范围光环效果）
-			floorId = floorId || core.status.floorId;
-			var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
-				hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
-				hero_def = core.getRealStatusOrDefault(hero, 'def'),
-				hero_mdef = core.getRealStatusOrDefault(hero, 'mdef');
+	// 获得某个怪物变化后的数据；该函数将被伤害计算和怪物手册使用
+	// 例如：坚固、模仿、仿攻等等
+	// 
+	// 参数说明：
+	// enemy：该怪物信息
+	// hero_hp,hero_atk,hero_def,hero_mdef：勇士的生命攻防护盾数据
+	// x,y：该怪物的坐标（查看手册和强制战斗时为undefined）
+	// floorId：该怪物所在的楼层
+	// 后面三个参数主要是可以在光环等效果上可以适用（也可以按需制作部分范围光环效果）
+	floorId = floorId || core.status.floorId;
+	var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
+		hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
+		hero_def = core.getRealStatusOrDefault(hero, 'def'),
+		hero_mdef = core.getRealStatusOrDefault(hero, 'mdef');
 
-			var mon_hp = core.getEnemyValue(enemy, 'hp', x, y, floorId),
-				mon_atk = core.getEnemyValue(enemy, 'atk', x, y, floorId),
-				mon_def = core.getEnemyValue(enemy, 'def', x, y, floorId),
-				mon_special = core.getEnemyValue(enemy, 'special', x, y, floorId);
-			var mon_money = core.getEnemyValue(enemy, 'money', x, y, floorId),
-				mon_exp = core.getEnemyValue(enemy, 'exp', x, y, floorId),
-				mon_point = core.getEnemyValue(enemy, 'point', x, y, floorId);
-			var mon_ap = core.getEnemyValue(enemy, 'ap', x, y, floorId),
-    			mon_arm = core.getEnemyValue(enemy, 'arm', x, y, floorId),
-	    		mon_tpn = core.getEnemyValue(enemy, 'tpn', x, y, floorId),
-		    	mon_top = core.getEnemyValue(enemy, 'top', x, y, floorId),
-				mon_bom = core.getEnemyValue(enemy, 'bom', x, y, floorId),
-				mon_dod = core.getEnemyValue(enemy, 'dod', x, y, floorId),
-				mon_gro = core.getEnemyValue(enemy, 'gro', x, y, floorId);
+	var mon_hp = core.getEnemyValue(enemy, 'hp', x, y, floorId),
+		mon_atk = core.getEnemyValue(enemy, 'atk', x, y, floorId),
+		mon_def = core.getEnemyValue(enemy, 'def', x, y, floorId),
+		mon_special = core.getEnemyValue(enemy, 'special', x, y, floorId);
+	var mon_money = core.getEnemyValue(enemy, 'money', x, y, floorId),
+		mon_exp = core.getEnemyValue(enemy, 'exp', x, y, floorId),
+		mon_point = core.getEnemyValue(enemy, 'point', x, y, floorId);
+	var mon_ap = core.getEnemyValue(enemy, 'ap', x, y, floorId),
+		mon_arm = core.getEnemyValue(enemy, 'arm', x, y, floorId),
+		mon_tpn = core.getEnemyValue(enemy, 'tpn', x, y, floorId),
+		mon_top = core.getEnemyValue(enemy, 'top', x, y, floorId),
+		mon_bom = core.getEnemyValue(enemy, 'bom', x, y, floorId),
+		mon_dod = core.getEnemyValue(enemy, 'dod', x, y, floorId),
+		mon_cd = core.getEnemyValue(enemy, 'cd', x, y, floorId),
+		mon_ammo = core.getEnemyValue(enemy, 'ammo', x, y, floorId),
+		mon_spd = core.getEnemyValue(enemy, 'spd', x, y, floorId),
+		n = core.getEnemyValue(enemy, 'n', x, y, floorId),
+		mon_gro = core.getEnemyValue(enemy, 'gro', x, y, floorId);
 
-			var guards = [];
+	var guards = [];
 
-			// 光环和支援检查
-			if (!core.status.checkBlock) core.status.checkBlock = {};
+	// 光环和支援检查
+	if (!core.status.checkBlock) core.status.checkBlock = {};
 
-			if (core.status.checkBlock.needCache) {
-				// 从V2.5.4开始，对光环效果增加缓存，以解决多次重复计算的问题，从而大幅提升运行效率。
-				var hp_buff = 0,
-					atk_buff = 0,
-					def_buff = 0;
-				// 已经计算过的光环怪ID列表，用于判定叠加
-				var usedEnemyIds = {};
-				// 检查光环和支援的缓存
-				var index = x != null && y != null ? (x + "," + y) : floorId;
-				if (!core.status.checkBlock.cache) core.status.checkBlock.cache = {};
-				var cache = core.status.checkBlock.cache[index];
-				if (!cache) {
-					// 没有该点的缓存，则遍历每个图块
-					core.extractBlocks(floorId);
-					core.status.maps[floorId].blocks.forEach(function (block) {
-						if (!block.disable) {
-							// 获得该图块的ID
-							var id = block.event.id,
-								enemy = core.material.enemys[id];
-							// 检查【光环】技能，数字25
-							if (enemy && core.hasSpecial(enemy.special, 25)) {
-								// 检查是否是范围光环
-								var inRange = enemy.haloRange == null;
-								if (enemy.haloRange != null && x != null && y != null) {
-									var dx = Math.abs(block.x - x),
-										dy = Math.abs(block.y - y);
-									// 检查十字和九宫格光环
-									if (dx + dy <= enemy.haloRange) inRange = true;
-									if (enemy.haloSquare && dx <= enemy.haloRange && dy <= enemy.haloRange) inRange = true;
-								}
-								// 检查是否可叠加
-								if (inRange && (enemy.haloAdd || !usedEnemyIds[enemy.id])) {
-									hp_buff += enemy.hpBuff || 0;
-									atk_buff += enemy.atkBuff || 0;
-									def_buff += enemy.defBuff || 0;
-									usedEnemyIds[enemy.id] = true;
-								}
-							}
-							// 检查【支援】技能，数字26
-							if (enemy && core.hasSpecial(enemy.special, 26) &&
-								// 检查支援条件，坐标存在，距离为1，且不能是自己
-								// 其他类型的支援怪，比如十字之类的话.... 看着做是一样的
-								x != null && y != null && Math.abs(block.x - x) <= 1 && Math.abs(block.y - y) <= 1 && !(x == block.x && y == block.y)) {
-								// 记录怪物的x,y，ID
-								guards.push([block.x, block.y, id]);
-							}
-
-							// TODO：如果有其他类型光环怪物在这里仿照添加检查
-							// 注：新增新的类光环属性（需要遍历全图的）需要在特殊属性定义那里的第五项写1，参见光环和支援的特殊属性定义。
+	if (core.status.checkBlock.needCache) {
+		// 从V2.5.4开始，对光环效果增加缓存，以解决多次重复计算的问题，从而大幅提升运行效率。
+		var hp_buff = 0,
+			atk_buff = 0,
+			def_buff = 0;
+		// 已经计算过的光环怪ID列表，用于判定叠加
+		var usedEnemyIds = {};
+		// 检查光环和支援的缓存
+		var index = x != null && y != null ? (x + "," + y) : floorId;
+		if (!core.status.checkBlock.cache) core.status.checkBlock.cache = {};
+		var cache = core.status.checkBlock.cache[index];
+		if (!cache) {
+			// 没有该点的缓存，则遍历每个图块
+			core.extractBlocks(floorId);
+			core.status.maps[floorId].blocks.forEach(function (block) {
+				if (!block.disable) {
+					// 获得该图块的ID
+					var id = block.event.id,
+						enemy = core.material.enemys[id];
+					// 检查【光环】技能，数字25
+					if (enemy && core.hasSpecial(enemy.special, 25)) {
+						// 检查是否是范围光环
+						var inRange = enemy.haloRange == null;
+						if (enemy.haloRange != null && x != null && y != null) {
+							var dx = Math.abs(block.x - x),
+								dy = Math.abs(block.y - y);
+							// 检查十字和九宫格光环
+							if (dx + dy <= enemy.haloRange) inRange = true;
+							if (enemy.haloSquare && dx <= enemy.haloRange && dy <= enemy.haloRange) inRange = true;
 						}
-					});
+						// 检查是否可叠加
+						if (inRange && (enemy.haloAdd || !usedEnemyIds[enemy.id])) {
+							hp_buff += enemy.hpBuff || 0;
+							atk_buff += enemy.atkBuff || 0;
+							def_buff += enemy.defBuff || 0;
+							usedEnemyIds[enemy.id] = true;
+						}
+					}
+					// 检查【支援】技能，数字26
+					if (enemy && core.hasSpecial(enemy.special, 26) &&
+						// 检查支援条件，坐标存在，距离为1，且不能是自己
+						// 其他类型的支援怪，比如十字之类的话.... 看着做是一样的
+						x != null && y != null && Math.abs(block.x - x) <= 1 && Math.abs(block.y - y) <= 1 && !(x == block.x && y == block.y)) {
+						// 记录怪物的x,y，ID
+						guards.push([block.x, block.y, id]);
+					}
 
-					core.status.checkBlock.cache[index] = { "hp_buff": hp_buff, "atk_buff": atk_buff, "def_buff": def_buff, "guards": guards };
-				} else {
-					// 直接使用缓存数据
-					hp_buff = cache.hp_buff;
-					atk_buff = cache.atk_buff;
-					def_buff = cache.def_buff;
-					guards = cache.guards;
+					// TODO：如果有其他类型光环怪物在这里仿照添加检查
+					// 注：新增新的类光环属性（需要遍历全图的）需要在特殊属性定义那里的第五项写1，参见光环和支援的特殊属性定义。
 				}
+			});
 
-				// 增加比例；如果要增加数值可以直接在这里修改
-				mon_hp *= (1 + hp_buff / 100);
-				mon_atk *= (1 + atk_buff / 100);
-				mon_def *= (1 + def_buff / 100);
-			}
+			core.status.checkBlock.cache[index] = { "hp_buff": hp_buff, "atk_buff": atk_buff, "def_buff": def_buff, "guards": guards };
+		} else {
+			// 直接使用缓存数据
+			hp_buff = cache.hp_buff;
+			atk_buff = cache.atk_buff;
+			def_buff = cache.def_buff;
+			guards = cache.guards;
+		}
 
-			// TODO：可以在这里新增其他的怪物数据变化
-			// 比如仿攻（怪物攻击不低于勇士攻击）：
-			// if (core.hasSpecial(mon_special, 27) && mon_atk < hero_atk) {
-			//     mon_atk = hero_atk;
-			// }
-			// 也可以按需增加各种自定义内容
+		// 增加比例；如果要增加数值可以直接在这里修改
+		mon_hp *= (1 + hp_buff / 100);
+		mon_atk *= (1 + atk_buff / 100);
+		mon_def *= (1 + def_buff / 100);
+	}
 
-			return {
-				"hp": Math.floor(mon_hp),
-				"atk": Math.floor(mon_atk),
-				"def": Math.floor(mon_def),
-				"money": Math.floor(mon_money),
-				"exp": Math.floor(mon_exp),
-				"point": Math.floor(mon_point),
-				"special": mon_special,
-				"guards": guards, // 返回支援情况
-				"ap": Math.floor(mon_ap),
-				"arm": Math.floor(mon_arm),
-				"tpn": Math.floor(mon_tpn),
-				"top": Math.floor(mon_top),
-				"bom": Math.floor(mon_bom),
-				"dod": Math.floor(mon_dod),
-				"gro": Math.floor(mon_gro),
-				"enemyId": enemy.id,
-				"type": enemy.type
-			};
-		},
+	// TODO：可以在这里新增其他的怪物数据变化
+	// 比如仿攻（怪物攻击不低于勇士攻击）：
+	// if (core.hasSpecial(mon_special, 27) && mon_atk < hero_atk) {
+	//     mon_atk = hero_atk;
+	// }
+	// 也可以按需增加各种自定义内容
+
+	return {
+		"hp": Math.floor(mon_hp),
+		"atk": Math.floor(mon_atk),
+		"def": Math.floor(mon_def),
+		"money": Math.floor(mon_money),
+		"exp": Math.floor(mon_exp),
+		"point": Math.floor(mon_point),
+		"special": mon_special,
+		"guards": guards, // 返回支援情况
+		"ap": Math.floor(mon_ap),
+		"arm": Math.floor(mon_arm),
+		"tpn": Math.floor(mon_tpn),
+		"top": Math.floor(mon_top),
+		"bom": Math.floor(mon_bom),
+		"dod": Math.floor(mon_dod),
+		"cd": Math.floor(mon_cd),
+		"ammo": Math.floor(mon_ammo),
+		"spd": Math.floor(mon_spd),
+		"gro": Math.floor(mon_gro),
+		"n": Math.floor(n),
+		"enemyId": enemy.id,
+		"type": enemy.type
+	};
+},
         "getDamageInfo": function (enemy, hero, x, y, floorId) {
 	// 获得战斗伤害信息（实际伤害计算函数）
 	// 
@@ -707,18 +697,31 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var mon_hp = enemyInfo.hp,
 		mon_atk = enemyInfo.atk,
 		mon_def = enemyInfo.def,
+		fixdamage = enemyInfo.damage,
 		mon_special = enemyInfo.special;
 
 	//回合制战斗
 	var curr_hp = mon_hp,
 		turn = 0,
 		damage = 0;
+	//先攻
+	if (core.hasSpecial(mon_special, 1)) {
+		damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn)
+	}
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合
 		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn);
-		if (curr_hp > 0)
+		if (curr_hp > 0) {
 			damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);
+		}
 	}
+
+	//固伤
+	if (core.hasSpecial(mon_special, 22)) {
+		damage += fixdamage; //固伤在护盾前，可以被护盾减少
+	}
+	//扣除护盾
+	damage -= hero_mdef; //这里可以变为负值
 
 	return {
 		"mon_hp": Math.floor(mon_hp),

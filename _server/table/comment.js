@@ -262,6 +262,24 @@ var comment_c456ea59_6018_45ef_8bcc_211a24c627dc = {
 					"_docs": "领域伤害",
 					"_data": "领域怪的伤害值"
 				},
+				"cd": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_docs": "鱼雷cd",
+					"_data": "发射鱼雷需要的冷却回合数"
+				},
+				"ammo": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_docs": "载弹量",
+					"_data": "轰炸机每次投放的炸弹数量"
+				},
+				"spd": {
+					"_leaf": true,
+					"_type": "textarea",
+					"_docs": "突防速度",
+					"_data": "轰炸机抵达投弹地点需要的回合数"
+				},
 				"repulse": {
 					"_leaf": true,
 					"_type": "textarea",
