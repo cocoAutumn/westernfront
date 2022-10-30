@@ -1007,20 +1007,98 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 	}
 
 	// 也可以复写其他的属性颜色如怪物攻防等，具体参见下面的例子的注释部分
+	core.ui._drawBook_drawContent = function (index, enemy, top, left) {
+		var width = core._PX_ - left; // 9 : 8 : 8 划分三列
+		core.ui._drawBook_drawRow1(index, enemy, top, left, width, top + 20);
+		core.ui._drawBook_drawRow2(index, enemy, top, left, width, top + 38);
+		core.ui._drawBook_drawRow3(index, enemy, top, left, width, top + 56);
+	}
 	core.ui._drawBook_drawRow1 = function (index, enemy, top, left, width, position) {
 		// 绘制第一行
 		core.setTextAlign('ui', 'left');
 		var b13 = this._buildFont(13, true),
 			f13 = this._buildFont(13, false);
 		var col1 = left,
+			col2 = left + width * 0.23,
+			col3 = left + width * 0.5,
+			col4 = left + width * 0.75;
+		core.fillText('ui', '生命', col1, position, [0, 255, 0, 1], f13);
+		core.fillText('ui', core.formatBigNumber(enemy.hp || 0), col1 + 30, position, null, b13);
+		core.fillText('ui', '黄金', col2, position, [255, 255, 0, 1], f13);
+		core.fillText('ui', core.formatBigNumber(enemy.money || 0), col2 + 30, position, null, b13);
+		core.fillText('ui', '经验', col3, position, [0, 255, 255, 1], f13);
+		core.fillText('ui', core.formatBigNumber(enemy.exp || 0), col3 + 30, position, null, b13);
+		core.fillText('ui', '回合', col4, position, [255, 255, 255, 1], f13);
+		core.fillText('ui', core.getDamageInfo(enemy)?.turn, col3 + 30, position, null, b13);
+	}
+
+	core.ui._drawBook_drawRow2 = function (index, enemy, top, left, width, position) {
+		// 绘制第二行
+		core.setTextAlign('ui', 'left');
+		var b13 = this._buildFont(13, true),
+			f13 = this._buildFont(13, false);
+		var col1 = left,
 			col2 = left + width * 9 / 25,
 			col3 = left + width * 17 / 25;
-		core.fillText('ui', '生命', col1, position, '#DDDDDD', f13);
-		core.fillText('ui', core.formatBigNumber(enemy.hp || 0), col1 + 30, position, /*'red' */ null, b13);
-		core.fillText('ui', '攻击', col2, position, null, f13);
-		core.fillText('ui', core.formatBigNumber(enemy.atk || 0), col2 + 30, position, /* '#FF0000' */ null, b13);
-		core.fillText('ui', '防御', col3, position, null, f13);
-		core.fillText('ui', core.formatBigNumber(enemy.def || 0), col3 + 30, position, /* [255, 0, 0, 1] */ null, b13);
+		// 获得第二行绘制的内容
+		var second_line = [];
+		if (core.flags.statusBarItems.indexOf('enableMoney') >= 0) second_line.push([core.getStatusLabel('money'), core.formatBigNumber(enemy.money || 0)]);
+		if (core.flags.enableAddPoint) second_line.push([core.getStatusLabel('point'), core.formatBigNumber(enemy.point || 0)]);
+		if (core.flags.statusBarItems.indexOf('enableExp') >= 0) second_line.push([core.getStatusLabel('exp'), core.formatBigNumber(enemy.exp || 0)]);
+
+		var damage_offset = col1 + (core._PX_ - col1) / 2 - 12;
+		// 第一列
+		if (second_line.length > 0) {
+			var one = second_line.shift();
+			core.fillText('ui', one[0], col1, position, '#DDDDDD', f13);
+			core.fillText('ui', one[1], col1 + 30, position, null, b13);
+			damage_offset = col2 + (core._PX_ - col2) / 2 - 12;
+		}
+		// 第二列
+		if (second_line.length > 0) {
+			var one = second_line.shift();
+			core.fillText('ui', one[0], col2, position, '#DDDDDD', f13);
+			core.fillText('ui', one[1], col2 + 30, position, null, b13);
+			damage_offset = col3 + (core._PX_ - col3) / 2 - 12;
+		}
+		// 忽略第三列，直接绘制伤害
+		this._drawBook_drawDamage(index, enemy, damage_offset, position);
+	}
+
+	core.ui._drawBook_drawRow3 = function (index, enemy, top, left, width, position) {
+		// 绘制第三行
+		core.setTextAlign('ui', 'left');
+		var b13 = this._buildFont(13, true),
+			f13 = this._buildFont(13, false);
+		var col1 = left,
+			col2 = left + width * 9 / 25,
+			col3 = left + width * 17 / 25;
+		core.fillText('ui', '临界', col1, position, '#DDDDDD', f13);
+		core.fillText('ui', core.formatBigNumber(enemy.critical || 0), col1 + 30, position, null, b13);
+		core.fillText('ui', '减伤', col2, position, null, f13);
+		core.fillText('ui', core.formatBigNumber(enemy.criticalDamage || 0), col2 + 30, position, null, b13);
+		core.fillText('ui', '加防', col3, position, null, f13);
+		core.fillText('ui', core.formatBigNumber(enemy.defDamage || 0), col3 + 30, position, null, b13);
+	}
+
+	core.ui._drawBook_drawDamage = function (index, enemy, offset, position) {
+		core.setTextAlign('ui', 'center');
+		var damage = enemy.damage,
+			color = '#FFFF00';
+		if (damage == null) {
+			damage = '无法战斗';
+			color = '#FF2222';
+		} else {
+			if (damage >= core.status.hero.hp) color = '#FF2222';
+			else if (damage >= core.status.hero.hp * 2 / 3) color = '#FF9933';
+			else if (damage <= 0) color = '#11FF11';
+			damage = core.formatBigNumber(damage);
+			if (core.enemys.hasSpecial(enemy, 19)) damage += "+";
+			if (core.enemys.hasSpecial(enemy, 21)) damage += "-";
+			if (core.enemys.hasSpecial(enemy, 11)) damage += "^";
+		}
+		if (enemy.notBomb) damage += "[b]";
+		core.fillText('ui', damage, offset, position, color, this._buildFont(13, true));
 	}
 },
     "multiHeros": function () {
