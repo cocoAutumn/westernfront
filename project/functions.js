@@ -494,23 +494,27 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[4, "2连击", "每回合攻击2次", "#ffee77"],
 		[5, "3连击", "每回合攻击3次", "#ffee77"],
 		[6, function (enemy) { return (enemy.n || '') + "连击"; }, function (enemy) { return "每回合攻击" + (enemy.n || 4) + "次"; }, "#ffee77"],
-		[15, "炮击", function (enemy) { return "经过敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "范围内" + (enemy.range || 1) + "格时遭受炮击，生命减少" + (enemy.zone || 0) + "点"; }, "#c677dd"],
+		[15, "炮击", function (enemy) { return "经过敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "范围内" + (enemy.range || 1) + "格时遭受炮击，生命减少" + (enemy.zone ?? 0) + "点"; }, "#c677dd"],
 		[16, "夹击", "经过两只相同的怪物中间，角色生命值变成一半", "#bb99ee"],
-		[22, "固伤", function (enemy) { return "敌人对角色造成" + (enemy.damage || 0) + "点固定伤害，可被后勤值抵消。"; }, "#ff9977"],
-		[24, "狙击", function (enemy) { return "经过敌人同行或同列时遭受远距离攻击，伤害为" + (enemy.laser || 0) + "点"; }, "#dda0dd"],
-		[25, "指挥", function (enemy) { return (enemy.range != null ? ((enemy.haloSquare ? "自身九宫格" : "自身十字") + enemy.haloRange + "格范围内") : "同楼层所有") + "轴心国军队生命提升" + (enemy.hpBuff || 0) + "%，攻击提升" + (enemy.atkBuff || 0) + "%，防御提升" + (enemy.defBuff || 0) + "%，" + (enemy.haloAdd ? "可叠加" : "不可叠加"); }, "#e6e099", 1],
-		[28, "航弹", "每（破甲比例）回合投放（反击比例）枚航空炸弹，每颗炸弹伤害为（吸血比例）倍空袭值。造成的伤害计为“炸弹伤害”"],
-		[29, "鱼雷", "每（阻击伤害）回合投放（鱼雷管）枚鱼雷，每发鱼雷伤害等于雷击伤害。造成的伤害计为“鱼雷伤害”"],
+		[22, "固伤", function (enemy) { return "敌人对角色造成" + (enemy.damage ?? 0) + "点固定伤害，可被后勤值抵消。"; }, "#ff9977"],
+		[24, "狙击", function (enemy) { return "经过敌人同行或同列时遭受远距离攻击，伤害为" + (enemy.laser ?? 0) + "点"; }, "#dda0dd"],
+		[25, "指挥", function (enemy) { return "位于敌阵核心的指挥单位。" + (enemy.range != null ? ((enemy.haloSquare ? "自身九宫格" : "自身十字") + enemy.haloRange + "格范围内") : "同楼层所有") + "轴心国军队攻击提升" + (enemy.hpBuff ?? 0) + "%，雷击提升" + (enemy.atkBuff ?? 0) + "%，空袭提升" + (enemy.defBuff ?? 0) + "%," + (enemy.haloAdd ? "可叠加" : "不可叠加"); }, "#e6e099", 1],
+		[28, "航弹", function (enemy) { return "每" + (enemy.spd ?? 0) + "回合投放" + (enemy.ammo ?? 0) + "枚航空炸弹，每颗炸弹伤害等于空袭值。造成的伤害计为“炸弹伤害”" },
+			[255, 255, 0, 1]
+		],
+		[29, "鱼雷", function (enemy) { return "每" + (enemy.cd ?? 0) + "回合投放" + (enemy.tpn ?? 0) + "枚鱼雷，每发鱼雷伤害等于雷击值。造成的伤害计为“鱼雷伤害”" },
+			[255, 150, 0, 1]
+		],
 		[30, "航炮", "每个偶数回合额外造成一次2倍攻击力的伤害"],
 		[31, "280mm舰炮", "每3回合额外发射一轮主炮，伤害等于3倍攻击力"],
 		[32, "380mm舰炮", "每4回合额外发射一轮主炮，伤害等于6倍攻击力"],
 		[33, "潜行", "受到主角攻击力伤害减少70%"],
 		[34, "惊雷", "战斗开始时，发起先手鱼雷攻击。发射鱼雷数量以及伤害等同于正常的鱼雷袭击"],
-		[35, "闪避", "主角发起鱼雷攻击时，闪避其中的n枚"],
+		[35, "闪避", function (enemy) { return "主角发起鱼雷攻击时，闪避其中的" + (enemy.dod ?? 0) + "n枚" }],
 		[36, "俯冲轰炸", "航空炸弹造成的伤害增加50%，且第一枚炸弹命中后，主角攻击力降低5%，持续到战斗结束"],
 		[37, "跨射", "强大的舰炮具有更远的射程。若主角未装备战列舰，该敌人以3倍攻击力攻击主角3次"],
 		[38, "精锐", "对主角造成的伤害翻倍"],
-		[39, "集群", "主角同时与n个该敌人进行战斗"],
+		[39, "集群", function (enemy) { return "主角同时与" + (enemy.gro ?? 0) + "个该敌人进行战斗" }],
 		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害，且防空领域内无法空降"],
 		[41, "反制", "与该敌人战斗时，主角无法使用技能"],
 		[42, "截断", "该敌人在场时，主角后勤值失效"],
@@ -570,9 +574,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	if (core.status.checkBlock.needCache) {
 		// 从V2.5.4开始，对光环效果增加缓存，以解决多次重复计算的问题，从而大幅提升运行效率。
-		var hp_buff = 0,
-			atk_buff = 0,
-			def_buff = 0;
+		var atk_buff = 0,
+			top_buff = 0,
+			bom_buff = 0;
 		// 已经计算过的光环怪ID列表，用于判定叠加
 		var usedEnemyIds = {};
 		// 检查光环和支援的缓存
@@ -600,9 +604,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						}
 						// 检查是否可叠加
 						if (inRange && (enemy.haloAdd || !usedEnemyIds[enemy.id])) {
-							hp_buff += enemy.hpBuff || 0;
-							atk_buff += enemy.atkBuff || 0;
-							def_buff += enemy.defBuff || 0;
+							atk_buff += enemy.hpBuff || 0;
+							top_buff += enemy.atkBuff || 0;
+							bom_buff += enemy.defBuff || 0;
 							usedEnemyIds[enemy.id] = true;
 						}
 					}
@@ -620,19 +624,19 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				}
 			});
 
-			core.status.checkBlock.cache[index] = { "hp_buff": hp_buff, "atk_buff": atk_buff, "def_buff": def_buff, "guards": guards };
+			core.status.checkBlock.cache[index] = { "atk_buff": atk_buff, "top_buff": top_buff, "bom_buff": bom_buff, "guards": guards };
 		} else {
 			// 直接使用缓存数据
-			hp_buff = cache.hp_buff;
 			atk_buff = cache.atk_buff;
-			def_buff = cache.def_buff;
+			top_buff = cache.top_buff;
+			bom_buff = cache.bom_buff;
 			guards = cache.guards;
 		}
 
 		// 增加比例；如果要增加数值可以直接在这里修改
-		mon_hp *= (1 + hp_buff / 100);
 		mon_atk *= (1 + atk_buff / 100);
-		mon_def *= (1 + def_buff / 100);
+		mon_top *= (1 + top_buff / 100);
+		mon_bom *= (1 + bom_buff / 100);
 	}
 
 	// TODO：可以在这里新增其他的怪物数据变化
@@ -683,13 +687,21 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
 		origin_hero_hp = core.getStatusOrDefault(hero, 'hp'),
 		origin_hero_atk = core.getStatusOrDefault(hero, 'atk'),
-		origin_hero_def = core.getStatusOrDefault(hero, 'def');
+		origin_hero_def = core.getStatusOrDefault(hero, 'def'),
+		hero_ap = core.getRealStatusOrDefault(hero, 'ap'),
+		hero_arm = core.getRealStatusOrDefault(hero, 'arm'),
+		hero_top = core.getRealStatusOrDefault(hero, 'top'),
+		hero_bom = core.getRealStatusOrDefault(hero, 'bom'),
+		hero_tpn = core.getRealStatusOrDefault(hero, 'tpn'),
+		hero_dod = core.getRealStatusOrDefault(hero, 'dod'),
+		hero_gro = core.getRealStatusOrDefault(hero, 'gro');
 
 	// 勇士的负属性都按0计算
 	hero_hp = Math.max(0, hero_hp);
 	hero_atk = Math.max(0, hero_atk);
 	hero_def = Math.max(0, hero_def);
 	hero_mdef = Math.max(0, hero_mdef);
+
 
 	// 怪物的各项数据
 	// 对坚固模仿等处理扔到了脚本编辑-getEnemyInfo之中
@@ -698,7 +710,20 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_atk = enemyInfo.atk,
 		mon_def = enemyInfo.def,
 		fixdamage = enemyInfo.damage,
-		mon_special = enemyInfo.special;
+		mon_special = enemyInfo.special,
+		mon_ap = enemyInfo.ap,
+		mon_arm = enemyInfo.arm,
+		mon_top = enemyInfo.top,
+		mon_bom = enemyInfo.bom,
+		mon_tpn = enemyInfo.tpn,
+		mon_dod = enemyInfo.dod,
+		mon_cd = enemyInfo.cd,
+		mon_ammo = enemyInfo.ammo,
+		mon_spd = enemyInfo.spd,
+		mon_gro = enemyInfo.gro;
+
+	hero_dod = core.clamp(hero_dod, 0, mon_tpn);
+	mon_tpn = core.clamp(mon_dod, 0, hero_tpn);
 
 	//回合制战斗
 	var curr_hp = mon_hp,
@@ -707,6 +732,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//先攻
 	if (core.hasSpecial(mon_special, 1)) {
 		damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn)
+	}
+	//惊雷
+	if (core.hasSpecial(mon_special, 34)) {
+		damage += (mon_tpn - hero_dod) * mon_top;
 	}
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合

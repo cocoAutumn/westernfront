@@ -34,15 +34,30 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			mon_spd = enemyInfo.spd,
 			mon_gro = enemyInfo.gro;
 		var damage = hero_atk;
+		hero_dod = core.clamp(hero_dod, 0, mon_tpn);
+		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
+
+		//俯冲轰炸
+		if (core.hasSpecial(mon_special, 36) && nthTurn > mon_spd) {
+			hero_atk *= 0.95;
+		}
+
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
 			if (hero_ap <= mon_arm && hero_arm < mon_ap) { // 无法击穿
 				if (nthTurn <= 5) damage = 0;
 				else damage *= 0.8;
 			}
+
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-			if (nthTurn % 10 === 0) damage += hero_top * hero_tpn; // TODO: dod的作用
+			if (nthTurn % 10 === 0) damage += hero_top * (hero_tpn - mon_dod); // TODO: dod的作用
+
+			//潜行
+			if (core.hasSpecial(mon_special, 33)) {
+				damage *= 0.3;
+			}
+
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
-			damage += hero_bom;
+
 		}
 		return damage;
 	}
@@ -76,6 +91,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			mon_spd = enemyInfo.spd,
 			mon_gro = enemyInfo.gro;
 		var damage = mon_atk;
+		hero_dod = core.clamp(hero_dod, 0, mon_tpn);
+		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
 
 		if (core.hasSpecial(mon_special, 4)) { //二连击
 			damage *= 2;
@@ -93,10 +110,23 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				if (nthTurn <= 5) damage = 0;
 				else damage *= 0.8;
 			}
+
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-			if (nthTurn > 0 && nthTurn % mon_cd === 0) damage += mon_top * mon_tpn; // TODO: dod的作用
+			if (nthTurn > 0 && nthTurn % mon_cd === 0) damage += mon_top * (mon_tpn - hero_dod); // TODO: dod的作用
+
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 
+			//航弹
+			if (core.hasSpecial(mon_special, 28) && nthTurn > 0 && nthTurn % mon_spd === 0) {
+				if (core.hasSpecial(mon_special, 36)) { //俯冲轰炸机
+					damage += mon_ammo * mon_bom * 1.5;
+				} else
+					damage += mon_ammo * mon_bom;
+			}
+			//鱼雷
+			if (core.hasSpecial(mon_special, 29) && nthTurn > 0 && nthTurn % mon_cd === 0) {
+				damage += mon_top * mon_tpn;
+			}
 		}
 		return damage;
 	}

@@ -313,20 +313,20 @@ var comment_c456ea59_6018_45ef_8bcc_211a24c627dc = {
 				"hpBuff": {
 					"_leaf": true,
 					"_type": "textarea",
-					"_docs": "光环加血",
-					"_data": "光环怪增加生命的比例"
+					"_docs": "光环加攻",
+					"_data": "光环怪增加攻击的比例"
 				},
 				"atkBuff": {
 					"_leaf": true,
 					"_type": "textarea",
-					"_docs": "光环加攻",
-					"_data": "光环怪增加攻击的比例"
+					"_docs": "光环加雷",
+					"_data": "光环怪增加雷击的比例"
 				},
 				"defBuff": {
 					"_leaf": true,
 					"_type": "textarea",
-					"_docs": "光环加防",
-					"_data": "光环怪增加防御的比例"
+					"_docs": "光环加袭",
+					"_data": "光环怪增加空袭的比例"
 				},
 				"zoneSquare": {
 					"_leaf": true,
