@@ -109,7 +109,7 @@ main.floors.train1=
                 },
                 {
                     "type": "text",
-                    "text": "\t[奥金莱克]\f[auchinleck.png,0,360]你的任务就是选择合适的路线，击败\\i[commandos]这个敌人。捡拾血瓶\\i[redPotion]增加生命值但不超过生命上限。黄宝石\\i[yellowGem]提升血限和相同数值的血量。红宝石\\i[redGem]提升攻击力。对应颜色的钥匙\\i[yellowKey]开对应颜色的门\\i[yellowDoor]。",
+                    "text": "\t[奥金莱克]\f[auchinleck.png,0,360]你的任务就是选择合适的路线，击败\\i[commandos]这个敌人。规则与传统魔塔相同，捡拾血瓶\\i[redPotion]增加生命值但不超过生命上限。黄宝石\\i[yellowGem]提升血限和相同数值的血量。红宝石\\i[redGem]提升攻击力。对应颜色的钥匙\\i[yellowKey]开对应颜色的门\\i[yellowDoor]。",
                     "pos": [
                         100,
                         340,
@@ -118,7 +118,7 @@ main.floors.train1=
                 },
                 {
                     "type": "text",
-                    "text": "\t[奥金莱克]\f[auchinleck.png,0,360]绿宝石\\i[greenGem]加补给值，与魔塔里的魔防（护盾）相同，但不会使伤害为负。以及，按X键可以查看敌人属性\\i[book]。",
+                    "text": "\t[奥金莱克]\f[auchinleck.png,0,360]绿宝石\\i[greenGem]加后勤值，与魔塔里的魔防（护盾）相同，但不会使伤害为负。以及，按X键可以查看敌人属性\\i[book]。",
                     "pos": [
                         100,
                         340,

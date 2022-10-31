@@ -1601,7 +1601,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		var x0 = core.status.hero.loc.x - core.bigmap.offsetX / 32 >= core._HEIGHT_ ? 0 : core._PY_;
 		var x1 = 8; //以后改文字左对齐就改这里，技术员说的
 		core.ui.setAlpha(ctx, 0.75);
-		core.ui.drawWindowSkin('winskin.png', ctx, x0, 0, core._PX_ - core._PY_, core._PY_);
+		core.ui.drawWindowSkin('15.png', ctx, x0, 0, core._PX_ - core._PY_, core._PY_);
 		core.ui.setAlpha(ctx, 1);
 		fill('战场:' + (core.status.thisMap || {}).name, x0 + x1, 20);
 		fill('地形:' + (core.status.thisMap || {}).area, x0 + x1, 40);
@@ -1614,13 +1614,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		core.fillRect(ctx, x0 + 10, 90, 130 * ratio, 5, [255 * (1 - ratio), 255 * ratio, 0, 1]);
 		fill((100 * ratio).toFixed(1) + '%', x0 + x1, 110, [255 * (1 - ratio), 255 * ratio, 0, 1]);
 		core.setFillStyle(ctx, 'white')
-		fill('便携:' + core.formatBigNumber(core.getRealStatus('atk')), x0 + x1, 130);
-		fill('指挥点:' + core.formatBigNumber(core.getRealStatus('mana')), x0 + x1, 150);
-		fill('攻击:' + core.formatBigNumber(core.getRealStatus('atk')), x0 + x1, 170);
-		fill('穿甲:' + core.formatBigNumber(core.getRealStatus('ap')), x0 + x1, 190);
+		fill('便携:' + core.formatBigNumber(core.getRealStatus('atk')), x0 + x1, 130, '#64FF00');
+		fill('指挥点:' + core.formatBigNumber(core.getRealStatus('mana')), x0 + x1, 150, '#6464FF');
+		fill('攻击:' + core.formatBigNumber(core.getRealStatus('atk')), x0 + x1, 170, '#FF6400');
+		fill('穿甲:' + core.formatBigNumber(core.getRealStatus('ap')), x0 + x1, 190, '#DDDDDD');
 		fill('装甲:' + core.formatBigNumber(core.getRealStatus('arm')), x0 + x1, 210);
 		fill('雷击:' + core.formatBigNumber(core.getRealStatus('top')), x0 + x1, 230);
-		fill('雷管:' + core.formatBigNumber(core.getRealStatus('tpn')), x0 + x1, 250);
+		fill('鱼雷管:' + core.formatBigNumber(core.getRealStatus('tpn')), x0 + x1, 250);
 		fill('后勤:' + core.formatBigNumber(core.getRealStatus('mdef')), x0 + x1, 270);
 		fill('黄金:' + core.formatBigNumber(core.getRealStatus('money')), x0 + x1, 290);
 		fill('经验:' + core.formatBigNumber(core.getRealStatus('exp')), x0 + x1, 310);

@@ -10,7 +10,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT2",
 			"MT3",
 			"MT4",
-			"MT5"
+			"MT5",
+			"MT6"
 		],
 		"floorPartitions": [],
 		"images": [
@@ -192,7 +193,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"xinxinxuanze.mp3",
 			"zone.mp3"
 		],
-		"fonts": [],
+		"fonts": [
+			"kaiti"
+		],
 		"nameMap": {
 			"确定": "confirm.mp3",
 			"取消": "cancel.mp3",
@@ -332,9 +335,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"startVerticalBackground": "project/images/bg.jpg",
 			"startLogoStyle": "color: black",
 			"startButtonsStyle": "background-color: #32369F; opacity: 0.85; color: #FFFFFF; border: #FFFFFF 2px solid; caret-color: #FFD700;",
-			"statusLeftBackground": "url(project/images/status.png) repeat",
-			"statusTopBackground": "url(project/images/status.png) repeat",
-			"toolsBackground": "black",
+			"statusLeftBackground": "url(project/images/15.png) repeat",
+			"statusTopBackground": "url(project/images/15.png) repeat",
+			"toolsBackground": "15.png",
 			"floorChangingStyle": "background-color: black; color: white",
 			"statusBarColor": [
 				255,
@@ -354,7 +357,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				0,
 				1
 			],
-			"font": "Verdana"
+			"font": "kaiti"
 		},
 		"splitImages": []
 	},
