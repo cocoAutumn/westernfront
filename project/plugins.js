@@ -130,6 +130,24 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		return damage;
 	}
+
+	//技能系统
+	this.getSkillInfo = function (id) {
+		id = id ?? 0;
+		var strategy = false,
+			name = '无',
+			cost = 0,
+			event = [];
+
+		return {
+			'strategy': strategy,
+			'name': name,
+			'cost': cost,
+			'event': event,
+			'id': id
+		};
+	}
+
 	this._afterLoadResources = function () {
 		// 本函数将在所有资源加载完毕后，游戏开启前被执行
 	}

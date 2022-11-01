@@ -643,6 +643,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"startTime": 47
 			},
 			{
+				"type": "function",
+				"function": "function(){\nflags.skillList = [0,0,0,0,0,0,0];\n}"
+			},
+			{
 				"type": "while",
 				"condition": "1",
 				"data": [
