@@ -134,18 +134,21 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 	//技能系统
 	this.getSkillInfo = function (id) {
 		id = id ?? 0;
-		var strategy = false;
-		name = '无';
-		cost = 0;
-		event = [];
+		var strategy = false,
+			name = '无',
+			cost = 0,
+			event = [],
+			description = '无';
 		if (id === 1) {
 			name = '战壕';
 			cost = 20;
+			description = '挖掘战壕，与敌方陆军战斗时，受到的伤害减少10%，持续一次战斗';
 		}
 		if (id === 2) { //动员
 			strategy = true;
-			name = '动员'
+			name = '动员';
 			cost = 35;
+			description = '血量立即恢复25%';
 			event = [{ "type": "setValue", "name": "status:hp", "operator": "+=", "value": "status:hpmax/4" }];
 		}
 
@@ -154,7 +157,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			'name': name,
 			'cost': cost,
 			'event': event,
-			'id': id
+			'id': id,
+			'description': description
 		};
 	}
 

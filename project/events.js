@@ -142,6 +142,121 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 					}
 				]
 			}
-		]
+		],
+		"查看技能": [
+			{
+				"type": "while",
+				"condition": "true",
+				"data": [
+					{
+						"type": "setValue",
+						"name": "temp:A",
+						"value": "core.getSkillInfo(flags.skillList[0])",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "temp:B",
+						"value": "core.getSkillInfo(flags.skillList[1])",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "temp:C",
+						"value": "core.getSkillInfo(flags.skillList[2])",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "temp:D",
+						"value": "core.getSkillInfo(flags.skillList[3])",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "temp:E",
+						"value": "core.getSkillInfo(flags.skillList[4])",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "temp:F",
+						"value": "core.getSkillInfo(flags.skillList[5])",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "temp:G",
+						"value": "core.getSkillInfo(flags.skillList[6])",
+						"norefresh": true
+					},
+					{
+						"type": "choices",
+						"text": "\t[查看当前技能] ",
+						"choices": [
+							{
+								"text": "快捷键1：${temp:A.name+(temp:A.strategy?'（即时）':'')+'，消耗：'+temp:A.cost}",
+								"need": "flags.skillList[0]>0",
+								"action": [
+									"\t[${temp:A.name}]${temp:A.strategy?'战略':'战术'}指令，消耗指挥点数：${temp:A.cost}。\n${temp:A.description}"
+								]
+							},
+							{
+								"text": "快捷键2：${temp:B.name+(temp:B.strategy?'（即时）':'')+'，消耗：'+temp:B.cost}",
+								"need": "flags.skillList[1]>0",
+								"action": [
+									"\t[${temp:B.name}]${temp:B.strategy?'战略':'战术'}指令，消耗指挥点数：${temp:B.cost}。\n${temp:B.description}"
+								]
+							},
+							{
+								"text": "快捷键3：${temp:C.name+(temp:C.strategy?'（即时）':'')+'，消耗：'+temp:C.cost}",
+								"need": "flags.skillList[2]>0",
+								"action": [
+									"\t[${temp:C.name}]${temp:C.strategy?'战略':'战术'}指令，消耗指挥点数：${temp:C.cost}。\n${temp:C.description}"
+								]
+							},
+							{
+								"text": "快捷键4：${temp:D.name+(temp:D.strategy?'（即时）':'')+'，消耗：'+temp:D.cost}",
+								"need": "flags.skillList[3]>0",
+								"action": [
+									"\t[${temp:D.name}]${temp:D.strategy?'战略':'战术'}指令，消耗指挥点数：${temp:D.cost}。\n${temp:D.description}"
+								]
+							},
+							{
+								"text": "快捷键5：${temp:E.name+(temp:E.strategy?'（即时）':'')+'，消耗：'+temp:E.cost}",
+								"need": "flags.skillList[4]>0",
+								"action": [
+									"\t[${temp:E.name}]${temp:E.strategy?'战略':'战术'}指令，消耗指挥点数：${temp:E.cost}。\n${temp:E.description}"
+								]
+							},
+							{
+								"text": "快捷键6：${temp:F.name+(temp:F.strategy?'（即时）':'')+'，消耗：'+temp:F.cost}",
+								"need": "flags.skillList[5]>0",
+								"action": [
+									"\t[${temp:F.name}]${temp:F.strategy?'战略':'战术'}指令，消耗指挥点数：${temp:F.cost}。\n${temp:F.description}"
+								]
+							},
+							{
+								"text": "快捷键7：${temp:G.name+(temp:G.strategy?'（即时）':'')+'，消耗：'+temp:G.cost}",
+								"need": "flags.skillList[6]>0",
+								"action": [
+									"\t[${temp:G.name}]${temp:G.strategy?'战略':'战术'}指令，消耗指挥点数：${temp:G.cost}。\n${temp:G.description}"
+								]
+							},
+							{
+								"text": "退出",
+								"action": [
+									{
+										"type": "break",
+										"n": 1
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		],
+		"选择技能": null
 	}
 }
