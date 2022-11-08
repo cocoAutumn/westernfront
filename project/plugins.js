@@ -162,6 +162,37 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		};
 	}
 
+	this.bindSkills = function() {
+		var list = [];
+		for (var i = 0; i < flags.learned.length; ++i) {
+			if (flags.learned[i]) {
+				var info = this.getSkillInfo(i), obj = {
+					"text": info.name + (info.strategy ? '（即时）' : '') + '，消耗：' + info.cost,
+					"action": [
+						{"type": "tip", "text": "请按下要绑定到的数字键1~7"},
+						{"type": "wait", "forceChild": true, "data": [
+							{"case": "keyboard", "keycode": "49,50,51,52,53,54,55", "action": [
+								{"type": "function", "function":
+									"function(){var index=flags.skillList.indexOf(" + info.id + ");" +
+									"if(index>=0)flags.skillList[index]=flags.skillList[flags.keycode-49];" +
+									"flags.skillList[flags.keycode-49]=" + info.id + ";}"
+								},
+							]},
+						]},
+					]
+				};
+				list.push(obj);
+			}
+		}
+		list.push({"text": "查看当前快捷键", "action": [{"type": "insert", "name": "查看技能"}]});
+		list.push({"text": "保存并进入下一章", "action": [{"type": "break", "n": 1}]});
+		return [
+			{"type": "while", "condition": "true","data": [
+				{"type": "choices", "text": "\t[技能快捷键设定] ", "choices": list}
+			]}
+		];
+	}
+
 	this._afterLoadResources = function () {
 		// 本函数将在所有资源加载完毕后，游戏开启前被执行
 	}

@@ -854,6 +854,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	case 53:
 	case 54:
 	case 55:
+		core.status.route.push('key:' + keyCode);
 		var skill = flags.skillList[keyCode - 49];
 		if (skill === flags.skill) skill = 0;
 		if (skill === 0) {
