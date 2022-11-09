@@ -587,8 +587,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			"type": 0,
 			"value": {
 				"atk": 20,
-				"ap": 20,
-				"arm": 8
+				"arm": 5,
+				"ap": 20
 			},
 			"percentage": {}
 		}
@@ -673,12 +673,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "E级驱逐舰",
 		"canUseItemEffect": "true",
-		"text": "攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。",
+		"text": "攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：反潜——对潜艇攻击时，每回合额外造成一次等同于攻击力的伤害。",
 		"equip": {
 			"type": 1,
 			"value": {
 				"tpn": 3,
 				"top": 100,
+				"dod": 1,
 				"atk": 100
 			},
 			"percentage": {}
@@ -713,13 +714,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "轻巡·爱丁堡号",
 		"canUseItemEffect": "true",
-		"text": "攻+150，雷击+50，鱼雷管+1。",
+		"text": "攻200，雷击+100，鱼雷管+2。",
 		"equip": {
 			"type": 2,
 			"value": {
-				"tpn": 1,
-				"top": 50,
-				"atk": 150
+				"tpn": 2,
+				"top": 100,
+				"atk": 200
 			},
 			"percentage": {}
 		}
@@ -727,7 +728,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"sheffield": {
 		"cls": "equips",
 		"name": "轻巡·谢菲尔德号",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+150，雷击+50，鱼雷管+1。\n"
 	},
 	"norfolk": {
 		"cls": "equips",
@@ -767,7 +769,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"equip": {
 			"type": 3,
 			"value": {
-				"atk": 500
+				"atk": 500,
+				"dod": -1
 			},
 			"percentage": {}
 		}
@@ -800,7 +803,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "舰载机：飓风MK1、贼鸥式轰炸机、箭鱼式鱼雷机。闪避鱼雷数-1。\n受到敌方鱼雷伤害增加20%。",
 		"equip": {
 			"type": 3,
-			"value": {},
+			"value": {
+				"dod": -1
+			},
 			"percentage": {}
 		}
 	},
@@ -895,7 +900,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"p51d": {
 		"cls": "equips",
 		"name": "P51D野马",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+250.挂载：6×127mm火箭弹。\n对地和对舰攻击时抢先发射2轮火箭弹，每发火箭弹伤害为0.3倍攻击力。\n被动：长途护航——与战略轰炸机一同出击时，受到的所有战斗伤害减少30%。\n     制空霸权——与敌方战斗机战斗时，每回合额外攻击2次。"
 	},
 	"skua": {
 		"cls": "equips",
@@ -936,7 +942,15 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"torch": {
 		"cls": "equips",
 		"name": "火把式攻击机",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻＋250。挂载：16×RP3火箭弹、1×500磅炸弹。遭遇敌方战斗机或重型战斗机时额外受到20%伤害。\n对地攻击时，率先发射一轮火箭弹，每发火箭弹伤害为0.2倍攻击力。\n每2回合投掷一次炸弹，每枚炸弹伤害为2倍攻击力。",
+		"equip": {
+			"type": 5,
+			"value": {
+				"atk": 250
+			},
+			"percentage": {}
+		}
 	},
 	"mosquito": {
 		"cls": "equips",
@@ -1027,6 +1041,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"b29": {
 		"cls": "equips",
 		"name": "B29超级空中堡垒",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻＋250.挂载：20×250磅炸弹.\n每10回合投掷1轮炸弹，每颗炸弹伤害为1倍攻击力。\n被动：战略轰炸——减免80%高射炮伤害，自身炸弹伤害减少70%。无法在海上发挥任何战力。\n     ？？？——涉及最高级军事机密，无法查看该技能详情。"
 	}
 }

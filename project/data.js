@@ -6,12 +6,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"train2",
 			"train3",
 			"MT0",
+			"prepare1",
 			"MT1",
 			"MT2",
 			"MT3",
 			"MT4",
-			"MT5",
-			"MT6"
+			"MT5"
 		],
 		"floorPartitions": [],
 		"images": [
@@ -98,10 +98,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"cao3.mp3",
 			"cao4.mp3",
 			"cao5.mp3",
+			"cao6.mp3",
 			"desert1.mp3",
 			"desert2.mp3",
 			"desert3.mp3",
 			"desert4.mp3",
+			"europe1.mp3",
 			"failed.mp3",
 			"farthestend.mp3",
 			"gaijin1.mp3",
@@ -410,6 +412,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"startCanvas": [
 			{
 				"type": "setText",
+				"position": "down",
+				"offset": 10,
+				"bold": false,
 				"background": "15.png",
 				"time": 40
 			},
@@ -897,7 +902,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"extendToolbar": true,
 		"flyNearStair": true,
 		"flyRecordPosition": false,
-		"itemFirstText": true,
+		"itemFirstText": false,
 		"equipboxButton": false,
 		"enableAddPoint": false,
 		"enableNegativeDamage": false,

@@ -482,12 +482,12 @@ main.floors.MT0=
         "我们历经数年修建的马奇诺防线可不是软柿子，命令你的部下马上集合，让德国佬常常我们的厉害！",
         {
             "type": "changeFloor",
-            "floorId": "MT1",
+            "floorId": "prepare1",
             "loc": [
-                0,
+                7,
                 7
             ],
-            "direction": "right"
+            "direction": "down"
         }
     ],
     "eachArrive": [],

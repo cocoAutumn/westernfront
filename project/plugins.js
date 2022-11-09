@@ -36,6 +36,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		var damage = hero_atk;
 		hero_dod = core.clamp(hero_dod, 0, mon_tpn);
 		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
+		var torpeodoDamage = 0,
+			bombDamage = 0;
 
 		//俯冲轰炸
 		if (core.hasSpecial(mon_special, 36) && nthTurn > mon_spd) {
@@ -49,16 +51,27 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			}
 
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-			if (nthTurn % 10 === 0) damage += hero_top * (hero_tpn - mon_dod); // TODO: dod的作用
+			if (nthTurn % 10 === 0) torpeodoDamage += hero_top * (hero_tpn - mon_dod); // TODO: dod的作用
 
+			//厌战号战列舰
+			if (core.hasEquip('warspite') && nthTurn % 3 === 0 && enemyInfo.type != '潜艇') {
+				damage += hero_atk;
+			}
 			//潜行
 			if (core.hasSpecial(mon_special, 33)) {
 				damage *= 0.3;
+			}
+			//E级驱逐舰
+			if (core.hasEquip('classe') && enemyInfo.type === '潜艇') {
+				damage += hero_atk
 			}
 
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 
 		}
+
+		damage += torpeodoDamage + bombDamage;
+
 		return damage;
 	}
 	this.getEnemyPerDamage = function (enemyInfo, hero, x, y, floorId, nthTurn) {
@@ -93,6 +106,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		var damage = mon_atk;
 		hero_dod = core.clamp(hero_dod, 0, mon_tpn);
 		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
+		var torpeodoDamage = 0,
+			bombDamage = 0;
 
 		if (core.hasSpecial(mon_special, 4)) { //二连击
 			damage *= 2;
@@ -112,22 +127,33 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			}
 
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-			if (nthTurn > 0 && nthTurn % mon_cd === 0) damage += mon_top * (mon_tpn - hero_dod); // TODO: dod的作用
+			if (nthTurn > 0 && nthTurn % mon_cd === 0)
+				torpeodoDamage += mon_top * (mon_tpn - hero_dod); // TODO: dod的作用
+			//鹰号航母
+			if (core.hasEquip('eagle')) {
+				torpeodoDamage *= 1.2;
+			}
 
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 
 			//航弹
 			if (core.hasSpecial(mon_special, 28) && nthTurn > 0 && nthTurn % mon_spd === 0) {
 				if (core.hasSpecial(mon_special, 36)) { //俯冲轰炸机
-					damage += mon_ammo * mon_bom * 1.5;
+					bombDamage += mon_ammo * mon_bom * 1.5;
 				} else
-					damage += mon_ammo * mon_bom;
+					bombDamage += mon_ammo * mon_bom;
 			}
 			//鱼雷
 			if (core.hasSpecial(mon_special, 29) && nthTurn > 0 && nthTurn % mon_cd === 0) {
-				damage += mon_top * mon_tpn;
+				torpeodoDamage += mon_top * mon_tpn;
+				//鹰号航母
+				if (core.hasEquip('eagle')) {
+					torpeodoDamage *= 1.2;
+				}
 			}
 		}
+		damage += torpeodoDamage + bombDamage;
+
 		return damage;
 	}
 
@@ -142,7 +168,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		if (id === 1) {
 			name = '战壕';
 			cost = 20;
-			description = '挖掘战壕，与敌方陆军战斗时，受到的伤害减少10%，持续一次战斗';
+			description = '挖掘战壕，与敌方陆军战斗时，受到的伤害减少10%';
 		}
 		if (id === 2) { //动员
 			strategy = true;
@@ -162,35 +188,69 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		};
 	}
 
-	this.bindSkills = function() {
+	this.bindSkills = function () {
 		var list = [];
 		for (var i = 0; i < flags.learned.length; ++i) {
 			if (flags.learned[i]) {
-				var info = this.getSkillInfo(i), obj = {
-					"text": info.name + (info.strategy ? '（即时）' : '') + '，消耗：' + info.cost,
-					"action": [
-						{"type": "tip", "text": "请按下要绑定到的数字键1~7"},
-						{"type": "wait", "forceChild": true, "data": [
-							{"case": "keyboard", "keycode": "49,50,51,52,53,54,55", "action": [
-								{"type": "function", "function":
-									"function(){var index=flags.skillList.indexOf(" + info.id + ");" +
-									"if(index>=0)flags.skillList[index]=flags.skillList[flags.keycode-49];" +
-									"flags.skillList[flags.keycode-49]=" + info.id + ";}"
-								},
-							]},
-						]},
-					]
-				};
+				var info = this.getSkillInfo(i),
+					obj = {
+						"text": info.name + (info.strategy ? '（即时）' : '') + '，消耗：' + info.cost,
+						"action": [
+							{ "type": "tip", "text": "请按下要绑定到的数字键1~7" },
+							{
+								"type": "wait",
+								"forceChild": true,
+								"data": [{
+									"case": "keyboard",
+									"keycode": "49,50,51,52,53,54,55",
+									"action": [{
+										"type": "function",
+										"function": "function(){var index=flags.skillList.indexOf(" + info.id + ");" +
+											"if(index>=0)flags.skillList[index]=flags.skillList[flags.keycode-49];" +
+											"flags.skillList[flags.keycode-49]=" + info.id + ";}"
+									}, ]
+								}, ]
+							},
+						]
+					};
 				list.push(obj);
 			}
 		}
-		list.push({"text": "查看当前快捷键", "action": [{"type": "insert", "name": "查看技能"}]});
-		list.push({"text": "保存并进入下一章", "action": [{"type": "break", "n": 1}]});
-		return [
-			{"type": "while", "condition": "true","data": [
-				{"type": "choices", "text": "\t[技能快捷键设定] ", "choices": list}
-			]}
-		];
+		list.push({ "text": "查看当前快捷键", "action": [{ "type": "insert", "name": "查看技能" }] });
+		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": 1 }] });
+		return [{
+			"type": "while",
+			"condition": "true",
+			"data": [
+				{ "type": "choices", "text": "\t[技能快捷键设定] ", "choices": list }
+			]
+		}];
+	}
+
+	//禁止手动换装
+	core.items._realLoadEquip = function (type, loadId, unloadId, callback) {
+		if (core.status.event.id === 'action') {
+			var loadEquip = core.material.items[loadId] || {},
+				unloadEquip = core.material.items[unloadId] || {};
+
+			// --- 音效
+			core.items._realLoadEquip_playSound();
+
+			// --- 实际换装
+			core.items._loadEquipEffect(loadId, unloadId);
+
+			// --- 加减
+			if (loadId) core.removeItem(loadId);
+			if (unloadId) core.addItem(unloadId);
+			core.status.hero.equipment[type] = loadId || null;
+
+			// --- 提示
+			if (loadId) core.drawTip("已装备上" + loadEquip.name, loadId);
+			else if (unloadId) core.drawTip("已卸下" + unloadEquip.name, unloadId);
+		}
+
+
+		if (callback) callback();
 	}
 
 	this._afterLoadResources = function () {
@@ -1113,15 +1173,15 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		if (core.plugin.Navy.includes(enemy.type)) {
 			core.fillText('ui', '鱼雷管', col1, position, [255, 255, 255, 1], f13);
-			core.fillText('ui', core.formatBigNumber(enemy.ap || 0), col1 + 45, position, null, b13);
+			core.fillText('ui', core.formatBigNumber(enemy.tpn || 0), col1 + 45, position, null, b13);
 			core.fillText('ui', '雷击', col2, position, null, f13);
-			core.fillText('ui', core.formatBigNumber(enemy.arm || 0), col2 + 30, position, null, b13);
+			core.fillText('ui', core.formatBigNumber(enemy.top || 0), col2 + 30, position, null, b13);
 		}
 		if (core.plugin.Luftwaffe.includes(enemy.type)) {
 			core.fillText('ui', '鱼雷管', col1, position, [255, 255, 255, 1], f13);
-			core.fillText('ui', core.formatBigNumber(enemy.ap || 0), col1 + 45, position, null, b13);
+			core.fillText('ui', core.formatBigNumber(enemy.tpn || 0), col1 + 45, position, null, b13);
 			core.fillText('ui', '雷击', col2, position, null, f13);
-			core.fillText('ui', core.formatBigNumber(enemy.arm || 0), col2 + 30, position, null, b13);
+			core.fillText('ui', core.formatBigNumber(enemy.top || 0), col2 + 30, position, null, b13);
 		}
 
 		var damage_offset = col3 + 20;

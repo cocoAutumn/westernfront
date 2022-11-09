@@ -80,7 +80,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"cccp": 48,
 		"italy": 49,
 		"england": 50,
-		"france": 51
+		"france": 51,
+		"snow": 52
 	},
 	"animates": {
 		"star": 0,
@@ -147,7 +148,11 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"N509": 29,
 		"N510": 30,
 		"N511": 31,
-		"N512": 32
+		"N512": 32,
+		"N514": 33,
+		"N515": 34,
+		"N516": 35,
+		"N517": 36
 	},
 	"npc48": {
 		"npc0": 0,

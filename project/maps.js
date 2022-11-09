@@ -231,7 +231,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"321": {"cls":"npc48","id":"tallRedDoor","trigger":"openDoor","name":"高红门","animate":1,"doorInfo":{"time":160,"openSound":"door.mp3","closeSound":"door.mp3","keys":{"redKey":1}}},
 	"322": {"cls":"npc48","id":"tallGreenDoor","trigger":"openDoor","name":"高绿门","animate":1,"doorInfo":{"time":160,"openSound":"door.mp3","closeSound":"door.mp3","keys":{"greenKey":1}}},
 	"323": {"cls":"npc48","id":"tallSpecialDoor","trigger":"openDoor","name":"高机关门","animate":1,"doorInfo":{"time":160,"openSound":"door.mp3","closeSound":"door.mp3","keys":{"specialKey":1}}},
-	"324": {"cls":"npc48","id":"tallSteelDoor","trigger":"openDoor","name":"高铁门","animate":1,"doorInfo":{"time":160,"openSound":"door.mp3","closeSound":"door.mp3","keys":{"steelKey":1}}},
+	"324": {"cls":"npc48","id":"tallSteelDoor","trigger":null,"name":"高铁门","animate":1,"doorInfo":{"time":160,"openSound":"door.mp3","closeSound":"door.mp3","keys":{"steelKey":1}}},
 	"325": {"cls":"enemys","id":"keiskeiFairy"},
 	"326": {"cls":"enemys","id":"tulipFairy"},
 	"327": {"cls":"enemy48","id":"bearDown"},
@@ -419,5 +419,10 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"509": {"cls":"npcs","id":"N509"},
 	"510": {"cls":"npcs","id":"N510"},
 	"511": {"cls":"npcs","id":"N511"},
-	"512": {"cls":"npcs","id":"N512"}
+	"512": {"cls":"npcs","id":"N512"},
+	"513": {"cls":"terrains","id":"snow"},
+	"514": {"cls":"npcs","id":"N514"},
+	"515": {"cls":"npcs","id":"N515"},
+	"516": {"cls":"npcs","id":"N516"},
+	"517": {"cls":"npcs","id":"N517"}
 }
