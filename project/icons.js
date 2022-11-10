@@ -447,7 +447,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"b17": 137,
 		"b24": 138,
 		"lancaster": 139,
-		"b29": 140
+		"b29": 140,
+		"tea": 141,
+		"cola": 142
 	},
 	"autotile": {
 		"autotile": 0,

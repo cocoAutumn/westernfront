@@ -33,122 +33,65 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			mon_ammo = enemyInfo.ammo,
 			mon_spd = enemyInfo.spd,
 			mon_gro = enemyInfo.gro;
-		var damage = hero_atk;
 		hero_dod = core.clamp(hero_dod, 0, mon_tpn);
 		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
-		var torpeodoDamage = 0,
-			bombDamage = 0;
-
-		//俯冲轰炸
-		if (core.hasSpecial(mon_special, 36) && nthTurn > mon_spd) {
+		if (core.hasSpecial(mon_special, 36) && nthTurn > mon_spd) // 俯冲轰炸，除前spd个回合外，攻击降低
 			hero_atk *= 0.95;
-		}
-
+		var damage = hero_atk,
+			torpeodoDamage = 0,
+			bombDamage = 0;
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
-
-			//正常情况，判断是否击穿
-			if (hero_ap <= mon_arm && hero_arm < mon_ap) { // 无法击穿
-				if (nthTurn <= 5) { damage = 0; } //5回合内无伤害
-				//5回合后，判断装备加成——攻击机
-				if (nthTurn > 5) {
-					if (core.hasEquip('skua') && nthTurn % 4 === 0) { //贼鸥式轰炸机
-						bombDamage += hero_atk * 2;
-					}
-					if (core.hasEquip('eagle') && nthTurn % 4 === 0) { //贼鸥式轰炸机(鹰号航母)，可与正常的飞机叠加伤害
-						bombDamage += hero_atk * 2;
-					}
-					if (core.hasEquip('torch') && nthTurn % 4 === 0) { //火把式攻击机
-						bombDamage += hero_atk * 2;
-					}
-
-					//装备加成——轰炸机
-					if (core.hasEquip('swordfish') && nthTurn % 5 === 0) { //箭鱼鱼雷机
-						bombDamage += hero_atk * 0.6 * 3;
-					}
-					if (core.hasEquip('eagle') && nthTurn % 5 === 0) { //箭鱼鱼雷机（鹰号航母）
-						bombDamage += hero_atk * 0.6 * 3;
-					}
-				}
-				//最终伤害*0.8
-				damage += bombDamage;
-				damage *= 0.8;
-
-			}
-			if (hero_ap > mon_arm) { //击穿
-				if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) { //贼鸥式轰炸机
-					bombDamage += hero_atk * 2;
-				}
-				if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 4 === 0) { //贼鸥式轰炸机(鹰号航母)
-					bombDamage += hero_atk * 2;
-				}
-				if (core.hasEquip('torch') && nthTurn > 0 && nthTurn % 4 === 0) { //火把式攻击机
-					bombDamage += hero_atk * 2;
-				}
-
-				//装备加成——轰炸机
-				if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0) { //箭鱼鱼雷机
-					bombDamage += hero_atk * 0.6 * 3;
-				}
-				if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 5 === 0) { //箭鱼鱼雷机(鹰号航母)
-					bombDamage += hero_atk * 0.6 * 3;
-				}
-			}
-
+			// 装备加成——攻击机
+			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) // 贼鸥式轰炸机
+				bombDamage += hero_atk * 2;
+			if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 4 === 0) // 贼鸥式轰炸机(鹰号航母)
+				bombDamage += hero_atk * 2;
+			if (core.hasEquip('torch') && nthTurn > 0 && nthTurn % 4 === 0) // 火把式攻击机
+				bombDamage += hero_atk * 2;
+			// 装备加成——轰炸机
+			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0) // 箭鱼鱼雷机
+				bombDamage += hero_atk * 0.6 * 3;
+			if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 5 === 0) // 箭鱼鱼雷机(鹰号航母)
+				bombDamage += hero_atk * 0.6 * 3;
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-
-			//装备加成——攻击机
-			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) { //贼鸥式轰炸机
+			// 装备加成——攻击机
+			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机
 				bombDamage += hero_atk * 2;
 				bombDamage *= 1.1;
 			}
-			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 4 === 0) { //贼鸥式轰炸机(鹰号航母)
+			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机(鹰号航母)
 				bombDamage += hero_atk * 2;
 				bombDamage *= 1.1;
 			}
-			if (core.hasEquip('torch') && nthTurn > 0 && nthTurn % 4 === 0) { //火把式攻击机
+			if (core.hasEquip('torch') && nthTurn > 0 && nthTurn % 4 === 0) // 火把式攻击机
 				bombDamage += hero_atk * 2;
-			}
-
-			//装备加成——轰炸机
-			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 1) { //箭鱼鱼雷机
+			// 装备加成——轰炸机
+			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 1) // 箭鱼鱼雷机
 				torpeodoDamage += hero_top * (1 - mon_dod);
-			}
-			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 1) { //箭鱼鱼雷机(鹰号航母)
+			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 1) // 箭鱼鱼雷机(鹰号航母)
 				torpeodoDamage += hero_top * (1 - mon_dod);
-			}
-
-			//正常情况，鱼雷攻击
-			if (nthTurn % 10 === 0) torpeodoDamage += hero_top * (hero_tpn - mon_dod); // TODO: dod的作用
-
-			//装备加成——军舰
-
-			//厌战号战列舰
-			if (core.hasEquip('warspite') && nthTurn > 0 && nthTurn % 3 === 0 && enemyInfo.type != '潜艇') {
+			// 正常情况，鱼雷攻击
+			if (nthTurn % 10 === 0) torpeodoDamage += hero_top * (hero_tpn - mon_dod);
+			// 装备加成——军舰
+			// 厌战号战列舰
+			if (core.hasEquip('warspite') && nthTurn > 0 && nthTurn % 3 === 0 && enemyInfo.type != '潜艇')
 				damage += hero_atk;
-			}
-			//潜行
-			if (core.hasSpecial(mon_special, 33)) {
-				damage *= 0.3;
-			}
+			// 潜行
+			if (core.hasSpecial(mon_special, 33)) damage *= 0.3;
 			//E级驱逐舰
-			if (core.hasEquip('classe') && enemyInfo.type === '潜艇') {
-				damage += hero_atk
-			}
-
+			if (core.hasEquip('classe') && enemyInfo.type === '潜艇') damage += hero_atk;
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
-			if (core.hasEquip('hurricanemk1') && enemyInfo.type.endsWith('轰炸机')) { //飓风MK1
+			if (core.hasEquip('hurricanemk1') && enemyInfo.type.endsWith('轰炸机')) // 飓风MK1
 				damage += 80;
-			}
-			if (core.hasEquip('eagle') && enemyInfo.type.endsWith('轰炸机')) { //飓风MK1（鹰号航母）
+			if (core.hasEquip('eagle') && enemyInfo.type.endsWith('轰炸机')) //飓风MK1（鹰号航母）
 				damage += 80;
-			}
-			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) { //英俊战士
+			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
 				damage *= 1.3;
-			}
 		}
-
 		damage += torpeodoDamage + bombDamage;
-
+		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) // 陆战中被对方单向击穿
+			if (nthTurn <= 5) damage = 0;
+			else damage *= 0.8; // 前5回合无法造成伤害，其他回合伤害只有80%
 		return damage;
 	}
 	this.getEnemyPerDamage = function (enemyInfo, hero, x, y, floorId, nthTurn) {
@@ -185,56 +128,34 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
 		var torpeodoDamage = 0,
 			bombDamage = 0;
-
-		if (core.hasSpecial(mon_special, 4)) { //二连击
-			damage *= 2;
-		}
-		if (core.hasSpecial(mon_special, 5)) { //三连击
-			damage *= 3;
-		}
-		//注：如果以后有人使用本模板继续造塔，请至多在同一个怪物身上放置一个连击类技能！比如不要同时有2连击和3连击！
-		if (core.hasSpecial(mon_special, 6)) {
-			damage *= enemyInfo.n;
-		}
-
+		// 连击
+		if (core.hasSpecial(mon_special, 4)) damage *= 2;
+		if (core.hasSpecial(mon_special, 5)) damage *= 3;
+		if (core.hasSpecial(mon_special, 6)) damage *= enemyInfo.n;
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
-			if (hero_ap > mon_arm && hero_arm >= mon_ap) { // 击穿
+			if (hero_ap > mon_arm && hero_arm >= mon_ap) // 被勇士单向击穿
 				if (nthTurn <= 5) damage = 0;
 				else damage *= 0.8;
-			}
-
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
 			if (nthTurn > 0 && nthTurn % mon_cd === 0)
-				torpeodoDamage += mon_top * (mon_tpn - hero_dod); // TODO: dod的作用
-			//鹰号航母
-			if (core.hasEquip('eagle')) {
-				torpeodoDamage *= 1.2;
-			}
-
+				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
+			if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
-
-			if (core.hasEquip('torch') && enemyInfo.type.endsWith('战斗机')) { //火把式攻击机
+			if (core.hasEquip('torch') && enemyInfo.type.endsWith('战斗机')) // 火把式攻击机
 				damage *= 1.3;
-			}
-
-			//航弹
+			// 航弹
 			if (core.hasSpecial(mon_special, 28) && nthTurn > 0 && nthTurn % mon_spd === 0) {
-				if (core.hasSpecial(mon_special, 36)) { //俯冲轰炸机
-					bombDamage += mon_ammo * mon_bom * 1.5;
-				} else
-					bombDamage += mon_ammo * mon_bom;
+				// 俯冲轰炸机
+				if (core.hasSpecial(mon_special, 36)) bombDamage += mon_ammo * mon_bom * 1.5;
+				else bombDamage += mon_ammo * mon_bom;
 			}
-			//鱼雷
+			// 鱼雷
 			if (core.hasSpecial(mon_special, 29) && nthTurn > 0 && nthTurn % mon_cd === 0) {
 				torpeodoDamage += mon_top * mon_tpn;
-				//鹰号航母
-				if (core.hasEquip('eagle')) {
-					torpeodoDamage *= 1.2;
-				}
+				if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
 			}
 		}
 		damage += torpeodoDamage + bombDamage;
-
 		return damage;
 	}
 
@@ -251,14 +172,13 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			cost = 20;
 			description = '挖掘战壕，与敌方陆军战斗时，受到的伤害减少10%';
 		}
-		if (id === 2) { //动员
+		if (id === 2) {
 			strategy = true;
 			name = '动员';
 			cost = 35;
 			description = '血量立即恢复25%';
 			event = [{ "type": "setValue", "name": "status:hp", "operator": "+=", "value": "status:hpmax/4" }];
 		}
-
 		return {
 			'strategy': strategy,
 			'name': name,
@@ -268,7 +188,6 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			'description': description
 		};
 	}
-
 	this.bindSkills = function () {
 		var list = [];
 		for (var i = 0; i < flags.learned.length; ++i) {
@@ -302,38 +221,28 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		return [{
 			"type": "while",
 			"condition": "true",
-			"data": [
-				{ "type": "choices", "text": "\t[技能快捷键设定] ", "choices": list }
-			]
+			"data": [{ "type": "choices", "text": "\t[技能快捷键设定] ", "choices": list }]
 		}];
 	}
-
-	//禁止手动换装
+	// 禁止手动换装，只能在事件中用指令强制换装
 	core.items._realLoadEquip = function (type, loadId, unloadId, callback) {
 		if (core.status.event.id === 'action') {
 			var loadEquip = core.material.items[loadId] || {},
 				unloadEquip = core.material.items[unloadId] || {};
-
 			// --- 音效
 			core.items._realLoadEquip_playSound();
-
 			// --- 实际换装
 			core.items._loadEquipEffect(loadId, unloadId);
-
 			// --- 加减
 			if (loadId) core.removeItem(loadId);
 			if (unloadId) core.addItem(unloadId);
 			core.status.hero.equipment[type] = loadId || null;
-
 			// --- 提示
 			if (loadId) core.drawTip("已装备上" + loadEquip.name, loadId);
 			else if (unloadId) core.drawTip("已卸下" + unloadEquip.name, unloadId);
 		}
-
-
 		if (callback) callback();
 	}
-
 	this._afterLoadResources = function () {
 		// 本函数将在所有资源加载完毕后，游戏开启前被执行
 	}

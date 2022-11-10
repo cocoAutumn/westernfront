@@ -424,5 +424,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"514": {"cls":"npcs","id":"N514"},
 	"515": {"cls":"npcs","id":"N515"},
 	"516": {"cls":"npcs","id":"N516"},
-	"517": {"cls":"npcs","id":"N517"}
+	"517": {"cls":"npcs","id":"N517"},
+	"518": {"cls":"items","id":"tea"},
+	"519": {"cls":"items","id":"cola"}
 }

@@ -1638,7 +1638,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		core.fillRect(ctx, x0 + 10, 90, 130 * ratio, 5, [255 * (1 - ratio), 255 * ratio, 0, 1]);
 		fill((100 * ratio).toFixed(1) + '%', x0 + x1, 110, [255 * (1 - ratio), 255 * ratio, 0, 1]);
 		core.setFillStyle(ctx, 'white')
-		fill('便携:' + core.formatBigNumber(core.getRealStatus('atk')), x0 + x1, 130, '#64FF00');
+		fill('便携:' + (core.itemCount('tea')), x0 + x1, 130, '#64FF00');
 		fill('指挥点:' + core.formatBigNumber(core.getRealStatus('mana')), x0 + x1, 150, '#6464FF');
 		fill('攻击:' + core.formatBigNumber(core.getRealStatus('atk')), x0 + x1, 170, '#FF6400');
 		fill('穿甲:' + core.formatBigNumber(core.getRealStatus('ap')), x0 + x1, 190, '#DDDDDD');
