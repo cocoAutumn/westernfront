@@ -483,7 +483,14 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"wand": {
 		"cls": "constants",
 		"name": "技能快捷键查看",
-		"text": "查看当前快捷键所对应的技能"
+		"text": "查看当前快捷键所对应的技能",
+		"canUseItemEffect": true,
+		"useItemEvent": [
+			{
+				"type": "insert",
+				"name": "查看技能"
+			}
+		]
 	},
 	"pack": {
 		"cls": "items",
@@ -551,11 +558,12 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "橙宝石",
 		"canUseItemEffect": "true",
 		"text": "，增加10雷击",
-		"itemEffectTip": "，增加10雷击"
+		"itemEffectTip": "，增加10雷击",
+		"itemEffect": "core.status.hero.top += 10;"
 	},
 	"pinkGem": {
 		"cls": "items",
-		"name": "粉宝石",
+		"name": "粉宝石（废稿）",
 		"canUseItemEffect": "true",
 		"text": "，增加5空袭",
 		"itemEffectTip": "，增加5空袭"
@@ -800,10 +808,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "鹰号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：飓风MK1、贼鸥式轰炸机、箭鱼式鱼雷机。闪避鱼雷数-1。\n受到敌方鱼雷伤害增加20%。",
+		"text": "舰载机：海飓风MK1、贼鸥式轰炸机、剑鱼式鱼雷机。闪避鱼雷数-1。\n受到敌方鱼雷伤害增加20%。",
 		"equip": {
 			"type": 3,
 			"value": {
+				"atk": 60,
 				"dod": -1
 			},
 			"percentage": {}
@@ -838,7 +847,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "飓风MK1",
 		"canUseItemEffect": "true",
-		"text": "攻+40。战斗中，主角对敌方造成伤害时，追加80点伤害，对轰炸机追加200点伤害。",
+		"text": "攻+40。每回合对轰炸机追加80点伤害。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -907,7 +916,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "贼鸥式轰炸机",
 		"canUseItemEffect": "true",
-		"text": "攻+20。挂载：1×500磅炸弹。\n每4个回合投弹，造成2倍攻击力的伤害。",
+		"text": "攻+20。挂载：1×500磅炸弹。\n每4个回合投弹，造成2倍攻击力的伤害。\n被动：俯冲轰炸——攻击军舰时，炸弹造成的伤害提升10%。",
 		"equip": {
 			"type": 5,
 			"value": {
@@ -925,7 +934,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "英俊战士MK6C",
 		"canUseItemEffect": "true",
-		"text": "攻击+300。挂载：8×RP-3火箭弹。攻击轰炸机时增伤30%。\n对地攻击时率先发射1轮火箭弹，每发火箭弹的伤害为0.2倍攻击力。\n被动：机载雷达：敌人的“先攻”技能无效且我方额外先攻2次。",
+		"text": "攻击+300。挂载：8×RP-3火箭弹。攻击轰炸机时增伤30%。\n攻击非空军敌人时率先发射1轮火箭弹，每发火箭弹的伤害为0.2倍攻击力。\n被动：机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。",
 		"equip": {
 			"type": 5,
 			"value": {
@@ -943,7 +952,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "火把式攻击机",
 		"canUseItemEffect": "true",
-		"text": "攻＋250。挂载：16×RP3火箭弹、1×500磅炸弹。遭遇敌方战斗机或重型战斗机时额外受到20%伤害。\n对地攻击时，率先发射一轮火箭弹，每发火箭弹伤害为0.2倍攻击力。\n每2回合投掷一次炸弹，每枚炸弹伤害为2倍攻击力。",
+		"text": "攻＋250。挂载：16×RP3火箭弹、1×500磅炸弹。遭遇敌方战斗机或重型战斗机时额外受到20%伤害。\n攻击非空军敌人时，率先发射一轮火箭弹，每发火箭弹伤害为0.2倍攻击力。\n每4回合投掷一次炸弹，每枚炸弹伤害为2倍攻击力。",
 		"equip": {
 			"type": 5,
 			"value": {
@@ -979,9 +988,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"swordfish": {
 		"cls": "equips",
-		"name": "箭鱼式鱼雷机",
+		"name": "剑鱼式鱼雷机",
 		"canUseItemEffect": "true",
-		"text": "无属性加成。挂载：1×鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放一枚鱼雷。对地攻击时，每3回合投放一次炸弹，每颗炸弹伤害为0.6倍攻击力.",
+		"text": "无属性加成。挂载：1×鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放一枚鱼雷。对地攻击时，每5回合投放一次炸弹，每颗炸弹伤害为0.6倍攻击力.",
 		"equip": {
 			"type": 6,
 			"value": {},

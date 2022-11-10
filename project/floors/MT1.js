@@ -28,7 +28,8 @@ main.floors.MT1=
             "type": "sleep",
             "time": 500
         },
-        "\r[yellow]Lesson  1  马奇诺防线",
+        "\r[yellow]Stage 1  1940年，法国",
+        "\r[yellow]Mission 1 马奇诺防线",
         {
             "type": "sleep",
             "time": 500
@@ -40,12 +41,6 @@ main.floors.MT1=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]为帮助玩家选择接下来的战斗中要使用的技能，每次选择出战技能前，系统都会提供部分关于当前区域的敌人信息，以及推荐选用的技能，供玩家参考。",
-        {
-            "type": "playSound",
-            "name": "xinxinmagic.mp3"
-        },
-        "\t[系统提示]当前区域敌人特点：步兵居多，伴随少量轻型火炮、轻型坦克和飞机。\n推荐携带技能：战壕",
         "\t[系统提示]即将进入存档页面。",
         {
             "type": "callSave"

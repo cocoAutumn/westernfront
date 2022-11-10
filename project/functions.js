@@ -259,6 +259,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	var enemy = core.material.enemys[enemyId];
 	var special = enemy.special;
+	var type = enemy.type;
 
 	// 播放战斗音效和动画
 	// 默认播放的动画；你也可以使用
@@ -269,6 +270,43 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		animate = core.material.items[equipId].equip.animate;
 	// 你也可以在这里根据自己的需要，比如enemyId或special或flag来修改播放的动画效果
 	// if (enemyId == '...') animate = '...';
+	if (type === '步兵') {
+		animate = 'shoot';
+	}
+	if (type === '轻坦' || type === '中坦' || type === '重坦' || type === '坦歼') {
+		animate = 'vehicleexplore';
+		core.playSound("move2.mp3");
+	}
+	if (type === '反坦克炮' || type === '榴弹炮' || type === '高射炮') {
+		animate = "vehicleexplore";
+		core.playSound("gunfire.mp3");
+	}
+	if (type === '建筑') {
+		animate = 'zone';
+	}
+	if (type === '潜艇') {
+		animate = 'xinxinwater';
+		core.playSound("Sonar.wav");
+	}
+	if (type === '驱逐' || type === '轻巡' || type === '重巡' || type === '战列' || type === '商船') {
+		animate = "xinxinwater";
+	}
+	if (type === '战斗机' || type === '重型战斗机') {
+		animate = "shootair";
+		core.playSound("fighter.mp3");
+	}
+	if (type === '俯冲轰炸机') {
+		animate = "shootair";
+		core.playSound("stukadive.mp3");
+	}
+	if (type === '鱼雷轰炸机' || type === '中型轰炸机') {
+		animate = "shootair";
+		core.playSound("bomber1.mp3");
+	}
+	if (type === '导弹') {
+		animate = "shootair";
+		core.playSound("v_jet_pass.mp3");
+	}
 
 	// 检查该动画是否存在SE，如果不存在则使用默认音效
 	if (!(core.material.animates[animate] || {}).se)
@@ -729,19 +767,29 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_gro = enemyInfo.gro;
 
 	hero_dod = core.clamp(hero_dod, 0, mon_tpn);
-	mon_tpn = core.clamp(mon_tpn, 0, hero_dod);
+	mon_dod = core.clamp(mon_dod, 0, hero_tpn);
 
 	//回合制战斗
 	var curr_hp = mon_hp,
 		turn = 0,
 		damage = 0;
 	//先攻
-	if (core.hasSpecial(mon_special, 1)) {
+	if (core.hasSpecial(mon_special, 1) && !core.hasEquip("beautifighter")) {
 		damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn)
+	}
+	//英俊战士特殊判定
+	if (core.hasSpecial(mon_special, 1) && core.hasEquip("beautifighter")) {
+		curr_hp -= hero_atk * 2;
 	}
 	//惊雷
 	if (core.hasSpecial(mon_special, 34)) {
 		damage += (mon_tpn - hero_dod) * mon_top;
+	}
+	if (core.hasEquip('beautifighter') && !core.plugin.Luftwaffe.includes(enemyInfo.type)) { //英俊战士
+		curr_hp -= hero_atk * 0.2 * 8;
+	}
+	if (core.hasEquip('torch') && !core.plugin.Luftwaffe.includes(enemyInfo.type)) { //火把攻击机
+		curr_hp -= hero_atk * 0.2 * 16;
 	}
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合

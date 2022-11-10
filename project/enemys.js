@@ -43,7 +43,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"mortar": {"name":"德国迫击炮排","hp":200,"atk":120,"def":0,"money":1,"exp":1,"point":0,"special":[1,9],"type":"步兵","description":"操作迫击炮的步兵小组，负责使用迫击炮攻击掩体后的敌军。","ap":10,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"me109e4": {"name":"ME109E-4","hp":500,"atk":30,"def":0,"money":2,"exp":2,"point":0,"special":[5],"type":"战斗机","description":"著名的梅塞施密特ME109系列战斗机，被誉为“帝国雄鹰”。","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"me110c": {"name":"ME110C破坏者","hp":1000,"atk":60,"def":0,"money":4,"exp":4,"point":0,"special":0,"type":"重型战斗机","description":"德国空军的“多面手”——ME110系列战斗机，除了争夺制空权以外几乎啥都能干。","ap":0,"arm":0,"top":0,"bom":200,"tpn":0,"dod":0,"gro":0},
-	"ju87b": {"name":"JU87B斯图卡","hp":300,"atk":20,"def":0,"money":4,"exp":4,"point":0,"special":[28],"type":"俯冲轰炸机","description":"臭名昭著的斯图卡轰炸机，加装汽笛的斯图卡能够发出极具震慑力的呼啸声，因此成为二战初期盟军地面部队的噩梦。","ap":0,"arm":0,"top":0,"bom":1000,"tpn":0,"dod":0,"gro":0,"value":1},
+	"ju87b": {"name":"JU87B斯图卡","hp":500,"atk":20,"def":0,"money":4,"exp":4,"point":0,"special":[28],"type":"俯冲轰炸机","description":"臭名昭著的斯图卡轰炸机，加装汽笛的斯图卡能够发出极具震慑力的呼啸声，因此成为二战初期盟军地面部队的噩梦。","ap":0,"arm":0,"top":0,"bom":1000,"tpn":0,"dod":0,"gro":0,"value":1,"ammo":1,"spd":3},
 	"transship": {"name":"靶舰","hp":3000,"atk":400,"def":0,"money":0,"exp":0,"point":0,"special":[29,35],"type":"轻巡","description":"训练用的靶舰","ap":0,"arm":0,"top":500,"bom":0,"tpn":2,"dod":1,"gro":0,"cd":9},
 	"italydd1": {"name":"帕莱斯特罗级驱逐舰","hp":7000,"atk":600,"def":0,"money":5,"exp":5,"point":0,"special":[5],"type":"驱逐","ap":0,"arm":0,"top":2000,"bom":0,"tpn":3,"dod":2,"gro":0},
 	"italydd2": {"name":"角宿一星级驱逐舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"驱逐"},
