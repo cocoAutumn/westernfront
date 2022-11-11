@@ -426,5 +426,10 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"516": {"cls":"npcs","id":"N516"},
 	"517": {"cls":"npcs","id":"N517"},
 	"518": {"cls":"items","id":"tea"},
-	"519": {"cls":"items","id":"cola"}
+	"519": {"cls":"items","id":"cola"},
+	"520": {"cls":"items","id":"I520"},
+	"521": {"cls":"items","id":"I521"},
+	"522": {"cls":"items","id":"I522"},
+	"523": {"cls":"items","id":"I523"},
+	"524": {"cls":"items","id":"I524"}
 }

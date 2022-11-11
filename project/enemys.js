@@ -125,7 +125,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"konesburg": {"name":"科尼斯堡级轻巡洋舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},
 	"italyca1": {"name":"扎拉级重巡洋舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},
 	"italyca2": {"name":"塔兰托级重巡洋舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},
-	"panzer2c": {"name":"二号C型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},
+	"panzer2c": {"name":"二号C型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"轻坦","description":"闪电战的前锋，虽然战力拉跨，但却满足当时的战争需求。"},
 	"panzer35t": {"name":"35t","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},
 	"panzer38t": {"name":"38t","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},
 	"sdkfz234": {"name":"sd.kfz.234","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},

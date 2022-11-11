@@ -851,13 +851,200 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"levelUp": [
 			{
 				"need": "0",
-				"title": "",
+				"title": "下士",
+				"action": []
+			},
+			{
+				"need": "100",
+				"title": "中士",
+				"clear": true,
 				"action": [
 					{
-						"type": "comment",
-						"text": "此处是初始等级，只需填写称号"
+						"type": "animate",
+						"name": "yongchang"
+					},
+					"晋升中士。攻击+5，血限与血量+100",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "5"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "100"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "100"
 					}
 				]
+			},
+			{
+				"need": "200",
+				"title": "上士",
+				"clear": true,
+				"action": [
+					{
+						"type": "animate",
+						"name": "yongchang"
+					},
+					"晋升上士。攻击+10，血限与血量+200，后勤+5",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "10"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "200"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "200"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "5"
+					}
+				]
+			},
+			{
+				"need": "500",
+				"title": "准尉",
+				"clear": true,
+				"action": [
+					{
+						"type": "animate",
+						"name": "yongchang"
+					},
+					"晋升准尉。攻击+20，雷击+50，血量与血限+500，后勤+10。此外，获得步兵反坦克武器，穿甲+5",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "20"
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "50"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "500"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "500"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "10"
+					},
+					{
+						"type": "setValue",
+						"name": "status:ap",
+						"operator": "+=",
+						"value": "5"
+					}
+				]
+			},
+			{
+				"need": "750",
+				"title": "少尉",
+				"clear": true,
+				"action": [
+					{
+						"type": "animate",
+						"name": "yongchang"
+					},
+					"晋升少尉。"
+				]
+			},
+			{
+				"need": "1000",
+				"title": "中尉",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "1250",
+				"title": "上尉",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "2000",
+				"title": "准校",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "2500",
+				"title": "少校",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "3000",
+				"title": "中校",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "3500",
+				"title": "上校",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "5000",
+				"title": "准将",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "6000",
+				"title": "少将",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "7000",
+				"title": "中将",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "8000",
+				"title": "上将",
+				"clear": true,
+				"action": []
+			},
+			{
+				"need": "10000",
+				"title": "元帅/五星上将",
+				"clear": true,
+				"action": []
 			}
 		]
 	},

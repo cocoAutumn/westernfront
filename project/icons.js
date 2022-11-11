@@ -449,7 +449,12 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"lancaster": 139,
 		"b29": 140,
 		"tea": 141,
-		"cola": 142
+		"cola": 142,
+		"I520": 143,
+		"I521": 144,
+		"I522": 145,
+		"I523": 146,
+		"I524": 147
 	},
 	"autotile": {
 		"autotile": 0,

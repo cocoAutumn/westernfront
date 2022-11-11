@@ -307,7 +307,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "持有时无视负面地形"
 	},
 	"bigKey": {
-		"cls": "tools",
+		"cls": "items",
 		"name": "大黄门钥匙",
 		"text": "可以开启当前层所有黄门",
 		"itemEffect": "core.addItem('yellowKey', 1);\ncore.addItem('blueKey', 1);\ncore.addItem('redKey', 1);",
@@ -535,7 +535,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"I341": {
 		"cls": "items",
-		"name": "新物品",
+		"name": "大银块",
 		"canUseItemEffect": "true"
 	},
 	"I342": {
@@ -557,9 +557,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "橙宝石",
 		"canUseItemEffect": "true",
-		"text": "，增加10雷击",
-		"itemEffectTip": "，增加10雷击",
-		"itemEffect": "core.status.hero.top += 10;"
+		"text": "，增加5雷击",
+		"itemEffectTip": "，增加5雷击",
+		"itemEffect": "core.status.hero.top += 5;"
 	},
 	"pinkGem": {
 		"cls": "items",
@@ -579,12 +579,23 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"type": "playSound",
 				"name": "xinxinbazhe.mp3"
 			}
-		]
+		],
+		"itemEffect": "core.status.hero.hpmax += 50;\ncore.status.hero.hp += 50;\ncore.status.hero.mana += 5;\ncore.status.hero.atk += 1;\ncore.status.hero.top += 5;\ncore.status.hero.mdef += 3;"
 	},
 	"ft17": {
 		"cls": "equips",
 		"name": "雷诺FT17",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻10，穿5装3。",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 10,
+				"ap": 5,
+				"arm": 5
+			},
+			"percentage": {}
+		}
 	},
 	"h35": {
 		"cls": "equips",
@@ -836,7 +847,15 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"wrestler": {
 		"cls": "equips",
 		"name": "斗士MK2型",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+5。",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 5
+			},
+			"percentage": {}
+		}
 	},
 	"p40b": {
 		"cls": "equips",
@@ -1056,13 +1075,56 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"tea": {
 		"cls": "tools",
 		"name": "下午茶",
-		"canUseItemEffect": "true",
-		"text": "英式下午茶，能让人的精神得到放松。\n饮用后恢复25%血量。快捷键8。"
+		"canUseItemEffect": "core.status.hero.hp < core.status.hero.hpmax",
+		"text": "英式下午茶，能让人的精神得到放松。\n饮用后恢复25%血量。快捷键8。",
+		"useItemEvent": [
+			{
+				"type": "animate",
+				"name": "heal",
+				"loc": "hero",
+				"async": true
+			}
+		],
+		"useItemEffect": "if (hero.hp > hero.hpmax * 3 / 4) core.drawHeroAnimate('hpfull');\ncore.status.hero.hp += hero.hpmax * 0.25;"
 	},
 	"cola": {
 		"cls": "tools",
 		"name": "可乐",
-		"canUseItemEffect": "true",
-		"text": "美国大兵的最爱，不过喝太多了会导致一些健康问题。\n饮用后恢复50%血量。"
+		"canUseItemEffect": "core.status.hero.hp < core.status.hero.hpmax",
+		"text": "美国大兵的最爱，不过喝太多了会导致一些健康问题。\n饮用后恢复50%血量。",
+		"useItemEvent": [
+			{
+				"type": "animate",
+				"name": "heal",
+				"loc": "hero",
+				"async": true
+			}
+		],
+		"useItemEffect": "if (hero.hp > hero.hpmax * 1 / 2) core.drawHeroAnimate('hpfull');\ncore.status.hero.hp += hero.hpmax * 0.5;"
+	},
+	"I520": {
+		"cls": "items",
+		"name": "银屑",
+		"canUseItemEffect": "true"
+	},
+	"I521": {
+		"cls": "items",
+		"name": "金屑",
+		"canUseItemEffect": "true"
+	},
+	"I522": {
+		"cls": "items",
+		"name": "银块",
+		"canUseItemEffect": "true"
+	},
+	"I523": {
+		"cls": "items",
+		"name": "金块",
+		"canUseItemEffect": "true"
+	},
+	"I524": {
+		"cls": "items",
+		"name": "大金块",
+		"canUseItemEffect": "true"
 	}
 }
