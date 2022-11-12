@@ -36,11 +36,6 @@ main.floors.prepare1=
         },
         {
             "type": "setValue",
-            "name": "status:ap",
-            "value": "0"
-        },
-        {
-            "type": "setValue",
             "name": "status:arm",
             "value": "0"
         },

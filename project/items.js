@@ -30,18 +30,18 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"blueGem": {
 		"cls": "items",
 		"name": "蓝宝石",
-		"text": "，指挥点数+5",
-		"itemEffect": "core.status.hero.mana += 5;",
-		"itemEffectTip": "，指挥点+5",
-		"useItemEffect": "core.status.hero.mana += 5;",
+		"text": "，指挥点数+10",
+		"itemEffect": "core.status.hero.mana += 10;",
+		"itemEffectTip": "，指挥点+10",
+		"useItemEffect": "core.status.hero.mana += 10;",
 		"canUseItemEffect": "true"
 	},
 	"greenGem": {
 		"cls": "items",
 		"name": "绿宝石",
-		"text": "，补给+5",
+		"text": "，后勤+5",
 		"itemEffect": "core.status.hero.mdef += core.values.greenGem * core.status.thisMap.ratio",
-		"itemEffectTip": "，护盾+${core.values.greenGem * core.status.thisMap.ratio}",
+		"itemEffectTip": "，后勤+${core.values.greenGem * core.status.thisMap.ratio}",
 		"useItemEffect": "core.status.hero.mdef += core.values.greenGem",
 		"canUseItemEffect": "true"
 	},
@@ -580,7 +580,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"name": "xinxinbazhe.mp3"
 			}
 		],
-		"itemEffect": "core.status.hero.hpmax += 50;\ncore.status.hero.hp += 50;\ncore.status.hero.mana += 5;\ncore.status.hero.atk += 1;\ncore.status.hero.top += 5;\ncore.status.hero.mdef += 3;"
+		"itemEffect": "core.status.hero.hpmax += 50;\ncore.status.hero.hp += 50;\ncore.status.hero.mana += 10;\ncore.status.hero.atk += 1;\ncore.status.hero.top += 5;\ncore.status.hero.mdef += 5;"
 	},
 	"ft17": {
 		"cls": "equips",

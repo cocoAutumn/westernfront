@@ -898,6 +898,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	case 80: // P：游戏主页
 		core.actions._clickGameInfo_openComments();
 		break;
+	case 56: //使用便携药
+		if (core.canUseItem('tea')) {
+			core.status.route.push('key:56');
+			core.useItem('tea', true);
+		}
+		break;
 	case 49:
 	case 50:
 	case 51:
