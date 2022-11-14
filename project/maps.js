@@ -431,5 +431,11 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"521": {"cls":"items","id":"I521"},
 	"522": {"cls":"items","id":"I522"},
 	"523": {"cls":"items","id":"I523"},
-	"524": {"cls":"items","id":"I524"}
+	"524": {"cls":"items","id":"I524"},
+	"20104": {"cls":"tileset","id":"X20104","canPass":true},
+	"20105": {"cls":"tileset","id":"X20105","canPass":true},
+	"20107": {"cls":"tileset","id":"X20107","canPass":true},
+	"20108": {"cls":"tileset","id":"X20108","canPass":true},
+	"20112": {"cls":"tileset","id":"X20112","canPass":true},
+	"20116": {"cls":"tileset","id":"X20116","canPass":true}
 }

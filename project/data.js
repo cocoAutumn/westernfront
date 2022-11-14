@@ -11,9 +11,19 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT2",
 			"MT3",
 			"MT4",
-			"MT5"
+			"MT5",
+			"MT6",
+			"MT7",
+			"MT8",
+			"MT9",
+			"MT10"
 		],
-		"floorPartitions": [],
+		"floorPartitions": [
+			[
+				"MT0",
+				"MT5"
+			]
+		],
 		"images": [
 			"15.png",
 			"aircraft1.png",
@@ -42,7 +52,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"winskin.png"
 		],
 		"tilesets": [
-			"magictower.png"
+			"magictower.png",
+			"001-Grassland01.png"
 		],
 		"animates": [
 			"aim",

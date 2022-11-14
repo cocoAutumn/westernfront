@@ -21,7 +21,37 @@ main.floors.MT5=
     ],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
+    "events": {
+        "14,7": [
+            {
+                "type": "setCurtain",
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "time": 500,
+                "keep": true
+            },
+            {
+                "type": "setHeroOpacity",
+                "opacity": 0
+            },
+            {
+                "type": "hideStatusBar"
+            },
+            {
+                "type": "pauseBgm"
+            },
+            {
+                "type": "confirm",
+                "text": "跳过剧情吗？",
+                "yes": [],
+                "no": []
+            }
+        ]
+    },
     "changeFloor": {
         "0,7": {
             "floorId": "MT4",
