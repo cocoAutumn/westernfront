@@ -16,7 +16,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT7",
 			"MT8",
 			"MT9",
-			"MT10"
+			"MT10",
+			"MT11",
+			"MT12",
+			"MT13",
+			"MT14",
+			"MT15"
 		],
 		"floorPartitions": [
 			[
@@ -115,6 +120,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"desert3.mp3",
 			"desert4.mp3",
 			"europe1.mp3",
+			"europe2.mp3",
+			"europe3.mp3",
 			"failed.mp3",
 			"farthestend.mp3",
 			"gaijin1.mp3",
