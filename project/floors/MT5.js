@@ -153,7 +153,8 @@ main.floors.MT5=
                         "value": "null"
                     }
                 ]
-            }
+            },
+            "1": null
         },
         "13,7": {
             "0": {
@@ -168,11 +169,11 @@ main.floors.MT5=
                         "loc": [
                             13,
                             7
-                        ],
-                        "floorId": "MT5"
+                        ]
                     }
                 ]
-            }
+            },
+            "1": null
         }
     },
     "cannotMove": {},

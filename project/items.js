@@ -1105,7 +1105,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"I520": {
 		"cls": "items",
 		"name": "银屑",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，黄金+5",
+		"itemEffectTip": "，黄金+5",
+		"itemEffect": "core.status.hero.money += 5;"
 	},
 	"I521": {
 		"cls": "items",
@@ -1125,6 +1128,106 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"I524": {
 		"cls": "items",
 		"name": "大金块",
+		"canUseItemEffect": "true"
+	},
+	"red2Gem": {
+		"cls": "items",
+		"name": "2阶红宝石",
+		"canUseItemEffect": "true"
+	},
+	"red3Gem": {
+		"cls": "items",
+		"name": "3阶红宝石",
+		"canUseItemEffect": "true"
+	},
+	"red4Gem": {
+		"cls": "items",
+		"name": "4阶红宝石",
+		"canUseItemEffect": "true"
+	},
+	"red5Gem": {
+		"cls": "items",
+		"name": "5阶红宝石",
+		"canUseItemEffect": "true"
+	},
+	"blue2Gem": {
+		"cls": "items",
+		"name": "2阶蓝宝石",
+		"canUseItemEffect": "true"
+	},
+	"blue3Gem": {
+		"cls": "items",
+		"name": "3阶蓝宝石",
+		"canUseItemEffect": "true"
+	},
+	"blue4Gem": {
+		"cls": "items",
+		"name": "4阶蓝宝石",
+		"canUseItemEffect": "true"
+	},
+	"blue5Gem": {
+		"cls": "items",
+		"name": "5阶蓝宝石",
+		"canUseItemEffect": "true"
+	},
+	"green2Gem": {
+		"cls": "items",
+		"name": "2阶绿宝石",
+		"canUseItemEffect": "true"
+	},
+	"green3Gem": {
+		"cls": "items",
+		"name": "3阶绿宝石",
+		"canUseItemEffect": "true"
+	},
+	"green4Gem": {
+		"cls": "items",
+		"name": "4阶绿宝石",
+		"canUseItemEffect": "true"
+	},
+	"green5Gem": {
+		"cls": "items",
+		"name": "5阶绿宝石",
+		"canUseItemEffect": "true"
+	},
+	"yellow2Gem": {
+		"cls": "items",
+		"name": "2阶黄宝石",
+		"canUseItemEffect": "true"
+	},
+	"yellow3Gem": {
+		"cls": "items",
+		"name": "3阶黄宝石",
+		"canUseItemEffect": "true"
+	},
+	"yellow4Gem": {
+		"cls": "items",
+		"name": "4阶黄宝石",
+		"canUseItemEffect": "true"
+	},
+	"yellow5Gem": {
+		"cls": "items",
+		"name": "5阶黄宝石",
+		"canUseItemEffect": "true"
+	},
+	"orange2Gem": {
+		"cls": "items",
+		"name": "2阶橙宝石",
+		"canUseItemEffect": "true"
+	},
+	"orange3Gem": {
+		"cls": "items",
+		"name": "3阶橙宝石",
+		"canUseItemEffect": "true"
+	},
+	"orange4Gem": {
+		"cls": "items",
+		"name": "4阶橙宝石",
+		"canUseItemEffect": "true"
+	},
+	"orange5Gem": {
+		"cls": "items",
+		"name": "5阶橙宝石",
 		"canUseItemEffect": "true"
 	}
 }

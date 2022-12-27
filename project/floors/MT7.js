@@ -28,11 +28,47 @@ main.floors.MT7=
                 "choices": [
                     {
                         "text": "呼叫空中支援（装备飞机）",
-                        "action": []
+                        "action": [
+                            {
+                                "type": "choices",
+                                "text": "\t[参谋,N517]请选择出战的空中单位",
+                                "choices": [
+                                    {
+                                        "text": "装备 斗士MK2",
+                                        "icon": "wrestler",
+                                        "need": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
+                                        "action": [
+                                            {
+                                                "type": "loadEquip",
+                                                "id": "wrestler"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "text": "卸下当前战斗机",
+                                        "action": [
+                                            {
+                                                "type": "unloadEquip",
+                                                "pos": 4
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "text": "取消",
+                                        "action": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "text": "选择战术",
-                        "action": []
+                        "action": [
+                            {
+                                "type": "insert",
+                                "name": "选择技能"
+                            }
+                        ]
                     },
                     {
                         "text": "没什么事",
@@ -42,7 +78,48 @@ main.floors.MT7=
             }
         ],
         "3,3": [
-            "\t[维修人员,N514]长官，所有战车准备就绪！"
+            "\t[维修人员,N514]长官，所有战车准备就绪！",
+            {
+                "type": "choices",
+                "text": "\t[维修人员,N514]请选择出战坦克",
+                "choices": [
+                    {
+                        "text": "装备 雷诺FT17",
+                        "icon": "ft17",
+                        "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "ft17"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 哈奇开斯H35",
+                        "icon": "h35",
+                        "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "h35"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前坦克",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 0
+                            }
+                        ]
+                    },
+                    {
+                        "text": "返回",
+                        "action": []
+                    }
+                ]
+            }
         ],
         "14,6": [
             {
@@ -51,6 +128,13 @@ main.floors.MT7=
                 "yes": [],
                 "no": []
             }
+        ],
+        "5,11": [
+            {
+                "type": "playSound",
+                "name": "xinxinmagic.mp3"
+            },
+            "\t[系统提示]当前区域敌人特点：大量装甲车辆，有步兵伴随。\n推荐携带技能：战壕\n推荐出战装备：雷诺FT17、斗士MK2"
         ]
     },
     "changeFloor": {},

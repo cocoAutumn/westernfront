@@ -864,6 +864,79 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"textInList": "查看出战技能",
 				"mustEnable": false,
 				"commonEvent": "查看技能"
+			},
+			{
+				"id": "shop2",
+				"text": "\t[1939级商店]",
+				"textInList": "1939级商店",
+				"mustEnable": true,
+				"disablePreview": true,
+				"choices": [
+					{
+						"text": "雷诺FT17（100￥）",
+						"need": "status:money>=100",
+						"icon": "ft17",
+						"condition": "!core.hasEquip('ft17')&&!core.hasItem('ft17')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							{
+								"type": "setValue",
+								"name": "status:money",
+								"operator": "-=",
+								"value": "100"
+							},
+							{
+								"type": "setValue",
+								"name": "item:ft17",
+								"operator": "+=",
+								"value": "1"
+							}
+						]
+					},
+					{
+						"text": "哈奇开斯H35（200￥）",
+						"need": "status:money>=200",
+						"icon": "h35",
+						"condition": "!core.hasEquip('h35')&&!core.hasItem('h35')",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "status:money",
+								"operator": "-=",
+								"value": "200"
+							},
+							{
+								"type": "setValue",
+								"name": "item:h35",
+								"operator": "+=",
+								"value": "1"
+							}
+						]
+					},
+					{
+						"text": "斗士MK2（75￥）",
+						"need": "status:money>=75",
+						"icon": "wrestler",
+						"condition": "!core.hasEquip('wrestler')&&!core.hasItem('wrestler')",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "status:money",
+								"operator": "-=",
+								"value": "75"
+							},
+							{
+								"type": "setValue",
+								"name": "item:wrestler",
+								"operator": "+=",
+								"value": "1"
+							}
+						]
+					}
+				]
 			}
 		],
 		"levelUp": [
