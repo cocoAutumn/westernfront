@@ -47,8 +47,26 @@ main.floors.MT5=
             {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
-                "yes": [],
-                "no": []
+                "yes": [
+                    {
+                        "type": "changeFloor",
+                        "floorId": "MT7",
+                        "loc": [
+                            7,
+                            7
+                        ]
+                    }
+                ],
+                "no": [
+                    {
+                        "type": "changeFloor",
+                        "floorId": "MT6",
+                        "loc": [
+                            -1,
+                            -1
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -115,7 +133,7 @@ main.floors.MT5=
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
-        "12,4": {
+        "13,7": {
             "0": {
                 "condition": "flag:door_MT5_12_4==3",
                 "currentFloor": true,
@@ -124,52 +142,30 @@ main.floors.MT5=
                 "multiExecute": false,
                 "data": [
                     {
-                        "type": "openDoor"
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            4
+                        ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT5_12_4",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
-        },
-        "12,10": {
-            "0": {
-                "condition": "flag:door_MT5_12_10==3",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
                     },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT5_12_10",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            },
-            "1": null
-        },
-        "13,7": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT1','MT2','MT3','MT4','MT5'])",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
                     {
                         "type": "openDoor",
                         "loc": [
                             13,
                             7
                         ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT5_12_4",
+                        "value": "null"
                     }
                 ]
             },
