@@ -21,12 +21,20 @@ main.floors.MT1=
             "type": "showStatusBar"
         },
         {
+            "type": "update"
+        },
+        {
             "type": "setCurtain",
             "time": 500
         },
         {
             "type": "sleep",
             "time": 500
+        },
+        {
+            "type": "setValue",
+            "name": "flag:stage",
+            "value": "1"
         },
         "\r[yellow]Stage 1  1940年，法国",
         "\r[yellow]Mission 1 马奇诺防线",

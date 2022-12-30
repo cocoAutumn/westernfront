@@ -22,6 +22,9 @@ main.floors.MT7=
             "type": "showStatusBar"
         },
         {
+            "type": "update"
+        },
+        {
             "type": "setCurtain",
             "time": 500
         },

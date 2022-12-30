@@ -77,6 +77,9 @@ main.floors.prepare1=
             "type": "showStatusBar"
         },
         {
+            "type": "update"
+        },
+        {
             "type": "setCurtain",
             "time": 500
         },

@@ -81,7 +81,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"italy": 49,
 		"england": 50,
 		"france": 51,
-		"snow": 52
+		"snow": 52,
+		"star1": 53,
+		"star2": 54
 	},
 	"animates": {
 		"star": 0,

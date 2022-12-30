@@ -356,6 +356,9 @@ main.floors.train3=
                 "type": "hideStatusBar"
             },
             {
+                "type": "update"
+            },
+            {
                 "type": "setHeroOpacity",
                 "opacity": 0
             },

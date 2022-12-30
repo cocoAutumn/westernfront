@@ -77,6 +77,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"skua.jpg",
 			"sky.jpg",
 			"slim.png",
+			"star.png",
 			"status.png",
 			"studdent.png",
 			"swordfish.jpg",
@@ -86,6 +87,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"title3.png",
 			"title4.png",
 			"title5.png",
+			"win.png",
 			"winskin.png",
 			"wrestler.jpg"
 		],
@@ -874,6 +876,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			{
 				"type": "sleep",
 				"time": 500
+			},
+			{
+				"type": "function",
+				"function": "function(){\nflags.mission = [\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n]\n}"
 			},
 			"1918年，第一次世界大战终于以德国的战败而告终。",
 			"但，那似乎也是悲剧的开端。",

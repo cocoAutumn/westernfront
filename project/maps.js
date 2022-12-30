@@ -452,6 +452,8 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"542": {"cls":"items","id":"green5Gem"},
 	"543": {"cls":"items","id":"yellow5Gem"},
 	"544": {"cls":"items","id":"orange5Gem"},
+	"545": {"cls":"terrains","id":"star1"},
+	"546": {"cls":"terrains","id":"star2"},
 	"20104": {"cls":"tileset","id":"X20104","canPass":true},
 	"20105": {"cls":"tileset","id":"X20105","canPass":true},
 	"20107": {"cls":"tileset","id":"X20107","canPass":true},

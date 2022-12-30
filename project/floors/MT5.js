@@ -24,6 +24,166 @@ main.floors.MT5=
     "events": {
         "14,7": [
             {
+                "type": "function",
+                "function": "function(){\nflags.mission[1][0]=true\n}"
+            },
+            {
+                "type": "update"
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "hideStatusBar"
+            },
+            {
+                "type": "update"
+            },
+            {
+                "type": "sleep",
+                "time": 1000
+            },
+            {
+                "type": "playSound",
+                "name": "158-Skill02.mp3"
+            },
+            {
+                "type": "showImage",
+                "code": 1,
+                "image": "win.png",
+                "sloc": [
+                    0,
+                    0,
+                    null
+                ],
+                "loc": [
+                    -320,
+                    140,
+                    1280,
+                    200
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "scaleImage",
+                "code": 1,
+                "center": [
+                    320,
+                    240
+                ],
+                "scale": 0.5,
+                "time": 1000
+            },
+            {
+                "type": "function",
+                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+            },
+            {
+                "type": "if",
+                "condition": "(temp:A>=1)",
+                "true": [
+                    {
+                        "type": "playSound",
+                        "name": "xinxinbazhe.mp3"
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 2,
+                        "image": "star.png",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            130,
+                            50,
+                            90,
+                            90
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 100
+                    },
+                    {
+                        "type": "if",
+                        "condition": "(temp:A>=2)",
+                        "true": [
+                            {
+                                "type": "playSound",
+                                "name": "xinxinbazhe.mp3"
+                            },
+                            {
+                                "type": "showImage",
+                                "code": 3,
+                                "image": "star.png",
+                                "sloc": [
+                                    0,
+                                    0,
+                                    null
+                                ],
+                                "loc": [
+                                    280,
+                                    50,
+                                    90,
+                                    90
+                                ],
+                                "opacity": 1,
+                                "time": 500
+                            },
+                            {
+                                "type": "sleep",
+                                "time": 100
+                            },
+                            {
+                                "type": "if",
+                                "condition": "(temp:A>=3)",
+                                "true": [
+                                    {
+                                        "type": "playSound",
+                                        "name": "xinxinbazhe.mp3"
+                                    },
+                                    {
+                                        "type": "showImage",
+                                        "code": 4,
+                                        "image": "star.png",
+                                        "sloc": [
+                                            0,
+                                            0,
+                                            null
+                                        ],
+                                        "loc": [
+                                            430,
+                                            50,
+                                            90,
+                                            90
+                                        ],
+                                        "opacity": 1,
+                                        "time": 500
+                                    },
+                                    {
+                                        "type": "sleep",
+                                        "time": 100
+                                    }
+                                ],
+                                "false": []
+                            }
+                        ],
+                        "false": []
+                    }
+                ],
+                "false": []
+            },
+            {
+                "type": "sleep",
+                "time": 2000
+            },
+            {
                 "type": "setCurtain",
                 "color": [
                     0,
@@ -35,14 +195,36 @@ main.floors.MT5=
                 "keep": true
             },
             {
+                "type": "hideImage",
+                "code": 1,
+                "time": 0
+            },
+            {
+                "type": "hideImage",
+                "code": 2,
+                "time": 0
+            },
+            {
+                "type": "hideImage",
+                "code": 3,
+                "time": 0
+            },
+            {
+                "type": "hideImage",
+                "code": 4,
+                "time": 0
+            },
+            {
                 "type": "setHeroOpacity",
                 "opacity": 0
             },
             {
-                "type": "hideStatusBar"
+                "type": "pauseBgm"
             },
             {
-                "type": "pauseBgm"
+                "type": "setValue",
+                "name": "flag:stage",
+                "value": "2"
             },
             {
                 "type": "confirm",
@@ -170,6 +352,34 @@ main.floors.MT5=
                 ]
             },
             "1": null
+        },
+        "14,12": {
+            "0": {
+                "condition": "!core.hasEnemyLeft(undefined,['MT1','MT2','MT3','MT4','MT5'])",
+                "currentFloor": false,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.mission[1][2]=true\n}"
+                    }
+                ]
+            },
+            "1": {
+                "condition": "core.maps.searchBlockWithFilter(x=>['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[x?.event?.id]?.type),['MT1','MT2','MT3','MT4','MT5']).length===0",
+                "currentFloor": false,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.mission[1][1]=true\n}"
+                    }
+                ]
+            }
         }
     },
     "cannotMove": {},

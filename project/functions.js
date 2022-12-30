@@ -1627,6 +1627,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (!core.dymCanvas['status'])
 			core.ui.createCanvas('status', 0, 0, core._PX_, core._PY_, 66); // 刚好盖过显伤层
 		core.ui.clearMap(ctx = core.dymCanvas['status']);
+		if (core.hasFlag('hideStatusBar')) return; //状态栏隐藏
 		core.ui.setFillStyle(ctx, core.status.globalAttribute.statusBarColor);
 		var x0 = core.status.hero.loc.x - core.bigmap.offsetX / 32 >= core._HEIGHT_ ? 0 : core._PY_;
 		var x1 = 8; //以后改文字左对齐就改这里，技术员说的
@@ -1653,11 +1654,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		fill('鱼雷管:' + core.formatBigNumber(core.getRealStatus('tpn')), x0 + x1, 250);
 		fill('后勤:' + core.formatBigNumber(core.getRealStatus('mdef')), x0 + x1, 270);
 		fill('黄金:' + core.formatBigNumber(core.getRealStatus('money')), x0 + x1, 290);
-		fill('经验:' + core.formatBigNumber(core.getRealStatus('exp')), x0 + x1, 310);
+		fill('经验:' + core.formatBigNumber(core.control.getNextLvUpNeed()), x0 + x1, 310);
 		fill('战术:' + core.getSkillInfo(flags.skill).name, x0 + x1, 330);
 		fill(core.setTwoDigits(core.itemCount('yellowKey')), x0 + 12, 350, '#FFCCAA');
 		fill(core.setTwoDigits(core.itemCount('blueKey')), x0 + 47, 350, '#AAAADD');
 		fill(core.setTwoDigits(core.itemCount('redKey')), x0 + 82, 350, '#FF8888');
+		if (flags.stage >= 0) {
+			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][0] ? 'star2' : 'star1', x0 + 10, 380, 32, 32);
+			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][1] ? 'star2' : 'star1', x0 + 50, 380, 32, 32);
+			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][2] ? 'star2' : 'star1', x0 + 90, 380, 32, 32);
+		}
 	}
 },
         "drawStatistics": function () {
