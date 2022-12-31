@@ -56,7 +56,7 @@ main.floors.MT1=
         "\t[系统提示]1号商店已开启",
         {
             "type": "openShop",
-            "id": "shop2"
+            "id": "shop1"
         },
         "\t[任务目标]⭐通过当前区域\n⭐摧毁所有敌方坦克\n⭐全歼敌军",
         {

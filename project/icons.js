@@ -174,7 +174,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"zombieKnight": 13,
 		"skeletonPriest": 36,
 		"skeletonKing": 37,
-		"whiteHornSlime": 49,
 		"poisonZombie": 55,
 		"octopus": 57,
 		"princessEnemy": 59,
@@ -296,7 +295,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"panzer4e": 123,
 		"panzer4f": 124,
 		"panzer4g": 125,
-		"p2640": 126
+		"p2640": 126,
+		"motorinf": 49
 	},
 	"enemy48": {
 		"angel": 0,

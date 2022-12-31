@@ -28,6 +28,10 @@ main.floors.MT5=
                 "function": "function(){\nflags.mission[1][0]=true\n}"
             },
             {
+                "type": "function",
+                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+            },
+            {
                 "type": "update"
             },
             {
@@ -104,11 +108,12 @@ main.floors.MT5=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500
+                        "time": 500,
+                        "async": true
                     },
                     {
                         "type": "sleep",
-                        "time": 100
+                        "time": 500
                     },
                     {
                         "type": "if",
@@ -134,11 +139,12 @@ main.floors.MT5=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500
+                                "time": 500,
+                                "async": true
                             },
                             {
                                 "type": "sleep",
-                                "time": 100
+                                "time": 500
                             },
                             {
                                 "type": "if",
@@ -164,11 +170,12 @@ main.floors.MT5=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500
+                                        "time": 500,
+                                        "async": true
                                     },
                                     {
                                         "type": "sleep",
-                                        "time": 100
+                                        "time": 500
                                     }
                                 ],
                                 "false": []

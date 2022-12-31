@@ -485,12 +485,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "技能快捷键查看",
 		"text": "查看当前快捷键所对应的技能",
 		"canUseItemEffect": true,
-		"useItemEvent": [
-			{
-				"type": "insert",
-				"name": "查看技能"
-			}
-		]
+		"useItemEvent": [],
+		"useItemEffect": "core.insertCommonEvent('查看技能')"
 	},
 	"pack": {
 		"cls": "items",
@@ -850,7 +846,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "攻+5。",
 		"equip": {
-			"type": 0,
+			"type": 4,
 			"value": {
 				"atk": 5
 			},
@@ -1153,7 +1149,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"blue2Gem": {
 		"cls": "items",
 		"name": "2阶蓝宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"itemEffect": "core.status.hero.mana += 20;",
+		"text": "，指挥点数+20",
+		"itemEffectTip": "，指挥点+20",
+		"useItemEffect": "core.status.hero.mana += 20;"
 	},
 	"blue3Gem": {
 		"cls": "items",

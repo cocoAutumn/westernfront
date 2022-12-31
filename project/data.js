@@ -279,7 +279,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"背景音乐": "bgm.mp3",
 			"攻击": "attack.mp3",
 			"背景图": "bg.jpg",
-			"商店": "shop.mp3",
 			"领域": "zone"
 		},
 		"levelChoose": [
@@ -891,29 +890,19 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"希特勒上台后，德国的国力恢复迅速，人民的生活也好了起来。但最重要的是，他公开违反《凡尔赛条约》，大力重整军备。而我们的政府却只是表示强烈反对，所有的措施都停留在了纸面上。",
 			"希特勒几乎毫无顾忌的发展壮大，吞并捷克斯洛伐克和奥地利，我们的政府却依旧选择了听之任之，也不知道他们的脑袋里装的都是些什么东西。对了，刚才那句话马上给我忘掉，明白吗？",
 			"德国再这样发展下去的后果将是致命性的。刚被他们瓜分成两半的波兰就给我们很好的上了一课。恐怕用不了多久，战火就会烧向我们。",
-			"在那之前，我们必须做好一切战争准备。闲聊到此为止，指挥官阁下，我们将马上为你安排训练课程。希望你尽快熟悉军营环境，我们恐怕没有太多时间了。",
-			{
-				"type": "openShop",
-				"id": "shop1"
-			}
+			"在那之前，我们必须做好一切战争准备。闲聊到此为止，指挥官阁下，我们将马上为你安排训练课程。希望你尽快熟悉军营环境，我们恐怕没有太多时间了。"
 		],
 		"shops": [
 			{
 				"id": "shop1",
-				"textInList": "查看出战技能",
-				"mustEnable": false,
-				"commonEvent": "查看技能"
-			},
-			{
-				"id": "shop2",
-				"text": "\t[1939级商店]",
+				"text": "\t[1939级商店]请选择购买项",
 				"textInList": "1939级商店",
 				"mustEnable": true,
 				"disablePreview": true,
 				"choices": [
 					{
 						"text": "雷诺FT17（100￥）",
-						"need": "status:money>=100",
+						"need": "true",
 						"icon": "ft17",
 						"condition": "!core.hasEquip('ft17')&&!core.hasItem('ft17')",
 						"action": [
@@ -921,57 +910,117 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"type": "comment",
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
+							"\f[ft17.jpg,170,50]法国雷诺FT-17轻型坦克于第一次世界大战时期研制成功。它是世界上第一种装有可360度旋转炮塔的坦克，而且动力舱后置、车体前设驾驶席，这种设计自那以后就成了坦克设计的标配，直到现在。虽然雷诺坦克具有划时代的意义，但到了二战开始时，它们已经过时，在德军新型坦克面前不堪一击。",
+							"\f[ft17.jpg,170,50]装备属性：攻击+10，5穿甲，3装甲",
 							{
-								"type": "setValue",
-								"name": "status:money",
-								"operator": "-=",
-								"value": "100"
-							},
-							{
-								"type": "setValue",
-								"name": "item:ft17",
-								"operator": "+=",
-								"value": "1"
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=100)",
+										"true": [
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "100"
+											},
+											{
+												"type": "setValue",
+												"name": "item:ft17",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
 							}
 						]
 					},
 					{
 						"text": "哈奇开斯H35（200￥）",
-						"need": "status:money>=200",
+						"need": "true",
 						"icon": "h35",
 						"condition": "!core.hasEquip('h35')&&!core.hasItem('h35')",
 						"action": [
+							"\f[h35.jpg,170,50]哈奇开斯H35是法国在1934年研发的轻型坦克。作为一款步兵支援坦克，其火炮穿甲能力和机动性都很差，无法与敌军坦克正面对抗。法国战役结束后，绝大多数H35都被德军缴获，为敌人效力。",
+							"\f[h35.jpg,170,50]装备属性：攻击+20，20穿甲，5装甲",
 							{
-								"type": "setValue",
-								"name": "status:money",
-								"operator": "-=",
-								"value": "200"
-							},
-							{
-								"type": "setValue",
-								"name": "item:h35",
-								"operator": "+=",
-								"value": "1"
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=200)",
+										"true": [
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:h35",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
 							}
 						]
 					},
 					{
 						"text": "斗士MK2（75￥）",
-						"need": "status:money>=75",
+						"need": "true",
 						"icon": "wrestler",
 						"condition": "!core.hasEquip('wrestler')&&!core.hasItem('wrestler')",
 						"action": [
+							"\f[wrestler.jpg,170,50]角斗士战斗机是一款英国研发的双翼战斗机，于1936年开始装备英国空军，并出口到包括中国在内的多个国家。角斗士战斗机的性能在同级飞机里算得上佼佼者，参与过不列颠空战和马耳他战役。角斗士战斗机由于性能不及更先进的单翼战斗机，很快便过时了，但依旧执行着通讯联络、气象侦察等二线任务。",
+							"\f[wrestler.jpg,170,50]装备属性：攻击+5",
 							{
-								"type": "setValue",
-								"name": "status:money",
-								"operator": "-=",
-								"value": "75"
-							},
-							{
-								"type": "setValue",
-								"name": "item:wrestler",
-								"operator": "+=",
-								"value": "1"
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=100)",
+										"true": [
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "75"
+											},
+											{
+												"type": "setValue",
+												"name": "item:wrestler",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
 							}
 						]
 					}

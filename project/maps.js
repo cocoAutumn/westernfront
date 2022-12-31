@@ -181,7 +181,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"247": {"cls":"enemys","id":"magicMaster"},
 	"248": {"cls":"enemys","id":"sniper"},
 	"249": {"cls":"enemys","id":"blademaster"},
-	"250": {"cls":"enemys","id":"whiteHornSlime"},
+	"250": {"cls":"enemys","id":"motorinf"},
 	"251": {"cls":"enemys","id":"evilPrincess"},
 	"252": {"cls":"enemys","id":"evilFairy"},
 	"253": {"cls":"enemys","id":"pak38"},
