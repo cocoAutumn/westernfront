@@ -416,6 +416,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		core.setFlag('skill', 0);
 		core.setFlag('skillName', '无');
 	}
+	//二区任务：击杀40敌人
+	if (['MT8', 'MT9', 'MT10', 'MT11'].includes(core.status.floorId)) core.addFlag('二区杀敌', 1);
 
 
 	// 事件的处理

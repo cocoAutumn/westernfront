@@ -921,6 +921,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"condition": "(status:money>=100)",
 										"true": [
 											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
@@ -961,6 +965,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"condition": "(status:money>=200)",
 										"true": [
 											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
@@ -1000,6 +1008,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"type": "if",
 										"condition": "(status:money>=100)",
 										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
 											{
 												"type": "setValue",
 												"name": "status:money",
