@@ -631,7 +631,14 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"matilda": {
 		"cls": "equips",
 		"name": "玛蒂尔达步兵坦克",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 10
+			},
+			"percentage": {}
+		}
 	},
 	"churchillmk3": {
 		"cls": "equips",

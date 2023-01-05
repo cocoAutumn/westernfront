@@ -83,7 +83,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"france": 51,
 		"snow": 52,
 		"star1": 53,
-		"star2": 54
+		"star2": 54,
+		"T547": 55
 	},
 	"animates": {
 		"star": 0,
@@ -154,7 +155,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"N514": 33,
 		"N515": 34,
 		"N516": 35,
-		"N517": 36
+		"N517": 36,
+		"N548": 37,
+		"N549": 38,
+		"N550": 39
 	},
 	"npc48": {
 		"npc0": 0,

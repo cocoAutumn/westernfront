@@ -696,8 +696,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			},
 			{
 				"type": "playBgm",
-				"name": "allthis.mp3",
-				"startTime": 47
+				"name": "gaijin1.mp3"
 			},
 			{
 				"type": "function",
@@ -901,7 +900,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "雷诺FT17（100￥）",
+						"text": "雷诺FT17（100）",
 						"need": "true",
 						"icon": "ft17",
 						"condition": "!core.hasEquip('ft17')&&!core.hasItem('ft17')",
@@ -949,7 +948,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "哈奇开斯H35（200￥）",
+						"text": "哈奇开斯H35（200）",
 						"need": "true",
 						"icon": "h35",
 						"condition": "!core.hasEquip('h35')&&!core.hasItem('h35')",
@@ -993,7 +992,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "斗士MK2（75￥）",
+						"text": "斗士MK2（75）",
 						"need": "true",
 						"icon": "wrestler",
 						"condition": "!core.hasEquip('wrestler')&&!core.hasItem('wrestler')",
@@ -1006,11 +1005,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=100)",
+										"condition": "(status:money>=75)",
 										"true": [
 											{
 												"type": "playSound",
-												"name": "fighter1.mp3"
+												"name": "bomber2.mp3"
 											},
 											{
 												"type": "setValue",
@@ -1021,6 +1020,94 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 											{
 												"type": "setValue",
 												"name": "item:wrestler",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "贼鸥式俯冲轰炸机（舰）（300）",
+						"need": "true",
+						"icon": "skua",
+						"condition": "!core.hasEquip('skua')&&!core.hasItem('skua')",
+						"action": [
+							"\f[skua.jpg,170,50]布莱克本B24“贼鸥”式是英国海军航空兵在1940年代初期所使用的一种单发双座舰载飞机，是英国海军航空兵所拥有的第一种全金属结构的单翼飞机。“贼鸥”不仅能进行俯冲轰炸，必要时还可以拦截轰炸机，但它们不是德军战斗机的对手。1941年后，“贼鸥”退出了一线，由更优秀的飞机接替。",
+							"\f[skua.jpg,170,50]装备属性：攻+20。挂载：1×500磅炸弹。\n每4个回合投弹，造成2倍攻击力的伤害。\n被动：俯冲轰炸——攻击军舰时，炸弹造成的伤害提升10%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=250)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "bomber2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "250"
+											},
+											{
+												"type": "setValue",
+												"name": "item:skua",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "剑鱼式鱼雷机（舰）（250）",
+						"need": "true",
+						"icon": "swordfish",
+						"condition": "!core.hasEquip('swordfish')&&!core.hasItem('swordfish')",
+						"action": [
+							"\f[swordfish.jpg,170,50]剑鱼式鱼雷机于1935年研发完成。二战爆发时，“剑鱼”已经明显落伍——双翼机，仅有225km/h的速度，以及少得可怜的装备和防护，看上去就和一战时期的飞机一样不堪一击。然而就是这款落后的鱼雷机为英军立下了赫赫战功——奇袭塔兰托、围剿俾斯麦……剑鱼式完成了很多本不属于它们这个阶级的任务，直到战争结束。",
+							"\f[swordfish.jpg,170,50]装备属性：无\n挂载：1×鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放一枚鱼雷。对地攻击时，每5回合投放一次炸弹，每颗炸弹伤害为0.6倍攻击力.",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=250)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "bomber2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "240"
+											},
+											{
+												"type": "setValue",
+												"name": "item:swordfish",
 												"operator": "+=",
 												"value": "1"
 											}

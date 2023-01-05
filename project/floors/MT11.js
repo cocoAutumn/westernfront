@@ -22,6 +22,34 @@ main.floors.MT11=
     "events": {
         "7,0": [
             {
+                "type": "unloadEquip",
+                "pos": 0
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 1
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 2
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 3
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 4
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 5
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 6
+            },
+            {
                 "type": "function",
                 "function": "function(){\nflags.mission[2][0]=true\n}"
             },
@@ -241,7 +269,8 @@ main.floors.MT11=
                         "loc": [
                             7,
                             7
-                        ]
+                        ],
+                        "direction": "down"
                     }
                 ],
                 "no": [
