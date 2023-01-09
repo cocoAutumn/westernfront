@@ -558,16 +558,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[34, "惊雷", "战斗开始时，发起先手鱼雷攻击。发射鱼雷数量以及伤害等同于正常的鱼雷袭击"],
 		[35, "闪避", function (enemy) { return "主角发起鱼雷攻击时，闪避其中的" + (enemy.dod ?? 0) + "枚" }],
 		[36, "俯冲轰炸", "航空炸弹造成的伤害增加50%，且第一枚炸弹命中后，主角攻击力降低5%，持续到战斗结束"],
-		[37, "跨射", "强大的舰炮具有更远的射程。若主角未装备战列舰，该敌人以3倍攻击力攻击主角3次"],
+		[37, "跨射", "强大的舰炮具有更远的射程。若主角未装备战列舰，该敌人首先以3倍攻击力攻击主角3次"],
 		[38, "精锐", "对主角造成的伤害翻倍"],
 		[39, "集群", function (enemy) { return "主角同时与" + (enemy.gro ?? 0) + "个该敌人进行战斗" }],
-		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害，且防空领域内无法空降"],
+		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害"],
 		[41, "反制", "与该敌人战斗时，主角无法使用技能"],
-		[42, "截断", "该敌人在场时，主角后勤值失效"],
+		[42, "截断", "当前地图中，该敌人在场时，主角后勤值失效"],
 		[43, "超压", "该陆军单位的穿甲值大于主角装甲值时，造成的回合伤害额外提升40%"],
 		[44, "雷达", "每个存活的雷达能够为全图轴心国部队提供10%伤害加成"],
 		[45, "警戒", "若主角与该敌人发生战斗，则永久为全图轴心国部队提供10%的攻击力加成。该敌人自带1点固伤"],
-		[46, "夜枭", "存活时，周围8格内轴心国部队攻击力提升30%"],
+		[46, "夜枭", "存活时，周围3格内轴心国部队攻击力提升30%"],
 		[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角在战斗期间每回合额外流失当前生命值的5%，每进行一场战斗就解除一层该debuff。该敌人自带1点固伤"],
 		[48, "V1导弹", "巡航导弹，不会主动攻击。若主角未能在10回合内成功拦截该导弹，则立即爆炸并造成等同于自身攻击力的伤害。若成功拦截，则只造成50%攻击力伤害"],
 		[49, "弗里茨X", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍攻击力的伤害，否则失控坠毁，不会造成伤害"],
@@ -575,7 +575,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[51, "失踪", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡。该敌人自带1点固伤"],
 		[52, "包围", "主角站在两个该敌人中间时，攻击力减少30%。该敌人自带1点固伤"],
 		[54, "间谍", "战后额外扣除主角10点mp。若mp不足则杀死主角。该敌人自带1点固伤"],
-		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响"]
+		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响"],
+		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人20倍攻击力的伤害，可被后勤值减少"],
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -775,6 +776,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var curr_hp = mon_hp,
 		turn = 0,
 		damage = 0;
+	//狙击
+	if (core.hasSpecial(mon_special, 56)) {
+		damage += mon_atk * 20 - hero_mdef;
+	}
 	//先攻
 	if (core.hasSpecial(mon_special, 1) && !core.hasEquip("beautifighter")) {
 		damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn)
@@ -805,12 +810,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage *= 0.9;
 	}
 
+	//扣除护盾
+	damage -= hero_mdef; //这里可以变为负值
+
 	//固伤
 	if (core.hasSpecial(mon_special, 22)) {
 		damage += fixdamage; //固伤在护盾前，可以被护盾减少
 	}
-	//扣除护盾
-	damage -= hero_mdef; //这里可以变为负值
 
 	return {
 		"mon_hp": Math.floor(mon_hp),
@@ -1241,216 +1247,216 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			core.updateDamage();
 		},
         "updateCheckBlock": function (floorId) {
-			// 领域、夹击、阻击等的伤害值计算
-			floorId = floorId || core.status.floorId;
-			if (!floorId || !core.status.maps) return;
+	// 领域、夹击、阻击等的伤害值计算
+	floorId = floorId || core.status.floorId;
+	if (!floorId || !core.status.maps) return;
 
-			var width = core.floors[floorId].width,
-				height = core.floors[floorId].height;
-			var blocks = core.getMapBlocksObj(floorId);
+	var width = core.floors[floorId].width,
+		height = core.floors[floorId].height;
+	var blocks = core.getMapBlocksObj(floorId);
 
-			var damage = {}, // 每个点的伤害值
-				type = {}, // 每个点的伤害类型
-				repulse = {}, // 每个点的阻击怪信息
-				ambush = {}; // 每个点的捕捉信息
-			var betweenAttackLocs = {}; // 所有可能的夹击点
-			var needCache = false;
-			var canGoDeadZone = core.flags.canGoDeadZone;
-			core.flags.canGoDeadZone = true;
+	var damage = {}, // 每个点的伤害值
+		type = {}, // 每个点的伤害类型
+		repulse = {}, // 每个点的阻击怪信息
+		ambush = {}; // 每个点的捕捉信息
+	var betweenAttackLocs = {}; // 所有可能的夹击点
+	var needCache = false;
+	var canGoDeadZone = core.flags.canGoDeadZone;
+	core.flags.canGoDeadZone = true;
 
-			// 计算血网和领域、阻击、激光的伤害，计算捕捉信息
-			for (var loc in blocks) {
-				var block = blocks[loc],
-					x = block.x,
-					y = block.y,
-					id = block.event.id,
-					enemy = core.material.enemys[id];
-				if (block.disable) continue;
+	// 计算血网和领域、阻击、激光的伤害，计算捕捉信息
+	for (var loc in blocks) {
+		var block = blocks[loc],
+			x = block.x,
+			y = block.y,
+			id = block.event.id,
+			enemy = core.material.enemys[id];
+		if (block.disable) continue;
 
-				type[loc] = type[loc] || {};
+		type[loc] = type[loc] || {};
 
-				// 血网
-				// 如需调用当前楼层的ratio可使用  core.status.maps[floorId].ratio
-				if (id == 'lavaNet' && !core.hasItem('amulet')) {
-					damage[loc] = (damage[loc] || 0) + core.values.lavaDamage;
-					type[loc][(block.event.name || "血网") + "伤害"] = true;
-				}
+		// 血网
+		// 如需调用当前楼层的ratio可使用  core.status.maps[floorId].ratio
+		if (id == 'lavaNet' && !core.hasItem('amulet')) {
+			damage[loc] = (damage[loc] || 0) + core.values.lavaDamage;
+			type[loc][(block.event.name || "血网") + "伤害"] = true;
+		}
 
-				// 领域
-				// 如果要防止领域伤害，可以直接简单的将 flag:no_zone 设为true
-				if (enemy && core.hasSpecial(enemy.special, 15) && !core.hasFlag('no_zone')) {
-					// 领域范围，默认为1
-					var range = enemy.range || 1;
-					// 是否是九宫格领域
-					var zoneSquare = false;
-					if (enemy.zoneSquare != null) zoneSquare = enemy.zoneSquare;
-					// 在范围内进行搜索，增加领域伤害值
-					for (var dx = -range; dx <= range; dx++) {
-						for (var dy = -range; dy <= range; dy++) {
-							if (dx == 0 && dy == 0) continue;
-							var nx = x + dx,
-								ny = y + dy,
-								currloc = nx + "," + ny;
-							if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
-							// 如果是十字领域，则还需要满足 |dx|+|dy|<=range
-							if (!zoneSquare && Math.abs(dx) + Math.abs(dy) > range) continue;
-							damage[currloc] = (damage[currloc] || 0) + (enemy.zone || 0);
-							type[currloc] = type[currloc] || {};
-							type[currloc]["领域伤害"] = true;
-						}
-					}
-				}
-
-				// 阻击
-				// 如果要防止阻击伤害，可以直接简单的将 flag:no_repulse 设为true
-				if (enemy && core.hasSpecial(enemy.special, 18) && !core.hasFlag('no_repulse')) {
-					var scan = enemy.zoneSquare ? core.utils.scan2 : core.utils.scan;
-					for (var dir in scan) {
-						var nx = x + scan[dir].x,
-							ny = y + scan[dir].y,
-							currloc = nx + "," + ny;
-						if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
-						damage[currloc] = (damage[currloc] || 0) + (enemy.repulse || 0);
-						type[currloc] = type[currloc] || {};
-						type[currloc]["阻击伤害"] = true;
-
-						var rdir = core.turnDirection(":back", dir);
-						// 检查下一个点是否存在事件（从而判定是否移动）
-						var rnx = x + scan[rdir].x,
-							rny = y + scan[rdir].y;
-						if (rnx < 0 || rnx >= width || rny < 0 || rny >= height) continue;
-						// 如需禁止阻击被推到已隐藏的事件处（如重生怪处），可将这一句的false改为true
-						if (core.getBlock(rnx, rny, floorId, false) != null) continue;
-						if (core.utils.scan[rdir] && !core.canMoveHero(x, y, rdir, floorId)) continue;
-						repulse[currloc] = (repulse[currloc] || []).concat([
-							[x, y, id, rdir]
-						]);
-					}
-				}
-
-				// 激光
-				// 如果要防止激光伤害，可以直接简单的将 flag:no_laser 设为true
-				if (enemy && core.hasSpecial(enemy.special, 24) && !core.hasFlag("no_laser")) {
-					for (var nx = 0; nx < width; nx++) {
-						var currloc = nx + "," + y;
-						if (nx != x) {
-							damage[currloc] = (damage[currloc] || 0) + (enemy.laser || 0);
-							type[currloc] = type[currloc] || {};
-							type[currloc]["激光伤害"] = true;
-						}
-					}
-					for (var ny = 0; ny < height; ny++) {
-						var currloc = x + "," + ny;
-						if (ny != y) {
-							damage[currloc] = (damage[currloc] || 0) + (enemy.laser || 0);
-							type[currloc] = type[currloc] || {};
-							type[currloc]["激光伤害"] = true;
-						}
-					}
-				}
-
-				// 捕捉
-				// 如果要防止捕捉效果，可以直接简单的将 flag:no_ambush 设为true
-				if (enemy && core.enemys.hasSpecial(enemy.special, 27) && !core.hasFlag("no_ambush")) {
-					var scan = enemy.zoneSquare ? core.utils.scan2 : core.utils.scan;
-					// 给周围格子加上【捕捉】记号
-					for (var dir in scan) {
-						var nx = x + scan[dir].x,
-							ny = y + scan[dir].y,
-							currloc = nx + "," + ny;
-						if (nx < 0 || nx >= width || ny < 0 || ny >= height || (core.utils.scan[dir] && !core.canMoveHero(x, y, dir, floorId))) continue;
-						ambush[currloc] = (ambush[currloc] || []).concat([
-							[x, y, id, dir]
-						]);
-					}
-				}
-
-				// 夹击；在这里提前计算所有可能的夹击点，具体计算逻辑在下面
-				// 如果要防止夹击伤害，可以简单的将 flag:no_betweenAttack 设为true
-				if (enemy && core.enemys.hasSpecial(enemy.special, 16) && !core.hasFlag('no_betweenAttack')) {
-					for (var dir in core.utils.scan) {
-						var nx = x + core.utils.scan[dir].x,
-							ny = y + core.utils.scan[dir].y,
-							currloc = nx + "," + ny;
-						if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
-						betweenAttackLocs[currloc] = true;
-					}
-				}
-
-				// 检查地图范围类技能
-				var specialFlag = core.getSpecialFlag(enemy);
-				if (specialFlag & 1) needCache = true;
-				if (core.status.event.id == 'viewMaps') needCache = true;
-				if ((core.status.event.id == 'book' || core.status.event.id == 'bool-detail') && core.status.event.ui) needCache = true;
-			}
-
-			// 对每个可能的夹击点计算夹击伤害
-			for (var loc in betweenAttackLocs) {
-				var xy = loc.split(","),
-					x = parseInt(xy[0]),
-					y = parseInt(xy[1]);
-				// 夹击怪物的ID
-				var enemyId1 = null,
-					enemyId2 = null;
-				// 检查左右夹击
-				var leftBlock = blocks[(x - 1) + "," + y],
-					rightBlock = blocks[(x + 1) + "," + y];
-				var leftId = core.getFaceDownId(leftBlock),
-					rightId = core.getFaceDownId(rightBlock);
-				if (leftBlock && !leftBlock.disable && rightBlock && !rightBlock.disable && leftId == rightId) {
-					if (core.hasSpecial(leftId, 16))
-						enemyId1 = leftId;
-				}
-				// 检查上下夹击
-				var topBlock = blocks[x + "," + (y - 1)],
-					bottomBlock = blocks[x + "," + (y + 1)];
-				var topId = core.getFaceDownId(topBlock),
-					bottomId = core.getFaceDownId(bottomBlock);
-				if (topBlock && !topBlock.disable && bottomBlock && !bottomBlock.disable && topId == bottomId) {
-					if (core.hasSpecial(topId, 16))
-						enemyId2 = topId;
-				}
-
-				if (enemyId1 != null || enemyId2 != null) {
-					var leftHp = core.status.hero.hp - (damage[loc] || 0);
-					if (leftHp > 1) {
-						// 夹击伤害值
-						var value = Math.floor(leftHp / 2);
-						// 是否不超过怪物伤害值
-						if (core.flags.betweenAttackMax) {
-							var enemyDamage1 = core.getDamage(enemyId1, x, y, floorId);
-							if (enemyDamage1 != null && enemyDamage1 < value)
-								value = enemyDamage1;
-							var enemyDamage2 = core.getDamage(enemyId2, x, y, floorId);
-							if (enemyDamage2 != null && enemyDamage2 < value)
-								value = enemyDamage2;
-						}
-						if (value > 0) {
-							damage[loc] = (damage[loc] || 0) + value;
-							type[loc] = type[loc] || {};
-							type[loc]["夹击伤害"] = true;
-						}
-					}
+		// 领域
+		// 如果要防止领域伤害，可以直接简单的将 flag:no_zone 设为true
+		if (enemy && core.hasSpecial(enemy.special, 15) && !core.hasFlag('no_zone')) {
+			// 领域范围，默认为1
+			var range = enemy.range || 1;
+			// 是否是九宫格领域
+			var zoneSquare = false;
+			if (enemy.zoneSquare != null) zoneSquare = enemy.zoneSquare;
+			// 在范围内进行搜索，增加领域伤害值
+			for (var dx = -range; dx <= range; dx++) {
+				for (var dy = -range; dy <= range; dy++) {
+					if (dx == 0 && dy == 0) continue;
+					var nx = x + dx,
+						ny = y + dy,
+						currloc = nx + "," + ny;
+					if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+					// 如果是十字领域，则还需要满足 |dx|+|dy|<=range
+					if (!zoneSquare && Math.abs(dx) + Math.abs(dy) > range) continue;
+					damage[currloc] = (damage[currloc] || 0) + (enemy.zone || 0);
+					type[currloc] = type[currloc] || {};
+					type[currloc]["领域伤害"] = true;
 				}
 			}
+		}
 
-			// 取消注释下面这一段可以让护盾抵御阻激夹域伤害
-			/*
-			for (var loc in damage) {
-				damage[loc] = Math.max(0, damage[loc] - core.getRealStatus('mdef'));
+		// 阻击
+		// 如果要防止阻击伤害，可以直接简单的将 flag:no_repulse 设为true
+		if (enemy && core.hasSpecial(enemy.special, 18) && !core.hasFlag('no_repulse')) {
+			var scan = enemy.zoneSquare ? core.utils.scan2 : core.utils.scan;
+			for (var dir in scan) {
+				var nx = x + scan[dir].x,
+					ny = y + scan[dir].y,
+					currloc = nx + "," + ny;
+				if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+				damage[currloc] = (damage[currloc] || 0) + (enemy.repulse || 0);
+				type[currloc] = type[currloc] || {};
+				type[currloc]["阻击伤害"] = true;
+
+				var rdir = core.turnDirection(":back", dir);
+				// 检查下一个点是否存在事件（从而判定是否移动）
+				var rnx = x + scan[rdir].x,
+					rny = y + scan[rdir].y;
+				if (rnx < 0 || rnx >= width || rny < 0 || rny >= height) continue;
+				// 如需禁止阻击被推到已隐藏的事件处（如重生怪处），可将这一句的false改为true
+				if (core.getBlock(rnx, rny, floorId, false) != null) continue;
+				if (core.utils.scan[rdir] && !core.canMoveHero(x, y, rdir, floorId)) continue;
+				repulse[currloc] = (repulse[currloc] || []).concat([
+					[x, y, id, rdir]
+				]);
 			}
-			*/
+		}
 
-			core.flags.canGoDeadZone = canGoDeadZone;
-			core.status.checkBlock = {
-				damage: damage,
-				type: type,
-				repulse: repulse,
-				ambush: ambush,
-				needCache: needCache,
-				cache: {} // clear cache
-			};
-		},
+		// 激光
+		// 如果要防止激光伤害，可以直接简单的将 flag:no_laser 设为true
+		if (enemy && core.hasSpecial(enemy.special, 24) && !core.hasFlag("no_laser")) {
+			for (var nx = 0; nx < width; nx++) {
+				var currloc = nx + "," + y;
+				if (nx != x) {
+					damage[currloc] = (damage[currloc] || 0) + (enemy.laser || 0);
+					type[currloc] = type[currloc] || {};
+					type[currloc]["激光伤害"] = true;
+				}
+			}
+			for (var ny = 0; ny < height; ny++) {
+				var currloc = x + "," + ny;
+				if (ny != y) {
+					damage[currloc] = (damage[currloc] || 0) + (enemy.laser || 0);
+					type[currloc] = type[currloc] || {};
+					type[currloc]["激光伤害"] = true;
+				}
+			}
+		}
+
+		// 捕捉
+		// 如果要防止捕捉效果，可以直接简单的将 flag:no_ambush 设为true
+		if (enemy && core.enemys.hasSpecial(enemy.special, 27) && !core.hasFlag("no_ambush")) {
+			var scan = enemy.zoneSquare ? core.utils.scan2 : core.utils.scan;
+			// 给周围格子加上【捕捉】记号
+			for (var dir in scan) {
+				var nx = x + scan[dir].x,
+					ny = y + scan[dir].y,
+					currloc = nx + "," + ny;
+				if (nx < 0 || nx >= width || ny < 0 || ny >= height || (core.utils.scan[dir] && !core.canMoveHero(x, y, dir, floorId))) continue;
+				ambush[currloc] = (ambush[currloc] || []).concat([
+					[x, y, id, dir]
+				]);
+			}
+		}
+
+		// 夹击；在这里提前计算所有可能的夹击点，具体计算逻辑在下面
+		// 如果要防止夹击伤害，可以简单的将 flag:no_betweenAttack 设为true
+		if (enemy && core.enemys.hasSpecial(enemy.special, 16) && !core.hasFlag('no_betweenAttack')) {
+			for (var dir in core.utils.scan) {
+				var nx = x + core.utils.scan[dir].x,
+					ny = y + core.utils.scan[dir].y,
+					currloc = nx + "," + ny;
+				if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+				betweenAttackLocs[currloc] = true;
+			}
+		}
+
+		// 检查地图范围类技能
+		var specialFlag = core.getSpecialFlag(enemy);
+		if (specialFlag & 1) needCache = true;
+		if (core.status.event.id == 'viewMaps') needCache = true;
+		if ((core.status.event.id == 'book' || core.status.event.id == 'bool-detail') && core.status.event.ui) needCache = true;
+	}
+
+	// 对每个可能的夹击点计算夹击伤害
+	for (var loc in betweenAttackLocs) {
+		var xy = loc.split(","),
+			x = parseInt(xy[0]),
+			y = parseInt(xy[1]);
+		// 夹击怪物的ID
+		var enemyId1 = null,
+			enemyId2 = null;
+		// 检查左右夹击
+		var leftBlock = blocks[(x - 1) + "," + y],
+			rightBlock = blocks[(x + 1) + "," + y];
+		var leftId = core.getFaceDownId(leftBlock),
+			rightId = core.getFaceDownId(rightBlock);
+		if (leftBlock && !leftBlock.disable && rightBlock && !rightBlock.disable && leftId == rightId) {
+			if (core.hasSpecial(leftId, 16))
+				enemyId1 = leftId;
+		}
+		// 检查上下夹击
+		var topBlock = blocks[x + "," + (y - 1)],
+			bottomBlock = blocks[x + "," + (y + 1)];
+		var topId = core.getFaceDownId(topBlock),
+			bottomId = core.getFaceDownId(bottomBlock);
+		if (topBlock && !topBlock.disable && bottomBlock && !bottomBlock.disable && topId == bottomId) {
+			if (core.hasSpecial(topId, 16))
+				enemyId2 = topId;
+		}
+
+		if (enemyId1 != null || enemyId2 != null) {
+			var leftHp = core.status.hero.hp - (damage[loc] || 0);
+			if (leftHp > 1) {
+				// 夹击伤害值
+				var value = Math.floor(leftHp / 2);
+				// 是否不超过怪物伤害值
+				if (core.flags.betweenAttackMax) {
+					var enemyDamage1 = core.getDamage(enemyId1, x, y, floorId);
+					if (enemyDamage1 != null && enemyDamage1 < value)
+						value = enemyDamage1;
+					var enemyDamage2 = core.getDamage(enemyId2, x, y, floorId);
+					if (enemyDamage2 != null && enemyDamage2 < value)
+						value = enemyDamage2;
+				}
+				if (value > 0) {
+					damage[loc] = (damage[loc] || 0) + value;
+					type[loc] = type[loc] || {};
+					type[loc]["夹击伤害"] = true;
+				}
+			}
+		}
+	}
+
+	// 取消注释下面这一段可以让护盾抵御阻激夹域伤害
+	/*
+	for (var loc in damage) {
+		damage[loc] = Math.max(0, damage[loc] - core.getRealStatus('mdef'));
+	}
+	*/
+
+	core.flags.canGoDeadZone = canGoDeadZone;
+	core.status.checkBlock = {
+		damage: damage,
+		type: type,
+		repulse: repulse,
+		ambush: ambush,
+		needCache: needCache,
+		cache: {} // clear cache
+	};
+},
         "moveOneStep": function (callback) {
 			// 勇士每走一步后执行的操作。callback为行走完毕后的回调
 			// 这个函数执行在“刚走完”的时候，即还没有检查该点的事件和领域伤害等。

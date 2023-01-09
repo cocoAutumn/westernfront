@@ -21,7 +21,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT12",
 			"MT13",
 			"MT14",
-			"MT15"
+			"MT15",
+			"MT16",
+			"MT17",
+			"MT18",
+			"MT19",
+			"MT20"
 		],
 		"floorPartitions": [
 			[
@@ -243,6 +248,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"sniper.mp3",
 			"strafe.mp3",
 			"stukadive.mp3",
+			"technology.mp3",
 			"terrible.mp3",
 			"torpeodoexplo.wav",
 			"torpeodotubes.wav",
@@ -1049,7 +1055,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=250)",
+										"condition": "(status:money>=300)",
 										"true": [
 											{
 												"type": "playSound",
@@ -1059,7 +1065,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "250"
+												"value": "300"
 											},
 											{
 												"type": "setValue",
@@ -1103,7 +1109,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "240"
+												"value": "250"
 											},
 											{
 												"type": "setValue",

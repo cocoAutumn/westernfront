@@ -158,7 +158,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"N517": 36,
 		"N548": 37,
 		"N549": 38,
-		"N550": 39
+		"N550": 39,
+		"N551": 40
 	},
 	"npc48": {
 		"npc0": 0,
@@ -300,7 +301,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"panzer4f": 124,
 		"panzer4g": 125,
 		"p2640": 126,
-		"motorinf": 49
+		"motorinf": 49,
+		"rommel": 128
 	},
 	"enemy48": {
 		"angel": 0,

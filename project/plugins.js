@@ -174,10 +174,15 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		if (id === 2) {
 			strategy = true;
-			name = '动员';
-			cost = 35;
+			name = '紧急补给';
+			cost = 100;
 			description = '血量立即恢复25%';
 			event = [{ "type": "setValue", "name": "status:hp", "operator": "+=", "value": "status:hpmax/4" }];
+		}
+		if (id === 3) {
+			name = '防空弹幕';
+			cost = 50;
+			description = '下一次与敌方空军的战斗中，攻击力提升20%'
 		}
 		return {
 			'strategy': strategy,
