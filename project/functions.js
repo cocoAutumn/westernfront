@@ -543,7 +543,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[15, "炮击", function (enemy) { return "经过敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "范围内" + (enemy.range || 1) + "格时遭受炮击，生命减少" + (enemy.zone ?? 0) + "点"; }, "#c677dd"],
 		[16, "夹击", "经过两只相同的怪物中间，角色生命值变成一半", "#bb99ee"],
 		[22, "固伤", function (enemy) { return "敌人对角色造成" + (enemy.damage ?? 0) + "点固定伤害，可被后勤值抵消。"; }, "#ff9977"],
-		[24, "狙击", function (enemy) { return "经过敌人同行或同列时遭受远距离攻击，伤害为" + (enemy.laser ?? 0) + "点"; }, "#dda0dd"],
+		[24, "激光", function (enemy) { return "经过敌人同行或同列时遭受远距离攻击，伤害为" + (enemy.laser ?? 0) + "点"; }, "#dda0dd"],
 		[25, "指挥", function (enemy) { return "位于敌阵核心的指挥单位。" + (enemy.range != null ? ((enemy.haloSquare ? "自身九宫格" : "自身十字") + enemy.haloRange + "格范围内") : "同楼层所有") + "轴心国军队攻击提升" + (enemy.hpBuff ?? 0) + "%，雷击提升" + (enemy.atkBuff ?? 0) + "%，空袭提升" + (enemy.defBuff ?? 0) + "%," + (enemy.haloAdd ? "可叠加" : "不可叠加"); }, "#e6e099", 1],
 		[28, "航弹", function (enemy) { return "每" + (enemy.spd ?? 0) + "回合投放" + (enemy.ammo ?? 0) + "枚航空炸弹，每颗炸弹伤害等于空袭值。造成的伤害计为“炸弹伤害”" },
 			[255, 255, 0, 1]

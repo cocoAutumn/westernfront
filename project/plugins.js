@@ -37,6 +37,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
 		if (core.hasSpecial(mon_special, 36) && nthTurn > mon_spd) // 俯冲轰炸，除前spd个回合外，攻击降低
 			hero_atk *= 0.95;
+		if (flags.skill === 3 && this.Luftwaffe.includes(enemyInfo.type)) // 技能3：防空弹幕，对空攻击力为1.2倍
+			hero_atk *= 1.2;
 		var damage = hero_atk,
 			torpeodoDamage = 0,
 			bombDamage = 0;
@@ -57,7 +59,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			// 装备加成——攻击机
 			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机
 				bombDamage += hero_atk * 2;
-				bombDamage *= 1.1;
+				bombDamage *= 1.5;
 			}
 			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机(鹰号航母)
 				bombDamage += hero_atk * 2;
@@ -90,7 +92,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		damage += torpeodoDamage + bombDamage;
 		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) // 陆战中被对方单向击穿
-			if (nthTurn <= 5) damage = 0;
+			var preTurn = 5;
+			if (core.hasEquip('matilda')) preTurn = 10; // 玛蒂尔达步兵坦克：无法击穿对方时前10回合无法造成伤害
+			if (nthTurn <= preTurn) damage = 0;
 			else damage *= 0.8; // 前5回合无法造成伤害，其他回合伤害只有80%
 		return damage;
 	}
@@ -133,6 +137,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		if (core.hasSpecial(mon_special, 5)) damage *= 3;
 		if (core.hasSpecial(mon_special, 6)) damage *= enemyInfo.n;
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
+			if (core.hasSpecial(mon_special, 43) && mon_ap > hero_arm) // 超压：勇士被对方穿甲则对方伤害为1.4倍
+				damage *= 1.4;
+			if (core.hasEquip('matilda') && hero_arm >= mon_ap) // 玛蒂尔达步兵坦克：勇士未被对方穿甲则对方伤害为0.8倍
+				damage *= 0.8;
 			if (hero_ap > mon_arm && hero_arm >= mon_ap) // 被勇士单向击穿
 				if (nthTurn <= 5) damage = 0;
 				else damage *= 0.8;

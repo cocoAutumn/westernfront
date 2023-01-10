@@ -611,7 +611,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"s35": {
 		"cls": "equips",
 		"name": "索玛S35",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "废稿"
 	},
 	"crusades": {
 		"cls": "equips",
@@ -635,10 +636,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"equip": {
 			"type": 0,
 			"value": {
-				"atk": 10
+				"atk": 150,
+				"ap": 50,
+				"arm": 78
 			},
 			"percentage": {}
-		}
+		},
+		"text": "攻+150，穿50，装78。\n被动技能：\n压制：敌方地面部队无法击穿我方装甲时，受到伤害额外减少20%。\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"churchillmk3": {
 		"cls": "equips",
@@ -695,7 +699,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "E级驱逐舰",
 		"canUseItemEffect": "true",
-		"text": "攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：反潜——对潜艇攻击时，每回合额外造成一次等同于攻击力的伤害。",
+		"text": "攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于攻击力的伤害。",
 		"equip": {
 			"type": 1,
 			"value": {
@@ -835,17 +839,20 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"raider": {
 		"cls": "equips",
 		"name": "突击者号航空母舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "舰载机：F4F-3野猫战斗机、SBD-3无畏式轰炸机、TBD蹂躏者鱼雷机，闪避鱼雷数-2\n此航母的SBD俯冲轰炸机炸弹伤害增加50%，TBD鱼雷机的鱼雷伤害减少50%。"
 	},
 	"essex": {
 		"cls": "equips",
 		"name": "埃塞克斯号航空母舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "属性：攻击+30，雷击+50\n舰载机：F6F-3地狱猫战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机。\n对敌方飞机造成的伤害＋50%，对战列舰造成的鱼雷伤害增加70%。"
 	},
 	"enterprise": {
 		"cls": "equips",
 		"name": "企业号航空母舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "属性：攻击力+100，后勤+1000\n舰载机：F4U-4B海盗式战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机\n被动：\n幸运E：企业号的舰载机造成的一切伤害×250%，且我方遭遇致死攻击时，进入无敌状态，锁定血量为1，持续3回合。"
 	},
 	"wrestler": {
 		"cls": "equips",
@@ -938,7 +945,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "贼鸥式轰炸机",
 		"canUseItemEffect": "true",
-		"text": "攻+20。挂载：1×500磅炸弹。\n每4个回合投弹，造成2倍攻击力的伤害。\n被动：俯冲轰炸——攻击军舰时，炸弹造成的伤害提升10%。",
+		"text": "攻+20。挂载：1×500磅炸弹。\n每4个回合投弹，造成2倍攻击力的伤害。\n被动技能：\n俯冲轰炸：攻击军舰时，炸弹造成的伤害提升50%。",
 		"equip": {
 			"type": 5,
 			"value": {
