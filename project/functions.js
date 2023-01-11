@@ -279,7 +279,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	if (type === '反坦克炮' || type === '榴弹炮' || type === '高射炮') {
 		animate = "vehicleexplore";
-		core.playSound("gunfire.mp3");
+		core.playSound("bomb.mp3");
 	}
 	if (type === '建筑') {
 		animate = 'zone';
@@ -576,7 +576,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[52, "包围", "主角站在两个该敌人中间时，攻击力减少30%。该敌人自带1点固伤"],
 		[54, "间谍", "战后额外扣除主角10点mp。若mp不足则杀死主角。该敌人自带1点固伤"],
 		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响"],
-		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人20倍攻击力的伤害，可被后勤值减少"],
+		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人20倍攻击力的伤害，可被后勤值抵消"],
+		[57, "主将", "主角必须消灭当前地图所有杂兵后才可攻击主将"],
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -808,6 +809,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//技能1：战壕
 	if (flags.skill === 1 && core.plugin.Army.includes(enemyInfo.type)) {
 		damage *= 0.9;
+	}
+
+	//主将
+	if (core.hasSpecial(mon_special, 57)) {
+		for (var xx = 0; xx < core.bigmap.width; ++xx) {
+			for (var yy = 0; yy < core.bigmap.height; ++yy) {
+				if ((x != xx || y != yy) && core.enemyExists(xx, yy, null, floorId))
+					return null
+			}
+		}
 	}
 
 	//扣除护盾

@@ -32,6 +32,14 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT0",
 				"MT5"
+			],
+			[
+				"MT6",
+				"MT11"
+			],
+			[
+				"MT12",
+				"MT18"
 			]
 		],
 		"images": [
@@ -1004,7 +1012,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"condition": "!core.hasEquip('wrestler')&&!core.hasItem('wrestler')",
 						"action": [
 							"\f[wrestler.jpg,170,50]角斗士战斗机是一款英国研发的双翼战斗机，于1936年开始装备英国空军，并出口到包括中国在内的多个国家。角斗士战斗机的性能在同级飞机里算得上佼佼者，参与过不列颠空战和马耳他战役。角斗士战斗机由于性能不及更先进的单翼战斗机，很快便过时了，但依旧执行着通讯联络、气象侦察等二线任务。",
-							"\f[wrestler.jpg,170,50]装备属性：攻击+5",
+							"\f[wrestler.jpg,170,50]装备属性：攻击+25",
 							{
 								"type": "confirm",
 								"text": "确定购买？",

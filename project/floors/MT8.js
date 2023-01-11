@@ -101,6 +101,18 @@ main.floors.MT8=
             "name": "atk",
             "value": "80"
         },
+        {
+            "type": "setEnemy",
+            "id": "panzer3e",
+            "name": "hp",
+            "value": "1500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer3e",
+            "name": "atk",
+            "value": "200"
+        },
         "\t[系统提示]敌人战力重置完成",
         {
             "type": "playSound",

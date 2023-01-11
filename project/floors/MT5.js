@@ -273,15 +273,7 @@ main.floors.MT5=
         "11,5": [
             {
                 "type": "setValue",
-                "name": "flag:door_MT5_12_4",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "12,5": [
-            {
-                "type": "setValue",
-                "name": "flag:door_MT5_12_4",
+                "name": "flag:door_MT5_13_7",
                 "operator": "+=",
                 "value": "1"
             }
@@ -289,7 +281,7 @@ main.floors.MT5=
         "13,5": [
             {
                 "type": "setValue",
-                "name": "flag:door_MT5_12_4",
+                "name": "flag:door_MT5_13_7",
                 "operator": "+=",
                 "value": "1"
             }
@@ -297,15 +289,7 @@ main.floors.MT5=
         "11,9": [
             {
                 "type": "setValue",
-                "name": "flag:door_MT5_12_10",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "12,9": [
-            {
-                "type": "setValue",
-                "name": "flag:door_MT5_12_10",
+                "name": "flag:door_MT5_13_7",
                 "operator": "+=",
                 "value": "1"
             }
@@ -313,7 +297,7 @@ main.floors.MT5=
         "13,9": [
             {
                 "type": "setValue",
-                "name": "flag:door_MT5_12_10",
+                "name": "flag:door_MT5_13_7",
                 "operator": "+=",
                 "value": "1"
             }
@@ -322,44 +306,6 @@ main.floors.MT5=
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
-        "13,7": {
-            "0": {
-                "condition": "flag:door_MT5_12_4==3",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            12,
-                            4
-                        ]
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            12,
-                            10
-                        ]
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            13,
-                            7
-                        ]
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT5_12_4",
-                        "value": "null"
-                    }
-                ]
-            },
-            "1": null
-        },
         "14,12": {
             "0": {
                 "condition": "!core.hasEnemyLeft(undefined,['MT1','MT2','MT3','MT4','MT5'])",
@@ -387,6 +333,40 @@ main.floors.MT5=
                     }
                 ]
             }
+        },
+        "13,7": {
+            "0": {
+                "condition": "flag:door_MT5_13_7==4",
+                "currentFloor": true,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT5_13_7",
+                        "value": "null"
+                    }
+                ]
+            },
+            "1": null
         }
     },
     "cannotMove": {},

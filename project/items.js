@@ -858,11 +858,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "斗士MK2型",
 		"canUseItemEffect": "true",
-		"text": "攻+5。",
+		"text": "攻+25。",
 		"equip": {
 			"type": 4,
 			"value": {
-				"atk": 5
+				"atk": 25
 			},
 			"percentage": {}
 		}
@@ -1143,7 +1143,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"red2Gem": {
 		"cls": "items",
 		"name": "2阶红宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": ",攻击+2",
+		"itemEffect": "core.status.hero.atk += 2;",
+		"itemEffectTip": "，攻击+2",
+		"useItemEffect": "core.status.hero.atk += 2;"
 	},
 	"red3Gem": {
 		"cls": "items",
@@ -1187,7 +1191,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"green2Gem": {
 		"cls": "items",
 		"name": "2阶绿宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"itemEffect": "core.status.hero.mdef += 10;",
+		"text": "，后勤+10",
+		"itemEffectTip": "，后勤+10",
+		"useItemEffect": "core.status.hero.mdef += 10;"
 	},
 	"green3Gem": {
 		"cls": "items",
@@ -1207,7 +1215,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"yellow2Gem": {
 		"cls": "items",
 		"name": "2阶黄宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": ",血量及血限+100",
+		"itemEffectTip": ",血量及血限+100",
+		"itemEffect": "core.status.hero.hpmax += 100;\ncore.status.hero.hp += 100;",
+		"useItemEffect": "core.status.hero.hpmax += 100;\ncore.status.hero.hp += 100;"
 	},
 	"yellow3Gem": {
 		"cls": "items",

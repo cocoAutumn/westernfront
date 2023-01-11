@@ -91,11 +91,12 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage *= 1.3;
 		}
 		damage += torpeodoDamage + bombDamage;
-		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) // 陆战中被对方单向击穿
+		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) { // 陆战中被对方单向击穿
 			var preTurn = 5;
 			if (core.hasEquip('matilda')) preTurn = 10; // 玛蒂尔达步兵坦克：无法击穿对方时前10回合无法造成伤害
 			if (nthTurn <= preTurn) damage = 0;
 			else damage *= 0.8; // 前5回合无法造成伤害，其他回合伤害只有80%
+		}
 		return damage;
 	}
 	this.getEnemyPerDamage = function (enemyInfo, hero, x, y, floorId, nthTurn) {

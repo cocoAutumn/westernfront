@@ -58,73 +58,187 @@ main.floors.MT14=
             "type": "setEnemy",
             "id": "lightinf",
             "name": "hp",
-            "value": "400"
+            "value": "1200"
         },
         {
             "type": "setEnemy",
             "id": "lightinf",
             "name": "atk",
-            "value": "30"
+            "value": "50"
         },
         {
             "type": "setEnemy",
             "id": "commandos",
+            "name": "hp",
+            "value": "1200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "commandos",
+            "name": "atk",
+            "value": "70"
+        },
+        {
+            "type": "setEnemy",
+            "id": "motorinf",
+            "name": "hp",
+            "value": "1100"
+        },
+        {
+            "type": "setEnemy",
+            "id": "motorinf",
+            "name": "atk",
+            "value": "70"
+        },
+        {
+            "type": "setEnemy",
+            "id": "grenadier",
+            "name": "hp",
+            "value": "1000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "grenadier",
+            "name": "atk",
+            "value": "300"
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "hp",
+            "value": "500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "atk",
+            "value": "400"
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "hp",
+            "value": "1000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "atk",
+            "value": "80"
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
             "name": "hp",
             "value": "600"
         },
         {
             "type": "setEnemy",
-            "id": "commandos",
+            "id": "mg42",
             "name": "atk",
-            "value": "40"
+            "value": "100"
         },
         {
             "type": "setEnemy",
-            "id": "motorinf",
+            "id": "me109e4",
             "name": "hp",
-            "value": "400"
+            "value": "1200"
         },
         {
             "type": "setEnemy",
-            "id": "motorinf",
+            "id": "me109e4",
             "name": "atk",
-            "value": "40"
+            "value": "120"
         },
         {
             "type": "setEnemy",
-            "id": "grenadier",
+            "id": "ju87b",
             "name": "hp",
-            "value": "200"
+            "value": "1000"
         },
         {
             "type": "setEnemy",
-            "id": "grenadier",
+            "id": "pak36",
+            "name": "hp",
+            "value": "1000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak36",
+            "name": "atk",
+            "value": "180"
+        },
+        {
+            "type": "setEnemy",
+            "id": "sdkfz222",
+            "name": "hp",
+            "value": "1200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "sdkfz222",
+            "name": "atk",
+            "value": "70"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer2c",
+            "name": "hp",
+            "value": "1200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer2c",
+            "name": "atk",
+            "value": "100"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer35t",
+            "name": "hp",
+            "value": "1500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer35t",
             "name": "atk",
             "value": "150"
         },
         {
             "type": "setEnemy",
-            "id": "sdkfz222",
+            "id": "panzer38t",
             "name": "hp",
-            "value": "400"
+            "value": "1500"
         },
         {
             "type": "setEnemy",
-            "id": "sdkfz222",
+            "id": "panzer38t",
             "name": "atk",
-            "value": "40"
+            "value": "150"
         },
         {
             "type": "setEnemy",
-            "id": "panzer2c",
+            "id": "panzer3e",
             "name": "hp",
-            "value": "400"
+            "value": "2000"
         },
         {
             "type": "setEnemy",
-            "id": "panzer2c",
+            "id": "panzer3e",
             "name": "atk",
-            "value": "80"
+            "value": "250"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer4c",
+            "name": "hp",
+            "value": "2500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer4c",
+            "name": "atk",
+            "value": "300"
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -175,7 +289,7 @@ main.floors.MT14=
     [ 81,141,141,  0,141, 34,141,  0, 82,  0, 28,141,265,141,141],
     [  0,  0,202,  0,265,  0,141,254,141,141, 81,141, 29, 29, 29],
     [ 82,141,141,141,141,141,141,266,141, 29,205,141,141,141, 81],
-    [407, 33, 33, 33, 33, 33,141, 93,141, 28,141, 21, 30,202,244]
+    [407, 33, 33,518,518,518,141, 93,141, 28,141, 21, 30,202,244]
 ],
     "bgmap": [
 
