@@ -17,7 +17,7 @@ main.floors.MT3=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[重要消息]\r[red]比利时  战败！",
+        "\t[世界消息]\r[red]比利时  战败！",
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"

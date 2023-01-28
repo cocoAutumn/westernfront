@@ -84,7 +84,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"snow": 52,
 		"star1": 53,
 		"star2": 54,
-		"T547": 55
+		"T547": 55,
+		"hole1": 56,
+		"hole2": 57,
+		"hole3": 58
 	},
 	"animates": {
 		"star": 0,
@@ -116,7 +119,11 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"upPortal": 26,
 		"ice": 27,
 		"magentaWall": 28,
-		"A360": 29
+		"A360": 29,
+		"A556": 30,
+		"A557": 31,
+		"A558": 32,
+		"A559": 33
 	},
 	"npcs": {
 		"man": 0,
@@ -499,6 +506,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"autotile11": 0,
 		"autotile12": 0,
 		"autotile13": 0,
-		"autotile14": 0
+		"autotile14": 0,
+		"autotile15": 0,
+		"autotile16": 0,
+		"autotile17": 0
 	}
 }

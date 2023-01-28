@@ -17,7 +17,7 @@ main.floors.MT5=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[重要消息]\r[red]荷兰  投降！"
+        "\t[世界消息]\r[red]荷兰  投降！"
     ],
     "eachArrive": [],
     "parallelDo": "",
