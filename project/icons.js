@@ -256,7 +256,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"veneto": 73,
 		"scharnhost": 74,
 		"bismark": 75,
-		"E381": 96,
 		"E395": 110,
 		"E396": 111,
 		"E412": 127,
@@ -285,7 +284,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"do17z": 99,
 		"fw200": 100,
 		"ju288": 101,
-		"sm79": 102,
 		"howitzer150": 103,
 		"howitzer180": 104,
 		"flak88": 105,
@@ -309,7 +307,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"panzer4g": 125,
 		"p2640": 126,
 		"motorinf": 49,
-		"rommel": 128
+		"rommel": 128,
+		"z1007": 102,
+		"sm79": 96
 	},
 	"enemy48": {
 		"angel": 0,

@@ -83,7 +83,6 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"veneto": {"name":"维内托级战列舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战列"},
 	"scharnhost": {"name":"沙恩霍斯特级战列舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战列"},
 	"bismark": {"name":"俾斯麦级战列舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战列"},
-	"E381": {"name":"新敌人","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]},
 	"E395": {"name":"新敌人","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"驱逐"},
 	"E396": {"name":"新敌人","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"驱逐"},
 	"E412": {"name":"虎王","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"重坦"},
@@ -112,7 +111,6 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"do17z": {"name":"Do17z","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中型轰炸机"},
 	"fw200": {"name":"FW200兀鹰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中型轰炸机"},
 	"ju288": {"name":"JU288","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中型轰炸机"},
-	"sm79": {"name":"SM79食雀鹰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中型轰炸机"},
 	"howitzer150": {"name":"150mm榴弹炮","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"榴弹炮"},
 	"howitzer180": {"name":"180mm榴弹炮","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"榴弹炮"},
 	"flak88": {"name":"88mm高射炮","hp":800,"atk":800,"def":0,"money":2,"exp":2,"point":0,"special":[1,43],"type":"高射炮","ap":100,"arm":2,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
@@ -136,5 +134,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"panzer4g": {"name":"四号G型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中坦"},
 	"p2640": {"name":"卡罗P26/40","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"重坦"},
 	"motorinf": {"name":"德国机械化步兵中队","hp":200,"atk":20,"def":0,"money":1,"exp":1,"point":0,"special":[1,4],"type":"步兵","description":null,"ap":12,"arm":0},
-	"rommel": {"name":"隆美尔","hp":2000,"atk":500,"def":0,"money":20,"exp":20,"point":0,"special":[25,57],"type":"重坦","ap":100,"arm":40,"notBomb":true,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"hpBuff":1,"atkBuff":0,"defBuff":0.3}
+	"rommel": {"name":"隆美尔","hp":2000,"atk":500,"def":0,"money":20,"exp":20,"point":0,"special":[25,57],"type":"重坦","ap":100,"arm":40,"notBomb":true,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"hpBuff":1,"atkBuff":0,"defBuff":0.3},
+	"z1007": {"name":"Z.1007翠鸟","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中型轰炸机"},
+	"sm79": {"name":"SM79食雀鹰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[]}
 }
