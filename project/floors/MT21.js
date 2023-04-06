@@ -5,15 +5,256 @@ main.floors.MT21=
     "name": "敦刻尔克",
     "width": 15,
     "height": 15,
-    "canFlyTo": false,
-    "canFlyFrom": false,
+    "canFlyTo": true,
+    "canFlyFrom": true,
     "canUseQuickShop": true,
-    "cannotViewMap": true,
+    "cannotViewMap": false,
     "images": [],
     "ratio": 1,
     "defaultGround": "sand",
     "bgm": "hitman.mp3",
-    "firstArrive": [],
+    "firstArrive": [
+        {
+            "type": "setHeroOpacity",
+            "opacity": 1
+        },
+        {
+            "type": "showStatusBar"
+        },
+        {
+            "type": "setCurtain",
+            "time": 500
+        },
+        "\r[yellow]Mission 4  拖延战术",
+        {
+            "type": "text",
+            "text": "\t[蒙哥马利]\f[montgomary.png,0,310]我们的部队正在准备撤退，但这个过程必须不受打扰。",
+            "pos": [
+                100,
+                300,
+                380
+            ]
+        },
+        {
+            "type": "text",
+            "text": "\t[勒克莱尔]\f[montgomary.png,0,310]指挥官阁下，请你务必牵制德军一段时间。无数鲜活的生命就掌握在你手中了。",
+            "pos": [
+                100,
+                300,
+                380
+            ]
+        },
+        {
+            "type": "text",
+            "text": "\t[赫尔曼·戈林]\f[gorlin.png,0,310]飞行员们，给我狠狠的打！让元首和敌人看看我们德意志帝国空军的实力！",
+            "pos": [
+                100,
+                300,
+                380
+            ]
+        },
+        "\t[系统提示]敌人战力重置中",
+        {
+            "type": "setEnemy",
+            "id": "lightinf",
+            "name": "hp",
+            "value": "1200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightinf",
+            "name": "atk",
+            "value": "50"
+        },
+        {
+            "type": "setEnemy",
+            "id": "commandos",
+            "name": "hp",
+            "value": "1200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "commandos",
+            "name": "atk",
+            "value": "70"
+        },
+        {
+            "type": "setEnemy",
+            "id": "motorinf",
+            "name": "hp",
+            "value": "1100"
+        },
+        {
+            "type": "setEnemy",
+            "id": "motorinf",
+            "name": "atk",
+            "value": "70"
+        },
+        {
+            "type": "setEnemy",
+            "id": "grenadier",
+            "name": "hp",
+            "value": "1000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "grenadier",
+            "name": "atk",
+            "value": "300"
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "hp",
+            "value": "500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "atk",
+            "value": "400"
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "hp",
+            "value": "1000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "atk",
+            "value": "80"
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "hp",
+            "value": "600"
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "atk",
+            "value": "100"
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109e4",
+            "name": "hp",
+            "value": "1200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109e4",
+            "name": "atk",
+            "value": "120"
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju87b",
+            "name": "hp",
+            "value": "1000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak36",
+            "name": "hp",
+            "value": "1000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak36",
+            "name": "atk",
+            "value": "180"
+        },
+        {
+            "type": "setEnemy",
+            "id": "sdkfz222",
+            "name": "hp",
+            "value": "1200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "sdkfz222",
+            "name": "atk",
+            "value": "70"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer2c",
+            "name": "hp",
+            "value": "1200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer2c",
+            "name": "atk",
+            "value": "100"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer35t",
+            "name": "hp",
+            "value": "1500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer35t",
+            "name": "atk",
+            "value": "150"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer38t",
+            "name": "hp",
+            "value": "1500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer38t",
+            "name": "atk",
+            "value": "150"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer3e",
+            "name": "hp",
+            "value": "2000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer3e",
+            "name": "atk",
+            "value": "250"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer4c",
+            "name": "hp",
+            "value": "2500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer4c",
+            "name": "atk",
+            "value": "300"
+        },
+        "\t[系统提示]敌人战力重置完成",
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]即将进入存档界面",
+        {
+            "type": "callSave"
+        },
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[任务目标]⭐通过当前区域\n⭐通关时黄钥匙数量≥15\n⭐消灭所有敌人"
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},
@@ -44,18 +285,18 @@ main.floors.MT21=
     [150,150,150,150,150,150,150,  0,150,150,150,150,150,150,150],
     [150,150,150,150,150,150, 21,  0, 21,150,150,150,150,150,150],
     [150,150,150,150,150, 21, 33,202, 33, 21,150,150,150,150,150],
-    [  0,  0,  0,250,150,150,150, 86,150,150,150,150,  0,  0,  0],
-    [  0,  0,250,203, 81,  0,  0,  0,  0,  0,  0,150,  0,205,  0],
+    [ 30, 29,  0,250,150,150,150, 86,150,150,150,150, 27,  0, 21],
+    [ 22, 28,250,203, 81,  0,  0,  0,  0,  0, 28,150,  0,205,  0],
     [150,150,203,150,150,207,150,150,150, 81,150,150,150, 81,150],
-    [  0,150,  0,150,  0,  0,202,  0,244,  0,  0,  0,250,  0,  0],
-    [  0,150,150,150,150,202,150,202,150,150,254,150,150,  0, 94],
-    [  0,  0,150,  0,150,  0,202,  0,150,  0,  0,  0,150,  0,  0],
+    [ 27,150,345,150, 32,  0,202,  0,244,  0,  0,  0,250,  0, 30],
+    [ 27,150,150,150,150,202,150,202,150,150,254,150,150,  0, 94],
+    [  0,518,150, 31,150,  0,202,  0,150, 29, 28, 29,150,  0, 30],
     [203,  0,150,  0,203,  0, 81,150,150,150,150,150,150,150, 81],
-    [204,203,150, 81,150,150,217,  0,150,  0,  0,  0,150,  0,  0],
-    [ 81,150,150,206,  0,150,  0,  0,150,150,217,150,150,244,150],
+    [204,203,150, 81,150,150,217,  0,150, 21,347, 21,150,  0,  0],
+    [ 81,150,150,206,  0,150,  0, 21,150,150,217,150,150,244,150],
     [  0,  0,226,  0,  0,150,150, 82,150,  0,243,  0,150,  0,  0],
-    [  0,  0,226,  0, 82,  0,150,401,150,  0,150,  0,150,150,203],
-    [150,150,150,150,  0,  0,150, 93,150,  0,150,248, 81,  0,  0]
+    [518,  0,226,  0, 82, 27,150,401,150,  0,150,  0,150,150,203],
+    [150,150,150,150, 27, 27,150, 93,150, 28,150,248, 81,  0,  0]
 ],
     "bgmap": [
 

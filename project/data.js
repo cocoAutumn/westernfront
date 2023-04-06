@@ -1143,6 +1143,111 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					}
 				]
+			},
+			{
+				"id": "shop2",
+				"text": "\t[1940级商店]请选择购买项",
+				"textInList": "1940级商店",
+				"mustEnable": true,
+				"disablePreview": true,
+				"choices": [
+					{
+						"text": "飓风MK1战斗机（400）",
+						"need": "true",
+						"icon": "hurricanemk1",
+						"condition": "!core.hasEquip('hurricanemk1')&&!core.hasItem('hurricanemk1')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[h35.jpg,170,50]法国雷诺FT-17轻型坦克于第一次世界大战时期研制成功。它是世界上第一种装有可360度旋转炮塔的坦克，而且动力舱后置、车体前设驾驶席，这种设计自那以后就成了坦克设计的标配，直到现在。虽然雷诺坦克具有划时代的意义，但到了二战开始时，它们已经过时，在德军新型坦克面前不堪一击。",
+							"\f[ft17.jpg,170,50]装备属性：攻击+10，5穿甲，3装甲",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=400)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "400"
+											},
+											{
+												"type": "setValue",
+												"name": "item:hurricanemk1",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "喷火MK1战斗机（700）",
+						"need": "true",
+						"icon": "spitfiremk1",
+						"condition": "!core.hasEquip('spitfiremk1')&&!core.hasItem('spitfiremk1')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[h35.jpg,170,50]法国雷诺FT-17轻型坦克于第一次世界大战时期研制成功。它是世界上第一种装有可360度旋转炮塔的坦克，而且动力舱后置、车体前设驾驶席，这种设计自那以后就成了坦克设计的标配，直到现在。虽然雷诺坦克具有划时代的意义，但到了二战开始时，它们已经过时，在德军新型坦克面前不堪一击。",
+							"\f[ft17.jpg,170,50]装备属性：攻击+10，5穿甲，3装甲",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=600)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "600"
+											},
+											{
+												"type": "setValue",
+												"name": "item:spitfiremk1",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					}
+				]
 			}
 		],
 		"levelUp": [
