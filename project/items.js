@@ -693,7 +693,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "M26潘兴",
 		"canUseItemEffect": "true",
-		"text": "攻+5000，穿120装90。被动技能待定。"
+		"text": "攻+200%，穿120装90。被动技能待定。"
 	},
 	"classe": {
 		"cls": "equips",
@@ -714,7 +714,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"mahan": {
 		"cls": "equips",
 		"name": "马汉级驱逐舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+120，雷击+150，鱼雷管+3，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于攻击力的伤害。\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）。"
 	},
 	"classj": {
 		"cls": "equips",
@@ -779,7 +780,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"alaska": {
 		"cls": "equips",
-		"name": "重巡·阿拉斯加",
+		"name": "重巡·巴尔的摩号",
 		"canUseItemEffect": "true"
 	},
 	"hood": {
@@ -820,18 +821,18 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "光辉号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：喷火MK2、火把式攻击机、梭鱼式鱼雷机。闪避鱼雷数-1，且装备时主角攻击力减少200点。\n被动：装甲航母：在海上遭遇敌方空袭时，减少40%炸弹伤害。"
+		"text": "舰载机：喷火MK2、火把式攻击机、梭鱼式鱼雷机。闪避鱼雷数-2，且装备时主角攻击力减少200点。\n被动：装甲航母：在海上遭遇敌方空袭时，减少15%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。"
 	},
 	"eagle": {
 		"cls": "equips",
 		"name": "鹰号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：海飓风MK1、贼鸥式轰炸机、剑鱼式鱼雷机。闪避鱼雷数-1。\n受到敌方鱼雷伤害增加20%。",
+		"text": "舰载机：海飓风MK1、贼鸥式轰炸机、剑鱼式鱼雷机。闪避鱼雷数-2。\n受到敌方鱼雷伤害增加20%。",
 		"equip": {
 			"type": 3,
 			"value": {
-				"atk": 60,
-				"dod": -1
+				"dod": -2,
+				"atk": 60
 			},
 			"percentage": {}
 		}
@@ -846,13 +847,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "埃塞克斯号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "属性：攻击+30，雷击+50\n舰载机：F6F-3地狱猫战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机。\n对敌方飞机造成的伤害＋50%，对战列舰造成的鱼雷伤害增加70%。"
+		"text": "属性：攻击+5%，雷击+10%\n舰载机：F6F-3地狱猫战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机。\n对敌方飞机造成的伤害＋50%，对战列舰造成的鱼雷伤害增加70%。"
 	},
 	"enterprise": {
 		"cls": "equips",
 		"name": "企业号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "属性：攻击力+100，后勤+1000\n舰载机：F4U-4B海盗式战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机\n被动：\n幸运E：企业号的舰载机造成的一切伤害×250%，且我方遭遇致死攻击时，进入无敌状态，锁定血量为1，持续3回合。"
+		"text": "属性：攻击力+10%，后勤+20%\n舰载机：F4U-4B海盗式战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机\n被动：\n幸运E：企业号的舰载机造成的一切伤害×250%，且我方遭遇致死攻击时，进入无敌状态，锁定血量为1，持续3回合。"
 	},
 	"wrestler": {
 		"cls": "equips",
@@ -870,7 +871,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"p40b": {
 		"cls": "equips",
 		"name": "P40B战斧",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+35。挂载：2×100磅炸弹\n仅第2回合投弹，造成两次0.4倍攻击力的伤害"
 	},
 	"hurricanemk1": {
 		"cls": "equips",
@@ -939,7 +941,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "P51D野马",
 		"canUseItemEffect": "true",
-		"text": "攻+250.挂载：6×127mm火箭弹。\n对地和对舰攻击时抢先发射2轮火箭弹，每发火箭弹伤害为0.3倍攻击力。\n被动：长途护航——与战略轰炸机一同出击时，受到的所有战斗伤害减少30%。\n     制空霸权——与敌方战斗机战斗时，每回合额外攻击2次。"
+		"text": "攻+100%.挂载：6×127mm火箭弹。\n对地和对舰攻击时抢先发射2轮火箭弹，每发火箭弹伤害为0.3倍攻击力。\n被动：长途护航——与战略轰炸机一同出击时，受到的所有战斗伤害减少30%。\n     制空霸权——与敌方战斗机战斗时，每回合额外攻击2次。"
 	},
 	"skua": {
 		"cls": "equips",
@@ -1029,7 +1031,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"tbd": {
 		"cls": "equips",
 		"name": "TBD蹂躏者",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+5。挂载：1×鱼雷或12×50磅炸弹\n对舰攻击时，每5回合投放1枚鱼雷。对地攻击时，每5回合投放一轮炸弹，每颗炸弹伤害为0.1倍攻击力\n哑弹：投放的鱼雷不会爆炸（神剧难度无效）"
 	},
 	"blenheim": {
 		"cls": "equips",
