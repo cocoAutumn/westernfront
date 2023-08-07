@@ -699,7 +699,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "E级驱逐舰",
 		"canUseItemEffect": "true",
-		"text": "攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于攻击力的伤害。",
+		"text": "攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于0.1倍攻击力的伤害。",
 		"equip": {
 			"type": 1,
 			"value": {
@@ -715,7 +715,17 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "马汉级驱逐舰",
 		"canUseItemEffect": "true",
-		"text": "攻+120，雷击+150，鱼雷管+3，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于攻击力的伤害。\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）。"
+		"text": "攻+120，雷击+150，鱼雷管+3，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于攻击力的伤害。\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）。",
+		"equip": {
+			"type": 1,
+			"value": {
+				"tpn": 3,
+				"top": 150,
+				"dod": 2,
+				"atk": 120
+			},
+			"percentage": {}
+		}
 	},
 	"classj": {
 		"cls": "equips",
@@ -778,11 +788,6 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "轻巡·克利夫兰号",
 		"canUseItemEffect": "true"
 	},
-	"alaska": {
-		"cls": "equips",
-		"name": "重巡·巴尔的摩号",
-		"canUseItemEffect": "true"
-	},
 	"hood": {
 		"cls": "equips",
 		"name": "胡德号战列巡洋舰",
@@ -821,7 +826,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "光辉号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：喷火MK2、火把式攻击机、梭鱼式鱼雷机。闪避鱼雷数-2，且装备时主角攻击力减少200点。\n被动：装甲航母：在海上遭遇敌方空袭时，减少15%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。"
+		"text": "舰载机：海喷火MK2、火把式攻击机、梭鱼式鱼雷机。闪避鱼雷数-2，且装备时主角攻击力减少200点。\n被动：装甲航母：在海上遭遇敌方空袭时，减少15%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。"
 	},
 	"eagle": {
 		"cls": "equips",
@@ -859,7 +864,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "斗士MK2型",
 		"canUseItemEffect": "true",
-		"text": "攻+25。",
+		"text": "主武器：4×7.62mm机枪\n攻+25。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -868,17 +873,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			"percentage": {}
 		}
 	},
-	"p40b": {
-		"cls": "equips",
-		"name": "P40B战斧",
-		"canUseItemEffect": "true",
-		"text": "攻+35。挂载：2×100磅炸弹\n仅第2回合投弹，造成两次0.4倍攻击力的伤害"
-	},
 	"hurricanemk1": {
 		"cls": "equips",
 		"name": "飓风MK1",
 		"canUseItemEffect": "true",
-		"text": "攻+40。每回合对轰炸机追加80点伤害。",
+		"text": "主武器：8×7.62mm机枪\n攻+40。每回合对轰炸机追加80点伤害。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -890,7 +889,15 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"spitfiremk1": {
 		"cls": "equips",
 		"name": "喷火MK1",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：8×7.62mm机枪\n攻击+40，与战斗机作战时，每回合额外追加10%伤害",
+		"equip": {
+			"type": 4,
+			"value": {
+				"atk": 40
+			},
+			"percentage": {}
+		}
 	},
 	"p40e": {
 		"cls": "equips",
@@ -1257,6 +1264,24 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"orange5Gem": {
 		"cls": "items",
 		"name": "5阶橙宝石",
+		"canUseItemEffect": "true"
+	},
+	"p40c": {
+		"cls": "equips",
+		"name": "P40C战斧",
+		"canUseItemEffect": "true",
+		"text": "主武器：2×12.7mm和4×7.62mm机枪\n攻+30。挂载：2×100磅和1×500磅炸弹\n仅第2回合投弹，造成两次0.4倍攻击力的伤害和1次2倍攻击力的伤害",
+		"equip": {
+			"type": 4,
+			"value": {
+				"atk": 35
+			},
+			"percentage": {}
+		}
+	},
+	"baltimore": {
+		"cls": "equips",
+		"name": "重巡·巴尔的摩号",
 		"canUseItemEffect": "true"
 	}
 }

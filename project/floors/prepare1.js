@@ -17,52 +17,62 @@ main.floors.prepare1=
         {
             "type": "setValue",
             "name": "status:hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:hpmax",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:mana",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:atk",
-            "value": "10"
+            "value": "10",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:arm",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:top",
-            "value": "100"
+            "value": "100",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:tpn",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:dod",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:mdef",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:money",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setValue",

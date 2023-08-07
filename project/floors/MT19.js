@@ -12,7 +12,7 @@ main.floors.MT19=
     "images": [],
     "ratio": 1,
     "defaultGround": "ground",
-    "bgm": "allthis.mp3",
+    "bgm": "gaijin1.mp3",
     "firstArrive": [
         {
             "type": "resumeBgm"
@@ -21,16 +21,440 @@ main.floors.MT19=
             "type": "setCurtain",
             "time": 500
         },
-        "此时，40万英法联军龟缩在敦刻尔克这个港口小城里，遭受着德军的空袭。唯一的生路就是从海上撤退。",
-        "英法政府开始筹划一个名为“发电机行动”的撤退计划。将40万大军全部撤回英国本土，谈何容易。英国海军实力强大，但也没法一次性装下这么多人。",
-        "丘吉尔四处征集船只，他号召所有国民，自发调用家里能用的船只，前往炮火连天的敦刻尔克将士兵们接回家。",
-        "就这样，大大小小的各式船只，军用的也好，民用的也罢，能装多少人就装多少，一点一点的，分批运送士兵。",
-        "5月26日，“发电机行动”的第一天，有1300人成功撤退。如此大规模的撤退行动几乎毫无机密性可言，德军在第二天就派轰炸机袭击盟军船只，紧接着，潜艇、鱼雷艇也在夜色的掩护中展开猎杀。",
-        "希特勒也取消了禁止装甲部队前进的命令，留给盟军的时间已经不多了。"
+        {
+            "type": "drawArrow",
+            "x1": 144,
+            "y1": 400,
+            "x2": 144,
+            "y2": 144,
+            "style": [
+                255,
+                0,
+                0,
+                1
+            ],
+            "lineWidth": 3
+        },
+        {
+            "type": "drawArrow",
+            "x1": 240,
+            "y1": 400,
+            "x2": 240,
+            "y2": 120,
+            "style": [
+                255,
+                0,
+                0,
+                1
+            ],
+            "lineWidth": 3
+        },
+        {
+            "type": "drawArrow",
+            "x1": 304,
+            "y1": 336,
+            "x2": 304,
+            "y2": 120,
+            "style": [
+                255,
+                0,
+                0,
+                1
+            ],
+            "lineWidth": 3
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        "指挥官阁下，“发电机计划”已经正式启动，我们必须离开敦刻尔克海滩这个鬼地方，回到英国本土去。",
+        {
+            "type": "clearMap"
+        },
+        {
+            "type": "show",
+            "loc": [
+                [
+                    4,
+                    11
+                ],
+                [
+                    5,
+                    9
+                ],
+                [
+                    6,
+                    10
+                ],
+                [
+                    7,
+                    8
+                ],
+                [
+                    8,
+                    9
+                ],
+                [
+                    9,
+                    8
+                ],
+                [
+                    10,
+                    9
+                ]
+            ],
+            "time": 500
+        },
+        "我们的船已经成功接走了一部分人。但这超大规模的撤退根本不可能逃得过敌人的侦察。",
+        "敌人的空军和潜艇部队已经向我们发起过一轮攻击，但目前我们还架得住。",
+        {
+            "type": "move",
+            "loc": [
+                3,
+                13
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "rightup:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                4,
+                12
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "right:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                2,
+                12
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "right:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                3,
+                14
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "up:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                5,
+                14
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "up:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                7,
+                14
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "up:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                10,
+                14
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "up:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                12,
+                9
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "left:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                12,
+                11
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "left:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                12,
+                13
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "left:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                10,
+                10
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "left:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                10,
+                12
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "left:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                11,
+                13
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "leftup:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                11,
+                11
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "left:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                11,
+                9
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "leftdown:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                6,
+                13
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "up:1"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                8,
+                13
+            ],
+            "time": 500,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "up:1"
+            ]
+        },
+        {
+            "type": "waitAsync"
+        },
+        "但更大的威胁来自敌人的地面部队。他们重新组织起来向我们发起了进攻！",
+        "阁下，请尽全力阻挡德国人的坦克。我们数十万人的生命，现在都握在你的手里了！",
+        {
+            "type": "pauseBgm"
+        },
+        {
+            "type": "changeFloor",
+            "floorId": "MT20",
+            "loc": [
+                7,
+                7
+            ],
+            "direction": "down"
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
+    "events": {
+        "5,9": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "4,11": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "6,10": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "7,8": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,9": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "9,8": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "10,9": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        }
+    },
     "changeFloor": {},
     "beforeBattle": {},
     "afterBattle": {},
@@ -48,10 +472,10 @@ main.floors.MT19=
     [  0,  0,498,  0,500,  0,  0,500,  0,499,  0,  0,  0,  0,  0],
     [  0,  0,  0,499,  0,  0,499,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,494,226,  0,207],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,494,  0,  0,205,  0],
-    [  0,  0,  0,  0,  0,494,  0,547,  0,503,  0,494,226,  0,206],
+    [  0,  0,  0,  0,  0,  0,  0,498,  0,498,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,498,  0,  0,498,  0,498,494,226,  0,207],
+    [  0,  0,  0,  0,  0,  0,498,  0,  0,  0,494,  0,  0,205,  0],
+    [  0,  0,  0,  0,498,494,  0,547,  0,503,  0,494,226,  0,206],
     [  0,  0,226,  0,503,  0,  0,507,  0,  0,494,  0,  0,205,  0],
     [  0,  0,  0,494,  0,  0,494,  0,494,  0,  0,506,226,  0,207],
     [  0,  0,  0,226,  0,226,  0,226,  0,  0,226,  0,  0,  0,  0]

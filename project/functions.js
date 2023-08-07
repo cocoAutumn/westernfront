@@ -331,6 +331,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		core.events.lose('战斗失败');
 		return;
 	}
+	if (flags['escort'] && damage >= 0) {
+		flags['友军血量'] -= 0.4 * damage;
+		if (flags['友军血量'] <= 0) {
+			core.events.lose('任务失败');
+			// 战斗失败
+		}
+	}
+
 
 	// 扣减体力值并记录统计数据
 	core.status.hero.hp -= damage;
@@ -554,7 +562,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[30, "航炮", "每个偶数回合额外造成一次2倍攻击力的伤害"],
 		[31, "280mm舰炮", "每3回合额外发射一轮主炮，伤害等于3倍攻击力"],
 		[32, "380mm舰炮", "每4回合额外发射一轮主炮，伤害等于6倍攻击力"],
-		[33, "潜行", "受到主角攻击力伤害减少70%"],
+		[33, "潜行", "受到主角攻击力伤害减少90%"],
 		[34, "惊雷", "战斗开始时，发起先手鱼雷攻击。发射鱼雷数量以及伤害等同于正常的鱼雷袭击"],
 		[35, "闪避", function (enemy) { return "主角发起鱼雷攻击时，闪避其中的" + (enemy.dod ?? 0) + "枚" }],
 		[36, "俯冲轰炸", "航空炸弹造成的伤害增加50%，且第一枚炸弹命中后，主角攻击力降低5%，持续到战斗结束"],
@@ -1175,88 +1183,88 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 		},
         "updateStatusBar": function () {
-			// 更新状态栏
+	// 更新状态栏
 
-			// 检查等级
-			core.events.checkLvUp();
+	// 检查等级
+	core.events.checkLvUp();
 
-			// 检查HP上限
-			if (core.flags.statusBarItems.indexOf('enableHPMax') >= 0) {
-				core.setStatus('hp', Math.min(core.getRealStatus('hpmax'), core.getStatus('hp')));
-			}
+	// 检查HP上限
+	if (core.flags.statusBarItems.indexOf('enableHPMax') >= 0) {
+		core.setStatus('hp', Math.min(core.getRealStatus('hpmax'), core.getStatus('hp')));
+	}
 
-			// 设置楼层名
-			if (core.status.floorId) {
-				core.setStatusBarInnerHTML('floor', core.status.maps[core.status.floorId].name);
-			}
+	// 设置楼层名
+	if (core.status.floorId) {
+		core.setStatusBarInnerHTML('floor', core.status.maps[core.status.floorId].name);
+	}
 
-			// 设置勇士名字和图标
-			core.setStatusBarInnerHTML('name', core.getStatus('name'));
-			// 设置等级名称
-			core.setStatusBarInnerHTML('lv', core.getLvName());
+	// 设置勇士名字和图标
+	core.setStatusBarInnerHTML('name', core.getStatus('name'));
+	// 设置等级名称
+	core.setStatusBarInnerHTML('lv', core.getLvName());
 
-			// 设置生命上限、生命值、攻防护盾金币和经验值
-			var statusList = ['hpmax', 'hp', 'mana', 'atk', 'def', 'mdef', 'money', 'exp'];
-			statusList.forEach(function (item) {
-				// 向下取整
-				core.status.hero[item] = Math.floor(core.status.hero[item]);
-				// 大数据格式化
-				core.setStatusBarInnerHTML(item, core.getRealStatus(item));
-			});
+	// 设置生命上限、生命值、攻防护盾金币和经验值
+	var statusList = ['hpmax', 'hp', 'mana', 'atk', 'def', 'mdef', 'money', 'exp'];
+	statusList.forEach(function (item) {
+		// 向下取整
+		core.status.hero[item] = Math.floor(core.status.hero[item]);
+		// 大数据格式化
+		core.setStatusBarInnerHTML(item, core.getRealStatus(item));
+	});
 
-			// 设置魔力值; status:manamax 只有在非负时才生效。
-			if (core.status.hero.manamax != null && core.getRealStatus('manamax') >= 0) {
-				core.status.hero.mana = Math.min(core.status.hero.mana, core.getRealStatus('manamax'));
-				core.setStatusBarInnerHTML('mana', core.status.hero.mana + "/" + core.getRealStatus('manamax'));
-			} else {
-				core.setStatusBarInnerHTML("mana", core.status.hero.mana);
-			}
-			// 设置技能栏
-			// 可以用flag:skill表示当前开启的技能类型，flag:skillName显示技能名；详见文档-个性化-技能塔的支持
-			core.setStatusBarInnerHTML('skill', core.getFlag('skillName', '无'));
+	// 设置魔力值; status:manamax 只有在非负时才生效。
+	if (core.status.hero.manamax != null && core.getRealStatus('manamax') >= 0) {
+		core.status.hero.mana = Math.min(core.status.hero.mana, core.getRealStatus('manamax'));
+		core.setStatusBarInnerHTML('mana', core.status.hero.mana + "/" + core.getRealStatus('manamax'));
+	} else {
+		core.setStatusBarInnerHTML("mana", core.status.hero.mana);
+	}
+	// 设置技能栏
+	// 可以用flag:skill表示当前开启的技能类型，flag:skillName显示技能名；详见文档-个性化-技能塔的支持
+	core.setStatusBarInnerHTML('skill', core.getFlag('skillName', '无'));
 
-			// 可以在这里添加自己额外的状态栏信息，比如想攻击显示 +0.5 可以这么写：
-			// if (core.hasFlag('halfAtk')) core.setStatusBarInnerHTML('atk', core.statusBar.atk.innerText + "+0.5");
+	// 可以在这里添加自己额外的状态栏信息，比如想攻击显示 +0.5 可以这么写：
+	// if (core.hasFlag('halfAtk')) core.setStatusBarInnerHTML('atk', core.statusBar.atk.innerText + "+0.5");
 
-			// 如果是自定义添加的状态栏，也需要在这里进行设置显示的数值
+	// 如果是自定义添加的状态栏，也需要在这里进行设置显示的数值
 
-			// 进阶
-			if (core.flags.statusBarItems.indexOf('enableLevelUp') >= 0) {
-				core.setStatusBarInnerHTML('up', core.formatBigNumber(core.getNextLvUpNeed()) || "");
-			} else core.setStatusBarInnerHTML('up', "");
+	// 进阶
+	if (core.flags.statusBarItems.indexOf('enableLevelUp') >= 0) {
+		core.setStatusBarInnerHTML('up', core.formatBigNumber(core.getNextLvUpNeed()) || "");
+	} else core.setStatusBarInnerHTML('up', "");
 
-			// 钥匙
-			var keys = ['yellowKey', 'blueKey', 'redKey', 'greenKey'];
-			keys.forEach(function (key) {
-				core.setStatusBarInnerHTML(key, core.setTwoDigits(core.itemCount(key)));
-			});
-			// 毒衰咒
-			core.setStatusBarInnerHTML('poison', core.hasFlag('poison') ? "毒" : "");
-			core.setStatusBarInnerHTML('weak', core.hasFlag('weak') ? "衰" : "");
-			core.setStatusBarInnerHTML('curse', core.hasFlag('curse') ? "咒" : "");
-			// 破炸飞
-			core.setStatusBarInnerHTML('pickaxe', "破" + core.itemCount('pickaxe'));
-			core.setStatusBarInnerHTML('bomb', "炸" + core.itemCount('bomb'));
-			core.setStatusBarInnerHTML('fly', "飞" + core.itemCount('centerFly'));
+	// 钥匙
+	var keys = ['yellowKey', 'blueKey', 'redKey', 'greenKey'];
+	keys.forEach(function (key) {
+		core.setStatusBarInnerHTML(key, core.setTwoDigits(core.itemCount(key)));
+	});
+	// 毒衰咒
+	core.setStatusBarInnerHTML('poison', core.hasFlag('poison') ? "毒" : "");
+	core.setStatusBarInnerHTML('weak', core.hasFlag('weak') ? "衰" : "");
+	core.setStatusBarInnerHTML('curse', core.hasFlag('curse') ? "咒" : "");
+	// 破炸飞
+	core.setStatusBarInnerHTML('pickaxe', "破" + core.itemCount('pickaxe'));
+	core.setStatusBarInnerHTML('bomb', "炸" + core.itemCount('bomb'));
+	core.setStatusBarInnerHTML('fly', "飞" + core.itemCount('centerFly'));
 
-			// 难度
-			if (core.statusBar.hard.innerText != core.status.hard) {
-				core.statusBar.hard.innerText = core.status.hard;
-			}
-			var hardColor = core.getFlag('__hardColor__');
-			if (hardColor == null) core.statusBar.hard.innerText = '';
-			if (core.statusBar.hard.getAttribute('_style') != hardColor) {
-				core.statusBar.hard.style.color = hardColor;
-				core.statusBar.hard.setAttribute('_style', hardColor);
-			}
-			// 自定义状态栏绘制
-			core.drawStatusBar();
+	// 难度
+	if (core.statusBar.hard.innerText != core.status.hard) {
+		core.statusBar.hard.innerText = core.status.hard;
+	}
+	var hardColor = core.getFlag('__hardColor__');
+	if (hardColor == null) core.statusBar.hard.innerText = '';
+	if (core.statusBar.hard.getAttribute('_style') != hardColor) {
+		core.statusBar.hard.style.color = hardColor;
+		core.statusBar.hard.setAttribute('_style', hardColor);
+	}
+	// 自定义状态栏绘制
+	core.drawStatusBar();
 
-			// 更新阻激夹域的伤害值
-			core.updateCheckBlock();
-			// updateDamage只能在此处执行！！更新全地图显伤
-			core.updateDamage();
-		},
+	// 更新阻激夹域的伤害值
+	core.updateCheckBlock();
+	// updateDamage只能在此处执行！！更新全地图显伤
+	core.updateDamage();
+},
         "updateCheckBlock": function (floorId) {
 	// 领域、夹击、阻击等的伤害值计算
 	floorId = floorId || core.status.floorId;
@@ -1623,7 +1631,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			fill(core.formatBigNumber(core.status.hero.money), 304, 58);
 			core.drawImage(ctx, core.statusBar.icons.exp, 6, 70, 25, 25);
 			fill(core.formatBigNumber(core.status.hero.exp), 42, 90);
-		} else if (!core.flags.extendToolbar) { // 横屏左侧状态栏
+		} else if (!core.flags.hideLeftStatusBar) { // 横屏左侧状态栏
 			core.drawImage(ctx, core.statusBar.icons.floor, 6, 9, 25, 25);
 			fill((core.status.thisMap || {}).name || "Loading", 42, 29);
 			core.drawImage(ctx, core.statusBar.icons.hp, 6, 43, 25, 25);
@@ -1642,7 +1650,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			fill(core.setTwoDigits(core.itemCount('blueKey')), 46, 267, '#AAAADD');
 			fill(core.setTwoDigits(core.itemCount('redKey')), 81, 267, '#FF8888');
 		}
-	} else if (core.flags.extendToolbar && !core.domStyle.isVertical) { // 横屏右侧状态栏
+	} else if (core.flags.hideLeftStatusBar && !core.domStyle.isVertical) { // 横屏右侧状态栏
 		if (!core.dymCanvas['status'])
 			core.ui.createCanvas('status', 0, 0, core._PX_, core._PY_, 66); // 刚好盖过显伤层
 		core.ui.clearMap(ctx = core.dymCanvas['status']);
@@ -1675,13 +1683,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		fill('黄金:' + core.formatBigNumber(core.getRealStatus('money')), x0 + x1, 290);
 		fill('经验:' + core.formatBigNumber(core.control.getNextLvUpNeed()), x0 + x1, 310);
 		fill('战术:' + core.getSkillInfo(flags.skill).name, x0 + x1, 330);
-		fill(core.setTwoDigits(core.itemCount('yellowKey')), x0 + 12, 350, '#FFCCAA');
-		fill(core.setTwoDigits(core.itemCount('blueKey')), x0 + 47, 350, '#AAAADD');
-		fill(core.setTwoDigits(core.itemCount('redKey')), x0 + 82, 350, '#FF8888');
+		if (flags['escort']) {
+			fill('友军:' + core.formatBigNumber(core.getFlag('友军血量')), x0 + x1, 350, '#FF6400');
+		}
+		fill(core.setTwoDigits(core.itemCount('yellowKey')), x0 + 12, 370, '#FFCCAA');
+		fill(core.setTwoDigits(core.itemCount('blueKey')), x0 + 47, 370, '#AAAADD');
+		fill(core.setTwoDigits(core.itemCount('redKey')), x0 + 82, 370, '#FF8888');
 		if (flags.stage >= 0) {
-			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][0] ? 'star2' : 'star1', x0 + 10, 380, 32, 32);
-			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][1] ? 'star2' : 'star1', x0 + 50, 380, 32, 32);
-			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][2] ? 'star2' : 'star1', x0 + 90, 380, 32, 32);
+			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][0] ? 'star2' : 'star1', x0 + 10, 400, 32, 32);
+			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][1] ? 'star2' : 'star1', x0 + 50, 400, 32, 32);
+			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][2] ? 'star2' : 'star1', x0 + 90, 400, 32, 32);
 		}
 	}
 },

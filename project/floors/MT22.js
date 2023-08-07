@@ -12,7 +12,7 @@ main.floors.MT22=
     "images": [],
     "ratio": 1,
     "defaultGround": "sand",
-    "bgm": "hitman.mp3",
+    "bgm": "cao4.mp3",
     "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",

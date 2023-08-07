@@ -15,23 +15,27 @@ main.floors.train2=
     "firstArrive": [
         {
             "type": "setValue",
-            "name": "status:hp",
-            "value": "50000"
+            "name": "status:hpmax",
+            "value": "50000",
+            "norefresh": true
         },
         {
             "type": "setValue",
-            "name": "status:hpmax",
-            "value": "50000"
+            "name": "status:hp",
+            "value": "50000",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:top",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:money",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setValue",

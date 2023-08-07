@@ -16,27 +16,32 @@ main.floors.train3=
         {
             "type": "setValue",
             "name": "status:hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:hpmax",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:atk",
-            "value": "10"
+            "value": "10",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:top",
-            "value": "100"
+            "value": "100",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:money",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setValue",

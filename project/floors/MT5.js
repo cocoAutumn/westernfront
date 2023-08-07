@@ -74,10 +74,10 @@ main.floors.MT5=
                 "type": "scaleImage",
                 "code": 1,
                 "center": [
-                    320,
-                    240
+                    240,
+                    200
                 ],
-                "scale": 0.5,
+                "scale": 0.4,
                 "time": 1000
             },
             {

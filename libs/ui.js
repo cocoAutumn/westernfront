@@ -57,7 +57,13 @@ ui.prototype.clearMap = function (name, x, y, width, height) {
             if (x != null && y != null && width != null && height != null) {
                 ctx.clearRect(x, y, width, height);
             } else {
-                ctx.clearRect(-32, -32, ctx.canvas.width + 32, ctx.canvas.height + 32);
+                if (ctx.canvas.getAttribute('isHD')) {
+                    const width = ctx.canvas.width / core.domStyle.scale / devicePixelRatio;
+                    const height = ctx.canvas.height / core.domStyle.scale / devicePixelRatio;
+                    ctx.clearRect(0, 0, width, height);
+                } else {
+                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                }
             }
         }
     }
@@ -1108,12 +1114,16 @@ ui.prototype.drawTextContent = function (ctx, content, config) {
     config.offsetY = 0;
     config.line = 0;
     config.blocks = [];
-    config.isHD = ctx != null && ctx.canvas.hasAttribute('isHD');
+    config.isHD = ctx == null || ctx.canvas.hasAttribute('isHD');
 
     // 创建一个新的临时画布
     var tempCtx = document.createElement('canvas').getContext('2d');
-    if (config.isHD) {
-        core.maps._setHDCanvasSize(tempCtx, ctx.canvas.width, ctx.canvas.height);
+    if (config.isHD && ctx) {
+        core.maps._setHDCanvasSize(
+            tempCtx,
+            ctx.canvas.width,
+            ctx.canvas.height
+        );
     } else {
         tempCtx.canvas.width = ctx == null ? 1 : ctx.canvas.width;
         tempCtx.canvas.height = ctx == null ? 1 : ctx.canvas.height;
@@ -1148,10 +1158,20 @@ ui.prototype._drawTextContent_draw = function (ctx, tempCtx, content, config) {
         if (config.index >= config.blocks.length) return false;
         var block = config.blocks[config.index++];
         if (block != null) {
-            var ratio = config.isHD ? core.domStyle.ratio : 1;
-            core.drawImage(ctx, tempCtx.canvas, block.left * ratio, block.top * ratio, block.width * ratio, block.height * ratio,
-                config.left + block.left + block.marginLeft, config.top + block.top + block.marginTop,
-                block.width, block.height);
+            // It works, why?
+            const scale = config.isHD ? devicePixelRatio * core.domStyle.scale : 1;
+            core.drawImage(
+                ctx,
+                tempCtx.canvas,
+                block.left * scale,
+                block.top * scale,
+                block.width * scale,
+                block.height * scale,
+                config.left + block.left + block.marginLeft,
+                config.top + block.top + block.marginTop,
+                block.width,
+                block.height
+            );
         }
         return true;
     }
@@ -2134,7 +2154,7 @@ ui.prototype._drawBook_drawBackground = function () {
 
 ui.prototype._drawBook_drawEmpty = function () {
     core.setTextAlign('ui', 'center');
-    core.fillText('ui', "未发现敌军有生力量", core._PY_ / 2, core._PY_ / 2 + 14, '#00E100', this._buildFont(50, true));
+    core.fillText('ui', "本层无怪物", core._PX_ / 2, core._PY_ / 2 + 14, '#999999', this._buildFont(50, true));
     core.fillText('ui', '返回游戏', core._PX_ - 46, core._PY_ - 13, '#DDDDDD', this._buildFont(15, true));
 }
 
@@ -2363,7 +2383,7 @@ ui.prototype._drawBookDetail_getInfo = function (index) {
     index = core.clamp(index, 0, enemys.length - 1);
     var enemy = enemys[index], enemyId = enemy.id;
     var texts = core.enemys.getSpecialHint(enemyId);
-    if (texts.length == 0) texts.push("该敌人无特殊技能。");
+    if (texts.length == 0) texts.push("该怪物无特殊属性。");
     if (enemy.description) texts.push(enemy.description + "\r");
     texts.push("");
     this._drawBookDetail_getTexts(enemy, floorId, texts);
@@ -2512,23 +2532,24 @@ ui.prototype.drawFly = function (page) {
     core.setTextAlign('ui', 'center');
 
     var middle = core._PY_ / 2 + 39;
+    const lastWidth = 0.25 * core._PX_ - 16;
 
     // 换行
-    var lines = core.splitLines('ui', title, 120, this._buildFont(19, true));
+    var lines = core.splitLines('ui', title, lastWidth, this._buildFont(19, true));
     var start_y = middle - (lines.length - 1) * 11;
     for (var i in lines) {
-        core.fillText('ui', lines[i], core._PX_ - 60, start_y, '#FFFFFF');
+        core.fillText('ui', lines[i], core._PX_ - lastWidth * 0.5, start_y, '#FFFFFF');
         start_y += 22;
     }
     if (core.actions._getNextFlyFloor(1) != page) {
-        core.fillText('ui', '▲', core._PX_ - 60, middle - 64, null, this._buildFont(17, false));
-        core.fillText('ui', '▲', core._PX_ - 60, middle - 96);
-        core.fillText('ui', '▲', core._PX_ - 60, middle - 96 - 7);
+        core.fillText('ui', '▲', core._PX_ - lastWidth * 0.5, middle - 64, null, this._buildFont(17, false));
+        core.fillText('ui', '▲', core._PX_ - lastWidth * 0.5, middle - 96);
+        core.fillText('ui', '▲', core._PX_ - lastWidth * 0.5, middle - 96 - 7);
     }
     if (core.actions._getNextFlyFloor(-1) != page) {
-        core.fillText('ui', '▼', core._PX_ - 60, middle + 64, null, this._buildFont(17, false));
-        core.fillText('ui', '▼', core._PX_ - 60, middle + 96);
-        core.fillText('ui', '▼', core._PX_ - 60, middle + 96 + 7);
+        core.fillText('ui', '▼', core._PX_ - lastWidth * 0.5, middle + 64, null, this._buildFont(17, false));
+        core.fillText('ui', '▼', core._PX_ - lastWidth * 0.5, middle + 96);
+        core.fillText('ui', '▼', core._PX_ - lastWidth * 0.5, middle + 96 + 7);
     }
     var size = 0.75;
     core.strokeRect('ui', 16, 64, size * core._PX_, size * core._PY_, '#FFFFFF', 2);
@@ -2656,7 +2677,7 @@ ui.prototype._drawToolbox = function (index) {
     var line1 = core._PY_ - 306;
     this._drawToolbox_drawLine(line1, "消耗道具");
     var line2 = core._PY_ - 146;
-    this._drawToolbox_drawLine(line2 + 9, "永久道具");
+    this._drawToolbox_drawLine(line2, "永久道具");
 
     this._drawToolbox_drawDescription(info, line1);
 
@@ -2922,7 +2943,7 @@ ui.prototype._drawEquipbox_drawStatusChanged_draw = function (text, color, obj) 
 
 ui.prototype._drawEquipbox_drawEquiped = function (info, line) {
     core.setTextAlign('ui', 'center');
-    var per_line = Math.ceil(core.status.globalAttribute.equipName.length / 2), width = Math.floor(core._PX_ / (per_line + 0.25));
+    var per_line = core._HALF_WIDTH_ - 3, width = Math.floor(core._PX_ / (per_line + 0.25));
     // 当前装备
     for (var i = 0; i < info.equipLength; i++) {
         var equipId = info.equipEquipment[i] || null;
@@ -3381,6 +3402,8 @@ ui.prototype.createCanvas = function (name, x, y, width, height, z) {
     newCanvas.style.display = 'block';
     newCanvas.setAttribute("_left", x);
     newCanvas.setAttribute("_top", y);
+    newCanvas.setAttribute("_width", width);
+    newCanvas.setAttribute("_height", height);
     newCanvas.style.width = width * core.domStyle.scale + 'px';
     newCanvas.style.height = height * core.domStyle.scale + 'px';
     newCanvas.style.left = x * core.domStyle.scale + 'px';
@@ -3439,16 +3462,21 @@ ui.prototype.rotateCanvas = function (name, angle, centerX, centerY) {
 }
 
 ////// canvas重置 //////
-ui.prototype.resizeCanvas = function (name, width, height, styleOnly, isTempCanvas) {
+ui.prototype.resizeCanvas = function (name, width, height, styleOnly) {
     var ctx = core.getContextByName(name);
+    const canvas = ctx.canvas;
     if (!ctx) return null;
     if (width != null) {
-        if (!styleOnly) core.maps._setHDCanvasSize(ctx, width, null, isTempCanvas);
+        if (!styleOnly && ctx.canvas.hasAttribute('isHD'))
+            core.maps._setHDCanvasSize(ctx, width, null);
         ctx.canvas.style.width = width * core.domStyle.scale + 'px';
+        canvas.setAttribute('_width', width);
     }
     if (height != null) {
-        if (!styleOnly) core.maps._setHDCanvasSize(ctx, null, height, isTempCanvas);
+        if (!styleOnly && ctx.canvas.hasAttribute('isHD'))
+            core.maps._setHDCanvasSize(ctx, null, height);
         ctx.canvas.style.height = height * core.domStyle.scale + 'px';
+        canvas.setAttribute('_height', height);
     }
     return ctx;
 }

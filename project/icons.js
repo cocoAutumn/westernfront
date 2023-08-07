@@ -119,11 +119,11 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"upPortal": 26,
 		"ice": 27,
 		"magentaWall": 28,
-		"A360": 29,
 		"A556": 30,
 		"A557": 31,
 		"A558": 32,
-		"A559": 33
+		"A559": 33,
+		"mine": 29
 	},
 	"npcs": {
 		"man": 0,
@@ -416,7 +416,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"dorsetshire": 92,
 		"benson": 87,
 		"cleveland": 93,
-		"alaska": 94,
 		"hood": 95,
 		"warspite": 96,
 		"kinggeorge5": 97,
@@ -428,7 +427,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"essex": 103,
 		"enterprise": 104,
 		"wrestler": 105,
-		"p40b": 106,
 		"hurricanemk1": 107,
 		"spitfiremk1": 108,
 		"p40e": 109,
@@ -489,7 +487,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"orange2Gem": 152,
 		"orange3Gem": 157,
 		"orange4Gem": 162,
-		"orange5Gem": 167
+		"orange5Gem": 167,
+		"p40c": 106,
+		"baltimore": 94
 	},
 	"autotile": {
 		"autotile": 0,

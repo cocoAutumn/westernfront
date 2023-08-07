@@ -55,56 +55,78 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT12",
 				"MT18"
+			],
+			[
+				"MT19",
+				"MT25"
 			]
 		],
 		"images": [
 			"15.png",
 			"aircraft1.png",
 			"alexanda.png",
-			"america.png",
 			"arnorid.png",
 			"auchinleck.png",
 			"badoglio.png",
+			"baltimore.jpg",
+			"bear.png",
+			"benson.jpg",
 			"bg.jpg",
 			"bock.png",
 			"bradley.png",
-			"difficult.png",
+			"brave.png",
+			"classe.jpg",
+			"classj.jpg",
+			"classv.jpg",
+			"cleveland.jpg",
 			"donitz.png",
+			"dorsetshire.jpg",
 			"dowdin.png",
 			"dragon.png",
+			"eagle.jpg",
+			"edinburgh.jpg",
 			"eisenhower.png",
-			"england.png",
+			"enterprise.jpg",
+			"essex.jpg",
 			"failure.png",
-			"france.png",
-			"franch1.png",
-			"franch2.png",
+			"flecher.jpg",
 			"ft17.jpg",
 			"gaulle.png",
-			"germany.png",
 			"gorlin.png",
 			"graziani.png",
+			"gridley.jpg",
 			"guderian.png",
 			"h35.jpg",
 			"heinrich.png",
 			"hero.png",
-			"italy.png",
+			"hurricanemk1.jpg",
+			"illustrious.jpg",
+			"iowa.jpg",
 			"kasselring.png",
+			"kinggeorgev.jpg",
 			"leclere.png",
 			"leeb.png",
 			"lundstedt.png",
 			"macarthur.png",
+			"mahan.jpg",
 			"manstein.png",
 			"messer.png",
 			"model.png",
 			"montbarton.png",
 			"montgomary.png",
 			"nimitz.png",
+			"norfolk.jpg",
+			"northcarolina.jpg",
+			"p40c.jpg",
 			"patton.png",
 			"petain.png",
+			"raider.jpg",
 			"rommel.png",
+			"sheffield.jpg",
 			"skua.jpg",
 			"sky.jpg",
 			"slim.png",
+			"spitfiremk1.jpg",
 			"star.png",
 			"status.png",
 			"studdent.png",
@@ -115,6 +137,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"title3.png",
 			"title4.png",
 			"title5.png",
+			"warspite.jpg",
 			"win.png",
 			"winskin.png",
 			"wrestler.jpg"
@@ -452,7 +475,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 	"firstData": {
 		"title": "铁血战将：落日余晖",
 		"name": "westernfront",
-		"version": "Ver 2.10.0",
+		"version": "Ver 2.10.2",
 		"floorId": "train1",
 		"hero": {
 			"image": "hero.png",
@@ -1162,7 +1185,55 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "飓风MK1战斗机（400）",
+						"text": "P40C“战斧”式战斗机（350）",
+						"need": "true",
+						"icon": "p40c",
+						"condition": "!core.hasEquip('p40c')&&!core.hasItem('p40c')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[p40c.jpg,170,50]P40系列战斗机，由美国柯蒂斯公司设计。P40的战斗力在当时并不算出众，却非常适合批量生产以及出口销售。P40被出口到多个国家，参与了整场二战。其中，在中国的美籍援华志愿航空队（民间俗称飞虎队）就驾驶P40战斗机与日军展开旷日持久的战斗，给侵华日军带来了沉重的打击。在电影《珍珠港》中，主角驾驶的飞机也是P40的后期型号。",
+							"\f[p40c.jpg,170,50]装备属性：攻+30。挂载：2×100磅和1×500磅炸弹\n仅第2回合投弹，造成两次0.4倍攻击力的伤害和1次2倍攻击力的伤害",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=350)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "350"
+											},
+											{
+												"type": "setValue",
+												"name": "item:p40c",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "飓风MK1战斗机（舰）（400）",
 						"need": "true",
 						"icon": "hurricanemk1",
 						"condition": "!core.hasEquip('hurricanemk1')&&!core.hasItem('hurricanemk1')",
@@ -1171,8 +1242,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"type": "comment",
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
-							"\f[h35.jpg,170,50]法国雷诺FT-17轻型坦克于第一次世界大战时期研制成功。它是世界上第一种装有可360度旋转炮塔的坦克，而且动力舱后置、车体前设驾驶席，这种设计自那以后就成了坦克设计的标配，直到现在。虽然雷诺坦克具有划时代的意义，但到了二战开始时，它们已经过时，在德军新型坦克面前不堪一击。",
-							"\f[ft17.jpg,170,50]装备属性：攻击+10，5穿甲，3装甲",
+							"\f[hurricanemk1.jpg,170,50]飓风式战斗机是二战期间英国空军的主力战斗机之一。作为英国的首批单翼战斗机，“飓风”的战斗力不算出众。他们速度迟缓，机体笨重而脆弱，完全不能与同时期的德国ME109战斗机硬碰硬，但“飓风”火力强劲，易于生产，又便于维修。在不列颠空战中，人们的注意力都集中在“喷火”战斗机与ME109的史诗级大战中时，数量众多的主力“飓风”则趁机猎杀德军轰炸机，为英国空军的胜利做出了不可磨灭的功劳。",
+							"\f[hurricanemk1.jpg,170,50]装备属性：攻+40。每回合对轰炸机追加80点伤害。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -1183,7 +1254,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"true": [
 											{
 												"type": "playSound",
-												"name": "move2.mp3"
+												"name": "fighter1.mp3"
 											},
 											{
 												"type": "setValue",
@@ -1219,29 +1290,125 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"type": "comment",
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
-							"\f[h35.jpg,170,50]法国雷诺FT-17轻型坦克于第一次世界大战时期研制成功。它是世界上第一种装有可360度旋转炮塔的坦克，而且动力舱后置、车体前设驾驶席，这种设计自那以后就成了坦克设计的标配，直到现在。虽然雷诺坦克具有划时代的意义，但到了二战开始时，它们已经过时，在德军新型坦克面前不堪一击。",
-							"\f[ft17.jpg,170,50]装备属性：攻击+10，5穿甲，3装甲",
+							"\f[spitfiremk1.jpg,170,50]超级马林公司设计的喷火式战斗机，是二战中最著名的战斗机之一。“喷火”造型优美，速度飞快，性能突出，是英国皇家空军引以为豪的中坚力量。“喷火”几乎从始至终都扮演着二战英国空军的主力，他的各种型号活跃于各大战场，还有专供航空母舰使用的“海喷火”系列型号。毫无疑问，“喷火”是英国赢得战争的一大功臣。",
+							"\f[spitfiremk1.jpg,170,50]装备属性：攻击+40，与战斗机作战时，每回合额外追加10%伤害",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=600)",
+										"condition": "(status:money>=700)",
 										"true": [
 											{
 												"type": "playSound",
-												"name": "move2.mp3"
+												"name": "fighter1.mp3"
 											},
 											{
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "600"
+												"value": "700"
 											},
 											{
 												"type": "setValue",
 												"name": "item:spitfiremk1",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "E级驱逐舰（500）",
+						"need": "true",
+						"icon": "classe",
+						"condition": "!core.hasEquip('classe')&&!core.hasItem('classe')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[classe.jpg,170,50]E级驱逐舰属于英国海军在二战前建造的一种型号，与F级一起，根据英国皇家海军1931年和1932年造舰计划建造。整场二战中，E和F级共损失9艘。武器设备包括：4门单管120mm主炮；2部四联装12.7mm维克斯高射机枪；2具4联装533mm鱼雷发射管，最大航速可达35-37节（换算约为65-68km/h）。图为“迎战”(Encounter)号驱逐舰",
+							"\f[classe.jpg,170,50]装备属性：攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于0.1倍攻击力的伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:classe",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "马汉级驱逐舰（520）",
+						"need": "true",
+						"icon": "mahan",
+						"condition": "!core.hasEquip('mahan')&&!core.hasItem('mahan')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[mahan.jpg,170,50]马汉级驱逐舰是美国建造的一个系列重鱼雷武装的驱逐舰，共建造了18艘，全部参与了太平洋战争。马汉级具有36.5节的最大速度，武器装备有5门127毫米38倍径高平两用炮，3座MK11型或MK12型鱼雷发射管，4门12.7mm机枪和舰艉的两条深水炸弹导轨。共有6艘马汉级驱逐舰在战争中被击沉。",
+							"\f[mahan.jpg,170,50]装备属性：攻+120，雷击+150，鱼雷管+3，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于0.1倍攻击力的伤害。\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=520)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "520"
+											},
+											{
+												"type": "setValue",
+												"name": "item:mahan",
 												"operator": "+=",
 												"value": "1"
 											}
@@ -1516,6 +1683,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"enableMoveDirectly": true,
 		"enableRouteFolding": true,
 		"disableShopOnDamage": false,
-		"blurFg": false
+		"blurFg": false,
+		"hideLeftStatusBar": true
 	}
 }
