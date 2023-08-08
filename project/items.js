@@ -1133,7 +1133,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"I521": {
 		"cls": "items",
 		"name": "金屑",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，黄金+10",
+		"itemEffectTip": "，黄金+10",
+		"itemEffect": "core.status.hero.money += 10;"
 	},
 	"I522": {
 		"cls": "items",

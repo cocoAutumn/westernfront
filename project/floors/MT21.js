@@ -67,7 +67,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "lightinf",
             "name": "hp",
-            "value": "1500"
+            "value": "1000"
         },
         {
             "type": "setEnemy",
@@ -79,7 +79,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "1500"
+            "value": "1000"
         },
         {
             "type": "setEnemy",
@@ -91,7 +91,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "1500"
+            "value": "1000"
         },
         {
             "type": "setEnemy",
@@ -103,31 +103,37 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "grenadier",
             "name": "hp",
-            "value": "1400"
+            "value": "800"
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
+            "name": "atk",
+            "value": "200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "hp",
+            "value": "500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
             "name": "atk",
             "value": "500"
         },
         {
             "type": "setEnemy",
             "id": "mortar",
-            "name": "hp",
-            "value": "1000"
-        },
-        {
-            "type": "setEnemy",
-            "id": "mortar",
-            "name": "atk",
-            "value": "700"
+            "name": "special",
+            "value": "[]"
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "1400"
+            "value": "600"
         },
         {
             "type": "setEnemy",
@@ -139,7 +145,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
-            "value": "1000"
+            "value": "600"
         },
         {
             "type": "setEnemy",
@@ -151,7 +157,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "me109e4",
             "name": "hp",
-            "value": "1500"
+            "value": "1000"
         },
         {
             "type": "setEnemy",
@@ -163,13 +169,13 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "ju87b",
             "name": "hp",
-            "value": "1500"
+            "value": "1100"
         },
         {
             "type": "setEnemy",
             "id": "pak36",
             "name": "hp",
-            "value": "1500"
+            "value": "1000"
         },
         {
             "type": "setEnemy",
@@ -181,7 +187,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "flak37",
             "name": "hp",
-            "value": "1000"
+            "value": "600"
         },
         {
             "type": "setEnemy",
@@ -193,7 +199,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "1200"
+            "value": "600"
         },
         {
             "type": "setEnemy",
@@ -205,7 +211,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "artillery75",
             "name": "hp",
-            "value": "1300"
+            "value": "600"
         },
         {
             "type": "setEnemy",
@@ -217,7 +223,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "hp",
-            "value": "1600"
+            "value": "800"
         },
         {
             "type": "setEnemy",
@@ -227,21 +233,33 @@ main.floors.MT21=
         },
         {
             "type": "setEnemy",
+            "id": "sdkfz222",
+            "name": "special",
+            "value": "[4]"
+        },
+        {
+            "type": "setEnemy",
             "id": "panzer2c",
             "name": "hp",
-            "value": "1500"
+            "value": "1000"
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "atk",
-            "value": "140"
+            "value": "100"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer2c",
+            "name": "special",
+            "value": "[4]"
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "hp",
-            "value": "1900"
+            "value": "1000"
         },
         {
             "type": "setEnemy",
@@ -251,21 +269,33 @@ main.floors.MT21=
         },
         {
             "type": "setEnemy",
+            "id": "panzer35t",
+            "name": "special",
+            "value": "[]"
+        },
+        {
+            "type": "setEnemy",
             "id": "panzer38t",
             "name": "hp",
-            "value": "2100"
+            "value": "1300"
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "atk",
             "value": "180"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer38t",
+            "name": "special",
+            "value": "[]"
         },
         {
             "type": "setEnemy",
             "id": "panzer3e",
             "name": "hp",
-            "value": "2500"
+            "value": "1800"
         },
         {
             "type": "setEnemy",
@@ -277,7 +307,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "panzer4c",
             "name": "hp",
-            "value": "3000"
+            "value": "1800"
         },
         {
             "type": "setEnemy",
@@ -330,8 +360,8 @@ main.floors.MT21=
     [150,150,150,150,150,150,150,  0,150,150,150,150,150,150,150],
     [150,150,150,150,150,150, 21,  0, 21,150,150,150,150,150,150],
     [150,150,150,150,150, 21, 33,202, 33, 21,150,150,150,150,150],
-    [ 30, 29,  0,250,150,150,150, 86,150,150,150,150, 27,  0, 21],
-    [ 22, 28,250,203, 81,  0,  0,  0,  0,  0, 28,150,  0,205,  0],
+    [ 30, 29,  0,250,150,150,150, 86,150,150,150,150, 27, 28, 21],
+    [ 22, 28,250,203, 81,  0,  0,  0,  0, 28, 28,150,  0,205,  0],
     [150,150,203,150,150,207,150,150,150, 81,150,150,150, 81,150],
     [ 27,150,345,150, 32,  0,202,  0,244,  0,  0,  0,250,  0, 30],
     [ 27,150,150,150,150,202,150,202,150,150,254,150,150,  0, 94],

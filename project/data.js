@@ -32,6 +32,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT23",
 			"MT24",
 			"MT25",
+			"MT25_1",
 			"MT26",
 			"MT27",
 			"MT28",
@@ -208,6 +209,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"europe1.mp3",
 			"europe2.mp3",
 			"europe3.mp3",
+			"europe4.mp3",
+			"europe5.mp3",
 			"failed.mp3",
 			"farthestend.mp3",
 			"gaijin1.mp3",
@@ -229,7 +232,15 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"medaction5.ogg",
 			"medaction8.ogg",
 			"wot1.mp3",
-			"wot2.mp3"
+			"wot2.mp3",
+			"wots1.mp3",
+			"wots2.mp3",
+			"wots3.mp3",
+			"wots4.mp3",
+			"wots5.mp3",
+			"wots6.mp3",
+			"wots7.mp3",
+			"wots8.mp3"
 		],
 		"sounds": [
 			"005-System05.mp3",
