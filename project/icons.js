@@ -489,7 +489,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"orange4Gem": 162,
 		"orange5Gem": 167,
 		"p40c": 106,
-		"baltimore": 94
+		"baltimore": 94,
+		"hard1": 168,
+		"hard2": 169,
+		"hard4": 170
 	},
 	"autotile": {
 		"autotile": 0,

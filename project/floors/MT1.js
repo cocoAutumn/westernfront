@@ -152,7 +152,10 @@ main.floors.MT1=
             }
         ],
         "2,9": [
-            "音频、图片等素材来源（借物表）"
+            "音频、图片等素材来源（借物表）",
+            "bgm来源：三国志曹操传、永远的七日之都、双星物语、林德拉克计划、碧蓝航线、原神、War on the Sea、钢铁雄心、冰封前线系列、战争雷霆、坦克世界、将军的荣耀系列、空中冲突太平洋航母、欧洲空战英雄、Requiem for a war、Victory、FarthestEnd、Darkside of Power、Conquest of Paradise、Exodus",
+            "音效来源：猎杀潜航、偷袭珍珠港、太平洋风暴、空中冲突太平洋航母、KARDS、还有从各种魔塔里面借（tou）的",
+            "图片来源：世界征服者4（及其mod）、百度、知乎等"
         ]
     },
     "changeFloor": {
@@ -167,7 +170,74 @@ main.floors.MT1=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {},
+    "afterOpenDoor": {
+        "4,7": [
+            {
+                "type": "if",
+                "condition": "(flag:hard===1)",
+                "true": [
+                    "\t[系统提示]检测到当前为“神剧难度”，获得40%全塔战斗减伤道具、20黄5蓝。祝游戏愉快！",
+                    {
+                        "type": "setValue",
+                        "name": "item:yellowKey",
+                        "operator": "+=",
+                        "value": "20"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "item:蓝",
+                        "operator": "+=",
+                        "value": "5"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "item:hard1",
+                        "operator": "+=",
+                        "value": "1"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:hard===2)",
+                "true": [
+                    "\t[系统提示]检测到当前为“街机难度”，获得20%全塔战斗减伤道具、10黄2蓝。祝游戏愉快！",
+                    {
+                        "type": "setValue",
+                        "name": "item:yellowKey",
+                        "operator": "+=",
+                        "value": "10"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "item:蓝",
+                        "operator": "+=",
+                        "value": "2"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "item:hard2",
+                        "operator": "+=",
+                        "value": "1"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:hard===3)",
+                "true": [
+                    "\t[系统提示]检测到当前为“历史难度”，无福利。祝游戏愉快！"
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:hard===4)",
+                "true": [
+                    "\t[系统提示]检测到当前为“炼狱难度”，大佬你太勇了，但是这个难度还没做完，相当于历史难度！"
+                ]
+            }
+        ]
+    },
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

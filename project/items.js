@@ -890,11 +890,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "喷火MK1",
 		"canUseItemEffect": "true",
-		"text": "主武器：8×7.62mm机枪\n攻击+40，与战斗机作战时，每回合额外追加10%伤害",
+		"text": "主武器：8×7.62mm机枪\n攻击+50，与战斗机作战时，每回合额外追加10%伤害",
 		"equip": {
 			"type": 4,
 			"value": {
-				"atk": 40
+				"atk": 50
 			},
 			"percentage": {}
 		}
@@ -1028,7 +1028,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "剑鱼式鱼雷机",
 		"canUseItemEffect": "true",
-		"text": "无属性加成。挂载：1×鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放一枚鱼雷。对地攻击时，每5回合投放一次炸弹，每颗炸弹伤害为0.6倍攻击力.",
+		"text": "无属性加成。挂载：1×MK12鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放3枚鱼雷。对地攻击时，每5回合投放一次炸弹，每颗炸弹伤害为0.6倍攻击力.",
 		"equip": {
 			"type": 6,
 			"value": {},
@@ -1039,7 +1039,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "TBD蹂躏者",
 		"canUseItemEffect": "true",
-		"text": "攻+5。挂载：1×鱼雷或12×50磅炸弹\n对舰攻击时，每5回合投放1枚鱼雷。对地攻击时，每5回合投放一轮炸弹，每颗炸弹伤害为0.1倍攻击力\n哑弹：投放的鱼雷不会爆炸（神剧难度无效）"
+		"text": "攻+5。挂载：1×MK13鱼雷或3×200磅炸弹\n对舰攻击时，每4回合投放3枚鱼雷（MK13鱼雷伤害增加20%）。对地攻击时，每4回合投放一轮炸弹，每颗炸弹伤害为0.1倍攻击力\n哑弹：投放的鱼雷不会爆炸（神剧难度无效）"
 	},
 	"blenheim": {
 		"cls": "equips",
@@ -1285,6 +1285,23 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"baltimore": {
 		"cls": "equips",
 		"name": "重巡·巴尔的摩号",
+		"canUseItemEffect": "true"
+	},
+	"hard1": {
+		"cls": "constants",
+		"name": "神剧难度",
+		"canUseItemEffect": "true",
+		"text": "全塔战斗减伤40%"
+	},
+	"hard2": {
+		"cls": "constants",
+		"name": "街机难度",
+		"canUseItemEffect": "true",
+		"text": "全塔战斗减伤20%"
+	},
+	"hard4": {
+		"cls": "constants",
+		"name": "炼狱难度",
 		"canUseItemEffect": "true"
 	}
 }

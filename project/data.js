@@ -60,6 +60,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT19",
 				"MT25"
+			],
+			[
+				"MT25_1",
+				"MT31"
 			]
 		],
 		"images": [
@@ -124,6 +128,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"raider.jpg",
 			"rommel.png",
 			"sheffield.jpg",
+			"skill3.jpg",
 			"skua.jpg",
 			"sky.jpg",
 			"slim.png",
@@ -138,6 +143,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"title3.png",
 			"title4.png",
 			"title5.png",
+			"uboat.png",
 			"warspite.jpg",
 			"win.png",
 			"winskin.png",
@@ -300,6 +306,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"rocketspawn.mp3",
 			"save.mp3",
 			"seaexplo.mp3",
+			"ship.mp3",
 			"shipgun.mp3",
 			"shop.mp3",
 			"sniper.mp3",
@@ -1149,7 +1156,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"condition": "!core.hasEquip('swordfish')&&!core.hasItem('swordfish')",
 						"action": [
 							"\f[swordfish.jpg,170,50]剑鱼式鱼雷机于1935年研发完成。二战爆发时，“剑鱼”已经明显落伍——双翼机，仅有225km/h的速度，以及少得可怜的装备和防护，看上去就和一战时期的飞机一样不堪一击。然而就是这款落后的鱼雷机为英军立下了赫赫战功——奇袭塔兰托、围剿俾斯麦……剑鱼式完成了很多本不属于它们这个阶级的任务，直到战争结束。",
-							"\f[swordfish.jpg,170,50]装备属性：无\n挂载：1×鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放一枚鱼雷。对地攻击时，每5回合投放一次炸弹，每颗炸弹伤害为0.6倍攻击力.",
+							"\f[swordfish.jpg,170,50]装备属性：无\n无属性加成。挂载：1×MK12鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放3枚鱼雷。对地攻击时，每5回合投放一次炸弹，每颗炸弹伤害为0.6倍攻击力.",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -1361,7 +1368,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"true": [
 											{
 												"type": "playSound",
-												"name": "fighter1.mp3"
+												"name": "ship.mp3"
 											},
 											{
 												"type": "setValue",
@@ -1409,7 +1416,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"true": [
 											{
 												"type": "playSound",
-												"name": "fighter1.mp3"
+												"name": "ship.mp3"
 											},
 											{
 												"type": "setValue",
@@ -1567,14 +1574,46 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "animate",
 						"name": "yongchang"
 					},
-					"晋升少尉。"
+					"晋升少尉。攻击+25，雷击+50，血量与血限+700，后勤+20。",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "25"
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "50"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "700"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "700"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "20"
+					}
 				]
 			},
 			{
 				"need": "1000",
 				"title": "中尉",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升中尉。"
+				]
 			},
 			{
 				"need": "1250",

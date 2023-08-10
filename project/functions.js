@@ -81,18 +81,30 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			});
 		},
         "lose": function (reason) {
-			// 游戏失败事件
-			core.ui.closePanel();
-			var replaying = core.isReplaying();
-			core.stopReplay();
-			core.waitHeroToStop(function () {
-				core.drawText([
-					"\t[" + (reason || "结局1") + "]你死了。\n如题。"
-				], function () {
-					core.events.gameOver(null, replaying);
-				});
-			})
-		},
+	// 游戏失败事件
+	core.ui.closePanel();
+	var replaying = core.isReplaying();
+	core.stopReplay();
+	core.waitHeroToStop(function () {
+		var arr = ["\t[" + (reason || "战败") + "]你的指挥出现了重大失误，导致我军承受了本不该有的巨大损失。经国会商讨决定，你已被撤职，并彻底失去对军队的一切指挥权！"];
+		core.status.gameOver = false;
+		core.clearMap('uievent');
+		core.events.insertAction([
+			{ "type": "hideStatusBar" },
+			{ "type": "pauseBgm" },
+			{ "type": "screenFlash", "color": [255, 255, 255, 1], "time": 100, "times": 1 },
+			{ "type": "sleep", "time": 500 },
+			{ "type": "setCurtain", "color": [0, 0, 0, 1], "time": 500, "keep": true },
+			{ "type": "showImage", "code": 1, "image": "failure.png", "loc": [0, 0], "opacity": 1, "time": 0 },
+			{ "type": "playBgm", "name": "failed.mp3", "keep": true },
+			{ "type": "setCurtain", "color": [0, 0, 0, 0], "time": 1000 },
+			{ "type": "sleep", "time": 2000 },
+		].concat(arr), null, null, function () {
+			core.status.gameOver = true;
+			core.events.gameOver(null, replaying);
+		});
+	})
+},
         "changingFloor": function (floorId, heroLoc) {
 			// 正在切换楼层过程中执行的操作；此函数的执行时间是“屏幕完全变黑“的那一刻
 			// floorId为要切换到的楼层ID；heroLoc表示勇士切换到的位置
@@ -553,15 +565,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[22, "固伤", function (enemy) { return "敌人对角色造成" + (enemy.damage ?? 0) + "点固定伤害，可被后勤值抵消。"; }, "#ff9977"],
 		[24, "激光", function (enemy) { return "经过敌人同行或同列时遭受远距离攻击，伤害为" + (enemy.laser ?? 0) + "点"; }, "#dda0dd"],
 		[25, "指挥", function (enemy) { return "位于敌阵核心的指挥单位。" + (enemy.range != null ? ((enemy.haloSquare ? "自身九宫格" : "自身十字") + enemy.haloRange + "格范围内") : "同楼层所有") + "轴心国军队攻击提升" + (enemy.hpBuff ?? 0) + "%，雷击提升" + (enemy.atkBuff ?? 0) + "%，空袭提升" + (enemy.defBuff ?? 0) + "%," + (enemy.haloAdd ? "可叠加" : "不可叠加"); }, "#e6e099", 1],
-		[28, "航弹", function (enemy) { return "每" + (enemy.spd ?? 0) + "回合投放" + (enemy.ammo ?? 0) + "枚航空炸弹，每颗炸弹伤害等于空袭值。造成的伤害计为“炸弹伤害”" },
+		[28, "航弹", function (enemy) { return "每\r[red]" + (enemy.spd ?? 0) + "\r回合投放\r[red]" + (enemy.ammo ?? 0) + "\r枚航空炸弹，每颗炸弹伤害等于空袭值。造成的伤害计为“炸弹伤害”" },
 			[255, 255, 0, 1]
 		],
-		[29, "鱼雷", function (enemy) { return "每" + (enemy.cd ?? 0) + "回合投放" + (enemy.tpn ?? 0) + "枚鱼雷，每发鱼雷伤害等于雷击值。造成的伤害计为“鱼雷伤害”" },
+		[29, "鱼雷", function (enemy) { return "每\r[red]" + (enemy.cd ?? 0) + "\r回合投放\r[red]" + (enemy.tpn ?? 0) + "\r枚鱼雷，每发鱼雷伤害等于雷击值。造成的伤害计为“鱼雷伤害”" },
 			[255, 150, 0, 1]
 		],
 		[30, "航炮", "每个偶数回合额外造成一次2倍攻击力的伤害"],
-		[31, "280mm舰炮", "每3回合额外发射一轮主炮，伤害等于3倍攻击力"],
-		[32, "380mm舰炮", "每4回合额外发射一轮主炮，伤害等于6倍攻击力"],
+		[31, "280mm舰炮", "每\r[red]3\r回合额外发射一轮主炮，伤害等于3倍攻击力"],
+		[32, "380mm舰炮", "每\r[red]4\r回合额外发射一轮主炮，伤害等于6倍攻击力"],
 		[33, "潜行", "受到主角攻击力伤害减少90%"],
 		[34, "惊雷", "战斗开始时，发起先手鱼雷攻击。发射鱼雷数量以及伤害等同于正常的鱼雷袭击"],
 		[35, "闪避", function (enemy) { return "主角发起鱼雷攻击时，闪避其中的" + (enemy.dod ?? 0) + "枚" }],
@@ -578,7 +590,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[46, "夜枭", "存活时，周围3格内轴心国部队攻击力提升30%"],
 		[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角在战斗期间每回合额外流失当前生命值的5%，每进行一场战斗就解除一层该debuff。该敌人自带1点固伤"],
 		[48, "V1导弹", "巡航导弹，不会主动攻击。若主角未能在10回合内成功拦截该导弹，则立即爆炸并造成等同于自身攻击力的伤害。若成功拦截，则只造成50%攻击力伤害"],
-		[49, "弗里茨X", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍攻击力的伤害，否则失控坠毁，不会造成伤害"],
+		[49, "无线制导", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍攻击力的伤害，否则失控坠毁，不会造成伤害"],
 		[50, "遥控", "该敌人控制着“弗里茨X”导弹进行攻击。被摧毁后，“弗里茨X”就会失控坠毁"],
 		[51, "失踪", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡。该敌人自带1点固伤"],
 		[52, "包围", "主角站在两个该敌人中间时，攻击力减少30%。该敌人自带1点固伤"],
@@ -827,6 +839,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					return null
 			}
 		}
+	}
+
+	//难度分歧
+	if (core.hasItem('hard1')) {
+		damage *= 0.6;
+	}
+	if (core.hasItem('hard2')) {
+		damage *= 0.8;
 	}
 
 	//扣除护盾

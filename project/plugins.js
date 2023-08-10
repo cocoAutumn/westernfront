@@ -68,12 +68,23 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('torch') && nthTurn > 0 && nthTurn % 4 === 0) // 火把式攻击机
 				bombDamage += hero_atk * 2;
 			// 装备加成——轰炸机
-			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 1) // 箭鱼鱼雷机
-				torpeodoDamage += hero_top * (1 - mon_dod);
-			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 1) // 箭鱼鱼雷机(鹰号航母)
-				torpeodoDamage += hero_top * (1 - mon_dod);
+			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机
+				torpeodoDamage += hero_top * (3 - mon_dod);
+			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机(鹰号航母)
+				torpeodoDamage += hero_top * (3 - mon_dod);
+			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（有哑弹）
+				if (flags.hard === 1 || flags['引信改良'])
+					torpeodoDamage += 1.2 * hero_top * (3 - mon_dod);
+			}
+			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（突击者号航空母舰）
+				if (flags.hard === 1 || flags['引信改良'])
+					torpeodoDamage += 1.2 * hero_top * (3 - mon_dod);
+			}
 			// 正常情况，鱼雷攻击
-			if (nthTurn % 10 === 0) torpeodoDamage += hero_top * (hero_tpn - mon_dod);
+			if (nthTurn % 10 === 0) {
+				if (flags.hard === 1 || flags['引信改良'] || !['mahan', 'gridley', 'benson', 'fletcher', 'raider', 'enterprise'].some(id => core.hasEquip(id)))
+					torpeodoDamage += hero_top * (hero_tpn - mon_dod);
+			}
 			// 装备加成——军舰
 			// 厌战号战列舰
 			if (core.hasEquip('warspite') && nthTurn > 0 && nthTurn % 3 === 0 && enemyInfo.type != '潜艇')
@@ -89,6 +100,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage += 80;
 			if (core.hasEquip('eagle') && enemyInfo.type.endsWith('轰炸机')) //飓风MK1（鹰号航母）
 				damage += 80;
+			if (core.hasEquip('spitfiremk1') && enemyInfo.type.endsWith('战斗机')) //喷火MK1
+				damage *= 1.1;
 			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
 				damage *= 1.3;
 		}
