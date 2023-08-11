@@ -185,7 +185,7 @@ main.floors.MT1=
                     },
                     {
                         "type": "setValue",
-                        "name": "item:蓝",
+                        "name": "item:blueKey",
                         "operator": "+=",
                         "value": "5"
                     },
@@ -210,7 +210,7 @@ main.floors.MT1=
                     },
                     {
                         "type": "setValue",
-                        "name": "item:蓝",
+                        "name": "item:blueKey",
                         "operator": "+=",
                         "value": "2"
                     },
