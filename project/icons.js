@@ -87,7 +87,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"T547": 55,
 		"hole1": 56,
 		"hole2": 57,
-		"hole3": 58
+		"hole3": 58,
+		"harbour": 59,
+		"airport": 60
 	},
 	"animates": {
 		"star": 0,
@@ -166,7 +168,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"N548": 37,
 		"N549": 38,
 		"N550": 39,
-		"N551": 40
+		"N551": 40,
+		"N563": 41
 	},
 	"npc48": {
 		"npc0": 0,
@@ -492,7 +495,13 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"baltimore": 94,
 		"hard1": 168,
 		"hard2": 169,
-		"hard4": 170
+		"hard4": 170,
+		"orangePotion": 171,
+		"purplePotion": 172,
+		"cyanPotion": 173,
+		"darkbluePotion": 174,
+		"darkredPotion": 175,
+		"goldPotion": 176
 	},
 	"autotile": {
 		"autotile": 0,

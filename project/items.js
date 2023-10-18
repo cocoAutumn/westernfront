@@ -890,11 +890,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "喷火MK1",
 		"canUseItemEffect": "true",
-		"text": "主武器：8×7.62mm机枪\n攻击+50，与战斗机作战时，每回合额外追加10%伤害",
+		"text": "主武器：8×7.62mm机枪\n攻击+60，与战斗机作战时，每回合额外追加10%伤害",
 		"equip": {
 			"type": 4,
 			"value": {
-				"atk": 50
+				"atk": 60
 			},
 			"percentage": {}
 		}
@@ -911,7 +911,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"spitfiremk2": {
 		"cls": "equips",
-		"name": "喷火MK2",
+		"name": "喷火MK5",
 		"canUseItemEffect": "true"
 	},
 	"f4f3": {
@@ -1141,17 +1141,26 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"I522": {
 		"cls": "items",
 		"name": "银块",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，黄金+50",
+		"itemEffectTip": "，黄金+50",
+		"itemEffect": "core.status.hero.money += 50;"
 	},
 	"I523": {
 		"cls": "items",
 		"name": "金块",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"itemEffect": "core.status.hero.money += 100;",
+		"text": "，黄金+100",
+		"itemEffectTip": "，黄金+100"
 	},
 	"I524": {
 		"cls": "items",
 		"name": "大金块",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，黄金+500",
+		"itemEffectTip": "，黄金+500",
+		"itemEffect": "core.status.hero.money += 500;"
 	},
 	"red2Gem": {
 		"cls": "items",
@@ -1165,7 +1174,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"red3Gem": {
 		"cls": "items",
 		"name": "3阶红宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": ",攻击+5",
+		"itemEffectTip": ",攻击+5",
+		"itemEffect": "core.status.hero.atk += 5;"
 	},
 	"red4Gem": {
 		"cls": "items",
@@ -1189,7 +1201,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"blue3Gem": {
 		"cls": "items",
 		"name": "3阶蓝宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，指挥点数+50",
+		"itemEffectTip": "，指挥点数+50",
+		"itemEffect": "core.status.hero.mana += 50;"
 	},
 	"blue4Gem": {
 		"cls": "items",
@@ -1213,7 +1228,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"green3Gem": {
 		"cls": "items",
 		"name": "3阶绿宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，后勤+20",
+		"itemEffectTip": "，后勤+20",
+		"itemEffect": "core.status.hero.mdef += 20;"
 	},
 	"green4Gem": {
 		"cls": "items",
@@ -1237,7 +1255,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"yellow3Gem": {
 		"cls": "items",
 		"name": "3阶黄宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": ",血量及血限+200",
+		"itemEffectTip": ",血量及血限+200",
+		"itemEffect": "core.status.hero.hpmax += 200;\ncore.status.hero.hp += 200;"
 	},
 	"yellow4Gem": {
 		"cls": "items",
@@ -1252,7 +1273,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"orange2Gem": {
 		"cls": "items",
 		"name": "2阶橙宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，增加10雷击",
+		"itemEffectTip": "，增加10雷击",
+		"itemEffect": "core.status.hero.top += 10;"
 	},
 	"orange3Gem": {
 		"cls": "items",
@@ -1303,5 +1327,53 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "constants",
 		"name": "炼狱难度",
 		"canUseItemEffect": "true"
+	},
+	"orangePotion": {
+		"cls": "items",
+		"name": "橙血瓶",
+		"canUseItemEffect": "true",
+		"text": "，生命+2000",
+		"itemEffectTip": "，生命+2000",
+		"itemEffect": "core.status.hero.hp += 2000;"
+	},
+	"purplePotion": {
+		"cls": "items",
+		"name": "紫血瓶",
+		"canUseItemEffect": "true",
+		"text": "，生命+5000",
+		"itemEffectTip": "，生命+5000",
+		"itemEffect": "core.status.hero.hp += 5000;"
+	},
+	"cyanPotion": {
+		"cls": "items",
+		"name": "青血瓶",
+		"canUseItemEffect": "true",
+		"text": "，生命+10000",
+		"itemEffectTip": "，生命+10000",
+		"itemEffect": "core.status.hero.hp += 10000;"
+	},
+	"darkbluePotion": {
+		"cls": "items",
+		"name": "深蓝血瓶",
+		"canUseItemEffect": "true",
+		"text": "，生命+15000",
+		"itemEffectTip": "，生命+15000",
+		"itemEffect": "core.status.hero.hp += 15000;"
+	},
+	"darkredPotion": {
+		"cls": "items",
+		"name": "赤血瓶",
+		"canUseItemEffect": "true",
+		"text": "，生命+20000",
+		"itemEffectTip": "，生命+20000",
+		"itemEffect": "core.status.hero.hp += 20000;"
+	},
+	"goldPotion": {
+		"cls": "items",
+		"name": "金血瓶",
+		"canUseItemEffect": "true",
+		"text": "，生命+50000",
+		"itemEffectTip": "，生命+50000",
+		"itemEffect": "core.status.hero.hp += 50000;"
 	}
 }

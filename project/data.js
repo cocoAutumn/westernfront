@@ -80,6 +80,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"bock.png",
 			"bradley.png",
 			"brave.png",
+			"chapter1.jpg",
+			"chapter2.jpg",
+			"chapter3.png",
+			"chapter4.jpg",
 			"classe.jpg",
 			"classj.jpg",
 			"classv.jpg",
@@ -151,7 +155,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		],
 		"tilesets": [
 			"magictower.png",
-			"001-Grassland01.png"
+			"001-Grassland01.png",
+			"tileset3.png"
 		],
 		"animates": [
 			"aim",
@@ -1309,7 +1314,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[spitfiremk1.jpg,170,50]超级马林公司设计的喷火式战斗机，是二战中最著名的战斗机之一。“喷火”造型优美，速度飞快，性能突出，是英国皇家空军引以为豪的中坚力量。“喷火”几乎从始至终都扮演着二战英国空军的主力，他的各种型号活跃于各大战场，还有专供航空母舰使用的“海喷火”系列型号。毫无疑问，“喷火”是英国赢得战争的一大功臣。",
-							"\f[spitfiremk1.jpg,170,50]装备属性：攻击+50，与战斗机作战时，每回合额外追加10%伤害",
+							"\f[spitfiremk1.jpg,170,50]装备属性：攻击+60，与战斗机作战时，每回合额外追加10%伤害",
 							{
 								"type": "confirm",
 								"text": "确定购买？",

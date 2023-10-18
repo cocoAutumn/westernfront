@@ -36,7 +36,26 @@ main.floors.MT1=
             "name": "flag:stage",
             "value": "1"
         },
-        "\r[yellow]Stage 1  1940年，法国",
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "chapter1.jpg",
+            "loc": [
+                0,
+                0
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "sleep",
+            "time": 1000
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        },
         "\r[yellow]Mission 1 马奇诺防线",
         {
             "type": "sleep",
