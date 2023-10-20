@@ -82,7 +82,10 @@ main.floors.MT1=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]特别说明：本塔允许负伤，后期提升后勤值去打弱怪会有不错的回血效果！"
+        "\t[系统提示]特别说明：本塔允许负伤，后期提升后勤值去打弱怪会有不错的回血效果！",
+        {
+            "type": "callBook"
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

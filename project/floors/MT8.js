@@ -126,7 +126,10 @@ main.floors.MT8=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐至少击杀40个敌人\n⭐至少摧毁一辆四号坦克"
+        "\t[任务目标]⭐通过当前区域\n⭐至少击杀40个敌人\n⭐至少摧毁一辆四号坦克",
+        {
+            "type": "callBook"
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

@@ -142,7 +142,10 @@ main.floors.MT27=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐友军损失血量少于50%\n⭐击落所有JU87俯冲轰炸机"
+        "\t[任务目标]⭐通过当前区域\n⭐友军损失血量少于50%\n⭐击落所有JU87俯冲轰炸机",
+        {
+            "type": "callBook"
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

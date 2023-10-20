@@ -253,7 +253,10 @@ main.floors.MT14=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐击败隆美尔\n⭐通关时至少保有10个“下午茶”道具\n⭐消灭所有敌人"
+        "\t[任务目标]⭐击败隆美尔\n⭐通关时至少保有10个“下午茶”道具\n⭐消灭所有敌人",
+        {
+            "type": "callBook"
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

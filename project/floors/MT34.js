@@ -12,8 +12,110 @@ main.floors.MT34=
     "images": [],
     "ratio": 1,
     "defaultGround": "water",
-    "bgm": "europe1.mp3",
-    "firstArrive": [],
+    "bgm": "gaijin2.mp3",
+    "firstArrive": [
+        {
+            "type": "setHeroOpacity",
+            "opacity": 1
+        },
+        {
+            "type": "showStatusBar"
+        },
+        {
+            "type": "setCurtain",
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "chapter2.jpg",
+            "loc": [
+                0,
+                0
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "sleep",
+            "time": 1000
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        },
+        "\r[yellow]Mission 6 守护军港",
+        "\t[盟军指挥官,hero]所有战机注意，十二点方向，2000米高度，发现一大群德国佬。",
+        "\t[盟军指挥官,hero]两人一组，准备俯冲，给我瞄准轰炸机狠狠的打！",
+        "\t[德军轰炸机编队队长]正前方，高空，发现英国战斗机，所有人准备战斗！",
+        "\t[系统提示]敌人战力重置中",
+        {
+            "type": "setEnemy",
+            "id": "me109e4",
+            "name": "hp",
+            "value": "1000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109e4",
+            "name": "atk",
+            "value": "200"
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109e4",
+            "name": "special",
+            "value": "[5,28]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109e4",
+            "name": "bom",
+            "value": "300"
+        },
+        {
+            "type": "setEnemy",
+            "id": "me110c",
+            "name": "hp",
+            "value": "1500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "me110c",
+            "name": "atk",
+            "value": "240"
+        },
+        {
+            "type": "setEnemy",
+            "id": "me110c",
+            "name": "bom",
+            "value": "300"
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju87b",
+            "name": "hp",
+            "value": "1350"
+        },
+        "\t[系统提示]敌人战力重置完成",
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]即将进入存档界面",
+        {
+            "type": "callSave"
+        },
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[任务目标]⭐通过当前区域\n⭐击落所有轰炸机\n⭐通关时至少持有20个“下午茶”",
+        {
+            "type": "callBook"
+        }
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},

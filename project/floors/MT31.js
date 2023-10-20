@@ -263,6 +263,11 @@ main.floors.MT31=
             },
             {
                 "type": "setValue",
+                "name": "flag:escort",
+                "value": "false"
+            },
+            {
+                "type": "setValue",
                 "name": "flag:stage",
                 "value": "6"
             },
@@ -326,9 +331,6 @@ main.floors.MT31=
                     }
                 ],
                 "no": [
-                    {
-                        "type": "pauseBgm"
-                    },
                     {
                         "type": "sleep",
                         "time": 500

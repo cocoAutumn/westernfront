@@ -482,6 +482,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"569": {"cls":"items","id":"darkbluePotion"},
 	"570": {"cls":"items","id":"darkredPotion"},
 	"571": {"cls":"items","id":"goldPotion"},
+	"572": {"cls":"items","id":"medal2"},
 	"20104": {"cls":"tileset","id":"X20104","canPass":true},
 	"20105": {"cls":"tileset","id":"X20105","canPass":true},
 	"20107": {"cls":"tileset","id":"X20107","canPass":true},

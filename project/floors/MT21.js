@@ -328,7 +328,10 @@ main.floors.MT21=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐通关时黄钥匙数量≥15\n⭐消灭所有敌人"
+        "\t[任务目标]⭐通过当前区域\n⭐通关时黄钥匙数量≥15\n⭐消灭所有敌人",
+        {
+            "type": "callBook"
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

@@ -42,7 +42,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT32",
 			"MT33",
 			"MT34",
-			"MT35"
+			"MT35",
+			"MT36",
+			"MT37",
+			"MT38",
+			"MT39",
+			"MT40"
 		],
 		"floorPartitions": [
 			[
@@ -82,7 +87,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"brave.png",
 			"chapter1.jpg",
 			"chapter2.jpg",
-			"chapter3.png",
+			"chapter3.jpg",
 			"chapter4.jpg",
 			"classe.jpg",
 			"classj.jpg",

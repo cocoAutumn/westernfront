@@ -501,7 +501,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"cyanPotion": 173,
 		"darkbluePotion": 174,
 		"darkredPotion": 175,
-		"goldPotion": 176
+		"goldPotion": 176,
+		"medal2": 177
 	},
 	"autotile": {
 		"autotile": 0,

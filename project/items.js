@@ -1375,5 +1375,19 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "，生命+50000",
 		"itemEffectTip": "，生命+50000",
 		"itemEffect": "core.status.hero.hp += 50000;"
+	},
+	"medal2": {
+		"cls": "items",
+		"name": "2级勋章",
+		"canUseItemEffect": "true",
+		"text": "，全属性提升",
+		"itemEffectTip": "，全属性提升",
+		"itemEffect": "core.status.hero.hpmax += 100;\ncore.status.hero.hp += 100;\ncore.status.hero.mana += 20;\ncore.status.hero.atk += 2;\ncore.status.hero.top += 10;\ncore.status.hero.mdef += 10;",
+		"useItemEvent": [
+			{
+				"type": "playSound",
+				"name": "xinxinbazhe.mp3"
+			}
+		]
 	}
 }
