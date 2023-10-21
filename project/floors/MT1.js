@@ -49,7 +49,7 @@ main.floors.MT1=
         },
         {
             "type": "sleep",
-            "time": 1000
+            "time": 2000
         },
         {
             "type": "hideImage",

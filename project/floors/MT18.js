@@ -305,7 +305,7 @@ main.floors.MT18=
                     null
                 ],
                 "loc": [
-                    -320,
+                    -370,
                     140,
                     1280,
                     200
@@ -317,7 +317,7 @@ main.floors.MT18=
                 "type": "scaleImage",
                 "code": 1,
                 "center": [
-                    240,
+                    190,
                     200
                 ],
                 "scale": 0.4,

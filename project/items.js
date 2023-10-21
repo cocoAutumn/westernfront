@@ -1332,49 +1332,49 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "橙血瓶",
 		"canUseItemEffect": "true",
-		"text": "，生命+2000",
-		"itemEffectTip": "，生命+2000",
-		"itemEffect": "core.status.hero.hp += 2000;"
+		"text": "，生命+5000",
+		"itemEffectTip": "，生命+5000",
+		"itemEffect": "core.status.hero.hp += 5000;"
 	},
 	"purplePotion": {
 		"cls": "items",
 		"name": "紫血瓶",
 		"canUseItemEffect": "true",
-		"text": "，生命+5000",
-		"itemEffectTip": "，生命+5000",
-		"itemEffect": "core.status.hero.hp += 5000;"
+		"text": "，生命+10000",
+		"itemEffectTip": "，生命+10000",
+		"itemEffect": "core.status.hero.hp += 10000;"
 	},
 	"cyanPotion": {
 		"cls": "items",
 		"name": "青血瓶",
 		"canUseItemEffect": "true",
-		"text": "，生命+10000",
-		"itemEffectTip": "，生命+10000",
-		"itemEffect": "core.status.hero.hp += 10000;"
+		"text": "，生命+15000",
+		"itemEffectTip": "，生命+15000",
+		"itemEffect": "core.status.hero.hp += 15000;"
 	},
 	"darkbluePotion": {
 		"cls": "items",
 		"name": "深蓝血瓶",
 		"canUseItemEffect": "true",
-		"text": "，生命+15000",
-		"itemEffectTip": "，生命+15000",
-		"itemEffect": "core.status.hero.hp += 15000;"
+		"text": "，生命+20000",
+		"itemEffectTip": "，生命+20000",
+		"itemEffect": "core.status.hero.hp += 20000;"
 	},
 	"darkredPotion": {
 		"cls": "items",
 		"name": "赤血瓶",
 		"canUseItemEffect": "true",
-		"text": "，生命+20000",
-		"itemEffectTip": "，生命+20000",
-		"itemEffect": "core.status.hero.hp += 20000;"
+		"text": "，生命+50000",
+		"itemEffectTip": "，生命+50000",
+		"itemEffect": "core.status.hero.hp += 50000;"
 	},
 	"goldPotion": {
 		"cls": "items",
 		"name": "金血瓶",
 		"canUseItemEffect": "true",
-		"text": "，生命+50000",
-		"itemEffectTip": "，生命+50000",
-		"itemEffect": "core.status.hero.hp += 50000;"
+		"text": "，生命+100000",
+		"itemEffectTip": "，生命+100000",
+		"itemEffect": "core.status.hero.hp += 100000;"
 	},
 	"medal2": {
 		"cls": "items",
