@@ -139,7 +139,7 @@ main.floors.MT40=
                                 "floorId": "MT41",
                                 "loc": [
                                     7,
-                                    0
+                                    14
                                 ],
                                 "direction": "down"
                             }
