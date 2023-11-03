@@ -52,7 +52,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT42",
 			"MT43",
 			"MT44",
-			"MT45"
+			"MT45",
+			"MT46",
+			"MT47",
+			"MT48",
+			"MT49",
+			"MT50"
 		],
 		"floorPartitions": [
 			[
@@ -78,6 +83,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT32",
 				"MT38"
+			],
+			[
+				"MT39",
+				"MT45"
 			]
 		],
 		"images": [
@@ -147,6 +156,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"rommel.png",
 			"sheffield.jpg",
 			"skill3.jpg",
+			"skill4.jpg",
 			"skua.jpg",
 			"sky.jpg",
 			"slim.png",
@@ -1631,7 +1641,38 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"title": "中尉",
 				"clear": true,
 				"action": [
-					"晋升中尉。"
+					"晋升中尉。",
+					"晋升少尉。攻击+30，雷击+70，血量与血限+1000，后勤+25。",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "30"
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "70"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "1000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "1000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "25"
+					}
 				]
 			},
 			{
