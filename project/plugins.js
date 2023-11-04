@@ -206,7 +206,14 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		if (id === 3) {
 			name = '防空弹幕';
 			cost = 50;
-			description = '下一次与敌方空军的战斗中，攻击力提升20%'
+			description = '下一次与敌方空军的战斗中，攻击力提升20%';
+		}
+		if (id === 4) {
+			strategy = true;
+			name = '空战王牌';
+			cost = 100;
+			description = '秒杀面前的非boss空军';
+			event = [{"type":"setValue","name":"flag:空战王牌","value":"core.getBlockId(core.nextX(),core.nextY())"},{"type":"if","condition":"core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌].type)&&!core.material.enemys[flag:空战王牌].notBomb","true":[{"type":"battle","loc":["core.nextX()","core.nextY()"]}],"false":[{"type":"setValue","name":"flag:空战王牌","value":"null"}]}];
 		}
 		return {
 			'strategy': strategy,
