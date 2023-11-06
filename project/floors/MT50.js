@@ -1,8 +1,8 @@
 main.floors.MT50=
 {
     "floorId": "MT50",
-    "title": "英国本土",
-    "name": "英国本土",
+    "title": "英国南部",
+    "name": "英国南部",
     "width": 15,
     "height": 15,
     "canFlyTo": true,
@@ -13,26 +13,232 @@ main.floors.MT50=
     "ratio": 1,
     "defaultGround": "grass3",
     "bgm": "europe3.mp3",
-    "firstArrive": [],
+    "firstArrive": [
+        {
+            "type": "move",
+            "loc": [
+                1,
+                6
+            ],
+            "time": 200,
+            "keep": true,
+            "steps": [
+                "right:4"
+            ]
+        },
+        {
+            "type": "show",
+            "loc": [
+                [
+                    0,
+                    6
+                ]
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                0,
+                6
+            ],
+            "time": 100,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "right:8"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                5,
+                6
+            ],
+            "time": 100,
+            "keep": true,
+            "async": true,
+            "steps": [
+                "right:1"
+            ]
+        },
+        {
+            "type": "animate",
+            "name": "shootair",
+            "loc": [
+                5,
+                6
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "shootair",
+            "loc": [
+                6,
+                6
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "shootair",
+            "loc": [
+                7,
+                6
+            ],
+            "async": true
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                6
+            ],
+            "async": true
+        },
+        {
+            "type": "waitAsync",
+            "excludeAnimates": true
+        },
+        {
+            "type": "setBgFgBlock",
+            "name": "fg",
+            "number": "N574",
+            "loc": [
+                [
+                    6,
+                    6
+                ]
+            ]
+        },
+        {
+            "type": "jump",
+            "from": [
+                8,
+                6
+            ],
+            "to": [
+                10,
+                0
+            ],
+            "time": 200,
+            "keep": true
+        },
+        {
+            "type": "hide",
+            "loc": [
+                [
+                    10,
+                    0
+                ]
+            ],
+            "remove": true
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]击落铁门内所有敌方战斗机后，通往下一地图的机关门会自动开启，且会同时获得属性点奖励"
+    ],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
-    "changeFloor": {},
+    "events": {
+        "0,6": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        }
+    },
+    "changeFloor": {
+        "14,7": {
+            "floorId": "MT49",
+            "loc": [
+                0,
+                7
+            ]
+        },
+        "7,14": {
+            "floorId": "MT51",
+            "loc": [
+                7,
+                0
+            ]
+        }
+    },
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
-    "autoEvent": {},
+    "autoEvent": {
+        "6,14": {
+            "0": {
+                "condition": "core.maps.searchBlockWithFilter(x=>['战斗机'].includes(core.material.enemys[x?.event?.id]?.type),['MT48']).length===0",
+                "currentFloor": true,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        }
+    },
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
+    [205,205,205,140,  0,518,518,  0,518,518,  0,140,205,205,205],
+    [205,205,205,140,  0,518,518,  0,518,518,  0,140,205,205,205],
+    [140, 86,140,140,  0,  0,  0,  0,  0,  0,  0,140,140, 86,140],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,311,311,311,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,573,  0,311,573,311,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [205,573,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,573,311,573,311,  0,  0,  0,  0,  0,  0,  0,  0,  0, 94],
+    [  0,  0,311,311,311,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [140, 86,140,140,  0,  0,  0,  0,  0,  0,  0,140,140, 86,140],
+    [205,205,205,140,566,566,140, 85,140,566,566,140,205,205,205],
+    [205,205,205,140,567,567,140, 93,140,567,567,140,205,205,205]
+],
+    "bgmap": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,359,359,359,359,359,359,359,359,359,359,359,359,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
@@ -41,9 +247,6 @@ main.floors.MT50=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
-],
-    "bgmap": [
-
 ],
     "fgmap": [
 

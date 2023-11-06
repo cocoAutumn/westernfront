@@ -57,7 +57,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT47",
 			"MT48",
 			"MT49",
-			"MT50"
+			"MT50",
+			"MT51",
+			"MT52",
+			"MT53",
+			"MT54",
+			"MT55",
+			"MT56",
+			"MT57",
+			"MT58",
+			"MT59",
+			"MT60"
 		],
 		"floorPartitions": [
 			[
@@ -180,7 +190,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"tilesets": [
 			"magictower.png",
 			"001-Grassland01.png",
-			"tileset3.png"
+			"tileset3.png",
+			"005-Beach01.png",
+			"004-Mountain01.png"
 		],
 		"animates": [
 			"aim",
