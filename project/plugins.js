@@ -213,7 +213,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			name = '空战王牌';
 			cost = 100;
 			description = '秒杀面前的非boss空军';
-			event = [{"type":"setValue","name":"flag:空战王牌","value":"core.getBlockId(core.nextX(),core.nextY())"},{"type":"if","condition":"core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌].type)&&!core.material.enemys[flag:空战王牌].notBomb","true":[{"type":"battle","loc":["core.nextX()","core.nextY()"]}],"false":[{"type":"setValue","name":"flag:空战王牌","value":"null"}]}];
+			event = [{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb", "true": [{ "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }], "false": [{ "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }];
 		}
 		return {
 			'strategy': strategy,

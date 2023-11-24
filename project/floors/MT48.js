@@ -36,9 +36,9 @@ main.floors.MT48=
             "time": 500
         },
         "\t[地面指挥部]红色长机，收到请回答！",
-        "\t[盟军指挥官]我听着呢！有事快点说，天上到处都是德国佬！",
+        "\t[盟军指挥官,hero]我听着呢！有事快点说，天上到处都是德国佬！",
         "\t[地面指挥部]赶快干掉这附近所有的轰炸机，不然等他们飞到机场，我们都得玩完！",
-        "\t[盟军指挥官]我知道！没其他事了就别分散我们注意力！",
+        "\t[盟军指挥官,hero]我知道！没其他事了就别分散我们注意力！",
         "\t[系统提示]敌人战力重置中",
         {
             "type": "setEnemy",
@@ -68,28 +68,34 @@ main.floors.MT48=
             "type": "setEnemy",
             "id": "ju88a",
             "name": "hp",
-            "value": "5500"
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "atk",
-            "value": "50"
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "special",
-            "value": "[]"
-        },
-        {
-            "type": "setEnemy",
-            "id": "he111",
-            "name": "hp",
             "value": "5000"
         },
         {
             "type": "setEnemy",
+            "id": "ju88a",
+            "name": "atk",
+            "value": "50"
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88a",
+            "name": "bom",
+            "value": "500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88a",
+            "name": "special",
+            "value": "[28]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "he111",
+            "name": "hp",
+            "value": "4500"
+        },
+        {
+            "type": "setEnemy",
             "id": "he111",
             "name": "atk",
             "value": "50"
@@ -97,14 +103,20 @@ main.floors.MT48=
         {
             "type": "setEnemy",
             "id": "he111",
+            "name": "bom",
+            "value": "500"
+        },
+        {
+            "type": "setEnemy",
+            "id": "he111",
             "name": "special",
-            "value": "[]"
+            "value": "[28]"
         },
         {
             "type": "setEnemy",
             "id": "do17z",
             "name": "hp",
-            "value": "5300"
+            "value": "4800"
         },
         {
             "type": "setEnemy",
@@ -115,8 +127,14 @@ main.floors.MT48=
         {
             "type": "setEnemy",
             "id": "do17z",
+            "name": "bom",
+            "value": "800"
+        },
+        {
+            "type": "setEnemy",
+            "id": "do17z",
             "name": "special",
-            "value": "[]"
+            "value": "[28]"
         },
         "\t[系统提示]敌人战力重置完成",
         {

@@ -195,7 +195,7 @@ main.floors.MT50=
     "autoEvent": {
         "6,14": {
             "0": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['战斗机'].includes(core.material.enemys[x?.event?.id]?.type),['MT48']).length===0",
+                "condition": "core.maps.searchBlockWithFilter(x=>['战斗机'].includes(core.material.enemys[x?.event?.id]?.type),['MT50']).length===0",
                 "currentFloor": true,
                 "priority": 0,
                 "delayExecute": false,
@@ -207,9 +207,17 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
-            }
+            },
+            "1": null
         }
     },
     "cannotMove": {},
