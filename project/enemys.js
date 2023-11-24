@@ -2,7 +2,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 {
 	"vampire": {"name":"冥灵魔王","hp":888,"atk":888,"def":0,"money":888,"exp":888,"point":0,"special":[6],"n":8},
 	"zombie": {"name":"兽人","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
-	"zombieKnight": {"name":"兽人武士","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
+	"zombieKnight": {"name":"兽人武士","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"afterBattle":null},
 	"skeletonPriest": {"name":"骷髅法师","hp":100,"atk":100,"def":0,"money":0,"exp":0,"point":0,"special":18,"value":20},
 	"skeletonKing": {"name":"骷髅王","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"evilHero": {"name":"迷失勇者","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
