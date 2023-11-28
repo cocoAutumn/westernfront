@@ -21,17 +21,69 @@ main.floors.MT55=
         {
             "type": "showStatusBar"
         },
+        "\r[yellow]Mission 9 伦敦上空的鹰",
+        {
+            "type": "playSound",
+            "name": "airalarm.mp3"
+        },
+        {
+            "type": "playSound",
+            "name": "airstrike.mp3"
+        },
+        {
+            "type": "sleep",
+            "time": 2000
+        },
         {
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 9 伦敦上空的鹰",
         {
-            "type": "moveHero",
+            "type": "move",
+            "loc": [
+                6,
+                1
+            ],
             "time": 500,
+            "async": true,
             "steps": [
                 "up:6"
             ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                7,
+                2
+            ],
+            "time": 500,
+            "async": true,
+            "steps": [
+                "up:6"
+            ]
+        },
+        {
+            "type": "move",
+            "loc": [
+                8,
+                1
+            ],
+            "time": 500,
+            "async": true,
+            "steps": [
+                "up:6"
+            ]
+        },
+        {
+            "type": "moveHero",
+            "time": 500,
+            "async": true,
+            "steps": [
+                "up:6"
+            ]
+        },
+        {
+            "type": "waitAsync"
         },
         "\t[盟军指挥官,hero]呼叫总部，所有战机已抵达指定位置，敌机就在前方。",
         {
@@ -79,7 +131,7 @@ main.floors.MT55=
             "type": "setEnemy",
             "id": "ju88a",
             "name": "atk",
-            "value": "100"
+            "value": "150"
         },
         {
             "type": "setEnemy",
@@ -103,7 +155,7 @@ main.floors.MT55=
             "type": "setEnemy",
             "id": "he111",
             "name": "atk",
-            "value": "100"
+            "value": "150"
         },
         {
             "type": "setEnemy",
@@ -127,7 +179,7 @@ main.floors.MT55=
             "type": "setEnemy",
             "id": "do17z",
             "name": "atk",
-            "value": "100"
+            "value": "130"
         },
         {
             "type": "setEnemy",
@@ -154,12 +206,25 @@ main.floors.MT55=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐击落所有轰炸机\n⭐击落所有战斗机"
+        "\t[任务目标]⭐通过当前区域\n⭐击落所有轰炸机\n⭐击落所有战斗机",
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]本区域是爽区，战斗机数量较少，轰炸机几乎全是负伤。趁着这个机会，好好补充下自己的背包和状态！"
     ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},
-    "changeFloor": {},
+    "changeFloor": {
+        "7,0": {
+            "floorId": "MT56",
+            "loc": [
+                7,
+                14
+            ]
+        }
+    },
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
@@ -169,8 +234,8 @@ main.floors.MT55=
     "cannotMoveIn": {},
     "map": [
     [  2,566,566,566,  2,  0,  0, 91,  0,  0,  2,  0,  0, 22,  2],
-    [  2,566,566,566, 81,  0,  0,  0,  0,  0, 81,  0,  0,  0,  2],
-    [  2,566,566,566,  2,  0,  0,  0,  0,  0,  2,  0,  0, 22,  2],
+    [  2,566,566,566, 81,  0,382,  0,382,  0, 81,  0,  0,  0,  2],
+    [  2,566,566,566,  2,  0,  0,382,  0,  0,  2,  0,  0, 22,  2],
     [  2,  2,  2,  2,  2,  0,  0,  0,  0,  0,  2,  2,  2,  2,  2],
     [  2,528,528,528,  2,  0,  0,  0,  0,  0,  2,  0,567,567,  2],
     [  2,527,527, 21, 81,  0,  0,  0,  0,  0, 81,  0,  0,567,  2],
