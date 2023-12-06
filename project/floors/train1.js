@@ -135,7 +135,7 @@ main.floors.train1=
                 },
                 {
                     "type": "text",
-                    "text": "\t[奥金莱克]\f[auchinleck.png,0,310]绿宝石\\i[greenGem]加后勤值，与魔塔里的魔防（护盾）相同，但不会使伤害为负。以及，按X键可以查看敌人属性\\i[book]。",
+                    "text": "\t[奥金莱克]\f[auchinleck.png,0,310]绿宝石\\i[greenGem]加后勤值，与魔塔里的魔防（护盾）相同，且可以使伤害为负。以及，按X键可以查看敌人属性\\i[book]。",
                     "pos": [
                         100,
                         300,

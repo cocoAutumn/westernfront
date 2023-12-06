@@ -699,7 +699,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "E级驱逐舰",
 		"canUseItemEffect": "true",
-		"text": "攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于0.1倍攻击力的伤害。",
+		"text": "攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于0.5倍攻击力的伤害。",
 		"equip": {
 			"type": 1,
 			"value": {
@@ -751,11 +751,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "轻巡·爱丁堡号",
 		"canUseItemEffect": "true",
-		"text": "攻200，雷击+100，鱼雷管+2。",
+		"text": "攻+200，雷击+100，鱼雷管+1。\n被动：黄金护卫：装备时，每次战后额外获得2枚黄金。",
 		"equip": {
 			"type": 2,
 			"value": {
-				"tpn": 2,
+				"tpn": 1,
 				"top": 100,
 				"atk": 200
 			},
@@ -826,7 +826,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "光辉号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：海喷火MK2、火把式攻击机、梭鱼式鱼雷机。闪避鱼雷数-2，且装备时主角攻击力减少200点。\n被动：装甲航母：在海上遭遇敌方空袭时，减少15%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。"
+		"text": "舰载机：海喷火MK5、梭鱼式鱼雷机、剑鱼式鱼雷机。闪避鱼雷数-2。\n被动：装甲航母：在海上遭遇敌方空袭时，减少15%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。"
 	},
 	"eagle": {
 		"cls": "equips",
@@ -917,7 +917,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"f4f3": {
 		"cls": "equips",
 		"name": "F4F-3野猫",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：6×12.7毫米勃朗宁机枪。挂载：2×100磅炸弹\n攻+8%。与陆地、水面目标战斗时，在第3回合投放炸弹，每颗炸弹伤害为0.4倍攻击力。"
 	},
 	"f6f5": {
 		"cls": "equips",
@@ -926,7 +927,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"spitfiremk5": {
 		"cls": "equips",
-		"name": "喷火MK5",
+		"name": "喷火MK9",
 		"canUseItemEffect": "true"
 	},
 	"spitfiremk16": {
@@ -986,19 +987,6 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "P38闪电",
 		"canUseItemEffect": "true"
 	},
-	"torch": {
-		"cls": "equips",
-		"name": "火把式攻击机",
-		"canUseItemEffect": "true",
-		"text": "攻＋250。挂载：16×RP3火箭弹、1×500磅炸弹。遭遇敌方战斗机或重型战斗机时额外受到20%伤害。\n攻击非空军敌人时，率先发射一轮火箭弹，每发火箭弹伤害为0.2倍攻击力。\n每4回合投掷一次炸弹，每枚炸弹伤害为2倍攻击力。",
-		"equip": {
-			"type": 5,
-			"value": {
-				"atk": 250
-			},
-			"percentage": {}
-		}
-	},
 	"mosquito": {
 		"cls": "equips",
 		"name": "蚊式战斗机",
@@ -1044,7 +1032,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"blenheim": {
 		"cls": "equips",
 		"name": "布伦海姆轰炸机",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+10。挂载：4×250磅炸弹。\n每5回合投掷一轮炸弹，每颗炸弹伤害为0.7倍攻击力"
 	},
 	"b25": {
 		"cls": "equips",
@@ -1389,5 +1378,18 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"name": "xinxinbazhe.mp3"
 			}
 		]
+	},
+	"typhoon": {
+		"cls": "equips",
+		"name": "台风式攻击机",
+		"canUseItemEffect": "true",
+		"text": "攻＋250。挂载：16×RP3火箭弹、1×500磅炸弹。遭遇敌方战斗机或重型战斗机时额外受到20%伤害。\n攻击非空军敌人时，率先发射一轮火箭弹，每发火箭弹伤害为0.2倍攻击力。\n每4回合投掷一次炸弹，每枚炸弹伤害为2倍攻击力。",
+		"equip": {
+			"type": 5,
+			"value": {
+				"atk": 250
+			},
+			"percentage": {}
+		}
 	}
 }

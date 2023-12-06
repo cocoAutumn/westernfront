@@ -507,13 +507,13 @@ main.floors.train3=
             },
             {
                 "type": "setValue",
-                "name": "item:torch",
+                "name": "item:typhoon",
                 "operator": "+=",
                 "value": "1"
             },
             {
                 "type": "loadEquip",
-                "id": "torch"
+                "id": "typhoon"
             },
             {
                 "type": "text",
@@ -572,7 +572,7 @@ main.floors.train3=
             },
             {
                 "type": "setValue",
-                "name": "item:torch",
+                "name": "item:typhoon",
                 "operator": "-=",
                 "value": "1"
             },

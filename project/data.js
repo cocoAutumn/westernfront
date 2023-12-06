@@ -67,7 +67,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT57",
 			"MT58",
 			"MT59",
-			"MT60"
+			"MT60",
+			"MT61",
+			"MT62",
+			"MT63",
+			"MT64",
+			"MT65",
+			"MT66",
+			"MT67",
+			"MT68",
+			"MT69",
+			"MT70"
 		],
 		"floorPartitions": [
 			[
@@ -109,15 +119,23 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		],
 		"images": [
 			"15.png",
+			"a26.jpg",
 			"aircraft1.png",
 			"alexanda.png",
 			"arnorid.png",
 			"auchinleck.png",
+			"b17.jpg",
+			"b24.jpg",
+			"b25.jpg",
+			"b29.jpg",
 			"badoglio.png",
 			"baltimore.jpg",
+			"barracuda.jpg",
 			"bear.png",
+			"beautifighter.jpg",
 			"benson.jpg",
 			"bg.jpg",
+			"blenheim.png",
 			"bock.png",
 			"bradley.png",
 			"brave.png",
@@ -129,6 +147,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"classj.jpg",
 			"classv.jpg",
 			"cleveland.jpg",
+			"cromwell.jpg",
+			"crusades.jpg",
 			"donitz.png",
 			"dorsetshire.jpg",
 			"dowdin.png",
@@ -138,7 +158,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"eisenhower.png",
 			"enterprise.jpg",
 			"essex.jpg",
+			"f4f.jpg",
+			"f4u.jpg",
+			"f6f.jpg",
 			"failure.png",
+			"firefly.jpg",
 			"flecher.jpg",
 			"ft17.jpg",
 			"gaulle.png",
@@ -150,47 +174,67 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"heinrich.png",
 			"hero.png",
 			"hurricanemk1.jpg",
+			"hurricanemk2.png",
 			"illustrious.jpg",
 			"iowa.jpg",
 			"kasselring.png",
 			"kinggeorgev.jpg",
+			"lancaster.jpg",
 			"leclere.png",
 			"leeb.png",
 			"londoninfire.jpg",
 			"lundstedt.png",
+			"m26.jpg",
+			"m3grant.jpg",
 			"macarthur.png",
 			"mahan.jpg",
 			"manstein.png",
+			"matilda.jpg",
 			"messer.png",
 			"model.png",
 			"montbarton.png",
 			"montgomary.png",
+			"mosquito.jpg",
 			"nimitz.png",
 			"norfolk.jpg",
 			"northcarolina.jpg",
+			"p38.jpg",
 			"p40c.jpg",
+			"p40e.jpg",
+			"p47.jpg",
+			"p51.jpg",
+			"p61.jpg",
 			"patton.png",
 			"petain.png",
 			"raider.jpg",
 			"rommel.png",
+			"sb2c.jpg",
+			"sbd.jpg",
 			"sheffield.jpg",
 			"skill3.jpg",
 			"skill4.jpg",
+			"skill5.jpg",
+			"skillnone.jpg",
 			"skua.jpg",
 			"sky.jpg",
 			"slim.png",
 			"spitfiremk1.jpg",
+			"spitfiremk5.jpg",
 			"star.png",
 			"status.png",
 			"studdent.png",
 			"swordfish.jpg",
 			"tassigne.png",
+			"tbd.jpg",
+			"tbf.jpg",
 			"title1.png",
 			"title2.png",
 			"title3.png",
 			"title4.png",
 			"title5.png",
+			"typhoon.jpg",
 			"uboat.png",
+			"valentine.jpg",
 			"warspite.jpg",
 			"win.png",
 			"winskin.png",
@@ -1397,6 +1441,54 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
+						"text": "布伦海姆式轰炸机（700）",
+						"need": "true",
+						"icon": "blenheim",
+						"condition": "!core.hasEquip('blenheim')&&!core.hasItem('blenheim')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[blenheim.png,170,50]布里斯托尔-布伦海姆式轰炸机，是二战时期英国使用的一种双引擎轰炸机，主要服役于英国及其海外殖民地。布伦海姆于1937年服役，战争前期担任主力轰炸机，轰炸陆地及海上目标，也有作为重型战斗机使用的型号，但其本身防护力很差，所以损失率一直居高不下。到了战争中后期，布伦海姆退出一线，将危险的轰炸任务交给其他更先进的轰炸机。",
+							"\f[blenheim.png,170,50]装备属性：攻+10。挂载：4×250磅炸弹。\n每5回合投掷一轮炸弹，每颗炸弹伤害为0.7倍攻击力",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=700)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "bomber1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "700"
+											},
+											{
+												"type": "setValue",
+												"name": "item:blenheim",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
 						"text": "E级驱逐舰（500）",
 						"need": "true",
 						"icon": "classe",
@@ -1477,6 +1569,102 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 											{
 												"type": "setValue",
 												"name": "item:mahan",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "爱丁堡号轻巡洋舰（1200）",
+						"need": "true",
+						"icon": "edinburgh",
+						"condition": "!core.hasEquip('edinburgh')&&!core.hasItem('edinburgh')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[edinburgh.jpg,170,50]爱丁堡号巡洋舰是爱丁堡级巡洋舰的首舰，二号舰名叫贝尔法斯特号。爱丁堡号于1938年下水，在二战期间主要在北海和北冰洋执行任务。爱丁堡号装备有12门152毫米主炮，其装甲防护在同时期英国轻巡洋舰当中是最厚的。当苏德两国开战时，爱丁堡号经常护送向苏联运送物资的船队。1942年5月2日，装载着465块金砖（4570kg）的爱丁堡号在从苏联返回英国的途中被德军潜艇击沉，至今仍有5块金砖未被打捞。",
+							"\f[edinburgh.jpg,170,50]装备属性：攻+200，雷击+100，鱼雷管+1。闪避鱼雷数+1。\n被动：黄金护卫：每次战斗后额外获得2枚黄金。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=1200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "1200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:edinburgh",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "鹰号航空母舰（2000）",
+						"need": "true",
+						"icon": "eagle",
+						"condition": "!core.hasEquip('eagle')&&!core.hasItem('eagle')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[eagle.jpg,170,50]“鹰”号航空母舰是英国皇家海军中一艘由战列舰改装而来的航母，于一战后服役，能搭载21架飞机。二战开始时，“鹰”号被紧急从新加坡调回地中海，并参与了对德国“施佩伯爵”号袖珍战列舰的空中搜索。1942年8月11日，“鹰”号航母被德国U-73号潜艇击沉，成为英国皇家海军在二战中损失的最后一艘航母。",
+							"\f[eagle.jpg,170,50]舰载机：海飓风MK1、贼鸥式轰炸机、剑鱼式鱼雷机。闪避鱼雷数-2。\n受到敌方鱼雷伤害增加20%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:eagle",
 												"operator": "+=",
 												"value": "1"
 											}
@@ -1662,8 +1850,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"title": "中尉",
 				"clear": true,
 				"action": [
-					"晋升中尉。",
-					"晋升少尉。攻击+30，雷击+70，血量与血限+1000，后勤+25。",
+					"晋升中尉。攻击+30，雷击+70，血量与血限+1000，后勤+25。",
 					{
 						"type": "setValue",
 						"name": "status:atk",
@@ -1700,7 +1887,39 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"need": "1250",
 				"title": "上尉",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升上尉。攻击+35，雷击+90，血量与血限+1500，后勤+30。",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "35"
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "90"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "1500"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "1500"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "30"
+					}
+				]
 			},
 			{
 				"need": "2000",

@@ -92,7 +92,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			// 潜行
 			if (core.hasSpecial(mon_special, 33)) damage *= 0.1;
 			//E级驱逐舰
-			if (core.hasEquip('classe') && enemyInfo.type === '潜艇') damage += 0.1 * hero_atk;
+			if (core.hasEquip('classe') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) damage += 0.5 * hero_atk;
 			//马汉级
 			if (core.hasEquip('mahan') && enemyInfo.type === '潜艇') damage += 0.1 * hero_atk;
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战

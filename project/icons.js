@@ -226,7 +226,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"italydd2": 10,
 		"italycl1": 11,
 		"mgbunker": 14,
-		"u27": 15,
 		"pak36": 16,
 		"pak40": 17,
 		"artillery75": 18,
@@ -247,7 +246,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"sniper": 47,
 		"pak38": 52,
 		"sdkfz222": 53,
-		"u37": 54,
 		"lightmg": 60,
 		"mg42": 61,
 		"coast381": 62,
@@ -261,8 +259,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"veneto": 73,
 		"scharnhost": 74,
 		"bismark": 75,
-		"E395": 110,
-		"E396": 111,
 		"E412": 127,
 		"italyinf1": 76,
 		"italyinf2": 77,
@@ -295,7 +291,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"flak120": 106,
 		"da90": 107,
 		"z1934": 108,
-		"z1936": 109,
 		"italycl2": 112,
 		"konesburg": 113,
 		"italyca1": 114,
@@ -314,7 +309,12 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"motorinf": 49,
 		"rommel": 128,
 		"z1007": 102,
-		"sm79": 96
+		"sm79": 96,
+		"u7": 15,
+		"u9": 54,
+		"z1934a": 109,
+		"z1936": 110,
+		"z1936a": 111
 	},
 	"enemy48": {
 		"angel": 0,
@@ -448,7 +448,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"sbd3": 120,
 		"beautifighter": 121,
 		"p38": 122,
-		"torch": 123,
 		"mosquito": 124,
 		"p47d": 125,
 		"sb2c": 126,
@@ -504,7 +503,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"darkbluePotion": 174,
 		"darkredPotion": 175,
 		"goldPotion": 176,
-		"medal2": 177
+		"medal2": 177,
+		"typhoon": 123
 	},
 	"autotile": {
 		"autotile": 0,

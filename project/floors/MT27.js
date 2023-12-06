@@ -105,19 +105,19 @@ main.floors.MT27=
         },
         {
             "type": "setEnemy",
-            "id": "u27",
+            "id": "u7",
             "name": "hp",
             "value": "100"
         },
         {
             "type": "setEnemy",
-            "id": "u27",
+            "id": "u7",
             "name": "top",
             "value": "2000"
         },
         {
             "type": "setEnemy",
-            "id": "u27",
+            "id": "u7",
             "name": "tpn",
             "value": "4"
         },
