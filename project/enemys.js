@@ -46,7 +46,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"transship": {"name":"靶舰","hp":3000,"atk":400,"def":0,"money":0,"exp":0,"point":0,"special":[29,35],"type":"轻巡","description":null,"ap":0,"arm":0,"top":500,"bom":0,"tpn":2,"dod":1,"gro":0,"cd":9},
 	"italydd1": {"name":"帕莱斯特罗级驱逐舰","hp":8000,"atk":100,"def":0,"money":5,"exp":5,"point":0,"special":[5],"type":"驱逐","ap":0,"arm":0,"top":2000,"bom":0,"tpn":3,"dod":2,"gro":0,"cd":10},
 	"italydd2": {"name":"角宿一星级驱逐舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"驱逐"},
-	"italycl1": {"name":"罗马统帅级轻巡洋舰","hp":12000,"atk":800,"def":0,"money":10,"exp":10,"point":0,"special":[4,29],"type":"轻巡","ap":0,"arm":0,"top":1000,"bom":0,"tpn":1,"dod":2,"gro":0},
+	"italycl1": {"name":"罗马统帅级轻巡洋舰","hp":12000,"atk":200,"def":0,"money":10,"exp":10,"point":0,"special":[29],"type":"轻巡","ap":0,"arm":0,"top":1000,"bom":0,"tpn":1,"dod":2,"gro":0},
 	"mgbunker": {"name":"机枪地堡","hp":500,"atk":100,"def":0,"money":5,"exp":5,"point":0,"special":[],"type":"建筑","ap":20,"arm":60,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"pak36": {"name":"Pak36反坦克炮","hp":100,"atk":50,"def":0,"money":2,"exp":2,"point":1,"special":[],"type":"反坦克炮","description":"口径：37mm","ap":20,"arm":2,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"pak40": {"name":"Pak40反坦克炮","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"反坦克炮","description":"口径：75mm"},

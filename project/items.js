@@ -1270,7 +1270,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"orange3Gem": {
 		"cls": "items",
 		"name": "3阶橙宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，增加20雷击",
+		"itemEffect": "core.status.hero.top += 20;",
+		"itemEffectTip": "，增加20雷击"
 	},
 	"orange4Gem": {
 		"cls": "items",

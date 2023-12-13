@@ -337,7 +337,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	// 当前战斗回合数，可用于战后所需的判定
 	var turn = damageInfo.turn;
 	// 判定是否致死
-	if (flags['空战王牌']) { damage = 0; delete flags['空战王牌']; }
+	if (flags['空战王牌']) { damage = 0;
+		delete flags['空战王牌']; }
 	if (damage == null || damage >= core.status.hero.hp) {
 		core.status.hero.hp = 0;
 		core.updateStatusBar(false, true);
@@ -369,6 +370,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var money = guards.reduce(function (curr, g) {
 		return curr + core.material.enemys[g[2]].money;
 	}, core.getEnemyValue(enemy, "money", x, y));
+	if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 	if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
 	if (core.hasFlag('curse')) money = 0; // 诅咒效果
 	core.status.hero.money += money;
