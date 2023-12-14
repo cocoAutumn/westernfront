@@ -48,7 +48,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				bombDamage += hero_atk * 2;
 			if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 4 === 0) // 贼鸥式轰炸机(鹰号航母)
 				bombDamage += hero_atk * 2;
-			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 火把式攻击机
+			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
 				bombDamage += hero_atk * 2;
 			// 装备加成——轰炸机
 			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0) // 箭鱼鱼雷机
@@ -65,7 +65,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				bombDamage += hero_atk * 2;
 				bombDamage *= 1.1;
 			}
-			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 火把式攻击机
+			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
 				bombDamage += hero_atk * 2;
 			// 装备加成——轰炸机
 			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机
@@ -165,7 +165,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
 			if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
-			if (core.hasEquip('torch') && enemyInfo.type.endsWith('战斗机')) // 火把式攻击机
+			if (core.hasEquip('typhoon') && enemyInfo.type.endsWith('战斗机')) // 台风式攻击机
 				damage *= 1.3;
 			// 航弹
 			if (core.hasSpecial(mon_special, 28) && nthTurn > 0 && nthTurn % mon_spd === 0) {

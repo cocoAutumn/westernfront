@@ -819,7 +819,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('beautifighter') && !core.plugin.Luftwaffe.includes(enemyInfo.type)) { //英俊战士
 		curr_hp -= hero_atk * 0.2 * 8;
 	}
-	if (core.hasEquip('torch') && !core.plugin.Luftwaffe.includes(enemyInfo.type)) { //火把攻击机
+	if (core.hasEquip('typhoon') && !core.plugin.Luftwaffe.includes(enemyInfo.type)) { //台风攻击机
 		curr_hp -= hero_atk * 0.2 * 16;
 	}
 	while (curr_hp > 0) {
