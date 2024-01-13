@@ -65,12 +65,18 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				bombDamage += hero_atk * 2;
 				bombDamage *= 1.1;
 			}
+			if (core.hasEquip('illus1941') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机(光辉1941)
+				bombDamage += hero_atk * 2;
+				bombDamage *= 1.1;
+			}
 			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
 				bombDamage += hero_atk * 2;
 			// 装备加成——轰炸机
 			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机
 				torpeodoDamage += hero_top * (3 - mon_dod);
 			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机(鹰号航母)
+				torpeodoDamage += hero_top * (3 - mon_dod);
+			if (core.hasEquip("illus1941") && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机(光辉1941)
 				torpeodoDamage += hero_top * (3 - mon_dod);
 			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（有哑弹）
 				if (flags.hard === 1 || flags['引信改良'])
@@ -101,6 +107,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('eagle') && enemyInfo.type.endsWith('轰炸机')) //飓风MK1（鹰号航母）
 				damage += 80;
 			if (core.hasEquip('spitfiremk1') && enemyInfo.type.endsWith('战斗机')) //喷火MK1
+				damage *= 1.1;
+			if (core.hasEquip('illus1941') && enemyInfo.type.endsWith('战斗机')) //光辉1941
 				damage *= 1.1;
 			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
 				damage *= 1.3;
@@ -144,6 +152,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			mon_spd = enemyInfo.spd,
 			mon_gro = enemyInfo.gro;
 		var damage = mon_atk;
+		//技能6：Z字规避
+		if (flags.skill === 6) {
+			hero_dod += 2;
+		}
 		hero_dod = core.clamp(hero_dod, 0, mon_tpn);
 		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
 		var torpeodoDamage = 0,
@@ -161,9 +173,22 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				if (nthTurn <= 5) damage = 0;
 				else damage *= 0.8;
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-			if (nthTurn > 0 && nthTurn % mon_cd === 0)
+			//技能5
+			if (flags.skill === 5 && core.status.thisMap.area === "海洋") {
+				damage *= 0.8;
+			}
+			//光辉号装甲
+			if (core.hasEquip('illus1941') && !enemyInfo.type.endsWith('战列') && !enemyInfo.type.endsWith('潜艇')) {
+				damage *= 0.8
+			}
+			if (core.hasEquip('illustrius') && !enemyInfo.type.endsWith('战列') && !enemyInfo.type.endsWith('潜艇')) {
+				damage *= 0.8
+			}
+			// 鱼雷
+			if (core.hasSpecial(mon_special, 29) && nthTurn > 0 && nthTurn % mon_cd === 0) {
 				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
-			if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
+				if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
+			}
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 			if (core.hasEquip('typhoon') && enemyInfo.type.endsWith('战斗机')) // 台风式攻击机
 				damage *= 1.3;
@@ -173,9 +198,16 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				if (core.hasSpecial(mon_special, 36)) bombDamage += mon_ammo * mon_bom * 1.5;
 				else bombDamage += mon_ammo * mon_bom;
 			}
+			//光辉号炸弹抗性
+			if (core.hasEquip('illus1941') && core.status.thisMap.area === "海洋") {
+				bombDamage *= 0.75;
+			}
+			if (core.hasEquip('illustrius') && core.status.thisMap.area === "海洋") {
+				bombDamage *= 0.75;
+			}
 			// 鱼雷
 			if (core.hasSpecial(mon_special, 29) && nthTurn > 0 && nthTurn % mon_cd === 0) {
-				torpeodoDamage += mon_top * mon_tpn;
+				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
 				if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
 			}
 		}
@@ -216,6 +248,16 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			event = [
 				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb", "true": [{ "type": "playSound", "name": "fighter.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft1.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标地点是非空军或boss，无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
 			];
+		}
+		if (id === 5) {
+			name = '烟幕';
+			cost = 50;
+			description = '下一次与敌方舰船的战斗中，获得20%的敌方炮火伤害减免。仅可在海洋地图中使用';
+		}
+		if (id === 6) {
+			name = 'Z字规避';
+			cost = 80;
+			description = '下一场战斗中，每次遭遇鱼雷攻击时额外闪避2枚鱼雷'
 		}
 		return {
 			'strategy': strategy,

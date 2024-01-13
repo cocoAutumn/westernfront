@@ -826,7 +826,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "光辉号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：海喷火MK5、梭鱼式鱼雷机、剑鱼式鱼雷机。闪避鱼雷数-2。\n被动：装甲航母：在海上遭遇敌方空袭时，减少15%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。"
+		"text": "舰载机：海喷火MK5、梭鱼式鱼雷机、剑鱼式鱼雷机。闪避鱼雷数-2。\n被动：装甲航母：在海上遭遇敌方空袭时，减少25%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。"
 	},
 	"eagle": {
 		"cls": "equips",
@@ -967,7 +967,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"sbd3": {
 		"cls": "equips",
 		"name": "SBD-3无畏",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+20。挂载：1×1000磅炸弹和2×250磅炸弹。\n每4个回合投弹，造成4.5倍攻击力的伤害。\n被动技能：\n俯冲轰炸：攻击军舰时，炸弹造成的伤害提升50%。"
 	},
 	"beautifighter": {
 		"cls": "equips",
@@ -1391,6 +1392,19 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			"type": 5,
 			"value": {
 				"atk": 250
+			},
+			"percentage": {}
+		}
+	},
+	"illus1941": {
+		"cls": "equips",
+		"name": "光辉（1941）",
+		"canUseItemEffect": "true",
+		"text": "舰载机：海喷火MK1、贼鸥式轰炸机、剑鱼式鱼雷机。闪避鱼雷数-2。\n被动：装甲航母：在海上遭遇敌方空袭时，减少25%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。",
+		"equip": {
+			"type": 3,
+			"value": {
+				"atk": 80
 			},
 			"percentage": {}
 		}

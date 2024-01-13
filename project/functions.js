@@ -793,6 +793,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_spd = enemyInfo.spd,
 		mon_gro = enemyInfo.gro;
 
+	if (flags.skill === 6) {
+		hero_dod += 2;
+	}
 	hero_dod = core.clamp(hero_dod, 0, mon_tpn);
 	mon_dod = core.clamp(mon_dod, 0, hero_tpn);
 
