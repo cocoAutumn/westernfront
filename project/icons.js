@@ -315,10 +315,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"z1934a": 109,
 		"z1936": 110,
 		"z1936a": 111,
-		"E576": 129,
-		"E577": 130,
-		"E578": 131,
-		"E579": 132
+		"cr42": 129,
+		"g50": 130,
+		"c200": 131,
+		"c202": 132
 	},
 	"enemy48": {
 		"angel": 0,
@@ -509,7 +509,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"goldPotion": 176,
 		"medal2": 177,
 		"typhoon": 123,
-		"illus1941": 178
+		"illus1941": 178,
+		"yellow3Key": 179,
+		"blue3Key": 180
 	},
 	"autotile": {
 		"autotile": 0,

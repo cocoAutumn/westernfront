@@ -1404,9 +1404,26 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"equip": {
 			"type": 3,
 			"value": {
-				"atk": 80
+				"atk": 80,
+				"dod": -2
 			},
 			"percentage": {}
 		}
+	},
+	"yellow3Key": {
+		"cls": "items",
+		"name": "一串黄钥匙",
+		"canUseItemEffect": "true",
+		"text": ",黄钥匙+3",
+		"itemEffectTip": ",黄钥匙+3",
+		"itemEffect": "core.addItem('yellowKey', 3)"
+	},
+	"blue3Key": {
+		"cls": "items",
+		"name": "一串蓝钥匙",
+		"canUseItemEffect": "true",
+		"text": "，蓝钥匙+3",
+		"itemEffectTip": "，蓝钥匙+3",
+		"itemEffect": "core.addItem('blueKey', 3)"
 	}
 }

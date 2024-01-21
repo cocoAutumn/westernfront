@@ -77,7 +77,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT67",
 			"MT68",
 			"MT69",
-			"MT70"
+			"MT70",
+			"MT71",
+			"MT72",
+			"MT73",
+			"MT74",
+			"MT75",
+			"MT76",
+			"MT77",
+			"MT78",
+			"MT79",
+			"MT80"
 		],
 		"floorPartitions": [
 			[
@@ -119,6 +129,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT61",
 				"MT67"
+			],
+			[
+				"MT68",
+				"MT74"
 			]
 		],
 		"images": [
@@ -143,6 +157,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"bock.png",
 			"bradley.png",
 			"brave.png",
+			"c200.jpg",
+			"c202.jpg",
 			"chapter1.jpg",
 			"chapter2.jpg",
 			"chapter3.jpg",
@@ -151,6 +167,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"classj.jpg",
 			"classv.jpg",
 			"cleveland.jpg",
+			"cr42.jpg",
 			"cromwell.jpg",
 			"crusades.jpg",
 			"donitz.png",
@@ -169,6 +186,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"firefly.jpg",
 			"flecher.jpg",
 			"ft17.jpg",
+			"g50.jpg",
 			"gaulle.png",
 			"gorlin.png",
 			"graziani.png",
@@ -177,6 +195,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"h35.jpg",
 			"heinrich.png",
 			"hero.png",
+			"hoodsinking.jpg",
 			"hurricanemk1.jpg",
 			"hurricanemk2.png",
 			"illustrious.jpg",
@@ -222,12 +241,14 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"skua.jpg",
 			"sky.jpg",
 			"slim.png",
+			"sm79.jpg",
 			"spitfiremk1.jpg",
 			"spitfiremk5.jpg",
 			"star.png",
 			"status.png",
 			"studdent.png",
 			"swordfish.jpg",
+			"taranto.jpg",
 			"tassigne.png",
 			"tbd.jpg",
 			"tbf.jpg",
@@ -242,7 +263,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"warspite.jpg",
 			"win.png",
 			"winskin.png",
-			"wrestler.jpg"
+			"wrestler.jpg",
+			"z1007.jpg"
 		],
 		"tilesets": [
 			"magictower.png",
@@ -1982,7 +2004,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		]
 	},
 	"values": {
-		"lavaDamage": 100,
+		"lavaDamage": 2000,
 		"poisonDamage": 10,
 		"weakValue": 20,
 		"redGem": 1,

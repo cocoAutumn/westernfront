@@ -181,7 +181,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('illus1941') && !enemyInfo.type.endsWith('战列') && !enemyInfo.type.endsWith('潜艇')) {
 				damage *= 0.8
 			}
-			if (core.hasEquip('illustrius') && !enemyInfo.type.endsWith('战列') && !enemyInfo.type.endsWith('潜艇')) {
+			if (core.hasEquip('illustrious') && !enemyInfo.type.endsWith('战列') && !enemyInfo.type.endsWith('潜艇')) {
 				damage *= 0.8
 			}
 			// 鱼雷
@@ -202,7 +202,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('illus1941') && core.status.thisMap.area === "海洋") {
 				bombDamage *= 0.75;
 			}
-			if (core.hasEquip('illustrius') && core.status.thisMap.area === "海洋") {
+			if (core.hasEquip('illustrious') && core.status.thisMap.area === "海洋") {
 				bombDamage *= 0.75;
 			}
 			// 鱼雷

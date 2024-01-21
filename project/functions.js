@@ -1326,6 +1326,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			damage[loc] = (damage[loc] || 0) + core.values.lavaDamage;
 			type[loc][(block.event.name || "血网") + "伤害"] = true;
 		}
+		// 水雷
+		if (id == 'mine' && !core.hasItem('amulet')) {
+			damage[loc] = (damage[loc] || 0) + core.values.lavaDamage;
+			type[loc][(block.event.name || "血网") + "伤害"] = true;
+		}
 
 		// 领域
 		// 如果要防止领域伤害，可以直接简单的将 flag:no_zone 设为true
