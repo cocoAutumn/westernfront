@@ -617,17 +617,29 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"crusades": {
 		"cls": "equips",
 		"name": "十字军巡洋坦克",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿50，装20。\n被动技能：\n突击：我方被敌人单向击穿时，攻击力额外增加20%",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 50,
+				"ap": 50,
+				"arm": 20
+			},
+			"percentage": {}
+		}
 	},
 	"valentine": {
 		"cls": "equips",
 		"name": "瓦伦丁步兵坦克",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿50，装60。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"cromwell": {
 		"cls": "equips",
 		"name": "克伦威尔巡洋坦克",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+150，穿78，装64。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"matilda": {
 		"cls": "equips",
@@ -637,63 +649,72 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			"type": 0,
 			"value": {
 				"atk": 150,
-				"ap": 50,
-				"arm": 78
+				"arm": 75,
+				"ap": 50
 			},
 			"percentage": {}
 		},
-		"text": "攻+150，穿50，装78。\n被动技能：\n压制：敌方地面部队无法击穿我方装甲时，受到伤害额外减少20%。\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+150，穿50，装75。\n被动技能：\n压制：敌方地面部队无法击穿我方装甲时，受到伤害额外减少20%。\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"churchillmk3": {
 		"cls": "equips",
 		"name": "丘吉尔MK3型",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿90，装89。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"m3grant": {
 		"cls": "equips",
 		"name": "M3格兰特",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿65，装51。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"m4a1": {
 		"cls": "equips",
 		"name": "M4A1谢尔曼",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿78，装50。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"m4a2": {
 		"cls": "equips",
 		"name": "M4A2谢尔曼",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿78，装63。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"m4a3": {
 		"cls": "equips",
-		"name": "M4A3谢尔曼",
-		"canUseItemEffect": "true"
+		"name": "M4A1(76W)",
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿120，装63。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"m4a3e2": {
 		"cls": "equips",
 		"name": "M4A3E2“巨无霸”",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿78，装101。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"firefly": {
 		"cls": "equips",
 		"name": "谢尔曼“萤火虫”",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿150，装51。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"a34comet": {
 		"cls": "equips",
 		"name": "A34彗星",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿123，装76。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"churchillmk7": {
 		"cls": "equips",
 		"name": "丘吉尔MK7型",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+50，穿78，装152。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
 	},
 	"m26pershing": {
 		"cls": "equips",
 		"name": "M26潘兴",
 		"canUseItemEffect": "true",
-		"text": "攻+200%，穿120装90。被动技能待定。"
+		"text": "攻+200%，穿160装100。被动技能待定。"
 	},
 	"classe": {
 		"cls": "equips",
@@ -715,7 +736,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "马汉级驱逐舰",
 		"canUseItemEffect": "true",
-		"text": "攻+120，雷击+150，鱼雷管+3，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于攻击力的伤害。\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）。",
+		"text": "攻+120，雷击+150，鱼雷管+3，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于0.5倍攻击力的伤害。\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）。",
 		"equip": {
 			"type": 1,
 			"value": {
@@ -735,12 +756,24 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"gridley": {
 		"cls": "equips",
 		"name": "格里德利级驱逐舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "废稿"
 	},
 	"classv": {
 		"cls": "equips",
 		"name": "V级驱逐舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "装备属性：攻+100，雷击+150，鱼雷管+6。闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害。\n老兵：装备期间与敌人作战后获得经验+2",
+		"equip": {
+			"type": 1,
+			"value": {
+				"tpn": 6,
+				"top": 150,
+				"dod": 2,
+				"atk": 100
+			},
+			"percentage": {}
+		}
 	},
 	"flecher": {
 		"cls": "equips",
@@ -771,7 +804,16 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"norfolk": {
 		"cls": "equips",
 		"name": "重巡·诺福克号",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "装备属性：攻+300，雷击+100。\n被动：\n先发制人：与敌方水面舰艇作战时，额外先攻一次\n最后一击：敌方水面舰艇血量少于20%时，立刻发射3枚鱼雷（不受哑弹影响）",
+		"equip": {
+			"type": 2,
+			"value": {
+				"atk": 300,
+				"top": 100
+			},
+			"percentage": {}
+		}
 	},
 	"dorsetshire": {
 		"cls": "equips",
@@ -781,7 +823,18 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"benson": {
 		"cls": "equips",
 		"name": "本森级驱逐舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "装备属性：攻+150，雷击＋300，鱼雷管+10，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害\n冲刺：发射鱼雷所需回合数-2\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）",
+		"equip": {
+			"type": 1,
+			"value": {
+				"tpn": 10,
+				"top": 300,
+				"dod": 2,
+				"atk": 150
+			},
+			"percentage": {}
+		}
 	},
 	"cleveland": {
 		"cls": "equips",
@@ -797,12 +850,12 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "厌战号战列舰",
 		"canUseItemEffect": "true",
-		"text": "攻+500。闪避鱼雷数-1。\n每3回合额外发射一轮主炮，对敌方水面战舰造成1倍攻击力的伤害。",
+		"text": "攻+500。闪避鱼雷数-2。\n被动：\n主炮轰击：每3回合额外发射一轮主炮，对敌方水面战舰造成3倍攻击力的伤害。",
 		"equip": {
 			"type": 3,
 			"value": {
-				"atk": 500,
-				"dod": -1
+				"dod": -2,
+				"atk": 500
 			},
 			"percentage": {}
 		}
@@ -907,7 +960,15 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"hurricanemk2": {
 		"cls": "equips",
 		"name": "飓风MK2",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "装备属性：攻+100。攻击对象为轰炸机或装甲小于20的坦克时，每回合普攻伤害额外增加20%",
+		"equip": {
+			"type": 4,
+			"value": {
+				"atk": 100
+			},
+			"percentage": {}
+		}
 	},
 	"spitfiremk2": {
 		"cls": "equips",
@@ -918,7 +979,16 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "F4F-3野猫",
 		"canUseItemEffect": "true",
-		"text": "主武器：6×12.7毫米勃朗宁机枪。挂载：2×100磅炸弹\n攻+8%。与陆地、水面目标战斗时，在第3回合投放炸弹，每颗炸弹伤害为0.4倍攻击力。"
+		"text": "主武器：6×12.7毫米勃朗宁机枪。挂载：2×100磅炸弹\n装备属性：攻+80后额外加10%。挂载：2×100磅炸弹。与敌方空军作战时，每个偶数回合普攻伤害增加15%\n仅第2回合投弹，造成两次0.4倍攻击力的伤害。",
+		"equip": {
+			"type": 4,
+			"value": {
+				"atk": 80
+			},
+			"percentage": {
+				"atk": 10
+			}
+		}
 	},
 	"f6f5": {
 		"cls": "equips",
@@ -968,7 +1038,14 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "SBD-3无畏",
 		"canUseItemEffect": "true",
-		"text": "攻+20。挂载：1×1000磅炸弹和2×250磅炸弹。\n每4个回合投弹，造成4.5倍攻击力的伤害。\n被动技能：\n俯冲轰炸：攻击军舰时，炸弹造成的伤害提升50%。"
+		"text": "攻+40。挂载：1×1000磅炸弹和2×250磅炸弹。\n每4个回合投弹，造成4.5倍攻击力的伤害。\n被动技能：\n俯冲轰炸：攻击军舰时，炸弹造成的伤害提升50%。",
+		"equip": {
+			"type": 5,
+			"value": {
+				"atk": 40
+			},
+			"percentage": {}
+		}
 	},
 	"beautifighter": {
 		"cls": "equips",
@@ -1028,7 +1105,14 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "TBD蹂躏者",
 		"canUseItemEffect": "true",
-		"text": "攻+5。挂载：1×MK13鱼雷或3×200磅炸弹\n对舰攻击时，每4回合投放3枚鱼雷（MK13鱼雷伤害增加20%）。对地攻击时，每4回合投放一轮炸弹，每颗炸弹伤害为0.1倍攻击力\n哑弹：投放的鱼雷不会爆炸（神剧难度无效）"
+		"text": "装备属性：攻+10。挂载：1×MK13鱼雷或3×500磅炸弹\n对舰攻击时，每5回合投放3枚鱼雷。对地攻击时，每5回合投放一轮炸弹，每颗炸弹伤害为1倍攻击力\n被动：\n哑弹：发射的鱼雷不会爆炸。",
+		"equip": {
+			"type": 7,
+			"value": {
+				"atk": 10
+			},
+			"percentage": {}
+		}
 	},
 	"blenheim": {
 		"cls": "equips",

@@ -1525,7 +1525,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[classe.jpg,170,50]E级驱逐舰属于英国海军在二战前建造的一种型号，与F级一起，根据英国皇家海军1931年和1932年造舰计划建造。整场二战中，E和F级共损失9艘。武器设备包括：4门单管120mm主炮；2部四联装12.7mm维克斯高射机枪；2具4联装533mm鱼雷发射管，最大航速可达35-37节（换算约为65-68km/h）。图为“迎战”(Encounter)号驱逐舰",
-							"\f[classe.jpg,170,50]装备属性：攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于0.1倍攻击力的伤害。",
+							"\f[classe.jpg,170,50]装备属性：攻+100，雷击+100，鱼雷管+3。闪避鱼雷数+1。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于0.5倍攻击力的伤害。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -1573,7 +1573,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[mahan.jpg,170,50]马汉级驱逐舰是美国建造的一个系列重鱼雷武装的驱逐舰，共建造了18艘，全部参与了太平洋战争。马汉级具有36.5节的最大速度，武器装备有5门127毫米38倍径高平两用炮，3座MK11型或MK12型鱼雷发射管，4门12.7mm机枪和舰艉的两条深水炸弹导轨。共有6艘马汉级驱逐舰在战争中被击沉。",
-							"\f[mahan.jpg,170,50]装备属性：攻+120，雷击+150，鱼雷管+3，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每回合额外造成一次等同于0.1倍攻击力的伤害。\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）。",
+							"\f[mahan.jpg,170,50]装备属性：攻+120，雷击+150，鱼雷管+3，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于0.5倍攻击力的伤害。\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -1691,6 +1691,495 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 											{
 												"type": "setValue",
 												"name": "item:eagle",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "shop3",
+				"text": "\t[1941级商店]请选择购买项",
+				"textInList": "1941级商店",
+				"mustEnable": true,
+				"disablePreview": true,
+				"choices": [
+					{
+						"text": "十字军巡洋坦克（500）",
+						"need": "true",
+						"icon": "crusades",
+						"condition": "!core.hasEquip('crusades')&&!core.hasItem('crusades')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[crusades.jpg,170,50]十字军是二战早期的英国巡洋坦克。十字军坦克车体相对较轻，速度可达45km/h，配备一门QF2磅炮（40mm口径）。在北非战役中，十字军坦克充当着轻骑兵的角色，凭借机动优势袭扰敌方侧翼。但这种坦克的缺陷也很明显，装甲薄弱，故障率高，早期型的2磅炮威力也不太够，直到改进型配备了6磅炮（57mm）才有所好转。北非战役结束后，其他新型坦克代替十字军成为装甲主力，十字军则在改造后担任防空、侦察等任务。",
+							"\f[crusades.jpg,170,50]装备属性：攻+50，穿50，装20。\n被动技能：\n突击：我方被敌人单向击穿时，攻击力额外增加20%",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:crusades",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "瓦伦丁步兵坦克（500）",
+						"need": "true",
+						"icon": "valentine",
+						"condition": "!core.hasEquip('valentine')&&!core.hasItem('valentine')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[valentine.jpg,170,50]瓦伦丁坦克是英国的一种步兵坦克。它们的火力不强，速度缓慢，但装甲却比较结实，适合配合步兵行动。瓦伦丁坦克于1941年在非洲沙漠首次参战，尽管不是大多数德军坦克的对手，但瓦伦丁的低故障率以及每车一个的无线电台使其备受欢迎。一部分坦克还被出口到苏联用于支援卫国战争，但苏军觉得原有的2磅炮（40mm口径）太弱，为其换上了76.2mm炮。到二战中期，英国装甲军团中的瓦伦丁坦克逐渐被其他新型坦克替代。",
+							"\f[valentine.jpg,170,50]装备属性：攻+50，穿50，装60。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:valentine",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "V级驱逐舰（600）",
+						"need": "true",
+						"icon": "classv",
+						"condition": "!core.hasEquip('classv')&&!core.hasItem('classv')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[classv.jpg,170,50]V级驱逐舰是英国于1917-1918年间建造的一型驱逐舰，共建造30艘，在二战时仍有18艘在服役，已经算是“老前辈”。V级配备了4门102mm炮，1门76mm高射炮、2座三联装鱼雷发射管以及反潜深水炸弹。",
+							"\f[classv.jpg,170,50]装备属性：攻+100，雷击+150，鱼雷管+6。闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害。\n老兵：装备期间与敌人作战后获得经验+2",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=600)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "600"
+											},
+											{
+												"type": "setValue",
+												"name": "item:classv",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "本森级驱逐舰（750）",
+						"need": "true",
+						"icon": "benson",
+						"condition": "!core.hasEquip('benson')&&!core.hasItem('benson')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[benson.jpg,170,50]本森级是二战时期美国的一型驱逐舰，1938年开工，共建造32艘并参与战争。本森级配备了5门127mm炮，2座五联装鱼雷发射管，8门防空武器和深水炸弹，最高航速37.5节。本森级驱逐舰中最著名的一艘是被称为“所罗门疯狗”的拉菲号，在瓜岛与日军的夜间海战中，拉菲号顶着凶猛的炮火，勇敢地向日本战列舰比睿号冲锋并发射鱼雷，随后在极近距离下用一切能用的武器猛扫日军甲板，最终遭到围攻而沉没。",
+							"\f[benson.jpg,170,50]装备属性：攻+150，雷击＋300，鱼雷管+10，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害\n冲刺：发射鱼雷所需回合数-2\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=850)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "750"
+											},
+											{
+												"type": "setValue",
+												"name": "item:benson",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "诺福克号重巡洋舰（1500）",
+						"need": "true",
+						"icon": "norfolk",
+						"condition": "!core.hasEquip('norfolk')&&!core.hasItem('norfolk')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[norfolk.jpg,170,50]诺福克级巡洋舰首舰，诺福克号，二号舰为多塞特郡号。这是英国海军最后一型条约重巡洋舰。诺福克号于1930年服役，配备了4门双联装203mm主炮，4门102mm高炮，34门高射机炮，最高航速32.5节。两艘军舰在战争中均参与了多次对德军大型战舰的攻击，立下汗马功劳。诺福克号于1943年被德军沙恩霍斯特号战舰击伤，回去修复后就再也没有遇到战斗，而二号舰多塞特郡号于1942年在印度洋被日本航母击沉。",
+							"\f[norfolk.jpg,170,50]装备属性：攻+300，雷击+100。\n被动：\n先发制人：与敌方水面舰艇作战时，额外先攻一次\n最后一击：敌方水面舰艇血量少于20%时，立刻发射3枚鱼雷（不受哑弹影响）",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=1500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "1500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:norfolk",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "厌战号战列舰（2500）",
+						"need": "true",
+						"icon": "warspite",
+						"condition": "!core.hasEquip('warspite')&&!core.hasItem('warspite')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[warspite.jpg,170,50]厌战号战列舰是英国伊丽莎白女王级战列舰的二号舰，一战时期下水并参与了战争，服役30多年，直到二战结束，期间还创下战列舰最远炮击命中的记录（24km外击中意大利战列舰朱利奥·凯撒号）。被坎宁安上将称为“可敬的老女士”。改造后的厌战号配备了4门双联装381mm主炮，14门152mm副炮、6门高射炮、38门高射机炮，1941年后还加装了各种雷达。",
+							"\f[warspite.jpg,170,50]装备属性：攻+500。闪避鱼雷数-1。\n被动：\n主炮轰击：每3回合额外发射一轮主炮，对敌方水面战舰造成3倍攻击力的伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:warspite",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "飓风MK2C战斗机（800）",
+						"need": "true",
+						"icon": "hurricanemk2",
+						"condition": "!core.hasEquip('hurricanemk2')&&!core.hasItem('hurricanemk2')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[hurricanemk2.png,170,50]飓风MK2C型，强化了火力配置，从8挺7.62mm机枪改造为4门20mm西斯巴诺机炮，大口径机炮带来的是更强悍的杀伤力，甚至能够对轻装甲地面目标造成可观毁伤。",
+							"\f[hurricanemk2.png,170,50]装备属性：攻+100。攻击对象为轰炸机或装甲小于20的坦克时，每回合普攻伤害额外增加10%",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=800)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "800"
+											},
+											{
+												"type": "setValue",
+												"name": "item:hurricanemk2",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "F4F野猫战斗机（舰）（800）",
+						"need": "true",
+						"icon": "f4f3",
+						"condition": "!core.hasEquip('f4f3')&&!core.hasItem('f4f3')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[f4f.jpg,170,50]格鲁曼公司设计的F4F“野猫”式战斗机是二战前期美国最重要的航母舰载战斗机。野猫的速度只有515km/h，机体较为笨重，但却有着6挺12.7mm机枪的充沛火力和坚实可靠的护甲。野猫是太平洋战争初期美国海军对抗日本零式战斗机的主要力量。事实证明，如果飞行员战术得当，做到扬长避短，野猫战斗机是可以与零式一较高下的。",
+							"\f[f4f.jpg,170,50]装备属性：攻+80后额外加10%。挂载：2×100磅炸弹。与敌方空军作战时，每个偶数回合普攻伤害增加15%\n仅第2回合投弹，造成两次0.4倍攻击力的伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=800)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "800"
+											},
+											{
+												"type": "setValue",
+												"name": "item:f4f3",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "SBD无畏式俯冲轰炸机（舰）（600）",
+						"need": "true",
+						"icon": "sbd3",
+						"condition": "!core.hasEquip('sbd3')&&!core.hasItem('sbd3')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[sbd.jpg,170,50]道格拉斯SBD无畏式轰炸机是二战初期美国最重要的俯冲轰炸机。无畏式能够在航空母舰上起降，最大速度410km/h，配备2挺12.7mm前射机枪和1挺双联装7.62mm后座自卫机枪，可以挂载1000磅的炸弹。SBD的成名一战便是著名的中途岛战役，4艘日军航母全都是被SBD无畏式轰炸机击沉的。到了战争后期，即便有了新型飞机，美军飞行员仍然对SBD爱不释手。",
+							"\f[sbd.jpg,170,50]装备属性：攻+40。挂载：1×1000磅炸弹和2×250磅炸弹。\n每4个回合投弹，造成4.5倍攻击力的伤害。\n被动技能：\n俯冲轰炸：攻击军舰时，炸弹造成的伤害提升50%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=600)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "600"
+											},
+											{
+												"type": "setValue",
+												"name": "item:sbd3",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "TBD蹂躏者鱼雷机（舰）（500）",
+						"need": "true",
+						"icon": "tbd",
+						"condition": "!core.hasEquip('tbd')&&!core.hasItem('tbd')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[tbd.jpg,170,50]道格拉斯TBD蹂躏者式鱼雷轰炸机是美军第一款全金属单翼鱼雷轰炸机，二战初期主要装备于美军航母。最大速度331km/h，可以挂载鱼雷或炸弹。战争期间，笨重缓慢又缺乏自卫火力的TBD对于日本零式战斗机而言与活靶子无异，美军垃圾般的鱼雷质量也使它们投放的鱼雷不是哑弹就是被躲开了。中途岛海战是TBD的最后一战，所有的TBD鱼雷机都遭到了零式战斗机和高射炮的联合绞杀，41架飞机只有6架侥幸存活。在那之后，TBD就退出一线了。",
+							"\f[tbd.jpg,170,50]装备属性：攻+10。挂载：1×MK13鱼雷或3×500磅炸弹\n对舰攻击时，每5回合投放3枚鱼雷。对地攻击时，每5回合投放一轮炸弹，每颗炸弹伤害为1倍攻击力\n被动：\n哑弹：发射的鱼雷不会爆炸。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "bomber1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:tbd",
 												"operator": "+=",
 												"value": "1"
 											}

@@ -43,11 +43,29 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			torpeodoDamage = 0,
 			bombDamage = 0;
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
+			//十字军
+			if (core.hasEquip('crusades') && hero_ap <= mon_arm && mon_ap > hero_arm)
+				hero_atk *= 1.2;
+			//飓风MK2
+			if (core.hasEquip('hurricanemk2')) {
+				if (enemyInfo.type.endsWith('轻坦') || enemyInfo.type.endsWith('中坦') || enemyInfo.type.endsWith('重坦') || enemyInfo.type.endsWith('坦歼')) { //对地
+					if (mon_arm < 20)
+						damage *= 1.2;
+				}
+			}
+			//野猫
+			if (core.hasEquip('f4f3') && nthTurn === 2) {
+				bombDamage += 0.4 * 2 * hero_atk;
+			}
 			// 装备加成——攻击机
 			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) // 贼鸥式轰炸机
 				bombDamage += hero_atk * 2;
 			if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 4 === 0) // 贼鸥式轰炸机(鹰号航母)
 				bombDamage += hero_atk * 2;
+			if (core.hasEquip('sbd3') && nthTurn > 0 && nthTurn % 4 === 0) //无畏
+				bombDamage += hero_atk * 4.5;
+			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 4 === 0) //无畏（突击者号航母）
+				bombDamage += hero_atk * 4.5;
 			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
 				bombDamage += hero_atk * 2;
 			// 装备加成——轰炸机
@@ -55,7 +73,13 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				bombDamage += hero_atk * 0.6 * 3;
 			if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 5 === 0) // 箭鱼鱼雷机(鹰号航母)
 				bombDamage += hero_atk * 0.6 * 3;
+			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 5 === 0) //TBD鱼雷机
+				bombDamage += hero_atk * 3;
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
+			//野猫
+			if (core.hasEquip('f4f3') && nthTurn === 2) { //野猫
+				bombDamage += 0.4 * 2 * hero_atk;
+			}
 			// 装备加成——攻击机
 			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机
 				bombDamage += hero_atk * 2;
@@ -63,11 +87,19 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			}
 			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机(鹰号航母)
 				bombDamage += hero_atk * 2;
-				bombDamage *= 1.1;
+				bombDamage *= 1.5;
 			}
 			if (core.hasEquip('illus1941') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机(光辉1941)
 				bombDamage += hero_atk * 2;
-				bombDamage *= 1.1;
+				bombDamage *= 1.5;
+			}
+			if (core.hasEquip('sbd3') && nthTurn > 0 && nthTurn % 4 === 0) { //无畏
+				bombDamage += hero_atk * 4.5;
+				bombDamage *= 1.5;
+			}
+			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 4 === 0) { //无畏（突击者号航母）
+				bombDamage += hero_atk * 4.5;
+				bombDamage *= 1.5;
 			}
 			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
 				bombDamage += hero_atk * 2;
@@ -80,28 +112,37 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				torpeodoDamage += hero_top * (3 - mon_dod);
 			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（有哑弹）
 				if (flags.hard === 1 || flags['引信改良'])
-					torpeodoDamage += 1.2 * hero_top * (3 - mon_dod);
+					torpeodoDamage += hero_top * (3 - mon_dod);
 			}
 			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（突击者号航空母舰）
 				if (flags.hard === 1 || flags['引信改良'])
-					torpeodoDamage += 1.2 * hero_top * (3 - mon_dod);
+					torpeodoDamage += hero_top * (3 - mon_dod);
 			}
 			// 正常情况，鱼雷攻击
-			if (nthTurn % 10 === 0) {
-				if (flags.hard === 1 || flags['引信改良'] || !['mahan', 'gridley', 'benson', 'fletcher', 'raider', 'enterprise'].some(id => core.hasEquip(id)))
+			var torpeodo = 10
+			//先判定是否哑弹
+			if (flags.hard === 1 || flags['引信改良'] || !['mahan', 'gridley', 'benson', 'fletcher', 'raider', 'enterprise'].some(id => core.hasEquip(id))) {
+				if (core.hasEquip('benson')) { torpeodo -= 2 } //本森级，-2轮鱼雷cd
+				if (nthTurn % torpeodo === 0) { //发射鱼雷
 					torpeodoDamage += hero_top * (hero_tpn - mon_dod);
+				}
 			}
 			// 装备加成——军舰
 			// 厌战号战列舰
 			if (core.hasEquip('warspite') && nthTurn > 0 && nthTurn % 3 === 0 && enemyInfo.type != '潜艇')
-				damage += hero_atk;
+				damage += 3 * hero_atk;
 			// 潜行
 			if (core.hasSpecial(mon_special, 33)) damage *= 0.1;
 			//E级驱逐舰
 			if (core.hasEquip('classe') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) damage += 0.5 * hero_atk;
 			//马汉级
-			if (core.hasEquip('mahan') && enemyInfo.type === '潜艇') damage += 0.1 * hero_atk;
+			if (core.hasEquip('mahan') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) damage += 0.5 * hero_atk;
+			//V级
+			if (core.hasEquip('classv') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) damage += hero_atk;
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
+			if (core.hasEquip('f4f3') && nthTurn > 0 && nthTurn % 2 === 0) { //野猫
+				damage *= 1.15;
+			}
 			if (core.hasEquip('hurricanemk1') && enemyInfo.type.endsWith('轰炸机')) // 飓风MK1
 				damage += 80;
 			if (core.hasEquip('eagle') && enemyInfo.type.endsWith('轰炸机')) //飓风MK1（鹰号航母）
@@ -110,12 +151,15 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage *= 1.1;
 			if (core.hasEquip('illus1941') && enemyInfo.type.endsWith('战斗机')) //光辉1941
 				damage *= 1.1;
+			if (core.hasEquip('hurricanemk2') && enemyInfo.type.endsWith('轰炸机')) //飓风MK2
+				damage *= 1.2;
 			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
 				damage *= 1.3;
 		}
 		damage += torpeodoDamage + bombDamage;
 		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) { // 陆战中被对方单向击穿
 			var preTurn = 5;
+			if (core.hasEquip('valentine')) preTurn = 10; //瓦伦丁坦克
 			if (core.hasEquip('matilda')) preTurn = 10; // 玛蒂尔达步兵坦克：无法击穿对方时前10回合无法造成伤害
 			if (nthTurn <= preTurn) damage = 0;
 			else damage *= 0.8; // 前5回合无法造成伤害，其他回合伤害只有80%

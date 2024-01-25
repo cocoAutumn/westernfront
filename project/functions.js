@@ -337,8 +337,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	// 当前战斗回合数，可用于战后所需的判定
 	var turn = damageInfo.turn;
 	// 判定是否致死
-	if (flags['空战王牌']) { damage = 0;
-		delete flags['空战王牌']; }
+	if (flags['空战王牌']) {
+		damage = 0;
+		delete flags['空战王牌'];
+	}
 	if (damage == null || damage >= core.status.hero.hp) {
 		core.status.hero.hp = 0;
 		core.updateStatusBar(false, true);
@@ -380,6 +382,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var exp = guards.reduce(function (curr, g) {
 		return curr + core.material.enemys[g[2]].exp;
 	}, core.getEnemyValue(enemy, "exp", x, y));
+	if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 	if (core.hasFlag('curse')) exp = 0;
 	core.status.hero.exp += exp;
 	core.status.hero.statistics.exp += exp;
@@ -802,7 +805,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//回合制战斗
 	var curr_hp = mon_hp,
 		turn = 0,
-		damage = 0;
+		damage = 0,
+		notyet = true;
 	//狙击
 	if (core.hasSpecial(mon_special, 56)) {
 		damage += mon_atk * 20 - hero_mdef;
@@ -819,6 +823,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasSpecial(mon_special, 34)) {
 		damage += (mon_tpn - hero_dod) * mon_top;
 	}
+	//诺福克·先发制人
+	if (core.hasEquip('norfolk') && core.plugin.Navy.includes(enemyInfo.type)) {
+		curr_hp -= hero_atk;
+	}
+	//空射火箭弹
 	if (core.hasEquip('beautifighter') && !core.plugin.Luftwaffe.includes(enemyInfo.type)) { //英俊战士
 		curr_hp -= hero_atk * 0.2 * 8;
 	}
@@ -828,6 +837,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合
 		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn);
+		//诺福克·最后一击
+		if (notyet && curr_hp < 0.2 * mon_hp) {
+			curr_hp -= (3 - mon_dod) * hero_top;
+			notyet = false
+		}
 		if (curr_hp > 0) {
 			damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);
 		}
