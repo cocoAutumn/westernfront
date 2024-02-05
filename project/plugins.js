@@ -41,6 +41,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			hero_atk *= 1.2;
 		var damage = hero_atk,
 			torpeodoDamage = 0,
+			depthcharge = 0,
 			bombDamage = 0;
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
 			//十字军
@@ -131,14 +132,17 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			// 厌战号战列舰
 			if (core.hasEquip('warspite') && nthTurn > 0 && nthTurn % 3 === 0 && enemyInfo.type != '潜艇')
 				damage += 3 * hero_atk;
+			//胡德号战列舰
+			if (core.hasEquip('hood') && nthTurn > 0 && nthTurn % 4 === 0 && enemyInfo.type != '潜艇')
+				damage += 6 * hero_atk;
 			// 潜行
 			if (core.hasSpecial(mon_special, 33)) damage *= 0.1;
 			//E级驱逐舰
-			if (core.hasEquip('classe') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) damage += 0.5 * hero_atk;
+			if (core.hasEquip('classe') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += 0.5 * hero_atk;
 			//马汉级
-			if (core.hasEquip('mahan') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) damage += 0.5 * hero_atk;
+			if (core.hasEquip('mahan') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += 0.5 * hero_atk;
 			//V级
-			if (core.hasEquip('classv') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) damage += hero_atk;
+			if (core.hasEquip('classv') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += hero_atk;
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 			if (core.hasEquip('f4f3') && nthTurn > 0 && nthTurn % 2 === 0) { //野猫
 				damage *= 1.15;
@@ -156,7 +160,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
 				damage *= 1.3;
 		}
-		damage += torpeodoDamage + bombDamage;
+		damage += torpeodoDamage + bombDamage + depthcharge;
 		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) { // 陆战中被对方单向击穿
 			var preTurn = 5;
 			if (core.hasEquip('valentine')) preTurn = 10; //瓦伦丁坦克
@@ -213,6 +217,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage *= 1.4;
 			if (core.hasEquip('matilda') && hero_arm >= mon_ap) // 玛蒂尔达步兵坦克：勇士未被对方穿甲则对方伤害为0.8倍
 				damage *= 0.8;
+			//380舰炮
+			if (core.hasSpecial(mon_special, 32) && nthTurn > 0 && nthTurn % 4 === 0) {
+				damage += 6 * mon_atk;
+			}
 			if (hero_ap > mon_arm && hero_arm >= mon_ap) // 被勇士单向击穿
 				if (nthTurn <= 5) damage = 0;
 				else damage *= 0.8;
@@ -232,6 +240,14 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasSpecial(mon_special, 29) && nthTurn > 0 && nthTurn % mon_cd === 0) {
 				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
 				if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
+			}
+			//280舰炮
+			if (core.hasSpecial(mon_special, 31) && nthTurn > 0 && nthTurn % 3 === 0) {
+				damage += 3 * mon_atk;
+			}
+			//380舰炮
+			if (core.hasSpecial(mon_special, 32) && nthTurn > 0 && nthTurn % 4 === 0) {
+				damage += 6 * mon_atk;
 			}
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 			if (core.hasEquip('typhoon') && enemyInfo.type.endsWith('战斗机')) // 台风式攻击机
@@ -302,6 +318,27 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			name = 'Z字规避';
 			cost = 80;
 			description = '下一场战斗中，每次遭遇鱼雷攻击时额外闪避2枚鱼雷'
+		}
+		if (id === 7) {
+			strategy = true;
+			name = '扫雷';
+			cost = 20;
+			description = '立即清除主角面前的地雷或水雷'
+			event = [
+				{ "type": "setValue", "name": "temp:A", "value": "core.getBlockId(core.nextX(), core.nextY())" },
+				{
+					"type": "if",
+					"condition": "((temp:A==='lavaNet')||(temp:A==='mine'))",
+					"true": [
+						{ "type": "playSound", "name": "005-System05.mp3" },
+						{ "type": "hide", "loc": ["core.nextX()", "core.nextY()"], "remove": true },
+					],
+					"false": [
+						{ "type": "playSound", "name": "error.mp3" },
+						{ "type": "tip", "text": "操作失败！" },
+					]
+				},
+			]
 		}
 		return {
 			'strategy': strategy,

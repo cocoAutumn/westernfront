@@ -11,7 +11,7 @@ main.floors.MT73=
     "cannotViewMap": false,
     "images": [],
     "ratio": 1,
-    "defaultGround": "ground",
+    "defaultGround": "water",
     "bgm": "hitman.mp3",
     "firstArrive": [],
     "eachArrive": [],
@@ -20,7 +20,7 @@ main.floors.MT73=
         "14,7": [
             {
                 "type": "choices",
-                "text": "夜幕即将降临，目标进入航程，是否现在发起空袭？（卸掉其他所有装备，并强制装备光辉号航空母舰，且无法返回）",
+                "text": "\t[WARNING]夜幕即将降临，目标进入航程，是否现在发起空袭？（卸掉其他所有装备，并强制装备光辉号航空母舰，且无法返回）",
                 "choices": [
                     {
                         "text": "开始行动",

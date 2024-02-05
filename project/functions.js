@@ -373,6 +373,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return curr + core.material.enemys[g[2]].money;
 	}, core.getEnemyValue(enemy, "money", x, y));
 	if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+	if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 	if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
 	if (core.hasFlag('curse')) money = 0; // 诅咒效果
 	core.status.hero.money += money;
@@ -383,6 +384,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return curr + core.material.enemys[g[2]].exp;
 	}, core.getEnemyValue(enemy, "exp", x, y));
 	if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+	if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 	if (core.hasFlag('curse')) exp = 0;
 	core.status.hero.exp += exp;
 	core.status.hero.statistics.exp += exp;
@@ -569,7 +571,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[15, "炮击", function (enemy) { return "经过敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "范围内" + (enemy.range || 1) + "格时遭受炮击，生命减少" + (enemy.zone ?? 0) + "点"; }, "#c677dd"],
 		[16, "夹击", "经过两只相同的怪物中间，角色生命值变成一半", "#bb99ee"],
 		[22, "固伤", function (enemy) { return "敌人对角色造成" + (enemy.damage ?? 0) + "点固定伤害，可被后勤值抵消。"; }, "#ff9977"],
-		[24, "激光", function (enemy) { return "经过敌人同行或同列时遭受远距离攻击，伤害为" + (enemy.laser ?? 0) + "点"; }, "#dda0dd"],
+		[24, "狙射", function (enemy) { return "经过敌人同行或同列时遭受远距离攻击，伤害为" + (enemy.laser ?? 0) + "点"; }, "#dda0dd"],
 		[25, "指挥", function (enemy) { return "位于敌阵核心的指挥单位。" + (enemy.range != null ? ((enemy.haloSquare ? "自身九宫格" : "自身十字") + enemy.haloRange + "格范围内") : "同楼层所有") + "轴心国军队攻击提升" + (enemy.hpBuff ?? 0) + "%，雷击提升" + (enemy.atkBuff ?? 0) + "%，空袭提升" + (enemy.defBuff ?? 0) + "%," + (enemy.haloAdd ? "可叠加" : "不可叠加"); }, "#e6e099", 1],
 		[28, "航弹", function (enemy) { return "每\r[red]" + (enemy.spd ?? 0) + "\r回合投放\r[red]" + (enemy.ammo ?? 0) + "\r枚航空炸弹，每颗炸弹伤害等于空袭值。造成的伤害计为“炸弹伤害”" },
 			[255, 255, 0, 1]
@@ -604,6 +606,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响"],
 		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人20倍攻击力的伤害，可被后勤值抵消"],
 		[57, "主将", "主角必须消灭当前地图所有杂兵后才可攻击主将"],
+		[58, "狼群", "当前地图除自身外每有1艘潜艇，雷击值增加10%"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -815,6 +818,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasSpecial(mon_special, 1) && !core.hasEquip("beautifighter")) {
 		damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn)
 	}
+	//跨射
+	if (core.hasSpecial(mon_special, 37)) {
+		if (!['hood', 'warspite', 'kinggeorge5', 'northcarolina', 'iowa'].some(id => core.hasEquip(id))) {
+			damage += 3 * 3 * mon_atk;
+		}
+	}
 	//英俊战士特殊判定
 	if (core.hasSpecial(mon_special, 1) && core.hasEquip("beautifighter")) {
 		curr_hp -= hero_atk * 2;
@@ -839,8 +848,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn);
 		//诺福克·最后一击
 		if (notyet && curr_hp < 0.2 * mon_hp) {
-			curr_hp -= (3 - mon_dod) * hero_top;
-			notyet = false
+			if (core.hasEquip('norfolk')) {
+				if (mon_dod <= 3) {
+					curr_hp -= (3 - mon_dod) * hero_top;
+					notyet = false
+				}
+			}
 		}
 		if (curr_hp > 0) {
 			damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);

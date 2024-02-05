@@ -11,7 +11,7 @@ main.floors.MT72=
     "cannotViewMap": false,
     "images": [],
     "ratio": 1,
-    "defaultGround": "ground",
+    "defaultGround": "water",
     "bgm": "hitman.mp3",
     "firstArrive": [],
     "eachArrive": [],

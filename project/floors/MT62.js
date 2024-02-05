@@ -54,7 +54,7 @@ main.floors.MT62=
     "parallelDo": "",
     "events": {
         "8,0": [
-            "\t[参谋]长官，请下达指示！",
+            "\t[参谋,N517]长官，请下达指示！",
             "\t[系统提示]即将进入存档界面",
             {
                 "type": "callSave"

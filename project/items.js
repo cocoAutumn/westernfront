@@ -763,13 +763,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "V级驱逐舰",
 		"canUseItemEffect": "true",
-		"text": "装备属性：攻+100，雷击+150，鱼雷管+6。闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害。\n老兵：装备期间与敌人作战后获得经验+2",
+		"text": "装备属性：攻+100，雷击+1000，鱼雷管+6。闪避鱼雷数+3。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害。\n老兵：装备期间与敌人作战后获得经验+2",
 		"equip": {
 			"type": 1,
 			"value": {
 				"tpn": 6,
-				"top": 150,
-				"dod": 2,
+				"top": 1000,
+				"dod": 3,
 				"atk": 100
 			},
 			"percentage": {}
@@ -824,13 +824,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "本森级驱逐舰",
 		"canUseItemEffect": "true",
-		"text": "装备属性：攻+150，雷击＋300，鱼雷管+10，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害\n冲刺：发射鱼雷所需回合数-2\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）",
+		"text": "装备属性：攻+150，雷击＋1500，鱼雷管+10，闪避鱼雷数+4。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害\n冲刺：发射鱼雷所需回合数-2\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）",
 		"equip": {
 			"type": 1,
 			"value": {
 				"tpn": 10,
-				"top": 300,
-				"dod": 2,
+				"top": 1500,
+				"dod": 4,
 				"atk": 150
 			},
 			"percentage": {}
@@ -844,7 +844,16 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"hood": {
 		"cls": "equips",
 		"name": "胡德号战列巡洋舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+1000。闪避鱼雷数-2。\n被动：\n主炮轰击：每4回合额外发射一轮主炮，对敌方水面战舰造成6倍攻击力的伤害。\n皇家荣耀：战后获得黄金和经验+10。",
+		"equip": {
+			"type": 3,
+			"value": {
+				"atk": 1000,
+				"dod": -2
+			},
+			"percentage": {}
+		}
 	},
 	"warspite": {
 		"cls": "equips",
@@ -1356,9 +1365,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "3阶橙宝石",
 		"canUseItemEffect": "true",
-		"text": "，增加20雷击",
-		"itemEffect": "core.status.hero.top += 20;",
-		"itemEffectTip": "，增加20雷击"
+		"text": "，增加50雷击",
+		"itemEffect": "core.status.hero.top += 50;",
+		"itemEffectTip": "，增加50雷击"
 	},
 	"orange4Gem": {
 		"cls": "items",

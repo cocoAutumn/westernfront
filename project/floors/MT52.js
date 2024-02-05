@@ -389,7 +389,7 @@ main.floors.MT52=
         "6,14": {
             "0": {
                 "condition": "core.maps.searchBlockWithFilter(x=>['中型轰炸机'].includes(core.material.enemys[x?.event?.id]?.type),['MT48','MT49','MT50','MT51','MT52']).length===0",
-                "currentFloor": true,
+                "currentFloor": false,
                 "priority": 0,
                 "delayExecute": false,
                 "multiExecute": false,

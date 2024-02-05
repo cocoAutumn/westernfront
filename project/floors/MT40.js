@@ -1,8 +1,8 @@
 main.floors.MT40=
 {
     "floorId": "MT40",
-    "title": "多佛尔机场",
-    "name": "多佛尔机场",
+    "title": "比金山机场",
+    "name": "比金山机场",
     "width": 15,
     "height": 15,
     "canFlyTo": false,
@@ -103,7 +103,7 @@ main.floors.MT40=
             }
         ],
         "10,11": [
-            "\t[参谋]长官，请下达指示！",
+            "\t[参谋,N517]长官，请下达指示！",
             "\t[系统提示]即将进入存档界面",
             {
                 "type": "callSave"

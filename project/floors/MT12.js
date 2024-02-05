@@ -11,7 +11,7 @@ main.floors.MT12=
     "cannotViewMap": true,
     "images": [],
     "ratio": 1,
-    "defaultGround": "ground",
+    "defaultGround": "ground6",
     "bgm": "wots3.mp3",
     "firstArrive": [
         {

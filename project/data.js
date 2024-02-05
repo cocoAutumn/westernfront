@@ -87,7 +87,27 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT77",
 			"MT78",
 			"MT79",
-			"MT80"
+			"MT80",
+			"MT81",
+			"MT82",
+			"MT83",
+			"MT84",
+			"MT85",
+			"MT86",
+			"MT87",
+			"MT88",
+			"MT89",
+			"MT90",
+			"MT91",
+			"MT92",
+			"MT93",
+			"MT94",
+			"MT95",
+			"MT96",
+			"MT97",
+			"MT98",
+			"MT99",
+			"MT100"
 		],
 		"floorPartitions": [
 			[
@@ -133,6 +153,18 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT68",
 				"MT74"
+			],
+			[
+				"MT75",
+				"MT81"
+			],
+			[
+				"MT82",
+				"MT88"
+			],
+			[
+				"MT89",
+				"MT93"
 			]
 		],
 		"images": [
@@ -170,6 +202,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"cr42.jpg",
 			"cromwell.jpg",
 			"crusades.jpg",
+			"deutschland.jpg",
 			"donitz.png",
 			"dorsetshire.jpg",
 			"dowdin.png",
@@ -195,6 +228,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"h35.jpg",
 			"heinrich.png",
 			"hero.png",
+			"hipper.jpg",
 			"hoodsinking.jpg",
 			"hurricanemk1.jpg",
 			"hurricanemk2.png",
@@ -233,6 +267,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"rommel.png",
 			"sb2c.jpg",
 			"sbd.jpg",
+			"scharnhorst.jpg",
 			"sheffield.jpg",
 			"skill3.jpg",
 			"skill4.jpg",
@@ -260,6 +295,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"typhoon.jpg",
 			"uboat.png",
 			"valentine.jpg",
+			"veneto.jpg",
 			"warspite.jpg",
 			"win.png",
 			"winskin.png",
@@ -1822,7 +1858,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[classv.jpg,170,50]V级驱逐舰是英国于1917-1918年间建造的一型驱逐舰，共建造30艘，在二战时仍有18艘在服役，已经算是“老前辈”。V级配备了4门102mm炮，1门76mm高射炮、2座三联装鱼雷发射管以及反潜深水炸弹。",
-							"\f[classv.jpg,170,50]装备属性：攻+100，雷击+150，鱼雷管+6。闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害。\n老兵：装备期间与敌人作战后获得经验+2",
+							"\f[classv.jpg,170,50]装备属性：攻+100，雷击+1000，鱼雷管+6。闪避鱼雷数+3。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害。\n老兵：装备期间与敌人作战后获得经验+2",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -1870,7 +1906,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[benson.jpg,170,50]本森级是二战时期美国的一型驱逐舰，1938年开工，共建造32艘并参与战争。本森级配备了5门127mm炮，2座五联装鱼雷发射管，8门防空武器和深水炸弹，最高航速37.5节。本森级驱逐舰中最著名的一艘是被称为“所罗门疯狗”的拉菲号，在瓜岛与日军的夜间海战中，拉菲号顶着凶猛的炮火，勇敢地向日本战列舰比睿号冲锋并发射鱼雷，随后在极近距离下用一切能用的武器猛扫日军甲板，最终遭到围攻而沉没。",
-							"\f[benson.jpg,170,50]装备属性：攻+150，雷击＋300，鱼雷管+10，闪避鱼雷数+2。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害\n冲刺：发射鱼雷所需回合数-2\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）",
+							"\f[benson.jpg,170,50]装备属性：攻+150，雷击＋1500，鱼雷管+10，闪避鱼雷数+4。\n被动：\n反潜：对潜艇攻击时，每3回合额外造成一次等同于攻击力的伤害\n冲刺：发射鱼雷所需回合数-2\n哑弹：发射的鱼雷不会爆炸（神剧难度无效）",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2440,55 +2476,133 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"need": "2000",
 				"title": "准校",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升准校。攻击+50，雷击+150，血量与血限+2000，后勤+50。",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "50"
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "150"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "2000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "2000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "50"
+					}
+				]
 			},
 			{
 				"need": "2500",
 				"title": "少校",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升少校。攻击+50，雷击+250，血量与血限+3000，后勤+50。",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "50"
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "250"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "3000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "3000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "50"
+					}
+				]
 			},
 			{
 				"need": "3000",
 				"title": "中校",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升中校"
+				]
 			},
 			{
 				"need": "3500",
 				"title": "上校",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升上校"
+				]
 			},
 			{
 				"need": "5000",
 				"title": "准将",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升准将"
+				]
 			},
 			{
 				"need": "6000",
 				"title": "少将",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升少将"
+				]
 			},
 			{
 				"need": "7000",
 				"title": "中将",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升中将"
+				]
 			},
 			{
 				"need": "8000",
 				"title": "上将",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升上将"
+				]
 			},
 			{
 				"need": "10000",
 				"title": "元帅/五星上将",
 				"clear": true,
-				"action": []
+				"action": [
+					"晋升元帅/五星上将"
+				]
 			}
 		]
 	},
