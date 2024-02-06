@@ -165,6 +165,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT89",
 				"MT93"
+			],
+			[
+				"MT94",
+				"MT99"
 			]
 		],
 		"images": [
@@ -173,6 +177,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"aircraft1.png",
 			"alexanda.png",
 			"arnorid.png",
+			"attackbismark.jpg",
 			"auchinleck.png",
 			"b17.jpg",
 			"b24.jpg",
@@ -2549,23 +2554,83 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				]
 			},
 			{
-				"need": "3000",
+				"need": "3500",
 				"title": "中校",
 				"clear": true,
 				"action": [
-					"晋升中校"
+					"晋升中校。攻击+80，雷击+500，血量与血限+5000，后勤+80",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "80"
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "500"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "5000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "5000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "80"
+					}
 				]
 			},
 			{
-				"need": "3500",
+				"need": "4500",
 				"title": "上校",
 				"clear": true,
 				"action": [
-					"晋升上校"
+					"晋升上校，攻击+100，雷击+800，血量与血限+8000，后期+200",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "100"
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "800"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "8000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "8000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "200"
+					}
 				]
 			},
 			{
-				"need": "5000",
+				"need": "6000",
 				"title": "准将",
 				"clear": true,
 				"action": [
@@ -2573,7 +2638,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				]
 			},
 			{
-				"need": "6000",
+				"need": "7000",
 				"title": "少将",
 				"clear": true,
 				"action": [
@@ -2581,7 +2646,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				]
 			},
 			{
-				"need": "7000",
+				"need": "8000",
 				"title": "中将",
 				"clear": true,
 				"action": [
@@ -2589,7 +2654,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				]
 			},
 			{
-				"need": "8000",
+				"need": "9000",
 				"title": "上将",
 				"clear": true,
 				"action": [

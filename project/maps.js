@@ -496,6 +496,8 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"583": {"cls":"enemys","id":"deutschland"},
 	"584": {"cls":"npcs","id":"N584"},
 	"585": {"cls":"npcs","id":"N585"},
+	"586": {"cls":"npcs","id":"N586"},
+	"587": {"cls":"npcs","id":"N587"},
 	"20104": {"cls":"tileset","id":"X20104","canPass":true},
 	"20105": {"cls":"tileset","id":"X20105","canPass":true},
 	"20107": {"cls":"tileset","id":"X20107","canPass":true},

@@ -409,7 +409,7 @@ main.floors.MT88=
                                                 "time": 500
                                             },
                                             "\t[威尔士亲王号舰长,N584]这里是威尔士亲王号！我们打错了！那个是欧根亲王号重巡洋舰，敌人的尾舰才是俾斯麦号！重复，尾舰才是俾斯麦号！",
-                                            "\t[吕特晏斯（俾斯麦号舰长）,bismark]继续保持静默已经没有任何意义。Jot Dora（准许开火）！",
+                                            "\t[吕特晏斯（俾斯麦号指挥官）,bismark]继续保持静默已经没有任何意义。Jot Dora（准许开火）！",
                                             {
                                                 "type": "playSound",
                                                 "name": "xinxinmagic.mp3"
@@ -811,10 +811,6 @@ main.floors.MT88=
                                                 ]
                                             },
                                             {
-                                                "type": "function",
-                                                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-                                            },
-                                            {
                                                 "type": "update"
                                             },
                                             {
@@ -1027,6 +1023,10 @@ main.floors.MT88=
                                                 ]
                                             },
                                             {
+                                                "type": "sleep",
+                                                "time": 500
+                                            },
+                                            {
                                                 "type": "animate",
                                                 "name": "bigexplore",
                                                 "loc": [
@@ -1080,7 +1080,7 @@ main.floors.MT88=
                                                     255,
                                                     1
                                                 ],
-                                                "time": 200,
+                                                "time": 500,
                                                 "times": 1
                                             },
                                             {
@@ -1104,7 +1104,7 @@ main.floors.MT88=
                                                     255,
                                                     1
                                                 ],
-                                                "time": 200,
+                                                "time": 500,
                                                 "times": 1
                                             },
                                             {

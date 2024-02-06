@@ -1412,7 +1412,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"hard4": {
 		"cls": "constants",
 		"name": "炼狱难度",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "所有敌人伤害增加10%"
 	},
 	"orangePotion": {
 		"cls": "items",

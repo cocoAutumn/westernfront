@@ -105,12 +105,19 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
 				bombDamage += hero_atk * 2;
 			// 装备加成——轰炸机
-			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机
+			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) { // 箭鱼鱼雷机
 				torpeodoDamage += hero_top * (3 - mon_dod);
+			}
 			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机(鹰号航母)
 				torpeodoDamage += hero_top * (3 - mon_dod);
 			if (core.hasEquip("illus1941") && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机(光辉1941)
 				torpeodoDamage += hero_top * (3 - mon_dod);
+			if (flags.skill === 8 && nthTurn === 5 && mon_dod < 3) { //技能8：剑鱼818中队
+				torpeodoDamage += hero_top * (3 - mon_dod);
+				mon_dod -= 2;
+				if (mon_dod < 0)
+					mon_dod = 0;
+			}
 			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（有哑弹）
 				if (flags.hard === 1 || flags['引信改良'])
 					torpeodoDamage += hero_top * (3 - mon_dod);
@@ -339,6 +346,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					]
 				},
 			]
+		}
+		if (id === 8) {
+			name = '剑鱼818中队';
+			cost = 80;
+			description = '在下一场与敌方水面舰艇的战斗中，第五回合额外使用剑鱼式鱼雷机发起一次攻击。如果至少命中1枚鱼雷，则接下来的战斗中敌舰鱼雷闪避数量-2'
 		}
 		return {
 			'strategy': strategy,
