@@ -161,6 +161,18 @@ main.floors.MT88=
             "value": "'俾斯麦(?)'"
         },
         {
+            "type": "setEnemy",
+            "id": "bismark",
+            "name": "money",
+            "value": "0"
+        },
+        {
+            "type": "setEnemy",
+            "id": "bismark",
+            "name": "exp",
+            "value": "0"
+        },
+        {
             "type": "callBook"
         }
     ],
@@ -669,6 +681,18 @@ main.floors.MT88=
                                 "id": "bismark",
                                 "name": "hp",
                                 "value": "120000"
+                            },
+                            {
+                                "type": "setEnemy",
+                                "id": "bismark",
+                                "name": "money",
+                                "value": "50"
+                            },
+                            {
+                                "type": "setEnemy",
+                                "id": "bismark",
+                                "name": "exp",
+                                "value": "50"
                             }
                         ],
                         "false": [

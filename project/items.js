@@ -633,7 +633,16 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "瓦伦丁步兵坦克",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿50，装60。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+50，穿50，装60。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 50,
+				"ap": 50,
+				"arm": 60
+			},
+			"percentage": {}
+		}
 	},
 	"cromwell": {
 		"cls": "equips",
@@ -1339,9 +1348,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "3阶黄宝石",
 		"canUseItemEffect": "true",
-		"text": ",血量及血限+200",
-		"itemEffectTip": ",血量及血限+200",
-		"itemEffect": "core.status.hero.hpmax += 200;\ncore.status.hero.hp += 200;"
+		"text": ",血量及血限+500",
+		"itemEffectTip": ",血量及血限+500",
+		"itemEffect": "core.status.hero.hpmax += 500;\ncore.status.hero.hp += 500;"
 	},
 	"yellow4Gem": {
 		"cls": "items",
@@ -1519,5 +1528,19 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "，蓝钥匙+3",
 		"itemEffectTip": "，蓝钥匙+3",
 		"itemEffect": "core.addItem('blueKey', 3)"
+	},
+	"medal3": {
+		"cls": "items",
+		"name": "3级勋章",
+		"canUseItemEffect": "true",
+		"text": "，全属性提升",
+		"itemEffectTip": "，全属性提升",
+		"useItemEvent": [
+			{
+				"type": "playSound",
+				"name": "xinxinbazhe.mp3"
+			}
+		],
+		"itemEffect": "core.status.hero.hpmax += 500;\ncore.status.hero.hp += 500;\ncore.status.hero.mana += 50;\ncore.status.hero.atk += 5;\ncore.status.hero.top += 50;\ncore.status.hero.mdef += 20;"
 	}
 }

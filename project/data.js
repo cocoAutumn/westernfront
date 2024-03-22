@@ -107,7 +107,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT97",
 			"MT98",
 			"MT99",
-			"MT100"
+			"MT100",
+			"MT101",
+			"MT102",
+			"MT103",
+			"MT104",
+			"MT105",
+			"MT106",
+			"MT107",
+			"MT108",
+			"MT109",
+			"MT110"
 		],
 		"floorPartitions": [
 			[
@@ -312,7 +322,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"001-Grassland01.png",
 			"tileset3.png",
 			"005-Beach01.png",
-			"004-Mountain01.png"
+			"004-Mountain01.png",
+			"006-Desert01.png"
 		],
 		"animates": [
 			"aim",
@@ -1070,7 +1081,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 									"\t[野战炮,artillery75]\b[down,null]拥有强大的远程火力，在敌人的射程之外对其进行猛烈轰炸，不过一旦被近身就会变得非常脆弱。",
 									"\t[高射炮,flak37]\b[down,null]密集的高射炮火令敌机飞行员感到胆寒。口径较大的高射炮甚至可以把地面上的敌军也一块炸飞。",
 									"\t[防御工事,mgbunker]\b[down,null]固定的防御建筑物，攻守兼备，但是无法移动，很容易被重型火力击中。",
-									"\t[潜艇,u27]\b[down,null]潜藏在深海中的“幽灵猎手”，能躲掉大多数炮火，并给予敌舰致命一击。",
+									"\t[潜艇,u7]\b[down,null]潜藏在深海中的“幽灵猎手”，能躲掉大多数炮火，并给予敌舰致命一击。",
 									"\t[驱逐舰,italydd1]\b[down,null]战斗力低下却数量众多的小型军舰，扮演着国际象棋里弱小却不可或缺的“兵”。同时也是潜艇的天敌。",
 									"\t[巡洋舰,italycl1]\b[down,null]性能较均衡的中型军舰，分为“轻巡洋舰”和“重巡洋舰”两种。在舰队里是主力战舰的绝佳辅助，周围没有大型军舰时，它们就是主力。",
 									"\t[战列舰,bismark]\b[down,null]拥有堪称恐怖的火力和坚硬装甲的大型军舰，没有人敢硬接这群庞然大物的巨型主炮，除非他是从精神病院里偷跑出来的。",
@@ -1757,7 +1768,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "十字军巡洋坦克（500）",
+						"text": "十字军巡洋坦克（1200）",
 						"need": "true",
 						"icon": "crusades",
 						"condition": "!core.hasEquip('crusades')&&!core.hasItem('crusades')",
@@ -1774,7 +1785,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=500)",
+										"condition": "(status:money>=1200)",
 										"true": [
 											{
 												"type": "playSound",
@@ -1784,7 +1795,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "500"
+												"value": "1200"
 											},
 											{
 												"type": "setValue",
@@ -1805,7 +1816,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "瓦伦丁步兵坦克（500）",
+						"text": "瓦伦丁步兵坦克（1400）",
 						"need": "true",
 						"icon": "valentine",
 						"condition": "!core.hasEquip('valentine')&&!core.hasItem('valentine')",
@@ -1822,7 +1833,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=500)",
+										"condition": "(status:money>=1400)",
 										"true": [
 											{
 												"type": "playSound",
@@ -1832,7 +1843,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "500"
+												"value": "1400"
 											},
 											{
 												"type": "setValue",
@@ -2045,7 +2056,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "飓风MK2C战斗机（800）",
+						"text": "飓风MK2C战斗机（1200）",
 						"need": "true",
 						"icon": "hurricanemk2",
 						"condition": "!core.hasEquip('hurricanemk2')&&!core.hasItem('hurricanemk2')",
@@ -2062,7 +2073,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=800)",
+										"condition": "(status:money>=1200)",
 										"true": [
 											{
 												"type": "playSound",
@@ -2072,7 +2083,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "800"
+												"value": "1200"
 											},
 											{
 												"type": "setValue",
@@ -2093,7 +2104,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "F4F野猫战斗机（舰）（800）",
+						"text": "F4F野猫战斗机（舰）（1200）",
 						"need": "true",
 						"icon": "f4f3",
 						"condition": "!core.hasEquip('f4f3')&&!core.hasItem('f4f3')",
@@ -2110,7 +2121,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=800)",
+										"condition": "(status:money>=1200)",
 										"true": [
 											{
 												"type": "playSound",
@@ -2120,7 +2131,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "800"
+												"value": "1200"
 											},
 											{
 												"type": "setValue",
@@ -2141,7 +2152,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "SBD无畏式俯冲轰炸机（舰）（600）",
+						"text": "SBD无畏式俯冲轰炸机（舰）（1000）",
 						"need": "true",
 						"icon": "sbd3",
 						"condition": "!core.hasEquip('sbd3')&&!core.hasItem('sbd3')",
@@ -2158,7 +2169,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=600)",
+										"condition": "(status:money>=1000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -2168,7 +2179,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "600"
+												"value": "1000"
 											},
 											{
 												"type": "setValue",
@@ -2189,7 +2200,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "TBD蹂躏者鱼雷机（舰）（500）",
+						"text": "TBD蹂躏者鱼雷机（舰）（800）",
 						"need": "true",
 						"icon": "tbd",
 						"condition": "!core.hasEquip('tbd')&&!core.hasItem('tbd')",
@@ -2206,7 +2217,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=500)",
+										"condition": "(status:money>=800)",
 										"true": [
 											{
 												"type": "playSound",
@@ -2216,7 +2227,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "500"
+												"value": "800"
 											},
 											{
 												"type": "setValue",

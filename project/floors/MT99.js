@@ -558,6 +558,18 @@ main.floors.MT99=
                                         "id": "bismark",
                                         "name": "special",
                                         "value": "[57]"
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "bismark",
+                                        "name": "money",
+                                        "value": "50"
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "bismark",
+                                        "name": "exp",
+                                        "value": "50"
                                     }
                                 ],
                                 "false": [
@@ -623,6 +635,38 @@ main.floors.MT99=
                                             },
                                             {
                                                 "type": "update"
+                                            },
+                                            {
+                                                "type": "unloadEquip",
+                                                "pos": 0
+                                            },
+                                            {
+                                                "type": "unloadEquip",
+                                                "pos": 1
+                                            },
+                                            {
+                                                "type": "unloadEquip",
+                                                "pos": 2
+                                            },
+                                            {
+                                                "type": "unloadEquip",
+                                                "pos": 3
+                                            },
+                                            {
+                                                "type": "unloadEquip",
+                                                "pos": 4
+                                            },
+                                            {
+                                                "type": "unloadEquip",
+                                                "pos": 5
+                                            },
+                                            {
+                                                "type": "unloadEquip",
+                                                "pos": 6
+                                            },
+                                            {
+                                                "type": "function",
+                                                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
                                             },
                                             {
                                                 "type": "sleep",
@@ -816,6 +860,14 @@ main.floors.MT99=
                                                 "time": 500
                                             },
                                             {
+                                                "type": "forbidSave"
+                                            },
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:stage",
+                                                "value": "16"
+                                            },
+                                            {
                                                 "type": "confirm",
                                                 "text": "跳过剧情吗？",
                                                 "yes": [],
@@ -846,10 +898,24 @@ main.floors.MT99=
                                                     }
                                                 ],
                                                 "no": [
-                                                    "第三章测试版已结束，感谢您的游玩！",
                                                     {
-                                                        "type": "win",
-                                                        "reason": "Stage 3 惊涛骇浪"
+                                                        "type": "playBgm",
+                                                        "name": "wots5.mp3"
+                                                    },
+                                                    "轴心国的三巨头中，当德国和日本都瞄准资源丰富的土地大肆扩张时，德国的“猪队友”意大利却盯上了一块不毛之地——北非。",
+                                                    "北非到处都是沙漠，资源少的可怜，不过相应的，这里的难度看起来也不大。非洲的小国大多都没什么实力，就算是英国的殖民地也没有太多防守力量。墨索里尼以为，拿下这里的难度不会很大。",
+                                                    "但意大利在令人失望这方面从没让人失望过。光是打下埃塞俄比亚这个几乎只有中世纪水平的小国就被打的不得不掏出毒气弹来解决对手。",
+                                                    "但又菜又不多练还爱作死的墨索里尼似乎并未意识到这一点。当他们对英法正式宣战时，墨索里尼命令北非的意大利军团向英国殖民地发起进攻。",
+                                                    "英军占领的埃及后面就是苏伊士运河，这是英国与中印等亚洲地区连接的重要通道，一旦苏伊士运河被切断，后果不堪设想。",
+                                                    "英军必须阻止意军的攻势，以此捍卫苏伊士运河的控制权。",
+                                                    {
+                                                        "type": "changeFloor",
+                                                        "floorId": "MT100",
+                                                        "loc": [
+                                                            -1,
+                                                            -1
+                                                        ],
+                                                        "direction": "down"
                                                     }
                                                 ]
                                             }

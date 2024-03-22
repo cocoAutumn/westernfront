@@ -198,8 +198,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"poisonZombie": 55,
 		"octopus": 57,
 		"princessEnemy": 59,
-		"yellowGateKeeper": 20,
-		"blueGateKeeper": 21,
 		"redGateKeeper": 22,
 		"magicMaster": 46,
 		"devilWarrior": 41,
@@ -324,7 +322,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"c200": 131,
 		"c202": 132,
 		"hipper": 133,
-		"deutschland": 134
+		"deutschland": 134,
+		"m1340": 135,
+		"messe": 20,
+		"graziani": 21
 	},
 	"enemy48": {
 		"angel": 0,
@@ -517,7 +518,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"typhoon": 123,
 		"illus1941": 178,
 		"yellow3Key": 179,
-		"blue3Key": 180
+		"blue3Key": 180,
+		"medal3": 181
 	},
 	"autotile": {
 		"autotile": 0,

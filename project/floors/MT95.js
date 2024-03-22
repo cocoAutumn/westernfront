@@ -354,6 +354,18 @@ main.floors.MT95=
             "name": "dod",
             "value": "0"
         },
+        {
+            "type": "setEnemy",
+            "id": "bismark",
+            "name": "money",
+            "value": "0"
+        },
+        {
+            "type": "setEnemy",
+            "id": "bismark",
+            "name": "exp",
+            "value": "0"
+        },
         "\t[系统提示]敌人战力重置完成",
         {
             "type": "playSound",
