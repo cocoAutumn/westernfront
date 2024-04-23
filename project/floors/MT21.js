@@ -205,7 +205,7 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "flak88",
             "name": "atk",
-            "value": "800"
+            "value": "1200"
         },
         {
             "type": "setEnemy",

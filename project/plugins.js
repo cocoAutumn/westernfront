@@ -168,6 +168,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage *= 1.3;
 		}
 		damage += torpeodoDamage + bombDamage + depthcharge;
+		if (flags.dry === true && !core.hasSpecial(mon_special, 55)) { //炎热debuff
+			damage *= 1.2;
+		}
 		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) { // 陆战中被对方单向击穿
 			var preTurn = 5;
 			if (core.hasEquip('valentine')) preTurn = 10; //瓦伦丁坦克
@@ -279,6 +282,12 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			}
 		}
 		damage += torpeodoDamage + bombDamage;
+		if (core.hasSpecial(mon_special, 38)) { //精锐
+			damage *= 2;
+		}
+		if (flags.dry === true) { //炎热
+			damage *= 1.2;
+		}
 		return damage;
 	}
 
@@ -351,6 +360,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			name = '剑鱼818中队';
 			cost = 80;
 			description = '在下一场与敌方水面舰艇的战斗中，第五回合额外使用剑鱼式鱼雷机发起一次攻击。如果至少命中1枚鱼雷，则接下来的战斗中敌舰鱼雷闪避数量-2'
+		}
+		if (id === 9) {
+			name = '抵抗运动';
+			cost = 150;
+			description = '下一场战斗中，敌方陆军攻击力随回合数增加而减少，每回合减少原攻击力的5%'
 		}
 		return {
 			'strategy': strategy,

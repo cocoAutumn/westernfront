@@ -611,7 +611,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[52, "包围", "主角站在两个该敌人中间时，攻击力减少30%。该敌人自带1点固伤"],
 		[54, "间谍", "战后额外扣除主角10点mp。若mp不足则杀死主角。该敌人自带1点固伤"],
 		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响"],
-		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人20倍攻击力的伤害，可被后勤值抵消"],
+		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人2倍攻击力的伤害，可被后勤值抵消"],
 		[57, "主将", "主角必须消灭当前地图所有杂兵后才可攻击主将"],
 		[58, "狼群", "当前地图除自身外每有1艘潜艇，雷击值增加10%"]
 	];
@@ -804,7 +804,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_cd = enemyInfo.cd,
 		mon_ammo = enemyInfo.ammo,
 		mon_spd = enemyInfo.spd,
-		mon_gro = enemyInfo.gro;
+		mon_gro = enemyInfo.gro,
+		mon_oriatk = enemyInfo.atk;
 
 	if (flags.skill === 6) {
 		hero_dod += 2;
@@ -819,7 +820,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		notyet = true;
 	//狙击
 	if (core.hasSpecial(mon_special, 56)) {
-		damage += mon_atk * 20 - hero_mdef;
+		damage += mon_atk * 2 - hero_mdef;
 	}
 	//先攻
 	if (core.hasSpecial(mon_special, 1) && !core.hasEquip("beautifighter")) {
@@ -853,6 +854,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合
 		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn);
+		if (flags.skill === 9 && core.plugin.Army.includes(enemyInfo.type)) { //技能9：抵抗运动
+			mon_atk = Math.max(0, 21 - turn) * mon_oriatk / 20;
+		}
 		//诺福克·最后一击
 		if (notyet && curr_hp < 0.2 * mon_hp) {
 			if (core.hasEquip('norfolk')) {
@@ -1761,6 +1765,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][0] ? 'star2' : 'star1', x0 + 10, 400, 32, 32);
 			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][1] ? 'star2' : 'star1', x0 + 50, 400, 32, 32);
 			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][2] ? 'star2' : 'star1', x0 + 90, 400, 32, 32);
+		}
+		if (flags.dry === true) {
+			fill('炎', x0 + x1, 385);
 		}
 	}
 },

@@ -12,7 +12,7 @@ main.floors.MT88=
     "images": [],
     "ratio": 1,
     "defaultGround": "water",
-    "bgm": "hiaction6.ogg",
+    "bgm": "hiaction6.mp3",
     "firstArrive": [
         {
             "type": "moveHero",

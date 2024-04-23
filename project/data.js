@@ -117,7 +117,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT107",
 			"MT108",
 			"MT109",
-			"MT110"
+			"MT110",
+			"MT111",
+			"MT112",
+			"MT113",
+			"MT114",
+			"MT115",
+			"MT116",
+			"MT117",
+			"MT118",
+			"MT119",
+			"MT120"
 		],
 		"floorPartitions": [
 			[
@@ -179,6 +189,14 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT94",
 				"MT99"
+			],
+			[
+				"MT100",
+				"MT106"
+			],
+			[
+				"MT107",
+				"MT113"
 			]
 		],
 		"images": [
@@ -287,6 +305,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"skill3.jpg",
 			"skill4.jpg",
 			"skill5.jpg",
+			"skill9.png",
 			"skillnone.jpg",
 			"skua.jpg",
 			"sky.jpg",
@@ -323,7 +342,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"tileset3.png",
 			"005-Beach01.png",
 			"004-Mountain01.png",
-			"006-Desert01.png"
+			"006-Desert01.png",
+			"Egito.png",
+			"vxmota.png"
 		],
 		"animates": [
 			"aim",
@@ -402,13 +423,13 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"genshin4.mp3",
 			"genshin5.mp3",
 			"genshin6.mp3",
-			"hiaction2.ogg",
-			"hiaction4.ogg",
-			"hiaction6.ogg",
+			"hiaction2.mp3",
+			"hiaction4.mp3",
+			"hiaction6.mp3",
 			"hitman.mp3",
-			"medaction1.ogg",
-			"medaction5.ogg",
-			"medaction8.ogg",
+			"medaction1.mp3",
+			"medaction5.mp3",
+			"medaction8.mp3",
 			"wot1.mp3",
 			"wot2.mp3",
 			"wots1.mp3",

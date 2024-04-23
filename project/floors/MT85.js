@@ -12,7 +12,7 @@ main.floors.MT85=
     "images": [],
     "ratio": 1,
     "defaultGround": "water",
-    "bgm": "hiaction6.ogg",
+    "bgm": "hiaction6.mp3",
     "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",
