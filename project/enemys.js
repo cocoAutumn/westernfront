@@ -128,7 +128,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"p2640": {"name":"卡罗P26/40","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"重坦","ap":71,"arm":50,"description":"主武器：75mm短管炮"},
 	"motorinf": {"name":"德国机械化步兵中队","hp":200,"atk":20,"def":0,"money":1,"exp":1,"point":0,"special":[1,4],"type":"步兵","description":"主武器：步枪、突击步枪、手榴弹、军用摩托","ap":12,"arm":0},
 	"rommel": {"name":"隆美尔","hp":2000,"atk":500,"def":0,"money":20,"exp":20,"point":0,"special":[25,57],"type":"重坦","ap":100,"arm":40,"notBomb":true,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"hpBuff":1,"atkBuff":0,"defBuff":0.3},
-	"z1007": {"name":"Z.1007翠鸟","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中型轰炸机","description":"自卫武器：2×12.7mm机枪和2×7.7mm机枪\n挂载：4×250kg炸弹和2×500kg炸弹"},
+	"z1007": {"name":"Z.1007翠鸟","hp":20000,"atk":300,"def":0,"money":6,"exp":6,"point":0,"special":[28],"type":"中型轰炸机","description":"自卫武器：2×12.7mm机枪和2×7.7mm机枪\n挂载：4×250kg炸弹和2×500kg炸弹","ap":0,"arm":0,"top":0,"bom":2000,"tpn":0,"dod":0,"gro":0,"spd":6,"ammo":4},
 	"sm79": {"name":"SM79食雀鹰","hp":6300,"atk":20,"def":0,"money":5,"exp":5,"point":0,"special":[29],"type":"中型轰炸机","description":"自卫武器：2×12.7mm机枪＋2×7.7mm机枪\n挂载：5×250kg炸弹或1×F200/450×5.46型鱼雷","ap":0,"arm":0,"top":3000,"bom":500,"cd":5,"spd":5,"ammo":5,"tpn":3},
 	"u7": {"name":"U-7型","hp":150,"atk":0,"def":0,"money":8,"exp":8,"point":0,"special":[29,33,34,35],"atkValue":2,"defValue":3,"type":"潜艇","ap":0,"arm":0,"top":5000,"bom":0,"tpn":6,"dod":999,"gro":0,"cd":5},
 	"u9": {"name":"U-9型","hp":3000,"atk":0,"def":0,"money":8,"exp":8,"point":0,"special":[29,33,34,35],"type":"潜艇","tpn":6,"dod":999,"gro":0,"bom":0,"arm":0,"ap":0,"top":4000,"cd":4},

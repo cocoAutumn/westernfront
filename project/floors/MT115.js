@@ -39,7 +39,7 @@ main.floors.MT115=
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
                     {
-                        "text": "装备 斗士MK1型",
+                        "text": "装备 斗士MK2型",
                         "icon": "wrestler",
                         "need": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
                         "action": [
@@ -116,7 +116,10 @@ main.floors.MT115=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量意大利步兵和空军，偶尔会有德国空军援助\n推荐携带技能：战壕、紧急补给、抵抗运动\n推荐出战装备：斗士MK1（也可以不带）"
+            "\t[系统提示]当前区域敌人特点：大量意大利步兵和空军，偶尔会有德国空军援助\n推荐携带技能：战壕、紧急补给、防空弹幕、空战王牌、抵抗运动\n推荐出战装备：斗士MK2也可以不带）"
+        ],
+        "2,2": [
+            "\t[盟军指挥官,hero]现在不是龟缩在防空洞里的时候。"
         ]
     },
     "changeFloor": {},

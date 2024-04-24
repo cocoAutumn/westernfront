@@ -208,7 +208,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			mon_cd = enemyInfo.cd,
 			mon_ammo = enemyInfo.ammo,
 			mon_spd = enemyInfo.spd,
-			mon_gro = enemyInfo.gro;
+			mon_gro = enemyInfo.gro,
+			mon_oriatk = enemyInfo.atk;
 		var damage = mon_atk;
 		//技能6：Z字规避
 		if (flags.skill === 6) {
