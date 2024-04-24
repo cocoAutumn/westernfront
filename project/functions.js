@@ -804,8 +804,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_cd = enemyInfo.cd,
 		mon_ammo = enemyInfo.ammo,
 		mon_spd = enemyInfo.spd,
-		mon_gro = enemyInfo.gro,
-		mon_oriatk = enemyInfo.atk;
+		mon_gro = enemyInfo.gro;
 
 	if (flags.skill === 6) {
 		hero_dod += 2;
@@ -855,7 +854,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		++turn; // 进入下一回合
 		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn);
 		if (flags.skill === 9 && core.plugin.Army.includes(enemyInfo.type)) { //技能9：抵抗运动
-			mon_atk = Math.max(0, 21 - turn) * mon_oriatk / 20;
+			enemyInfo.atk = Math.max(11 - turn, 3) * mon_atk / 10;
 		}
 		//诺福克·最后一击
 		if (notyet && curr_hp < 0.2 * mon_hp) {

@@ -208,8 +208,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			mon_cd = enemyInfo.cd,
 			mon_ammo = enemyInfo.ammo,
 			mon_spd = enemyInfo.spd,
-			mon_gro = enemyInfo.gro,
-			mon_oriatk = enemyInfo.atk;
+			mon_gro = enemyInfo.gro;
 		var damage = mon_atk;
 		//技能6：Z字规避
 		if (flags.skill === 6) {
@@ -364,8 +363,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		if (id === 9) {
 			name = '抵抗运动';
-			cost = 150;
-			description = '下一场战斗中，敌方陆军攻击力随回合数增加而减少，每回合减少原攻击力的5%'
+			cost = 100;
+			description = '下一场战斗中，敌方陆军攻击力随回合数增加而减少，每回合减少原攻击力的10%。当敌人攻击力不足原来的30%时，则不会继续减少'
 		}
 		return {
 			'strategy': strategy,
