@@ -519,7 +519,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"illus1941": 178,
 		"yellow3Key": 179,
 		"blue3Key": 180,
-		"medal3": 181
+		"medal3": 181,
+		"tea5": 182
 	},
 	"autotile": {
 		"autotile": 0,

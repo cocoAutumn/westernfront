@@ -1542,5 +1542,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			}
 		],
 		"itemEffect": "core.status.hero.hpmax += 500;\ncore.status.hero.hp += 500;\ncore.status.hero.mana += 50;\ncore.status.hero.atk += 5;\ncore.status.hero.top += 50;\ncore.status.hero.mdef += 20;"
+	},
+	"tea5": {
+		"cls": "items",
+		"name": "小补给箱",
+		"canUseItemEffect": "true",
+		"text": "，获得5个下午茶",
+		"itemEffectTip": "，获得5个下午茶",
+		"itemEffect": "core.addItem('tea', 5)"
 	}
 }

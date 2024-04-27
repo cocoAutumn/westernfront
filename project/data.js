@@ -316,6 +316,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"sbd.jpg",
 			"scharnhorst.jpg",
 			"sheffield.jpg",
+			"skill10.png",
 			"skill3.jpg",
 			"skill4.jpg",
 			"skill5.jpg",
@@ -2269,6 +2270,104 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"name": "item:tbd",
 												"operator": "+=",
 												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "盟军科技研发成果LV1（1000）",
+						"need": "true",
+						"condition": "flags.technology===1",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"1级研发。研发项目：对缴获的德军恩尼格玛密码机进行的全面解析",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=1000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "009-System09.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "1000"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:technology",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "主动技能：破译（500）",
+						"need": "true",
+						"icon": "skill1",
+						"condition": "flags.technology===2",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\t[主动技能：破译]花费：40。效果：下一场战斗中，获得20%减伤。",
+							"\t[历史来源]\f[skill10.png,170,50]1941年，英军驱逐舰捕获了德军U-110号潜艇，并在里面缴获了一台完整的德国“恩尼格玛”密码机。很快，盟军就发明了如图所示专门破译“恩尼格玛”的“图灵机”，这意味着德军使用该密码通信的任何内容都将暴露无遗。为防止被敌人察觉，此事被盟军作为最高机密，每一次破译敌军情报后，都要故意设置一些假象，让德军的行动计划成功一部分。直到战争结束，德军都没有意识到自己的密码被破译的事实。只不过，有时候设置“假象”的代价实在令人难以接受，最著名也最有争议的事件便是“考文垂大轰炸”。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "technology.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "500"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:technology",
+												"operator": "+=",
+												"value": "1"
+											},
+											{
+												"type": "function",
+												"function": "function(){\nflags.learned[10]=true\n}"
 											}
 										],
 										"false": [

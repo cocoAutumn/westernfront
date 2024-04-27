@@ -500,6 +500,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"587": {"cls":"npcs","id":"N587"},
 	"588": {"cls":"items","id":"medal3"},
 	"589": {"cls":"enemys","id":"m1340"},
+	"590": {"cls":"items","id":"tea5"},
 	"20104": {"cls":"tileset","id":"X20104","canPass":true},
 	"20105": {"cls":"tileset","id":"X20105","canPass":true},
 	"20107": {"cls":"tileset","id":"X20107","canPass":true},

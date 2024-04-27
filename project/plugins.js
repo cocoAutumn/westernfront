@@ -366,6 +366,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			cost = 100;
 			description = '下一场战斗中，敌方陆军攻击力随回合数增加而减少，每回合减少原攻击力的10%。当敌人攻击力不足原来的30%时，则不会继续减少'
 		}
+		if (id === 10) {
+			name = '破译';
+			cost = 40;
+			description = '下一场战斗中，获得20%减伤'
+		}
 		return {
 			'strategy': strategy,
 			'name': name,

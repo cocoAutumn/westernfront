@@ -64,7 +64,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"flak37": {"name":"单装37mm高射炮","hp":600,"atk":120,"def":0,"money":2,"exp":2,"point":0,"special":[5],"type":"高射炮","ap":15,"arm":2,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"grenadier": {"name":"德国掷弹兵排","hp":100,"atk":50,"def":0,"money":1,"exp":1,"point":0,"special":0,"type":"步兵","description":"主武器：步枪、手榴弹、反坦克火箭筒","ap":15,"arm":0},
 	"sniper": {"name":"狙击手","hp":300,"atk":1500,"def":0,"money":1,"exp":1,"point":0,"special":[56],"type":"步兵","afterBattle":[{"type":"playSound","name":"sniper.mp3"}],"ap":5,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：狙击步枪"},
-	"pak38": {"name":"Pak38反坦克炮","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"反坦克炮","description":"口径：50mm"},
+	"pak38": {"name":"Pak38反坦克炮","hp":0,"atk":0,"def":0,"money":2,"exp":2,"point":0,"special":[],"type":"反坦克炮","description":"口径：50mm","ap":83,"arm":2,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"sdkfz222": {"name":"sd.kfz.222装甲车","hp":200,"atk":20,"def":0,"money":4,"exp":4,"point":0,"special":[6],"type":"轻坦","description":"主武器：1×20mm机炮和1×7.92mm机枪","ap":8,"arm":3,"n":5},
 	"lightmg": {"name":"德国轻机枪掩体","hp":200,"atk":20,"def":0,"money":1,"exp":1,"point":0,"special":[6],"type":"步兵","description":"主武器：MG34轻机枪","ap":12,"arm":0,"n":5},
 	"mg42": {"name":"德国重机枪掩体","hp":200,"atk":50,"def":0,"money":2,"exp":2,"point":0,"special":[6],"type":"步兵","description":"主武器：MG42重机枪","ap":15,"arm":0,"n":10},
