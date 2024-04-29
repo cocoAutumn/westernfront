@@ -44,9 +44,6 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			depthcharge = 0,
 			bombDamage = 0;
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
-			//十字军
-			if (core.hasEquip('crusades') && hero_ap <= mon_arm && mon_ap > hero_arm)
-				hero_atk *= 1.2;
 			//飓风MK2
 			if (core.hasEquip('hurricanemk2')) {
 				if (enemyInfo.type.endsWith('轻坦') || enemyInfo.type.endsWith('中坦') || enemyInfo.type.endsWith('重坦') || enemyInfo.type.endsWith('坦歼')) { //对地
@@ -173,6 +170,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) { // 陆战中被对方单向击穿
 			var preTurn = 5;
+			if (core.hasEquip('crusades')) preTurn = 3; //十字军坦克：敌人先攻-2
 			if (core.hasEquip('valentine')) preTurn = 10; //瓦伦丁坦克
 			if (core.hasEquip('matilda')) preTurn = 10; // 玛蒂尔达步兵坦克：无法击穿对方时前10回合无法造成伤害
 			if (nthTurn <= preTurn) damage = 0;
@@ -231,9 +229,12 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasSpecial(mon_special, 32) && nthTurn > 0 && nthTurn % 4 === 0) {
 				damage += 6 * mon_atk;
 			}
-			if (hero_ap > mon_arm && hero_arm >= mon_ap) // 被勇士单向击穿
-				if (nthTurn <= 5) damage = 0;
+			if (hero_ap > mon_arm && hero_arm >= mon_ap) { // 被勇士单向击穿
+				if (core.hasSpecial(mon_special, 60)) {
+					if (nthTurn <= 2) damage = 0;
+				} else if (nthTurn <= 5) damage = 0;
 				else damage *= 0.8;
+			}
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
 			//技能5
 			if (flags.skill === 5 && core.status.thisMap.area === "海洋") {
@@ -322,7 +323,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			cost = 100;
 			description = '秒杀面前的非boss空军';
 			event = [
-				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb&&core.material.enemys[flags.空战王牌]?.type!=='导弹'", "true": [{ "type": "playSound", "name": "fighter.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft1.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标地点是非空军或boss，无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
+				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb&&core.material.enemys[flags.空战王牌]?.type!=='导弹'", "true": [{ "type": "playSound", "name": "bomber3.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft2.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标地点是非空军或boss，无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
 			];
 		}
 		if (id === 5) {

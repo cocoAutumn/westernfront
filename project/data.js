@@ -324,6 +324,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"scharnhorst.jpg",
 			"sheffield.jpg",
 			"skill10.png",
+			"skill11.jpg",
 			"skill3.jpg",
 			"skill4.jpg",
 			"skill5.jpg",
@@ -432,6 +433,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"europe3.mp3",
 			"europe4.mp3",
 			"europe5.mp3",
+			"europe6.mp3",
 			"failed.mp3",
 			"farthestend.mp3",
 			"gaijin1.mp3",
@@ -483,6 +485,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"bomber.mp3",
 			"bomber1.mp3",
 			"bomber2.mp3",
+			"bomber3.mp3",
 			"bombspawn.mp3",
 			"bulet1.wav",
 			"bulet2.wav",
@@ -1162,7 +1165,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			},
 			{
 				"type": "function",
-				"function": "function(){\nflags.mission = [\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n\t[false, false, false],\n]\n}"
+				"function": "function(){\nflags.mission = eval('[' + '[false,false,false],'.repeat(60) + ']')\n}"
 			},
 			"1918年，第一次世界大战终于以德国的战败而告终。",
 			"但，那似乎也是悲剧的开端。",
@@ -1821,7 +1824,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[crusades.jpg,170,50]十字军是二战早期的英国巡洋坦克。十字军坦克车体相对较轻，速度可达45km/h，配备一门QF2磅炮（40mm口径）。在北非战役中，十字军坦克充当着轻骑兵的角色，凭借机动优势袭扰敌方侧翼。但这种坦克的缺陷也很明显，装甲薄弱，故障率高，早期型的2磅炮威力也不太够，直到改进型配备了6磅炮（57mm）才有所好转。北非战役结束后，其他新型坦克代替十字军成为装甲主力，十字军则在改造后担任防空、侦察等任务。",
-							"\f[crusades.jpg,170,50]装备属性：攻+50，穿50，装20。\n被动技能：\n突击：我方被敌人单向击穿时，攻击力额外增加20%",
+							"\f[crusades.jpg,170,50]装备属性：攻+50，穿50，装20。\n被动技能：\n机动：我方被敌人单向击穿时，敌方先攻次数-2",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2365,12 +2368,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"name": "status:money",
 												"operator": "-=",
 												"value": "500"
-											},
-											{
-												"type": "setValue",
-												"name": "flag:technology",
-												"operator": "+=",
-												"value": "1"
 											},
 											{
 												"type": "function",

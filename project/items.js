@@ -618,7 +618,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "十字军巡洋坦克",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿50，装20。\n被动技能：\n突击：我方被敌人单向击穿时，攻击力额外增加20%",
+		"text": "攻+50，穿50，装20。\n被动技能：\n机动：我方被敌人单向击穿时，敌方先攻次数-2",
 		"equip": {
 			"type": 0,
 			"value": {

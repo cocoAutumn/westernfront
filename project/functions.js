@@ -592,9 +592,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[33, "潜行", "受到主角攻击力伤害减少90%"],
 		[34, "惊雷", "战斗开始时，发起先手鱼雷攻击。发射鱼雷数量以及伤害等同于正常的鱼雷袭击"],
 		[35, "闪避", function (enemy) { return "主角发起鱼雷攻击时，闪避其中的" + (enemy.dod ?? 0) + "枚" }],
-		[36, "俯冲轰炸", "航空炸弹造成的伤害增加50%，且第一枚炸弹命中后，主角攻击力降低5%，持续到战斗结束"],
+		[36, "俯冲轰炸", "航空炸弹造成的伤害增加50%，且第一枚炸弹命中后，主角攻击力降低5%，持续到战斗结束", "#00ffff"],
 		[37, "跨射", "强大的舰炮具有更远的射程。若主角未装备战列舰，该敌人首先以3倍攻击力攻击主角3次"],
-		[38, "精锐", "对主角造成的伤害翻倍"],
+		[38, "精锐", "对主角造成的伤害翻倍", "#dc143c"],
 		[39, "集群", function (enemy) { return "主角同时与" + (enemy.gro ?? 0) + "个该敌人进行战斗" }],
 		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害"],
 		[41, "反制", "与该敌人战斗时，主角无法使用技能"],
@@ -610,11 +610,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[51, "失踪", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡"],
 		[52, "包围", "主角站在两个该敌人中间时，攻击力减少30%"],
 		[54, "间谍", "战后额外扣除主角10点mp。若mp不足则杀死主角"],
-		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响"],
+		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响", "#bdb76b"],
 		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人2倍攻击力的伤害，可被后勤值抵消"],
-		[57, "主将", "主角必须消灭当前地图所有杂兵后才可攻击主将"],
+		[57, "主将", "主角必须消灭当前地图所有杂兵后才可攻击主将", "#00ff00"],
 		[58, "狼群", "当前地图除自身外每有1艘潜艇，雷击值增加10%"],
-		[59, "陷阱", "主角与该敌人领域内的其他敌人战斗时，每回合额外受到一次领域伤害"]
+		[59, "陷阱", function (enemy) { return "主角与该敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + (enemy.range || 1) + "格内的其他敌人战斗时，每回合额外受到" + enemy.zone + "点领域伤害" }, "#ffff00", 1],
+		[60, "机动", "被主角单向击穿时，主角先手攻击回合数-3"],
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -661,7 +662,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		// 从V2.5.4开始，对光环效果增加缓存，以解决多次重复计算的问题，从而大幅提升运行效率。
 		var atk_buff = 0,
 			top_buff = 0,
-			bom_buff = 0;
+			bom_buff = 0,
+			trap_buff = 0;
 		// 已经计算过的光环怪ID列表，用于判定叠加
 		var usedEnemyIds = {};
 		// 检查光环和支援的缓存
@@ -703,13 +705,25 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						// 记录怪物的x,y，ID
 						guards.push([block.x, block.y, id]);
 					}
-
+					// 检查【陷阱】技能，数字59
+					if (enemy && core.hasSpecial(enemy.special, 59)) {
+						var range = enemy.range || 1,
+							inRange = false;
+						if (x != null && y != null) {
+							var dx = Math.abs(block.x - x),
+								dy = Math.abs(block.y - y);
+							// 检查十字和九宫格陷阱
+							if (0 < dx + dy && dx + dy <= range) inRange = true;
+							if (enemy.zoneSquare && 0 < dx + dy && dx <= range && dy <= range) inRange = true;
+						}
+						if (inRange) trap_buff += enemy.zone; // 叠加
+					}
 					// TODO：如果有其他类型光环怪物在这里仿照添加检查
 					// 注：新增新的类光环属性（需要遍历全图的）需要在特殊属性定义那里的第五项写1，参见光环和支援的特殊属性定义。
 				}
 			});
 
-			core.status.checkBlock.cache[index] = { "atk_buff": atk_buff, "top_buff": top_buff, "bom_buff": bom_buff, "guards": guards };
+			core.status.checkBlock.cache[index] = { "atk_buff": atk_buff, "top_buff": top_buff, "bom_buff": bom_buff, "trap_buff": trap_buff, "guards": guards };
 		} else {
 			// 直接使用缓存数据
 			atk_buff = cache.atk_buff;
@@ -824,7 +838,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	//先攻
 	if (core.hasSpecial(mon_special, 1) && !core.hasEquip("beautifighter")) {
-		damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn)
+		damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);
 	}
 	//跨射
 	if (core.hasSpecial(mon_special, 37)) {
@@ -868,6 +882,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 		if (curr_hp > 0) {
 			damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);
+			damage += core.status.checkBlock?.cache?.[x + ',' + y]?.trap_buff || 0; // 59: 陷阱
 		}
 	}
 	//技能1：战壕
@@ -878,7 +893,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (flags.skill === 10) {
 		damage *= 0.8;
 	}
-
 	//主将
 	if (core.hasSpecial(mon_special, 57)) {
 		for (var xx = 0; xx < core.bigmap.width; ++xx) {
@@ -1769,9 +1783,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][0] ? 'star2' : 'star1', x0 + 10, 400, 32, 32);
 			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][1] ? 'star2' : 'star1', x0 + 50, 400, 32, 32);
 			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][2] ? 'star2' : 'star1', x0 + 90, 400, 32, 32);
-		}
-		if (flags.dry === true) {
-			fill('炎', x0 + x1, 385);
 		}
 	}
 },
