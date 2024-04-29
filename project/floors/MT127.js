@@ -26,7 +26,310 @@ main.floors.MT127=
     ],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
+    "events": {
+        "14,14": [
+            {
+                "type": "unloadEquip",
+                "pos": 0
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 1
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 2
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 3
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 4
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 5
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 6
+            },
+            {
+                "type": "function",
+                "function": "function(){\nflags.mission[19][0]=true\n}"
+            },
+            {
+                "type": "if",
+                "condition": "(item:tea>=20)",
+                "true": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.mission[19][1]=true\n}"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(status:mana>=100)",
+                "true": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.mission[19][2]=true\n}"
+                    }
+                ]
+            },
+            {
+                "type": "function",
+                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+            },
+            {
+                "type": "update"
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "hideStatusBar"
+            },
+            {
+                "type": "update"
+            },
+            {
+                "type": "sleep",
+                "time": 1000
+            },
+            {
+                "type": "playSound",
+                "name": "158-Skill02.mp3"
+            },
+            {
+                "type": "showImage",
+                "code": 1,
+                "image": "win.png",
+                "sloc": [
+                    0,
+                    0,
+                    null
+                ],
+                "loc": [
+                    -370,
+                    140,
+                    1280,
+                    200
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "scaleImage",
+                "code": 1,
+                "center": [
+                    190,
+                    200
+                ],
+                "scale": 0.4,
+                "time": 1000
+            },
+            {
+                "type": "function",
+                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+            },
+            {
+                "type": "if",
+                "condition": "(temp:A>=1)",
+                "true": [
+                    {
+                        "type": "playSound",
+                        "name": "xinxinbazhe.mp3"
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 2,
+                        "image": "star.png",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            130,
+                            50,
+                            90,
+                            90
+                        ],
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "if",
+                        "condition": "(temp:A>=2)",
+                        "true": [
+                            {
+                                "type": "playSound",
+                                "name": "xinxinbazhe.mp3"
+                            },
+                            {
+                                "type": "showImage",
+                                "code": 3,
+                                "image": "star.png",
+                                "sloc": [
+                                    0,
+                                    0,
+                                    null
+                                ],
+                                "loc": [
+                                    280,
+                                    50,
+                                    90,
+                                    90
+                                ],
+                                "opacity": 1,
+                                "time": 500,
+                                "async": true
+                            },
+                            {
+                                "type": "sleep",
+                                "time": 500
+                            },
+                            {
+                                "type": "if",
+                                "condition": "(temp:A>=3)",
+                                "true": [
+                                    {
+                                        "type": "playSound",
+                                        "name": "xinxinbazhe.mp3"
+                                    },
+                                    {
+                                        "type": "showImage",
+                                        "code": 4,
+                                        "image": "star.png",
+                                        "sloc": [
+                                            0,
+                                            0,
+                                            null
+                                        ],
+                                        "loc": [
+                                            430,
+                                            50,
+                                            90,
+                                            90
+                                        ],
+                                        "opacity": 1,
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "sleep",
+                                        "time": 500
+                                    }
+                                ],
+                                "false": []
+                            }
+                        ],
+                        "false": []
+                    }
+                ],
+                "false": []
+            },
+            {
+                "type": "sleep",
+                "time": 2000
+            },
+            {
+                "type": "setCurtain",
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "time": 500,
+                "keep": true
+            },
+            {
+                "type": "hideImage",
+                "code": 1,
+                "time": 0
+            },
+            {
+                "type": "hideImage",
+                "code": 2,
+                "time": 0
+            },
+            {
+                "type": "hideImage",
+                "code": 3,
+                "time": 0
+            },
+            {
+                "type": "hideImage",
+                "code": 4,
+                "time": 0
+            },
+            {
+                "type": "setHeroOpacity",
+                "opacity": 0
+            },
+            {
+                "type": "pauseBgm"
+            },
+            {
+                "type": "setValue",
+                "name": "flag:stage",
+                "value": "20"
+            },
+            {
+                "type": "confirm",
+                "text": "跳过剧情吗？",
+                "yes": [
+                    {
+                        "type": "changeFloor",
+                        "floorId": "MT129",
+                        "loc": [
+                            7,
+                            8
+                        ],
+                        "direction": "down"
+                    }
+                ],
+                "no": [
+                    {
+                        "type": "playBgm",
+                        "name": "wot2.mp3"
+                    },
+                    "英军有着决定性的坦克数量优势，但他们没有领会机动作战的要领。其结果就是，“战斧行动”变成了一次彻底的失败。",
+                    "隆美尔再次将88毫米高射炮放平，部署在英军进攻的必经之路上。在当时，没有任何坦克的装甲能扛得住88毫米高射炮。结果显而易见，战斗结束后，道路上布满了英军坦克的残骸。",
+                    "在“坦克陷阱”成功拖延英军之后，隆美尔调集自己的装甲师迂回攻击英军侧翼。尽管迎头碰上了英军的第7装甲师，但由于“十字军”坦克不断发生故障，占有优势的英军还是在混战中败下阵来。",
+                    "战斗3天后，英军的前线指挥官还没意识到自己的处境，反倒是远在后方的韦维尔将军发现了异常，紧急命令前线部队放弃占领区，向后撤退。再晚一点，隆美尔的包围圈就真的完成了。",
+                    "英军经过一场战斗没有取得什么有价值的战果，还损失了200辆坦克。其中只有90辆是被俘或击毁，剩下的全是出故障趴窝的。而隆美尔具有战场打扫权，修复了一部分受损的坦克，所以德军最终只有25辆坦克的损失。",
+                    "“沙漠之狐”再次向世人证明了自己的军事实力，他的机动防御粉碎了英军呆板的正面进攻，也粉碎了他们解围托布鲁克的幻想。",
+                    "但这也仅仅是一次小胜。在北半球的同一时间，德军的铁蹄开进苏联，那里的战事更为焦灼，更多的补给被源源不断送往苏联战场，隆美尔本就尴尬的补给变得更加紧张。",
+                    "英军还是把控着地中海的制海权和制空权。托布鲁克虽然被包围，但其本身就是个战略意义重大的港口，被困的澳军仍然能获得充足的补给，反倒是包围他们的德意联军快要撑不住了。",
+                    "如果能拿下托布鲁克，德意联军就能稍微缓解自己的补给压力，否则，就只能乖乖撤退。",
+                    "1941年11月，处于极寒之地的苏联已经飘起了雪花，而北非沙漠还是一如既往的炎热。",
+                    "英德双方几乎是同时发起行动，这决定着双方的战场走向。德意联军决心一举攻下托布鲁克，而英联邦军队则是解围托布鲁克，同时也能驱逐德意联军。",
+                    "英方将此次行动命名为：十字军行动。",
+                    {
+                        "type": "changeFloor",
+                        "floorId": "MT128",
+                        "loc": [
+                            -1,
+                            -1
+                        ],
+                        "direction": "down"
+                    }
+                ]
+            }
+        ]
+    },
     "changeFloor": {
         "0,14": {
             "floorId": "MT126",

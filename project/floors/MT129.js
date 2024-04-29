@@ -1,36 +1,333 @@
 main.floors.MT129=
 {
-"floorId": "MT129",
-"title": "主塔 129 层",
-"name": "129",
-"width": 15,
-"height": 15,
-"canFlyTo": true,
-"canFlyFrom": true,
-"canUseQuickShop": true,
-"cannotViewMap": false,
-"images": [],
-"ratio": 1,
-"defaultGround": "X10007",
-"bgm": "bgm5.mp3",
-"firstArrive": [],
-"eachArrive": [],
-"parallelDo": "",
-"events": {},
-"changeFloor": {},
-"beforeBattle": {},
-"afterBattle": {},
-"afterGetItem": {},
-"afterOpenDoor": {},
-"autoEvent": {},
-"cannotMove": {},
-"cannotMoveIn": {},
-"map": [
+    "floorId": "MT129",
+    "title": "开罗-指挥部",
+    "name": "开罗-指挥部",
+    "width": 15,
+    "height": 15,
+    "canFlyTo": false,
+    "canFlyFrom": false,
+    "canUseQuickShop": true,
+    "cannotViewMap": true,
+    "images": [],
+    "ratio": 1,
+    "defaultGround": "X10007",
+    "bgm": "bgm5.mp3",
+    "firstArrive": [
+        {
+            "type": "setHeroOpacity",
+            "opacity": 1
+        },
+        {
+            "type": "showStatusBar"
+        },
+        {
+            "type": "update"
+        },
+        {
+            "type": "setCurtain",
+            "time": 500
+        }
+    ],
+    "eachArrive": [],
+    "parallelDo": "",
+    "events": {
+        "2,6": [
+            "\t[维修人员,N514]长官，所有战车准备就绪！",
+            {
+                "type": "choices",
+                "text": "\t[维修人员,N514]请选择出战坦克",
+                "choices": [
+                    {
+                        "text": "装备 雷诺FT17",
+                        "icon": "ft17",
+                        "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "ft17"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 哈奇开斯H35",
+                        "icon": "h35",
+                        "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "h35"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 十字军巡洋坦克",
+                        "icon": "crusades",
+                        "need": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "crusades"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 瓦伦丁步兵坦克",
+                        "icon": "valentine",
+                        "need": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "valentine"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前坦克",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 0
+                            }
+                        ]
+                    },
+                    {
+                        "text": "返回",
+                        "action": []
+                    }
+                ]
+            }
+        ],
+        "12,6": [
+            "\t[机场后勤,N516]长官，我方空军已就绪！",
+            {
+                "type": "choices",
+                "text": "\t[机场后勤,N516]请选择出战空军",
+                "choices": [
+                    {
+                        "text": "装备 飓风MK1型",
+                        "icon": "hurricanemk1",
+                        "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "hurricanemk1"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 喷火MK1型",
+                        "icon": "spitfiremk1",
+                        "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "spitfiremk1"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 飓风MK2型",
+                        "icon": "hurricanemk2",
+                        "need": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "hurricanemk2"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 F4F野猫战斗机",
+                        "icon": "f4f3",
+                        "need": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "f4f3"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 贼鸥式轰炸机",
+                        "icon": "skua",
+                        "need": "core.hasItem('skua')&&!core.hasEquip('skua')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "skua"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 SBD无畏式轰炸机",
+                        "icon": "sbd3",
+                        "need": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "sbd3"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 剑鱼式鱼雷机",
+                        "icon": "swordfish",
+                        "need": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "swordfish"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 TBD蹂躏者鱼雷机",
+                        "icon": "tbd",
+                        "need": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "tbd"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前战斗机",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 4
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前攻击机",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 5
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前轰炸机",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 6
+                            }
+                        ]
+                    },
+                    {
+                        "text": "返回",
+                        "action": []
+                    }
+                ]
+            }
+        ],
+        "7,6": [
+            "\t[参谋,N517]长官，请下达指示！",
+            "\t[系统提示]即将进入存档界面",
+            {
+                "type": "callSave"
+            },
+            {
+                "type": "insert",
+                "name": "选择技能"
+            },
+            {
+                "type": "choices",
+                "text": "是否立即前往战场？",
+                "choices": [
+                    {
+                        "text": "还没准备好",
+                        "action": []
+                    },
+                    {
+                        "text": "现在出发",
+                        "action": [
+                            {
+                                "type": "setCurtain",
+                                "color": [
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "time": 500,
+                                "keep": true
+                            },
+                            {
+                                "type": "changeFloor",
+                                "floorId": "MT130",
+                                "loc": [
+                                    14,
+                                    7
+                                ],
+                                "direction": "left"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "5,5": [
+            {
+                "type": "playSound",
+                "name": "xinxinmagic.mp3"
+            },
+            "\t[系统提示]当前区域敌人特点：大量德国陆军和少量空军，强敌较多\n推荐携带技能：战壕、紧急补给、防空弹幕、空战王牌、抵抗运动、扫雷、破译\n推荐出战装备：十字军或瓦伦丁坦克，空军无硬性要求"
+        ]
+    },
+    "changeFloor": {},
+    "beforeBattle": {},
+    "afterBattle": {},
+    "afterGetItem": {},
+    "afterOpenDoor": {},
+    "autoEvent": {},
+    "cannotMove": {},
+    "cannotMoveIn": {},
+    "map": [
+    [70132,70000,70002,70002,70002,70001,70002,70003,70004,70005,70002,70002,70002,70006,70082],
+    [70140,70008,70011,70011,70011,70009,70010,70011,70012,70011,70011,70011,70011,70014,70090],
+    [70148,70016,70019,70019,70019,70017,70018,70019,70020,70021,70019,70019,70019,70022,70098],
+    [70156,70024,70025,70026,70026,70025,70026,70027,70028,70029,70027,70028,70029,70030,70106],
+    [70164,70032,70033,70034,70035,70067,70036,70065,70066,70067,70035,70036,70037,70038,70114],
+    [70172,70040,70041,70042,70075,70043,70044,70041,70074,70075,70043,70044,70045,70046,70122],
+    [  0,  0,514,  0,  0,  0,  0,517,  0,  0,  0,  0,516,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,60025,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,60033,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [80682,80682,80682,80682,80682,80682,80683,80680,80681,80682,80682,80682,80682,80682,80682],
+    [80690,80690,80690,80690,80690,80690,80691,80688,80689,80690,80690,80690,80690,80690,80690]
+],
+    "bgmap": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,559,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,559,  0,  0,  0,  0,559,  0,  0,  0,  0,559,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+],
+    "fgmap": [
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,10163,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
@@ -42,4 +339,5 @@ main.floors.MT129=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
 ],
+    "area": "陆地"
 }
