@@ -546,7 +546,7 @@ main.floors.MT111=
     "autoEvent": {
         "4,14": {
             "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT119','MT110','MT111'])",
+                "condition": "!core.hasEnemyLeft(undefined,['MT109','MT110','MT111'])",
                 "currentFloor": false,
                 "priority": 0,
                 "delayExecute": false,

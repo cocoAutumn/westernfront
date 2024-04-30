@@ -372,8 +372,8 @@ main.floors.MT60=
                 ]
             },
             "1": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['中战斗机','重型战斗机'].includes(core.material.enemys[x?.event?.id]?.type),['MT56','MT57','MT58','MT59','MT60']).length===0",
-                "currentFloor": true,
+                "condition": "core.maps.searchBlockWithFilter(x=>['战斗机','重型战斗机'].includes(core.material.enemys[x?.event?.id]?.type),['MT56','MT57','MT58','MT59','MT60']).length===0",
+                "currentFloor": false,
                 "priority": 0,
                 "delayExecute": false,
                 "multiExecute": false,

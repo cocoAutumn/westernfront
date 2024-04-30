@@ -138,7 +138,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "ab41",
             "name": "hp",
-            "value": "25000"
+            "value": "9000"
         },
         {
             "type": "setEnemy",
@@ -150,7 +150,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "l640",
             "name": "hp",
-            "value": "22000"
+            "value": "10000"
         },
         {
             "type": "setEnemy",
@@ -162,7 +162,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "22000"
+            "value": "12000"
         },
         {
             "type": "setEnemy",
@@ -264,7 +264,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "hp",
-            "value": "21000"
+            "value": "12000"
         },
         {
             "type": "setEnemy",
@@ -276,13 +276,13 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "special",
-            "value": "[4,55]"
+            "value": "[4,55,60]"
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "hp",
-            "value": "20000"
+            "value": "10000"
         },
         {
             "type": "setEnemy",
@@ -294,13 +294,13 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "special",
-            "value": "[4,55]"
+            "value": "[4,55,60]"
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "hp",
-            "value": "20000"
+            "value": "10000"
         },
         {
             "type": "setEnemy",
@@ -312,13 +312,13 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "special",
-            "value": "[55]"
+            "value": "[55,60]"
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "hp",
-            "value": "22000"
+            "value": "12000"
         },
         {
             "type": "setEnemy",
@@ -330,7 +330,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "special",
-            "value": "[55]"
+            "value": "[55,60]"
         },
         {
             "type": "setEnemy",

@@ -137,7 +137,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT127",
 			"MT128",
 			"MT129",
-			"MT130"
+			"MT130",
+			"MT131",
+			"MT132",
+			"MT133",
+			"MT134",
+			"MT135",
+			"MT136",
+			"MT137",
+			"MT138",
+			"MT139",
+			"MT140"
 		],
 		"floorPartitions": [
 			[
@@ -2326,6 +2336,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"name": "flag:technology",
 												"operator": "+=",
 												"value": "1"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:skill10learned",
+												"value": "false"
 											}
 										],
 										"false": [
@@ -2343,7 +2358,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"text": "主动技能：破译（500）",
 						"need": "true",
 						"icon": "skill1",
-						"condition": "flags.technology===2",
+						"condition": "flags.technology===2&&flags.skill10learned===false",
 						"action": [
 							{
 								"type": "comment",
@@ -2372,6 +2387,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 											{
 												"type": "function",
 												"function": "function(){\nflags.learned[10]=true\n}"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:skill10learned",
+												"value": "true"
 											}
 										],
 										"false": [

@@ -56,7 +56,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"panzer5d": {"name":"豹式坦克D型","hp":500,"atk":200,"def":0,"money":0,"exp":0,"point":0,"special":[7],"type":"中坦","description":"主武器：75mm长管坦克炮","ap":173,"arm":120},
 	"panzer5g": {"name":"豹式坦克G型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"中坦","ap":173,"arm":100},
 	"panzer3f": {"name":"三号坦克F型","hp":10000,"atk":6000,"def":0,"money":6,"exp":6,"point":0,"special":[55],"type":"中坦","description":"主武器：50mm坦克炮","arm":30,"ap":83,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"aceinf": {"name":"维京团","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"步兵","description":"主武器：MG42重机枪、MG34轻机枪、手榴弹、反坦克火箭筒、突击步枪"},
+	"aceinf": {"name":"维京团","hp":60000,"atk":5000,"def":0,"money":5,"exp":5,"point":0,"special":[38,55],"type":"步兵","description":"主武器：MG42重机枪、MG34轻机枪、手榴弹、反坦克火箭筒、突击步枪","ap":60,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"italydd3": {"name":"旋风级驱逐舰","hp":8500,"atk":130,"def":0,"money":10,"exp":10,"point":0,"special":[6,29,35],"type":"驱逐","ap":0,"arm":0,"top":2500,"bom":0,"tpn":4,"dod":5,"gro":0,"cd":8,"n":4,"description":"主炮：2×双联装120mm炮\n防空：2×40mm高炮、1×双联装13mm机枪"},
 	"ju87g": {"name":"JU87G斯图卡","hp":100,"atk":120,"def":0,"money":14,"exp":0,"point":0,"special":13,"type":"俯冲轰炸机","description":"主武器：2×37mm航炮、1×7.92mm自卫机枪\n挂载：1×500kg炸弹"},
 	"gunbunker": {"name":"炮兵要塞","hp":10000,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"建筑","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
@@ -119,7 +119,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"panzer35t": {"name":"35t","hp":800,"atk":100,"def":0,"money":4,"exp":4,"point":0,"special":[5],"type":"轻坦","bom":0,"tpn":0,"dod":0,"gro":0,"top":0,"arm":10,"ap":30,"description":"主武器：37mm坦克炮"},
 	"panzer38t": {"name":"38t","hp":800,"atk":120,"def":0,"money":4,"exp":4,"point":0,"special":[5],"type":"轻坦","ap":45,"arm":15,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：37mm坦克炮"},
 	"sdkfz234": {"name":"sd.kfz.234","hp":14000,"atk":5000,"def":0,"money":6,"exp":6,"point":0,"special":[55],"type":"轻坦","ap":83,"arm":30,"description":"主武器：50mm坦克炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"l640": {"name":"菲亚特L6/40","hp":16000,"atk":1500,"def":0,"money":3,"exp":3,"point":0,"special":[5],"type":"轻坦","arm":15,"ap":27,"description":"主武器：20mm机炮","n":5,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"l640": {"name":"菲亚特L6/40","hp":8000,"atk":1500,"def":0,"money":3,"exp":3,"point":0,"special":[5,60],"type":"轻坦","arm":15,"ap":27,"description":"主武器：20mm机炮","n":5,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"wildwind": {"name":"旋风式自行防空炮","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"轻坦","arm":80,"ap":20},
 	"panzer4c": {"name":"四号C型","hp":1500,"atk":250,"def":0,"money":6,"exp":6,"point":0,"special":[],"type":"中坦","ap":50,"arm":30,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：75mm短管坦克炮"},
 	"panzer4e": {"name":"四号E型","hp":10000,"atk":13000,"def":0,"money":6,"exp":6,"point":0,"special":[55],"type":"中坦","ap":50,"arm":60,"description":"主武器：75mm短管坦克炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
@@ -143,5 +143,5 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"deutschland": {"name":"德意志级袖珍战列舰","hp":50000,"atk":800,"def":0,"money":25,"exp":25,"point":0,"special":[29,31,35],"type":"重巡","description":"主炮：2×三联装280mm炮\n副炮：8×150mm炮\n防空：6×105mm高射炮、8×双联装37mm炮","tpn":4,"ap":0,"arm":0,"top":3000,"bom":0,"dod":2,"gro":0,"cd":15},
 	"m1340": {"name":"安萨尔多M13/40","hp":26000,"atk":3000,"def":0,"money":4,"exp":4,"point":0,"special":[],"type":"中坦","ap":41,"arm":30,"description":"主武器：47mm坦克炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"messe": {"name":"梅塞","hp":100,"atk":120,"def":0,"money":10,"exp":0,"point":0,"special":0},
-	"graziani": {"name":"格拉齐亚尼","hp":20000,"atk":3000,"def":0,"money":0,"exp":0,"point":0,"special":[25,38],"type":"重坦","ap":41,"arm":30,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"value":0.4,"hpBuff":0.6,"defBuff":0.2}
+	"graziani": {"name":"格拉齐亚尼","hp":20000,"atk":3000,"def":0,"money":0,"exp":0,"point":0,"special":[25,38,57],"type":"重坦","ap":41,"arm":30,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"value":40,"hpBuff":60,"defBuff":20,"atkBuff":0}
 }

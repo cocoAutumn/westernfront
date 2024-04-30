@@ -1274,7 +1274,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"red4Gem": {
 		"cls": "items",
 		"name": "4阶红宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": ",攻击+10",
+		"itemEffectTip": ",攻击+10",
+		"itemEffect": "core.status.hero.atk += 10;"
 	},
 	"red5Gem": {
 		"cls": "items",
@@ -1301,7 +1304,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"blue4Gem": {
 		"cls": "items",
 		"name": "4阶蓝宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，指挥点数+100",
+		"itemEffectTip": "，指挥点数+100",
+		"itemEffect": "core.status.hero.mana += 100;"
 	},
 	"blue5Gem": {
 		"cls": "items",
@@ -1328,7 +1334,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"green4Gem": {
 		"cls": "items",
 		"name": "4阶绿宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，后勤+50",
+		"itemEffectTip": "，后勤+50",
+		"itemEffect": "core.status.hero.mdef += 50;"
 	},
 	"green5Gem": {
 		"cls": "items",
@@ -1355,7 +1364,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"yellow4Gem": {
 		"cls": "items",
 		"name": "4阶黄宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": ",血量及血限+1000",
+		"itemEffectTip": ",血量及血限+1000",
+		"itemEffect": "core.status.hero.hpmax += 1000;\ncore.status.hero.hp += 1000;"
 	},
 	"yellow5Gem": {
 		"cls": "items",
@@ -1381,7 +1393,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"orange4Gem": {
 		"cls": "items",
 		"name": "4阶橙宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，增加200雷击",
+		"itemEffectTip": "，增加200雷击",
+		"itemEffect": "core.status.hero.top += 200;"
 	},
 	"orange5Gem": {
 		"cls": "items",
