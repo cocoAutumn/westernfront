@@ -174,7 +174,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"N584": 43,
 		"N585": 44,
 		"N586": 45,
-		"N587": 46
+		"N587": 46,
+		"N591": 47,
+		"N592": 48
 	},
 	"npc48": {
 		"npc0": 0,
@@ -325,7 +327,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"deutschland": 134,
 		"m1340": 135,
 		"messe": 20,
-		"graziani": 21
+		"graziani": 21,
+		"a6mzero": 136,
+		"val": 137,
+		"kate": 138
 	},
 	"enemy48": {
 		"angel": 0,

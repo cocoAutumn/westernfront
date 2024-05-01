@@ -12,7 +12,7 @@ main.floors.MT77=
     "images": [],
     "ratio": 1,
     "defaultGround": "water",
-    "bgm": "genshin1.mp3",
+    "bgm": "wots5.mp3",
     "firstArrive": [
         {
             "type": "setValue",

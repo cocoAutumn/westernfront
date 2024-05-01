@@ -175,8 +175,8 @@ main.floors.MT1=
         ],
         "2,9": [
             "音频、图片等素材来源（借物表）",
-            "bgm来源：三国志曹操传、永远的七日之都、双星物语、林德拉克计划、碧蓝航线、原神、War on the Sea、钢铁雄心、冰封前线系列、战争雷霆、坦克世界、将军的荣耀系列、空中冲突太平洋航母、欧洲空战英雄、Requiem for a war、Victory、FarthestEnd、Darkside of Power、Conquest of Paradise、Exodus",
-            "音效来源：猎杀潜航、偷袭珍珠港、太平洋风暴、空中冲突太平洋航母、KARDS、还有从各种魔塔里面借（tou）的",
+            "bgm来源：三国志曹操传、永远的七日之都、双星物语、林德拉克计划、碧蓝航线、War on the Sea、钢铁雄心、冰封前线系列、战争雷霆、坦克世界、将军的荣耀系列、空中冲突太平洋航母、欧洲空战英雄、FarthestEnd、Conquest of Paradise、Exodus",
+            "音效来源：猎杀潜航、偷袭珍珠港、太平洋风暴、空中冲突太平洋航母、KARDS、还有从各种魔塔里面借的",
             "图片来源：世界征服者4（及其mod）、百度、知乎等"
         ]
     },

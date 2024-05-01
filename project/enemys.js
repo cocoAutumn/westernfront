@@ -143,5 +143,8 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"deutschland": {"name":"德意志级袖珍战列舰","hp":50000,"atk":800,"def":0,"money":25,"exp":25,"point":0,"special":[29,31,35],"type":"重巡","description":"主炮：2×三联装280mm炮\n副炮：8×150mm炮\n防空：6×105mm高射炮、8×双联装37mm炮","tpn":4,"ap":0,"arm":0,"top":3000,"bom":0,"dod":2,"gro":0,"cd":15},
 	"m1340": {"name":"安萨尔多M13/40","hp":26000,"atk":3000,"def":0,"money":4,"exp":4,"point":0,"special":[],"type":"中坦","ap":41,"arm":30,"description":"主武器：47mm坦克炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"messe": {"name":"梅塞","hp":100,"atk":120,"def":0,"money":10,"exp":0,"point":0,"special":0},
-	"graziani": {"name":"格拉齐亚尼","hp":20000,"atk":3000,"def":0,"money":0,"exp":0,"point":0,"special":[25,38,57],"type":"重坦","ap":41,"arm":30,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"value":40,"hpBuff":60,"defBuff":20,"atkBuff":0}
+	"graziani": {"name":"格拉齐亚尼","hp":20000,"atk":3000,"def":0,"money":0,"exp":0,"point":0,"special":[25,38,57],"type":"重坦","ap":41,"arm":30,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"value":40,"hpBuff":60,"defBuff":20,"atkBuff":0},
+	"a6mzero": {"name":"A6M零式二一型","hp":350,"atk":90,"def":0,"money":0,"exp":0,"point":0,"special":[6],"type":"战斗机","description":"主武器：2×7.7mm机枪和2×20mm机炮","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"n":8},
+	"val": {"name":"D3A九九舰爆","hp":240,"atk":10,"def":0,"money":0,"exp":0,"point":0,"special":[28,36],"type":"俯冲轰炸机","description":"主武器：2×7.7mm前射机枪、1×7.7mm自卫机枪\n挂载：1×250kg炸弹、2×60kg炸弹","ammo":1,"spd":4,"ap":0,"arm":0,"top":0,"bom":3000},
+	"kate": {"name":"B5N九七舰攻","hp":300,"atk":10,"def":0,"money":0,"exp":0,"point":0,"special":[29],"type":"鱼雷轰炸机","description":"自卫武器：1×7.7mm机枪\n挂载：1×91式鱼雷","ap":0,"arm":0,"top":5000,"bom":0,"tpn":1,"dod":0,"gro":0,"cd":5,"ammo":1,"spd":5}
 }

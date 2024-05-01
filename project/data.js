@@ -147,7 +147,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT137",
 			"MT138",
 			"MT139",
-			"MT140"
+			"MT140",
+			"MT141"
 		],
 		"floorPartitions": [
 			[
@@ -225,6 +226,14 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT121",
 				"MT127"
+			],
+			[
+				"MT128",
+				"MT134"
+			],
+			[
+				"MT135",
+				"MT141"
 			]
 		],
 		"images": [
@@ -326,6 +335,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"p51.jpg",
 			"p61.jpg",
 			"patton.png",
+			"pearlharbor.jpg",
 			"petain.png",
 			"raider.jpg",
 			"rommel.png",
