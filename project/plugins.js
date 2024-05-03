@@ -286,7 +286,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		if (core.hasSpecial(mon_special, 38)) { //精锐
 			damage *= 2;
 		}
-		if (flags.dry === true) { //炎热
+		if (flags.dry === true && !core.hasItem('hard1')) { //炎热
 			damage *= 1.2;
 		}
 		return damage;
