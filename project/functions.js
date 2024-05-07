@@ -1702,92 +1702,57 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				.sort( /*function (id1, id2) { return core.material.items[id1].name <= core.material.items[id2].name ? -1 : 1 }*/);
 		},
         "drawStatusBar": function () {
-	var ctx, fill = function (text, x, y, style) {
-		core.ui.setFont(ctx, (/^\w+$/.test(text) ? 'italic ' : '') + 'bold 12px Verdana');
-		core.ui.fillBoldText(ctx, text, x, y, style, null, null, 140);
-		core.setStrokeStyle(ctx, 'black');
-	};
-	if (core.flags.statusCanvas) { // 系统开关「自绘状态栏」开启
-		core.ui.clearMap(ctx = core.dom.statusCanvasCtx); // 清空状态栏
-		core.ui.setFillStyle(ctx, core.status.globalAttribute.statusBarColor);
-		if (core.domStyle.isVertical) { // 竖屏顶部状态栏
-			core.drawImage(ctx, core.statusBar.icons.floor, 6, 6, 25, 25);
-			fill((core.status.thisMap || {}).name || "Loading", 42, 26);
-			core.drawImage(ctx, core.statusBar.icons.hp, 137, 6, 25, 25);
-			fill(core.formatBigNumber(core.getRealStatus('hp')), 173, 26);
-			core.drawImage(ctx, core.statusBar.icons.atk, 268, 6, 25, 25);
-			fill(core.formatBigNumber(core.getRealStatus('atk')), 304, 26);
-			core.drawImage(ctx, core.statusBar.icons.def, 6, 38, 25, 25);
-			fill(core.formatBigNumber(core.getRealStatus('def')), 42, 58);
-			core.drawImage(ctx, core.statusBar.icons.mdef, 137, 38, 25, 25);
-			fill(core.formatBigNumber(core.getRealStatus('mdef')), 173, 58);
-			core.drawImage(ctx, core.statusBar.icons.money, 268, 38, 25, 25);
-			fill(core.formatBigNumber(core.status.hero.money), 304, 58);
-			core.drawImage(ctx, core.statusBar.icons.exp, 6, 70, 25, 25);
-			fill(core.formatBigNumber(core.status.hero.exp), 42, 90);
-		} else if (!core.flags.hideLeftStatusBar) { // 横屏左侧状态栏
-			core.drawImage(ctx, core.statusBar.icons.floor, 6, 9, 25, 25);
-			fill((core.status.thisMap || {}).name || "Loading", 42, 29);
-			core.drawImage(ctx, core.statusBar.icons.hp, 6, 43, 25, 25);
-			fill(core.formatBigNumber(core.getRealStatus('hp')), 42, 63);
-			core.drawImage(ctx, core.statusBar.icons.atk, 6, 77, 25, 25);
-			fill(core.formatBigNumber(core.getRealStatus('atk')), 42, 97);
-			core.drawImage(ctx, core.statusBar.icons.def, 6, 111, 25, 25);
-			fill(core.formatBigNumber(core.getRealStatus('def')), 42, 131);
-			core.drawImage(ctx, core.statusBar.icons.mdef, 6, 145, 25, 25);
-			fill(core.formatBigNumber(core.getRealStatus('mdef')), 42, 165);
-			core.drawImage(ctx, core.statusBar.icons.money, 6, 179, 25, 25);
-			fill(core.formatBigNumber(core.status.hero.money), 42, 199);
-			core.drawImage(ctx, core.statusBar.icons.exp, 6, 213, 25, 25);
-			fill(core.formatBigNumber(core.status.hero.exp), 42, 233);
-			fill(core.setTwoDigits(core.itemCount('yellowKey')), 11, 267, '#FFCCAA');
-			fill(core.setTwoDigits(core.itemCount('blueKey')), 46, 267, '#AAAADD');
-			fill(core.setTwoDigits(core.itemCount('redKey')), 81, 267, '#FF8888');
-		}
-	} else if (core.flags.hideLeftStatusBar && !core.domStyle.isVertical) { // 横屏右侧状态栏
-		if (!core.dymCanvas['status'])
-			core.ui.createCanvas('status', 0, 0, core._PX_, core._PY_, 66); // 刚好盖过显伤层
-		core.ui.clearMap(ctx = core.dymCanvas['status']);
-		if (core.hasFlag('hideStatusBar')) return; //状态栏隐藏
-		core.ui.setFillStyle(ctx, core.status.globalAttribute.statusBarColor);
-		var x0 = core.status.hero.loc.x - core.bigmap.offsetX / 32 >= core._HEIGHT_ ? 0 : core._PY_;
-		var x1 = 8; //以后改文字左对齐就改这里，技术员说的
-		core.ui.setAlpha(ctx, 0.75);
-		core.ui.drawWindowSkin('15.png', ctx, x0, 0, core._PX_ - core._PY_, core._PY_);
-		core.ui.setAlpha(ctx, 1);
-		fill('战场:' + (core.status.thisMap || {}).name, x0 + x1, 20);
-		fill('地形:' + (core.status.thisMap || {}).area, x0 + x1, 40);
-		fill('军衔:' + core.getLvName(), x0 + x1, 60);
-		var s1 = core.formatBigNumber(core.getRealStatus('hp')),
-			s2 = core.formatBigNumber(core.getRealStatus('hpmax')),
-			ratio = core.getRealStatus('hp') / core.getRealStatus('hpmax');
-		fill(s1 + '/' + s2, x0 + x1, 80, [0, 255, 0, 1]);
-		core.strokeRect(ctx, x0 + 10, 90, 130, 5, '#00FF00', 1);
-		core.fillRect(ctx, x0 + 10, 90, 130 * ratio, 5, [255 * (1 - ratio), 255 * ratio, 0, 1]);
-		fill((100 * ratio).toFixed(1) + '%', x0 + x1, 110, [255 * (1 - ratio), 255 * ratio, 0, 1]);
-		core.setFillStyle(ctx, 'white')
-		fill('便携:' + (core.itemCount('tea')), x0 + x1, 130, '#64FF00');
-		fill('指挥点:' + core.formatBigNumber(core.getRealStatus('mana')), x0 + x1, 150, '#6464FF');
-		fill('攻击:' + core.formatBigNumber(core.getRealStatus('atk')), x0 + x1, 170, '#FF6400');
-		fill('穿甲:' + core.formatBigNumber(core.getRealStatus('ap')), x0 + x1, 190, '#DDDDDD');
-		fill('装甲:' + core.formatBigNumber(core.getRealStatus('arm')), x0 + x1, 210);
-		fill('雷击:' + core.formatBigNumber(core.getRealStatus('top')), x0 + x1, 230);
-		fill('鱼雷管:' + core.formatBigNumber(core.getRealStatus('tpn')), x0 + x1, 250);
-		fill('后勤:' + core.formatBigNumber(core.getRealStatus('mdef')), x0 + x1, 270);
-		fill('黄金:' + core.formatBigNumber(core.getRealStatus('money')), x0 + x1, 290);
-		fill('经验:' + core.formatBigNumber(core.control.getNextLvUpNeed()), x0 + x1, 310);
-		fill('战术:' + core.getSkillInfo(flags.skill).name, x0 + x1, 330);
-		if (flags['escort']) {
-			fill('友军:' + core.formatBigNumber(core.getFlag('友军血量')), x0 + x1, 350, '#FF6400');
-		}
-		fill(core.setTwoDigits(core.itemCount('yellowKey')), x0 + 12, 370, '#FFCCAA');
-		fill(core.setTwoDigits(core.itemCount('blueKey')), x0 + 47, 370, '#AAAADD');
-		fill(core.setTwoDigits(core.itemCount('redKey')), x0 + 82, 370, '#FF8888');
-		if (flags.stage >= 0) {
-			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][0] ? 'star2' : 'star1', x0 + 10, 400, 32, 32);
-			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][1] ? 'star2' : 'star1', x0 + 50, 400, 32, 32);
-			core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][2] ? 'star2' : 'star1', x0 + 90, 400, 32, 32);
-		}
+	if (!core.dymCanvas['status']) core.ui.createCanvas('status', 480, 0, core._PX_, core._PY_, 66); // 刚好盖过显伤层
+	ctx = main.mode === 'editor' ? core.dom.statusCanvasCtx : core.dymCanvas['status']; // 为了预览，但预览宽度不足
+	core.ui.clearMap(ctx); // 擦除
+	if (core.hasFlag('hideStatusBar')) return; //状态栏隐藏
+	core.ui.setFillStyle(ctx, core.status.globalAttribute.statusBarColor); // 填充颜色
+	core.ui.drawImage(ctx, 'statusbar.png', 0, 0); // 背景
+	core.ui.setFont(ctx, '20px Aaknife'); // 字体字号（地图名）
+	core.ui.setTextAlign(ctx, 'center'); // 左右居中
+	core.ui.setTextBaseline(ctx, 'bottom'); // 下对齐
+	core.ui.fillText(ctx, core.status.thisMap?.name ?? '', 80, 34, '#66CCFF'); // 地图名
+	core.ui.setFont(ctx, '20px Aaknife'); // 字体字号（军衔）
+	core.ui.fillText(ctx, core.getLvName(), 80, 56, 'white'); // 军衔
+	core.ui.setTextAlign(ctx, 'right'); // 右对齐
+	core.ui.fillText(ctx, core.status.thisMap?.area ?? '', 158, 56, 'yellow'); // 地形
+	core.ui.setTextAlign(ctx, 'left'); // 左对齐
+	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（生命）
+	core.ui.fillText(ctx, core.getStatus('hp'), 28, 82, '#00FF00'); // 生命值
+	core.ui.fillRect(ctx, 10, 86, 140 * core.getStatus('hp') / core.getRealStatus('hpmax'), 12, '#00FF00'); // 血条，满血为140*12
+	core.ui.setTextAlign(ctx, 'right'); // 右对齐
+	core.ui.fillText(ctx, Math.ceil(core.getStatus('hp') / core.getRealStatus('hpmax') * 100) + '%', 158, 82); // 生命百分比
+	core.ui.fillText(ctx, core.getRealStatus('hpmax'), 158, 120, 'white'); // 最大生命
+	core.ui.setFont(ctx, '20px Aaknife'); // 字体字号（便携）
+	core.ui.setTextAlign(ctx, 'left'); // 左对齐
+	core.ui.fillText(ctx, core.itemCount('tea'), 28, 126, 'white'); // 下午茶
+	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（攻击）
+	core.ui.fillText(ctx, core.getRealStatus('atk'), 50, 146, 'red'); // 攻击力
+	if (flags.escort) {
+		core.ui.fillText(ctx, '友军: ' + flags['友军血量'], 5, 165, 'red'); //友军
+	}
+	core.ui.setTextAlign(ctx, 'center'); // 左右居中
+	core.ui.fillText(ctx, core.getRealStatus('mana'), 134, 154, '#66CCFF'); // 指挥点
+	core.ui.fillText(ctx, core.getRealStatus('ap'), 32, 234, 'white'); // 穿甲
+	core.ui.fillText(ctx, core.getRealStatus('arm'), 122, 234); // 穿甲
+	core.ui.fillText(ctx, core.getRealStatus('top'), 32, 300); // 雷击
+	core.ui.fillText(ctx, core.getRealStatus('tpn'), 122, 300); // 鱼雷管
+	core.ui.setTextAlign(ctx, 'left'); // 左对齐
+	core.ui.fillText(ctx, core.getRealStatus('money'), 50, 338); // 黄金
+	core.ui.fillText(ctx, core.getRealStatus('exp'), 50, 358); // 经验
+	core.ui.fillText(ctx, core.getRealStatus('mdef'), 50, 378); // 后勤
+	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（技能名）
+	if (flags.skill > 0) core.ui.fillText(ctx, core.getSkillInfo(flags.skill).name, 6, 404, 'orange') // 技能名
+	core.ui.setFont(ctx, '18px Aaknife'); // 字体字号（钥匙）
+	core.ui.fillText(ctx, core.replaceText('\r[#FFD700]${core.setTwoDigits(item:yellowKey)}  \r[#66CCFF]${core.setTwoDigits(item:blueKey)}  \r[#FF0000]${core.setTwoDigits(item:redKey)}'), 10, 428); // 钥匙
+	if (flags.stage >= 0) {
+		core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][0] ? 'star2' : 'star1', 124, 320, 32, 32);
+		core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][1] ? 'star2' : 'star1', 124, 356, 32, 32);
+		core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][2] ? 'star2' : 'star1', 124, 392, 32, 32);
+	}
+	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（buff和光环）
+	if (flags.dry === true) {
+		core.ui.fillText(ctx, '炎热', 5, 450, 'orange')
 	}
 },
         "drawStatistics": function () {
