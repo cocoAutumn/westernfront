@@ -42,6 +42,7 @@ main.floors.MT101=
                         "text": "装备 飓风MK1型",
                         "icon": "hurricanemk1",
                         "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
+                        "condition": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -53,6 +54,7 @@ main.floors.MT101=
                         "text": "装备 喷火MK1型",
                         "icon": "spitfiremk1",
                         "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -64,6 +66,7 @@ main.floors.MT101=
                         "text": "装备 贼鸥式轰炸机",
                         "icon": "skua",
                         "need": "core.hasItem('skua')&&!core.hasEquip('skua')",
+                        "condition": "core.hasItem('skua')&&!core.hasEquip('skua')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -75,6 +78,7 @@ main.floors.MT101=
                         "text": "装备 剑鱼式鱼雷机",
                         "icon": "swordfish",
                         "need": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
+                        "condition": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -172,6 +176,7 @@ main.floors.MT101=
                         "text": "装备 雷诺FT17",
                         "icon": "ft17",
                         "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
+                        "condition": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -183,6 +188,7 @@ main.floors.MT101=
                         "text": "装备 哈奇开斯H35",
                         "icon": "h35",
                         "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
+                        "condition": "core.hasItem('h35')&&!core.hasEquip('h35')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -194,6 +200,7 @@ main.floors.MT101=
                         "text": "装备 十字军巡洋坦克",
                         "icon": "crusades",
                         "need": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
+                        "condition": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -205,6 +212,7 @@ main.floors.MT101=
                         "text": "装备 瓦伦丁步兵坦克",
                         "icon": "valentine",
                         "need": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
+                        "condition": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -233,7 +241,7 @@ main.floors.MT101=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量意大利陆军和空军，步兵为主，少量装甲部队\n推荐携带技能：战壕、紧急补给、防空弹幕、空战英豪\n推荐出战装备：瓦伦丁步兵坦克，空军随意带"
+            "\t[系统提示]当前区域敌人特点：大量意大利陆军和空军，步兵为主，少量装甲部队\n推荐携带技能：战壕、紧急补给、防空弹幕、空战王牌\n推荐出战装备：瓦伦丁步兵坦克，空军随意带"
         ]
     },
     "changeFloor": {},

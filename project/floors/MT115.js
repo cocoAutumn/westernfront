@@ -42,6 +42,7 @@ main.floors.MT115=
                         "text": "装备 斗士MK2型",
                         "icon": "wrestler",
                         "need": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
+                        "condition": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
                         "action": [
                             {
                                 "type": "loadEquip",

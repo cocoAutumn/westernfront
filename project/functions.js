@@ -64,10 +64,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	// 游戏获胜事件 
 	var sum = 0;
-	for (var i = 0; i <= 15; ++i)
+	for (var i = 0; i < flags.mission.length; ++i)
 		for (var j = 0; j < 3; ++j)
 			if (flags.mission[i][j])
 				sum += 100;
+	core.status.hero.hpmax = sum;
+	core.status.hero.hp = sum;
 	core.ui.closePanel();
 	var replaying = core.isReplaying();
 	if (replaying) core.stopReplay();
@@ -78,8 +80,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			core.dom.gif2.innerHTML = "";
 		}
 		reason = core.replaceText(reason);
-		core.status.hero.hpmax = sum;
-		core.status.hero.hp = sum;
 		core.drawText([
 			"\t[" + (reason || "恭喜通关") + "]你的分数是${status:hp}。"
 		], function () {
@@ -383,6 +383,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var money = guards.reduce(function (curr, g) {
 		return curr + core.material.enemys[g[2]].money;
 	}, core.getEnemyValue(enemy, "money", x, y));
+	if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
 	if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 	if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 	if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
@@ -620,6 +621,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[58, "狼群", "当前地图除自身外每有1艘潜艇，雷击值增加10%"],
 		[59, "陷阱", function (enemy) { return "主角与该敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + (enemy.range || 1) + "格内的其他敌人战斗时，每回合额外受到" + enemy.zone + "点领域伤害" }, "#ffff00", 1],
 		[60, "机动", "被主角单向击穿时，主角先手攻击回合数-3"],
+		[61, "投降", "这些已投降的敌军伤害值固定为0，且不会提供金经奖励。"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -854,6 +856,17 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasSpecial(mon_special, 1) && core.hasEquip("beautifighter")) {
 		curr_hp -= hero_atk * 2;
 	}
+	//谢菲尔德——巴伦支海
+	if (core.hasEquip("sheffield")) {
+		if (enemyInfo.type === '驱逐' || enemyInfo.type === '轻巡') {
+			curr_hp -= mon_top * 0.3;
+			mon_top *= 0.7;
+		}
+	}
+	//谢菲尔德——警戒
+	if (core.hasEquip("sheffield")) {
+		curr_hp -= hero_atk;
+	}
 	//惊雷
 	if (core.hasSpecial(mon_special, 34)) {
 		damage += (mon_tpn - hero_dod) * mon_top;
@@ -876,7 +889,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			enemyInfo.atk = Math.max(11 - turn, 3) * mon_atk / 10;
 		}
 		//诺福克·最后一击
-		if (notyet && curr_hp < 0.2 * mon_hp) {
+		if (core.plugin.Navy.includes(enemyInfo.type) && enemyInfo.type != '潜艇' && notyet && curr_hp < 0.2 * mon_hp) {
 			if (core.hasEquip('norfolk')) {
 				if (mon_dod <= 3) {
 					curr_hp -= (3 - mon_dod) * hero_top;
@@ -1739,7 +1752,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.ui.fillText(ctx, core.getRealStatus('tpn'), 122, 300); // 鱼雷管
 	core.ui.setTextAlign(ctx, 'left'); // 左对齐
 	core.ui.fillText(ctx, core.getRealStatus('money'), 50, 338); // 黄金
-	core.ui.fillText(ctx, core.getRealStatus('exp'), 50, 358); // 经验
+	core.ui.fillText(ctx, core.control.getNextLvUpNeed(), 50, 358); // 经验
 	core.ui.fillText(ctx, core.getRealStatus('mdef'), 50, 378); // 后勤
 	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（技能名）
 	if (flags.skill > 0) core.ui.fillText(ctx, core.getSkillInfo(flags.skill).name, 6, 404, 'orange') // 技能名

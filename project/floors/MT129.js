@@ -53,6 +53,7 @@ main.floors.MT129=
                         "text": "装备 雷诺FT17",
                         "icon": "ft17",
                         "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
+                        "condition": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -64,6 +65,7 @@ main.floors.MT129=
                         "text": "装备 哈奇开斯H35",
                         "icon": "h35",
                         "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
+                        "condition": "core.hasItem('h35')&&!core.hasEquip('h35')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -75,6 +77,7 @@ main.floors.MT129=
                         "text": "装备 十字军巡洋坦克",
                         "icon": "crusades",
                         "need": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
+                        "condition": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -86,6 +89,7 @@ main.floors.MT129=
                         "text": "装备 瓦伦丁步兵坦克",
                         "icon": "valentine",
                         "need": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
+                        "condition": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -119,6 +123,7 @@ main.floors.MT129=
                         "text": "装备 飓风MK1型",
                         "icon": "hurricanemk1",
                         "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
+                        "condition": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -130,6 +135,7 @@ main.floors.MT129=
                         "text": "装备 喷火MK1型",
                         "icon": "spitfiremk1",
                         "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -141,6 +147,7 @@ main.floors.MT129=
                         "text": "装备 飓风MK2型",
                         "icon": "hurricanemk2",
                         "need": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
+                        "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -152,6 +159,7 @@ main.floors.MT129=
                         "text": "装备 F4F野猫战斗机",
                         "icon": "f4f3",
                         "need": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -163,6 +171,7 @@ main.floors.MT129=
                         "text": "装备 贼鸥式轰炸机",
                         "icon": "skua",
                         "need": "core.hasItem('skua')&&!core.hasEquip('skua')",
+                        "condition": "core.hasItem('skua')&&!core.hasEquip('skua')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -174,6 +183,7 @@ main.floors.MT129=
                         "text": "装备 SBD无畏式轰炸机",
                         "icon": "sbd3",
                         "need": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
+                        "condition": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -185,6 +195,7 @@ main.floors.MT129=
                         "text": "装备 剑鱼式鱼雷机",
                         "icon": "swordfish",
                         "need": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
+                        "condition": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -196,10 +207,23 @@ main.floors.MT129=
                         "text": "装备 TBD蹂躏者鱼雷机",
                         "icon": "tbd",
                         "need": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
+                        "condition": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
                         "action": [
                             {
                                 "type": "loadEquip",
                                 "id": "tbd"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 布伦海姆轰炸机",
+                        "icon": "blenheim",
+                        "need": "core.hasItem('blenheim')&&!core.hasEquip('blenheim')",
+                        "condition": "core.hasItem('blenheim')&&!core.hasEquip('blenheim')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "blenheim"
                             }
                         ]
                     },

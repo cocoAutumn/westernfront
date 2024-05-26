@@ -57,6 +57,7 @@ main.floors.MT69=
                         "text": "装备 E级驱逐舰",
                         "icon": "classe",
                         "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
+                        "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -68,6 +69,7 @@ main.floors.MT69=
                         "text": "装备 马汉级驱逐舰",
                         "icon": "mahan",
                         "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
+                        "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -79,6 +81,7 @@ main.floors.MT69=
                         "text": "装备 爱丁堡号轻巡洋舰",
                         "icon": "edinburgh",
                         "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
+                        "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -90,6 +93,7 @@ main.floors.MT69=
                         "text": "装备 鹰号航空母舰",
                         "icon": "eagle",
                         "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
+                        "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
                         "action": [
                             {
                                 "type": "loadEquip",

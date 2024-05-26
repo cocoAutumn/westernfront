@@ -66,7 +66,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "italyinf1",
             "name": "hp",
-            "value": "40000"
+            "value": "30000"
         },
         {
             "type": "setEnemy",
@@ -78,7 +78,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "40000"
+            "value": "30000"
         },
         {
             "type": "setEnemy",
@@ -90,7 +90,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "35000"
+            "value": "25000"
         },
         {
             "type": "setEnemy",
@@ -102,7 +102,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
-            "value": "30000"
+            "value": "20000"
         },
         {
             "type": "setEnemy",
@@ -114,7 +114,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "hp",
-            "value": "25000"
+            "value": "15000"
         },
         {
             "type": "setEnemy",
@@ -126,7 +126,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "hp",
-            "value": "22000"
+            "value": "17000"
         },
         {
             "type": "setEnemy",
@@ -138,7 +138,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "ab41",
             "name": "hp",
-            "value": "9000"
+            "value": "7000"
         },
         {
             "type": "setEnemy",
@@ -150,7 +150,7 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "l640",
             "name": "hp",
-            "value": "10000"
+            "value": "8000"
         },
         {
             "type": "setEnemy",

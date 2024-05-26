@@ -102,6 +102,7 @@ main.floors.prepare1=
             "name": "xinxinmagic.mp3"
         },
         "\t[系统提示]现在是战前准备阶段。你可以在此选择本区域作战的出场装备和技能。战斗开始后，将无法回到此地。后面的区域也都会有这样的准备阶段。",
+        "\t[系统提示]绿色箭头指向的NPC们可以帮助你装上装备，或是选择出战的技能。准备完成后，可以在参谋\\i[N517]处正式开始游戏。",
         {
             "type": "function",
             "function": "function(){\nflags.learned[1]=true\n}"

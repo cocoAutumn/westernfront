@@ -1,6 +1,6 @@
-main.floors.MT108=
+main.floors.MT143=
 {
-    "floorId": "MT108",
+    "floorId": "MT143",
     "title": "托布鲁克",
     "name": "托布鲁克",
     "width": 15,
@@ -29,19 +29,20 @@ main.floors.MT108=
             "time": 500
         },
         {
-            "type": "sleep",
-            "time": 1000
-        },
-        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]如果战斗地点在海岸附近，可以得到舰队的支援（部分海军类装备可用）。有海军的帮助，战斗会变得轻松一些。"
+        {
+            "type": "openShop",
+            "id": "shop4"
+        },
+        "\t[系统提示]已开启4号商店",
+        "\t[系统提示]1942年出的新东西比较多，故分为上下两半商店。为防止玩家选择困难，接下来的游戏可能会开始大规模送钱。但高难度玩家还是建议省着点花。“工业潜能”的计算效果在其他装备之前，因此翻倍效果仅为敌人本身的金币"
     ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
-        "2,6": [
+        "5,6": [
             "\t[维修人员,N514]长官，所有战车准备就绪！",
             {
                 "type": "choices",
@@ -96,6 +97,30 @@ main.floors.MT108=
                         ]
                     },
                     {
+                        "text": "装备 玛蒂尔达步兵坦克",
+                        "icon": "matilda",
+                        "need": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
+                        "condition": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "matilda"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 M3格兰特中型坦克",
+                        "icon": "m3grant",
+                        "need": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
+                        "condition": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "m3grant"
+                            }
+                        ]
+                    },
+                    {
                         "text": "卸下当前坦克",
                         "action": [
                             {
@@ -111,24 +136,12 @@ main.floors.MT108=
                 ]
             }
         ],
-        "5,6": [
+        "9,6": [
             "\t[机场后勤,N516]长官，我方空军已就绪！",
             {
                 "type": "choices",
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
-                    {
-                        "text": "装备 飓风MK1型",
-                        "icon": "hurricanemk1",
-                        "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
-                        "condition": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "hurricanemk1"
-                            }
-                        ]
-                    },
                     {
                         "text": "装备 喷火MK1型",
                         "icon": "spitfiremk1",
@@ -154,14 +167,38 @@ main.floors.MT108=
                         ]
                     },
                     {
-                        "text": "装备 贼鸥式轰炸机",
-                        "icon": "skua",
-                        "need": "core.hasItem('skua')&&!core.hasEquip('skua')",
-                        "condition": "core.hasItem('skua')&&!core.hasEquip('skua')",
+                        "text": "装备 F4F野猫战斗机",
+                        "icon": "f4f3",
+                        "need": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
                         "action": [
                             {
                                 "type": "loadEquip",
-                                "id": "skua"
+                                "id": "f4f3"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 SBD无畏式轰炸机",
+                        "icon": "sbd3",
+                        "need": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
+                        "condition": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "sbd3"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 英俊战士重型战斗机",
+                        "icon": "beautifighter",
+                        "need": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
+                        "condition": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "beautifighter"
                             }
                         ]
                     },
@@ -174,6 +211,54 @@ main.floors.MT108=
                             {
                                 "type": "loadEquip",
                                 "id": "swordfish"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 TBD蹂躏者鱼雷机",
+                        "icon": "tbd",
+                        "need": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
+                        "condition": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "tbd"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 梭鱼式鱼雷机",
+                        "icon": "barracuda",
+                        "need": "core.hasItem('barracuda')&&!core.hasEquip('barracuda')",
+                        "condition": "core.hasItem('barracuda')&&!core.hasEquip('barracuda')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "barracuda"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 布伦海姆轰炸机",
+                        "icon": "blenheim",
+                        "need": "core.hasItem('blenheim')&&!core.hasEquip('blenheim')",
+                        "condition": "core.hasItem('blenheim')&&!core.hasEquip('blenheim')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "blenheim"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 B25米切尔轰炸机",
+                        "icon": "b25",
+                        "need": "core.hasItem('b25')&&!core.hasEquip('b25')",
+                        "condition": "core.hasItem('b25')&&!core.hasEquip('b25')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "b25"
                             }
                         ]
                     },
@@ -201,61 +286,6 @@ main.floors.MT108=
                             {
                                 "type": "unloadEquip",
                                 "pos": 6
-                            }
-                        ]
-                    },
-                    {
-                        "text": "返回",
-                        "action": []
-                    }
-                ]
-            }
-        ],
-        "9,6": [
-            "\t[海军参谋,N515]长官，地中海舰队准备就绪！",
-            {
-                "type": "choices",
-                "text": "\t[海军参谋,N515]请选择出战海军舰艇",
-                "choices": [
-                    {
-                        "text": "装备 诺福克号重巡洋舰",
-                        "icon": "norfolk",
-                        "need": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                        "condition": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "norfolk"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 鹰号航空母舰",
-                        "icon": "eagle",
-                        "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                        "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "eagle"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前巡洋舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 2
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前主力舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 3
                             }
                         ]
                     },
@@ -300,10 +330,10 @@ main.floors.MT108=
                             },
                             {
                                 "type": "changeFloor",
-                                "floorId": "MT109",
+                                "floorId": "MT144",
                                 "loc": [
                                     14,
-                                    12
+                                    7
                                 ],
                                 "direction": "left"
                             }
@@ -317,7 +347,7 @@ main.floors.MT108=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量意大利陆军和空军，战斗后期会出现德军装甲军团\n推荐携带技能：战壕、紧急补给\n推荐出战装备：瓦伦丁步兵坦克，诺福克号重巡洋舰，其他随意带"
+            "\t[系统提示]当前区域敌人特点：大量意大利步兵、装甲单位和少量德军，有空中支援\n推荐携带技能：防空弹幕、空战王牌、抵抗运动、扫雷、破译、空中打击\n推荐出战装备：十字军或瓦伦丁坦克，飓风MK2或F4F野猫、SBD无畏、剑鱼或布伦海姆"
         ]
     },
     "changeFloor": {},
@@ -335,7 +365,7 @@ main.floors.MT108=
     [70156,70056,70057,70058,70024,70025,70026,70027,70028,70029,70030,70060,70061,70062,70156],
     [70164,70064,70065,70066,70032,70033,70034,70035,70036,70037,70038,70068,70069,70070,70164],
     [70172,70072,70073,70074,70040,70041,70042,70043,70044,70077,70046,70076,70077,70078,70172],
-    [  0,  0,514,  0,  0,516,  0,  0,  0,515,  0,  0,517,  0,  0],
+    [  0,  0,  0,  0,  0,514,  0,  0,  0,516,  0,  0,517,  0,  0],
     [  0,  0,  0,60035,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,70235],
     [70208,70209,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,70243],
     [70224,70225,  0,  0,60036,  0,  0,  0,  0,  0,60120,  0,  0,  0,70235],
@@ -353,7 +383,7 @@ main.floors.MT108=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,559,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,559,  0,  0,559,  0,  0,  0,559,  0,  0,559,  0,  0],
+    [  0,  0,  0,  0,  0,559,  0,  0,  0,559,  0,  0,559,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [70216,70217,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],

@@ -136,6 +136,7 @@ main.floors.MT7=
                         "text": "装备 雷诺FT17",
                         "icon": "ft17",
                         "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
+                        "condition": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -147,6 +148,7 @@ main.floors.MT7=
                         "text": "装备 哈奇开斯H35",
                         "icon": "h35",
                         "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
+                        "condition": "core.hasItem('h35')&&!core.hasEquip('h35')",
                         "action": [
                             {
                                 "type": "loadEquip",

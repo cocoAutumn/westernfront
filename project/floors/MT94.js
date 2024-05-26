@@ -60,6 +60,7 @@ main.floors.MT94=
                         "text": "装备 E级驱逐舰",
                         "icon": "classe",
                         "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
+                        "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -71,6 +72,7 @@ main.floors.MT94=
                         "text": "装备 V级驱逐舰",
                         "icon": "classv",
                         "need": "core.hasItem('classv')&&!core.hasEquip('classv')",
+                        "condition": "core.hasItem('classv')&&!core.hasEquip('classv')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -82,6 +84,7 @@ main.floors.MT94=
                         "text": "装备 马汉级驱逐舰",
                         "icon": "mahan",
                         "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
+                        "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -93,6 +96,7 @@ main.floors.MT94=
                         "text": "装备 本森级驱逐舰",
                         "icon": "benson",
                         "need": "core.hasItem('benson')&&!core.hasEquip('benson')",
+                        "condition": "core.hasItem('benson')&&!core.hasEquip('benson')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -104,6 +108,7 @@ main.floors.MT94=
                         "text": "装备 爱丁堡号轻巡洋舰",
                         "icon": "edinburgh",
                         "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
+                        "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -115,6 +120,7 @@ main.floors.MT94=
                         "text": "装备 诺福克号重巡洋舰",
                         "icon": "norfolk",
                         "need": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
+                        "condition": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -126,6 +132,7 @@ main.floors.MT94=
                         "text": "装备 厌战号战列舰",
                         "icon": "warspite",
                         "need": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
+                        "condition": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -137,6 +144,7 @@ main.floors.MT94=
                         "text": "装备 鹰号航空母舰",
                         "icon": "eagle",
                         "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
+                        "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -234,6 +242,7 @@ main.floors.MT94=
                         "text": "装备 飓风MK1型",
                         "icon": "hurricanemk1",
                         "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
+                        "condition": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -245,6 +254,7 @@ main.floors.MT94=
                         "text": "装备 喷火MK1型",
                         "icon": "spitfiremk1",
                         "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -256,6 +266,7 @@ main.floors.MT94=
                         "text": "装备 F4F野猫",
                         "icon": "f4f3",
                         "need": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -267,6 +278,7 @@ main.floors.MT94=
                         "text": "装备 贼鸥式轰炸机",
                         "icon": "skua",
                         "need": "core.hasItem('skua')&&!core.hasEquip('skua')",
+                        "condition": "core.hasItem('skua')&&!core.hasEquip('skua')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -278,6 +290,7 @@ main.floors.MT94=
                         "text": "装备 SBD无畏",
                         "icon": "sbd3",
                         "need": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
+                        "condition": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -289,6 +302,7 @@ main.floors.MT94=
                         "text": "装备 剑鱼式鱼雷机",
                         "icon": "swordfish",
                         "need": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
+                        "condition": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -300,6 +314,7 @@ main.floors.MT94=
                         "text": "装备 TBD蹂躏者",
                         "icon": "tbd",
                         "need": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
+                        "condition": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
                         "action": [
                             {
                                 "type": "loadEquip",

@@ -118,6 +118,7 @@ main.floors.MT20=
                         "text": "装备 雷诺FT17",
                         "icon": "ft17",
                         "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
+                        "condition": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -129,6 +130,7 @@ main.floors.MT20=
                         "text": "装备 哈奇开斯H35",
                         "icon": "h35",
                         "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
+                        "condition": "core.hasItem('h35')&&!core.hasEquip('h35')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -162,6 +164,7 @@ main.floors.MT20=
                         "text": "装备 斗士MK2",
                         "icon": "wrestler",
                         "need": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
+                        "condition": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -173,6 +176,7 @@ main.floors.MT20=
                         "text": "装备 P40C战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
+                        "condition": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -184,6 +188,7 @@ main.floors.MT20=
                         "text": "装备 飓风MK1",
                         "icon": "hurricanemk1",
                         "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
+                        "condition": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -195,6 +200,7 @@ main.floors.MT20=
                         "text": "装备 贼鸥式轰炸机",
                         "icon": "skua",
                         "need": "core.hasItem('skua')&&!core.hasEquip('skua')",
+                        "condition": "core.hasItem('skua')&&!core.hasEquip('skua')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -206,6 +212,7 @@ main.floors.MT20=
                         "text": "装备 剑鱼式鱼雷机",
                         "icon": "swordfish",
                         "need": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
+                        "condition": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -252,7 +259,7 @@ main.floors.MT20=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：除了海军，其他的全都有\n推荐携带技能：战壕、紧急补给、防空弹幕\n推荐出战装备：哈奇开斯H35、飓风MKI、贼鸥式轰炸机、剑鱼式鱼雷机。"
+            "\t[系统提示]当前区域敌人特点：除了海军，其他的全都有\n推荐携带技能：战壕、紧急补给、防空弹幕\n推荐出战装备：哈奇开斯H35、飓风MKI、贼鸥式轰炸机、剑鱼式鱼雷机（只能二选一的情况下，推荐选后者）。"
         ]
     },
     "changeFloor": {},

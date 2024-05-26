@@ -55,6 +55,13 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('f4f3') && nthTurn === 2) {
 				bombDamage += 0.4 * 2 * hero_atk;
 			}
+			if (core.hasEquip('raider') && nthTurn === 2) {
+				bombDamage += 0.4 * 2 * hero_atk;
+			}
+			//P40C战斧
+			if (core.hasEquip('p40c') && nthTurn === 2) {
+				bombDamage += 2.8 * hero_atk;
+			}
 			// 装备加成——攻击机
 			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) // 贼鸥式轰炸机
 				bombDamage += hero_atk * 2;
@@ -63,7 +70,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('sbd3') && nthTurn > 0 && nthTurn % 4 === 0) //无畏
 				bombDamage += hero_atk * 4.5;
 			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 4 === 0) //无畏（突击者号航母）
-				bombDamage += hero_atk * 4.5;
+				bombDamage += hero_atk * 6.3;
 			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
 				bombDamage += hero_atk * 2;
 			// 装备加成——轰炸机
@@ -71,12 +78,28 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				bombDamage += hero_atk * 0.6 * 3;
 			if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 5 === 0) // 箭鱼鱼雷机(鹰号航母)
 				bombDamage += hero_atk * 0.6 * 3;
+			if (core.hasEquip('blenheim') && nthTurn > 0 && nthTurn % 5 === 0) //布伦海姆
+				bombDamage += hero_atk * 0.7 * 4;
 			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 5 === 0) //TBD鱼雷机
 				bombDamage += hero_atk * 3;
+			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 5 === 0) //TBD鱼雷机（突击者）
+				bombDamage += hero_atk * 3;
+			if (core.hasEquip('b25') && nthTurn > 0 && nthTurn % 5 === 0) { //B25米切尔
+				if (!['eagle', 'illustrious', 'raider', 'essex', 'enterprise'].some(id => core.hasEquip(id))) {
+					bombDamage += hero_atk * 12;
+				} else bombDamage += hero_atk * 6;
+			}
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
 			//野猫
 			if (core.hasEquip('f4f3') && nthTurn === 2) { //野猫
 				bombDamage += 0.4 * 2 * hero_atk;
+			}
+			if (core.hasEquip('raider') && nthTurn === 2) { //野猫（突击者航空母舰）
+				bombDamage += 0.4 * 2 * hero_atk;
+			}
+			//P40C战斧
+			if (core.hasEquip('p40c') && nthTurn === 2) {
+				bombDamage += 2.8 * hero_atk;
 			}
 			// 装备加成——攻击机
 			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机
@@ -96,7 +119,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				bombDamage *= 1.5;
 			}
 			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 4 === 0) { //无畏（突击者号航母）
-				bombDamage += hero_atk * 4.5;
+				bombDamage += hero_atk * 6.3;
 				bombDamage *= 1.5;
 			}
 			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
@@ -109,6 +132,13 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				torpeodoDamage += hero_top * (3 - mon_dod);
 			if (core.hasEquip("illus1941") && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机(光辉1941)
 				torpeodoDamage += hero_top * (3 - mon_dod);
+			if (core.hasEquip('blenheim') && nthTurn > 0 && nthTurn % 5 === 0) //布伦海姆
+				bombDamage += hero_atk * 0.7 * 4;
+			if (core.hasEquip('b25') && nthTurn > 0 && nthTurn % 5 === 0) { //B25米切尔
+				if (!['eagle', 'illustrious', 'raider', 'essex', 'enterprise'].some(id => core.hasEquip(id))) {
+					bombDamage += hero_atk * 12;
+				}
+			} else bombDamage += hero_atk * 6;
 			if (flags.skill === 8 && nthTurn === 5 && mon_dod < 3) { //技能8：剑鱼818中队
 				torpeodoDamage += hero_top * (3 - mon_dod);
 				mon_dod -= 2;
@@ -147,8 +177,13 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('mahan') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += 0.5 * hero_atk;
 			//V级
 			if (core.hasEquip('classv') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += hero_atk;
+			//本森级
+			if (core.hasEquip('benson') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += hero_atk;
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 			if (core.hasEquip('f4f3') && nthTurn > 0 && nthTurn % 2 === 0) { //野猫
+				damage *= 1.15;
+			}
+			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 2 === 0) { //野猫（突击者）
 				damage *= 1.15;
 			}
 			if (core.hasEquip('hurricanemk1') && enemyInfo.type.endsWith('轰炸机')) // 飓风MK1
@@ -173,6 +208,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('crusades')) preTurn = 3; //十字军坦克：敌人先攻-2
 			if (core.hasEquip('valentine')) preTurn = 10; //瓦伦丁坦克
 			if (core.hasEquip('matilda')) preTurn = 10; // 玛蒂尔达步兵坦克：无法击穿对方时前10回合无法造成伤害
+			if (core.hasEquip('m3grant')) preTurn = 15;
 			if (nthTurn <= preTurn) damage = 0;
 			else damage *= 0.8; // 前5回合无法造成伤害，其他回合伤害只有80%
 		}
@@ -224,6 +260,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasSpecial(mon_special, 43) && mon_ap > hero_arm) // 超压：勇士被对方穿甲则对方伤害为1.4倍
 				damage *= 1.4;
 			if (core.hasEquip('matilda') && hero_arm >= mon_ap) // 玛蒂尔达步兵坦克：勇士未被对方穿甲则对方伤害为0.8倍
+				damage *= 0.8;
+			if (core.hasEquip('m3grant') && hero_arm >= mon_ap) // M3格兰特：勇士未被对方穿甲则对方伤害为0.8倍
 				damage *= 0.8;
 			//380舰炮
 			if (core.hasSpecial(mon_special, 32) && nthTurn > 0 && nthTurn % 4 === 0) {
@@ -352,6 +390,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					],
 					"false": [
 						{ "type": "playSound", "name": "error.mp3" },
+						{ "type": "setValue", "name": "status:mana", "operator": "+=", "value": "20" },
 						{ "type": "tip", "text": "操作失败！" },
 					]
 				},
@@ -1459,8 +1498,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					core.status.damage.data.push({ text: damageString.damage, px: 32 * x + 1, py: 32 * (y + 1) - 1, color: damageString.color });
 				}
 				if (core.flags.displayCritical) {
+					var info = core.getEnemyInfo(block.event.id, hero, x, y, floorId);
+					var critical = info.hp > hero.atk ? Math.ceil(info.hp / (Math.ceil(info.hp / hero.atk) - 1)) - hero.atk : 0;
 					var turn = core.getDamageInfo(block.event.id, core.status.hero, x, y, floorId)?.turn;
-					core.status.damage.data.push({ text: turn, px: 32 * x + 1, py: 32 * (y + 1) - 11, color: '#FFFFFF' });
+					core.status.damage.data.push({ text: critical, px: 32 * x + 1, py: 32 * (y + 1) - 11, color: '#FFFFFF' });
+					core.status.damage.data.push({ text: turn, px: 32 * x + 1, py: 32 * (y + 1) - 21, color: '#FFFFFF' });
 				}
 			}
 		});

@@ -70,6 +70,7 @@ main.floors.MT13=
                         "text": "装备 斗士MK2",
                         "icon": "wrestler",
                         "need": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
+                        "condition": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -81,6 +82,7 @@ main.floors.MT13=
                         "text": "装备 贼鸥式轰炸机",
                         "icon": "skua",
                         "need": "core.hasItem('skua')&&!core.hasEquip('skua')",
+                        "condition": "core.hasItem('skua')&&!core.hasEquip('skua')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -92,6 +94,7 @@ main.floors.MT13=
                         "text": "装备 剑鱼式鱼雷机",
                         "icon": "swordfish",
                         "need": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
+                        "condition": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
                         "action": [
                             {
                                 "type": "loadEquip",

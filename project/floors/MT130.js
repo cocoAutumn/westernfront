@@ -267,7 +267,7 @@ main.floors.MT130=
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "zone",
-            "value": "16000"
+            "value": "6000"
         },
         "\t[系统提示]敌人战力重置完成",
         "\t[系统提示]即将进入存档界面",

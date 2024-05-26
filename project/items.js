@@ -633,7 +633,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "瓦伦丁步兵坦克",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿50，装60。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。",
+		"text": "攻+50，穿50，装60。\n被动技能：\n迟缓：被敌人单向击穿时，敌人额外先攻5回合。",
 		"equip": {
 			"type": 0,
 			"value": {
@@ -663,67 +663,78 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			},
 			"percentage": {}
 		},
-		"text": "攻+150，穿50，装75。\n被动技能：\n压制：敌方地面部队无法击穿我方装甲时，受到伤害额外减少20%。\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+150，穿50，装75。\n被动技能：\n压制：敌方地面部队无法击穿我方装甲时，受到伤害额外减少20%。\n迟缓：被敌人单向击穿时，敌人额外先攻5回合。"
 	},
 	"churchillmk3": {
 		"cls": "equips",
 		"name": "丘吉尔MK3型",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿90，装89。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+n后加m%，穿90，装89。\n被动技能：\n笨重：被敌人单向击穿时，敌人额外先攻10回合。\n红茶不能洒：使用“下午茶”时，恢复效果改为35%。"
 	},
 	"m3grant": {
 		"cls": "equips",
 		"name": "M3格兰特",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿65，装51。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+150后额外加10%，穿65，装75。\n被动技能：\n压制：敌方地面部队无法击穿我方装甲时，受到伤害额外减少20%。\n笨重：被敌人单向击穿时，敌人额外先攻10回合。",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 150,
+				"ap": 65,
+				"arm": 75
+			},
+			"percentage": {
+				"atk": 10
+			}
+		}
 	},
 	"m4a1": {
 		"cls": "equips",
 		"name": "M4A1谢尔曼",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿78，装50。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+n后额外加m%，穿78，装85。\n被动技能：\n工业底蕴：战后额外加5黄金。\n数量碾压：被敌人单向击穿时，攻击力额外加15%。"
 	},
 	"m4a2": {
 		"cls": "equips",
 		"name": "M4A2谢尔曼",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿78，装63。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+50，穿78，装110。\n被动技能：\n工业底蕴：战后额外加5黄金。\n数量碾压：被敌人单向击穿时，攻击力额外加15%。"
 	},
 	"m4a3": {
 		"cls": "equips",
 		"name": "M4A1(76W)",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿120，装63。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+50，穿120，装105。\n被动技能：\n工业底蕴：战后额外加5黄金。\n数量碾压：被敌人单向击穿时，攻击力额外加15%。"
 	},
 	"m4a3e2": {
 		"cls": "equips",
 		"name": "M4A3E2“巨无霸”",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿78，装101。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+50，穿78，装175。\n被动技能：\n工业底蕴：战后额外加5黄金。\n互相刮痧：双方互不击穿时，减少敌人20%伤害。"
 	},
 	"firefly": {
 		"cls": "equips",
 		"name": "谢尔曼“萤火虫”",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿150，装51。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+50，穿155，装110。\n被动技能：\n破局：击穿敌人坦克时，攻击力提升20%。\n驯兽师：与虎式或豹式坦克对战时，攻击力再增加30%"
 	},
 	"a34comet": {
 		"cls": "equips",
 		"name": "A34彗星",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿123，装76。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+50，穿123，装76。\n被动技能：\n机动：我方被敌人单向击穿时，敌方先攻次数-2\n红茶不能洒：使用“下午茶”时，恢复效果改为40%。"
 	},
 	"churchillmk7": {
 		"cls": "equips",
 		"name": "丘吉尔MK7型",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿78，装152。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。"
+		"text": "攻+50，穿78，装170。\n被动技能：\n笨重：被敌人单向击穿时，敌人额外先攻10回合。\n红茶不能洒：使用“下午茶”时，恢复效果改为40%。\n绝对防御：单向击穿敌人陆军时，无伤赢得战斗。"
 	},
 	"m26pershing": {
 		"cls": "equips",
 		"name": "M26潘兴",
 		"canUseItemEffect": "true",
-		"text": "攻+200%，穿160装100。被动技能待定。"
+		"text": "攻击+n后额外加200%，穿160装160。\n被动：\n横扫千军：与敌方步兵和火炮战斗时，伤害增加50%，受到伤害减少40%。\n驯兽师：与虎式和豹式坦克作战时，攻击力再增加30%。"
 	},
 	"classe": {
 		"cls": "equips",
@@ -760,7 +771,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"classj": {
 		"cls": "equips",
 		"name": "J级驱逐舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻击+n，雷击+a后额外加b%。鱼雷管+10，闪避数+4。\n被动：\n战时需求：击败敌方海军时，额外获得5黄金和5经验。\n商船护航：存在友军时，友军受到的伤害减半。"
 	},
 	"gridley": {
 		"cls": "equips",
@@ -787,7 +799,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"flecher": {
 		"cls": "equips",
 		"name": "弗莱彻级驱逐舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+n后额外加m%。雷击＋a后额外加b%。鱼雷管+12，闪避数+5。\n被动：\n数量优势：我方海军发射鱼雷时，额外发射一轮。\n勇气迸发：面对重巡和战列舰时，受到伤害+30%但会提前5回合发射鱼雷。\n哑弹：发射的鱼雷不会爆炸。"
 	},
 	"edinburgh": {
 		"cls": "equips",
@@ -808,7 +821,18 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "轻巡·谢菲尔德号",
 		"canUseItemEffect": "true",
-		"text": "攻+150，雷击+50，鱼雷管+1。\n"
+		"text": "攻+250后增加10%，雷击+1000，鱼雷管+2。\n被动：\n巴伦支海传奇：攻击轻巡和驱逐舰时，减少对手30%的雷击值并转化为首回合对其造成的额外伤害\n警戒：战斗开始时，我方额外普攻一回合",
+		"equip": {
+			"type": 2,
+			"value": {
+				"tpn": 2,
+				"top": 1000,
+				"atk": 250
+			},
+			"percentage": {
+				"atk": 10
+			}
+		}
 	},
 	"norfolk": {
 		"cls": "equips",
@@ -827,7 +851,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"dorsetshire": {
 		"cls": "equips",
 		"name": "重巡·多塞特郡号",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "废稿"
 	},
 	"benson": {
 		"cls": "equips",
@@ -848,7 +873,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"cleveland": {
 		"cls": "equips",
 		"name": "轻巡·克利夫兰号",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+n后额外加m%。雷击+a后额外加b%。鱼雷管+2，闪避数+1。\n被动：\n防空轻巡：与敌机战斗时，每回合额外增伤25%。\n海上骑士：我方血量低于一半时，获得25%伤害减免。\n哑弹：发射的鱼雷不会爆炸。"
 	},
 	"hood": {
 		"cls": "equips",
@@ -881,23 +907,26 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"kinggeorge5": {
 		"cls": "equips",
 		"name": "乔治五世号战列舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻击+n，后勤+m。闪避鱼雷数-3。\n被动：\n主炮轰击：每4回合额外发射一轮主炮，对敌方水面战舰造成6倍攻击力的伤害。\n重甲战舰：敌方轻巡和驱逐舰的普攻伤害减少50%，但受到鱼雷攻击时伤害增加40%。"
 	},
 	"northcarolina": {
 		"cls": "equips",
 		"name": "北卡罗莱纳号战列舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻击+n后额外加m%。后勤+a后额外加b%。闪避鱼雷数-2。\n被动：\n主炮轰击：每4回合额外发射一轮主炮，对敌方水面战舰造成9倍攻击力的伤害。\n禁飞区：在海上遭遇空袭时，对敌机造成的伤害提升60%。\n重甲战舰：敌方轻巡和驱逐舰普攻伤害减少40%，但受到鱼雷攻击伤害增加20%。"
 	},
 	"iowa": {
 		"cls": "equips",
 		"name": "衣阿华级战列舰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+n后额外加m%。后勤+a后额外加b%。闪避鱼雷数-1。\n被动：\n主炮轰击：每4回合额外发射一轮主炮，对敌方水面战舰造成10倍攻击力的伤害。\n末代战列：减免20%伤害，对轻巡和驱逐舰时效果改为40%。\n空袭掩护：在海上与敌机交战时，增伤50%。"
 	},
 	"illustrious": {
 		"cls": "equips",
 		"name": "光辉号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：海喷火MK5、梭鱼式鱼雷机、剑鱼式鱼雷机。闪避鱼雷数-2。\n被动：装甲航母：在海上遭遇敌方空袭时，减少25%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。"
+		"text": "舰载机：海喷火MK5、梭鱼式鱼雷机、剑鱼式鱼雷机。闪避鱼雷数-2。\n被动：\n装甲航母：在海上遭遇敌方空袭时，减少25%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。"
 	},
 	"eagle": {
 		"cls": "equips",
@@ -917,25 +946,35 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "突击者号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：F4F-3野猫战斗机、SBD-3无畏式轰炸机、TBD蹂躏者鱼雷机，闪避鱼雷数-2\n此航母的SBD俯冲轰炸机炸弹伤害增加50%，TBD鱼雷机的鱼雷伤害减少50%。"
+		"text": "舰载机：F4F-3野猫战斗机、SBD-3无畏式轰炸机、TBD蹂躏者鱼雷机，闪避鱼雷数-2\n被动：\n航弹强化：此航母的俯冲轰炸机造成的炸弹伤害提升40%。",
+		"equip": {
+			"type": 3,
+			"value": {
+				"atk": 130,
+				"dod": -2
+			},
+			"percentage": {
+				"atk": 10
+			}
+		}
 	},
 	"essex": {
 		"cls": "equips",
 		"name": "埃塞克斯号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "属性：攻击+5%，雷击+10%\n舰载机：F6F-3地狱猫战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机。\n对敌方飞机造成的伤害＋50%，对战列舰造成的鱼雷伤害增加70%。"
+		"text": "攻击+5%，雷击+10%。舰载机：F6F-5地狱猫战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机。\n被动：\n远程空袭：无视敌军战列舰主炮伤害，且可以支援我军在陆地上的行动。\n夺取制空：对敌方空军增伤30%且免疫他们的第一轮炸弹或鱼雷攻击。\n紧急维修：战斗中我方血量不足10%时，立即回复40%生命值，每场战斗只能触发一次。"
 	},
 	"enterprise": {
 		"cls": "equips",
 		"name": "企业号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "属性：攻击力+10%，后勤+20%\n舰载机：F4U-4B海盗式战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机\n被动：\n幸运E：企业号的舰载机造成的一切伤害×250%，且我方遭遇致死攻击时，进入无敌状态，锁定血量为1，持续3回合。"
+		"text": "攻击力+n%，后勤+m%。舰载机：F4U-4B海盗式战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机\n被动：\n灰色幽灵：火箭弹、炸弹和鱼雷伤害×250%。我方遭遇致死攻击时，进入无敌状态，锁定血量为1，持续3回合，之后恢复10%血量。每场战斗只触发1次。\n远程空袭：无视敌军战列舰主炮伤害，且可以支援我军在陆地上的行动。\n夺取制空：对敌方空军增伤30%且免疫他们的第一轮炸弹或鱼雷攻击。"
 	},
 	"wrestler": {
 		"cls": "equips",
 		"name": "斗士MK2型",
 		"canUseItemEffect": "true",
-		"text": "主武器：4×7.62mm机枪\n攻+25。",
+		"text": "主武器：4×7.7mm机枪\n攻+25。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -948,7 +987,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "飓风MK1",
 		"canUseItemEffect": "true",
-		"text": "主武器：8×7.62mm机枪\n攻+40。每回合对轰炸机追加80点伤害。",
+		"text": "主武器：8×7.7mm机枪\n攻+40。每回合对轰炸机追加80点伤害。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -961,7 +1000,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "喷火MK1",
 		"canUseItemEffect": "true",
-		"text": "主武器：8×7.62mm机枪\n攻击+60，与战斗机作战时，每回合额外追加10%伤害",
+		"text": "主武器：8×7.7mm机枪\n攻击+60，与战斗机作战时，每回合额外追加10%伤害",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -973,13 +1012,14 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"p40e": {
 		"cls": "equips",
 		"name": "P40E战鹰",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：6×12.7mm机枪。挂载：2×100磅和1×500磅炸弹\n攻击+80后额外加10%。\n仅第2回合投弹，造成两次0.4倍攻击力的伤害和1次2倍攻击力的伤害。"
 	},
 	"hurricanemk2": {
 		"cls": "equips",
 		"name": "飓风MK2",
 		"canUseItemEffect": "true",
-		"text": "装备属性：攻+100。攻击对象为轰炸机或装甲小于20的坦克时，每回合普攻伤害额外增加20%",
+		"text": "主武器：4×20mm机炮\n装备属性：攻+100。攻击对象为轰炸机或装甲小于20的坦克时，每回合普攻伤害额外增加20%",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -991,7 +1031,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"spitfiremk2": {
 		"cls": "equips",
 		"name": "喷火MK5",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：4×7.7mm机枪和2×20mm机炮\n攻击+120后额外加10%，与战斗机作战时，每回合额外追加10%伤害。\n被动：\n空中传奇：与敌方战斗机作战时，如果对手血量高于70%，攻击力额外增加10%。"
 	},
 	"f4f3": {
 		"cls": "equips",
@@ -1011,33 +1052,38 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"f6f5": {
 		"cls": "equips",
 		"name": "F6F-5地狱猫",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：6×12.7mm机枪。挂载：6×HVAR火箭弹和2×1000磅炸弹\n属性：攻+n后额外＋20%\n与陆军或水面舰艇战斗时，首回合抢先发射火箭弹，每枚火箭弹伤害为0.2倍攻击力。仅第2回合投弹，每颗炸弹伤害为4倍攻击力\n被动：\n地狱审判：如果敌方战斗机具有连击，则开战时压制敌人无法行动2回合。"
 	},
 	"spitfiremk5": {
 		"cls": "equips",
 		"name": "喷火MK9",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：4×7.7mm机枪和2×20mm机炮。\n属性：攻击＋n后额外加30%。\n被动：\n空中传奇：与敌方战斗机作战时，如果对方血量大于50%，攻击力额外提升10%"
 	},
 	"spitfiremk16": {
 		"cls": "equips",
 		"name": "喷火MK16",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：2×12.7mm机枪和2×20mm机炮\n属性：攻击+n后额外加50%\n被动：\n空中传奇：与敌方战斗机作战时，战斗全程攻击力提升20%"
 	},
 	"seafury": {
 		"cls": "equips",
 		"name": "海怒",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "废稿"
 	},
 	"f4u": {
 		"cls": "equips",
 		"name": "F4U-4B海盗",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：4×20mm机炮。挂载：8×HVAR火箭弹和2×1000磅炸弹\n属性：攻击+n后额外加80%。与陆军和海军作战时抢先发射火箭弹，每枚火箭弹伤害为0.4倍攻击力。仅第2回合投弹，每颗炸弹伤害为4倍攻击力。\n被动：\n死亡口哨：敌人血量小于20%时，立即将其消灭"
 	},
 	"p51d": {
 		"cls": "equips",
 		"name": "P51D野马",
 		"canUseItemEffect": "true",
-		"text": "攻+100%.挂载：6×127mm火箭弹。\n对地和对舰攻击时抢先发射2轮火箭弹，每发火箭弹伤害为0.3倍攻击力。\n被动：长途护航——与战略轰炸机一同出击时，受到的所有战斗伤害减少30%。\n     制空霸权——与敌方战斗机战斗时，每回合额外攻击2次。"
+		"text": "主武器：6×12.7mm机枪。挂载：10×HVAR火箭弹\n属性：攻击+n后额外加100%。与陆军和水面舰艇战斗时抢先发射火箭弹，每枚火箭弹伤害为0.4倍攻击力。\n被动：\n长途护航：装备了其他飞机时，受到的所有战斗伤害减少30%。\n制空霸权：与敌方空军战斗时，战斗方式改为3连击。对喷气机不生效。"
 	},
 	"skua": {
 		"cls": "equips",
@@ -1069,7 +1115,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "英俊战士MK6C",
 		"canUseItemEffect": "true",
-		"text": "攻击+300。挂载：8×RP-3火箭弹。攻击轰炸机时增伤30%。\n攻击非空军敌人时率先发射1轮火箭弹，每发火箭弹的伤害为0.2倍攻击力。\n被动：机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。",
+		"text": "攻击+300。挂载：8×RP-3火箭弹。攻击轰炸机时增伤30%。\n攻击非空军敌人时率先发射1轮火箭弹，每发火箭弹的伤害为0.2倍攻击力。\n被动：\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。",
 		"equip": {
 			"type": 5,
 			"value": {
@@ -1081,32 +1127,38 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"p38": {
 		"cls": "equips",
 		"name": "P38闪电",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：4×12.7mm机枪和1×20mm机炮。挂载：6×M8火箭弹\n属性：攻击+n。与陆军和水面舰艇战斗时抢先发射火箭弹，每枚火箭弹伤害为0.1倍攻击力\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加40%"
 	},
 	"mosquito": {
 		"cls": "equips",
 		"name": "蚊式战斗机",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：4×7.7mm机枪和4×20mm机炮。挂载：8×RP3火箭弹\n属性：攻击+n。与陆军和水面舰艇作战时抢先发射火箭弹，每枚火箭弹伤害为0.2倍攻击力\n被动：\n木制奇迹：受到伤害增加20%，但后勤增加n%。\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。"
 	},
 	"p47d": {
 		"cls": "equips",
 		"name": "P47D雷电",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：8×12.7mm机枪。挂载：3×500磅炸弹\n属性：攻击＋n后额外加40%。每3回合投掷炸弹，每颗炸弹伤害为1.5倍攻击力。\n被动：\n铜墙铁壁：与空军和高射炮作战时，获得20%减伤。"
 	},
 	"sb2c": {
 		"cls": "equips",
 		"name": "SB2C地狱俯冲者",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：2×20mm机炮和2×7.62mm自卫机枪。挂载：8×HVAR火箭弹和1×2000磅炸弹\n属性：攻击+n，雷击+n%。与陆军和水面舰艇作战时抢先发射火箭弹，每枚火箭弹伤害为0.2倍攻击力。\n每4回合投弹，每颗炸弹伤害为8倍攻击力。\n被动：\n地狱咆哮：敌人攻击力减少10%。对重巡和战列舰造成的炸弹伤害增加50%。"
 	},
 	"tempest": {
 		"cls": "equips",
 		"name": "暴风式攻击机",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "废稿"
 	},
 	"p61": {
 		"cls": "equips",
 		"name": "P61黑寡妇",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：4×20mm机炮和4×12.7mm机枪炮塔。挂载：4×500磅炸弹\n属性：攻击+n，后勤+40%。每5个回合投弹，每颗炸弹伤害为1倍攻击力。\n被动：\n暗夜行者：与空军和高射炮对战时，在3的倍数回合免疫敌人伤害。\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。"
 	},
 	"swordfish": {
 		"cls": "equips",
@@ -1125,7 +1177,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "装备属性：攻+10。挂载：1×MK13鱼雷或3×500磅炸弹\n对舰攻击时，每5回合投放3枚鱼雷。对地攻击时，每5回合投放一轮炸弹，每颗炸弹伤害为1倍攻击力\n被动：\n哑弹：发射的鱼雷不会爆炸。",
 		"equip": {
-			"type": 7,
+			"type": 6,
 			"value": {
 				"atk": 10
 			},
@@ -1136,53 +1188,75 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "布伦海姆轰炸机",
 		"canUseItemEffect": "true",
-		"text": "攻+10。挂载：4×250磅炸弹。\n每5回合投掷一轮炸弹，每颗炸弹伤害为0.7倍攻击力"
+		"text": "攻+10。挂载：4×250磅炸弹。\n每5回合投掷一轮炸弹，每颗炸弹伤害为0.7倍攻击力",
+		"equip": {
+			"type": 6,
+			"value": {
+				"atk": 10
+			},
+			"percentage": {}
+		}
 	},
 	"b25": {
 		"cls": "equips",
 		"name": "B25米切尔",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "自卫武器：7×12.7mm炮塔。攻击+50。挂载：3×1000磅炸弹。\n每5回合投弹，每颗炸弹伤害为2倍攻击力。\n被动：\n杜立特传奇：我方装备有航空母舰时，投掷炸弹时额外再投一轮。",
+		"equip": {
+			"type": 6,
+			"value": {
+				"atk": 50
+			},
+			"percentage": {}
+		}
 	},
 	"barracuda": {
 		"cls": "equips",
 		"name": "梭鱼式轰炸机",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "自卫武器：2×7.7mm机枪。挂载：6×250磅炸弹或1×MK12鱼雷\n无属性加成。\n对地攻击时，每5回合投掷一轮炸弹，每颗炸弹伤害为0.5倍攻击力\n对舰攻击时，每5回合投掷5枚鱼雷。且同时进行炸弹攻击。"
 	},
 	"tbf": {
 		"cls": "equips",
 		"name": "TBF复仇者",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "主武器：2×12.7mm机枪和1×12.7mm自卫机枪。挂载：4×500磅炸弹或1×MK13鱼雷\n属性：攻击+n，雷击+n%。对地攻击时，每4回合投掷炸弹，每颗炸弹伤害为1倍攻击力。对舰攻击时，每4回合投放10枚鱼雷。\n被动：\n巨舰猎手：攻击重巡或战列舰时，鱼雷伤害增加100%\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n哑弹：发射的鱼雷不会爆炸。"
 	},
 	"a26": {
 		"cls": "equips",
 		"name": "B26入侵者",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "自卫武器：7×12.7mm自卫机枪。挂载：4×1000磅炸弹或1×MK13鱼雷\n每5回合投弹，每颗炸弹伤害为2倍攻击力。对舰攻击时改为投放5枚鱼雷。\n被动：\n补给困境：投放炸弹后，敌人攻击力减少20%。\n哑弹：发射的鱼雷不会爆炸。"
 	},
 	"sterling": {
 		"cls": "equips",
 		"name": "斯特林MK1",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "废稿"
 	},
 	"b17": {
 		"cls": "equips",
 		"name": "B17空中堡垒",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "自卫武器：9×12.7和2×7.62mm机枪。挂载：12×500磅炸弹\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，敌人血量减少30%，且战后主角周围8格内敌方陆军血量减少20%，可叠加。\n飞行混凝土：遭遇战斗机和高射炮攻击时，减免20%伤害，且反弹敌方战斗机10%伤害。"
 	},
 	"b24": {
 		"cls": "equips",
 		"name": "B24解放者",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "自卫武器：5×12.7mm机枪。挂载：12×500磅炸弹。\n被动:\n战略轰炸：无法对舰攻击。对地攻击时，敌方血量减少20%，且战后主角周围8格陆军血量减少10%，可叠加。\n反潜巡逻：对潜艇攻击时，抢先投放深水炸弹，造成5倍攻击力的伤害"
 	},
 	"lancaster": {
 		"cls": "items",
 		"name": "兰开斯特轰炸机",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "自卫武器：8×7.7mm机枪。挂载：14×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，减少敌人40%血量，且战后主角周围8格内陆军血量减少20%，可叠加。\n特别行动：该飞机可挂载特定的超重型炸弹。"
 	},
 	"b29": {
 		"cls": "equips",
 		"name": "B29超级空中堡垒",
 		"canUseItemEffect": "true",
-		"text": "攻＋250.挂载：20×250磅炸弹.\n每10回合投掷1轮炸弹，每颗炸弹伤害为1倍攻击力。\n被动：战略轰炸——减免80%高射炮伤害，自身炸弹伤害减少70%。无法在海上发挥任何战力。\n     ？？？——涉及最高级军事机密，无法查看该技能详情。"
+		"text": "自卫武器：12×12.7mm机枪。挂载：18×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，减少敌人50%血量，且战后主角周围8格内陆军血量减少30%，可叠加。\n平流层：敌人的防空技能失效，敌人的普通战斗机伤害减少50%。\n末日降临：该机可以挂载核武器。"
 	},
 	"tea": {
 		"cls": "tools",
@@ -1250,9 +1324,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "大金块",
 		"canUseItemEffect": "true",
-		"text": "，黄金+500",
-		"itemEffectTip": "，黄金+500",
-		"itemEffect": "core.status.hero.money += 500;"
+		"text": "，黄金+1000",
+		"itemEffectTip": "，黄金+1000",
+		"itemEffect": "core.status.hero.money += 1000;"
 	},
 	"red2Gem": {
 		"cls": "items",
@@ -1411,7 +1485,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"equip": {
 			"type": 4,
 			"value": {
-				"atk": 35
+				"atk": 30
 			},
 			"percentage": {}
 		}
@@ -1419,7 +1493,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"baltimore": {
 		"cls": "equips",
 		"name": "重巡·巴尔的摩号",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "攻+n后额外加m%。闪避数+1。\n被动：\n对空防御：与敌机作战时，获得30%减伤。\n优质护航：装备主力舰时，战前对敌方轻巡和驱逐舰减少20%血量。"
 	},
 	"hard1": {
 		"cls": "constants",

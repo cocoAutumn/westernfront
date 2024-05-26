@@ -148,7 +148,16 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT138",
 			"MT139",
 			"MT140",
-			"MT141"
+			"MT141",
+			"MT142",
+			"MT143",
+			"MT144",
+			"MT145",
+			"MT146",
+			"MT147",
+			"MT148",
+			"MT149",
+			"MT150"
 		],
 		"floorPartitions": [
 			[
@@ -234,6 +243,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT135",
 				"MT141"
+			],
+			[
+				"MT142",
+				"MT148"
 			]
 		],
 		"images": [
@@ -268,6 +281,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"chapter2.jpg",
 			"chapter3.jpg",
 			"chapter4.jpg",
+			"chapter5.jpg",
 			"classe.jpg",
 			"classj.jpg",
 			"classv.jpg",
@@ -374,6 +388,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"uboat.png",
 			"valentine.jpg",
 			"veneto.jpg",
+			"warmachine.jpg",
 			"warspite.jpg",
 			"win.png",
 			"winskin.png",
@@ -388,7 +403,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"004-Mountain01.png",
 			"006-Desert01.png",
 			"Egito.png",
-			"vxmota.png"
+			"vxmota.png",
+			"Holy.png"
 		],
 		"animates": [
 			"aim",
@@ -2124,7 +2140,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "飓风MK2C战斗机（1200）",
+						"text": "飓风MK2C战斗机（900/1200）",
 						"need": "true",
 						"icon": "hurricanemk2",
 						"condition": "!core.hasEquip('hurricanemk2')&&!core.hasItem('hurricanemk2')",
@@ -2140,28 +2156,85 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "确定购买？",
 								"yes": [
 									{
-										"type": "if",
-										"condition": "(status:money>=1200)",
-										"true": [
+										"type": "choices",
+										"text": "你可以从以下两种购买方案中选择一种",
+										"choices": [
 											{
-												"type": "playSound",
-												"name": "fighter1.mp3"
+												"text": "替换手中的“飓风MK1型”（900）",
+												"icon": "hurricanemk1",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:hurricanemk1>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=900)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "fighter1.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "900"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:hurricanemk1",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:hurricanemk2",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
 											},
 											{
-												"type": "setValue",
-												"name": "status:money",
-												"operator": "-=",
-												"value": "1200"
-											},
-											{
-												"type": "setValue",
-												"name": "item:hurricanemk2",
-												"operator": "+=",
-												"value": "1"
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=1200)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "fighter1.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "1200"
+															},
+															{
+																"type": "setValue",
+																"name": "item:hurricanemk2",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
 											}
-										],
-										"false": [
-											"大炮一响，黄金万两。再多去赚点钱吧！"
 										]
 									}
 								],
@@ -2403,6 +2476,350 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 											{
 												"type": "setValue",
 												"name": "flag:skill10learned",
+												"value": "true"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "shop4",
+				"text": "\t[1942级商店（上半）]请选择购买项",
+				"textInList": "1942级商店（上半）",
+				"mustEnable": true,
+				"disablePreview": true,
+				"choices": [
+					{
+						"text": "M3格兰特中型坦克（2200）",
+						"need": "true",
+						"icon": "m3grant",
+						"condition": "!core.hasEquip('m3grant')&&!core.hasItem('m3grant')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[m3grant.jpg,170,50]M3中型坦克是二战初期美军使用的中型坦克，被大量出口租给英国使用，英军为其取名为“格兰特”(Grant)或“李”(Lee)式。这种坦克的设计比较奇怪，头顶一门37毫米炮塔，车体右侧被硬生生塞了一门固定的75毫米炮，简直像是坦克和歼击车的合体。这样的设计缺陷也很明显，除了车体过大容易挨揍之外，一旦75毫米炮无法击穿敌人，那么M3中型坦克就彻底成了待宰羔羊。",
+							"\f[m3grant.jpg,170,50]攻+150后额外加10%，穿65，装75。\n被动技能：\n压制：敌方地面部队无法击穿我方装甲时，受到伤害额外减少20%。\n笨重：被敌人单向击穿时，敌人额外先攻10回合。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:m3grant",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "马蒂尔达步兵坦克（1800）",
+						"need": "true",
+						"icon": "matilda",
+						"condition": "!core.hasEquip('matilda')&&!core.hasItem('matilda')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[matilda.jpg,170,50]马蒂尔达坦克在二战爆发时就已经在英军当中服役了。这种坦克的定位是步兵坦克，装甲厚，速度慢，可靠性好，其75毫米的重型装甲在战争初期是绝对防护，只有88毫米高射炮才能击穿。不过，落后的设计思路注定了马蒂尔达很快被淘汰的命运——马蒂尔达1型的武器只有机枪，2型装备的2磅炮随着战争的发展也明显不够用，而且组建工程费时费力。1942年以后，最后一批订单下达，马蒂尔达坦克开始逐渐退出一线。",
+							"\f[matilda.jpg,170,50]装备属性：攻+50，穿50，装75。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=1800)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "1800"
+											},
+											{
+												"type": "setValue",
+												"name": "item:matilda",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "谢菲尔德号轻巡洋舰（2500）",
+						"need": "true",
+						"icon": "sheffield",
+						"condition": "!core.hasEquip('sheffield')&&!core.hasItem('sheffield')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[sheffield.jpg,170,50]谢菲尔德号巡洋舰隶属于南安普顿级。武器配置为4门三联装152mm火炮，4门102mm两用炮，14挺防空机枪和6条鱼雷发射管。谢菲尔德号参与了英军的多次海上行动。1942年底，谢菲尔德号护航的JW51船队在巴伦支海遭遇德国海军袭击，谢菲尔德号在不利情况下奋勇反击，并击伤“希佩尔”号重巡洋舰，击沉Z-16号驱逐舰。谢菲尔德号存活到了战后，于1967年拆毁，但船钟和军旗至今被保存在谢菲尔德大教堂。",
+							"\f[sheffield.jpg,170,50]装备属性：攻+250后增加10%，雷击+1000，鱼雷管+2。\n被动：\n巴伦支海传奇：攻击轻巡和驱逐舰时，减少对手30%的雷击值并转化为首回合对其造成的额外伤害\n警戒：战斗开始时，我方额外普攻一回合",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:sheffield",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "突击者号航空母舰（4000）",
+						"need": "true",
+						"icon": "raider",
+						"condition": "!core.hasEquip('raider')&&!core.hasItem('raider')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[raider.jpg,170,50]CV-4“突击者”号（又名“游骑兵”号）航空母舰是二战初期美国大西洋舰队里唯一的大型航空母舰，整场战争中都在大西洋战场，没有参与太平洋战争。与同时期与日本海军厮杀的一众美军航母相比，突击者号的战绩并不突出，仅获得2枚战斗之星。该舰于1934年服役，配备了8门127毫米炮和40挺防空机枪，最多可搭载86架飞机。1944年，突击者号转为训练舰，并存活至战争结束，1947年拆解。",
+							"\f[raider.jpg,170,50]舰载机：F4F-3野猫战斗机、SBD-3无畏式轰炸机、TBD蹂躏者鱼雷机，闪避鱼雷数-2\n被动：\n航弹强化：此航母的俯冲轰炸机造成的炸弹伤害提升40%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=4000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "4000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:raider",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "“英俊战士”重型战斗机（3000）",
+						"need": "true",
+						"icon": "beautifighter",
+						"condition": "!core.hasEquip('beautifighter')&&!core.hasItem('beautifighter')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[beautifighter.jpg,170,50]英国布里斯托尔公司研发的“英俊战士”重型战斗机于1940年开始服役。“英俊战士”的设计思路十分前卫，除了担任战斗机以外，这款飞机还存在很大的改进空间，可以被改造成为侦察机和鱼雷攻击机。该机从1940年一直服役到战争结束，其配备的基础武器：6挺7.7mm机枪和4门20mm机炮可以轻松解决任何一架轰炸机，机载雷达可以使其在夜间仍有不错的战斗力，鱼雷机改型也在战争中击沉过上百艘敌方船只。",
+							"\f[beautifighter.jpg,170,50]装备属性：攻击+300。挂载：8×RP-3火箭弹。攻击轰炸机时增伤30%。\n攻击非空军敌人时率先发射1轮火箭弹，每发火箭弹的伤害为0.2倍攻击力。\n被动：\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:beautifighter",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "B25“米切尔”中型轰炸机（2500）",
+						"need": "true",
+						"icon": "b25",
+						"condition": "!core.hasEquip('b25')&&!core.hasItem('b25')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[b25.jpg,170,50]美国B25“米切尔”轰炸机于1941年开始服役，是二战中最优秀的中型轰炸机之一。B25浑身上下布满自卫机枪来驱赶妄图击落他们的敌机，弹舱可以容纳最多1361kg（3000磅）炸弹，还可以改造为对地攻击机。珍珠港事件发生后，为了报复日本无耻的侵略行为，美军杜立特中将把16架改装后的B25放上“大黄蜂”号航空母舰，在日本近海放飞，空袭东京后飞往中国迫降。直接把炸弹扔到敌人老家，对两国军民而言十分大快人心，B25因此一战成名。",
+							"\f[b25.jpg,170,50]装备属性：攻击+50。挂载：3×1000磅炸弹。\n每5回合投弹，每颗炸弹伤害为2倍攻击力。\n被动：\n杜立特传奇：我方装备有航空母舰时，投掷炸弹时额外再投一轮。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "bomber1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:b25",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "工业潜能（1000）",
+						"need": "true",
+						"icon": "skill1",
+						"condition": "flags.warmachine!=true",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[warmachine.jpg,170,50]二战爆发前，美国具有极其恐怖的工业潜能，在和平状态下，工业产值就占了世界总量的30%。整场战争期间，美国光是底特律的克莱斯勒工厂，就生产了四万辆坦克，飞机30万架，各类汽车238万辆，25万门自行火炮，石油生产占世界70%。在战争结束时，美国光是大小各型航空母舰就有147艘，这还是去掉了被击沉的那些。所以日本海军大将山本五十六才认为，与美国的作战必须速战速决，只可惜他们没做到。",
+							"\f[warmachine.jpg,170,50]购买该项后，主角战后获得的黄金翻倍",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=1000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "technology.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "1000"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:warmachine",
 												"value": "true"
 											}
 										],

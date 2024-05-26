@@ -509,6 +509,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"596": {"cls":"npcs","id":"N596"},
 	"597": {"cls":"npcs","id":"N597"},
 	"598": {"cls":"npcs","id":"N598"},
+	"599": {"cls":"npcs","id":"N599"},
 	"20104": {"cls":"tileset","id":"X20104","canPass":true},
 	"20105": {"cls":"tileset","id":"X20105","canPass":true},
 	"20107": {"cls":"tileset","id":"X20107","canPass":true},
