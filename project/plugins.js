@@ -1499,7 +1499,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				}
 				if (core.flags.displayCritical) {
 					var info = core.getEnemyInfo(block.event.id, hero, x, y, floorId);
-					var critical = info.hp > hero.atk ? Math.ceil(info.hp / (Math.ceil(info.hp / hero.atk) - 1)) - hero.atk : 0;
+					var critical = core.plugin.getCritical(block.event.id, hero, x, y, floorId);
 					var turn = core.getDamageInfo(block.event.id, core.status.hero, x, y, floorId)?.turn;
 					core.status.damage.data.push({ text: critical, px: 32 * x + 1, py: 32 * (y + 1) - 11, color: '#FFFFFF' });
 					core.status.damage.data.push({ text: turn, px: 32 * x + 1, py: 32 * (y + 1) - 21, color: '#FFFFFF' });
@@ -1507,8 +1507,15 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			}
 		});
 	}
-
-
+	this.getCritical = function (enemyId, hero, x, y, floorId) {
+		var info = core.getDamageInfo(enemyId, core.status.hero, x, y, floorId);
+		if (info == null || info.damage <= 0) return 0;
+		for (var i = 0; ++i < 1000;) {
+			var newInfo = core.getDamageInfo(enemyId, {'atk': core.status.hero.atk + i}, x, y, floorId);
+			if (newInfo != null && newInfo.turn < info.turn) break;
+		}
+		return i;
+	}
 },
     "multiHeros": function () {
 		// 多角色插件

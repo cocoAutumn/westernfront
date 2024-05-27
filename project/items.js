@@ -500,9 +500,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true"
 	},
 	"I335": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
+		"cls": "constants",
+		"name": "任务提示",
+		"canUseItemEffect": "true",
+		"text": "查看本区的三个任务目标",
+		"useItemEffect": "(function () {\n\tvar i = core.floorIds.indexOf(core.status.floorId);\n\twhile (i > 0) {\n\t\tvar s = JSON.stringify(core.floors[core.floorIds[i]].firstArrive);\n\t\tvar a = /\\\"\\\\t\\[任务目标\\]⭐(.+)\\\\n⭐(.+)\\\\n⭐(.+?)\\\"/.exec(s);\n\t\tif (Array.isArray(a) && a.length >= 3) {\n\t\t\tcore.drawText('\\t[任务目标]⭐' + a[1] + '\\n⭐' + a[2] + '\\n⭐' + a[3]);\n\t\t\tbreak;\n\t\t}\n\t\t--i;\n\t}\n})()"
 	},
 	"I336": {
 		"cls": "items",

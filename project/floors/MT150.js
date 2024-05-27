@@ -13,7 +13,22 @@ main.floors.MT150=
     "ratio": 1,
     "defaultGround": "ground6",
     "bgm": "cao6.mp3",
-    "firstArrive": [],
+    "firstArrive": [
+        {
+            "type": "setHeroOpacity",
+            "opacity": 1
+        },
+        {
+            "type": "showStatusBar"
+        },
+        {
+            "type": "update"
+        },
+        {
+            "type": "setCurtain",
+            "time": 500
+        }
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
