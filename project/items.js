@@ -22,16 +22,17 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "红宝石",
 		"text": ",攻击+1",
-		"itemEffect": "core.status.hero.atk += 1;",
+		"itemEffect": "core.status.hero.atk += 1;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}",
 		"itemEffectTip": "，攻击+1",
-		"useItemEffect": "core.status.hero.atk += 1;",
-		"canUseItemEffect": "true"
+		"useItemEffect": "core.status.hero.atk += 1;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}",
+		"canUseItemEffect": "true",
+		"useItemEvent": []
 	},
 	"blueGem": {
 		"cls": "items",
 		"name": "蓝宝石",
 		"text": "，指挥点数+10",
-		"itemEffect": "core.status.hero.mana += 10;",
+		"itemEffect": "core.status.hero.mana += 10;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('manaup');\n}",
 		"itemEffectTip": "，指挥点+10",
 		"useItemEffect": "core.status.hero.mana += 10;",
 		"canUseItemEffect": "true"
@@ -40,7 +41,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "绿宝石",
 		"text": "，后勤+5",
-		"itemEffect": "core.status.hero.mdef += core.values.greenGem * core.status.thisMap.ratio",
+		"itemEffect": "core.status.hero.mdef += core.values.greenGem * core.status.thisMap.ratio\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('mdefup');\n}",
 		"itemEffectTip": "，后勤+${core.values.greenGem * core.status.thisMap.ratio}",
 		"useItemEffect": "core.status.hero.mdef += core.values.greenGem",
 		"canUseItemEffect": "true"
@@ -557,7 +558,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，增加5雷击",
 		"itemEffectTip": "，增加5雷击",
-		"itemEffect": "core.status.hero.top += 5;"
+		"itemEffect": "core.status.hero.top += 5;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('topup');\n}"
 	},
 	"pinkGem": {
 		"cls": "items",
@@ -578,7 +579,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"name": "xinxinbazhe.mp3"
 			}
 		],
-		"itemEffect": "core.status.hero.hpmax += 50;\ncore.status.hero.hp += 50;\ncore.status.hero.mana += 10;\ncore.status.hero.atk += 1;\ncore.status.hero.top += 5;\ncore.status.hero.mdef += 5;"
+		"itemEffect": "core.status.hero.hpmax += 50;\ncore.status.hero.hp += 50;\ncore.status.hero.mana += 10;\ncore.status.hero.atk += 1;\ncore.status.hero.top += 5;\ncore.status.hero.mdef += 5;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}"
 	},
 	"ft17": {
 		"cls": "equips",
@@ -1335,7 +1336,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "2阶红宝石",
 		"canUseItemEffect": "true",
 		"text": ",攻击+2",
-		"itemEffect": "core.status.hero.atk += 2;",
+		"itemEffect": "core.status.hero.atk += 2;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}",
 		"itemEffectTip": "，攻击+2",
 		"useItemEffect": "core.status.hero.atk += 2;"
 	},
@@ -1345,7 +1346,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": ",攻击+5",
 		"itemEffectTip": ",攻击+5",
-		"itemEffect": "core.status.hero.atk += 5;"
+		"itemEffect": "core.status.hero.atk += 5;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}"
 	},
 	"red4Gem": {
 		"cls": "items",
@@ -1353,7 +1354,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": ",攻击+10",
 		"itemEffectTip": ",攻击+10",
-		"itemEffect": "core.status.hero.atk += 10;"
+		"itemEffect": "core.status.hero.atk += 10;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}"
 	},
 	"red5Gem": {
 		"cls": "items",
@@ -1364,7 +1365,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "2阶蓝宝石",
 		"canUseItemEffect": "true",
-		"itemEffect": "core.status.hero.mana += 20;",
+		"itemEffect": "core.status.hero.mana += 20;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('manaup');\n}",
 		"text": "，指挥点数+20",
 		"itemEffectTip": "，指挥点+20",
 		"useItemEffect": "core.status.hero.mana += 20;"
@@ -1375,7 +1376,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+50",
 		"itemEffectTip": "，指挥点数+50",
-		"itemEffect": "core.status.hero.mana += 50;"
+		"itemEffect": "core.status.hero.mana += 50;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"blue4Gem": {
 		"cls": "items",
@@ -1383,7 +1384,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+100",
 		"itemEffectTip": "，指挥点数+100",
-		"itemEffect": "core.status.hero.mana += 100;"
+		"itemEffect": "core.status.hero.mana += 100;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"blue5Gem": {
 		"cls": "items",
@@ -1394,7 +1395,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "2阶绿宝石",
 		"canUseItemEffect": "true",
-		"itemEffect": "core.status.hero.mdef += 10;",
+		"itemEffect": "core.status.hero.mdef += 10;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('mdefup');\n}",
 		"text": "，后勤+10",
 		"itemEffectTip": "，后勤+10",
 		"useItemEffect": "core.status.hero.mdef += 10;"
@@ -1405,7 +1406,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，后勤+20",
 		"itemEffectTip": "，后勤+20",
-		"itemEffect": "core.status.hero.mdef += 20;"
+		"itemEffect": "core.status.hero.mdef += 20;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('mdefup');\n}"
 	},
 	"green4Gem": {
 		"cls": "items",
@@ -1413,7 +1414,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，后勤+50",
 		"itemEffectTip": "，后勤+50",
-		"itemEffect": "core.status.hero.mdef += 50;"
+		"itemEffect": "core.status.hero.mdef += 50;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('mdefup');\n}"
 	},
 	"green5Gem": {
 		"cls": "items",
@@ -1426,7 +1427,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": ",血量及血限+100",
 		"itemEffectTip": ",血量及血限+100",
-		"itemEffect": "core.status.hero.hpmax += 100;\ncore.status.hero.hp += 100;",
+		"itemEffect": "core.status.hero.hpmax += 100;\ncore.status.hero.hp += 100;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('hpmaxup');\n}",
 		"useItemEffect": "core.status.hero.hpmax += 100;\ncore.status.hero.hp += 100;"
 	},
 	"yellow3Gem": {
@@ -1435,7 +1436,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": ",血量及血限+500",
 		"itemEffectTip": ",血量及血限+500",
-		"itemEffect": "core.status.hero.hpmax += 500;\ncore.status.hero.hp += 500;"
+		"itemEffect": "core.status.hero.hpmax += 500;\ncore.status.hero.hp += 500;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('hpmaxup');\n}"
 	},
 	"yellow4Gem": {
 		"cls": "items",
@@ -1443,7 +1444,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": ",血量及血限+1000",
 		"itemEffectTip": ",血量及血限+1000",
-		"itemEffect": "core.status.hero.hpmax += 1000;\ncore.status.hero.hp += 1000;"
+		"itemEffect": "core.status.hero.hpmax += 1000;\ncore.status.hero.hp += 1000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('hpmaxup');\n}"
 	},
 	"yellow5Gem": {
 		"cls": "items",
@@ -1456,14 +1457,14 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，增加10雷击",
 		"itemEffectTip": "，增加10雷击",
-		"itemEffect": "core.status.hero.top += 10;"
+		"itemEffect": "core.status.hero.top += 10;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('topup');\n}"
 	},
 	"orange3Gem": {
 		"cls": "items",
 		"name": "3阶橙宝石",
 		"canUseItemEffect": "true",
 		"text": "，增加50雷击",
-		"itemEffect": "core.status.hero.top += 50;",
+		"itemEffect": "core.status.hero.top += 50;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('topup');\n}",
 		"itemEffectTip": "，增加50雷击"
 	},
 	"orange4Gem": {
@@ -1472,7 +1473,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，增加200雷击",
 		"itemEffectTip": "，增加200雷击",
-		"itemEffect": "core.status.hero.top += 200;"
+		"itemEffect": "core.status.hero.top += 200;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('topup');\n}"
 	},
 	"orange5Gem": {
 		"cls": "items",
@@ -1570,7 +1571,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，全属性提升",
 		"itemEffectTip": "，全属性提升",
-		"itemEffect": "core.status.hero.hpmax += 100;\ncore.status.hero.hp += 100;\ncore.status.hero.mana += 20;\ncore.status.hero.atk += 2;\ncore.status.hero.top += 10;\ncore.status.hero.mdef += 10;",
+		"itemEffect": "core.status.hero.hpmax += 100;\ncore.status.hero.hp += 100;\ncore.status.hero.mana += 20;\ncore.status.hero.atk += 2;\ncore.status.hero.top += 10;\ncore.status.hero.mdef += 10;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}",
 		"useItemEvent": [
 			{
 				"type": "playSound",
@@ -1633,7 +1634,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"name": "xinxinbazhe.mp3"
 			}
 		],
-		"itemEffect": "core.status.hero.hpmax += 500;\ncore.status.hero.hp += 500;\ncore.status.hero.mana += 50;\ncore.status.hero.atk += 5;\ncore.status.hero.top += 50;\ncore.status.hero.mdef += 20;"
+		"itemEffect": "core.status.hero.hpmax += 500;\ncore.status.hero.hp += 500;\ncore.status.hero.mana += 50;\ncore.status.hero.atk += 5;\ncore.status.hero.top += 50;\ncore.status.hero.mdef += 20;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}"
 	},
 	"tea5": {
 		"cls": "items",
@@ -1642,5 +1643,67 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "，获得5个下午茶",
 		"itemEffectTip": "，获得5个下午茶",
 		"itemEffect": "core.addItem('tea', 5)"
+	},
+	"I600": {
+		"cls": "constants",
+		"name": "额外设置",
+		"canUseItemEffect": "true",
+		"text": "进行一些额外的设置",
+		"useItemEvent": [
+			{
+				"type": "choices",
+				"text": "选择设置项",
+				"choices": [
+					{
+						"text": "临界显示（开）",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "flag:cri",
+								"value": "true"
+							}
+						]
+					},
+					{
+						"text": "临界显示（关）",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "flag:cri",
+								"value": "false"
+							}
+						]
+					},
+					{
+						"text": "捡宝石动画（开）",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "flag:anime",
+								"value": "true"
+							}
+						]
+					},
+					{
+						"text": "捡宝石动画（关）",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "flag:anime",
+								"value": "false"
+							}
+						]
+					},
+					{
+						"text": "自动拾取（不捡血瓶）（开）",
+						"action": []
+					},
+					{
+						"text": "自动拾取（不捡血瓶）（关）",
+						"action": []
+					}
+				]
+			}
+		]
 	}
 }

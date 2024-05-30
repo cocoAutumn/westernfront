@@ -66,12 +66,12 @@ main.floors.MT150=
                             },
                             {
                                 "type": "changeFloor",
-                                "floorId": "MT144",
+                                "floorId": "MT151",
                                 "loc": [
-                                    14,
+                                    0,
                                     7
                                 ],
-                                "direction": "left"
+                                "direction": "right"
                             }
                         ]
                     }
@@ -79,11 +79,83 @@ main.floors.MT150=
             }
         ],
         "2,7": [
-            "\t[海军参谋,N515]长官，地中海舰队准备就绪！",
+            "\t[海军参谋,N515]长官，所有军舰待命中！",
             {
                 "type": "choices",
                 "text": "\t[海军参谋,N515]请选择出战海军舰艇",
                 "choices": [
+                    {
+                        "text": "装备 E级驱逐舰",
+                        "icon": "classe",
+                        "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
+                        "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "classe"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 V级驱逐舰",
+                        "icon": "classv",
+                        "need": "core.hasItem('classv')&&!core.hasEquip('classv')",
+                        "condition": "core.hasItem('classv')&&!core.hasEquip('classv')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "classv"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 马汉级驱逐舰",
+                        "icon": "mahan",
+                        "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
+                        "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "mahan"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 本森级驱逐舰",
+                        "icon": "benson",
+                        "need": "core.hasItem('benson')&&!core.hasEquip('benson')",
+                        "condition": "core.hasItem('benson')&&!core.hasEquip('benson')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "benson"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 爱丁堡号轻巡洋舰",
+                        "icon": "edinburgh",
+                        "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
+                        "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "edinburgh"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 谢菲尔德号轻巡洋舰",
+                        "icon": "sheffield",
+                        "need": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
+                        "condition": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "sheffield"
+                            }
+                        ]
+                    },
                     {
                         "text": "装备 诺福克号重巡洋舰",
                         "icon": "norfolk",
@@ -97,6 +169,18 @@ main.floors.MT150=
                         ]
                     },
                     {
+                        "text": "装备 厌战号战列舰",
+                        "icon": "warspite",
+                        "need": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
+                        "condition": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "warspite"
+                            }
+                        ]
+                    },
+                    {
                         "text": "装备 鹰号航空母舰",
                         "icon": "eagle",
                         "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
@@ -105,6 +189,27 @@ main.floors.MT150=
                             {
                                 "type": "loadEquip",
                                 "id": "eagle"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 突击者号航空母舰",
+                        "icon": "raider",
+                        "need": "core.hasItem('raider')&&!core.hasEquip('raider')",
+                        "condition": "core.hasItem('raider')&&!core.hasEquip('raider')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "raider"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前驱逐舰",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 1
                             }
                         ]
                     },
@@ -292,6 +397,13 @@ main.floors.MT150=
                     }
                 ]
             }
+        ],
+        "5,1": [
+            {
+                "type": "playSound",
+                "name": "xinxinmagic.mp3"
+            },
+            "\t[系统提示]当前区域敌人特点：大量潜艇和意大利军舰，存在少量大型军舰，有空军。\n推荐携带技能：防空弹幕、空战王牌、烟幕、Z字规避、扫雷、剑鱼818中队、破译。\n推荐出战装备：V级驱逐舰、诺福克号重巡洋舰、厌战号战列舰、F4F野猫、SBD无畏、剑鱼式鱼雷机"
         ]
     },
     "changeFloor": {},

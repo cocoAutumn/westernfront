@@ -420,6 +420,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				{ "type": "setValue", "name": "flag:空中打击", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[flag:空中打击]?.type)&&!core.material.enemys[flag:空中打击]?.notBomb", "true": [{ "type": "playSound", "name": "bomber3.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft2.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标地点不是坦克或属于boss单位，无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "200" }, { "type": "setValue", "name": "flag:空中打击", "value": "null" }] }
 			];
 		}
+		if (id === 12) {
+			name = '从海底出击';
+			cost = 100;
+			description = '下一场战斗中，派遣一艘潜艇支援：在战斗开始时发射6枚鱼雷，随后潜艇撤退'
+		}
 		return {
 			'strategy': strategy,
 			'name': name,
@@ -1499,10 +1504,12 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				}
 				if (core.flags.displayCritical) {
 					var info = core.getEnemyInfo(block.event.id, hero, x, y, floorId);
-					var critical = core.plugin.getCritical(block.event.id, hero, x, y, floorId);
+					if (flags.cri === true) {
+						var critical = core.plugin.getCritical(block.event.id, hero, x, y, floorId);
+						core.status.damage.data.push({ text: critical, px: 32 * x + 1, py: 32 * (y + 1) - 21, color: '#FFFFFF' });
+					}
 					var turn = core.getDamageInfo(block.event.id, core.status.hero, x, y, floorId)?.turn;
-					core.status.damage.data.push({ text: critical, px: 32 * x + 1, py: 32 * (y + 1) - 11, color: '#FFFFFF' });
-					core.status.damage.data.push({ text: turn, px: 32 * x + 1, py: 32 * (y + 1) - 21, color: '#FFFFFF' });
+					core.status.damage.data.push({ text: turn, px: 32 * x + 1, py: 32 * (y + 1) - 11, color: '#FFFFFF' });
 				}
 			}
 		});
@@ -1511,7 +1518,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		var info = core.getDamageInfo(enemyId, core.status.hero, x, y, floorId);
 		if (info == null || info.damage <= 0) return 0;
 		for (var i = 0; ++i < 1000;) {
-			var newInfo = core.getDamageInfo(enemyId, {'atk': core.status.hero.atk + i}, x, y, floorId);
+			var newInfo = core.getDamageInfo(enemyId, { 'atk': core.status.hero.atk + i }, x, y, floorId);
 			if (newInfo != null && newInfo.turn < info.turn) break;
 		}
 		return i;

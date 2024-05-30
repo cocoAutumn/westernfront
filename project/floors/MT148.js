@@ -277,6 +277,11 @@ main.floors.MT148=
                 "value": "23"
             },
             {
+                "type": "setValue",
+                "name": "flag:dry",
+                "value": "false"
+            },
+            {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
                 "yes": [

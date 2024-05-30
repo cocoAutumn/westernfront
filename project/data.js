@@ -418,15 +418,20 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		],
 		"animates": [
 			"aim",
+			"allup",
+			"atkup",
 			"bigexplore",
 			"explore",
 			"fire",
 			"hand",
 			"heal",
 			"hpfull",
+			"hpmaxup",
 			"irritable",
 			"jianji",
 			"jianji2",
+			"manaup",
+			"mdefup",
 			"question",
 			"repair",
 			"shoot",
@@ -434,6 +439,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"sniper",
 			"sword",
 			"thunder",
+			"topup",
 			"turnevil",
 			"vehicleexplore",
 			"wolfknife",
@@ -1225,7 +1231,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"希特勒上台后，德国的国力恢复迅速，人民的生活也好了起来。但最重要的是，他公开违反《凡尔赛条约》，大力重整军备。而我们的政府却只是表示强烈反对，所有的措施都停留在了纸面上。",
 			"希特勒几乎毫无顾忌的发展壮大，吞并捷克斯洛伐克和奥地利，我们的政府却依旧选择了听之任之，也不知道他们的脑袋里装的都是些什么东西。对了，刚才那句话马上给我忘掉，明白吗？",
 			"德国再这样发展下去的后果将是致命性的。刚被他们瓜分成两半的波兰就给我们很好的上了一课。恐怕用不了多久，战火就会烧向我们。",
-			"在那之前，我们必须做好一切战争准备。闲聊到此为止，指挥官阁下，我们将马上为你安排训练课程。希望你尽快熟悉军营环境，我们恐怕没有太多时间了。"
+			"在那之前，我们必须做好一切战争准备。闲聊到此为止，指挥官阁下，我们将马上为你安排训练课程。希望你尽快熟悉军营环境，我们恐怕没有太多时间了。",
+			{
+				"type": "setValue",
+				"name": "flag:anime",
+				"value": "true"
+			}
 		],
 		"shops": [
 			{
