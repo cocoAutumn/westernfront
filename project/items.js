@@ -1656,6 +1656,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"choices": [
 					{
 						"text": "临界显示（开）",
+						"condition": "flags.cri===false",
 						"action": [
 							{
 								"type": "setValue",
@@ -1666,6 +1667,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 					},
 					{
 						"text": "临界显示（关）",
+						"condition": "flags.cri===true",
 						"action": [
 							{
 								"type": "setValue",
@@ -1676,6 +1678,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 					},
 					{
 						"text": "捡宝石动画（开）",
+						"condition": "flags.anime===false",
 						"action": [
 							{
 								"type": "setValue",
@@ -1686,6 +1689,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 					},
 					{
 						"text": "捡宝石动画（关）",
+						"condition": "flags.anime===true",
 						"action": [
 							{
 								"type": "setValue",
@@ -1695,11 +1699,37 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 						]
 					},
 					{
+						"text": "战后音效（开）",
+						"condition": "flags.closesound===true",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "flag:closesound",
+								"value": "false"
+							}
+						]
+					},
+					{
+						"text": "战后音效（关）",
+						"condition": "flags.closesound!==true",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "flag:closesound",
+								"value": "true"
+							}
+						]
+					},
+					{
 						"text": "自动拾取（不捡血瓶）（开）",
 						"action": []
 					},
 					{
 						"text": "自动拾取（不捡血瓶）（关）",
+						"action": []
+					},
+					{
+						"text": "返回",
 						"action": []
 					}
 				]

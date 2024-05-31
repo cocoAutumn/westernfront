@@ -16,7 +16,25 @@ main.floors.MT154=
     "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
+    "events": {
+        "7,1": [
+            {
+                "type": "playSound",
+                "name": "technology.mp3"
+            },
+            {
+                "type": "function",
+                "function": "function(){\nflags.learned[12]=true\n}"
+            },
+            "\t[系统提示]习得新技能：从海底出击",
+            "\t[系统提示]\f[skill12.jpg,170,50]从海底出击（100指挥点）：下一场与敌方海军战斗中，我方潜艇加入战斗，在战斗开始时抢先发射6枚鱼雷，随后潜艇撤退（战术技能）。",
+            "\t[历史来源]\f[skill12.jpg,170,50]潜艇作战不是德军的专项，其他拥有海军的国家大多也有自己的潜艇。德军潜艇出名很大程度上是因为它们是德军破坏盟军运输线的MVP，而盟军对于海上运输线的打击则被远程轰炸机分担了不少，潜艇的亮点都在狩猎大型军舰上。而德军恰好没多少大型战舰，所以大西洋上的盟军潜艇自然是没什么耀眼战果。但地球另一端的日本海军则有不少大型战舰殒命于美军潜艇的鱼雷下，包括初航17个小时就被击沉的信浓号航空母舰。",
+            {
+                "type": "hide",
+                "remove": true
+            }
+        ]
+    },
     "changeFloor": {
         "0,7": {
             "floorId": "MT153",
@@ -34,10 +52,84 @@ main.floors.MT154=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {},
+    "afterBattle": {
+        "6,6": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT154_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "8,6": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT154_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "6,4": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT154_7_3",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "8,4": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT154_7_3",
+                "operator": "+=",
+                "value": "1"
+            }
+        ]
+    },
     "afterGetItem": {},
     "afterOpenDoor": {},
-    "autoEvent": {},
+    "autoEvent": {
+        "7,5": {
+            "0": {
+                "condition": "flag:door_MT154_7_5==2",
+                "currentFloor": true,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    {
+                        "type": "openDoor"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT154_7_5",
+                        "operator": "=",
+                        "value": "null"
+                    }
+                ]
+            }
+        },
+        "7,3": {
+            "0": {
+                "condition": "flag:door_MT154_7_3==2",
+                "currentFloor": true,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    {
+                        "type": "openDoor"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT154_7_3",
+                        "operator": "=",
+                        "value": "null"
+                    }
+                ]
+            }
+        }
+    },
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
@@ -54,8 +146,8 @@ main.floors.MT154=
     [578,  3,  3,521, 81,  3,  3,240,  3,  3,534,534,  3, 21,360],
     [  0,  0,360,234,  0,  0,  3,533,  3,534,534, 81,  3,  3,393],
     [  3,  3,  3, 81,  3,  0,360,216,360,534,  3,234,533,532,533],
-    [518,  0,  3,  0,  3,  3,  3, 82,  3,  3,  3,  3,  3,  3, 81],
-    [518,  0,240,  0,  3,536,537,255,538,539,  3,531,531,531,216]
+    [518,531,  3,  0,  3,  3,  3, 82,  3,  3,  3,  3,  3,  3, 81],
+    [518,531,240,  0,  3,536,537,255,538,539,  3,531,531,531,216]
 ],
     "bgmap": [
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],

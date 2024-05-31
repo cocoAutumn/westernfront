@@ -137,8 +137,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('b25') && nthTurn > 0 && nthTurn % 5 === 0) { //B25米切尔
 				if (!['eagle', 'illustrious', 'raider', 'essex', 'enterprise'].some(id => core.hasEquip(id))) {
 					bombDamage += hero_atk * 12;
-				}
-			} else bombDamage += hero_atk * 6;
+				} else bombDamage += hero_atk * 6;
+			}
 			if (flags.skill === 8 && nthTurn === 5 && mon_dod < 3) { //技能8：剑鱼818中队
 				torpeodoDamage += hero_top * (3 - mon_dod);
 				mon_dod -= 2;
@@ -1515,13 +1515,18 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		});
 	}
 	this.getCritical = function (enemyId, hero, x, y, floorId) {
-		var info = core.getDamageInfo(enemyId, core.status.hero, x, y, floorId);
-		if (info == null || info.damage <= 0) return 0;
-		for (var i = 0; ++i < 1000;) {
-			var newInfo = core.getDamageInfo(enemyId, { 'atk': core.status.hero.atk + i }, x, y, floorId);
-			if (newInfo != null && newInfo.turn < info.turn) break;
-		}
-		return i;
+		var enemyInfo = core.getEnemyInfo(enemyId, hero, x, y, floorId);
+		var damageInfo = core.getDamageInfo(enemyId, core.status.hero, x, y, floorId);
+		var low = 1,
+			high = enemyInfo.hp,
+			mid;
+		do {
+			mid = Math.floor((low + high) / 2);
+			var newInfo = core.getDamageInfo(enemyId, { 'atk': core.status.hero.atk + mid }, x, y, floorId);
+			if (newInfo.turn >= damageInfo.turn) low = mid + 1;
+			else high = mid;
+		} while (low < high);
+		return low;
 	}
 },
     "multiHeros": function () {

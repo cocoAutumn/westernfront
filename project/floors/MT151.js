@@ -137,7 +137,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "u7",
             "name": "top",
-            "value": "4000",
+            "value": "10000",
             "norefresh": true
         },
         {
@@ -151,14 +151,14 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "u9",
             "name": "hp",
-            "value": "9000",
+            "value": "3000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "u9",
             "name": "top",
-            "value": "4000",
+            "value": "10000",
             "norefresh": true
         },
         {
@@ -172,182 +172,182 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd1",
             "name": "hp",
-            "value": "100",
+            "value": "650000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd1",
             "name": "atk",
-            "value": "100",
+            "value": "300",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd1",
             "name": "top",
-            "value": "100",
+            "value": "8000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd2",
             "name": "hp",
-            "value": "100",
+            "value": "70000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd2",
             "name": "atk",
-            "value": "100",
+            "value": "300",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd2",
             "name": "top",
-            "value": "100",
+            "value": "8000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd3",
             "name": "hp",
-            "value": "100",
+            "value": "80000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd3",
             "name": "atk",
-            "value": "100",
+            "value": "400",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd3",
             "name": "top",
-            "value": "100",
+            "value": "8000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd4",
             "name": "hp",
-            "value": "100",
+            "value": "80000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd4",
             "name": "atk",
-            "value": "100",
+            "value": "500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd4",
             "name": "top",
-            "value": "100",
+            "value": "8500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italycl1",
             "name": "hp",
-            "value": "100",
+            "value": "180000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italycl1",
             "name": "atk",
-            "value": "100",
+            "value": "600",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italycl1",
             "name": "top",
-            "value": "100",
+            "value": "3000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italycl2",
             "name": "hp",
-            "value": "100",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italycl2",
             "name": "atk",
-            "value": "100",
+            "value": "600",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italycl2",
             "name": "top",
-            "value": "100",
+            "value": "3000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyca1",
             "name": "hp",
-            "value": "100",
+            "value": "450000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyca1",
             "name": "atk",
-            "value": "100",
+            "value": "1000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyca1",
             "name": "top",
-            "value": "100",
+            "value": "2000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyca2",
             "name": "hp",
-            "value": "100",
+            "value": "500000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyca2",
             "name": "atk",
-            "value": "100",
+            "value": "1000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyca2",
             "name": "top",
-            "value": "100",
+            "value": "2000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "veneto",
             "name": "hp",
-            "value": "100",
+            "value": "800000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "veneto",
             "name": "atk",
-            "value": "100",
+            "value": "1500",
             "norefresh": true
         },
         {
@@ -368,77 +368,91 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "g50",
             "name": "hp",
-            "value": "100",
+            "value": "10000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "g50",
             "name": "atk",
-            "value": "100",
+            "value": "1100",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "c200",
+            "name": "hp",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "c200",
+            "name": "atk",
+            "value": "1300",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sm79",
             "name": "hp",
-            "value": "100",
+            "value": "19000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sm79",
             "name": "atk",
-            "value": "100",
+            "value": "300",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sm79",
             "name": "bom",
-            "value": "100",
+            "value": "6000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "z1007",
             "name": "hp",
-            "value": "100",
+            "value": "24000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "z1007",
             "name": "atk",
-            "value": "100",
+            "value": "300",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "z1007",
             "name": "bom",
-            "value": "100",
+            "value": "6500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "z1934",
             "name": "hp",
-            "value": "100",
+            "value": "80000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "z1934",
             "name": "atk",
-            "value": "100",
+            "value": "500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "z1934",
             "name": "top",
-            "value": "100"
+            "value": "10000"
         },
         {
             "type": "setGlobalValue",
@@ -493,14 +507,14 @@ main.floors.MT151=
     [210,  3,  3,  0,  3,  3,211, 81,  0,210,  0,216,  0,  3, 21],
     [  0,577,360,  0,  3,532,  0,  3,534,360,534,  3,577,  3,577],
     [534,  0,  3,  0,216,  0,532,  3,  3,216,  3,  3,  0,  3,532],
-    [  3,  3,  3,  3,  3,  3,210,  0,360,  0,  0, 81,  0,212,532],
+    [  3,  3,  3,  3,  3,  3,210,  0,360,  0,531, 81,  0,212,532],
     [518,570,570,570,  3,  0,  0,  3,  3,  3,  3,  3,216,  3,  3],
     [  0,  0,  0,216, 86,211,  3,  3,534,  3,533,  3, 81,399, 94],
     [518,570,570,570,  3,  0,360,211,534,  3,533,  3,216,  3,  3],
     [  3,  3,  3,  3,  3,  3,397,  3,534,210,533,360,577,521,521],
-    [  0, 21,216,  0, 81,  0,  0,  3,534,  3,  3,210,  3,  3,  3],
-    [211,  0,  3,360,  3,  0,360,  3,  3,533,534,  0,  0,360,210],
-    [ 81,  3,  3, 82,  3,  3,  0,  0,  0,  3,  3, 81,  3,  3,532],
+    [  0, 21,216,531, 81,531,  0,  3,534,  3,  3,210,  3,  3,  3],
+    [211,  0,  3,360,  3,  0,360,  3,  3,533,534,531,  0,360,210],
+    [ 81,  3,  3, 82,  3,  3,531,531,534,  3,  3, 81,  3,  3,532],
     [ 21,  0,  3,590,588,  3,  3,211,  3,  3, 21,255, 21,  3,532],
     [  0,216, 81, 21,588,  3,534,533,534, 82,518,518,518,  3,532]
 ],

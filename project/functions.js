@@ -294,37 +294,44 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	if (type === '轻坦' || type === '中坦' || type === '重坦' || type === '坦歼') {
 		animate = 'vehicleexplore';
-		core.playSound("move2.mp3");
+		if (flags.closesound !== true)
+			core.playSound("move2.mp3");
 	}
 	if (type === '反坦克炮' || type === '榴弹炮' || type === '高射炮') {
 		animate = "vehicleexplore";
-		core.playSound("bomb.mp3");
+		if (flags.closesound !== true)
+			core.playSound("bomb.mp3");
 	}
 	if (type === '建筑') {
 		animate = 'zone';
 	}
 	if (type === '潜艇') {
 		animate = 'xinxinwater';
-		core.playSound("Sonar.wav");
+		if (flags.closesound !== true)
+			core.playSound("Sonar.wav");
 	}
 	if (type === '驱逐' || type === '轻巡' || type === '重巡' || type === '战列' || type === '商船') {
 		animate = "xinxinwater";
 	}
 	if (type === '战斗机' || type === '重型战斗机') {
 		animate = "shootair";
-		core.playSound("fighter.mp3");
+		if (flags.closesound !== true)
+			core.playSound("fighter.mp3");
 	}
 	if (type === '俯冲轰炸机') {
 		animate = "shootair";
-		core.playSound("stukadive.mp3");
+		if (flags.closesound !== true)
+			core.playSound("stukadive.mp3");
 	}
 	if (type === '鱼雷轰炸机' || type === '中型轰炸机') {
 		animate = "shootair";
-		core.playSound("bomber1.mp3");
+		if (flags.closesound !== true)
+			core.playSound("bomber1.mp3");
 	}
 	if (type === '导弹') {
 		animate = "shootair";
-		core.playSound("v_jet_pass.mp3");
+		if (flags.closesound !== true)
+			core.playSound("v_jet_pass.mp3");
 	}
 
 	// 检查该动画是否存在SE，如果不存在则使用默认音效
@@ -618,7 +625,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响", "#bdb76b"],
 		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人2倍攻击力的伤害，可被后勤值抵消"],
 		[57, "主将", "主角必须消灭当前地图所有杂兵后才可攻击主将", "#00ff00"],
-		[58, "狼群", "当前地图除自身外每有1艘潜艇，雷击值增加10%"],
+		[58, "狼群", "当前地图除自身外每有1艘潜艇，雷击值增加10%", "#e6e099", 1],
 		[59, "陷阱", function (enemy) { return "主角与该敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + (enemy.range || 1) + "格内的其他敌人战斗时，每回合额外受到" + enemy.zone + "点领域伤害" }, "#ffff00", 1],
 		[60, "机动", "被主角单向击穿时，主角先手攻击回合数-3"],
 		[61, "投降", "这些已投降的敌军伤害值固定为0，且不会提供金经奖励。"]
@@ -702,6 +709,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							bom_buff += enemy.defBuff || 0;
 							usedEnemyIds[enemy.id] = true;
 						}
+					}
+					//狼群,58
+					if (enemy && core.hasSpecial(enemy.special, 58) && core.hasSpecial(mon_special, 58)) { // 这里要判断一下两个怪都有狼群
+						if (x !== block.x || y !== block.y) top_buff += 10;
 					}
 					// 检查【支援】技能，数字26
 					if (enemy && core.hasSpecial(enemy.special, 26) &&
