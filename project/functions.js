@@ -378,6 +378,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.status.hero.hp -= damage;
 	core.status.hero.statistics.battleDamage += damage;
 	core.status.hero.statistics.battle++;
+	if (flags.skill === 13 && hero.hp * 10 < hero.hpmax && core.status.thisMap.area === "海洋") hero.hp = hero.hpmax; // 金牌损管
 
 	// 计算当前怪物的支援怪物
 	var guards = [];
@@ -818,6 +819,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	hero_def = Math.max(0, hero_def);
 	hero_mdef = Math.max(0, hero_mdef);
 
+	if (core.searchBlockWithFilter(block => core.hasSpecial(block.event.id, 42)).length > 0) hero_mdef = 0; // 截断：勇士护盾失效
 
 	// 怪物的各项数据
 	// 对坚固模仿等处理扔到了脚本编辑-getEnemyInfo之中
@@ -1417,6 +1419,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (id == 'mine' && !core.hasItem('amulet')) {
 			damage[loc] = (damage[loc] || 0) + core.values.lavaDamage;
 			type[loc][(block.event.name || "血网") + "伤害"] = true;
+		}
+
+		// 歼灭：生命不足一成，靠近即死
+		if (enemy && core.hasSpecial(enemy.special, 51) && hero.hp * 10 < hero.hpmax) {
+			for (var loc of [[x - 1, y], [x + 1, y], [x, y - 1], [x, y + 1]]) {
+				if (loc[0] < 0 || loc[0] >= width || loc[1] < 0 || loc[1] >= height) continue;
+				damage[loc[0] + ',' + loc[1]] = Infinity;
+				type[loc[0] + ',' + loc[1]]['歼灭伤害'] = true;
+			}
 		}
 
 		// 领域

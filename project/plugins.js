@@ -504,6 +504,72 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		if (callback) callback();
 	}
+	//显伤加字
+	core.enemys.getDamageString = function (enemy, x, y, floorId) {
+		if (typeof enemy == 'string') enemy = core.material.enemys[enemy];
+		var damage = this.getDamage(enemy, x, y, floorId);
+
+		var color = '#000000';
+
+		if (damage == null) {
+			damage = "???";
+			color = '#FF2222';
+		} else {
+			if (damage <= 0) color = '#11FF11';
+			else if (damage < core.status.hero.hp / 3) color = '#FFFFFF';
+			else if (damage < core.status.hero.hp * 2 / 3) color = '#FFFF00';
+			else if (damage < core.status.hero.hp) color = '#FF9933';
+			else color = '#FF2222';
+
+			damage = core.formatBigNumber(damage, true);
+			if (core.enemys.hasSpecial(enemy, 19))
+				damage += "+";
+			if (core.enemys.hasSpecial(enemy, 21))
+				damage += "-";
+			if (core.enemys.hasSpecial(enemy, 11))
+				damage += "^";
+			if (core.enemys.hasSpecial(enemy, 42))
+				damage += "截";
+		}
+
+		return {
+			"damage": damage,
+			"color": color
+		};
+	}
+	//歼灭领域显伤
+	core.control._updateDamage_extraDamage = function (floorId, onMap) {
+		core.status.damage.extraData = [];
+		if (!core.flags.displayExtraDamage) return;
+
+		var width = core.floors[floorId].width,
+			height = core.floors[floorId].height;
+		var startX = onMap && core.bigmap.v2 ? Math.max(0, core.bigmap.posX - core.bigmap.extend) : 0;
+		var endX = onMap && core.bigmap.v2 ? Math.min(width, core.bigmap.posX + core._WIDTH_ + core.bigmap.extend + 1) : width;
+		var startY = onMap && core.bigmap.v2 ? Math.max(0, core.bigmap.posY - core.bigmap.extend) : 0;
+		var endY = onMap && core.bigmap.v2 ? Math.min(height, core.bigmap.posY + core._HEIGHT_ + core.bigmap.extend + 1) : height;
+
+		for (var x = startX; x < endX; x++) {
+			for (var y = startY; y < endY; y++) {
+				var alpha = 1;
+				if (core.noPass(x, y, floorId)) {
+					if (core.flags.extraDamageType == 2) alpha = 0;
+					else if (core.flags.extraDamageType == 1) alpha = 0.6;
+				}
+				var damage = core.status.checkBlock.damage[x + "," + y] || 0;
+				if (damage > 0 && Number.isFinite(damage)) { // 该点伤害
+					damage = core.formatBigNumber(damage, true);
+					core.status.damage.extraData.push({ text: damage, px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ffaa33', alpha: alpha });
+				} else if (damage === Infinity) {
+					core.status.damage.extraData.push({ text: '歼', px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ff0000', alpha: alpha });
+				} else { // 检查捕捉
+					if (core.status.checkBlock.ambush[x + "," + y]) {
+						core.status.damage.extraData.push({ text: '!', px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ffaa33', alpha: alpha });
+					}
+				}
+			}
+		}
+	}
 	this._afterLoadResources = function () {
 		// 本函数将在所有资源加载完毕后，游戏开启前被执行
 	}
