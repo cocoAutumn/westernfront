@@ -137,7 +137,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "u7",
             "name": "top",
-            "value": "10000",
+            "value": "8000",
             "norefresh": true
         },
         {
@@ -158,7 +158,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "u9",
             "name": "top",
-            "value": "10000",
+            "value": "8000",
             "norefresh": true
         },
         {
@@ -172,7 +172,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd1",
             "name": "hp",
-            "value": "650000",
+            "value": "65000",
             "norefresh": true
         },
         {
@@ -186,7 +186,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd1",
             "name": "top",
-            "value": "8000",
+            "value": "6000",
             "norefresh": true
         },
         {
@@ -207,14 +207,14 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd2",
             "name": "top",
-            "value": "8000",
+            "value": "6000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd3",
             "name": "hp",
-            "value": "80000",
+            "value": "75000",
             "norefresh": true
         },
         {
@@ -228,7 +228,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd3",
             "name": "top",
-            "value": "8000",
+            "value": "6000",
             "norefresh": true
         },
         {
@@ -249,7 +249,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd4",
             "name": "top",
-            "value": "8500",
+            "value": "6000",
             "norefresh": true
         },
         {
@@ -353,15 +353,8 @@ main.floors.MT151=
         {
             "type": "setEnemy",
             "id": "veneto",
-            "name": "dod",
-            "value": "1",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "veneto",
             "name": "special",
-            "value": "[32,35,37]",
+            "value": "[32,37]",
             "norefresh": true
         },
         {
@@ -396,7 +389,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "sm79",
             "name": "hp",
-            "value": "19000",
+            "value": "18500",
             "norefresh": true
         },
         {
@@ -410,14 +403,14 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "sm79",
             "name": "bom",
-            "value": "6000",
+            "value": "5000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "z1007",
             "name": "hp",
-            "value": "24000",
+            "value": "23000",
             "norefresh": true
         },
         {
@@ -452,7 +445,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "z1934",
             "name": "top",
-            "value": "10000"
+            "value": "8000"
         },
         {
             "type": "setGlobalValue",

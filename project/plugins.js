@@ -145,6 +145,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				if (mon_dod < 0)
 					mon_dod = 0;
 			}
+			if (flags.skill === 12 && nthTurn === 1 && mon_dod < 6) { //技能12：从海底出击
+				torpeodoDamage += hero_top * (6 - mon_dod);
+			}
 			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（有哑弹）
 				if (flags.hard === 1 || flags['引信改良'])
 					torpeodoDamage += hero_top * (3 - mon_dod);
@@ -424,6 +427,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			name = '从海底出击';
 			cost = 100;
 			description = '下一场战斗中，派遣一艘潜艇支援：在战斗开始时发射6枚鱼雷，随后潜艇撤退'
+		}
+		if (id === 13) {
+			name = '金牌损管';
+			cost = 180;
+			description = '下一场与敌人海军的战斗结束后，如果剩余血量不足10%，则恢复全部血量'
 		}
 		return {
 			'strategy': strategy,

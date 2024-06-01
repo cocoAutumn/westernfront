@@ -257,6 +257,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT142",
 				"MT148"
+			],
+			[
+				"MT149",
+				"MT155"
 			]
 		],
 		"images": [
@@ -3223,7 +3227,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"title": "上校",
 				"clear": true,
 				"action": [
-					"晋升上校，攻击+100，雷击+800，血量与血限+8000，后期+200",
+					"晋升上校，攻击+100，雷击+800，血量与血限+8000，后勤+200",
 					{
 						"type": "setValue",
 						"name": "status:atk",
