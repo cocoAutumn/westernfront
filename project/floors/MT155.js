@@ -274,6 +274,11 @@ main.floors.MT155=
                 "value": "24"
             },
             {
+                "type": "setValue",
+                "name": "flag:escort",
+                "value": "false"
+            },
+            {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
                 "yes": [
