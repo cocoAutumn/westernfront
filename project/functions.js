@@ -1669,44 +1669,61 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			// core.stopAutomaticRoute();
 		},
         "moveDirectly": function (x, y, ignoreSteps) {
-			// 瞬间移动；x,y为要瞬间移动的点；ignoreSteps为减少的步数，可能之前已经被计算过
-			// 返回true代表成功瞬移，false代表没有成功瞬移
+	// 瞬间移动；x,y为要瞬间移动的点；ignoreSteps为减少的步数，可能之前已经被计算过
+	// 返回true代表成功瞬移，false代表没有成功瞬移
 
-			// 判定能否瞬移到该点
-			if (ignoreSteps == null) ignoreSteps = core.canMoveDirectly(x, y);
-			if (ignoreSteps >= 0) {
-				// 中毒也允许瞬移
-				if (core.hasFlag('poison')) {
-					var damage = ignoreSteps * core.values.poisonDamage;
-					if (damage >= core.status.hero.hp) return false;
-					core.status.hero.statistics.poisonDamage += damage;
-					core.status.hero.hp -= damage;
-				}
+	// 判定能否瞬移到该点
+	if (ignoreSteps == null) ignoreSteps = core.canMoveDirectly(x, y);
+	if (ignoreSteps >= 0) {
+		// 中毒也允许瞬移
+		if (core.hasFlag('poison')) {
+			var damage = ignoreSteps * core.values.poisonDamage;
+			if (damage >= core.status.hero.hp) return false;
+			core.status.hero.statistics.poisonDamage += damage;
+			core.status.hero.hp -= damage;
+		}
 
-				core.clearMap('hero');
-				// 获得勇士最后的朝向
-				var lastDirection = core.status.route[core.status.route.length - 1];
-				if (['left', 'right', 'up', 'down'].indexOf(lastDirection) >= 0)
-					core.setHeroLoc('direction', lastDirection);
-				// 设置坐标，并绘制
-				core.control._moveDirectyFollowers(x, y);
-				core.status.hero.loc.x = x;
-				core.status.hero.loc.y = y;
-				core.drawHero();
-				// 记录录像
-				core.status.route.push("move:" + x + ":" + y);
-				// 统计信息
-				core.status.hero.statistics.moveDirectly++;
-				core.status.hero.statistics.ignoreSteps += ignoreSteps;
-				if (core.hasFlag('poison')) {
-					core.updateStatusBar(false, true);
+		core.clearMap('hero');
+		// 获得勇士最后的朝向
+		var lastDirection = core.status.route[core.status.route.length - 1];
+		if (['left', 'right', 'up', 'down'].indexOf(lastDirection) >= 0)
+			core.setHeroLoc('direction', lastDirection);
+		// 设置坐标，并绘制
+		core.control._moveDirectyFollowers(x, y);
+		core.status.hero.loc.x = x;
+		core.status.hero.loc.y = y;
+		core.drawHero();
+		// 记录录像
+		core.status.route.push("move:" + x + ":" + y);
+
+		if (flags.autoitem) { // 自动拾取
+			for (var x = core.bigmap.width; --x >= 0;)
+				for (var y = core.bigmap.height; --y >= 0;) {
+					var block = core.getBlock(x, y);
+					if (block != null && !block.event.id.endsWith('Potion') && block.event.trigger === 'getItem' && !core.floors[core.status.floorId].afterGetItem[x + "," + y]) {
+						if ([
+								[x - 1, y],
+								[x + 1, y],
+								[x, y - 1],
+								[x, y + 1]
+							].some(d => core.canMoveDirectly(d[0], d[1]) >= 0))
+							core.getItem(block.event.id, 1, x, y);
+					}
 				}
-				core.ui.drawStatusBar();
-				core.checkRouteFolding();
-				return true;
-			}
-			return false;
-		},
+		}
+
+		// 统计信息
+		core.status.hero.statistics.moveDirectly++;
+		core.status.hero.statistics.ignoreSteps += ignoreSteps;
+		if (core.hasFlag('poison')) {
+			core.updateStatusBar(false, true);
+		}
+		core.ui.drawStatusBar();
+		core.checkRouteFolding();
+		return true;
+	}
+	return false;
+},
         "parallelDo": function (timestamp) {
 			// 并行事件处理，可以在这里写任何需要并行处理的脚本或事件
 			// 该函数将被系统反复执行，每次执行间隔视浏览器或设备性能而定，一般约为16.6ms一次

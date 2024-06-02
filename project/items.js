@@ -1651,108 +1651,73 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "进行一些额外的设置",
 		"useItemEvent": [
 			{
-				"type": "choices",
-				"text": "选择设置项",
-				"choices": [
+				"type": "while",
+				"condition": "true",
+				"data": [
 					{
-						"text": "临界显示（开）",
-						"condition": "flags.cri===false",
-						"action": [
+						"type": "choices",
+						"text": "\t[选择设置项] ",
+						"choices": [
 							{
-								"type": "setValue",
-								"name": "flag:cri",
-								"value": "true"
+								"text": "临界显示：[${flags.cri?'ON':'OFF'}]",
+								"action": [
+									{
+										"type": "setValue",
+										"name": "flag:cri",
+										"value": "(!flag:cri)"
+									}
+								]
+							},
+							{
+								"text": "宝石动画：[${flags.anime?'ON':'OFF'}]",
+								"action": [
+									{
+										"type": "setValue",
+										"name": "flag:anime",
+										"value": "(!flag:anime)"
+									}
+								]
+							},
+							{
+								"text": "战后音效：[${flags.closesound?'ON':'OFF'}]",
+								"action": [
+									{
+										"type": "setValue",
+										"name": "flag:closesound",
+										"value": "(!flag:closesound)"
+									}
+								]
+							},
+							{
+								"text": "撞冰受伤：[${flags.hitice?'ON':'OFF'}]",
+								"action": [
+									{
+										"type": "setValue",
+										"name": "flag:hitice",
+										"value": "(!flag:hitice)"
+									}
+								]
+							},
+							{
+								"text": "自动拾取：[${flags.autoitem?'ON':'OFF'}]",
+								"action": [
+									{
+										"type": "setValue",
+										"name": "flag:autoitem",
+										"value": "(!flag:autoitem)"
+									}
+								]
+							},
+							{
+								"text": "返回",
+								"action": [
+									{
+										"type": "break",
+										"n": 1
+									}
+								]
 							}
 						]
-					},
-					{
-						"text": "临界显示（关）",
-						"condition": "flags.cri===true",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "flag:cri",
-								"value": "false"
-							}
-						]
-					},
-					{
-						"text": "捡宝石动画（开）",
-						"condition": "flags.anime===false",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "flag:anime",
-								"value": "true"
-							}
-						]
-					},
-					{
-						"text": "捡宝石动画（关）",
-						"condition": "flags.anime===true",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "flag:anime",
-								"value": "false"
-							}
-						]
-					},
-					{
-						"text": "战后音效（开）",
-						"condition": "flags.closesound===true",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "flag:closesound",
-								"value": "false"
-							}
-						]
-					},
-					{
-						"text": "战后音效（关）",
-						"condition": "flags.closesound!==true",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "flag:closesound",
-								"value": "true"
-							}
-						]
-					},
-					{
-						"text": "浮冰扣血（开）",
-						"condition": "flags.hitice!==true",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "flag:hitice",
-								"value": "true"
-							}
-						]
-					},
-					{
-						"text": "浮冰扣血（关）",
-						"condition": "flags.hitice===true",
-						"action": [
-							{
-								"type": "setValue",
-								"name": "flag:hitice",
-								"value": "false"
-							}
-						]
-					},
-					{
-						"text": "自动拾取（不捡血瓶）（开）",
-						"action": []
-					},
-					{
-						"text": "自动拾取（不捡血瓶）（关）",
-						"action": []
-					},
-					{
-						"text": "返回",
-						"action": []
 					}
 				]
 			}
