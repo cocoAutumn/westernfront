@@ -1721,6 +1721,28 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 						]
 					},
 					{
+						"text": "浮冰扣血（开）",
+						"condition": "flags.hitice!==true",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "flag:hitice",
+								"value": "true"
+							}
+						]
+					},
+					{
+						"text": "浮冰扣血（关）",
+						"condition": "flags.hitice===true",
+						"action": [
+							{
+								"type": "setValue",
+								"name": "flag:hitice",
+								"value": "false"
+							}
+						]
+					},
+					{
 						"text": "自动拾取（不捡血瓶）（开）",
 						"action": []
 					},

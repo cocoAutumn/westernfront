@@ -25,6 +25,11 @@ main.floors.MT1=
             "value": "1"
         },
         {
+            "type": "setValue",
+            "name": "flag:hitice",
+            "value": "true"
+        },
+        {
             "type": "setHeroOpacity",
             "opacity": 1
         },
