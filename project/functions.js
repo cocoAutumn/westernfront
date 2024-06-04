@@ -1423,9 +1423,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		// 歼灭：生命不足一成，靠近即死
 		if (enemy && core.hasSpecial(enemy.special, 51) && hero.hp * 10 < hero.hpmax) {
-			for (var loc of [[x - 1, y], [x + 1, y], [x, y - 1], [x, y + 1]]) {
+			for (var loc of [
+					[x - 1, y],
+					[x + 1, y],
+					[x, y - 1],
+					[x, y + 1]
+				]) {
 				if (loc[0] < 0 || loc[0] >= width || loc[1] < 0 || loc[1] >= height) continue;
 				damage[loc[0] + ',' + loc[1]] = Infinity;
+				type[loc[0] + ',' + loc[1]] = type[loc[0] + ',' + loc[1]] || {};
 				type[loc[0] + ',' + loc[1]]['歼灭伤害'] = true;
 			}
 		}
@@ -1805,6 +1811,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（buff和光环）
 	if (flags.dry === true) {
 		core.ui.fillText(ctx, '炎热', 5, 450, 'orange')
+	}
+	if (core.status.floorId != null && core.searchBlockWithFilter(block => core.hasSpecial(block.event.id, 42)).length > 0) {
+		core.ui.fillText(ctx, '截断', 50, 450, '#778899')
 	}
 },
         "drawStatistics": function () {

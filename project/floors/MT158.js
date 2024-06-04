@@ -36,17 +36,8 @@ main.floors.MT158=
             "time": 500
         },
         "\r[yellow]Mission 24 PQ17的单程票",
-        "\t[盟军指挥官,hero]声纳又探测到了多个不明水下信号，我们被德军潜艇包围了！",
-        "\t[盟军指挥官,hero]所有舰船注意规避，按Z字路线航行！",
-        {
-            "type": "text",
-            "text": "\t[邓尼茨]\f[donitz.png,0,310]潜艇部队，用我们的“狼群战术”围攻敌人，优先打击他们的商船。同时我希望意大利海空军能够给予我们援助！",
-            "pos": [
-                100,
-                300,
-                380
-            ]
-        },
+        "\t[盟军指挥官,hero]根据情报，敌人的海军和空军已经尽数出动，用不了多久就会和我们发生接触。",
+        "\t[盟军指挥官,hero]全体护航舰船注意保护商船队，后援正在赶来的路上。",
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
@@ -63,14 +54,7 @@ main.floors.MT158=
             "type": "setEnemy",
             "id": "u7",
             "name": "top",
-            "value": "8000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "u7",
-            "name": "special",
-            "value": "[29,33,34,35,58]",
+            "value": "10000",
             "norefresh": true
         },
         {
@@ -84,14 +68,7 @@ main.floors.MT158=
             "type": "setEnemy",
             "id": "u9",
             "name": "top",
-            "value": "8000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "u9",
-            "name": "special",
-            "value": "[29,33,34,35,58]",
+            "value": "10000",
             "norefresh": true
         },
         {
@@ -115,9 +92,317 @@ main.floors.MT158=
             "value": "8000"
         },
         {
+            "type": "setEnemy",
+            "id": "z1934a",
+            "name": "hp",
+            "value": "80000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934a",
+            "name": "atk",
+            "value": "550",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934a",
+            "name": "top",
+            "value": "8000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936",
+            "name": "hp",
+            "value": "85000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936",
+            "name": "atk",
+            "value": "550",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936",
+            "name": "top",
+            "value": "8000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "konesburg",
+            "name": "hp",
+            "value": "160000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "konesburg",
+            "name": "atk",
+            "value": "700",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "konesburg",
+            "name": "top",
+            "value": "3000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "konesburg",
+            "name": "special",
+            "value": "[5,29,35,42]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "hipper",
+            "name": "hp",
+            "value": "320000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "hipper",
+            "name": "atk",
+            "value": "1000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "hipper",
+            "name": "top",
+            "value": "2000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "hipper",
+            "name": "special",
+            "value": "[1,29,35,51]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "deutschland",
+            "name": "hp",
+            "value": "500000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "deutschland",
+            "name": "atk",
+            "value": "1500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "deutschland",
+            "name": "top",
+            "value": "2000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "deutschland",
+            "name": "special",
+            "value": "[29,31,35,51]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "scharnhost",
+            "name": "hp",
+            "value": "800000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "scharnhost",
+            "name": "atk",
+            "value": "1500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "scharnhost",
+            "name": "special",
+            "value": "[1,31,37]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109f4",
+            "name": "hp",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109f4",
+            "name": "atk",
+            "value": "1400",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109f4",
+            "name": "special",
+            "value": "[6,28]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109f4",
+            "name": "bom",
+            "value": "3000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju87b",
+            "name": "hp",
+            "value": "14000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju87b",
+            "name": "bom",
+            "value": "8000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju87b",
+            "name": "special",
+            "value": "[28,36]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88a",
+            "name": "hp",
+            "value": "24000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88a",
+            "name": "atk",
+            "value": "300",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88a",
+            "name": "bom",
+            "value": "5000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88a",
+            "name": "special",
+            "value": "[28]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "he111",
+            "name": "hp",
+            "value": "25000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "he111",
+            "name": "atk",
+            "value": "300",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "he111",
+            "name": "top",
+            "value": "15000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "he111",
+            "name": "special",
+            "value": "[29]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "do17z",
+            "name": "hp",
+            "value": "18000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "do17z",
+            "name": "atk",
+            "value": "300",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "do17z",
+            "name": "top",
+            "value": "15000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "do17z",
+            "name": "special",
+            "value": "[29]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw200",
+            "name": "hp",
+            "value": "26000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw200",
+            "name": "atk",
+            "value": "300",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw200",
+            "name": "bom",
+            "value": "5000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw200",
+            "name": "special",
+            "value": "[28]",
+            "norefresh": true
+        },
+        {
             "type": "setGlobalValue",
             "name": "lavaDamage",
-            "value": 10000
+            "value": 15000
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -132,14 +417,18 @@ main.floors.MT158=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐友军剩余血量不少于20w\n⭐友军剩余血量不少于10w",
+        "\t[任务目标]⭐通过当前区域\n⭐友军剩余血量不少于40w\n⭐友军剩余血量不少于20w",
         {
             "type": "callBook"
         }
     ],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
+    "events": {
+        "1,9": [
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]主角抵达本区域最后一张地图的时候就会受剧情影响，与友军分离。为了更快完成任务，也为了更好的向强敌施展拳脚，建议以最快的速度冲向后面的楼层哦！"
+        ]
+    },
     "changeFloor": {
         "14,7": {
             "floorId": "MT159",
@@ -157,21 +446,21 @@ main.floors.MT158=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [  0,  0,  0,  3,  0,  6,  0,  3,  0,  0,  3,  3,  0,  0,  0],
-    [  0,  3,  3,  3,  0,  0,  0,  3,  3,  0,  3,  0,  6,  0,  3],
-    [  0,  0,  0,  6,  0,  3,  0,  0,  0,  0,  0,  0,  3,  0,  3],
-    [  0,  3,  0,  0,  0,  6,  3,  0,  3,  3,  3,  0,  0,  0,  0],
-    [  0,  3,  0,  6,  0,  0,  3,  0,  3,  0,  6,  0,  3,  3,  3],
-    [  3,  3,  3,  3,  0,  3,  6,  0,  0,  0,  0,  0,  0,  0,  0],
-    [570, 21,571,  3,  0,  0,  0,  0,  6,  6,  0,  3,  3,  0,  6],
-    [  0,  0,  0, 86,  0,  0,  3,  0,  0,  0,  0,  0,  3,  0, 94],
-    [570, 21,571,  3,  6,  0,  3,  3,  3,  0,  3,  6,  3,  0,  3],
-    [  3,  3,  3,  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  3,  0,  3,  3,  3,  3,  0,  3,  3,  0,  3,  0],
-    [  0,  3,  0,  0,  0,  0,  0,  0,  3,  0,  0,  3,  0,  3,  0],
-    [  3,  3,  6,  0,  6,  0,  0,  6,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  3,  0,  0,  0,  3,  3,  3,  3,  3,  0,  3,  6,  0,  3],
-    [  0,  0,  0,  3,  0,  0,  6,  0,  0,  0,  0,  3,  0,  0,  0]
+    [531, 21, 21,  3,532,  6,532,  3,518,518,  3,  3,532,530,532],
+    [ 81,  3,  3,  3,534,216,534,  3,  3,383,  3,532,  6,384,  3],
+    [534,255,532,  6,  0,  3,360,393,  0,  0,216,534,  3, 81,  3],
+    [534,  3,207, 81,368,  6,  3, 81,  3,  3,  3,569,383,360, 21],
+    [534,  3,532,  6,  0,531,  3,531,  3,518,  6,216,  3,  3,  3],
+    [  3,  3,  3,  3,216,  3,  6,  0,382,534,360,531,207, 21, 21],
+    [570, 21,571,  3,531,360, 81,368,  6,  6, 81,  3,  3,216,  6],
+    [  0,  0,  0, 86,531,534,  3,534,360,531,532,533,  3, 81, 94],
+    [570, 21,571,  3,  6,216,  3,  3,  3,216,  3,  6,  3,216,  3],
+    [  3,601,  3,  3,534,569,382,360,  0,  0,382,531,569,368,534],
+    [533,533,368,  3, 81,  3,  3,  3,  3, 81,  3,  3, 81,  3,393],
+    [533,  3,  0,360,368,216,530,534,  3,393,534,  3,360,  3,360],
+    [  3,  3,  6, 81,  6,534,530,  6,534,  0,360,216,  0,533,531],
+    [ 21,  3,  0,255,  0,  3,  3,  3,  3,  3, 82,  3,  6,385,  3],
+    [ 21,  0,207,  3,  0, 22,  6,530,530,530,530,  3,533,533,533]
 ],
     "bgmap": [
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
@@ -183,7 +472,7 @@ main.floors.MT158=
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
-    [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
+    [ 16,  3, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],

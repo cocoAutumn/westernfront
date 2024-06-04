@@ -145,8 +145,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				if (mon_dod < 0)
 					mon_dod = 0;
 			}
-			if (flags.skill === 12 && nthTurn === 1 && mon_dod < 6) { //技能12：从海底出击
-				torpeodoDamage += hero_top * (6 - mon_dod);
+			if (flags.skill === 12 && nthTurn === 1 && mon_dod < 8) { //技能12：从海底出击
+				torpeodoDamage += hero_top * (8 - mon_dod);
 			}
 			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（有哑弹）
 				if (flags.hard === 1 || flags['引信改良'])
@@ -426,7 +426,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		if (id === 12) {
 			name = '从海底出击';
 			cost = 100;
-			description = '下一场战斗中，派遣一艘潜艇支援：在战斗开始时发射6枚鱼雷，随后潜艇撤退'
+			description = '下一场战斗中，派遣一艘潜艇支援：在战斗开始时发射8枚鱼雷，随后潜艇撤退'
 		}
 		if (id === 13) {
 			name = '金牌损管';
@@ -561,7 +561,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					damage = core.formatBigNumber(damage, true);
 					core.status.damage.extraData.push({ text: damage, px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ffaa33', alpha: alpha });
 				} else if (damage === Infinity) {
-					core.status.damage.extraData.push({ text: '歼', px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ff0000', alpha: alpha });
+					core.status.damage.extraData.push({ text: '死', px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ff0000', alpha: alpha });
 				} else { // 检查捕捉
 					if (core.status.checkBlock.ambush[x + "," + y]) {
 						core.status.damage.extraData.push({ text: '!', px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ffaa33', alpha: alpha });
@@ -1578,12 +1578,12 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				}
 				if (core.flags.displayCritical) {
 					var info = core.getEnemyInfo(block.event.id, hero, x, y, floorId);
-					if (flags.cri === true) {
+					var turn = core.getDamageInfo(block.event.id, core.status.hero, x, y, floorId)?.turn;
+					core.status.damage.data.push({ text: turn, px: 32 * x + 1, py: 32 * (y + 1) - 11, color: '#FFFFFF' });
+					if (flags.cri === true && turn > 0) {
 						var critical = core.plugin.getCritical(block.event.id, hero, x, y, floorId);
 						core.status.damage.data.push({ text: critical, px: 32 * x + 1, py: 32 * (y + 1) - 21, color: '#FFFFFF' });
 					}
-					var turn = core.getDamageInfo(block.event.id, core.status.hero, x, y, floorId)?.turn;
-					core.status.damage.data.push({ text: turn, px: 32 * x + 1, py: 32 * (y + 1) - 11, color: '#FFFFFF' });
 				}
 			}
 		});
@@ -1597,7 +1597,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		do {
 			mid = Math.floor((low + high) / 2);
 			var newInfo = core.getDamageInfo(enemyId, { 'atk': core.status.hero.atk + mid }, x, y, floorId);
-			if (newInfo.turn >= damageInfo.turn) low = mid + 1;
+			if (newInfo?.turn >= damageInfo?.turn) low = mid + 1;
 			else high = mid;
 		} while (low < high);
 		return low;
