@@ -106,7 +106,12 @@ main.floors.prepare1=
         {
             "type": "function",
             "function": "function(){\nflags.learned[1]=true\n}"
-        }
+        },
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]\r[aqua]经费不足，某些地图画出来的效果可能非常不理想，还请谅解下，凑合玩吧。\r"
     ],
     "eachArrive": [],
     "parallelDo": "",

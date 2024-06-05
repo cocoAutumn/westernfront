@@ -609,7 +609,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[37, "跨射", "强大的舰炮具有更远的射程。若主角未装备战列舰，该敌人首先以3倍攻击力攻击主角3次"],
 		[38, "精锐", "对主角造成的伤害翻倍", "#dc143c"],
 		[39, "集群", function (enemy) { return "主角同时与" + (enemy.gro ?? 0) + "个该敌人进行战斗" }],
-		[40, "禁飞", function (enemy) {return "该敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "范围内" + (enemy.range || 1) + "格内无法作为空降地点。如果主角装备了空军，该范围内的敌人攻击力提升20%";}],
+		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害"],
 		[41, "反制", "与该敌人战斗时，主角无法使用技能"],
 		[42, "截断", "当前地图中，该敌人在场时，主角后勤值失效"],
 		[43, "超压", "该陆军单位的穿甲值大于主角装甲值时，造成的回合伤害额外提升40%"],
@@ -677,7 +677,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		var atk_buff = 0,
 			top_buff = 0,
 			bom_buff = 0,
-			trap_buff = 0;
+			trap_buff = 0,
+			aa_buff = 0;
 		// 已经计算过的光环怪ID列表，用于判定叠加
 		var usedEnemyIds = {};
 		// 检查光环和支援的缓存
@@ -735,6 +736,18 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							if (enemy.zoneSquare && 0 < dx + dy && dx <= range && dy <= range) inRange = true;
 						}
 						if (inRange) trap_buff += enemy.zone; // 叠加
+					}
+					// 检查【防空】技能，数字40
+					if (enemy && core.hasSpecial(enemy.special, 40)) {
+						var range = 2,
+							inRange = false;
+						if (x != null && y != null) {
+							var dx = Math.abs(block.x - x),
+								dy = Math.abs(block.y - y);
+							// 检查十字和九宫格陷阱
+							if (0 < dx && dx <= range && 0 < dy && dy <= range) inRange = true;
+						}
+						if (inRange) aa_buff += enemy.atk / 5; // 叠加
 					}
 					// TODO：如果有其他类型光环怪物在这里仿照添加检查
 					// 注：新增新的类光环属性（需要遍历全图的）需要在特殊属性定义那里的第五项写1，参见光环和支援的特殊属性定义。
@@ -913,6 +926,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (curr_hp > 0) {
 			damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);
 			damage += core.status.checkBlock?.cache?.[x + ',' + y]?.trap_buff || 0; // 59: 陷阱
+			damage += core.status.checkBlock?.cache?.[x + ',' + y]?.aa_buff || 0; // 40: 防空
 		}
 	}
 	//技能1：战壕
@@ -1423,15 +1437,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		// 歼灭：生命不足一成，靠近即死
 		if (enemy && core.hasSpecial(enemy.special, 51) && hero.hp * 10 < hero.hpmax) {
-			for (var loc of [
-					[x - 1, y],
-					[x + 1, y],
-					[x, y - 1],
-					[x, y + 1]
-				]) {
+			for (var loc of [[x - 1, y], [x + 1, y], [x, y - 1], [x, y + 1]]) {
 				if (loc[0] < 0 || loc[0] >= width || loc[1] < 0 || loc[1] >= height) continue;
 				damage[loc[0] + ',' + loc[1]] = Infinity;
-				type[loc[0] + ',' + loc[1]] = type[loc[0] + ',' + loc[1]] || {};
 				type[loc[0] + ',' + loc[1]]['歼灭伤害'] = true;
 			}
 		}
@@ -1811,9 +1819,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（buff和光环）
 	if (flags.dry === true) {
 		core.ui.fillText(ctx, '炎热', 5, 450, 'orange')
-	}
-	if (core.status.floorId != null && core.searchBlockWithFilter(block => core.hasSpecial(block.event.id, 42)).length > 0) {
-		core.ui.fillText(ctx, '截断', 50, 450, '#778899')
 	}
 },
         "drawStatistics": function () {

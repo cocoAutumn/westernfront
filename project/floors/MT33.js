@@ -31,7 +31,12 @@ main.floors.MT33=
         {
             "type": "sleep",
             "time": 500
-        }
+        },
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]这是机场。别问为啥这么难看，问就是作者不会画。"
     ],
     "eachArrive": [],
     "parallelDo": "",
