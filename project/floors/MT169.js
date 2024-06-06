@@ -162,7 +162,8 @@ main.floors.MT169=
                         "value": "null"
                     }
                 ]
-            }
+            },
+            "1": null
         }
     },
     "cannotMove": {},

@@ -69,7 +69,7 @@ main.floors.MT163=
             "floorId": "MT164",
             "loc": [
                 7,
-                7
+                9
             ],
             "direction": "down"
         }
