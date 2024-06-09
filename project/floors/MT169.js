@@ -13,7 +13,81 @@ main.floors.MT169=
     "ratio": 1,
     "defaultGround": "X10006",
     "bgm": "hiaction4.mp3",
-    "firstArrive": [],
+    "firstArrive": [
+        {
+            "type": "moveHero",
+            "time": 500,
+            "steps": [
+                "up:2"
+            ]
+        },
+        {
+            "type": "closeDoor",
+            "id": "specialDoor",
+            "loc": [
+                7,
+                13
+            ]
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": [
+                7,
+                10
+            ],
+            "async": true
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": [
+                6,
+                9
+            ],
+            "async": true
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": [
+                8,
+                9
+            ],
+            "async": true
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": [
+                6,
+                6
+            ],
+            "async": true
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": [
+                8,
+                6
+            ],
+            "async": true
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": [
+                7,
+                4
+            ],
+            "async": true
+        },
+        {
+            "type": "waitAsync"
+        },
+        "\t[德军高炮小队,flak88]敌人空袭！掩护车队！"
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},
@@ -156,9 +230,15 @@ main.floors.MT169=
                         "type": "openDoor"
                     },
                     {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    },
+                    {
                         "type": "setValue",
                         "name": "flag:door_MT169_7_1",
-                        "operator": "=",
                         "value": "null"
                     }
                 ]
