@@ -203,7 +203,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage *= 1.3;
 		}
 		damage += torpeodoDamage + bombDamage + depthcharge;
-		if (flags.dry === true && !core.hasSpecial(mon_special, 55)) { //炎热debuff
+		if (flags.dry === true && !core.hasSpecial(mon_special, 55) && !core.hasSpecial(mon_special, 62)) { //炎热debuff
 			damage *= 1.2;
 		}
 		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) { // 陆战中被对方单向击穿
@@ -328,7 +328,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			damage *= 2;
 		}
 		if (flags.dry === true && !core.hasItem('hard1')) { //炎热
-			damage *= 1.2;
+			if (core.hasSpecial(mon_special, 62)) { //沙漠之狐
+				damage *= 1.5;
+			} else
+				damage *= 1.2;
 		}
 		return damage;
 	}

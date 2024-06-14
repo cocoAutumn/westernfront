@@ -629,7 +629,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[58, "狼群", "当前地图除自身外每有1艘潜艇，雷击值增加10%", "#e6e099", 1],
 		[59, "陷阱", function (enemy) { return "主角与该敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + (enemy.range || 1) + "格内的其他敌人战斗时，每回合额外受到" + enemy.zone + "点领域伤害" }, "#ffff00", 1],
 		[60, "机动", "被主角单向击穿时，主角先手攻击回合数-3"],
-		[61, "投降", "这些已投降的敌军伤害值固定为0，且不会提供金经奖励。"]
+		[61, "投降", "这些已投降的敌军伤害值固定为0，且不会提供金经奖励。"],
+		[62, "沙漠之狐", "隆美尔专属技能。当前具有“炎热”buff时，主角受到的炎热伤害提升至50%，隆美尔自身不会受到任何影响", "#bdb76b"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -1081,7 +1082,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					core.playSound('error.mp3');
 					core.drawTip('指挥点不足，无法启用战略指令' + info.name);
 				} else {
-					hero.mana -= info.cost //扣mp
+					core.control.autosave(true); // 自动存档
+					hero.mana -= info.cost; //扣mp
 					core.insertAction(info.event);
 				}
 			else
@@ -1438,9 +1440,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		// 歼灭：生命不足一成，靠近即死
 		if (enemy && core.hasSpecial(enemy.special, 51) && hero.hp * 10 < hero.hpmax) {
-			for (var loc of [[x - 1, y], [x + 1, y], [x, y - 1], [x, y + 1]]) {
+			for (var loc of [
+					[x - 1, y],
+					[x + 1, y],
+					[x, y - 1],
+					[x, y + 1]
+				]) {
 				if (loc[0] < 0 || loc[0] >= width || loc[1] < 0 || loc[1] >= height) continue;
 				damage[loc[0] + ',' + loc[1]] = Infinity;
+				type[loc[0] + ',' + loc[1]] = type[loc[0] + ',' + loc[1]] || {};
 				type[loc[0] + ',' + loc[1]]['歼灭伤害'] = true;
 			}
 		}

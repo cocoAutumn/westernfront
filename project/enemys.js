@@ -123,7 +123,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"wildwind": {"name":"旋风式自行防空炮","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"轻坦","arm":80,"ap":20},
 	"panzer4c": {"name":"四号C型","hp":1500,"atk":250,"def":0,"money":6,"exp":6,"point":0,"special":[],"type":"中坦","ap":50,"arm":30,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：75mm短管坦克炮"},
 	"panzer4e": {"name":"四号E型","hp":10000,"atk":13000,"def":0,"money":6,"exp":6,"point":0,"special":[55],"type":"中坦","ap":50,"arm":60,"description":"主武器：75mm短管坦克炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"panzer4f": {"name":"四号F2型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中坦","ap":123,"arm":50},
+	"panzer4f": {"name":"四号F2型","hp":20000,"atk":12000,"def":0,"money":0,"exp":0,"point":0,"special":[55],"type":"中坦","ap":123,"arm":50},
 	"panzer4g": {"name":"四号G型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中坦","ap":123,"arm":80},
 	"p2640": {"name":"卡罗P26/40","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"重坦","ap":71,"arm":50,"description":"主武器：75mm短管炮"},
 	"motorinf": {"name":"德国机械化步兵中队","hp":200,"atk":20,"def":0,"money":1,"exp":1,"point":0,"special":[1,4],"type":"步兵","description":"主武器：步枪、突击步枪、手榴弹、军用摩托","ap":12,"arm":0},

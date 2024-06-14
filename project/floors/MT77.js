@@ -214,7 +214,7 @@ main.floors.MT77=
             "type": "if",
             "condition": "(flag:hard===2)",
             "true": [
-                "\t[系统提示]检测到当前为“神剧难度”，友军血量+10w",
+                "\t[系统提示]检测到当前为“街机难度”，友军血量+10w",
                 {
                     "type": "setValue",
                     "name": "flag:友军血量",

@@ -177,7 +177,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT167",
 			"MT168",
 			"MT169",
-			"MT170"
+			"MT170",
+			"MT171",
+			"MT172",
+			"MT173",
+			"MT174",
+			"MT175",
+			"MT176",
+			"MT177",
+			"MT178",
+			"MT179",
+			"MT180"
 		],
 		"floorPartitions": [
 			[
@@ -275,6 +285,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT156",
 				"MT162"
+			],
+			[
+				"MT163",
+				"MT169"
 			]
 		],
 		"images": [
@@ -395,6 +409,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"skill10.png",
 			"skill11.jpg",
 			"skill12.jpg",
+			"skill13.jpg",
 			"skill3.jpg",
 			"skill4.jpg",
 			"skill5.jpg",
@@ -1249,7 +1264,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			},
 			{
 				"type": "function",
-				"function": "function(){\nflags.mission = eval('[' + '[false,false,false],'.repeat(60) + ']')\n}"
+				"function": "function(){\nflags.mission = eval('[' + '[false,false,false],'.repeat(100) + ']')\n}"
 			},
 			"1918年，第一次世界大战终于以德国的战败而告终。",
 			"但，那似乎也是悲剧的开端。",
