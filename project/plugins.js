@@ -39,6 +39,12 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			hero_atk *= 0.95;
 		if (flags.skill === 3 && this.Luftwaffe.includes(enemyInfo.type)) // 技能3：防空弹幕，对空攻击力为1.2倍
 			hero_atk *= 1.2;
+		//谢馒头
+		if (core.hasEquip('M4') && this.Army.includes(enemyInfo.type)) {
+			if (hero_ap <= mon_arm && hero_arm < mon_ap) {
+				hero_atk *= 1.15;
+			}
+		}
 		var damage = hero_atk,
 			torpeodoDamage = 0,
 			depthcharge = 0,
@@ -199,19 +205,27 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage *= 1.1;
 			if (core.hasEquip('hurricanemk2') && enemyInfo.type.endsWith('轰炸机')) //飓风MK2
 				damage *= 1.2;
-			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
-				damage *= 1.3;
+			if (core.hasEquip('spitfiremk5') && enemyInfo.type.endsWith('战斗机')) //喷火MK5
+				damage *= 1.1;
+			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机') && nthTurn === 1) //英俊战士
+				damage *= 2;
+			if (core.hasEquip('p38') && enemyInfo.type.endsWith('轰炸机') && nthTurn === 1) //P38
+				damage *= 2;
 		}
 		damage += torpeodoDamage + bombDamage + depthcharge;
 		if (flags.dry === true && !core.hasSpecial(mon_special, 55) && !core.hasSpecial(mon_special, 62)) { //炎热debuff
 			damage *= 1.2;
+		}
+		if (core.hasEquip('p38') && core.hasSpecial(mon_special, 57)) { //P38闪电，斩首行动
+			damage *= 1.5;
 		}
 		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) { // 陆战中被对方单向击穿
 			var preTurn = 5;
 			if (core.hasEquip('crusades')) preTurn = 3; //十字军坦克：敌人先攻-2
 			if (core.hasEquip('valentine')) preTurn = 10; //瓦伦丁坦克
 			if (core.hasEquip('matilda')) preTurn = 10; // 玛蒂尔达步兵坦克：无法击穿对方时前10回合无法造成伤害
-			if (core.hasEquip('m3grant')) preTurn = 15;
+			if (core.hasEquip('m3grant')) preTurn = 15; //M3格兰特
+			if (core.hasEquip('churchillmk3')) preTurn = 15; //傻丘3
 			if (nthTurn <= preTurn) damage = 0;
 			else damage *= 0.8; // 前5回合无法造成伤害，其他回合伤害只有80%
 		}
@@ -304,6 +318,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
 			if (core.hasEquip('typhoon') && enemyInfo.type.endsWith('战斗机')) // 台风式攻击机
 				damage *= 1.3;
+			if (core.hasEquip('p47b')) //P47B雷电
+				damage *= 0.8;
 			// 航弹
 			if (core.hasSpecial(mon_special, 28) && nthTurn > 0 && nthTurn % mon_spd === 0) {
 				// 俯冲轰炸机

@@ -425,7 +425,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"matilda": 71,
 		"churchillmk3": 72,
 		"m3grant": 73,
-		"m4a1": 74,
 		"m4a2": 75,
 		"m4a3": 76,
 		"m4a3e2": 77,
@@ -458,12 +457,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"wrestler": 105,
 		"hurricanemk1": 107,
 		"spitfiremk1": 108,
-		"p40e": 109,
 		"hurricanemk2": 110,
-		"spitfiremk2": 111,
 		"f4f3": 112,
 		"f6f5": 113,
-		"spitfiremk5": 114,
 		"spitfiremk16": 115,
 		"seafury": 116,
 		"f4u": 117,
@@ -544,7 +540,11 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"I611": 190,
 		"I612": 191,
 		"I613": 192,
-		"I614": 193
+		"I614": 193,
+		"m4": 74,
+		"p47b": 109,
+		"spitfiremk9": 114,
+		"spitfiremk5": 111
 	},
 	"autotile": {
 		"autotile": 0,

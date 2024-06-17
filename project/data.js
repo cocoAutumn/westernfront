@@ -289,6 +289,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT163",
 				"MT169"
+			],
+			[
+				"MT170",
+				"MT177"
 			]
 		],
 		"images": [
@@ -330,6 +334,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"chapter7.jpg",
 			"chapter8.jpg",
 			"chapter9.jpg",
+			"churchill3.jpg",
 			"classe.jpg",
 			"classj.jpg",
 			"classv.jpg",
@@ -378,6 +383,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"lundstedt.png",
 			"m26.jpg",
 			"m3grant.jpg",
+			"m4.jpg",
 			"macarthur.png",
 			"mahan.jpg",
 			"manstein.png",
@@ -394,6 +400,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"p40c.jpg",
 			"p40e.jpg",
 			"p47.jpg",
+			"p47d.jpg",
 			"p51.jpg",
 			"p61.jpg",
 			"patton.png",
@@ -615,6 +622,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"load.mp3",
 			"move1.mp3",
 			"move2.mp3",
+			"move3.mp3",
 			"open_ui.mp3",
 			"pickaxe.mp3",
 			"rain.wav",
@@ -2887,6 +2895,312 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "flag:warmachine",
 												"value": "true"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "shop5",
+				"text": "\t[1942级商店（下半）]请选择购买项",
+				"textInList": "1942级商店（下半）",
+				"mustEnable": true,
+				"disablePreview": true,
+				"choices": [
+					{
+						"text": "M4“谢尔曼”中型坦克（2500）",
+						"need": "true",
+						"icon": "m4",
+						"condition": "!core.hasEquip('m4')&&!core.hasItem('m4')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[m4.jpg,170,50]如果说二战时期苏联坦克的象征是T-34系列型号，那么美国坦克的象征便是M4“谢尔曼”。谢尔曼坦克于1942年批量生产装备美军，拥有不计其数的改型，是二战中产量最大的坦克之一，各型号总产量近5万辆。M4是最初型号，配备75mm短管炮和倾斜装甲，在最初装备的那段时间里算是相对先进的坦克。随着战争的进行，谢尔曼的攻击力和防护力都显得不足，但好在这种坦克非常易于改装，只要稍微改改，换个炮，加点装甲，就能继续适应战场形势，再不济也能凭借巨大的产能淹死敌人。此外，由于谢尔曼坦克圆润滑稽，酷似馒头的外形和发音，军迷们给它起了个外号叫“谢馒头”",
+							"\f[m4.jpg,170,50]装备属性：攻+200后额外加30%，穿78，装85。\n被动技能：\n工业底蕴：战后额外加5黄金。判定在“工业潜能”之前触发。\n数量碾压：被敌人单向击穿时，攻击力额外加15%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:m4",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "丘吉尔MK3步兵坦克（3000）",
+						"need": "true",
+						"icon": "churchillmk3",
+						"condition": "!core.hasEquip('churchillmk3')&&!core.hasItem('churchillmk3')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[churchill3.jpg,170,50]“丘吉尔”坦克是英国的最后一种步兵坦克，也是第二次世界大战中英国生产数量最多的一种坦克，共计制造了约7000辆。这种以丘吉尔首相命名的重型坦克于1941年开始交付英军，其特点是装甲非常厚，后期型甚至装甲厚度远超虎式坦克，但缺点也非常明显——初期型号的炮太小，在坦克战中处于“谁也打不穿，谁也打不穿”的尴尬地位，后期型才略有改进。但无论哪种型号都有一个共同的缺点：太慢，骑自行车都有可能追上它。丘吉尔3型于1942年5月开始装备英军，主炮换为57mm加农炮，大大提高了火力。",
+							"\f[churchill3.jpg,170,50]装备属性：攻+100后加20%，穿90，装89。\n被动技能：\n笨重：被敌人单向击穿时，敌人额外先攻10回合。\n红茶不能洒：使用“下午茶”时，恢复效果改为35%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:churchillmk3",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "喷火MK5战斗机（2500）",
+						"need": "true",
+						"icon": "spitfiremk5",
+						"condition": "!core.hasEquip('spitfiremk5')&&!core.hasItem('spitfiremk5')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[spitfiremk5.jpg,170,50]喷火MK5型是喷火大家族中最重要的型号之一，换装了1140马力的梅林型发动机，火力也从8挺7.7mm机枪换成了4挺7.7加2挺20mm机炮。MK5型共生产了约6500架，是英国空军的主力。",
+							"\f[spitfiremk5.jpg,170,50]装备属性：攻击+170后额外加20%。\n被动：\n不列颠之鹰：与敌方战斗机作战时，每回合增伤10%。此外，如果回合开始时该敌机血量高于60%，额外受到等同于我方攻击力40%的伤害",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "choices",
+										"text": "你可以从以下两种购买方案中选择一种",
+										"choices": [
+											{
+												"text": "替换手中的“喷火MK1型”（1900）",
+												"icon": "spitfiremk1",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:spitfiremk1>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=1900)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "fighter1.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "1900"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:spitfiremk1",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:spitfiremk5",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=2500)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "fighter1.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "2500"
+															},
+															{
+																"type": "setValue",
+																"name": "item:spitfiremk5",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "P47B“雷电”战斗机（2500）",
+						"need": "true",
+						"icon": "p47b",
+						"condition": "!core.hasEquip('p47b')&&!core.hasItem('p47b')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[p47.jpg,170,50]P47“雷电”战斗机由美国“共和”公司设计制造，是美国产量最大的战斗机之一。P47战斗机的特点总结起来就是“大力飞砖”，火力配置和装甲防护非常彪悍，速度也相对较快，但非常笨重，在空战中要是不慎陷入缠斗，很容易就会败下阵来。P47活跃于各大战场，通常执行护航和对地攻击任务，且战果相当丰厚。曾有一位飞行员驾驶P47在空战中遭受重创，但敌机直到打光了子弹也没能将其击落，只能向他敬礼后无奈飞走。当这位飞行员回到基地数飞机上的弹孔时，他光是站在原地不动就数了200个弹孔，只好放弃，并感叹P47战斗机的防护能力实在是太好。",
+							"\f[p47.jpg,170,50]装备属性：攻击+120后额外加20%。\n被动：\n钢筋铁骨：与敌方空军作战时，免疫20%普攻伤害。\n火力倾泻：如果敌方轰炸机血量少于50%，每回合额外附加30%攻击力的伤害",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:p47b",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "P38“闪电”重型战斗机（3200）",
+						"need": "true",
+						"icon": "p38",
+						"condition": "!core.hasEquip('p38')&&!core.hasItem('p38')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[p38.jpg,170,50]P38“闪电”战斗机是美国洛克希德公司研发的双引擎重型战斗机，1941年服役，绰号“双身恶魔”。P38战斗机速度快，航程远，火力强劲，并且坚固，是美军相对较为成功的战斗机之一，美国头号王牌飞行员理查德·邦格的座驾就是P38。1943年，美国截获了日本的绝密电报，获知海军大将山本五十六的航程信息。1943年4月18日清晨，十余架P38腾空而起，飞往布甘维尔岛上空，随后一击命中山本的座机，山本当场坠机身亡。从此P38一战成名。并且，看到P38独特的外观，你是否想起了某个小霸王掌机上的童年回忆？提示：1942。",
+							"\f[p38.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:p38",
+												"operator": "+=",
+												"value": "1"
 											}
 										],
 										"false": [

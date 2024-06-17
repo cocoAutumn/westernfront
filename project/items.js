@@ -672,7 +672,18 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "丘吉尔MK3型",
 		"canUseItemEffect": "true",
-		"text": "攻+n后加m%，穿90，装89。\n被动技能：\n笨重：被敌人单向击穿时，敌人额外先攻10回合。\n红茶不能洒：使用“下午茶”时，恢复效果改为35%。"
+		"text": "攻+100后加30%，穿90，装89。\n被动技能：\n笨重：被敌人单向击穿时，敌人额外先攻10回合。\n红茶不能洒：使用“下午茶”时，恢复效果改为35%。",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 100,
+				"ap": 90,
+				"arm": 89
+			},
+			"percentage": {
+				"atk": 30
+			}
+		}
 	},
 	"m3grant": {
 		"cls": "equips",
@@ -690,12 +701,6 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"atk": 10
 			}
 		}
-	},
-	"m4a1": {
-		"cls": "equips",
-		"name": "M4A1谢尔曼",
-		"canUseItemEffect": "true",
-		"text": "攻+n后额外加m%，穿78，装85。\n被动技能：\n工业底蕴：战后额外加5黄金。\n数量碾压：被敌人单向击穿时，攻击力额外加15%。"
 	},
 	"m4a2": {
 		"cls": "equips",
@@ -1012,12 +1017,6 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			"percentage": {}
 		}
 	},
-	"p40e": {
-		"cls": "equips",
-		"name": "P40E战鹰",
-		"canUseItemEffect": "true",
-		"text": "主武器：6×12.7mm机枪。挂载：2×100磅和1×500磅炸弹\n攻击+80后额外加10%。\n仅第2回合投弹，造成两次0.4倍攻击力的伤害和1次2倍攻击力的伤害。"
-	},
 	"hurricanemk2": {
 		"cls": "equips",
 		"name": "飓风MK2",
@@ -1031,17 +1030,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			"percentage": {}
 		}
 	},
-	"spitfiremk2": {
-		"cls": "equips",
-		"name": "喷火MK5",
-		"canUseItemEffect": "true",
-		"text": "主武器：4×7.7mm机枪和2×20mm机炮\n攻击+120后额外加10%，与战斗机作战时，每回合额外追加10%伤害。\n被动：\n空中传奇：与敌方战斗机作战时，如果对手血量高于70%，攻击力额外增加10%。"
-	},
 	"f4f3": {
 		"cls": "equips",
 		"name": "F4F-3野猫",
 		"canUseItemEffect": "true",
-		"text": "主武器：6×12.7毫米勃朗宁机枪。挂载：2×100磅炸弹\n装备属性：攻+80后额外加10%。挂载：2×100磅炸弹。与敌方空军作战时，每个偶数回合普攻伤害增加15%\n仅第2回合投弹，造成两次0.4倍攻击力的伤害。",
+		"text": "主武器：6×12.7毫米勃朗宁机枪。挂载：2×100磅炸弹\n装备属性：攻+80后额外加10%。与敌方空军作战时，每个偶数回合普攻伤害增加15%\n仅第2回合投弹，造成两次0.4倍攻击力的伤害。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -1057,12 +1050,6 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "F6F-5地狱猫",
 		"canUseItemEffect": "true",
 		"text": "主武器：6×12.7mm机枪。挂载：6×HVAR火箭弹和2×1000磅炸弹\n属性：攻+n后额外＋20%\n与陆军或水面舰艇战斗时，首回合抢先发射火箭弹，每枚火箭弹伤害为0.2倍攻击力。仅第2回合投弹，每颗炸弹伤害为4倍攻击力\n被动：\n地狱审判：如果敌方战斗机具有连击，则开战时压制敌人无法行动2回合。"
-	},
-	"spitfiremk5": {
-		"cls": "equips",
-		"name": "喷火MK9",
-		"canUseItemEffect": "true",
-		"text": "主武器：4×7.7mm机枪和2×20mm机炮。\n属性：攻击＋n后额外加30%。\n被动：\n空中传奇：与敌方战斗机作战时，如果对方血量大于50%，攻击力额外提升10%"
 	},
 	"spitfiremk16": {
 		"cls": "equips",
@@ -1086,7 +1073,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "P51D野马",
 		"canUseItemEffect": "true",
-		"text": "主武器：6×12.7mm机枪。挂载：10×HVAR火箭弹\n属性：攻击+n后额外加100%。与陆军和水面舰艇战斗时抢先发射火箭弹，每枚火箭弹伤害为0.4倍攻击力。\n被动：\n长途护航：装备了其他飞机时，受到的所有战斗伤害减少30%。\n制空霸权：与敌方空军战斗时，战斗方式改为3连击。对喷气机不生效。"
+		"text": "主武器：6×12.7mm机枪。挂载：10×HVAR火箭弹\n属性：攻击+n后额外加100%。与陆军和水面舰艇战斗时抢先发射火箭弹，每枚火箭弹伤害为0.2倍攻击力。\n被动：\n长途护航：装备了其他飞机时，受到的所有战斗伤害减少30%。\n制空霸权：与敌方空军战斗时，战斗方式改为3连击。对喷气机不生效。"
 	},
 	"skua": {
 		"cls": "equips",
@@ -1118,7 +1105,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "英俊战士MK6C",
 		"canUseItemEffect": "true",
-		"text": "攻击+300。挂载：8×RP-3火箭弹。攻击轰炸机时增伤30%。\n攻击非空军敌人时率先发射1轮火箭弹，每发火箭弹的伤害为0.2倍攻击力。\n被动：\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。",
+		"text": "主武器：6×7.7mm机枪和4×20mm机炮\n攻击+300。挂载：8×RP-3火箭弹。攻击轰炸机时增伤30%。\n攻击非空军敌人时率先发射1轮火箭弹，每发火箭弹的伤害为0.2倍攻击力。\n被动：\n机载雷达：敌人的“突袭”（先攻）技能无效且我方额外进行2次普通攻击。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害",
 		"equip": {
 			"type": 5,
 			"value": {
@@ -1131,7 +1118,14 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "P38闪电",
 		"canUseItemEffect": "true",
-		"text": "主武器：4×12.7mm机枪和1×20mm机炮。挂载：6×M8火箭弹\n属性：攻击+n。与陆军和水面舰艇战斗时抢先发射火箭弹，每枚火箭弹伤害为0.1倍攻击力\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加40%"
+		"text": "主武器：4×12.7mm机枪和1×20mm机炮\n攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+		"equip": {
+			"type": 5,
+			"value": {
+				"atk": 350
+			},
+			"percentage": {}
+		}
 	},
 	"mosquito": {
 		"cls": "equips",
@@ -1274,7 +1268,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"async": true
 			}
 		],
-		"useItemEffect": "if (hero.hp > hero.hpmax * 3 / 4) core.drawHeroAnimate('hpfull');\ncore.status.hero.hp += hero.hpmax * 0.25;"
+		"useItemEffect": "if (core.hasEquip('churchillmk3')) {\n\tif (hero.hp > hero.hpmax * 0.65) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.35;\n} else {\n\tif (hero.hp > hero.hpmax * 0.65) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.35;\n}"
 	},
 	"cola": {
 		"cls": "tools",
@@ -1772,5 +1766,58 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "新物品",
 		"canUseItemEffect": "true"
+	},
+	"m4": {
+		"cls": "equips",
+		"name": "M4谢尔曼",
+		"canUseItemEffect": "true",
+		"text": "攻+200后额外加30%，穿78，装85。\n被动技能：\n工业底蕴：战后额外加5黄金。判定在“工业潜能”之前触发。\n数量碾压：被敌人单向击穿时，攻击力额外加15%。",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 200,
+				"ap": 78,
+				"arm": 85
+			},
+			"percentage": {
+				"atk": 30
+			}
+		}
+	},
+	"p47b": {
+		"cls": "equips",
+		"name": "P47B雷电",
+		"canUseItemEffect": "true",
+		"text": "主武器：8×12.7mm机枪\n装备属性：攻击+120后额外加20%。\n被动：\n钢筋铁骨：与敌方空军作战时，免疫20%普攻伤害。",
+		"equip": {
+			"type": 4,
+			"value": {
+				"atk": 120
+			},
+			"percentage": {
+				"atk": 20
+			}
+		}
+	},
+	"spitfiremk9": {
+		"cls": "equips",
+		"name": "喷火MK9",
+		"canUseItemEffect": "true",
+		"text": "主武器：4×7.7mm机枪和2×20mm机炮。\n属性：攻击＋n后额外加30%。\n被动：\n空中传奇：与敌方战斗机作战时，如果对方血量大于50%，攻击力额外提升10%"
+	},
+	"spitfiremk5": {
+		"cls": "equips",
+		"name": "喷火MK5",
+		"canUseItemEffect": "true",
+		"text": "主武器：4×7.7mm机枪和2×20mm机炮\n攻击+170后额外加20%。\n被动：\n不列颠之鹰：与敌方战斗机作战时，每回合增伤10%。此外，如果回合开始时该敌机血量高于60%，额外受到等同于我方攻击力40%的伤害。",
+		"equip": {
+			"type": 4,
+			"value": {
+				"atk": 170
+			},
+			"percentage": {
+				"atk": 20
+			}
+		}
 	}
 }

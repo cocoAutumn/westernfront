@@ -292,10 +292,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (type === '步兵') {
 		animate = 'shoot';
 	}
-	if (type === '轻坦' || type === '中坦' || type === '重坦' || type === '坦歼') {
+	if (type === '轻坦' || type === '中坦' || type === '坦歼') {
 		animate = 'vehicleexplore';
 		if (flags.closesound !== true)
 			core.playSound("move2.mp3");
+	}
+	if (type === '重坦') {
+		animate = 'vehicleexplore';
+		if (flags.closesound !== true)
+			core.playSound("move3.mp3");
 	}
 	if (type === '反坦克炮' || type === '榴弹炮' || type === '高射炮') {
 		animate = "vehicleexplore";
@@ -391,6 +396,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var money = guards.reduce(function (curr, g) {
 		return curr + core.material.enemys[g[2]].money;
 	}, core.getEnemyValue(enemy, "money", x, y));
+	if (core.hasEquip('m4')) money += 5; //谢馒头，触发在双倍前
 	if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
 	if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 	if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
@@ -866,6 +872,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		turn = 0,
 		damage = 0,
 		notyet = true;
+
 	//狙击
 	if (core.hasSpecial(mon_special, 56)) {
 		damage += mon_atk * 2 - hero_mdef;
@@ -903,12 +910,18 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('norfolk') && core.plugin.Navy.includes(enemyInfo.type)) {
 		curr_hp -= hero_atk;
 	}
+	//喷火MK5
+	if (core.hasEquip('spitfiremk5') && enemyInfo.type === '战斗机' && curr_hp >= mon_hp * 0.6)
+		curr_hp -= hero_atk * 0.4;
 	//空射火箭弹
-	if (core.hasEquip('beautifighter') && !core.plugin.Luftwaffe.includes(enemyInfo.type)) { //英俊战士
+	if (core.hasEquip('beautifighter') && !core.plugin.Luftwaffe.includes(enemyInfo.type) && enemyInfo.type !== '潜艇') { //英俊战士
 		curr_hp -= hero_atk * 0.2 * 8;
 	}
-	if (core.hasEquip('typhoon') && !core.plugin.Luftwaffe.includes(enemyInfo.type)) { //台风攻击机
+	if (core.hasEquip('typhoon') && !core.plugin.Luftwaffe.includes(enemyInfo.type) && enemyInfo.type !== '潜艇') { //台风攻击机
 		curr_hp -= hero_atk * 0.2 * 16;
+	}
+	if (core.hasEquip('p38') && !core.plugin.Luftwaffe.includes(enemyInfo.type) && enemyInfo.type !== '潜艇') { //P38闪电
+		curr_hp -= hero_atk * 0.1 * 6;
 	}
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合
