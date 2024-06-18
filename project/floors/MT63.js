@@ -35,26 +35,6 @@ main.floors.MT63=
             "type": "setCurtain",
             "time": 500
         },
-        {
-            "type": "showImage",
-            "code": 1,
-            "image": "chapter3.jpg",
-            "loc": [
-                0,
-                0
-            ],
-            "opacity": 1,
-            "time": 500
-        },
-        {
-            "type": "sleep",
-            "time": 2000
-        },
-        {
-            "type": "hideImage",
-            "code": 1,
-            "time": 500
-        },
         "\r[yellow]Mission 10 保卫船队",
         "\t[盟军指挥官,hero]已完成任务交接，所有舰船保持队形，注意搜索敌人。",
         {

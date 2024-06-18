@@ -118,6 +118,18 @@ main.floors.MT108=
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
                     {
+                        "text": "装备 P40C战斧",
+                        "icon": "p40c",
+                        "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
+                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p40c"
+                            }
+                        ]
+                    },
+                    {
                         "text": "装备 飓风MK1型",
                         "icon": "hurricanemk1",
                         "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",

@@ -365,6 +365,49 @@ main.floors.MT31=
                             "作战计划毫无争议。德国空军将发起“空中闪电战”，以压倒性优势，对英国本土实施残酷的轰炸，确立制空权，以确保陆军能够顺利乘船登陆。",
                             "计划名为，“海狮计划”",
                             {
+                                "type": "sleep",
+                                "time": 500
+                            },
+                            {
+                                "type": "showImage",
+                                "code": 1,
+                                "image": "chapter2.jpg",
+                                "loc": [
+                                    0,
+                                    0
+                                ],
+                                "opacity": 1,
+                                "time": 0
+                            },
+                            {
+                                "type": "setCurtain",
+                                "time": 500
+                            },
+                            {
+                                "type": "sleep",
+                                "time": 2000
+                            },
+                            {
+                                "type": "setCurtain",
+                                "color": [
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "time": 500,
+                                "keep": true
+                            },
+                            {
+                                "type": "hideImage",
+                                "code": 1,
+                                "time": 0
+                            },
+                            {
+                                "type": "sleep",
+                                "time": 500
+                            },
+                            {
                                 "type": "changeFloor",
                                 "floorId": "MT32",
                                 "loc": [

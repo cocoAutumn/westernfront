@@ -1703,6 +1703,20 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 								]
 							},
 							{
+								"text": "灯光效果：[${flags.lighton?'ON':'OFF'}]",
+								"action": [
+									{
+										"type": "setValue",
+										"name": "flag:lighton",
+										"value": "(!flag:lighton)"
+									},
+									{
+										"type": "function",
+										"function": "function(){\ncore.drawHero()\n}"
+									}
+								]
+							},
+							{
 								"text": "返回",
 								"action": [
 									{

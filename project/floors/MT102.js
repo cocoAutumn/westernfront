@@ -25,26 +25,6 @@ main.floors.MT102=
             "type": "setCurtain",
             "time": 500
         },
-        {
-            "type": "showImage",
-            "code": 1,
-            "image": "chapter4.jpg",
-            "loc": [
-                0,
-                0
-            ],
-            "opacity": 1,
-            "time": 500
-        },
-        {
-            "type": "sleep",
-            "time": 2000
-        },
-        {
-            "type": "hideImage",
-            "code": 1,
-            "time": 500
-        },
         "\r[yellow]Mission 16 罗盘行动",
         {
             "type": "setValue",

@@ -589,6 +589,23 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			}
 		}
 	}
+	//灯光
+	core.control._drawHero_draw = function (direction, x, y, status, offset, frame) {
+		offset = offset || { x: 0, y: 0, offset: 0, px: 0, py: 0 };
+		if (["MT55", "MT56", "MT57", "MT58", "MT59", "MT60", "MT180"].indexOf(core.status.floorId) >= 0) {
+			core.plugin.drawLight('newui1', 0.5, [
+				[16 + hero.loc.x * 32 + offset.x, 16 + hero.loc.y * 32 + offset.y, flags.lighton ? 128 : 1000]
+			], 0.8);
+		}
+		var opacity = core.setAlpha('hero', core.getFlag('__heroOpacity__', 1))
+		this._drawHero_getDrawObjs(direction, x, y, status, offset).forEach(function (block) {
+			core.drawImage('hero', block.img, (block.heroIcon[block.status] + (frame || 0)) % 4 * block.width,
+				block.heroIcon.loc * block.height, block.width, block.height,
+				block.posx + (32 - block.width) / 2, block.posy + 32 - block.height, block.width, block.height);
+		});
+		core.setAlpha('hero', opacity);
+
+	}
 	this._afterLoadResources = function () {
 		// 本函数将在所有资源加载完毕后，游戏开启前被执行
 	}

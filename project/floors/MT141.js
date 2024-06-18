@@ -386,6 +386,49 @@ main.floors.MT141=
                             "这对隆美尔来说确实很棘手。但他还是迅速制定了计划，抓紧一切时间展开行动。",
                             "一场大战，就此展开。",
                             {
+                                "type": "sleep",
+                                "time": 500
+                            },
+                            {
+                                "type": "showImage",
+                                "code": 1,
+                                "image": "chapter5.jpg",
+                                "loc": [
+                                    0,
+                                    0
+                                ],
+                                "opacity": 1,
+                                "time": 0
+                            },
+                            {
+                                "type": "setCurtain",
+                                "time": 500
+                            },
+                            {
+                                "type": "sleep",
+                                "time": 2000
+                            },
+                            {
+                                "type": "setCurtain",
+                                "color": [
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "time": 500,
+                                "keep": true
+                            },
+                            {
+                                "type": "hideImage",
+                                "code": 1,
+                                "time": 0
+                            },
+                            {
+                                "type": "sleep",
+                                "time": 500
+                            },
+                            {
                                 "type": "changeFloor",
                                 "floorId": "MT142",
                                 "loc": [

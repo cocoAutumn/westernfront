@@ -26,26 +26,6 @@ main.floors.MT144=
             "time": 500
         },
         {
-            "type": "showImage",
-            "code": 1,
-            "image": "chapter5.jpg",
-            "loc": [
-                0,
-                0
-            ],
-            "opacity": 1,
-            "time": 500
-        },
-        {
-            "type": "sleep",
-            "time": 2000
-        },
-        {
-            "type": "hideImage",
-            "code": 1,
-            "time": 500
-        },
-        {
             "type": "setValue",
             "name": "flag:dry",
             "value": "true"

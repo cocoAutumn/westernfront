@@ -24,6 +24,49 @@ main.floors.MT0=
         "1940年5月9日，德国空军出动，把炸弹扔进了自家地盘，以数百名本国无辜平民的伤亡为由，诬陷给荷兰和比利时两个中立国作为开战理由。",
         "5月10日，法国、荷兰、比利时、卢森堡的天空，响起了德国轰炸机的引擎声——代号“黄色方案”，开始行动。",
         {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "chapter1.jpg",
+            "loc": [
+                0,
+                0
+            ],
+            "opacity": 1,
+            "time": 0
+        },
+        {
+            "type": "setCurtain",
+            "time": 500
+        },
+        {
+            "type": "sleep",
+            "time": 2000
+        },
+        {
+            "type": "setCurtain",
+            "color": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "time": 500,
+            "keep": true
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 0
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
             "type": "setCurtain",
             "time": 500
         },

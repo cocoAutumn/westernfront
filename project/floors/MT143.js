@@ -143,6 +143,18 @@ main.floors.MT143=
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
                     {
+                        "text": "装备 P40C战斧",
+                        "icon": "p40c",
+                        "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
+                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p40c"
+                            }
+                        ]
+                    },
+                    {
                         "text": "装备 喷火MK1型",
                         "icon": "spitfiremk1",
                         "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",

@@ -909,6 +909,49 @@ main.floors.MT99=
                                                     "英军占领的埃及后面就是苏伊士运河，这是英国与中印等亚洲地区连接的重要通道，一旦苏伊士运河被切断，后果不堪设想。",
                                                     "英军必须阻止意军的攻势，以此捍卫苏伊士运河的控制权。",
                                                     {
+                                                        "type": "sleep",
+                                                        "time": 500
+                                                    },
+                                                    {
+                                                        "type": "showImage",
+                                                        "code": 1,
+                                                        "image": "chapter4.jpg",
+                                                        "loc": [
+                                                            0,
+                                                            0
+                                                        ],
+                                                        "opacity": 1,
+                                                        "time": 0
+                                                    },
+                                                    {
+                                                        "type": "setCurtain",
+                                                        "time": 500
+                                                    },
+                                                    {
+                                                        "type": "sleep",
+                                                        "time": 2000
+                                                    },
+                                                    {
+                                                        "type": "setCurtain",
+                                                        "color": [
+                                                            0,
+                                                            0,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "time": 500,
+                                                        "keep": true
+                                                    },
+                                                    {
+                                                        "type": "hideImage",
+                                                        "code": 1,
+                                                        "time": 0
+                                                    },
+                                                    {
+                                                        "type": "sleep",
+                                                        "time": 500
+                                                    },
+                                                    {
                                                         "type": "changeFloor",
                                                         "floorId": "MT100",
                                                         "loc": [

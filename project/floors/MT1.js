@@ -31,6 +31,11 @@ main.floors.MT1=
         },
         {
             "type": "setValue",
+            "name": "flag:lighton",
+            "value": "true"
+        },
+        {
+            "type": "setValue",
             "name": "item:I335",
             "operator": "+=",
             "value": "1"
@@ -57,26 +62,6 @@ main.floors.MT1=
             "type": "setValue",
             "name": "flag:stage",
             "value": "1"
-        },
-        {
-            "type": "showImage",
-            "code": 1,
-            "image": "chapter1.jpg",
-            "loc": [
-                0,
-                0
-            ],
-            "opacity": 1,
-            "time": 500
-        },
-        {
-            "type": "sleep",
-            "time": 2000
-        },
-        {
-            "type": "hideImage",
-            "code": 1,
-            "time": 500
         },
         "\r[yellow]Mission 1 马奇诺防线",
         {

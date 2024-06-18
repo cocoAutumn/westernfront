@@ -39,6 +39,18 @@ main.floors.MT164=
                 "text": "\t[机库后勤,N516]请选择出战空军",
                 "choices": [
                     {
+                        "text": "装备 P40C战斧",
+                        "icon": "p40c",
+                        "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
+                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p40c"
+                            }
+                        ]
+                    },
+                    {
                         "text": "装备 喷火MK1型",
                         "icon": "spitfiremk1",
                         "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
@@ -243,7 +255,7 @@ main.floors.MT164=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量空军，包括战斗机和重型战斗机，少量高射炮\n推荐携带技能：防空弹幕、空战王牌、破译。\n推荐出战装备：F4F野猫、SBD无畏，轰炸机随便带"
+            "\t[系统提示]当前区域敌人特点：大量空军，包括战斗机和重型战斗机，少量高射炮\n推荐携带技能：防空弹幕、空战王牌、破译。\n推荐出战装备：F4F野猫、英俊战士（可不带），轰炸机随便带"
         ]
     },
     "changeFloor": {},

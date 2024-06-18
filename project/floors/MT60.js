@@ -329,6 +329,49 @@ main.floors.MT60=
                             "每个盟军船员都必须时刻绷紧神经，没人知道敌人会在什么时候出现在何处，是海上，天上，亦或是水下？",
                             "在浩瀚的大西洋上，围绕商船队展开的持久战，已经打响。",
                             {
+                                "type": "sleep",
+                                "time": 500
+                            },
+                            {
+                                "type": "showImage",
+                                "code": 1,
+                                "image": "chapter3.jpg",
+                                "loc": [
+                                    0,
+                                    0
+                                ],
+                                "opacity": 1,
+                                "time": 0
+                            },
+                            {
+                                "type": "setCurtain",
+                                "time": 500
+                            },
+                            {
+                                "type": "sleep",
+                                "time": 2000
+                            },
+                            {
+                                "type": "setCurtain",
+                                "color": [
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "time": 500,
+                                "keep": true
+                            },
+                            {
+                                "type": "hideImage",
+                                "code": 1,
+                                "time": 0
+                            },
+                            {
+                                "type": "sleep",
+                                "time": 500
+                            },
+                            {
                                 "type": "changeFloor",
                                 "floorId": "MT61",
                                 "loc": [
