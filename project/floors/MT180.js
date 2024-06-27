@@ -53,287 +53,329 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "70000",
+            "value": "80000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "atk",
-            "value": "1200",
+            "value": "1400",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "65000",
+            "value": "75000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "atk",
-            "value": "1200",
+            "value": "1400",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf4",
-            "name": "hp",
-            "value": "60000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italyinf4",
-            "name": "atk",
-            "value": "3000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italyinf5",
-            "name": "hp",
-            "value": "65000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italyinf5",
-            "name": "atk",
-            "value": "1500",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italyinf6",
-            "name": "hp",
-            "value": "60000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italyinf6",
-            "name": "atk",
-            "value": "1600",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "l640",
-            "name": "hp",
-            "value": "20000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "l640",
-            "name": "atk",
-            "value": "2000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "m1340",
-            "name": "hp",
-            "value": "16000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "m1340",
-            "name": "atk",
-            "value": "5000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "commandos",
             "name": "hp",
             "value": "70000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
+            "id": "italyinf4",
+            "name": "atk",
+            "value": "3500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyinf5",
+            "name": "hp",
+            "value": "75000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyinf5",
+            "name": "atk",
+            "value": "1700",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyinf6",
+            "name": "hp",
+            "value": "70000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyinf6",
+            "name": "atk",
+            "value": "1800",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "l640",
+            "name": "hp",
+            "value": "24000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "l640",
+            "name": "atk",
+            "value": "2200",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "m1340",
+            "name": "hp",
+            "value": "20000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "m1340",
+            "name": "atk",
+            "value": "5500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "commandos",
+            "name": "hp",
+            "value": "80000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "1500",
+            "value": "1700",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "60000",
+            "value": "70000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "atk",
-            "value": "5000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mortar",
-            "name": "special",
-            "value": "[1,51,55]",
+            "value": "6000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "65000",
+            "value": "75000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "1700",
+            "value": "1900",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "lightmg",
-            "name": "hp",
-            "value": "65000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "lightmg",
-            "name": "atk",
-            "value": "1700",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mg42",
-            "name": "hp",
-            "value": "60000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mg42",
-            "name": "atk",
-            "value": "2000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "howitzer105",
-            "name": "hp",
-            "value": "6000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "howitzer105",
-            "name": "atk",
-            "value": "22000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "howitzer105",
+            "id": "motorinf",
             "name": "special",
-            "value": "[15,42,55]",
+            "value": "[1,4,52,55]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "howitzer105",
-            "name": "zone",
-            "value": "20000",
+            "id": "lightmg",
+            "name": "hp",
+            "value": "75000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "atk",
+            "value": "1900",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "hp",
+            "value": "70000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "atk",
+            "value": "2200",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "aceinf",
+            "name": "hp",
+            "value": "130000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "aceinf",
+            "name": "atk",
+            "value": "5500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "hp",
-            "value": "22000",
+            "value": "25000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "atk",
-            "value": "6000",
+            "value": "6500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "20000",
+            "value": "24000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "atk",
-            "value": "6000",
+            "value": "6500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "stug3a",
+            "name": "hp",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "stug3a",
+            "name": "atk",
+            "value": "12500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "hp",
-            "value": "20000",
+            "value": "24000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "atk",
-            "value": "10000",
+            "value": "11000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110c",
+            "id": "panzer4f",
             "name": "hp",
-            "value": "27000",
+            "value": "24000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110c",
+            "id": "panzer4f",
             "name": "atk",
-            "value": "2500",
+            "value": "12500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "ju88a",
+            "id": "ju88c6",
             "name": "hp",
             "value": "32000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "ju88a",
+            "id": "ju88c6",
+            "name": "atk",
+            "value": "5000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "he111",
+            "name": "hp",
+            "value": "32000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "he111",
             "name": "atk",
             "value": "800",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "ju88a",
+            "id": "he111",
             "name": "bom",
             "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
+            "id": "pak38",
+            "name": "hp",
+            "value": "8000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak38",
+            "name": "atk",
+            "value": "6500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak38",
+            "name": "special",
+            "value": "[55,59]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak38",
+            "name": "zone",
+            "value": "6500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "da90",
             "name": "hp",
-            "value": "6000",
+            "value": "8000",
             "norefresh": true
         },
         {
@@ -345,16 +387,9 @@ main.floors.MT180=
         },
         {
             "type": "setEnemy",
-            "id": "da90",
-            "name": "special",
-            "value": "[40]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "6000",
+            "value": "8000",
             "norefresh": true
         },
         {
@@ -368,7 +403,18 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "flak88",
             "name": "special",
-            "value": "[40,55]"
+            "value": "[55,59]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak88",
+            "name": "zone",
+            "value": "15000"
+        },
+        {
+            "type": "setGlobalValue",
+            "name": "lavaDamage",
+            "value": 15000
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -383,35 +429,28 @@ main.floors.MT180=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐击败隆美尔（主线boss）\n⭐击败格拉齐亚尼（支线boss）\n⭐击毁所有四号F2型坦克",
+        "\t[任务目标]⭐通过当前区域\n⭐全程没有受到地雷伤害\n⭐通关时至少持有20瓶下午茶",
         {
             "type": "callBook"
-        },
-        {
-            "type": "choices",
-            "text": "\t[突发事件]意大利部队向你发出了投降请求。是否同意他们的投降？（投降的敌人伤害均为0，但不会获得金经。拒绝投降有概率激发敌人斗志）",
-            "choices": [
-                {
-                    "text": "接受投降",
-                    "action": []
-                },
-                {
-                    "text": "不接受投降",
-                    "action": [
-                        {
-                            "type": "playSound",
-                            "name": "xinxinmagic.mp3"
-                        },
-                        "\t[系统提示]意军对你不接受投降请求的行为感到不满，战斗力提升了！"
-                    ]
-                }
-            ]
         }
     ],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
-    "changeFloor": {},
+    "events": {
+        "9,14": [
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]这关很不亲民，所有的空地都被塞满了地雷！希望你的指挥点数足够充裕吧。",
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]此外，本区域出现了新的“阵地”属性。这是一种双向光环，阵地怪本身可以给周围的怪物提供增益，周围的怪物反过来又可以为阵地本身提供增益。看起来是很烧脑的局面，但其实，这也就意味着你既可以先清杂兵，又可以先杀光环本体，两个都可以选哦！"
+        ]
+    },
+    "changeFloor": {
+        "7,0": {
+            "floorId": "MT181",
+            "loc": [
+                7,
+                14
+            ]
+        }
+    },
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
@@ -420,21 +459,21 @@ main.floors.MT180=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [  0,  0,  0,  0,  0,  0,150, 91,150,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,150,  0,150,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [150,150,150,518,518,150,150, 91,150,521,150,521,521,521,150],
+    [534,362, 11,150,203,569,150,366,150,405,150,150,203,150,150],
+    [530,150,265,404, 81,150,362, 81,250, 11, 11,363, 81,203, 11],
+    [534,362, 11,150, 11,150,570,362,150,150,150,362,150, 11,533],
+    [150,150,150,150,362, 81, 11,150,534,534,534,534,150,150,150],
+    [531,150,534,150, 11,150,363,150,362,150,150,363, 81,531,531],
+    [531,250,534,404,365,150, 11,250, 81, 11,569, 11,150,203,150],
+    [150,150,150,150, 11, 81,569,150,150,250,150,150,532,532,532],
+    [532,232, 11,150,150,203,150,150, 11,215, 11,150,150,150,150],
+    [533,150, 11,266, 81,363,150, 11,253,150, 11,150,521,538,535],
+    [533,150,363,150,150,405,150,362,150,362,363,409,253,518,536],
+    [533,150,363,150, 11, 11,362, 11, 81, 11,150,150,521,539,537],
     [150,150, 82,150,150,150,150, 86,150,150,150,150, 82,150,150],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+    [571,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,571],
+    [571,571,571,571,  0,  0,  0,  0,  0,601,  0,571,571,571,571]
 ],
     "bgmap": [
 

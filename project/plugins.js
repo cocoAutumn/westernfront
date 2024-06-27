@@ -549,6 +549,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage += "^";
 			if (core.enemys.hasSpecial(enemy, 42))
 				damage += "截";
+			if (core.enemys.hasSpecial(enemy, 52))
+				damage += "夹";
+			if (core.enemys.hasSpecial(enemy, 63))
+				damage += "阵";
 		}
 
 		return {
@@ -592,7 +596,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 	//灯光
 	core.control._drawHero_draw = function (direction, x, y, status, offset, frame) {
 		offset = offset || { x: 0, y: 0, offset: 0, px: 0, py: 0 };
-		if (["MT55", "MT56", "MT57", "MT58", "MT59", "MT60", "MT180"].indexOf(core.status.floorId) >= 0) {
+		if (["MT55", "MT56", "MT57", "MT58", "MT59", "MT60", "MT180", "MT181", "MT182", "MT183", "MT184"].indexOf(core.status.floorId) >= 0) {
 			core.plugin.drawLight('newui1', 0.5, [
 				[16 + hero.loc.x * 32 + offset.x, 16 + hero.loc.y * 32 + offset.y, flags.lighton ? 128 : 1000]
 			], 0.8);

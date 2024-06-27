@@ -364,6 +364,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage = 0;
 		delete flags['空中打击'];
 	}
+	if (core.hasSpecial(enemyId, 61)) damage = 0; // 投降
 	if (damage == null || damage >= core.status.hero.hp) {
 		core.status.hero.hp = 0;
 		core.updateStatusBar(false, true);
@@ -401,7 +402,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 	if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 	if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-	if (core.hasFlag('curse')) money = 0; // 诅咒效果
+	if (core.hasSpecial(enemyId, 61)) money = 0; // 投降
 	core.status.hero.money += money;
 	core.status.hero.statistics.money += money;
 
@@ -411,7 +412,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}, core.getEnemyValue(enemy, "exp", x, y));
 	if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 	if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
-	if (core.hasFlag('curse')) exp = 0;
+	if (core.hasSpecial(enemyId, 61)) exp = 0; // 投降
 	core.status.hero.exp += exp;
 	core.status.hero.statistics.exp += exp;
 
@@ -616,28 +617,28 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[38, "精锐", "对主角造成的伤害翻倍", "#dc143c"],
 		[39, "集群", function (enemy) { return "主角同时与" + (enemy.gro ?? 0) + "个该敌人进行战斗" }],
 		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害", "#e6e099", 1],
-		[41, "反制", "与该敌人战斗时，主角使用的战术技能失效", "#5f9ea0"],
-		[42, "截断", "当前地图中，该敌人在场时，主角后勤值失效", "#5f9ea0"],
+		[41, "反制", "与该敌人战斗时，主角无法使用技能"],
+		[42, "截断", "当前地图中，该敌人在场时，主角后勤值失效"],
 		[43, "超压", "该陆军单位的穿甲值大于主角装甲值时，造成的回合伤害额外提升40%"],
-		[44, "雷达", "每个存活的雷达能够为全图轴心国部队提供10%伤害加成", "#e6e099", 1],
-		[45, "警戒", "若主角与该敌人发生战斗，则永久为全图轴心国部队提供10%的攻击力加成", "#e6e099"],
-		[46, "夜枭", "存活时，周围3格内轴心国部队攻击力提升30%", "#ffff00"],
-		[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角在战斗期间每回合额外流失当前生命值的5%，每进行一场战斗就解除一层该debuff", "#bdb76b"],
-		[48, "V1导弹", "巡航导弹，不会主动攻击。若主角未能在10回合内成功拦截该导弹，则立即爆炸并造成等同于自身攻击力的伤害。若成功拦截，则只造成50%攻击力伤害", "#ff0000"],
-		[49, "无线制导", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍攻击力的伤害，否则失控坠毁，不会造成伤害", "#ff0000"],
-		[50, "遥控", "该敌人控制着“弗里茨X”导弹进行攻击。被摧毁后，“弗里茨X”就会失控坠毁", "#ff0000"],
-		[51, "歼灭", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡", "#ff0000"],
-		[52, "包夹", "主角站在两个该敌人中间时，遭受这两个敌人的一次普通攻击", "#c677dd"],
-		[54, "渗透", "战斗伤害不会小于0，战后额外扣除主角100点mp。若mp不足则杀死主角", "#dc143c"],
+		[44, "雷达", "每个存活的雷达能够为全图轴心国部队提供10%伤害加成"],
+		[45, "警戒", "若主角与该敌人发生战斗，则永久为全图轴心国部队提供10%的攻击力加成"],
+		[46, "夜枭", "存活时，周围3格内轴心国部队攻击力提升30%"],
+		[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角在战斗期间每回合额外流失当前生命值的5%，每进行一场战斗就解除一层该debuff"],
+		[48, "V1导弹", "巡航导弹，不会主动攻击。若主角未能在10回合内成功拦截该导弹，则立即爆炸并造成等同于自身攻击力的伤害。若成功拦截，则只造成50%攻击力伤害"],
+		[49, "无线制导", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍攻击力的伤害，否则失控坠毁，不会造成伤害"],
+		[50, "遥控", "该敌人控制着“弗里茨X”导弹进行攻击。被摧毁后，“弗里茨X”就会失控坠毁"],
+		[51, "歼灭", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡"],
+		[52, "包夹", "主角站在两个该敌人中间时，遭受这两个敌人的一次普通攻击"],
+		[54, "渗透", "战斗伤害不会小于0，战后额外扣除主角100点mp。若mp不足则杀死主角"],
 		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响", "#bdb76b"],
 		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人2倍攻击力的伤害，可被后勤值抵消"],
 		[57, "主将", "主角必须消灭当前地图所有杂兵后才可攻击主将", "#00ff00"],
 		[58, "狼群", "当前地图除自身外每有1艘潜艇，雷击值增加10%", "#e6e099", 1],
 		[59, "陷阱", function (enemy) { return "主角与该敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + (enemy.range || 1) + "格内的其他敌人战斗时，每回合额外受到" + enemy.zone + "点领域伤害" }, "#ffff00", 1],
 		[60, "机动", "被主角单向击穿时，主角先手攻击回合数-3"],
-		[61, "投降", "这些已投降的敌军伤害值固定为0，且不会提供金经奖励。", "#ffffff"],
+		[61, "投降", "这些已投降的敌军伤害值固定为0，且不会提供金经奖励。"],
 		[62, "沙漠之狐", "隆美尔专属技能。当前具有“炎热”buff时，主角受到的炎热伤害提升至50%，隆美尔自身不会受到任何影响", "#bdb76b"],
-		[63, "阵地", "该敌人存活时，九宫格半径2格范围内的敌人获得20%减伤。且该范围内存在其他队友时，自身获得40%减伤和10%攻击力加成。不可叠加。", "#ffff00"]
+		[63, "阵地", "该敌人存活时，九宫格半径2格范围内的敌人获得20%减伤。且该范围内存在其他队友时，自身获得40%减伤和10%攻击力加成。不可叠加。", "#ffff00", 1]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -674,6 +675,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_spd = core.getEnemyValue(enemy, 'spd', x, y, floorId),
 		n = core.getEnemyValue(enemy, 'n', x, y, floorId),
 		mon_gro = core.getEnemyValue(enemy, 'gro', x, y, floorId);
+	var mon_id = core.getEnemyValue(enemy, 'id', x, y, floorId);
 
 	var guards = [];
 
@@ -686,7 +688,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			top_buff = 0,
 			bom_buff = 0,
 			trap_buff = 0,
-			aa_buff = 0;
+			aa_buff = 0,
+			damage_debuff = 0;
 		// 已经计算过的光环怪ID列表，用于判定叠加
 		var usedEnemyIds = {};
 		// 检查光环和支援的缓存
@@ -706,8 +709,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						// 检查是否是范围光环
 						var inRange = enemy.haloRange == null;
 						if (enemy.haloRange != null && x != null && y != null) {
-							var dx = Math.abs(block.x - x),
-								dy = Math.abs(block.y - y);
+							var dx = Math.abs(block.x - x), dy = Math.abs(block.y - y);
 							// 检查十字和九宫格光环
 							if (dx + dy <= enemy.haloRange) inRange = true;
 							if (enemy.haloSquare && dx <= enemy.haloRange && dy <= enemy.haloRange) inRange = true;
@@ -720,9 +722,34 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							usedEnemyIds[enemy.id] = true;
 						}
 					}
-					//狼群,58
+					// 检查【狼群】技能，数字58
 					if (enemy && core.hasSpecial(enemy.special, 58) && core.hasSpecial(mon_special, 58)) { // 这里要判断一下两个怪都有狼群
 						if (x !== block.x || y !== block.y) top_buff += 10;
+					}
+					// 检查【阵地】技能，数字63（其他阵地给当前怪物加光环）
+					if (enemy && core.hasSpecial(enemy.special, 63)) {
+						var inRange = false;
+						if (x != null && y != null) {
+							var dx = Math.abs(block.x - x), dy = Math.abs(block.y - y);
+							if (dx <= 2 && dy <= 2) inRange = true;
+						}
+						if (inRange && !usedEnemyIds[enemy.id]) {
+							damage_debuff += 0.2;
+							usedEnemyIds[enemy.id] = true;
+						}
+					}
+					// 检查【阵地】技能，数字63（其他怪物给当前阵地加光环）
+					if (enemy && core.hasSpecial(mon_special), 63) {
+						var inRange = false;
+						if (x != null && y != null) {
+							var dx = Math.abs(block.x - x), dy = Math.abs(block.y - y);
+							if (dx <= 2 && dy <= 2) inRange = true;
+						}
+						if (inRange && !usedEnemyIds[mon_id]) {
+							damage_debuff += 0.4;
+							atk_buff += 10;
+							usedEnemyIds[mon_id] = true;
+						}
 					}
 					// 检查【支援】技能，数字26
 					if (enemy && core.hasSpecial(enemy.special, 26) &&
@@ -768,7 +795,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			atk_buff = cache.atk_buff;
 			top_buff = cache.top_buff;
 			bom_buff = cache.bom_buff;
+			trap_buff = cache.trap_buff;
 			aa_buff = cache.aa_buff;
+			damage_debuff = cache.damage_debuff;
 			guards = cache.guards;
 		}
 
@@ -926,7 +955,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合
-		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn);
+		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn) * (1 - core.status.checkBlock?.cache?.[x + ',' + y]?.damage_debuff || 0);
 		if (flags.skill === 9 && core.plugin.Army.includes(enemyInfo.type)) { //技能9：抵抗运动
 			enemyInfo.atk = Math.max(11 - turn, 3) * mon_atk / 10;
 		}
@@ -935,7 +964,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			if (core.hasEquip('norfolk')) {
 				if (mon_dod <= 3) {
 					curr_hp -= (3 - mon_dod) * hero_top;
-					notyet = false
+					notyet = false;
 				}
 			}
 		}
@@ -1556,9 +1585,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 		}
 
-		// 夹击；在这里提前计算所有可能的夹击点，具体计算逻辑在下面
+		// 包夹；在这里提前计算所有可能的夹击点，具体计算逻辑在下面
 		// 如果要防止夹击伤害，可以简单的将 flag:no_betweenAttack 设为true
-		if (enemy && core.enemys.hasSpecial(enemy.special, 16) && !core.hasFlag('no_betweenAttack')) {
+		if (enemy && core.enemys.hasSpecial(enemy.special, 52) && !core.hasFlag('no_betweenAttack')) {
 			for (var dir in core.utils.scan) {
 				var nx = x + core.utils.scan[dir].x,
 					ny = y + core.utils.scan[dir].y,
@@ -1575,52 +1604,47 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if ((core.status.event.id == 'book' || core.status.event.id == 'bool-detail') && core.status.event.ui) needCache = true;
 	}
 
-	// 对每个可能的夹击点计算夹击伤害
+	// 对每个可能的包夹点计算夹击伤害
 	for (var loc in betweenAttackLocs) {
 		var xy = loc.split(","),
 			x = parseInt(xy[0]),
 			y = parseInt(xy[1]);
-		// 夹击怪物的ID
+		// 包夹怪物的ID
 		var enemyId1 = null,
 			enemyId2 = null;
-		// 检查左右夹击
+		// 检查左右包夹
 		var leftBlock = blocks[(x - 1) + "," + y],
 			rightBlock = blocks[(x + 1) + "," + y];
 		var leftId = core.getFaceDownId(leftBlock),
 			rightId = core.getFaceDownId(rightBlock);
 		if (leftBlock && !leftBlock.disable && rightBlock && !rightBlock.disable && leftId == rightId) {
-			if (core.hasSpecial(leftId, 16))
+			if (core.hasSpecial(leftId, 52))
 				enemyId1 = leftId;
 		}
-		// 检查上下夹击
+		// 检查上下包夹
 		var topBlock = blocks[x + "," + (y - 1)],
 			bottomBlock = blocks[x + "," + (y + 1)];
 		var topId = core.getFaceDownId(topBlock),
 			bottomId = core.getFaceDownId(bottomBlock);
 		if (topBlock && !topBlock.disable && bottomBlock && !bottomBlock.disable && topId == bottomId) {
-			if (core.hasSpecial(topId, 16))
+			if (core.hasSpecial(topId, 52))
 				enemyId2 = topId;
 		}
 
 		if (enemyId1 != null || enemyId2 != null) {
-			var leftHp = core.status.hero.hp - (damage[loc] || 0);
-			if (leftHp > 1) {
-				// 夹击伤害值
-				var value = Math.floor(leftHp / 2);
-				// 是否不超过怪物伤害值
-				if (core.flags.betweenAttackMax) {
-					var enemyDamage1 = core.getDamage(enemyId1, x, y, floorId);
-					if (enemyDamage1 != null && enemyDamage1 < value)
-						value = enemyDamage1;
-					var enemyDamage2 = core.getDamage(enemyId2, x, y, floorId);
-					if (enemyDamage2 != null && enemyDamage2 < value)
-						value = enemyDamage2;
-				}
-				if (value > 0) {
-					damage[loc] = (damage[loc] || 0) + value;
-					type[loc] = type[loc] || {};
-					type[loc]["夹击伤害"] = true;
-				}
+			var value = 0;
+			if (enemyId1 != null) {
+				value += core.plugin.getEnemyPerDamage(enemyId1, hero, x - 1, y, floorId);
+				value += core.plugin.getEnemyPerDamage(enemyId1, hero, x + 1, y, floorId);
+			}
+			if (enemyId2 != null) {
+				value += core.plugin.getEnemyPerDamage(enemyId2, hero, x, y - 1, floorId);
+				value += core.plugin.getEnemyPerDamage(enemyId2, hero, x, y + 1, floorId);
+			}
+			if (value > 0) {
+				damage[loc] = (damage[loc] || 0) + value;
+				type[loc] = type[loc] || {};
+				type[loc]["包夹伤害"] = true;
 			}
 		}
 	}
