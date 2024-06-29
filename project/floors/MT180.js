@@ -53,7 +53,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "80000",
+            "value": "90000",
             "norefresh": true
         },
         {
@@ -67,7 +67,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "75000",
+            "value": "85000",
             "norefresh": true
         },
         {
@@ -81,7 +81,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
-            "value": "70000",
+            "value": "80000",
             "norefresh": true
         },
         {
@@ -123,7 +123,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "l640",
             "name": "hp",
-            "value": "24000",
+            "value": "30000",
             "norefresh": true
         },
         {
@@ -137,7 +137,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "20000",
+            "value": "25000",
             "norefresh": true
         },
         {
@@ -151,7 +151,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "80000",
+            "value": "90000",
             "norefresh": true
         },
         {
@@ -165,7 +165,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "70000",
+            "value": "80000",
             "norefresh": true
         },
         {
@@ -256,7 +256,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "24000",
+            "value": "29000",
             "norefresh": true
         },
         {
@@ -270,7 +270,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "stug3a",
             "name": "hp",
-            "value": "12000",
+            "value": "20000",
             "norefresh": true
         },
         {
@@ -284,7 +284,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "hp",
-            "value": "24000",
+            "value": "28000",
             "norefresh": true
         },
         {
@@ -298,7 +298,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "panzer4f",
             "name": "hp",
-            "value": "24000",
+            "value": "28000",
             "norefresh": true
         },
         {
@@ -326,7 +326,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "he111",
             "name": "hp",
-            "value": "32000",
+            "value": "33000",
             "norefresh": true
         },
         {
@@ -345,9 +345,16 @@ main.floors.MT180=
         },
         {
             "type": "setEnemy",
+            "id": "he111",
+            "name": "special",
+            "value": "[28]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "pak38",
             "name": "hp",
-            "value": "8000",
+            "value": "12000",
             "norefresh": true
         },
         {
@@ -375,7 +382,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "da90",
             "name": "hp",
-            "value": "8000",
+            "value": "12000",
             "norefresh": true
         },
         {
@@ -389,7 +396,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "8000",
+            "value": "12000",
             "norefresh": true
         },
         {
@@ -409,12 +416,12 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "flak88",
             "name": "zone",
-            "value": "15000"
+            "value": "10000"
         },
         {
             "type": "setGlobalValue",
             "name": "lavaDamage",
-            "value": 15000
+            "value": 20000
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -472,7 +479,7 @@ main.floors.MT180=
     [533,150,363,150,150,405,150,362,150,362,363,409,253,518,536],
     [533,150,363,150, 11, 11,362, 11, 81, 11,150,150,521,539,537],
     [150,150, 82,150,150,150,150, 86,150,150,150,150, 82,150,150],
-    [571,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,571],
+    [571,571,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,571,571],
     [571,571,571,571,  0,  0,  0,  0,  0,601,  0,571,571,571,571]
 ],
     "bgmap": [

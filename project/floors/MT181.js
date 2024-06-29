@@ -91,7 +91,7 @@ main.floors.MT181=
                             "type": "setEnemy",
                             "id": "italyinf2",
                             "name": "hp",
-                            "value": "100000",
+                            "value": "110000",
                             "norefresh": true
                         },
                         {
@@ -105,7 +105,7 @@ main.floors.MT181=
                             "type": "setEnemy",
                             "id": "italyinf3",
                             "name": "hp",
-                            "value": "95000",
+                            "value": "105000",
                             "norefresh": true
                         },
                         {
@@ -119,7 +119,7 @@ main.floors.MT181=
                             "type": "setEnemy",
                             "id": "italyinf4",
                             "name": "hp",
-                            "value": "90000",
+                            "value": "100000",
                             "norefresh": true
                         },
                         {
@@ -161,7 +161,7 @@ main.floors.MT181=
                             "type": "setEnemy",
                             "id": "l640",
                             "name": "hp",
-                            "value": "30000",
+                            "value": "40000",
                             "norefresh": true
                         },
                         {
@@ -175,7 +175,7 @@ main.floors.MT181=
                             "type": "setEnemy",
                             "id": "m1340",
                             "name": "hp",
-                            "value": "25000",
+                            "value": "35000",
                             "norefresh": true
                         },
                         {
@@ -189,7 +189,7 @@ main.floors.MT181=
                             "type": "setEnemy",
                             "id": "da90",
                             "name": "hp",
-                            "value": "10000",
+                            "value": "20000",
                             "norefresh": true
                         },
                         {

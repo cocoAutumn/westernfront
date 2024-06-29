@@ -628,7 +628,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[49, "无线制导", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍攻击力的伤害，否则失控坠毁，不会造成伤害"],
 		[50, "遥控", "该敌人控制着“弗里茨X”导弹进行攻击。被摧毁后，“弗里茨X”就会失控坠毁"],
 		[51, "歼灭", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡"],
-		[52, "包夹", "主角站在两个该敌人中间时，遭受这两个敌人的一次普通攻击"],
+		[52, "包夹", "主角站在两个该敌人中间时，遭受这两个敌人的一次普通攻击", "#c677dd"],
 		[54, "渗透", "战斗伤害不会小于0，战后额外扣除主角100点mp。若mp不足则杀死主角"],
 		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响", "#bdb76b"],
 		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人2倍攻击力的伤害，可被后勤值抵消"],
@@ -636,7 +636,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[58, "狼群", "当前地图除自身外每有1艘潜艇，雷击值增加10%", "#e6e099", 1],
 		[59, "陷阱", function (enemy) { return "主角与该敌人周围" + (enemy.zoneSquare ? "九宫格" : "十字") + (enemy.range || 1) + "格内的其他敌人战斗时，每回合额外受到" + enemy.zone + "点领域伤害" }, "#ffff00", 1],
 		[60, "机动", "被主角单向击穿时，主角先手攻击回合数-3"],
-		[61, "投降", "这些已投降的敌军伤害值固定为0，且不会提供金经奖励。"],
+		[61, "投降", "这些已投降的敌军伤害值固定为0，且不会提供金经奖励。", "#ffffff"],
 		[62, "沙漠之狐", "隆美尔专属技能。当前具有“炎热”buff时，主角受到的炎热伤害提升至50%，隆美尔自身不会受到任何影响", "#bdb76b"],
 		[63, "阵地", "该敌人存活时，九宫格半径2格范围内的敌人获得20%减伤。且该范围内存在其他队友时，自身获得40%减伤和10%攻击力加成。不可叠加。", "#ffff00", 1]
 	];
@@ -709,7 +709,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						// 检查是否是范围光环
 						var inRange = enemy.haloRange == null;
 						if (enemy.haloRange != null && x != null && y != null) {
-							var dx = Math.abs(block.x - x), dy = Math.abs(block.y - y);
+							var dx = Math.abs(block.x - x),
+								dy = Math.abs(block.y - y);
 							// 检查十字和九宫格光环
 							if (dx + dy <= enemy.haloRange) inRange = true;
 							if (enemy.haloSquare && dx <= enemy.haloRange && dy <= enemy.haloRange) inRange = true;
@@ -730,7 +731,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					if (enemy && core.hasSpecial(enemy.special, 63)) {
 						var inRange = false;
 						if (x != null && y != null) {
-							var dx = Math.abs(block.x - x), dy = Math.abs(block.y - y);
+							var dx = Math.abs(block.x - x),
+								dy = Math.abs(block.y - y);
 							if (dx <= 2 && dy <= 2) inRange = true;
 						}
 						if (inRange && !usedEnemyIds[enemy.id]) {
@@ -742,7 +744,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					if (enemy && core.hasSpecial(mon_special), 63) {
 						var inRange = false;
 						if (x != null && y != null) {
-							var dx = Math.abs(block.x - x), dy = Math.abs(block.y - y);
+							var dx = Math.abs(block.x - x),
+								dy = Math.abs(block.y - y);
 							if (dx <= 2 && dy <= 2) inRange = true;
 						}
 						if (inRange && !usedEnemyIds[mon_id]) {
@@ -955,7 +958,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合
-		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn) * (1 - core.status.checkBlock?.cache?.[x + ',' + y]?.damage_debuff || 0);
+		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn) * (1 - (core.status.checkBlock?.cache?.[x + ',' + y]?.damage_debuff || 0))
 		if (flags.skill === 9 && core.plugin.Army.includes(enemyInfo.type)) { //技能9：抵抗运动
 			enemyInfo.atk = Math.max(11 - turn, 3) * mon_atk / 10;
 		}
@@ -1005,6 +1008,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	//扣除护盾
 	damage -= hero_mdef; //这里可以变为负值
+
+	//投降
+	if (core.hasSpecial(mon_special, 61)) {
+		damage *= 0;
+	}
 
 	//固伤
 	if (core.hasSpecial(mon_special, 22)) {
