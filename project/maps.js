@@ -10,7 +10,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"8": {"cls":"terrains","id":"blueShopRight"},
 	"9": {"cls":"terrains","id":"pinkShopLeft"},
 	"10": {"cls":"terrains","id":"pinkShopRight"},
-	"11": {"cls":"animates","id":"lavaNet","canPass":true,"trigger":"null","script":"(function () {\n\t// 血网的伤害效果移动到 checkBlock 中处理\n\n\t// 如果要做一次性血网，可直接注释掉下面这句话：\n\tcore.removeBlock(core.getHeroLoc('x'), core.getHeroLoc('y'));\n})();","name":"地雷"},
+	"11": {"cls":"animates","id":"lavaNet","canPass":true,"trigger":"null","script":"(function () {\n\t// 血网的伤害效果移动到 checkBlock 中处理\n\tif (flags.landmines == null) flags.landmines = [];\n\tflags.landmines.push(core.status.floorId);\n\n\t// 如果要做一次性血网，可直接注释掉下面这句话：\n\tcore.removeBlock(core.getHeroLoc('x'), core.getHeroLoc('y'));\n})();","name":"地雷"},
 	"12": {"cls":"animates","id":"poisonNet","canPass":true,"trigger":"null","script":"(function () {\n\tif (!core.hasItem('amulet')) {\n\t\tcore.triggerDebuff('get', 'poison');\n\t\tcore.updateStatusBar();\n\t}\n\n\t// 如果要做一次性毒网，可直接注释掉下面这句话：\n\t// core.removeBlock(core.getHeroLoc('x'), core.getHeroLoc('y'));\n})()","name":"毒网"},
 	"13": {"cls":"animates","id":"weakNet","canPass":true,"trigger":"null","script":"(function () {\n\tif (!core.hasItem('amulet')) {\n\t\tcore.triggerDebuff('get', 'weak');\n\t\tcore.updateStatusBar();\n\t}\n\n\t// 如果要做一次性衰网，可直接注释掉下面这句话：\n\t// core.removeBlock(core.getHeroLoc('x'), core.getHeroLoc('y'));\n})()","name":"衰网"},
 	"14": {"cls":"animates","id":"curseNet","canPass":true,"trigger":"null","script":"(function () {\n\tif (!core.hasItem('amulet')) {\n\t\tcore.triggerDebuff('get', 'curse');\n\t\tcore.updateStatusBar();\n\t}\n\n\t// 如果要做一次性咒网，可直接注释掉下面这句话：\n\t// core.removeBlock(core.getHeroLoc('x'), core.getHeroLoc('y'));\n})()","name":"咒网"},

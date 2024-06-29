@@ -682,14 +682,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	// 光环和支援检查
 	if (!core.status.checkBlock) core.status.checkBlock = {};
 
+	let damage_debuff = 0;
 	if (core.status.checkBlock.needCache) {
 		// 从V2.5.4开始，对光环效果增加缓存，以解决多次重复计算的问题，从而大幅提升运行效率。
 		var atk_buff = 0,
 			top_buff = 0,
 			bom_buff = 0,
 			trap_buff = 0,
-			aa_buff = 0,
-			damage_debuff = 0;
+			aa_buff = 0;
 		// 已经计算过的光环怪ID列表，用于判定叠加
 		var usedEnemyIds = {};
 		// 检查光环和支援的缓存
@@ -733,7 +733,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						if (x != null && y != null) {
 							var dx = Math.abs(block.x - x),
 								dy = Math.abs(block.y - y);
-							if (dx <= 2 && dy <= 2) inRange = true;
+							if (dx <= 2 && dy <= 2 && !(dx === 0 && dy === 0)) inRange = true;
 						}
 						if (inRange && !usedEnemyIds[enemy.id]) {
 							damage_debuff += 0.2;
@@ -741,12 +741,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						}
 					}
 					// 检查【阵地】技能，数字63（其他怪物给当前阵地加光环）
-					if (enemy && core.hasSpecial(mon_special), 63) {
+					if (enemy && core.hasSpecial(mon_special, 63)) {
 						var inRange = false;
 						if (x != null && y != null) {
 							var dx = Math.abs(block.x - x),
 								dy = Math.abs(block.y - y);
-							if (dx <= 2 && dy <= 2) inRange = true;
+							if (dx <= 2 && dy <= 2 && !(dx === 0 && dy === 0)) inRange = true;
 						}
 						if (inRange && !usedEnemyIds[mon_id]) {
 							damage_debuff += 0.4;
@@ -792,7 +792,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				}
 			});
 
-			core.status.checkBlock.cache[index] = { "atk_buff": atk_buff, "top_buff": top_buff, "bom_buff": bom_buff, "trap_buff": trap_buff, "aa_buff": aa_buff, "guards": guards };
+			core.status.checkBlock.cache[index] = { "atk_buff": atk_buff, "top_buff": top_buff, "bom_buff": bom_buff, "trap_buff": trap_buff, "aa_buff": aa_buff, "guards": guards, "damage_debuff": damage_debuff };
 		} else {
 			// 直接使用缓存数据
 			atk_buff = cache.atk_buff;
@@ -826,6 +826,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		"point": Math.floor(mon_point),
 		"special": mon_special,
 		"guards": guards, // 返回支援情况
+		damage_debuff,
 		"ap": Math.floor(mon_ap),
 		"arm": Math.floor(mon_arm),
 		"tpn": Math.floor(mon_tpn),
@@ -892,7 +893,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_cd = enemyInfo.cd,
 		mon_ammo = enemyInfo.ammo,
 		mon_spd = enemyInfo.spd,
-		mon_gro = enemyInfo.gro;
+		mon_gro = enemyInfo.gro,
+		damage_debuff = enemyInfo.damage_debuff;
 
 	if (flags.skill === 6) {
 		hero_dod += 2;
@@ -956,9 +958,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('p38') && !core.plugin.Luftwaffe.includes(enemyInfo.type) && enemyInfo.type !== '潜艇') { //P38闪电
 		curr_hp -= hero_atk * 0.1 * 6;
 	}
+	const getHeroPerDamage = core.getHeroPerTurnDamageFn(enemyInfo, hero, x, y, floorId, turn);
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合
-		curr_hp -= core.getHeroPerDamage(enemyInfo, hero, x, y, floorId, turn) * (1 - (core.status.checkBlock?.cache?.[x + ',' + y]?.damage_debuff || 0))
+		curr_hp -= getHeroPerDamage(floorId, turn) * (1 - damage_debuff);
 		if (flags.skill === 9 && core.plugin.Army.includes(enemyInfo.type)) { //技能9：抵抗运动
 			enemyInfo.atk = Math.max(11 - turn, 3) * mon_atk / 10;
 		}

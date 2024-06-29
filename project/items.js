@@ -1268,7 +1268,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"async": true
 			}
 		],
-		"useItemEffect": "if (core.hasEquip('churchillmk3')) {\n\tif (hero.hp > hero.hpmax * 0.65) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.35;\n} else {\n\tif (hero.hp > hero.hpmax * 0.65) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.35;\n}"
+		"useItemEffect": "if (core.hasEquip('churchillmk3')) {\n\tif (hero.hp > hero.hpmax * 0.65) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.35;\n} else {\n\tif (hero.hp > hero.hpmax * 0.75) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.25;\n}"
 	},
 	"cola": {
 		"cls": "tools",

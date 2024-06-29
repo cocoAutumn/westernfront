@@ -4,232 +4,284 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 	this.Army = ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'];
 	this.Navy = ['潜艇', '鱼雷艇', '商船', '驱逐', '轻巡', '重巡', '战列', '航母'];
 	this.Luftwaffe = ['战斗机', '重型战斗机', '攻击机', '俯冲轰炸机', '鱼雷轰炸机', '中型轰炸机', '导弹'];
-	this.getHeroPerDamage = function (enemyInfo, hero, x, y, floorId, nthTurn) {
+	this.getHeroPerTurnDamageFn = function (enemyInfo, hero, x, y, floorId) {
 		hero = hero || core.status.hero;
 		floorId = floorId || core.status.floorId;
 		if (typeof enemyInfo === 'string') enemyInfo = core.getEnemyInfo(enemyInfo, hero, x, y, floorId);
-		var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
-			hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
-			hero_def = core.getRealStatusOrDefault(hero, 'def'),
-			hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
-			hero_ap = core.getRealStatusOrDefault(hero, 'ap'),
-			hero_arm = core.getRealStatusOrDefault(hero, 'arm'),
-			hero_top = core.getRealStatusOrDefault(hero, 'top'),
-			hero_bom = core.getRealStatusOrDefault(hero, 'bom'),
-			hero_tpn = core.getRealStatusOrDefault(hero, 'tpn'),
-			hero_dod = core.getRealStatusOrDefault(hero, 'dod'),
-			hero_gro = core.getRealStatusOrDefault(hero, 'gro');
-		var mon_hp = enemyInfo.hp,
-			mon_atk = enemyInfo.atk,
-			mon_def = enemyInfo.def,
-			mon_special = enemyInfo.special,
-			mon_ap = enemyInfo.ap,
-			mon_arm = enemyInfo.arm,
-			mon_top = enemyInfo.top,
-			mon_bom = enemyInfo.bom,
-			mon_tpn = enemyInfo.tpn,
-			mon_dod = enemyInfo.dod,
-			mon_cd = enemyInfo.cd,
-			mon_ammo = enemyInfo.ammo,
-			mon_spd = enemyInfo.spd,
-			mon_gro = enemyInfo.gro;
-		hero_dod = core.clamp(hero_dod, 0, mon_tpn);
-		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
-		if (core.hasSpecial(mon_special, 36) && nthTurn > mon_spd) // 俯冲轰炸，除前spd个回合外，攻击降低
-			hero_atk *= 0.95;
+		const heroInfo = {};
+		['hp', 'atk', 'def', 'mdef', 'ap', 'arm', 'top', 'bom', 'tpn', 'dod', 'gro'].forEach((field) => {
+			heroInfo[field] = core.getRealStatusOrDefault(hero, field);
+		});
+		const mon_special = enemyInfo.special;
+		const code = [ /* js */ `
+			var hero_hp = heroInfo.hp,
+				hero_atk = heroInfo.atk,
+				hero_def = heroInfo.def,
+				hero_mdef = heroInfo.mdef,
+				hero_ap = heroInfo.ap,
+				hero_arm = heroInfo.arm,
+				hero_top = heroInfo.top,
+				hero_bom = heroInfo.bom,
+				hero_tpn = heroInfo.tpn,
+				hero_dod = heroInfo.dod,
+				hero_gro = heroInfo.gro;
+			var mon_hp = enemyInfo.hp,
+				mon_atk = enemyInfo.atk,
+				mon_def = enemyInfo.def,
+				mon_ap = enemyInfo.ap,
+				mon_arm = enemyInfo.arm,
+				mon_top = enemyInfo.top,
+				mon_bom = enemyInfo.bom,
+				mon_tpn = enemyInfo.tpn,
+				mon_dod = enemyInfo.dod,
+				mon_cd = enemyInfo.cd,
+				mon_ammo = enemyInfo.ammo,
+				mon_spd = enemyInfo.spd,
+				mon_gro = enemyInfo.gro;
+			hero_dod = core.clamp(hero_dod, 0, mon_tpn);
+			mon_dod = core.clamp(mon_dod, 0, hero_tpn);
+		`];
+		if (core.hasSpecial(mon_special, 36)) // 俯冲轰炸，除前spd个回合外，攻击降低
+			code.push( /* js */ `if (nthTurn > mon_spd) hero_atk *= 0.95;`);
 		if (flags.skill === 3 && this.Luftwaffe.includes(enemyInfo.type)) // 技能3：防空弹幕，对空攻击力为1.2倍
-			hero_atk *= 1.2;
+			code.push( /* js */ `hero_atk *= 1.2;`);
 		//谢馒头
 		if (core.hasEquip('M4') && this.Army.includes(enemyInfo.type)) {
-			if (hero_ap <= mon_arm && hero_arm < mon_ap) {
-				hero_atk *= 1.15;
-			}
+			code.push( /* js */ `
+				if (hero_ap <= mon_arm && hero_arm < mon_ap) {
+					hero_atk *= 1.15;
+				}
+			`);
 		}
-		var damage = hero_atk,
-			torpeodoDamage = 0,
-			depthcharge = 0,
-			bombDamage = 0;
+		code.push( /* js */ `
+			var damage = hero_atk,
+				torpeodoDamage = 0,
+				depthcharge = 0,
+				bombDamage = 0;
+		`);
 		if (this.Army.includes(enemyInfo.type)) { // 陆战
 			//飓风MK2
 			if (core.hasEquip('hurricanemk2')) {
 				if (enemyInfo.type.endsWith('轻坦') || enemyInfo.type.endsWith('中坦') || enemyInfo.type.endsWith('重坦') || enemyInfo.type.endsWith('坦歼')) { //对地
-					if (mon_arm < 20)
-						damage *= 1.2;
+					code.push( /* js */ `if (mon_arm < 20) damage *= 1.2;`);
 				}
 			}
 			//野猫
-			if (core.hasEquip('f4f3') && nthTurn === 2) {
-				bombDamage += 0.4 * 2 * hero_atk;
+			if (core.hasEquip('f4f3')) {
+				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
 			}
-			if (core.hasEquip('raider') && nthTurn === 2) {
-				bombDamage += 0.4 * 2 * hero_atk;
+			if (core.hasEquip('raider')) {
+				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
 			}
 			//P40C战斧
-			if (core.hasEquip('p40c') && nthTurn === 2) {
-				bombDamage += 2.8 * hero_atk;
+			if (core.hasEquip('p40c')) {
+				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2.8 * hero_atk;`);
 			}
 			// 装备加成——攻击机
-			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) // 贼鸥式轰炸机
-				bombDamage += hero_atk * 2;
-			if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 4 === 0) // 贼鸥式轰炸机(鹰号航母)
-				bombDamage += hero_atk * 2;
-			if (core.hasEquip('sbd3') && nthTurn > 0 && nthTurn % 4 === 0) //无畏
-				bombDamage += hero_atk * 4.5;
-			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 4 === 0) //无畏（突击者号航母）
-				bombDamage += hero_atk * 6.3;
-			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
-				bombDamage += hero_atk * 2;
+			if (core.hasEquip('skua')) // 贼鸥式轰炸机
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
+			if (core.hasEquip("eagle")) // 贼鸥式轰炸机(鹰号航母)
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
+			if (core.hasEquip('sbd3')) //无畏
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 4.5;`);
+			if (core.hasEquip('raider')) //无畏（突击者号航母）
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 6.3;`);
+			if (core.hasEquip('typhoon')) // 台风式攻击机
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
 			// 装备加成——轰炸机
-			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0) // 箭鱼鱼雷机
-				bombDamage += hero_atk * 0.6 * 3;
-			if (core.hasEquip("eagle") && nthTurn > 0 && nthTurn % 5 === 0) // 箭鱼鱼雷机(鹰号航母)
-				bombDamage += hero_atk * 0.6 * 3;
-			if (core.hasEquip('blenheim') && nthTurn > 0 && nthTurn % 5 === 0) //布伦海姆
-				bombDamage += hero_atk * 0.7 * 4;
-			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 5 === 0) //TBD鱼雷机
-				bombDamage += hero_atk * 3;
-			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 5 === 0) //TBD鱼雷机（突击者）
-				bombDamage += hero_atk * 3;
-			if (core.hasEquip('b25') && nthTurn > 0 && nthTurn % 5 === 0) { //B25米切尔
+			if (core.hasEquip('swordfish')) // 箭鱼鱼雷机
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 0.6 * 3;`);
+			if (core.hasEquip("eagle")) // 箭鱼鱼雷机(鹰号航母)
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 0.6 * 3;`);
+			if (core.hasEquip('blenheim')) //布伦海姆
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 0.7 * 4;`);
+			if (core.hasEquip('tbd')) //TBD鱼雷机
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 3;`);
+			if (core.hasEquip('raider')) //TBD鱼雷机（突击者
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 3;`);
+			if (core.hasEquip('b25')) { //B25米切尔
 				if (!['eagle', 'illustrious', 'raider', 'essex', 'enterprise'].some(id => core.hasEquip(id))) {
-					bombDamage += hero_atk * 12;
-				} else bombDamage += hero_atk * 6;
+					code.push( /* js */ `bombDamage += hero_atk * 12;`);
+				} else {
+					code.push( /* js */ `bombDamage += hero_atk * 6;`);
+				}
 			}
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
 			//野猫
 			if (core.hasEquip('f4f3') && nthTurn === 2) { //野猫
-				bombDamage += 0.4 * 2 * hero_atk;
+				code.push( /* js */ `bombDamage += 0.4 * 2 * hero_atk;`);
 			}
 			if (core.hasEquip('raider') && nthTurn === 2) { //野猫（突击者航空母舰）
-				bombDamage += 0.4 * 2 * hero_atk;
+				code.push( /* js */ `bombDamage += 0.4 * 2 * hero_atk;`);
 			}
 			//P40C战斧
 			if (core.hasEquip('p40c') && nthTurn === 2) {
-				bombDamage += 2.8 * hero_atk;
+				code.push( /* js */ `bombDamage += 2.8 * hero_atk;`);
 			}
 			// 装备加成——攻击机
-			if (core.hasEquip('skua') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机
-				bombDamage += hero_atk * 2;
-				bombDamage *= 1.5;
+			if (core.hasEquip('skua')) { // 贼鸥式轰炸机
+				code.push( /* js */ `
+					if (nthTurn > 0 && nthTurn % 4 === 0) {
+						bombDamage += hero_atk * 2;
+						bombDamage *= 1.5;
+					}
+				`);
 			}
-			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机(鹰号航母)
-				bombDamage += hero_atk * 2;
-				bombDamage *= 1.5;
+			if (core.hasEquip('eagle')) { // 贼鸥式轰炸机(鹰号航母)
+				code.push( /* js */ `
+					if (nthTurn > 0 && nthTurn % 4 === 0) {
+						bombDamage += hero_atk * 2;
+						bombDamage *= 1.5;
+					}
+				`);
 			}
-			if (core.hasEquip('illus1941') && nthTurn > 0 && nthTurn % 4 === 0) { // 贼鸥式轰炸机(光辉1941)
-				bombDamage += hero_atk * 2;
-				bombDamage *= 1.5;
+			if (core.hasEquip('illus1941')) { // 贼鸥式轰炸机(光辉1941)
+				code.push( /* js */ `
+					if (nthTurn > 0 && nthTurn % 4 === 0) {
+						bombDamage += hero_atk * 2;
+						bombDamage *= 1.5;
+					}
+				`);
 			}
-			if (core.hasEquip('sbd3') && nthTurn > 0 && nthTurn % 4 === 0) { //无畏
-				bombDamage += hero_atk * 4.5;
-				bombDamage *= 1.5;
+			if (core.hasEquip('sbd3')) { //无畏
+				code.push( /* js */ `
+					if (nthTurn > 0 && nthTurn % 4 === 0) {
+						bombDamage += hero_atk * 4.5;
+						bombDamage *= 1.5;
+					}
+				`);
 			}
-			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 4 === 0) { //无畏（突击者号航母）
-				bombDamage += hero_atk * 6.3;
-				bombDamage *= 1.5;
+			if (core.hasEquip('raider')) { //无畏（突击者号航母）
+				code.push( /* js */ `
+					if (nthTurn > 0 && nthTurn % 4 === 0) {
+						bombDamage += hero_atk * 6.3;
+						bombDamage *= 1.5;
+					}
+				`);
 			}
-			if (core.hasEquip('typhoon') && nthTurn > 0 && nthTurn % 4 === 0) // 台风式攻击机
-				bombDamage += hero_atk * 2;
+			if (core.hasEquip('typhoon')) // 台风式攻击机
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
 			// 装备加成——轰炸机
-			if (core.hasEquip('swordfish') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) { // 箭鱼鱼雷机
-				torpeodoDamage += hero_top * (3 - mon_dod);
+			if (core.hasEquip('swordfish')) { // 箭鱼鱼雷机
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
 			}
-			if (core.hasEquip('eagle') && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机(鹰号航母)
-				torpeodoDamage += hero_top * (3 - mon_dod);
-			if (core.hasEquip("illus1941") && nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) // 箭鱼鱼雷机(光辉1941)
-				torpeodoDamage += hero_top * (3 - mon_dod);
-			if (core.hasEquip('blenheim') && nthTurn > 0 && nthTurn % 5 === 0) //布伦海姆
-				bombDamage += hero_atk * 0.7 * 4;
-			if (core.hasEquip('b25') && nthTurn > 0 && nthTurn % 5 === 0) { //B25米切尔
+			if (core.hasEquip('eagle')) // 箭鱼鱼雷机(鹰号航母)
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
+			if (core.hasEquip("illus1941")) // 箭鱼鱼雷机(光辉1941)
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
+			if (core.hasEquip('blenheim')) //布伦海姆
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 0.7 * 4;`);
+			if (core.hasEquip('b25')) { //B25米切尔
 				if (!['eagle', 'illustrious', 'raider', 'essex', 'enterprise'].some(id => core.hasEquip(id))) {
-					bombDamage += hero_atk * 12;
-				} else bombDamage += hero_atk * 6;
+					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 12;`);
+				} else {
+					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 6;`);
+				}
 			}
-			if (flags.skill === 8 && nthTurn === 5 && mon_dod < 3) { //技能8：剑鱼818中队
-				torpeodoDamage += hero_top * (3 - mon_dod);
-				mon_dod -= 2;
-				if (mon_dod < 0)
-					mon_dod = 0;
+			if (flags.skill === 8) { //技能8：剑鱼818中队
+				code.push( /* js */ `
+					if (nthTurn === 5 && mon_dod < 3) {
+						torpeodoDamage += hero_top * (3 - mon_dod);
+						mon_dod -= 2;
+						if (mon_dod < 0)
+							mon_dod = 0;
+					}
+				`);
 			}
-			if (flags.skill === 12 && nthTurn === 1 && mon_dod < 8) { //技能12：从海底出击
-				torpeodoDamage += hero_top * (8 - mon_dod);
+			if (flags.skill === 12) { //技能12：从海底出击
+				code.push( /* js */ `if (nthTurn === 1 && mon_dod < 8) torpeodoDamage += hero_top * (8 - mon_dod);`);
 			}
-			if (core.hasEquip('tbd') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（有哑弹）
+			if (core.hasEquip('tbd')) { //TBD蹂躏者（有哑弹）
 				if (flags.hard === 1 || flags['引信改良'])
-					torpeodoDamage += hero_top * (3 - mon_dod);
+					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
 			}
-			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) { //TBD蹂躏者（突击者号航空母舰）
+			if (core.hasEquip('raider')) { //TBD蹂躏者（突击者号航空母舰）
 				if (flags.hard === 1 || flags['引信改良'])
-					torpeodoDamage += hero_top * (3 - mon_dod);
+					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
 			}
 			// 正常情况，鱼雷攻击
-			var torpeodo = 10
+			code.push( /* js */ `var torpeodo = 10;`);
 			//先判定是否哑弹
 			if (flags.hard === 1 || flags['引信改良'] || !['mahan', 'gridley', 'benson', 'fletcher', 'raider', 'enterprise'].some(id => core.hasEquip(id))) {
-				if (core.hasEquip('benson')) { torpeodo -= 2 } //本森级，-2轮鱼雷cd
+				if (core.hasEquip('benson')) {
+					code.push( /* js */ `torpeodo -= 2;`);
+				} //本森级，-2轮鱼雷cd
 				if (nthTurn % torpeodo === 0) { //发射鱼雷
-					torpeodoDamage += hero_top * (hero_tpn - mon_dod);
+					code.push( /* js */ `torpeodoDamage += hero_top * (hero_tpn - mon_dod);`);
 				}
 			}
 			// 装备加成——军舰
 			// 厌战号战列舰
-			if (core.hasEquip('warspite') && nthTurn > 0 && nthTurn % 3 === 0 && enemyInfo.type != '潜艇')
-				damage += 3 * hero_atk;
+			if (core.hasEquip('warspite') && enemyInfo.type != '潜艇')
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) damage += 3 * hero_atk;`);
 			//胡德号战列舰
-			if (core.hasEquip('hood') && nthTurn > 0 && nthTurn % 4 === 0 && enemyInfo.type != '潜艇')
-				damage += 6 * hero_atk;
+			if (core.hasEquip('hood') && enemyInfo.type != '潜艇')
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) damage += 6 * hero_atk;`);
 			// 潜行
-			if (core.hasSpecial(mon_special, 33)) damage *= 0.1;
+			if (core.hasSpecial(mon_special, 33))
+				code.push( /* js */ `damage *= 0.1;`);
 			//E级驱逐舰
-			if (core.hasEquip('classe') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += 0.5 * hero_atk;
+			if (core.hasEquip('classe') && enemyInfo.type === '潜艇')
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) depthcharge += 0.5 * hero_atk;`);
 			//马汉级
-			if (core.hasEquip('mahan') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += 0.5 * hero_atk;
+			if (core.hasEquip('mahan') && enemyInfo.type === '潜艇')
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) depthcharge += 0.5 * hero_atk;`);
 			//V级
-			if (core.hasEquip('classv') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += hero_atk;
+			if (core.hasEquip('classv') && enemyInfo.type === '潜艇')
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) depthcharge += hero_atk;`);
 			//本森级
-			if (core.hasEquip('benson') && enemyInfo.type === '潜艇' && nthTurn > 0 && nthTurn % 3 === 0) depthcharge += hero_atk;
+			if (core.hasEquip('benson') && enemyInfo.type === '潜艇')
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) depthcharge += hero_atk;`);
 		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
-			if (core.hasEquip('f4f3') && nthTurn > 0 && nthTurn % 2 === 0) { //野猫
-				damage *= 1.15;
+			if (core.hasEquip('f4f3')) { //野猫
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 2 === 0) damage *= 1.15;`);
 			}
-			if (core.hasEquip('raider') && nthTurn > 0 && nthTurn % 2 === 0) { //野猫（突击者）
-				damage *= 1.15;
+			if (core.hasEquip('raider')) { //野猫（突击者）
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 2 === 0) damage *= 1.15;`);
 			}
 			if (core.hasEquip('hurricanemk1') && enemyInfo.type.endsWith('轰炸机')) // 飓风MK1
-				damage += 80;
+				code.push( /* js */ `damage += 80;`);
 			if (core.hasEquip('eagle') && enemyInfo.type.endsWith('轰炸机')) //飓风MK1（鹰号航母）
-				damage += 80;
+				code.push( /* js */ `damage += 80;`);
 			if (core.hasEquip('spitfiremk1') && enemyInfo.type.endsWith('战斗机')) //喷火MK1
-				damage *= 1.1;
+				code.push( /* js */ `damage *= 1.1;`);
 			if (core.hasEquip('illus1941') && enemyInfo.type.endsWith('战斗机')) //光辉1941
-				damage *= 1.1;
+				code.push( /* js */ `damage *= 1.1;`);
 			if (core.hasEquip('hurricanemk2') && enemyInfo.type.endsWith('轰炸机')) //飓风MK2
-				damage *= 1.2;
+				code.push( /* js */ `damage *= 1.2;`);
 			if (core.hasEquip('spitfiremk5') && enemyInfo.type.endsWith('战斗机')) //喷火MK5
-				damage *= 1.1;
-			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机') && nthTurn === 1) //英俊战士
-				damage *= 2;
-			if (core.hasEquip('p38') && enemyInfo.type.endsWith('轰炸机') && nthTurn === 1) //P38
-				damage *= 2;
+				code.push( /* js */ `damage *= 1.1;`);
+			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
+				code.push( /* js */ `if (nthTurn === 1) damage *= 2;`);
+			if (core.hasEquip('p38') && enemyInfo.type.endsWith('轰炸机')) //P38
+				code.push( /* js */ `if (nthTurn === 1) damage *= 2;`);
 		}
-		damage += torpeodoDamage + bombDamage + depthcharge;
+		code.push( /* js */ `damage += torpeodoDamage + bombDamage + depthcharge;`);
 		if (flags.dry === true && !core.hasSpecial(mon_special, 55) && !core.hasSpecial(mon_special, 62)) { //炎热debuff
-			damage *= 1.2;
+			code.push( /* js */ `damage *= 1.2;`);
 		}
 		if (core.hasEquip('p38') && core.hasSpecial(mon_special, 57)) { //P38闪电，斩首行动
-			damage *= 1.5;
+			code.push( /* js */ `damage *= 1.5;`);
 		}
-		if (this.Army.includes(enemyInfo.type) && hero_ap <= mon_arm && hero_arm < mon_ap) { // 陆战中被对方单向击穿
+		if (this.Army.includes(enemyInfo.type)) { // 陆战中被对方单向击穿
 			var preTurn = 5;
 			if (core.hasEquip('crusades')) preTurn = 3; //十字军坦克：敌人先攻-2
 			if (core.hasEquip('valentine')) preTurn = 10; //瓦伦丁坦克
 			if (core.hasEquip('matilda')) preTurn = 10; // 玛蒂尔达步兵坦克：无法击穿对方时前10回合无法造成伤害
 			if (core.hasEquip('m3grant')) preTurn = 15; //M3格兰特
 			if (core.hasEquip('churchillmk3')) preTurn = 15; //傻丘3
-			if (nthTurn <= preTurn) damage = 0;
-			else damage *= 0.8; // 前5回合无法造成伤害，其他回合伤害只有80%
+			// 前5回合无法造成伤害，其他回合伤害只有80%
+			code.push( /* js */ `
+				if (hero_ap <= mon_arm && hero_arm < mon_ap) {
+					var preTurn = ${preTurn};
+					if (nthTurn <= preTurn) damage = 0;
+					else damage *= 0.8;
+				}
+			`);
 		}
-		return damage;
+		code.push( /* js */ `return damage;`);
+		const fn = new Function("heroInfo", "enemyInfo", "nthTurn", code.join('\n'));
+		return (nthTurn) => fn(heroInfo, enemyInfo, nthTurn);
 	}
 	this.getEnemyPerDamage = function (enemyInfo, hero, x, y, floorId, nthTurn) {
 		hero = hero || core.status.hero;
