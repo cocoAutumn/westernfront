@@ -1010,6 +1010,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 
 	//扣除护盾
+	if (flags.skill === 14) {
+		hero_mdef *= 10;
+	}
 	damage -= hero_mdef; //这里可以变为负值
 
 	//投降

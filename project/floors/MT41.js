@@ -84,6 +84,14 @@ main.floors.MT41=
             "type": "playSound",
             "name": "fighter2.mp3"
         },
+        {
+            "type": "sleep",
+            "time": 2000
+        },
+        {
+            "type": "playSound",
+            "name": "dogfight.mp3"
+        },
         "\t[德国战斗机队长,me109e4]没时间摆成防御阵型了，所有人脱离编队，迎敌！",
         "\t[系统提示]敌人战力重置中",
         {

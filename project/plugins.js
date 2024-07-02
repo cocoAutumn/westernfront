@@ -206,9 +206,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				if (core.hasEquip('benson')) {
 					code.push( /* js */ `torpeodo -= 2;`);
 				} //本森级，-2轮鱼雷cd
-				if (nthTurn % torpeodo === 0) { //发射鱼雷
-					code.push( /* js */ `torpeodoDamage += hero_top * (hero_tpn - mon_dod);`);
-				}
+				code.push( /* js */ `if (nthTurn % torpeodo === 0){ //发射鱼雷 
+                torpeodoDamage += hero_top * (hero_tpn - mon_dod);
+                }
+             `);
 			}
 			// 装备加成——军舰
 			// 厌战号战列舰
@@ -504,6 +505,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			cost = 180;
 			description = '下一场与敌人海军的战斗结束后，如果剩余血量不足10%，则恢复全部血量'
 		}
+		if (id === 14) {
+			name = '补给优先';
+			cost = 250;
+			description = '下一场战斗中，后勤值提升10倍'
+		}
 		return {
 			'strategy': strategy,
 			'name': name,
@@ -646,22 +652,22 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 	}
 	//灯光
-	core.control._drawHero_draw = function (direction, x, y, status, offset, frame) {
-		offset = offset || { x: 0, y: 0, offset: 0, px: 0, py: 0 };
-		if (["MT55", "MT56", "MT57", "MT58", "MT59", "MT60", "MT180", "MT181", "MT182", "MT183", "MT184"].indexOf(core.status.floorId) >= 0) {
-			core.plugin.drawLight('newui1', 0.5, [
-				[16 + hero.loc.x * 32 + offset.x, 16 + hero.loc.y * 32 + offset.y, flags.lighton ? 128 : 1000]
-			], 0.8);
-		}
-		var opacity = core.setAlpha('hero', core.getFlag('__heroOpacity__', 1))
-		this._drawHero_getDrawObjs(direction, x, y, status, offset).forEach(function (block) {
-			core.drawImage('hero', block.img, (block.heroIcon[block.status] + (frame || 0)) % 4 * block.width,
-				block.heroIcon.loc * block.height, block.width, block.height,
-				block.posx + (32 - block.width) / 2, block.posy + 32 - block.height, block.width, block.height);
-		});
-		core.setAlpha('hero', opacity);
+	//core.control._drawHero_draw = function (direction, x, y, status, offset, frame) {
+	//offset = offset || { x: 0, y: 0, offset: 0, px: 0, py: 0 };
+	//if (["MT55", "MT56", "MT57", "MT58", "MT59", "MT60", "MT180", "MT181", "MT182", "MT183", "MT184"].indexOf(core.status.floorId) >= 0) {
+	//core.plugin.drawLight('newui1', 0.5, [
+	//[16 + hero.loc.x * 32 + offset.x, 16 + hero.loc.y * 32 + offset.y, flags.lighton ? 128 : 1000]
+	//], 0.8);
+	//}
+	//var opacity = core.setAlpha('hero', core.getFlag('__heroOpacity__', 1))
+	//this._drawHero_getDrawObjs(direction, x, y, status, offset).forEach(function (block) {
+	//core.drawImage('hero', block.img, (block.heroIcon[block.status] + (frame || 0)) % 4 * block.width,
+	//block.heroIcon.loc * block.height, block.width, block.height,
+	//block.posx + (32 - block.width) / 2, block.posy + 32 - block.height, block.width, block.height);
+	//});
+	//core.setAlpha('hero', opacity);
 
-	}
+	//}
 	this._afterLoadResources = function () {
 		// 本函数将在所有资源加载完毕后，游戏开启前被执行
 	}

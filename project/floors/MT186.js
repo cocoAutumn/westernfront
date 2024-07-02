@@ -894,12 +894,172 @@ main.floors.MT186=
                                 "type": "changeFloor",
                                 "floorId": "MT187",
                                 "loc": [
-                                    7,
+                                    12,
                                     0
                                 ],
                                 "direction": "down"
                             }
                         ]
+                    }
+                ]
+            }
+        ],
+        "8,9": [
+            "\t[海军参谋,N515]长官，所有军舰待命中！",
+            {
+                "type": "choices",
+                "text": "\t[海军参谋,N515]请选择出战海军舰艇",
+                "choices": [
+                    {
+                        "text": "装备 E级驱逐舰",
+                        "icon": "classe",
+                        "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
+                        "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "classe"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 V级驱逐舰",
+                        "icon": "classv",
+                        "need": "core.hasItem('classv')&&!core.hasEquip('classv')",
+                        "condition": "core.hasItem('classv')&&!core.hasEquip('classv')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "classv"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 马汉级驱逐舰",
+                        "icon": "mahan",
+                        "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
+                        "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "mahan"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 本森级驱逐舰",
+                        "icon": "benson",
+                        "need": "core.hasItem('benson')&&!core.hasEquip('benson')",
+                        "condition": "core.hasItem('benson')&&!core.hasEquip('benson')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "benson"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 爱丁堡号轻巡洋舰",
+                        "icon": "edinburgh",
+                        "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
+                        "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "edinburgh"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 谢菲尔德号轻巡洋舰",
+                        "icon": "sheffield",
+                        "need": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
+                        "condition": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "sheffield"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 诺福克号重巡洋舰",
+                        "icon": "norfolk",
+                        "need": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
+                        "condition": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "norfolk"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 厌战号战列舰",
+                        "icon": "warspite",
+                        "need": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
+                        "condition": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "warspite"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 鹰号航空母舰",
+                        "icon": "eagle",
+                        "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
+                        "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "eagle"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 突击者号航空母舰",
+                        "icon": "raider",
+                        "need": "core.hasItem('raider')&&!core.hasEquip('raider')",
+                        "condition": "core.hasItem('raider')&&!core.hasEquip('raider')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "raider"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前驱逐舰",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 1
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前巡洋舰",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 2
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前主力舰",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 3
+                            }
+                        ]
+                    },
+                    {
+                        "text": "返回",
+                        "action": []
                     }
                 ]
             }
@@ -922,8 +1082,8 @@ main.floors.MT186=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,573,  0,  0,573,  0,  0,573,  0],
-    [  0,556,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,573,556,  0,573,  0,  0,573,  0],
+    [  0,556,  0,  0,  0,  0,  0,  0,515,  0,  0,  0,  0,  0,  0],
     [  0,517,  0,  0,  0,  0,30395,30395,30395,30396,558,516,30395,30395,30395],
     [30360,30361,30362,  0,  0,  0,30395,30395,30395,30396,558,80242,30395,30395,30395],
     [30368,30369,30370,  0,599,  0,30395,30395,30395,30396,  0,  0,30395,30395,30395],
