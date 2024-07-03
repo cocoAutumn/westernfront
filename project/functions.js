@@ -334,7 +334,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			core.playSound("bomber1.mp3");
 	}
 	if (type === '导弹') {
-		animate = "shootair";
+		animate = "explore2";
 		if (flags.closesound !== true)
 			core.playSound("v_jet_pass.mp3");
 	}
@@ -961,7 +961,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	const getHeroPerDamage = core.getHeroPerTurnDamageFn(enemyInfo, hero, x, y, floorId, turn);
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合
-		curr_hp -= getHeroPerDamage(floorId, turn) * (1 - damage_debuff);
+		curr_hp -= getHeroPerDamage(turn) * (1 - damage_debuff);
 		if (flags.skill === 9 && core.plugin.Army.includes(enemyInfo.type)) { //技能9：抵抗运动
 			enemyInfo.atk = Math.max(11 - turn, 3) * mon_atk / 10;
 		}
