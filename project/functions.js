@@ -318,6 +318,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (type === '驱逐' || type === '轻巡' || type === '重巡' || type === '战列' || type === '商船') {
 		animate = "xinxinwater";
 	}
+	if (type === '重巡' || type === '战列') {
+		core.playSound("seabattle.mp3");
+	}
 	if (type === '战斗机' || type === '重型战斗机') {
 		animate = "shootair";
 		if (flags.closesound !== true)
@@ -335,6 +338,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	if (type === '导弹') {
 		animate = "explore2";
+		core.drawHeroAnimate("explore3");
 		if (flags.closesound !== true)
 			core.playSound("v_jet_pass.mp3");
 	}

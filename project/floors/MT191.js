@@ -411,7 +411,7 @@ main.floors.MT191=
             {
                 "type": "setValue",
                 "name": "flag:stage",
-                "value": "28"
+                "value": "29"
             },
             {
                 "type": "pauseBgm"
@@ -425,7 +425,7 @@ main.floors.MT191=
                         "floorId": "MT193",
                         "loc": [
                             7,
-                            7
+                            13
                         ]
                     }
                 ],
