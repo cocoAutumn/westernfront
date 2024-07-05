@@ -1833,5 +1833,19 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"atk": 20
 			}
 		}
+	},
+	"medal4": {
+		"cls": "items",
+		"name": "4级勋章",
+		"canUseItemEffect": "true",
+		"text": "，全属性提升",
+		"itemEffectTip": "，全属性提升",
+		"itemEffect": "core.status.hero.hpmax += 1000;\ncore.status.hero.hp += 1000;\ncore.status.hero.mana += 100;\ncore.status.hero.atk += 10;\ncore.status.hero.top += 200;\ncore.status.hero.mdef += 50;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}",
+		"useItemEvent": [
+			{
+				"type": "playSound",
+				"name": "xinxinbazhe.mp3"
+			}
+		]
 	}
 }

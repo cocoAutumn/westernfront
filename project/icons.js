@@ -125,7 +125,11 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"A557": 31,
 		"A558": 32,
 		"A559": 33,
-		"mine": 29
+		"mine": 29,
+		"A617": 34,
+		"A618": 35,
+		"A619": 36,
+		"A620": 37
 	},
 	"npcs": {
 		"man": 0,
@@ -545,7 +549,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"m4": 74,
 		"p47b": 109,
 		"spitfiremk9": 114,
-		"spitfiremk5": 111
+		"spitfiremk5": 111,
+		"medal4": 194
 	},
 	"autotile": {
 		"autotile": 0,
