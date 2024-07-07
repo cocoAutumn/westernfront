@@ -53,7 +53,7 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "90000",
+            "value": "150000",
             "norefresh": true
         },
         {
@@ -65,9 +65,16 @@ main.floors.MT194=
         },
         {
             "type": "setEnemy",
+            "id": "italyinf2",
+            "name": "special",
+            "value": "[]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "85000",
+            "value": "145000",
             "norefresh": true
         },
         {
@@ -79,23 +86,37 @@ main.floors.MT194=
         },
         {
             "type": "setEnemy",
+            "id": "italyinf3",
+            "name": "special",
+            "value": "[1,4]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
-            "value": "80000",
+            "value": "145000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "atk",
-            "value": "3500",
+            "value": "4000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyinf4",
+            "name": "special",
+            "value": "[]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "hp",
-            "value": "75000",
+            "value": "135000",
             "norefresh": true
         },
         {
@@ -107,9 +128,16 @@ main.floors.MT194=
         },
         {
             "type": "setEnemy",
+            "id": "italyinf5",
+            "name": "special",
+            "value": "[5]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "italyinf6",
             "name": "hp",
-            "value": "70000",
+            "value": "130000",
             "norefresh": true
         },
         {
@@ -117,6 +145,13 @@ main.floors.MT194=
             "id": "italyinf6",
             "name": "atk",
             "value": "1800",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyinf6",
+            "name": "special",
+            "value": "[6]",
             "norefresh": true
         },
         {
@@ -130,56 +165,70 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "l640",
             "name": "atk",
-            "value": "2200",
+            "value": "2500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "l640",
+            "name": "special",
+            "value": "[5,60]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "25000",
+            "value": "40000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "m1340",
-            "name": "atk",
-            "value": "5500",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "commandos",
-            "name": "hp",
-            "value": "90000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "commandos",
-            "name": "atk",
-            "value": "1700",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mortar",
-            "name": "hp",
-            "value": "80000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mortar",
             "name": "atk",
             "value": "6000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
+            "id": "m1340",
+            "name": "special",
+            "value": "[]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "commandos",
+            "name": "hp",
+            "value": "165000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "commandos",
+            "name": "atk",
+            "value": "1800",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "hp",
+            "value": "140000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "atk",
+            "value": "7000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "75000",
+            "value": "155000",
             "norefresh": true
         },
         {
@@ -191,16 +240,9 @@ main.floors.MT194=
         },
         {
             "type": "setEnemy",
-            "id": "motorinf",
-            "name": "special",
-            "value": "[1,4,52,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "75000",
+            "value": "145000",
             "norefresh": true
         },
         {
@@ -214,7 +256,7 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
-            "value": "70000",
+            "value": "140000",
             "norefresh": true
         },
         {
@@ -226,44 +268,65 @@ main.floors.MT194=
         },
         {
             "type": "setEnemy",
-            "id": "aceinf",
+            "id": "mgbunker",
             "name": "hp",
-            "value": "130000",
+            "value": "100000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "aceinf",
+            "id": "mgbunker",
             "name": "atk",
-            "value": "5500",
+            "value": "2200",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "sdkfz234",
+            "id": "howitzer105",
             "name": "hp",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "howitzer105",
+            "name": "atk",
             "value": "25000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
+            "id": "howitzer105",
+            "name": "zone",
+            "value": "20000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "sdkfz234",
+            "name": "hp",
+            "value": "22000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "sdkfz234",
             "name": "atk",
-            "value": "6500",
+            "value": "6000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "29000",
+            "value": "30000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "atk",
-            "value": "6500",
+            "value": "8000",
             "norefresh": true
         },
         {
@@ -277,112 +340,21 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "stug3a",
             "name": "atk",
-            "value": "12500",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4e",
-            "name": "hp",
-            "value": "28000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4e",
-            "name": "atk",
-            "value": "11000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "hp",
-            "value": "28000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "atk",
-            "value": "12500",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88c6",
-            "name": "hp",
-            "value": "32000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88c6",
-            "name": "atk",
-            "value": "5000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "he111",
-            "name": "hp",
-            "value": "33000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "he111",
-            "name": "atk",
-            "value": "800",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "he111",
-            "name": "bom",
             "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "he111",
-            "name": "special",
-            "value": "[28]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "pak38",
+            "id": "panzer4f",
             "name": "hp",
-            "value": "12000",
+            "value": "40000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "pak38",
+            "id": "panzer4f",
             "name": "atk",
-            "value": "6500",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "pak38",
-            "name": "special",
-            "value": "[55,59]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "pak38",
-            "name": "zone",
-            "value": "6500",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "pak38",
-            "name": "range",
-            "value": "2",
+            "value": "15000",
             "norefresh": true
         },
         {
@@ -396,7 +368,14 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "da90",
             "name": "atk",
-            "value": "15000",
+            "value": "20000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "da90",
+            "name": "special",
+            "value": "[40]",
             "norefresh": true
         },
         {
@@ -410,20 +389,49 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "flak88",
             "name": "atk",
-            "value": "15000",
+            "value": "20000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
-            "name": "special",
-            "value": "[55,59]"
+            "name": "zone",
+            "value": "20000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "flak88",
-            "name": "zone",
-            "value": "10000"
+            "id": "rommel",
+            "name": "hp",
+            "value": "30000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "rommel",
+            "name": "atk",
+            "value": "15000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "rommel",
+            "name": "special",
+            "value": "[25,38,57,62]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "rommel",
+            "name": "money",
+            "value": "0",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "rommel",
+            "name": "exp",
+            "value": "0"
         },
         {
             "type": "setGlobalValue",
@@ -468,21 +476,21 @@ main.floors.MT194=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [  0,  0,  0,  0, 81,  0,150,  0,150,  0,  0,  0,150,  0,  0],
-    [150,150,150,150,  0,  0,150,  0,150,150, 11,150,150,150, 11],
-    [  0,150,  0,150, 11,150,150,  0, 11,  0,  0,  0, 11,  0,  0],
-    [  0,150,  0,  0,  0,  0,  0,  0,150,  0,150,  0,150,150,150],
-    [  0,150, 81,150,150,150, 81,150,150,150,150, 81,150,571,571],
-    [  0, 81,  0,  0,  0,150,  0,  0,  0,150,  0,  0,150,571,571],
-    [150,150, 11,150,  0,150,150,150, 11,150,150, 11,150,  0,  0],
-    [ 92, 82,  0,150,  0, 11,  0,  0,  0,  0,  0,  0, 86,  0,  0],
-    [150,150, 11,  0,  0,150,  0,150,150,150,  0,  0,150,  0,  0],
-    [  0,  0, 11,150,150,150, 81,150,  0,150,150, 11,150,571,571],
-    [150,150,  0,  0,  0,  0,  0,  0,  0,150,  0,  0,150,571,571],
-    [  0,150, 81,150,150,150,150,150, 81,150, 11,150,150,150,150],
-    [  0,150,  0,  0,150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,150,  0,150,150, 81,150,150,150,150, 81,150,150,150, 11],
-    [  0, 82,  0,150,  0,  0,  0,150,  0,  0,  0,150,  0,  0,  0]
+    [537,537,537,405, 81,518,150, 22,150, 21,363, 21,150, 21, 21],
+    [150,150,150,150,518,220,150,362,150,150, 11,150,150,150, 11],
+    [538,150,390,150, 11,150,150,  0, 11,  0,362,  0, 11,362,363],
+    [538,150,250,363,536,  0,253,  0,150,215,150,570,150,150,150],
+    [538,150, 81,150,150,150, 81,150,150,150,150, 81,150,571,571],
+    [365, 81,  0,405,539,150,539,220,539,150,253,362,150,571,571],
+    [150,150, 11,150,203,150,150,150, 11,150,150, 11,150, 21, 21],
+    [ 92, 82,271,150,363, 11,  0,392,570,362,  0,203, 86,  0,  0],
+    [150,150, 11,405,539,150,203,150,150,150,536,  0,150, 21, 21],
+    [518,362, 11,150,150,150, 81,150,215,150,150, 11,150,571,571],
+    [150,150,203,  0,363,570,  0,365,250,150,253,362,150,571,571],
+    [535,150, 81,150,150,150,150,150, 81,150, 11,150,150,150,150],
+    [535,150,405,390,150,  0,362,  0,  0,253,  0,536,  0,362,570],
+    [535,150,  0,150,150, 81,150,150,150,150, 81,150,150,150, 11],
+    [589, 82,536,150,538,365,538,150,531,531,392,150,539,539,404]
 ],
     "bgmap": [
 

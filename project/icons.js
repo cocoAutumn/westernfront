@@ -213,7 +213,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"poisonZombie": 55,
 		"octopus": 57,
 		"princessEnemy": 59,
-		"redGateKeeper": 22,
 		"magicMaster": 46,
 		"devilWarrior": 41,
 		"fairyEnemy": 58,
@@ -343,7 +342,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"graziani": 21,
 		"a6mzero": 136,
 		"val": 137,
-		"kate": 138
+		"kate": 138,
+		"badoglio": 22
 	},
 	"enemy48": {
 		"angel": 0,

@@ -368,7 +368,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage = 0;
 		delete flags['空中打击'];
 	}
-	if (core.hasSpecial(enemyId, 61)) damage = 0; // 投降
 	if (damage == null || damage >= core.status.hero.hp) {
 		core.status.hero.hp = 0;
 		core.updateStatusBar(false, true);

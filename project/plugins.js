@@ -101,9 +101,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 3;`);
 			if (core.hasEquip('b25')) { //B25米切尔
 				if (!['eagle', 'illustrious', 'raider', 'essex', 'enterprise'].some(id => core.hasEquip(id))) {
-					code.push( /* js */ `bombDamage += hero_atk * 12;`);
+					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 12;`);
 				} else {
-					code.push( /* js */ `bombDamage += hero_atk * 6;`);
+					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 6;`);
 				}
 			}
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
@@ -506,7 +506,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			description = '下一场与敌人海军的战斗结束后，如果剩余血量不足10%，则恢复全部血量'
 		}
 		if (id === 14) {
-			name = '补给优先';
+			name = '补给线';
 			cost = 250;
 			description = '下一场战斗中，后勤值提升10倍'
 		}

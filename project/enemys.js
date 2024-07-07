@@ -13,7 +13,6 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"elemental": {"name":"元素生物","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"steelGuard": {"name":"铁守卫","hp":50,"atk":50,"def":50,"money":0,"exp":0,"point":0,"special":[18],"value":20},
 	"evilBat": {"name":"邪恶蝙蝠","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
-	"redGateKeeper": {"name":"巴多格里奥","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[15,25,38,57],"type":"榴弹炮","gro":0,"dod":0,"tpn":0,"bom":0,"top":0,"arm":2,"ap":999,"zone":20000,"range":2,"zoneSquare":true,"hpBuff":40,"atkBuff":0,"defBuff":10},
 	"magicMaster": {"name":"黑暗大法师","hp":100,"atk":120,"def":0,"money":12,"exp":0,"point":0,"special":11,"value":0.3333333333333333,"add":true,"notBomb":true},
 	"devilWarrior": {"name":"魔神武士","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"fairyEnemy": {"name":"仙子","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
@@ -125,7 +124,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"panzer4e": {"name":"四号E型","hp":10000,"atk":13000,"def":0,"money":6,"exp":6,"point":0,"special":[55],"type":"中坦","ap":50,"arm":60,"description":"主武器：75mm短管坦克炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"panzer4f": {"name":"四号F2型","hp":20000,"atk":12000,"def":0,"money":6,"exp":6,"point":0,"special":[55],"type":"中坦","ap":123,"arm":50},
 	"panzer4g": {"name":"四号G型","hp":0,"atk":0,"def":0,"money":6,"exp":6,"point":0,"special":[38,55],"type":"中坦","ap":123,"arm":80,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"p2640": {"name":"卡罗P26/40","hp":0,"atk":0,"def":0,"money":8,"exp":8,"point":0,"special":[52],"type":"重坦","ap":71,"arm":50,"description":"主武器：75mm短管炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"p2640": {"name":"卡罗P26/40","hp":60000,"atk":10000,"def":0,"money":8,"exp":8,"point":0,"special":[52],"type":"重坦","ap":71,"arm":50,"description":"主武器：75mm短管炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"motorinf": {"name":"德国机械化步兵中队","hp":200,"atk":20,"def":0,"money":1,"exp":1,"point":0,"special":[1,4],"type":"步兵","description":"主武器：步枪、突击步枪、手榴弹、军用摩托","ap":12,"arm":0},
 	"rommel": {"name":"隆美尔","hp":2000,"atk":500,"def":0,"money":20,"exp":20,"point":0,"special":[25,57],"type":"重坦","ap":100,"arm":40,"notBomb":true,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"hpBuff":1,"atkBuff":0,"defBuff":0.3},
 	"z1007": {"name":"Z.1007翠鸟","hp":20000,"atk":300,"def":0,"money":6,"exp":6,"point":0,"special":[28],"type":"中型轰炸机","description":"自卫武器：2×12.7mm机枪和2×7.7mm机枪\n挂载：4×250kg炸弹和2×500kg炸弹","ap":0,"arm":0,"top":0,"bom":2000,"tpn":0,"dod":0,"gro":0,"spd":6,"ammo":4},
@@ -146,5 +145,6 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"graziani": {"name":"格拉齐亚尼","hp":20000,"atk":3000,"def":0,"money":0,"exp":0,"point":0,"special":[25,38,57],"type":"重坦","ap":41,"arm":30,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"value":40,"hpBuff":60,"defBuff":20,"atkBuff":0},
 	"a6mzero": {"name":"A6M零式二一型","hp":350,"atk":90,"def":0,"money":0,"exp":0,"point":0,"special":[6],"type":"战斗机","description":"主武器：2×7.7mm机枪和2×20mm机炮","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"n":8},
 	"val": {"name":"D3A九九舰爆","hp":240,"atk":10,"def":0,"money":0,"exp":0,"point":0,"special":[28,36],"type":"俯冲轰炸机","description":"主武器：2×7.7mm前射机枪、1×7.7mm自卫机枪\n挂载：1×250kg炸弹、2×60kg炸弹","ammo":1,"spd":4,"ap":0,"arm":0,"top":0,"bom":3000},
-	"kate": {"name":"B5N九七舰攻","hp":300,"atk":10,"def":0,"money":0,"exp":0,"point":0,"special":[29],"type":"鱼雷轰炸机","description":"自卫武器：1×7.7mm机枪\n挂载：1×91式鱼雷","ap":0,"arm":0,"top":5000,"bom":0,"tpn":1,"dod":0,"gro":0,"cd":5,"ammo":1,"spd":5}
+	"kate": {"name":"B5N九七舰攻","hp":300,"atk":10,"def":0,"money":0,"exp":0,"point":0,"special":[29],"type":"鱼雷轰炸机","description":"自卫武器：1×7.7mm机枪\n挂载：1×91式鱼雷","ap":0,"arm":0,"top":5000,"bom":0,"tpn":1,"dod":0,"gro":0,"cd":5,"ammo":1,"spd":5},
+	"badoglio": {"name":"巴多格里奥","hp":20000,"atk":25000,"def":0,"money":0,"exp":0,"point":0,"special":[15,25,38,57],"type":"榴弹炮","gro":0,"dod":0,"tpn":0,"bom":0,"top":0,"arm":2,"ap":999,"zone":20000,"range":2,"zoneSquare":true,"hpBuff":40,"atkBuff":0,"defBuff":10}
 }

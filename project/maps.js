@@ -157,7 +157,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"220": {"cls":"enemys","id":"howitzer105"},
 	"221": {"cls":"enemys","id":"messe"},
 	"222": {"cls":"enemys","id":"graziani"},
-	"223": {"cls":"enemys","id":"redGateKeeper"},
+	"223": {"cls":"enemys","id":"badoglio"},
 	"224": {"cls":"enemys","id":"ab41"},
 	"225": {"cls":"enemys","id":"transcar"},
 	"226": {"cls":"enemys","id":"panzer3e"},
@@ -536,5 +536,6 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"20107": {"cls":"tileset","id":"X20107","canPass":true},
 	"20108": {"cls":"tileset","id":"X20108","canPass":true},
 	"20112": {"cls":"tileset","id":"X20112","canPass":true},
-	"20116": {"cls":"tileset","id":"X20116","canPass":true}
+	"20116": {"cls":"tileset","id":"X20116","canPass":true},
+	"80058": {"cls":"tileset","id":"X80058","canBreak":true}
 }
