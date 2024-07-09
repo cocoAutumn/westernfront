@@ -459,7 +459,7 @@ main.floors.MT201=
                                 "floorId": "MT202",
                                 "loc": [
                                     7,
-                                    0
+                                    3
                                 ],
                                 "direction": "down"
                             }

@@ -1274,7 +1274,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "tools",
 		"name": "可乐",
 		"canUseItemEffect": "core.status.hero.hp < core.status.hero.hpmax",
-		"text": "美国大兵的最爱，不过喝太多了会导致一些健康问题。\n饮用后恢复50%血量。",
+		"text": "美国大兵的最爱，不过喝太多了会导致一些健康问题。\n饮用后恢复50%血量。快捷键9。",
 		"useItemEvent": [
 			{
 				"type": "animate",
