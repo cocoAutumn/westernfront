@@ -2873,7 +2873,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[b25.jpg,170,50]美国B25“米切尔”轰炸机于1941年开始服役，是二战中最优秀的中型轰炸机之一。B25浑身上下布满自卫机枪来驱赶妄图击落他们的敌机，弹舱可以容纳最多1361kg（3000磅）炸弹，还可以改造为对地攻击机。珍珠港事件发生后，为了报复日本无耻的侵略行为，美军杜立特中将把16架改装后的B25放上“大黄蜂”号航空母舰，在日本近海放飞，空袭东京后飞往中国迫降。直接把炸弹扔到敌人老家，对两国军民而言十分大快人心，B25因此一战成名。",
-							"\f[b25.jpg,170,50]装备属性：攻击+50。挂载：3×1000磅炸弹。\n每5回合投弹，每颗炸弹伤害为2倍攻击力。\n被动：\n杜立特传奇：我方装备有航空母舰时，投掷炸弹时额外再投一轮。",
+							"\f[b25.jpg,170,50]装备属性：攻击+50。挂载：3×1000磅炸弹。\n每5回合投弹，每颗炸弹伤害为2倍攻击力。但受精度影响，实际炸弹伤害减少40%。\n被动：\n杜立特传奇：我方装备有航空母舰时，投掷炸弹时额外再投一轮。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -3063,7 +3063,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "喷火MK5战斗机（2500）",
+						"text": "喷火MK5战斗机（1900/2500）",
 						"need": "true",
 						"icon": "spitfiremk5",
 						"condition": "!core.hasEquip('spitfiremk5')&&!core.hasItem('spitfiremk5')",
@@ -3250,6 +3250,800 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"name": "item:p38",
 												"operator": "+=",
 												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "shop6",
+				"text": "\t[1943级商店]请选择购买项",
+				"textInList": "1943级商店",
+				"mustEnable": true,
+				"disablePreview": true,
+				"choices": [
+					{
+						"text": "J级驱逐舰（3000）",
+						"need": "true",
+						"icon": "classj",
+						"condition": "!core.hasEquip('classj')&&!core.hasItem('classj')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[classj.jpg,170,50]J级驱逐舰与K级、N级一起作为和平时期开始建造的英国新型驱逐舰，有时也被统称“标枪”(Javelin)级，共24艘舰船（每级8艘）于1939至1942年全部完成。武器配置为3门120mm主炮，2座高射机枪，鱼雷发射管增加至10部。该级驱逐舰参加了二战中西线大部分海上战役，但损失也非常惨重，共6艘J级、6艘K级和1艘N级驱逐舰在战争中被击沉。",
+							"\f[classj.jpg,170,50]装备属性：攻+100后加20%，穿90，装89。\n被动技能：\n笨重：被敌人单向击穿时，敌人额外先攻10回合。\n红茶不能洒：使用“下午茶”时，恢复效果改为35%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:classj",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "克利夫兰号轻巡洋舰（1900/2500）",
+						"need": "true",
+						"icon": "cleveland",
+						"condition": "!core.hasEquip('cleveland')&&!core.hasItem('cleveland')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[cleveland.jpg,170,50]克利夫兰号是美国克利夫兰级巡洋舰的首舰，于1941年11月下水，次年6月交付。该级轻巡洋舰装备了12门152毫米主炮（4座三联装），加强了水下防护能力。为了应对来自空中的袭击，这级巡洋舰配备了大量防空炮，能够迅速打出防空火力网，以掩护友军主力战舰。克利夫兰号自建成服役以后就参与了太平洋上的绝大多数战役，从瓜岛一直打到冲绳。虽然大部分水面战果都是航母打的，但在应对空中威胁时，这级巡洋舰能发挥不小的威力。所有克利夫兰级巡洋舰都没有在战争中被击沉，被称为“永不沉没的克利夫兰”。",
+							"\f[cleveland.jpg,170,50]装备属性：攻击+170后额外加20%。\n被动：\n不列颠之鹰：与敌方战斗机作战时，每回合增伤10%。此外，如果回合开始时该敌机血量高于60%，额外受到等同于我方攻击力40%的伤害",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "choices",
+										"text": "你可以从以下两种购买方案中选择一种",
+										"choices": [
+											{
+												"text": "替换手中的“喷火MK1型”（1900）",
+												"icon": "spitfiremk1",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:spitfiremk1>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=1900)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "fighter1.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "1900"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:spitfiremk1",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:spitfiremk5",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=2500)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "fighter1.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "2500"
+															},
+															{
+																"type": "setValue",
+																"name": "item:cleveland",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "英王乔治五世号战列舰（2500）",
+						"need": "true",
+						"icon": "kinggeorge5",
+						"condition": "!core.hasEquip('kinggeorge5')&&!core.hasItem('kinggeorge5')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[kinggeorgev.jpg,170,50]乔治五世级战列舰是英国的条约型战列舰，共建造5艘。作为被条约限制的战列舰，该级战舰的主炮口径为356毫米，相对较小，但10门炮的数量以及新装的火控雷达在一定程度上弥补了火力缺陷。乔五级战列舰非常重视防御力，从水上到水下，大多数部位都有坚固的装甲，最厚的地方甚至可以抵挡380毫米的穿甲弹。乔治五世号是该级战列舰的首舰，参与了对俾斯麦号的围剿和1945年在东京湾的日本投降仪式。",
+							"\f[kinggeorgev.jpg,170,50]装备属性：攻击+120后额外加20%。\n被动：\n钢筋铁骨：与敌方空军作战时，免疫20%普攻伤害。\n火力倾泻：如果敌方轰炸机血量少于50%，每回合额外附加30%攻击力的伤害",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:kinggeorge5",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "北卡罗莱纳号战列舰（3200）",
+						"need": "true",
+						"icon": "northcarolina",
+						"condition": "!core.hasEquip('northcarolina')&&!core.hasItem('northcarolina')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[northcarolina.jpg,170,50]北卡罗莱纳级战列舰是美军的新型快速战列舰，共建造2艘，分别为北卡罗莱纳号和华盛顿号。日本偷袭珍珠港后，美军意识到防空能力的重要性，于是大力加强了两艘船的防空能力。北卡级战列舰本身就有十分出色的火力（9门406毫米主炮和大量副炮）和防护能力，加上了防空性能后更是如虎添翼。在瓜岛战役中，两艘战列舰表现十分出色：北卡罗莱纳号在空袭中爆发出惊人的防空火力，保护了美军航母，华盛顿号则在夜间海战中一对一击沉了日军雾岛号战列舰。两艘船均存活至战后，其中北卡罗莱纳号被保留下来当作纪念舰，供人参观。",
+							"\f[northcarolina.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:northcarolina",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "光辉号航空母舰（3200）",
+						"need": "true",
+						"icon": "illustrious",
+						"condition": "!core.hasEquip('illustrious')&&!core.hasItem('illustrious')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[illustrious.jpg,170,50]光辉级航空母舰是英军在二战中最出色的装甲航母，共建造4艘：光辉、胜利、可畏、不屈。所谓装甲航母，就是以牺牲一定的载机量为代价，换取更好的防护能力和生存能力。光辉级航母的飞机数量远不及同时期的其他航母，但全身覆盖着装甲，可以经受更多攻击。首舰光辉号航母进行了对塔兰托的空袭，开创了航母袭击军港的先例。其后，光辉号在1941年遭到德军斯图卡轰炸机的空袭，被命中6枚炸弹，但依靠强大的防护力得以存活。在冲绳战役中，光辉号又被一架神风特攻队飞机击中，但同样得益于强大的防护力，仅仅是受了点伤，并无大碍。",
+							"\f[illustrious.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:illustrious",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "喷火MK9战斗机（3200）",
+						"need": "true",
+						"icon": "spitfiremk9",
+						"condition": "!core.hasEquip('spitfiremk9')&&!core.hasItem('spitfiremk9')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[f6f.jpg,170,50]喷火MK9型是专为抗衡德军FW190战斗机而发展的一种主要改型，换装了灰背隼61型发动机，最大平飞速度为656千米/小时，高空性能良好，配备有2门机炮和4挺机枪。共生产5665架。",
+							"\f[f6f.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:spitfiremk9",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "F6F“地狱猫”战斗机（舰）（3200）",
+						"need": "true",
+						"icon": "f6f5",
+						"condition": "!core.hasEquip('f6f5')&&!core.hasItem('f6f5')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[f6f.jpg,170,50]F6F“地狱猫”(hellcat，又译为泼妇)战斗机是美国在二战时期功绩最大的舰载战斗机，1943年9月服役，最大时速达到612km/h，配备6挺12.7mm机枪，后期型改为4挺机枪和2门20mm机炮，而且坚固耐用可靠性好。太平洋战争初期，日本零式战斗机在天空中嚣张跋扈，无人能挡，成为盟军飞行员的噩梦，但地狱猫的出现完美克制了零式，一夜之间就将这些“空中恶魔”变成了“飞行的经验包”。在马里亚纳海战中，地狱猫战斗机更是来了一场酣畅淋漓的“空中猎火鸡”，以26架的损失击落315架日机。2年的服役时间内，F6F地狱猫击落了5155架敌机，占美国海军和海军陆战飞行队击坠数的80%。",
+							"\f[f6f.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:f6f5",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "“台风”式攻击机（3200）",
+						"need": "true",
+						"icon": "typhoon",
+						"condition": "!core.hasEquip('typhoon')&&!core.hasItem('typhoon')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[typhoon.jpg,170,50]“台风”式战斗机原本是“飓风”战斗机的替代品，于1938年开始研制，计划替代飓风式战斗机，但不列颠空战的爆发迫使“台风”的研发停止了一段时间，最终于1941年5月才交付原型机。在实战中，英国空军发现“台风”和飓风战斗机一样，在空战中相对笨重，性能一般，但在对地攻击中表现出色，于是干脆挂上火箭弹和炸弹，用来执行对地攻击任务，摧毁了大量德军装甲单位。二战结束后，“台风”战斗机正式退役。",
+							"\f[typhoon.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:typhoon",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "蚊式重型(?)战斗机（3200）",
+						"need": "true",
+						"icon": "mosquito",
+						"condition": "!core.hasEquip('mosquito')&&!core.hasItem('mosquito')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[mosquito.jpg,170,50]DH98蚊式战斗机由英国的德·哈维兰公司设计制造。在钢铁和铝合金战机满天飞的时代，德·哈维兰却另辟蹊径，用木头制作了这款优秀的战机，使其被人称为“木制奇迹”。由于是木头制作，蚊式身轻如燕，价格低廉，同时具有十分优良的性能，速度也丝毫不差，两个发动机关掉其一的情况下仍能快过美国B26轰炸机。在欧洲上空，蚊式正如其名，经常在夜间灵活穿梭在德军上空，时不时“叮”上一口然后快速逃脱，多数德军战斗机又拿他们毫无办法，直到喷气机出现以后才有了速度优势。像极了夏天那些讨厌的蚊子，只不过不吸血，改扔炸弹了。",
+							"\f[mosquito.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:mosquito",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "“梭鱼”式鱼雷轰炸机（舰）（3200）",
+						"need": "true",
+						"icon": "barracuda",
+						"condition": "!core.hasEquip('barracuda')&&!core.hasItem('barracuda')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[barracuda.jpg,170,50]英国费尔雷公司研发的梭鱼式轰炸机是二战后期英国较优秀的舰载轰炸机。当同时期的美国和日本都已经用上新型全金属鱼雷机时，英国还在使用老式的双翼“剑鱼”轰炸机，这让英国军方很不爽，于是“梭鱼”被研发了出来。“梭鱼”的外形非常丑陋，但实战证明“梭鱼”是一款性能出色的战机，既能进行鱼雷攻击，也能当作俯冲轰炸机使用，最出名的战果是在“钨”行动中对“提尔皮茨”号战列舰的攻击，虽然没能将其击沉，但表现出来的性能也令人印象深刻。",
+							"\f[barracuda.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:barracuda",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "TBF“复仇者”鱼雷轰炸机（舰）（3200）",
+						"need": "true",
+						"icon": "tbf",
+						"condition": "!core.hasEquip('tbf')&&!core.hasItem('tbf')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[tbf.jpg,170,50]格鲁曼TBF“复仇者”式鱼雷轰炸机是二战时期美国最好的鱼雷轰炸机，主要活跃于太平洋战场。在中途岛海战后，TBF很快便替换了被认定为落后的TBD轰炸机，使美国鱼雷机的整体水平得到了提升。TBF的速度更快，性能更好，除了进行鱼雷攻击以外还可以挂载大量炸弹或火箭弹。在围绕瓜岛进行的一系列战役中，TBF复仇者击沉了比睿号战列舰，这是美军太平洋战争中击沉的第一艘战列舰。之后凡是美军航母参与的战役，都有TBF的出击，一直打到冲绳岛。TBF取得的最大的战果就是击沉了日军“大和”号和“武藏”号两艘超级战列舰。",
+							"\f[tbf.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:tbf",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "B17“空中堡垒”重型轰炸机（3200）",
+						"need": "true",
+						"icon": "b17",
+						"condition": "!core.hasEquip('b17')&&!core.hasItem('b17')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[b17.jpg,170,50]B17空中堡垒轰炸机是二战时期美国最重要的一款重型轰炸机，活跃于欧洲和太平洋战场，共生产12731架。这款巨大的四引擎重型轰炸机可以挂载2吨的炸弹，可以奔赴3000公里进行远程轰炸。B17最重要的特点就是坚固，不愧于其“空中堡垒”的名字，B17经常在被打的千疮百孔的情况下仍能坚持飞回基地，尽全力保住机组成员的生命，机内的13挺自卫机枪也能有效驱离企图接近的敌方战斗机。在西线战场，B17依靠其出色的防护能力，经常白天出击，空袭德国的重要设施，给德国的产能造成极大破坏，为盟军的胜利做出了不可磨灭的功劳。但B17的损失率也证明了一点：再结实的轰炸机，没有战斗机护航的话，依然会损失惨重。",
+							"\f[b17.jpg,170,50]装备属性：攻击+350。挂载：6×M8火箭弹\n攻击非空军敌人时率先发射1轮火箭弹，每枚火箭弹伤害为0.1倍攻击力。\n被动：\n斩首行动：攻击敌方主将时，我军造成的一切伤害增加50%。\n截击：对敌方轰炸机的首回合造成2倍暴击伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3200)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3200"
+											},
+											{
+												"type": "setValue",
+												"name": "item:b17",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "盟军科技研发成果LV2（1000）",
+						"need": "true",
+						"condition": "flags.technology===2",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"2级研发。研发项目：更高级的反潜设备",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=1000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "009-System09.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "1000"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:technology",
+												"operator": "+=",
+												"value": "1"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:skill10learned",
+												"value": "false"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "道具：主动声纳（500）",
+						"need": "true",
+						"icon": "skill1",
+						"condition": "flags.technology===3&&flags.skill10learned===false",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\t[主动声纳]被动效果，放在道具背包里即可生效。使敌军潜艇的“惊雷”技能无效化。",
+							"\t[历史来源]\f[skill10.png,170,50]声纳分为主动和被动。其中，被动声纳是被动的监听水下物体发出的声音，通过声音的来源方向和传播距离确定水下物体的方位。但如果目标物体没有发出太大响动，例如潜艇低速静默航行时，被动声纳就很难探测到。而主动声纳则是主动的发出声波，依靠反弹的回声确定目标的方位。主动声纳对于反潜作战十分重要，可以有效发现潜艇位置并进行攻击，只有潜入海水跃变层以下的潜艇才有可能钻空逃脱。玩过猎杀潜航的同学对此应该印象深刻，当听到频率越来越高的“ping”声时，你差不多就要寄了。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "technology.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "500"
+											},
+											{
+												"type": "function",
+												"function": "function(){\nflags.learned[10]=true\n}"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:skill10learned",
+												"value": "true"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "引信改良（500）",
+						"need": "true",
+						"icon": "skill1",
+						"condition": "flags.technology===3&&flags.skill10learned===false",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\t[引信改良]改进美国鱼雷的引信，解决哑弹问题。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "technology.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "500"
+											},
+											{
+												"type": "function",
+												"function": "function(){\nflags.learned[10]=true\n}"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:skill10learned",
+												"value": "true"
 											}
 										],
 										"false": [

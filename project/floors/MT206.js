@@ -16,7 +16,289 @@ main.floors.MT206=
     "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
+    "events": {
+        "7,14": [
+            {
+                "type": "unloadEquip",
+                "pos": 0
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 1
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 2
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 3
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 4
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 5
+            },
+            {
+                "type": "unloadEquip",
+                "pos": 6
+            },
+            {
+                "type": "function",
+                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+            },
+            {
+                "type": "function",
+                "function": "function(){\nflags.mission[30][0]=true\n}"
+            },
+            {
+                "type": "if",
+                "condition": "(item:tea>=30)",
+                "true": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.mission[30][2]=true\n}"
+                    }
+                ]
+            },
+            {
+                "type": "update"
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "hideStatusBar"
+            },
+            {
+                "type": "update"
+            },
+            {
+                "type": "sleep",
+                "time": 1000
+            },
+            {
+                "type": "playSound",
+                "name": "158-Skill02.mp3"
+            },
+            {
+                "type": "showImage",
+                "code": 1,
+                "image": "win.png",
+                "sloc": [
+                    0,
+                    0,
+                    null
+                ],
+                "loc": [
+                    -370,
+                    140,
+                    1280,
+                    200
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "scaleImage",
+                "code": 1,
+                "center": [
+                    190,
+                    200
+                ],
+                "scale": 0.4,
+                "time": 1000
+            },
+            {
+                "type": "function",
+                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+            },
+            {
+                "type": "if",
+                "condition": "(temp:A>=1)",
+                "true": [
+                    {
+                        "type": "playSound",
+                        "name": "xinxinbazhe.mp3"
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 2,
+                        "image": "star.png",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            130,
+                            50,
+                            90,
+                            90
+                        ],
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "if",
+                        "condition": "(temp:A>=2)",
+                        "true": [
+                            {
+                                "type": "playSound",
+                                "name": "xinxinbazhe.mp3"
+                            },
+                            {
+                                "type": "showImage",
+                                "code": 3,
+                                "image": "star.png",
+                                "sloc": [
+                                    0,
+                                    0,
+                                    null
+                                ],
+                                "loc": [
+                                    280,
+                                    50,
+                                    90,
+                                    90
+                                ],
+                                "opacity": 1,
+                                "time": 500,
+                                "async": true
+                            },
+                            {
+                                "type": "sleep",
+                                "time": 500
+                            },
+                            {
+                                "type": "if",
+                                "condition": "(temp:A>=3)",
+                                "true": [
+                                    {
+                                        "type": "playSound",
+                                        "name": "xinxinbazhe.mp3"
+                                    },
+                                    {
+                                        "type": "showImage",
+                                        "code": 4,
+                                        "image": "star.png",
+                                        "sloc": [
+                                            0,
+                                            0,
+                                            null
+                                        ],
+                                        "loc": [
+                                            430,
+                                            50,
+                                            90,
+                                            90
+                                        ],
+                                        "opacity": 1,
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "sleep",
+                                        "time": 500
+                                    }
+                                ],
+                                "false": []
+                            }
+                        ],
+                        "false": []
+                    }
+                ],
+                "false": []
+            },
+            {
+                "type": "sleep",
+                "time": 2000
+            },
+            {
+                "type": "setCurtain",
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "time": 500,
+                "keep": true
+            },
+            {
+                "type": "hideImage",
+                "code": 1,
+                "time": 0
+            },
+            {
+                "type": "hideImage",
+                "code": 2,
+                "time": 0
+            },
+            {
+                "type": "hideImage",
+                "code": 3,
+                "time": 0
+            },
+            {
+                "type": "hideImage",
+                "code": 4,
+                "time": 0
+            },
+            {
+                "type": "setHeroOpacity",
+                "opacity": 0
+            },
+            {
+                "type": "setValue",
+                "name": "flag:stage",
+                "value": "31"
+            },
+            {
+                "type": "pauseBgm"
+            },
+            {
+                "type": "confirm",
+                "text": "跳过剧情吗？",
+                "yes": [],
+                "no": [
+                    {
+                        "type": "playBgm",
+                        "name": "desert1.mp3"
+                    },
+                    "1942年夏季，苏联和德国在东线战场打的不可开交。德军绝大多数军事实力和精锐力量都压在那边，给苏联造成了不小的压力。",
+                    "相比之下，西线却显得平静很多，海上和空中发生的都是小规模战斗，即便是打的最火热的北非，其规模相比苏德战场而言，简直不够看。",
+                    "斯大林向西方国家施加压力，要求他们尽快在欧洲开辟第二战场，夹击德国的同时也能减轻苏联的压力。",
+                    "但英国方面却对此感到犹豫。他们不想贸然行动导致更多伤亡，也可能是希望苏德两国在战争中两败俱伤，自己去坐收渔利。",
+                    "最后，在美国方面的游说下，丘吉尔最终决定以登陆北非代替登陆欧洲，夺取北非和地中海控制权的同时，也能为后续行动积累登陆战经验。",
+                    "这次行动被称为“火炬行动”。美国艾森豪威尔中将担任行动总指挥，英国坎宁安上将作为海军司令负责制海权。登陆地点选在阿尔及利亚和摩洛哥，那里是法属殖民地，而法军在此前的一系列冲突中与英国烙下了不小的仇恨，因此以美军的名义实施登陆可以减少当地反抗。",
+                    "1942年11月8日，盟军兵分三路，10万陆军在16艘航空母舰、7艘战列舰等650余艘军舰，和上千架飞机的掩护下，展开登陆行动，同时还有大量空降部队深入敌后配合行动。",
+                    "两天后，两地的法军宣布停止抵抗。除比塞大和突尼斯被轴心国占领外，其余部分均被盟军收于囊中，至此，盟军已对北非的德意联军形成两面夹击。",
+                    "火炬行动是战争史上第一次使用登陆艇进行的大规模登陆作战。虽然整场战役强度并不高，但也为盟军积累了宝贵的经验。用不了多久，这些经验就能再次派上用场。",
+                    "北非的轴心国部队陷入危机，但现在不止是北非。远在欧洲大陆的德军并没有意识到，一批庞然大物早已悄悄运抵英国本土。",
+                    "很快，这些“大家伙”的名字便会被牢牢刻在西线盟军的战史中——",
+                    "B17“空中堡垒”重型轰炸机",
+                    {
+                        "type": "changeFloor",
+                        "floorId": "MT207",
+                        "loc": [
+                            -1,
+                            -1
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     "changeFloor": {
         "14,7": {
             "floorId": "MT205",
@@ -30,7 +312,24 @@ main.floors.MT206=
     "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
-    "autoEvent": {},
+    "autoEvent": {
+        "6,14": {
+            "0": {
+                "condition": "!core.hasEnemyLeft(undefined,['MT202','MT203','MT204'])",
+                "currentFloor": false,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.mission[30][1]=true\n}"
+                    }
+                ]
+            },
+            "1": null
+        }
+    },
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [

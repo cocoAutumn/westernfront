@@ -25,10 +25,10 @@ main.floors.MT202=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 29 第二次阿拉曼战役",
+        "\r[yellow]Mission 30 火炬行动",
         {
             "type": "text",
-            "text": "\t[蒙哥马利]\f[montgomary.png,0,310]士兵们，感到荣幸吧！我将带领你们，击败那个曾令你们恐惧的沙漠之狐！非洲军团即将遭受灭顶之灾！",
+            "text": "\t[艾森豪威尔]\f[eisenhower.png,0,310]“火炬行动”已经开始，这是我们美军在西线的第一次亮相，请各位务必认真对待。",
             "pos": [
                 100,
                 300,
@@ -37,7 +37,16 @@ main.floors.MT202=
         },
         {
             "type": "text",
-            "text": "\t[隆美尔]\f[rommel.png,0,310]我们的燃油所剩无几。将所有可用的坦克调集到北边，阻挡英军的装甲部队。诸位，为了非洲军团，为了德意志，也为了自己能够活下去，请全力一搏吧！",
+            "text": "\t[艾森豪威尔]\f[eisenhower.png,0,310]尽快巩固滩头阵地，英美两国海军的舰炮和航母舰载机都会支援你们的登陆行动。",
+            "pos": [
+                100,
+                300,
+                380
+            ]
+        },
+        {
+            "type": "text",
+            "text": "\t[巴顿]\f[patton.png,0,310]指挥官阁下，我希望你能尽快搞定那边的敌人，然后与我的部队会合！",
             "pos": [
                 100,
                 300,
@@ -53,14 +62,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "150000",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "atk",
-            "value": "1400",
+            "value": "2000",
             "norefresh": true
         },
         {
@@ -74,14 +83,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "145000",
+            "value": "195000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "atk",
-            "value": "1400",
+            "value": "2100",
             "norefresh": true
         },
         {
@@ -95,35 +104,35 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
-            "value": "145000",
+            "value": "195000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "atk",
-            "value": "4000",
+            "value": "10000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "special",
-            "value": "[]",
+            "value": "[1]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "hp",
-            "value": "135000",
+            "value": "185000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "atk",
-            "value": "1700",
+            "value": "2100",
             "norefresh": true
         },
         {
@@ -137,14 +146,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "hp",
-            "value": "130000",
+            "value": "180000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "atk",
-            "value": "1800",
+            "value": "2300",
             "norefresh": true
         },
         {
@@ -158,14 +167,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "l640",
             "name": "hp",
-            "value": "30000",
+            "value": "80000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "l640",
             "name": "atk",
-            "value": "2500",
+            "value": "3500",
             "norefresh": true
         },
         {
@@ -179,14 +188,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "40000",
+            "value": "100000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "m1340",
             "name": "atk",
-            "value": "6000",
+            "value": "10000",
             "norefresh": true
         },
         {
@@ -198,177 +207,37 @@ main.floors.MT202=
         },
         {
             "type": "setEnemy",
-            "id": "commandos",
+            "id": "p2640",
             "name": "hp",
-            "value": "165000",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "commandos",
+            "id": "p2640",
             "name": "atk",
-            "value": "1800",
+            "value": "20000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "mortar",
+            "id": "p2640",
+            "name": "special",
+            "value": "[52]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "da90",
             "name": "hp",
-            "value": "140000",
+            "value": "28000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "mortar",
-            "name": "atk",
-            "value": "7000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "motorinf",
-            "name": "hp",
-            "value": "155000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "motorinf",
-            "name": "atk",
-            "value": "1900",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "lightmg",
-            "name": "hp",
-            "value": "145000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "lightmg",
-            "name": "atk",
-            "value": "1900",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mg42",
-            "name": "hp",
-            "value": "140000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mg42",
-            "name": "atk",
-            "value": "2200",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "hp",
-            "value": "100000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "atk",
-            "value": "2200",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "howitzer105",
-            "name": "hp",
-            "value": "12000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "howitzer105",
+            "id": "da90",
             "name": "atk",
             "value": "25000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "howitzer105",
-            "name": "zone",
-            "value": "20000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "sdkfz234",
-            "name": "hp",
-            "value": "22000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "sdkfz234",
-            "name": "atk",
-            "value": "6000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "hp",
-            "value": "30000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "atk",
-            "value": "8000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "stug3a",
-            "name": "hp",
-            "value": "20000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "stug3a",
-            "name": "atk",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "hp",
-            "value": "40000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "atk",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "da90",
-            "name": "hp",
-            "value": "12000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "da90",
-            "name": "atk",
-            "value": "20000",
             "norefresh": true
         },
         {
@@ -380,63 +249,49 @@ main.floors.MT202=
         },
         {
             "type": "setEnemy",
-            "id": "flak88",
+            "id": "c200",
             "name": "hp",
-            "value": "12000",
+            "value": "25000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "flak88",
+            "id": "c200",
             "name": "atk",
-            "value": "20000",
+            "value": "2000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "flak88",
-            "name": "zone",
-            "value": "20000",
+            "id": "c200",
+            "name": "special",
+            "value": "[5]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "rommel",
+            "id": "c202",
             "name": "hp",
             "value": "30000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "rommel",
+            "id": "c202",
             "name": "atk",
-            "value": "15000",
+            "value": "2200",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "rommel",
+            "id": "c202",
             "name": "special",
-            "value": "[25,38,57,62]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "rommel",
-            "name": "money",
-            "value": "0",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "rommel",
-            "name": "exp",
-            "value": "0"
+            "value": "[6]"
         },
         {
             "type": "setGlobalValue",
             "name": "lavaDamage",
-            "value": 20000
+            "value": 30000
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -451,7 +306,7 @@ main.floors.MT202=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐肃清海岸上的敌人\n⭐通关时至少持有50下午茶",
+        "\t[任务目标]⭐通过当前区域\n⭐肃清海岸上的敌人\n⭐通关时至少持有30下午茶",
         {
             "type": "callBook"
         }
@@ -469,6 +324,10 @@ main.floors.MT202=
                 "type": "hide",
                 "remove": true
             }
+        ],
+        "8,2": [
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]登陆战的地点一般位于浅滩，并且可以获得海军的支援。可一旦深入内陆，海军装备就会撤退，不再提供支援。海军的很多技能虽然不会在登陆战中生效，但光是提供的基础数值加成就相当可观了，所以在深入内陆之前建议把海滩上的敌人清理一下哦！",
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]除此之外，从现在开始，美国军队加入战局，还带来了一种新的物资，名叫\r[yellow]可乐\\i[cola]\r。这种东西虽然数量比较少，但一瓶就可以提供50%的生命回复，在战场上看见了就不要放过哦！"
         ]
     },
     "changeFloor": {
