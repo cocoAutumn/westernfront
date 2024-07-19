@@ -1,38 +1,31 @@
-main.floors.MT210=
+main.floors.MT220=
 {
-    "floorId": "MT210",
-    "title": "法国",
-    "name": "法国",
-    "width": 15,
-    "height": 15,
-    "canFlyTo": true,
-    "canFlyFrom": true,
-    "canUseQuickShop": true,
-    "cannotViewMap": false,
-    "images": [
-        {
-            "name": "sky.jpg",
-            "canvas": "bg",
-            "x": 0,
-            "y": 0
-        }
-    ],
-    "ratio": 1,
-    "defaultGround": "grass",
-    "bgm": "europe4.mp3",
-    "firstArrive": [],
-    "eachArrive": [],
-    "parallelDo": "",
-    "events": {},
-    "changeFloor": {},
-    "beforeBattle": {},
-    "afterBattle": {},
-    "afterGetItem": {},
-    "afterOpenDoor": {},
-    "autoEvent": {},
-    "cannotMove": {},
-    "cannotMoveIn": {},
-    "map": [
+"floorId": "MT220",
+"title": "主塔 220 层",
+"name": "220",
+"width": 15,
+"height": 15,
+"canFlyTo": true,
+"canFlyFrom": true,
+"canUseQuickShop": true,
+"cannotViewMap": false,
+"images": [],
+"ratio": 1,
+"defaultGround": "water",
+"bgm": "hiaction2.mp3",
+"firstArrive": [],
+"eachArrive": [],
+"parallelDo": "",
+"events": {},
+"changeFloor": {},
+"beforeBattle": {},
+"afterBattle": {},
+"afterGetItem": {},
+"afterOpenDoor": {},
+"autoEvent": {},
+"cannotMove": {},
+"cannotMoveIn": {},
+"map": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
@@ -49,11 +42,4 @@ main.floors.MT210=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
 ],
-    "bgmap": [
-
-],
-    "fgmap": [
-
-],
-    "area": "天空"
 }

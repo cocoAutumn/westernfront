@@ -5,15 +5,20 @@ main.floors.MT208=
     "name": "比金山机场",
     "width": 15,
     "height": 15,
-    "canFlyTo": true,
-    "canFlyFrom": true,
+    "canFlyTo": false,
+    "canFlyFrom": false,
     "canUseQuickShop": true,
-    "cannotViewMap": false,
+    "cannotViewMap": true,
     "images": [],
     "ratio": 1,
     "defaultGround": "grass",
     "bgm": "cao6.mp3",
     "firstArrive": [
+        {
+            "type": "setValue",
+            "name": "flag:dry",
+            "value": "false"
+        },
         {
             "type": "setHeroOpacity",
             "opacity": 1
@@ -167,10 +172,10 @@ main.floors.MT208=
                                 "type": "changeFloor",
                                 "floorId": "MT209",
                                 "loc": [
-                                    7,
-                                    14
+                                    8,
+                                    4
                                 ],
-                                "direction": "down"
+                                "direction": "up"
                             }
                         ]
                     }
@@ -207,7 +212,7 @@ main.floors.MT208=
     [  0,311,573,  0,573,311,516,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,311,311,311,311,311,  0,  0,311,311,517,311,311,  0,  0],
     [  0,  0,  0,505,  0,  0,  0,  0,311,  0,  0,  0,311,  0,505],
-    [  0,505,  0,  0,  0,505,  0,  0,311,10139,10168,10139,311,382,  0],
+    [  0,505,  0,  0,  0,505,  0,  0,311,10139,10168,10139,311,  0,  0],
     [  0,  0,  0,505,  0,  0,  0,  0,311,10139,10176,10139,311,  0,505]
 ],
     "bgmap": [

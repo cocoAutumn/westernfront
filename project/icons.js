@@ -189,7 +189,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"N602": 54,
 		"N603": 55,
 		"N604": 56,
-		"N615": 57
+		"N615": 57,
+		"N622": 58
 	},
 	"npc48": {
 		"npc0": 0,
@@ -550,7 +551,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"p47b": 109,
 		"spitfiremk9": 114,
 		"spitfiremk5": 111,
-		"medal4": 194
+		"medal4": 194,
+		"sonar": 195
 	},
 	"autotile": {
 		"autotile": 0,

@@ -1,6 +1,6 @@
-main.floors.MT210=
+main.floors.MT212=
 {
-    "floorId": "MT210",
+    "floorId": "MT212",
     "title": "法国",
     "name": "法国",
     "width": 15,
@@ -19,7 +19,7 @@ main.floors.MT210=
     ],
     "ratio": 1,
     "defaultGround": "grass",
-    "bgm": "europe4.mp3",
+    "bgm": "hiaction2.mp3",
     "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",

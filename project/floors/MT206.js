@@ -269,7 +269,17 @@ main.floors.MT206=
             {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
-                "yes": [],
+                "yes": [
+                    {
+                        "type": "changeFloor",
+                        "floorId": "MT208",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "direction": "down"
+                    }
+                ],
                 "no": [
                     {
                         "type": "playBgm",

@@ -53,6 +53,7 @@ main.floors.MT202=
                 380
             ]
         },
+        "（注：本关中，维希法国军队由意大利军队友情出演）",
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
