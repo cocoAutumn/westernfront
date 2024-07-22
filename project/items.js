@@ -535,7 +535,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"I341": {
 		"cls": "items",
 		"name": "大银块",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，黄金+500",
+		"itemEffectTip": "，黄金+500",
+		"itemEffect": "core.status.hero.money += 500;"
 	},
 	"I342": {
 		"cls": "items",
@@ -1279,7 +1282,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "tools",
 		"name": "可乐",
 		"canUseItemEffect": "core.status.hero.hp < core.status.hero.hpmax",
-		"text": "美国大兵的最爱，不过喝太多了会导致一些健康问题。\n饮用后恢复50%血量。快捷键9。",
+		"text": "美国大兵的最爱，不过喝太多了会导致一些健康问题。\n饮用后恢复50%血量。",
 		"useItemEvent": [
 			{
 				"type": "animate",
@@ -1856,6 +1859,6 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"sonar": {
 		"cls": "constants",
 		"name": "主动声纳",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "false"
 	}
 }

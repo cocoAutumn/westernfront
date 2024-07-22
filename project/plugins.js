@@ -510,6 +510,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			cost = 250;
 			description = '下一场战斗中，后勤值提升10倍'
 		}
+		if (id === 15) {
+			name = 'C-47空中列车';
+			cost = 300;
+			description = '仅能在陆地或浅滩使用，空降至当前地图的中心对称落点。如果目标地点处于“防空”范围内或敌战斗机周围8格内，强行空降将损失80%血量。'
+		}
 		return {
 			'strategy': strategy,
 			'name': name,
