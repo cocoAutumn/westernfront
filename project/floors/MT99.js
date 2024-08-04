@@ -538,6 +538,49 @@ main.floors.MT99=
                                             5
                                         ]
                                     },
+                                    {
+                                        "type": "playSound",
+                                        "name": "fighter.mp3"
+                                    },
+                                    {
+                                        "type": "showImage",
+                                        "code": 1,
+                                        "image": "aircraft1.png",
+                                        "loc": [
+                                            480,
+                                            51
+                                        ],
+                                        "opacity": 1,
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "moveImage",
+                                        "code": 1,
+                                        "to": [
+                                            -195,
+                                            51
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "animate",
+                                        "name": "explore",
+                                        "loc": [
+                                            7,
+                                            5
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "hideImage",
+                                        "code": 1,
+                                        "time": 0
+                                    },
                                     "\t[系统提示]战列巡洋舰 声望号 加入战斗！",
                                     "\t[系统提示]航空母舰 胜利号 加入战斗！",
                                     "\t[系统提示]俾斯麦号战列舰千疮百孔，几乎失去战斗力！",

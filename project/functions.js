@@ -375,7 +375,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return;
 	}
 	if (flags['escort'] && damage >= 0) {
-		flags['友军血量'] -= 0.4 * damage;
+		flags['友军血量'] -= (core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage;
 		if (flags['友军血量'] <= 0) {
 			core.events.lose('任务失败');
 			// 战斗失败
@@ -983,6 +983,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			damage += core.status.checkBlock?.cache?.[x + ',' + y]?.trap_buff || 0; // 59: 陷阱
 			damage += core.status.checkBlock?.cache?.[x + ',' + y]?.aa_buff || 0; // 40: 防空
 		}
+	}
+	//拦截
+	if (core.hasSpecial(mon_special, 64)) {
+		damage *= 0.5;
 	}
 	//技能1：战壕
 	if (flags.skill === 1 && core.plugin.Army.includes(enemyInfo.type)) {

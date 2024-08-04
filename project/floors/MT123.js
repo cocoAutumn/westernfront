@@ -309,7 +309,7 @@ main.floors.MT123=
             "type": "setEnemy",
             "id": "flak88",
             "name": "special",
-            "value": "[15,55,59]"
+            "value": "[55,59]"
         },
         {
             "type": "setEnemy",

@@ -108,15 +108,15 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			}
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
 			//野猫
-			if (core.hasEquip('f4f3') && nthTurn === 2) { //野猫
-				code.push( /* js */ `bombDamage += 0.4 * 2 * hero_atk;`);
+			if (core.hasEquip('f4f3')) { //野猫
+				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
 			}
-			if (core.hasEquip('raider') && nthTurn === 2) { //野猫（突击者航空母舰）
-				code.push( /* js */ `bombDamage += 0.4 * 2 * hero_atk;`);
+			if (core.hasEquip('raider')) { //野猫（突击者航空母舰）
+				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
 			}
 			//P40C战斧
-			if (core.hasEquip('p40c') && nthTurn === 2) {
-				code.push( /* js */ `bombDamage += 2.8 * hero_atk;`);
+			if (core.hasEquip('p40c')) {
+				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2.8 * hero_atk;`);
 			}
 			// 装备加成——攻击机
 			if (core.hasEquip('skua')) { // 贼鸥式轰炸机
@@ -612,8 +612,12 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage += "^";
 			if (core.enemys.hasSpecial(enemy, 42))
 				damage += "截";
+			if (core.enemys.hasSpecial(enemy, 51))
+				damage += "歼";
 			if (core.enemys.hasSpecial(enemy, 52))
 				damage += "夹";
+			if (core.enemys.hasSpecial(enemy, 59))
+				damage += "X";
 			if (core.enemys.hasSpecial(enemy, 63))
 				damage += "阵";
 		}

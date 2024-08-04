@@ -34,8 +34,6 @@ main.floors.MT7=
     "parallelDo": "",
     "events": {
         "2,13": [
-            "\t[盟军指挥官,hero]参谋！",
-            "\t[参谋,N517]到！",
             {
                 "type": "choices",
                 "text": "\t[参谋,N517]长官，需要我做什么？",
