@@ -66,6 +66,14 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					code.push( /* js */ `if (mon_arm < 20) damage *= 1.2;`);
 				}
 			}
+			//台风战斗机
+			if (core.hasEquip('typhoon')) {
+				if (enemyInfo.type.endsWith('轻坦') || enemyInfo.type.endsWith('中坦') || enemyInfo.type.endsWith('重坦') || enemyInfo.type.endsWith('坦歼')) {
+					code.push( /* js */ `if (mon_arm < 20) damage *= 1.2;`);
+				} else if (enemyInfo.type.endsWith('反坦克炮') || enemyInfo.type.endsWith('榴弹炮') || enemyInfo.type.endsWith('高射炮') || enemyInfo.type.endsWith('步兵')) {
+					code.push( /* js */ `damage *= 1.2`);
+				}
+			}
 			//野猫
 			if (core.hasEquip('f4f3')) {
 				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
@@ -86,6 +94,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 4.5;`);
 			if (core.hasEquip('raider')) //无畏（突击者号航母）
 				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 6.3;`);
+			if (core.hasEquip('barracuda')) //梭鱼
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 6 * 0.5;`);
+			if (core.hasEquip('illustrious')) //梭鱼（光辉号）
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 6 * 0.5;`);
 			if (core.hasEquip('typhoon')) // 台风式攻击机
 				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
 			// 装备加成——轰炸机
@@ -159,6 +171,24 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					}
 				`);
 			}
+			if (core.hasEquip('barracuda')) { //梭鱼
+				code.push( /* js */ `
+                   if (nthTurn > 0 && nthTurn % 5 === 0) {
+                       bombDamage += hero_atk * 6 * 0.5;
+                   if (mon_dod <= 5)
+                       torpeodoDamage += hero_top * (5- mon_dod);
+                   }
+                `);
+			}
+			if (core.hasEquip('illustrious')) { //梭鱼（光辉号）
+				code.push( /* js */ `
+                   if (nthTurn > 0 && nthTurn % 5 === 0) {
+                       bombDamage += hero_atk * 6 * 0.5;
+                   if (mon_dod <= 5)
+                       torpeodoDamage += hero_top * (5- mon_dod);
+                   }
+                `);
+			}
 			if (core.hasEquip('typhoon')) // 台风式攻击机
 				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
 			// 装备加成——轰炸机
@@ -199,6 +229,39 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				if (flags.hard === 1 || flags['引信改良'])
 					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
 			}
+			if (core.hasEquip('tbf')) { //TBF复仇者（有哑弹）
+				if (flags.hard === 1 || flags['引信改良'])
+					code.push( /* js */ `
+                    if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 10) {
+                        torpeodoDamage += hero_top * (10 - mon_dod);
+                        if (enemyInfo.type === '重巡' || enemyInfo.type === '战列'){
+                           torpeodoDamage *= 2;
+                        }
+                   }
+               `);
+			}
+			if (core.hasEquip('essex')) { //TBF复仇者（企业号）
+				if (flags.hard === 1 || flags['引信改良'])
+					code.push( /* js */ `
+                    if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 10) {
+                        torpeodoDamage += hero_top * (10 - mon_dod);
+                        if (enemyInfo.type === '重巡' || enemyInfo.type === '战列'){
+                           torpeodoDamage *= 2;
+                        }
+                   }
+               `);
+			}
+			if (core.hasEquip('enterprise')) { //TBF复仇者（企业号）
+				if (flags.hard === 1 || flags['引信改良'])
+					code.push( /* js */ `
+                    if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 10) {
+                        torpeodoDamage += hero_top * (10 - mon_dod);
+                        if (enemyInfo.type === '重巡' || enemyInfo.type === '战列'){
+                           torpeodoDamage *= 2;
+                        }
+                   }
+               `);
+			}
 			// 正常情况，鱼雷攻击
 			code.push( /* js */ `var torpeodo = 10;`);
 			//先判定是否哑弹
@@ -218,6 +281,12 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			//胡德号战列舰
 			if (core.hasEquip('hood') && enemyInfo.type != '潜艇')
 				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) damage += 6 * hero_atk;`);
+			//乔五号战列舰
+			if (core.hasEquip('kinggeorge5') && enemyInfo.type != '潜艇')
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) damage += 6 * hero_atk;`);
+			//北卡号战列舰
+			if (core.hasEquip('northcarolina') && enemyInfo.type != '潜艇')
+				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) damage += 9 * hero_atk;`);
 			// 潜行
 			if (core.hasSpecial(mon_special, 33))
 				code.push( /* js */ `damage *= 0.1;`);
@@ -250,12 +319,20 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				code.push( /* js */ `damage *= 1.1;`);
 			if (core.hasEquip('hurricanemk2') && enemyInfo.type.endsWith('轰炸机')) //飓风MK2
 				code.push( /* js */ `damage *= 1.2;`);
+			if (core.hasEquip('typhoon') && enemyInfo.type.endsWith('轰炸机')) //台风战斗机
+				code.push( /* js */ `damage *= 1.2;`);
 			if (core.hasEquip('spitfiremk5') && enemyInfo.type.endsWith('战斗机')) //喷火MK5
 				code.push( /* js */ `damage *= 1.1;`);
+			if (core.hasEquip('illustrious') && enemyInfo.type.endsWith('战斗机')) //喷火MK5（光辉号）
+				code.push( /* js */ `damage *= 1.1;`);
+			if (core.hasEquip('spitfiremk5') && enemyInfo.type.endsWith('战斗机')) //喷火MK9
+				code.push( /* js */ `damage += 0.2 * hero.mdef;`);
 			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
 				code.push( /* js */ `if (nthTurn === 1) damage *= 2;`);
 			if (core.hasEquip('p38') && enemyInfo.type.endsWith('轰炸机')) //P38
 				code.push( /* js */ `if (nthTurn === 1) damage *= 2;`);
+			if (core.hasEquip("northcarolina") && core.status.thisMap.area === "海洋") //北卡禁飞区
+				code.push( /* js */ `damage *= 1.6;`);
 		}
 		code.push( /* js */ `damage += torpeodoDamage + bombDamage + depthcharge;`);
 		if (flags.dry === true && !core.hasSpecial(mon_special, 55) && !core.hasSpecial(mon_special, 62)) { //炎热debuff
@@ -355,6 +432,18 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('illustrious') && !enemyInfo.type.endsWith('战列') && !enemyInfo.type.endsWith('潜艇')) {
 				damage *= 0.8
 			}
+			//乔五战列舰装甲
+			if (core.hasEquip('kinggeorge5')) {
+				if (enemyInfo.type === '驱逐' || enemyInfo.type === '轻巡') {
+					damage *= 0.5;
+				}
+			}
+			//北卡战列舰装甲
+			if (core.hasEquip('northcarolina')) {
+				if (enemyInfo.type === '驱逐' || enemyInfo.type === '轻巡') {
+					damage *= 0.4;
+				}
+			}
 			// 鱼雷
 			if (core.hasSpecial(mon_special, 29) && nthTurn > 0 && nthTurn % mon_cd === 0) {
 				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
@@ -391,6 +480,14 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
 				if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
 			}
+		}
+		//乔五战列舰鱼雷减抗
+		if (core.hasEquip('kinggeorge5')) {
+			torpeodoDamage *= 1.4;
+		}
+		//北卡战列舰鱼雷减抗
+		if (core.hasEquip("northcarolina")) {
+			torpeodoDamage *= 1.2;
 		}
 		damage += torpeodoDamage + bombDamage;
 		if (core.hasSpecial(mon_special, 38)) { //精锐
@@ -511,9 +608,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			description = '下一场战斗中，后勤值提升10倍'
 		}
 		if (id === 15) {
+			strategy = true;
 			name = 'C-47空中列车';
 			cost = 300;
-			description = '仅能在陆地或浅滩使用，空降至当前地图的中心对称落点。如果目标地点处于“防空”范围内或敌战斗机周围8格内，强行空降将损失80%血量。'
+			description = '只能在陆地或浅滩使用，空降至当前地图的中心对称落点。如果目标地点处于“防空”范围内或敌方战斗机周围8格内，会失去80%生命值。（确认空降坐标时，点击目标点或空格进行空降，重新按对应快捷键则取消空降）';
+			event = [{ "type": "if", "condition": "(!['陆地','浅滩'].includes(core.status.thisMap.area))", "true": [{ "type": "playSound", "name": "操作失败" }, { "type": "tip", "text": "当前地图不可使用该技能！" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "function", "function": "function(){\nflags.X = core.bigmap.width - 1 - hero.loc.x;\nflags.Y = core.bigmap.height - 1 - hero.loc.y;\nflags.C = '#00FF00';\nif (core.getBlockNumber(flags.X, flags.Y) > 0) {\n\tflags.C = 'red';\n} else {\n\tfor (let dx = -2; dx <= 2; ++dx)\n\t\tfor (let dy = -2; dy <= +2; ++dy) {\n\t\t\tlet x = flags.X + dx,\n\t\t\t\ty = flags.Y + dy,\n\t\t\t\tid = core.getBlockId(x, y);\n\t\t\tif (core.enemyExists(x, y)) {\n\t\t\t\tif (core.hasSpecial(id, 40)) flags.C = 'yellow';\n\t\t\t\tif (Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && core.material.enemys[id].type.endsWith('战斗机')) flags.C = 'yellow';\n\t\t\t}\n\t\t}\n}\ncore.ui._createUIEvent();\ncore.ui.fillRect('uievent', 32 * flags.X, 32 * flags.Y, 32, 32, flags.C);\n}" }, { "type": "tip", "text": "请确认空降位置" }, { "type": "wait" }, { "type": "if", "condition": "(((flags.type===1)&&((flags.x!==flags.X)||(flags.y!==flags.Y)))||((flags.type===0)&&((flags.keycode!==32)&&(flags.keycode!==13))))", "true": [{ "type": "playSound", "name": "取消" }, { "type": "tip", "text": "已取消空降" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "if", "condition": "(flags.C==='red')", "true": [{ "type": "playSound", "name": "操作失败" }, { "type": "tip", "text": "空降落点有障碍物存在，无法着陆！" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "playSound", "name": "bomber.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft5.png", "loc": [480, "32 * flags.Y - 125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32 * flags.Y - 125"], "time": 500 }, { "type": "hideImage", "code": 1, "time": 0 }, { "type": "changePos", "loc": ["flags.X", "flags.Y"] }, { "type": "if", "condition": "(flags.C==='yellow')", "true": [{ "type": "animate", "name": "explore", "loc": "hero" }, { "type": "setValue", "name": "status:hp", "operator": "-=", "value": "0.8*status:hpmax" }] }] }] }, { "type": "clearMap" }] }];
 		}
 		return {
 			'strategy': strategy,

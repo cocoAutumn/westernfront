@@ -375,7 +375,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return;
 	}
 	if (flags['escort'] && damage >= 0) {
-		flags['友军血量'] -= (core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage;
+		var fredamage = (core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage;
+		if (core.hasEquip('classj')) { fredamage *= 0.5 } //检测到装备，友伤减半
+		flags['友军血量'] -= fredamage;
 		if (flags['友军血量'] <= 0) {
 			core.events.lose('任务失败');
 			// 战斗失败
@@ -401,6 +403,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return curr + core.material.enemys[g[2]].money;
 	}, core.getEnemyValue(enemy, "money", x, y));
 	if (core.hasEquip('m4')) money += 5; //谢馒头，触发在双倍前
+	if (core.hasEquip('classj')) money += 5; //J级驱逐舰
 	if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
 	if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 	if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
@@ -414,6 +417,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return curr + core.material.enemys[g[2]].exp;
 	}, core.getEnemyValue(enemy, "exp", x, y));
 	if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+	if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 	if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 	if (core.hasSpecial(enemyId, 61)) exp = 0; // 投降
 	core.status.hero.exp += exp;
@@ -431,6 +435,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		hero.mana -= core.getSkillInfo(flags.skill).cost;
 		flags.skill = 0;
 	}
+
+	//B17空中堡垒
+	if (core.hasEquip('b17'))
+		for (let dx = -1; dx <= 1; ++dx)
+			for (let dy = -1; dy <= 1; ++dy)
+				if (core.enemyExists(x + dx, y + dy)) core.setEnemyOnPoint(x + dx, y + dy, core.status.floorId, 'hp', '0.8', '*=');
 
 	// 中毒
 	if (core.enemys.hasSpecial(special, 12)) {
@@ -926,9 +936,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			damage += 3 * 3 * mon_atk;
 		}
 	}
-	//英俊战士特殊判定
-	if (core.hasSpecial(mon_special, 1) && core.hasEquip("beautifighter")) {
-		curr_hp -= hero_atk * 2;
+	//机载雷达
+	if (core.hasSpecial(mon_special, 1)) {
+		if (core.hasEquip("beautifighter") || core.hasEquip("tbf") || core.hasEquip("essex") || core.hasEquip("enterprise"))
+			curr_hp -= hero_atk * 2;
 	}
 	//谢菲尔德——巴伦支海
 	if (core.hasEquip("sheffield")) {
@@ -942,7 +953,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		curr_hp -= hero_atk;
 	}
 	//惊雷
-	if (core.hasSpecial(mon_special, 34)) {
+	if (core.hasSpecial(mon_special, 34) && !core.hasItem('sonar')) {
 		damage += (mon_tpn - hero_dod) * mon_top;
 	}
 	//诺福克·先发制人
@@ -951,6 +962,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	//喷火MK5
 	if (core.hasEquip('spitfiremk5') && enemyInfo.type === '战斗机' && curr_hp >= mon_hp * 0.6)
+		curr_hp -= hero_atk * 0.4;
+	//喷火MK5（光辉号）
+	if (core.hasEquip('illustrious') && enemyInfo.type === '战斗机' && curr_hp >= mon_hp * 0.6)
 		curr_hp -= hero_atk * 0.4;
 	//空射火箭弹
 	if (core.hasEquip('beautifighter') && !core.plugin.Luftwaffe.includes(enemyInfo.type) && enemyInfo.type !== '潜艇') { //英俊战士

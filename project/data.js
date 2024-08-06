@@ -3290,7 +3290,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[classj.jpg,170,50]J级驱逐舰与K级、N级一起作为和平时期开始建造的英国新型驱逐舰，有时也被统称“标枪”(Javelin)级，共24艘舰船（每级8艘）于1939至1942年全部完成。武器配置为3门120mm主炮，2座高射机枪，鱼雷发射管增加至10部。该级驱逐舰参加了二战中西线大部分海上战役，但损失也非常惨重，共6艘J级、6艘K级和1艘N级驱逐舰在战争中被击沉。",
-							"\f[classj.jpg,170,50]装备属性：攻击+200，雷击+1500后额外加20%。鱼雷管+10，闪避数+4。\n被动：\n战时需求：击败敌方海军时，额外获得5黄金和5经验。\n商船护航：存在友军时，友军受到的伤害减半。",
+							"\f[classj.jpg,170,50]装备属性：攻击+200，雷击+1500后额外加20%。鱼雷管+10，闪避数+4。\n被动：\n战时需求：击败敌方海军时，额外获得5黄金和5经验(可触发工业潜能效果）。\n商船护航：存在友军时，友军受到的伤害减半。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -3424,7 +3424,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "北卡罗莱纳号战列舰（6000）",
+						"text": "北卡罗莱纳号战列舰（7500）",
 						"need": "true",
 						"icon": "northcarolina",
 						"condition": "!core.hasEquip('northcarolina')&&!core.hasItem('northcarolina')",
@@ -3441,7 +3441,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=6000)",
+										"condition": "(status:money>=7500)",
 										"true": [
 											{
 												"type": "playSound",
@@ -3451,7 +3451,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "6000"
+												"value": "7500"
 											},
 											{
 												"type": "setValue",

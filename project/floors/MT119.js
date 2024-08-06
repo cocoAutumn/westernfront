@@ -36,7 +36,7 @@ main.floors.MT119=
         "7,7": [
             {
                 "type": "if",
-                "condition": "(blockId:7,7!==redKey)",
+                "condition": "(blockId:7,7!=='redKey')",
                 "true": [
                     {
                         "type": "playSound",
