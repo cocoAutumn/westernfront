@@ -81,6 +81,13 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('raider')) {
 				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
 			}
+			//地狱猫
+			if (core.hasEquip('f6f5')) {
+				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2 * 2 * hero_atk;`);
+			}
+			if (core.hasEquip('essex')) {
+				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2 * 2 * hero_atk;`);
+			}
 			//P40C战斧
 			if (core.hasEquip('p40c')) {
 				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2.8 * hero_atk;`);
@@ -186,6 +193,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
                        bombDamage += hero_atk * 6 * 0.5;
                    if (mon_dod <= 5)
                        torpeodoDamage += hero_top * (5- mon_dod);
+                   if (nthTurn = 1){
+                      bombDamage += hero_atk * 6 * 0.5;
+                   if (mon_dod <= 5)
+                       torpeodoDamage += hero_top * (5- mon_dod);
+                   }
                    }
                 `);
 			}
@@ -198,7 +210,13 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('eagle')) // 箭鱼鱼雷机(鹰号航母)
 				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
 			if (core.hasEquip("illus1941")) // 箭鱼鱼雷机(光辉1941)
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
+				code.push( /* js */ `
+                   if (nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) 
+                       torpeodoDamage += hero_top * (3 - mon_dod);
+                   if (nthTurn = 1 && mon_dod <= 3){
+                       torpeodoDamage += hero_top * (3 - mon_dod);
+                   }
+                `);
 			if (core.hasEquip('blenheim')) //布伦海姆
 				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 0.7 * 4;`);
 			if (core.hasEquip('b25')) { //B25米切尔
@@ -265,7 +283,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			// 正常情况，鱼雷攻击
 			code.push( /* js */ `var torpeodo = 10;`);
 			//先判定是否哑弹
-			if (flags.hard === 1 || flags['引信改良'] || !['mahan', 'gridley', 'benson', 'fletcher', 'raider', 'enterprise'].some(id => core.hasEquip(id))) {
+			if (flags.hard === 1 || flags['引信改良'] || !['mahan', 'gridley', 'benson', 'fletcher', 'cleveland', 'raider', 'enterprise'].some(id => core.hasEquip(id))) {
 				if (core.hasEquip('benson')) {
 					code.push( /* js */ `torpeodo -= 2;`);
 				} //本森级，-2轮鱼雷cd
@@ -327,12 +345,24 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				code.push( /* js */ `damage *= 1.1;`);
 			if (core.hasEquip('spitfiremk5') && enemyInfo.type.endsWith('战斗机')) //喷火MK9
 				code.push( /* js */ `damage += 0.2 * hero.mdef;`);
+			if (core.hasEquip('f6f5') && enemyInfo.type.endsWith('战斗机')) { //地狱猫——火鸡猎手
+				code.push( /* js */ `
+                  if(core.hasSpecial(mon_special, 4)){damage *= 1.4;}
+                  if(core.hasSpecial(mon_special, 5)){damage *= 1.6;}
+                  if(core.hasSpecial(mon_special, 6)){damage *= enemyInfo.n * 0.2 + 1;}
+                  if(!core.hasSpecial(mon_special, 4) && !core.hasSpecial(mon_special, 5) && !core.hasSpecial(mon_special, 6)){
+                     damage *= 1.2;
+                  }
+              `)
+			}
 			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
 				code.push( /* js */ `if (nthTurn === 1) damage *= 2;`);
 			if (core.hasEquip('p38') && enemyInfo.type.endsWith('轰炸机')) //P38
 				code.push( /* js */ `if (nthTurn === 1) damage *= 2;`);
 			if (core.hasEquip("northcarolina") && core.status.thisMap.area === "海洋") //北卡禁飞区
 				code.push( /* js */ `damage *= 1.6;`);
+			if (core.hasEquip("cleveland")) //克利夫兰
+				code.push( /* js */ `damage *= 1.25;`);
 		}
 		code.push( /* js */ `damage += torpeodoDamage + bombDamage + depthcharge;`);
 		if (flags.dry === true && !core.hasSpecial(mon_special, 55) && !core.hasSpecial(mon_special, 62)) { //炎热debuff
@@ -420,6 +450,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				} else if (nthTurn <= 5) damage = 0;
 				else damage *= 0.8;
 			}
+			if (core.hasEquip('b17')) { //b17伤害减免
+				if (enemyInfo.type === '高射炮') {
+					damage *= 0.8
+				}
+			}
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
 			//技能5
 			if (flags.skill === 5 && core.status.thisMap.area === "海洋") {
@@ -480,6 +515,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
 				if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
 			}
+			if (core.hasEquip('b17')) { //b17伤害减免
+				if (enemyInfo.type.endsWith('战斗机')) {
+					damage *= 0.8;
+				}
+			}
 		}
 		//乔五战列舰鱼雷减抗
 		if (core.hasEquip('kinggeorge5')) {
@@ -492,6 +532,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		damage += torpeodoDamage + bombDamage;
 		if (core.hasSpecial(mon_special, 38)) { //精锐
 			damage *= 2;
+		}
+		if (core.hasEquip('mosquito') && enemyInfo.type.endsWith('战斗机') && nthTurn <= 3) { //蚊式战斗机木制奇迹（喷气机以后做）
+			damage = 0;
 		}
 		if (flags.dry === true && !core.hasItem('hard1')) { //炎热
 			if (core.hasSpecial(mon_special, 62)) { //沙漠之狐

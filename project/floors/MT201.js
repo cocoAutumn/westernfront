@@ -325,6 +325,18 @@ main.floors.MT201=
                         ]
                     },
                     {
+                        "text": "装备 f6f",
+                        "icon": "f6f5",
+                        "need": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
+                        "condition": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "f6f5"
+                            }
+                        ]
+                    },
+                    {
                         "text": "卸下当前战斗机",
                         "action": [
                             {

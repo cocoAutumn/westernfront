@@ -440,7 +440,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('b17'))
 		for (let dx = -1; dx <= 1; ++dx)
 			for (let dy = -1; dy <= 1; ++dy)
-				if (core.enemyExists(x + dx, y + dy)) core.setEnemyOnPoint(x + dx, y + dy, core.status.floorId, 'hp', '0.8', '*=');
+				if (core.enemyExists(x + dx, y + dy) && core.plugin.Army.includes(core.material.enemys[core.getBlockId(x + dx, y + dy)].type))
+					core.setEnemyOnPoint(x + dx, y + dy, core.status.floorId, 'hp', '0.8', '*=');
 
 	// 中毒
 	if (core.enemys.hasSpecial(special, 12)) {
@@ -922,23 +923,27 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage = 0,
 		notyet = true;
 
+	//B17空中堡垒
+	if (core.hasEquip('b17') && core.plugin.Army.includes(enemyInfo.type)) {
+		curr_hp *= 0.7;
+	}
 	//狙击
 	if (core.hasSpecial(mon_special, 56)) {
 		damage += mon_atk * 2 - hero_mdef;
 	}
 	//先攻
-	if (core.hasSpecial(mon_special, 1) && !core.hasEquip("beautifighter")) {
+	if (core.hasSpecial(mon_special, 1) && core.hasEquip("beautifighter") || core.hasEquip("tbf") || core.hasEquip("mosquito") || core.hasEquip("essex") || core.hasEquip("enterprise")) {
 		damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);
 	}
 	//跨射
 	if (core.hasSpecial(mon_special, 37)) {
-		if (!['hood', 'warspite', 'kinggeorge5', 'northcarolina', 'iowa'].some(id => core.hasEquip(id))) {
+		if (!['hood', 'warspite', 'kinggeorge5', 'northcarolina', 'iowa', 'illustrious'].some(id => core.hasEquip(id))) {
 			damage += 3 * 3 * mon_atk;
 		}
 	}
 	//机载雷达
 	if (core.hasSpecial(mon_special, 1)) {
-		if (core.hasEquip("beautifighter") || core.hasEquip("tbf") || core.hasEquip("essex") || core.hasEquip("enterprise"))
+		if (core.hasEquip("beautifighter") || core.hasEquip("tbf") || core.hasEquip("mosquito") || core.hasEquip("essex") || core.hasEquip("enterprise"))
 			curr_hp -= hero_atk * 2;
 	}
 	//谢菲尔德——巴伦支海
@@ -976,6 +981,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('p38') && !core.plugin.Luftwaffe.includes(enemyInfo.type) && enemyInfo.type !== '潜艇') { //P38闪电
 		curr_hp -= hero_atk * 0.1 * 6;
 	}
+	if (core.hasEquip('f6f5') && !core.plugin.Luftwaffe.includes(enemyInfo.type) && enemyInfo.type !== '潜艇') { //地狱猫
+		curr_hp -= hero_atk * 0.2 * 6;
+	}
+	if (core.hasEquip("mosquito") && !core.plugin.Luftwaffe.includes(enemyInfo.type) && enemyInfo.type !== '潜艇') { //蚊子
+		curr_hp -= hero_atk * 0.2 * 8;
+	}
 	const getHeroPerDamage = core.getHeroPerTurnDamageFn(enemyInfo, hero, x, y, floorId, turn);
 	while (curr_hp > 0) {
 		++turn; // 进入下一回合
@@ -993,9 +1004,22 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 		}
 		if (curr_hp > 0) {
-			damage += core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);
+			var enemyDamage = core.getEnemyPerDamage(enemyInfo, hero, x, y, floorId, turn);
+			if (core.hasEquip('cleveland')) { //克利夫兰低血减伤
+				if (hero_hp - damage <= core.status.hero.hpmax * 0.5)
+					enemyDamage *= 0.75;
+			}
+			if (core.hasEquip('f6f5')) { //地狱猫安全返航
+				if (hero_hp - damage <= core.status.hpmax * 0.3)
+					enemyDamage *= 0.5;
+
+			}
+			damage += enemyDamage;
 			damage += core.status.checkBlock?.cache?.[x + ',' + y]?.trap_buff || 0; // 59: 陷阱
 			damage += core.status.checkBlock?.cache?.[x + ',' + y]?.aa_buff || 0; // 40: 防空
+			if (core.hasEquip('b17') && enemyInfo.type.endsWith('战斗机')) { //B17反伤效果
+				curr_hp -= enemyDamage * 0.1;
+			}
 		}
 	}
 	//拦截
@@ -1691,6 +1715,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage[loc] = Math.max(0, damage[loc] - core.getRealStatus('mdef'));
 	}
 	*/
+	if (core.hasEquip('mosquito'))
+		for (var loc in damage)
+			damage[loc] /= 2;
 
 	core.flags.canGoDeadZone = canGoDeadZone;
 	core.status.checkBlock = {
