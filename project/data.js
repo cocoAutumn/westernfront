@@ -4496,7 +4496,37 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"title": "准将",
 				"clear": true,
 				"action": [
-					"晋升准将"
+					"晋升准将，攻击+500，雷击+2000，血量与血限+50000，后勤+500",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "500"
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "2000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "50000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "50000"
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "500"
+					}
 				]
 			},
 			{

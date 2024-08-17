@@ -5,10 +5,10 @@ main.floors.MT209=
     "name": "法国",
     "width": 15,
     "height": 15,
-    "canFlyTo": true,
-    "canFlyFrom": true,
+    "canFlyTo": false,
+    "canFlyFrom": false,
     "canUseQuickShop": true,
-    "cannotViewMap": false,
+    "cannotViewMap": true,
     "images": [
         {
             "name": "sky.jpg",
@@ -29,6 +29,16 @@ main.floors.MT209=
             "type": "showStatusBar"
         },
         "\r[yellow]Mission 31 空中堡垒",
+        {
+            "type": "setValue",
+            "name": "flag:escort",
+            "value": "true"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:友军血量",
+            "value": "2500000"
+        },
         {
             "type": "setValue",
             "name": "item:b17",
@@ -74,16 +84,12 @@ main.floors.MT209=
             "time": 500
         },
         {
-            "type": "playSound",
-            "name": "bomber1.mp3"
+            "type": "sleep",
+            "time": 1000
         },
         {
             "type": "setCurtain",
             "time": 500
-        },
-        {
-            "type": "sleep",
-            "time": 1000
         },
         "\t[盟军指挥官,hero]睁大眼睛，注意警戒。敌人可能会从任何方向出现。",
         {

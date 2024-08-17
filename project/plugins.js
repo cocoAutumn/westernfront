@@ -346,14 +346,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('spitfiremk5') && enemyInfo.type.endsWith('战斗机')) //喷火MK9
 				code.push( /* js */ `damage += 0.2 * hero.mdef;`);
 			if (core.hasEquip('f6f5') && enemyInfo.type.endsWith('战斗机')) { //地狱猫——火鸡猎手
-				code.push( /* js */ `
-                  if(core.hasSpecial(mon_special, 4)){damage *= 1.4;}
-                  if(core.hasSpecial(mon_special, 5)){damage *= 1.6;}
-                  if(core.hasSpecial(mon_special, 6)){damage *= enemyInfo.n * 0.2 + 1;}
-                  if(!core.hasSpecial(mon_special, 4) && !core.hasSpecial(mon_special, 5) && !core.hasSpecial(mon_special, 6)){
-                     damage *= 1.2;
-                  }
-              `)
+				if (core.hasSpecial(mon_special, 4)) { code.push( /* js */ `damage *= 1.4`); }
+				if (core.hasSpecial(mon_special, 5)) { code.push( /* js */ `damage *= 1.6`); }
+				if (core.hasSpecial(mon_special, 6)) { code.push( /* js */ `damage *= enemyInfo.n * 0.2 + 1`); }
+				if (!core.hasSpecial(mon_special, 4) && !core.hasSpecial(mon_special, 5) && !core.hasSpecial(mon_special, 6)) { code.push( /* js */ `damage *= 1.2`); }
 			}
 			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
 				code.push( /* js */ `if (nthTurn === 1) damage *= 2;`);
@@ -497,6 +493,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage *= 1.3;
 			if (core.hasEquip('p47b')) //P47B雷电
 				damage *= 0.8;
+			if (core.hasSpecial(mon_special, 30) && nthTurn > 0 && nthTurn % 2 === 0) { //航炮
+				damage += mon_atk * 2;
+			}
 			// 航弹
 			if (core.hasSpecial(mon_special, 28) && nthTurn > 0 && nthTurn % mon_spd === 0) {
 				// 俯冲轰炸机
