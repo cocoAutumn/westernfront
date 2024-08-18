@@ -141,7 +141,7 @@ main.floors.MT214=
         },
         "6,0": {
             "0": {
-                "condition": "core.searchBlock('fw190a*',['MT210','MT211','MT212','MT213','MT214']).length === 0",
+                "condition": "core.searchBlock('fw190a1',['MT210','MT211','MT212','MT213','MT214']).length + core.searchBlock('fw190a3',['MT210','MT211','MT212','MT213','MT214']).length === 0",
                 "currentFloor": false,
                 "priority": 0,
                 "delayExecute": false,

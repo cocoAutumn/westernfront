@@ -1849,22 +1849,22 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	return false;
 },
         "parallelDo": function (timestamp) {
-			// 并行事件处理，可以在这里写任何需要并行处理的脚本或事件
-			// 该函数将被系统反复执行，每次执行间隔视浏览器或设备性能而定，一般约为16.6ms一次
-			// 参数timestamp为“从游戏资源加载完毕到当前函数执行时”的时间差，以毫秒为单位
+	// 并行事件处理，可以在这里写任何需要并行处理的脚本或事件
+	// 该函数将被系统反复执行，每次执行间隔视浏览器或设备性能而定，一般约为16.6ms一次
+	// 参数timestamp为“从游戏资源加载完毕到当前函数执行时”的时间差，以毫秒为单位
 
-			// 检查当前是否处于游戏开始状态
-			if (!core.isPlaying()) return;
+	// 检查当前是否处于游戏开始状态
+	if (!core.isPlaying()) return;
 
-			// 执行当前楼层的并行事件处理
-			if (core.status.floorId) {
-				try {
-					eval(core.floors[core.status.floorId].parallelDo);
-				} catch (e) {
-					console.error(e);
-				}
-			}
+	// 执行当前楼层的并行事件处理
+	if (core.status.floorId) {
+		try {
+			eval(core.floors[core.status.floorId].parallelDo);
+		} catch (e) {
+			console.error(e);
 		}
+	}
+}
     },
     "ui": {
         "getToolboxItems": function (cls) {

@@ -651,6 +651,17 @@ main.floors.MT215=
         },
         {
             "type": "setValue",
+            "name": "flag:escort",
+            "value": "false"
+        },
+        {
+            "type": "setValue",
+            "name": "item:b17",
+            "operator": "-=",
+            "value": "1"
+        },
+        {
+            "type": "setValue",
             "name": "flag:stage",
             "value": "32"
         },
