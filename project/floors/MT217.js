@@ -37,7 +37,7 @@ main.floors.MT217=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]已开启1943年新商店",
+        "\t[系统提示]已开启1943年（上半）商店",
         {
             "type": "openShop",
             "id": "shop6"
@@ -82,10 +82,10 @@ main.floors.MT217=
                                 "type": "changeFloor",
                                 "floorId": "MT218",
                                 "loc": [
-                                    14,
-                                    7
+                                    0,
+                                    4
                                 ],
-                                "direction": "left"
+                                "direction": "right"
                             }
                         ]
                     }

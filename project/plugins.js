@@ -46,7 +46,15 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		if (flags.skill === 3 && this.Luftwaffe.includes(enemyInfo.type)) // 技能3：防空弹幕，对空攻击力为1.2倍
 			code.push( /* js */ `hero_atk *= 1.2;`);
 		//谢馒头
-		if (core.hasEquip('M4') && this.Army.includes(enemyInfo.type)) {
+		if (core.hasEquip('m4') && this.Army.includes(enemyInfo.type)) {
+			code.push( /* js */ `
+				if (hero_ap <= mon_arm && hero_arm < mon_ap) {
+					hero_atk *= 1.15;
+				}
+			`);
+		}
+		//M4A2馒头
+		if (core.hasEquip('m4a2') && this.Army.includes(enemyInfo.type)) {
 			code.push( /* js */ `
 				if (hero_ap <= mon_arm && hero_arm < mon_ap) {
 					hero_atk *= 1.15;

@@ -403,6 +403,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return curr + core.material.enemys[g[2]].money;
 	}, core.getEnemyValue(enemy, "money", x, y));
 	if (core.hasEquip('m4')) money += 5; //谢馒头，触发在双倍前
+	if (core.hasEquip('m4a2')) money += 5; //M4A2馒头
 	if (core.hasEquip('classj')) money += 5; //J级驱逐舰
 	if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
 	if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
@@ -419,6 +420,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 	if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 	if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+	if (core.hasEquip('m4a2')) exp *= 2; //M4A2馒头
 	if (core.hasSpecial(enemyId, 61)) exp = 0; // 投降
 	core.status.hero.exp += exp;
 	core.status.hero.statistics.exp += exp;

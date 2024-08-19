@@ -1,6 +1,6 @@
-main.floors.MT220=
+main.floors.MT222=
 {
-    "floorId": "MT220",
+    "floorId": "MT222",
     "title": "凯赛林隘口",
     "name": "凯赛林隘口",
     "width": 15,
@@ -13,19 +13,7 @@ main.floors.MT220=
     "ratio": 1,
     "defaultGround": "sand",
     "bgm": "cao5.mp3",
-    "firstArrive": [
-        {
-            "type": "playSound",
-            "name": "xinxinmagic.mp3"
-        },
-        "\t[系统提示]部队的士气正逐渐崩溃！攻击力暂时减少100！",
-        {
-            "type": "setValue",
-            "name": "status:atk",
-            "operator": "-=",
-            "value": "100"
-        }
-    ],
+    "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},
@@ -51,8 +39,8 @@ main.floors.MT220=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,150,150,150,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,150,552,150,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,150,150,150,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,150,552,150,  0,  0,  0]
 ],
     "bgmap": [
 
