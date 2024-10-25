@@ -59,7 +59,7 @@ main.floors.MT219=
     "eachArrive": [
         {
             "type": "setValue",
-            "name": "flag:7-1task2",
+            "name": "flag:mission32task2",
             "operator": "+=",
             "value": "1"
         }
@@ -67,7 +67,8 @@ main.floors.MT219=
     "parallelDo": "",
     "events": {
         "13,6": [
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]这关的敌人都非常强，每到一个新楼层还会额外扣攻击力。这时候就不要贪恋宝石了，火速往出口逃跑吧！别忘了上一关获得的对称飞技能哦！"
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]这关的敌人都非常强，每到一个新楼层还会额外扣攻击力。这时候就不要贪恋宝石了，火速往出口逃跑吧！别忘了上一关获得的对称飞技能哦！",
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]当然，你要是选的的低难度，或者下午茶数量在200以上，也可以试试杀穿前几张地图。"
         ]
     },
     "changeFloor": {

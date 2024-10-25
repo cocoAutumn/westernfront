@@ -533,6 +533,8 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"620": {"cls":"animates","id":"A620","canPass":true},
 	"621": {"cls":"items","id":"sonar"},
 	"622": {"cls":"npcs","id":"N622"},
+	"623": {"cls":"npcs","id":"N623"},
+	"624": {"cls":"npcs","id":"N624"},
 	"20104": {"cls":"tileset","id":"X20104","canPass":true},
 	"20105": {"cls":"tileset","id":"X20105","canPass":true},
 	"20107": {"cls":"tileset","id":"X20107","canPass":true},

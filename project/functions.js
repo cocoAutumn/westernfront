@@ -437,6 +437,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		hero.mana -= core.getSkillInfo(flags.skill).cost;
 		flags.skill = 0;
 	}
+	//清楚可乐buff层数
+	if (flags.colabuff > 0) {
+		flags.colabuff = 0;
+	}
 
 	//B17空中堡垒
 	if (core.hasEquip('b17'))
@@ -655,7 +659,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[61, "投降", "这些已投降的敌军伤害值固定为0，且不会提供金经奖励。", "#ffffff"],
 		[62, "沙漠之狐", "隆美尔专属技能。当前具有“炎热”buff时，主角受到的炎热伤害提升至50%，隆美尔自身不会受到任何影响", "#bdb76b"],
 		[63, "阵地", "该敌人存活时，九宫格半径2格范围内的敌人获得20%减伤。且该范围内存在其他队友时，自身获得40%减伤和10%攻击力加成。不可叠加。", "#ffff00", 1],
-		[64, "拦截", "对主角的伤害降为50%，但对受保护的友军伤害倍率改为100%", "#ffcc33"]
+		[64, "拦截", "对主角的伤害降为50%，但对受保护的友军伤害倍率改为100%", "#ffcc33"],
+		[65, "抗破", "秒杀类技能无法对该敌人生效", "#d3d3d3"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -1060,6 +1065,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//扣除护盾
 	if (flags.skill === 14) {
 		hero_mdef *= 10;
+	}
+	//临时护盾
+	if (flags.colabuff >= 1) {
+		hero_mdef += Math.floor(flags.colabuff * core.status.hero.hpmax * 0.05);
 	}
 	damage -= hero_mdef; //这里可以变为负值
 
@@ -1918,6 +1927,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.ui.setTextAlign(ctx, 'left'); // 左对齐
 	core.ui.fillText(ctx, core.getRealStatus('money'), 50, 338); // 黄金
 	core.ui.fillText(ctx, core.control.getNextLvUpNeed(), 50, 358); // 经验
+	if (flags.colabuff >= 1) { //临时护盾
+		core.ui.setFont(ctx, '8px Aaknife');
+		core.ui.fillText(ctx, '+' + Math.floor(flags.colabuff * hero.hpmax * 0.05), 80, 365, 'green');
+		core.ui.setFont(ctx, '16px Aaknife');
+	}
 	core.ui.fillText(ctx, core.getRealStatus('mdef'), 50, 378); // 后勤
 	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（技能名）
 	if (flags.skill > 0) core.ui.fillText(ctx, core.getSkillInfo(flags.skill).name, 6, 404, 'orange') // 技能名

@@ -100,7 +100,7 @@ main.floors.MT208=
                         "text": "装备 喷火MK5战斗机",
                         "icon": "spitfiremk5",
                         "need": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
-                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -112,7 +112,7 @@ main.floors.MT208=
                         "text": "装备 P47B雷电战斗机",
                         "icon": "p47b",
                         "need": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
-                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
                         "action": [
                             {
                                 "type": "loadEquip",

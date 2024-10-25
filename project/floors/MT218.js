@@ -39,7 +39,7 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "1800",
+            "value": "2500",
             "norefresh": true
         },
         {
@@ -53,7 +53,21 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "mortar",
             "name": "atk",
-            "value": "7000",
+            "value": "9000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "sniper",
+            "name": "hp",
+            "value": "20000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "sniper",
+            "name": "atk",
+            "value": "60000",
             "norefresh": true
         },
         {
@@ -67,7 +81,7 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "1900",
+            "value": "2800",
             "norefresh": true
         },
         {
@@ -81,7 +95,7 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "lightmg",
             "name": "atk",
-            "value": "1900",
+            "value": "2900",
             "norefresh": true
         },
         {
@@ -95,126 +109,147 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "mg42",
             "name": "atk",
-            "value": "2200",
+            "value": "3200",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak38",
+            "name": "hp",
+            "value": "34000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak38",
+            "name": "atk",
+            "value": "20000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "hp",
-            "value": "12000",
+            "value": "34000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "atk",
-            "value": "25000",
+            "value": "45000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "zone",
-            "value": "20000",
+            "value": "35000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "hp",
-            "value": "22000",
+            "value": "85000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "atk",
-            "value": "6000",
+            "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "30000",
+            "value": "95000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "atk",
-            "value": "8000",
+            "value": "15000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer3f",
+            "name": "special",
+            "value": "[55,60]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "stug3a",
             "name": "hp",
-            "value": "20000",
+            "value": "70000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "stug3a",
             "name": "atk",
-            "value": "15000",
+            "value": "23000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4f",
             "name": "hp",
-            "value": "40000",
+            "value": "110000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4f",
             "name": "atk",
-            "value": "15000",
+            "value": "28000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "12000",
+            "value": "35000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "atk",
-            "value": "20000",
+            "value": "35000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "special",
-            "value": "[1,51,59]",
+            "value": "[1,40,51,59]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "zone",
-            "value": "20000",
+            "value": "25000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "rommel",
             "name": "hp",
-            "value": "30000",
+            "value": "120000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "rommel",
             "name": "atk",
-            "value": "15000",
+            "value": "45000",
             "norefresh": true
         },
         {
@@ -240,7 +275,7 @@ main.floors.MT218=
         {
             "type": "setGlobalValue",
             "name": "lavaDamage",
-            "value": 20000
+            "value": 40000
         },
         "\r[yellow]Mission 32 凯赛林隘口战役",
         {
@@ -282,7 +317,7 @@ main.floors.MT218=
         },
         {
             "type": "setBlock",
-            "number": "flak88",
+            "number": "panzer4f",
             "loc": [
                 [
                     5,
@@ -318,7 +353,7 @@ main.floors.MT218=
         },
         {
             "type": "setBlock",
-            "number": "flak88",
+            "number": "panzer3f",
             "loc": [
                 [
                     6,
@@ -336,7 +371,7 @@ main.floors.MT218=
         },
         {
             "type": "setBlock",
-            "number": "flak88",
+            "number": "panzer3f",
             "loc": [
                 [
                     7,
@@ -354,7 +389,7 @@ main.floors.MT218=
         },
         {
             "type": "setBlock",
-            "number": "flak88",
+            "number": "panzer4f",
             "loc": [
                 [
                     8,
@@ -390,7 +425,7 @@ main.floors.MT218=
         },
         {
             "type": "setBlock",
-            "number": "flak88",
+            "number": "panzer4f",
             "loc": [
                 [
                     10,

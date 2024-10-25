@@ -405,6 +405,176 @@ main.floors.MT215=
             "type": "waitAsync"
         },
         {
+            "type": "setBlock",
+            "number": "hole2",
+            "loc": [
+                [
+                    5,
+                    9
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "hole2",
+            "loc": [
+                [
+                    11,
+                    10
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "hole2",
+            "loc": [
+                [
+                    10,
+                    3
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "hole2",
+            "loc": [
+                [
+                    9,
+                    8
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "hole3",
+            "loc": [
+                [
+                    5,
+                    6
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "hole3",
+            "loc": [
+                [
+                    8,
+                    4
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "hole3",
+            "loc": [
+                [
+                    6,
+                    3
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "hole3",
+            "loc": [
+                [
+                    10,
+                    11
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "N574",
+            "loc": [
+                [
+                    4,
+                    6
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "N574",
+            "loc": [
+                [
+                    2,
+                    9
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "N574",
+            "loc": [
+                [
+                    3,
+                    8
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "N574",
+            "loc": [
+                [
+                    4,
+                    8
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "N574",
+            "loc": [
+                [
+                    8,
+                    8
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "N574",
+            "loc": [
+                [
+                    6,
+                    4
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "N574",
+            "loc": [
+                [
+                    8,
+                    2
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "N574",
+            "loc": [
+                [
+                    9,
+                    5
+                ]
+            ]
+        },
+        {
+            "type": "setBlock",
+            "number": "N574",
+            "loc": [
+                [
+                    9,
+                    9
+                ]
+            ]
+        },
+        {
             "type": "sleep",
             "time": 1000
         },
@@ -451,7 +621,7 @@ main.floors.MT215=
             "true": [
                 {
                     "type": "function",
-                    "function": "function(){\nflags.mission[30][2]=true\n}"
+                    "function": "function(){\nflags.mission[31][2]=true\n}"
                 }
             ]
         },

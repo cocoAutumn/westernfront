@@ -97,7 +97,7 @@ main.floors.MT217=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：德国空军，包括轻型战斗机和重型战斗机。\n推荐携带技能：防空弹幕、空战王牌、破译、补给线。\n推荐出战装备：喷火5或P47B。"
+            "\t[系统提示]当前区域敌人特点：大量强敌，皆为陆军。\n推荐携带技能：抵抗运动、破译、空中打击、补给线、C47空中列车\n推荐出战装备：M4A2谢尔曼、喷火或P47、英俊战士或P38、B25或B17"
         ],
         "10,13": [
             "\t[机场后勤,N516]长官，我方空军已就绪！",
@@ -157,7 +157,7 @@ main.floors.MT217=
                         "text": "装备 喷火MK5战斗机",
                         "icon": "spitfiremk5",
                         "need": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
-                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -166,10 +166,22 @@ main.floors.MT217=
                         ]
                     },
                     {
+                        "text": "装备 喷火MK9战斗机",
+                        "icon": "spitfiremk9",
+                        "need": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
+                        "condition": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "spitfiremk9"
+                            }
+                        ]
+                    },
+                    {
                         "text": "装备 P47B雷电战斗机",
                         "icon": "p47b",
                         "need": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
-                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -205,11 +217,23 @@ main.floors.MT217=
                         "text": "装备 P38闪电重型战斗机",
                         "icon": "p38",
                         "need": "core.hasItem('p38')&&!core.hasEquip('p38')",
-                        "condition": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
+                        "condition": "core.hasItem('p38')&&!core.hasEquip('p38')",
                         "action": [
                             {
                                 "type": "loadEquip",
                                 "id": "p38"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 台风攻击机",
+                        "icon": "typhoon",
+                        "need": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
+                        "condition": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "typhoon"
                             }
                         ]
                     },
@@ -270,6 +294,18 @@ main.floors.MT217=
                             {
                                 "type": "loadEquip",
                                 "id": "b25"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 B17空中堡垒",
+                        "icon": "b17",
+                        "need": "core.hasItem('b17')&&!core.hasEquip('b17')",
+                        "condition": "core.hasItem('b17')&&!core.hasEquip('b17')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "b17"
                             }
                         ]
                     },
@@ -406,6 +442,18 @@ main.floors.MT217=
                             {
                                 "type": "loadEquip",
                                 "id": "churchillmk3"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 M4A2谢尔曼",
+                        "icon": "m4a2",
+                        "need": "core.hasItem('m4a2')&&!core.hasEquip('m4a2')",
+                        "condition": "core.hasItem('m4a2')&&!core.hasEquip('m4a2')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "m4a2"
                             }
                         ]
                     },

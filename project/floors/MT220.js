@@ -18,18 +18,18 @@ main.floors.MT220=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]部队的士气正逐渐崩溃！攻击力暂时减少100！",
+        "\t[系统提示]部队的士气正逐渐崩溃！攻击力暂时减少200！",
         {
             "type": "setValue",
             "name": "status:atk",
             "operator": "-=",
-            "value": "100"
+            "value": "200"
         }
     ],
     "eachArrive": [
         {
             "type": "setValue",
-            "name": "flag:7-1task2",
+            "name": "flag:mission32task2",
             "operator": "+=",
             "value": "1"
         }

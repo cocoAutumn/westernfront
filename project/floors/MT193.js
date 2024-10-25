@@ -213,7 +213,7 @@ main.floors.MT193=
                         "text": "装备 喷火MK5战斗机",
                         "icon": "spitfiremk5",
                         "need": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
-                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -222,10 +222,22 @@ main.floors.MT193=
                         ]
                     },
                     {
+                        "text": "装备 喷火MK9战斗机",
+                        "icon": "spitfiremk9",
+                        "need": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
+                        "condition": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "spitfiremk9"
+                            }
+                        ]
+                    },
+                    {
                         "text": "装备 P47B雷电战斗机",
                         "icon": "p47b",
                         "need": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
-                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -261,11 +273,23 @@ main.floors.MT193=
                         "text": "装备 P38闪电重型战斗机",
                         "icon": "p38",
                         "need": "core.hasItem('p38')&&!core.hasEquip('p38')",
-                        "condition": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
+                        "condition": "core.hasItem('p38')&&!core.hasEquip('p38')",
                         "action": [
                             {
                                 "type": "loadEquip",
                                 "id": "p38"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 台风攻击机",
+                        "icon": "typhoon",
+                        "need": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
+                        "condition": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "typhoon"
                             }
                         ]
                     },
@@ -326,6 +350,18 @@ main.floors.MT193=
                             {
                                 "type": "loadEquip",
                                 "id": "b25"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 B17空中堡垒",
+                        "icon": "b17",
+                        "need": "core.hasItem('b17')&&!core.hasEquip('b17')",
+                        "condition": "core.hasItem('b17')&&!core.hasEquip('b17')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "b17"
                             }
                         ]
                     },

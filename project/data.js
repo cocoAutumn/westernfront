@@ -3294,12 +3294,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			{
 				"id": "shop6",
 				"text": "\t[1943级商店（上半）]请选择购买项",
-				"textInList": "1943级商店",
+				"textInList": "1943级商店（上半）",
 				"mustEnable": true,
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "M4A2谢尔曼（900/3500）",
+						"text": "M4A2谢尔曼（1200/3500）",
 						"need": "true",
 						"icon": "m4a2",
 						"condition": "!core.hasEquip('m4a2')&&!core.hasItem('m4a2')",
@@ -3319,7 +3319,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下两种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "替换手中的“M4谢尔曼”（900）",
+												"text": "替换手中的“M4谢尔曼”（1200）",
 												"icon": "m4",
 												"action": [
 													{
@@ -3328,7 +3328,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=900)",
+																"condition": "(status:money>=1200)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -3338,7 +3338,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "900"
+																		"value": "1200"
 																	},
 																	{
 																		"type": "setValue",
@@ -3843,7 +3843,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "B17“空中堡垒”重型轰炸机（5500）",
+						"text": "B17“空中堡垒”重型轰炸机（6500）",
 						"need": "true",
 						"icon": "b17",
 						"condition": "!core.hasEquip('b17')&&!core.hasItem('b17')",
@@ -3891,7 +3891,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "盟军科技研发成果LV2（2000）",
+						"text": "盟军科技研发成果LV2（3000）",
 						"need": "true",
 						"condition": "flags.technology===2",
 						"action": [
@@ -3937,7 +3937,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "道具：主动声纳（500）",
+						"text": "道具：主动声纳（1000）",
 						"need": "true",
 						"icon": "sonar",
 						"condition": "flags.technology===3&&!core.hasItem('sonar')",
@@ -3947,7 +3947,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\t[主动声纳]提供被动效果的道具，放在道具背包里即可生效。使敌军潜艇的“惊雷”技能无效化。",
-							"\t[历史来源]\f[activesonar.jpg,170,50]声纳分为主动和被动。其中，被动声纳是被动的监听水下物体发出的声音，通过声音的来源方向和传播距离确定水下物体的方位。但如果目标物体没有发出太大响动，例如潜艇低速静默航行时，被动声纳就很难探测到。而主动声纳则是主动的发出声波，依靠反弹的回声确定目标的方位。主动声纳对于反潜作战十分重要，可以有效发现潜艇位置并进行攻击，只有潜入海水跃变层以下的潜艇才有可能钻空逃脱。玩过猎杀潜航的同学对此应该印象深刻——当听到频率越来越高的“ping”声时，你差不多就要寄了。",
+							"\t[历史来源]\f[activesonar.jpg,170,50]声纳分为主动和被动。其中，被动声纳是被动的监听水下物体发出的声音，通过声音的来源方向和传播距离确定水下物体的方位。但如果目标物体没有发出太大响动，例如潜艇低速静默航行时，被动声纳就很难探测到。而主动声纳则是主动的发出声波，依靠反弹的回声确定目标的方位。主动声纳对于反潜作战十分重要，可以有效发现潜艇位置并进行攻击，只有潜入海水跃变层以下的潜艇才有可能钻空逃脱。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -3985,7 +3985,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "引信改良（500）",
+						"text": "引信改良（1000）",
 						"need": "true",
 						"icon": "skill1",
 						"condition": "flags.引信改良!==true",
