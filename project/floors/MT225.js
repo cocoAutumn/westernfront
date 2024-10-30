@@ -1070,7 +1070,7 @@ main.floors.MT225=
                                     7,
                                     14
                                 ],
-                                "direction": "right"
+                                "direction": "up"
                             }
                         ]
                     }

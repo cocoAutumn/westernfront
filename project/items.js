@@ -1466,7 +1466,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"red5Gem": {
 		"cls": "items",
 		"name": "5阶红宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": ",攻击+20",
+		"itemEffectTip": ",攻击+20",
+		"itemEffect": "core.status.hero.atk += 20;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}"
 	},
 	"blue2Gem": {
 		"cls": "items",
@@ -1496,7 +1499,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"blue5Gem": {
 		"cls": "items",
 		"name": "5阶蓝宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，指挥点数+200",
+		"itemEffectTip": "，指挥点数+200",
+		"itemEffect": "core.status.hero.mana += 200;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"green2Gem": {
 		"cls": "items",
@@ -1526,7 +1532,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"green5Gem": {
 		"cls": "items",
 		"name": "5阶绿宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，后勤+150",
+		"itemEffectTip": "，后勤+150",
+		"itemEffect": "core.status.hero.mdef += 150;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('mdefup');\n}"
 	},
 	"yellow2Gem": {
 		"cls": "items",
@@ -1556,7 +1565,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"yellow5Gem": {
 		"cls": "items",
 		"name": "5阶黄宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": ",血量及血限+3000",
+		"itemEffectTip": ",血量及血限+3000",
+		"itemEffect": "core.status.hero.hpmax += 3000;\ncore.status.hero.hp += 3000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('hpmaxup');\n}"
 	},
 	"orange2Gem": {
 		"cls": "items",
@@ -1585,7 +1597,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"orange5Gem": {
 		"cls": "items",
 		"name": "5阶橙宝石",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，增加500雷击",
+		"itemEffectTip": "，增加500雷击",
+		"itemEffect": "core.status.hero.top += 500;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('topup');\n}"
 	},
 	"p40c": {
 		"cls": "equips",
@@ -1844,56 +1859,6 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			}
 		]
 	},
-	"I605": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I606": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I607": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I608": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I609": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I610": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I611": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I612": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I613": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
-	"I614": {
-		"cls": "items",
-		"name": "新物品",
-		"canUseItemEffect": "true"
-	},
 	"m4": {
 		"cls": "equips",
 		"name": "M4谢尔曼",
@@ -1974,5 +1939,72 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "constants",
 		"name": "主动声纳",
 		"canUseItemEffect": "false"
+	},
+	"bigredPotion": {
+		"cls": "items",
+		"name": "大红血瓶",
+		"canUseItemEffect": "true",
+		"text": "，生命+25w",
+		"itemEffectTip": "，生命+25w",
+		"itemEffect": "core.status.hero.hp += 250000;"
+	},
+	"bigbluePotion": {
+		"cls": "items",
+		"name": "大蓝血瓶",
+		"canUseItemEffect": "true"
+	},
+	"bigyellowPotion": {
+		"cls": "items",
+		"name": "大黄血瓶",
+		"canUseItemEffect": "true"
+	},
+	"biggreenPotion": {
+		"cls": "items",
+		"name": "大绿血瓶",
+		"canUseItemEffect": "true"
+	},
+	"bigorangePotion": {
+		"cls": "items",
+		"name": "大橙血瓶",
+		"canUseItemEffect": "true"
+	},
+	"bigpurplePotion": {
+		"cls": "items",
+		"name": "大紫血瓶",
+		"canUseItemEffect": "true"
+	},
+	"bigcyanPotion": {
+		"cls": "items",
+		"name": "大青血瓶",
+		"canUseItemEffect": "true"
+	},
+	"bigdarkbluePotion": {
+		"cls": "items",
+		"name": "大深蓝血瓶",
+		"canUseItemEffect": "true"
+	},
+	"bigdarkredPotion": {
+		"cls": "items",
+		"name": "大赤血瓶",
+		"canUseItemEffect": "true"
+	},
+	"biggoldPotion": {
+		"cls": "items",
+		"name": "大金血瓶",
+		"canUseItemEffect": "true"
+	},
+	"medal5": {
+		"cls": "items",
+		"name": "5级勋章",
+		"canUseItemEffect": "true",
+		"text": "，全属性提升",
+		"itemEffectTip": "，全属性提升",
+		"itemEffect": "core.status.hero.hpmax += 3000;\ncore.status.hero.hp += 3000;\ncore.status.hero.mana += 200;\ncore.status.hero.atk += 20;\ncore.status.hero.top += 500;\ncore.status.hero.mdef += 150;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}",
+		"useItemEvent": [
+			{
+				"type": "playSound",
+				"name": "xinxinbazhe.mp3"
+			}
+		]
 	}
 }

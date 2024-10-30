@@ -677,6 +677,17 @@ main.floors.MT99=
                                                 ]
                                             },
                                             {
+                                                "type": "hide",
+                                                "loc": [
+                                                    [
+                                                        7,
+                                                        5
+                                                    ]
+                                                ],
+                                                "remove": true,
+                                                "time": 2000
+                                            },
+                                            {
                                                 "type": "update"
                                             },
                                             {
