@@ -172,7 +172,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"235": {"cls":"enemys","id":"ju87g"},
 	"236": {"cls":"enemys","id":"gunbunker"},
 	"237": {"cls":"enemys","id":"skeletonPriest"},
-	"238": {"cls":"enemys","id":"skeletonKing"},
+	"238": {"cls":"enemys","id":"zeppelin"},
 	"239": {"cls":"enemys","id":"skeletonPresbyter"},
 	"240": {"cls":"enemys","id":"italydd4"},
 	"241": {"cls":"enemys","id":"evilHero"},

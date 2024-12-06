@@ -583,7 +583,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			cost = 100;
 			description = '秒杀面前的非boss空军';
 			event = [
-				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb&&core.material.enemys[flags.空战王牌]?.type!=='导弹'&&!core.hasSpecial(mon_special, 65)", "true": [{ "type": "playSound", "name": "fighter.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft1.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
+				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb&&core.material.enemys[flags.空战王牌]?.type!=='导弹'&&!core.hasSpecial(flags['空战王牌'], 65)", "true": [{ "type": "playSound", "name": "fighter.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft1.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
 			];
 		}
 		if (id === 5) {
@@ -639,7 +639,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			cost = 200;
 			description = '秒杀面前的非boss坦克';
 			event = [
-				{ "type": "setValue", "name": "flag:空中打击", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[flag:空中打击]?.type)&&!core.material.enemys[flag:空中打击]?.notBomb&&!core.hasSpecial(mon_special, 65)", "true": [{ "type": "playSound", "name": "bomber3.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft2.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "200" }, { "type": "setValue", "name": "flag:空中打击", "value": "null" }] }
+				{ "type": "setValue", "name": "flag:空中打击", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[flag:空中打击]?.type)&&!core.material.enemys[flag:空中打击]?.notBomb&&!core.hasSpecial(flags['空中打击'], 65)", "true": [{ "type": "playSound", "name": "bomber3.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft2.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "200" }, { "type": "setValue", "name": "flag:空中打击", "value": "null" }] }
 			];
 		}
 		if (id === 12) {
@@ -666,9 +666,49 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		if (id === 16) {
 			strategy = true;
-			name = '制空权';
-			cost = 700;
-			description = '尝试夺取当前地图制空权，以150%hp上限的血量和120%攻击力与当前地图所有敌机进行战斗。如果成功，消灭全图敌机，继承剩余血量（不超过血限），此后在当前地图战斗时获得50%全伤害加成。如果失败，生命值减为1，扣减10个下午茶（不足则暴毙），当前地图的敌机血量减少50%。每张图限用一次，如果没有敌机，也无法使用。';
+			name = '海上霸主';
+			cost = 1000;
+			description = '只能在海上使用且必须装备着航空母舰。舰载机发动空袭，使全图除潜艇外的敌方海军损失50%生命值，同时我方损失等同于20%血限的hp作为飞机损失。每张地图仅限使用一次，对boss无效';
+		}
+		if (id === 17) {
+			strategy = true;
+			name = '潜行';
+			cost = 300;
+			description = '进入潜行状态，回避地图类伤害，并在进入战斗后额外获得1回合先攻和20%减伤。可主动解除，或在触碰地雷、进入战斗或进入下一区域时被动解除。注意：开启时或持续期间被“点杀”敌人攻击，也会被直接解除';
+		}
+		if (id === 18) {
+			name = '孟菲斯美女号';
+			cost = 100;
+			description = '下一场战斗中，友军不会受到任何伤害';
+		}
+		if (id === 19) {
+			strategy = true;
+			name = 'T34谢尔曼风琴';
+			cost = 600;
+			description = '仅可在地面使用。呼叫火箭炮覆盖打击，打击目标为以自身为中心7×7正方形区域，其中的敌人陆军受到不同程度的损失：步兵失去70%生命值，炮兵失去50%，装甲失去20%';
+		}
+		if (id === 20) {
+			strategy = true;
+			name = '地毯式轰炸';
+			cost = 1500;
+			description = '仅可在地面使用。呼叫大规模轰炸机群展开全图轰炸，全体敌方陆军损失70%生命值，空军损失15%生命值';
+		}
+		if (id === 21) {
+			strategy = true;
+			name = '红色尾翼';
+			cost = 500;
+			description = '获得第332战斗机大队的支援。接下来的5场战斗内，友军不会受伤，且对敌方战斗机伤害增加30%';
+		}
+		if (id === 22) {
+			name = 'M18地狱猫';
+			cost = 120;
+			description = '一队M18坦克歼击车加入战斗，下一场战斗中，穿甲值改为150，且面对无法击穿的敌方坦克时，敌人只会先攻3回合。但受到伤害也会增加15%。';
+		}
+		if (id === 23) {
+			strategy = true;
+			name = '高脚柜炸弹';
+			cost = 1000;
+			description = '只能在陆地或浅滩使用，且必须装备着“兰卡斯特轰炸机”。使用后在前方一格投下一枚“高脚柜”炸弹，直接摧毁面前的非boss陆军（无视抗破），并在爆炸地点3格内引发小范围地震，摧毁可破墙壁';
 		}
 		return {
 			'strategy': strategy,

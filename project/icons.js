@@ -212,7 +212,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"zombie": 12,
 		"zombieKnight": 13,
 		"skeletonPriest": 36,
-		"skeletonKing": 37,
 		"poisonZombie": 55,
 		"octopus": 57,
 		"princessEnemy": 59,
@@ -346,7 +345,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"a6mzero": 136,
 		"val": 137,
 		"kate": 138,
-		"badoglio": 22
+		"badoglio": 22,
+		"zeppelin": 37
 	},
 	"enemy48": {
 		"angel": 0,

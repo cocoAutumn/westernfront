@@ -662,7 +662,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[64, "拦截", "对主角的伤害降为50%，但对受保护的友军伤害倍率改为100%", "#ffcc33"],
 		[65, "抗破", "秒杀类技能无法对该敌人生效", "#d3d3d3"],
 		[66, "点杀", "主角在当前地图使用即时战略技能时（例如扫雷），以2倍攻击力攻击主角一次，可被后勤值抵消", "#c677dd"],
-		[67, "好战", "主角经过该敌人周围4格时，以120%攻击力与主角发生强制战斗,但如果是被隐蔽状态下的主角主动攻击，则自身攻击力减少20%，主角额外先攻一次", "#ff8c00"]
+		[67, "好战", "主角经过该敌人周围4格时，以120%攻击力与主角发生强制战斗,但如果是被隐蔽状态下的主角主动攻击，则自身攻击力减少20%，主角额外先攻一次", "#ff8c00"],
+		[68, "尖啸死神", "斯图卡轰炸机专属技能。投弹命中主角后，施加3层“惊慌”debuff，每层debuff会使主角攻击力减少10%，每过一次战斗减少一层，可无限叠加", "#dc143c"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -932,6 +933,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage = 0,
 		notyet = true;
 
+	//海上霸主
+	if (flags[core.status.floorId + '海上霸主'] && core.plugin.Navy.includes(enemyInfo.type) && enemyInfo.type !== '潜艇' && !core.hasSpecial(mon_special, 57)) {
+		curr_hp *= 0.5;
+	}
 	//B17空中堡垒
 	if (core.hasEquip('b17') && core.plugin.Army.includes(enemyInfo.type)) {
 		curr_hp *= 0.7;
@@ -1064,13 +1069,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage *= 1.1;
 	}
 
-	//扣除护盾
-	if (flags.skill === 14) {
-		hero_mdef *= 10;
-	}
 	//临时护盾
 	if (flags.colabuff >= 1) {
 		hero_mdef += Math.floor(flags.colabuff * core.status.hero.hpmax * 0.05);
+	}
+	//扣除护盾
+	if (flags.skill === 14) {
+		hero_mdef *= 10;
 	}
 	damage -= hero_mdef; //这里可以变为负值
 

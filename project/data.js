@@ -237,7 +237,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT227",
 			"MT228",
 			"MT229",
-			"MT230"
+			"MT230",
+			"MT231",
+			"MT232",
+			"MT233",
+			"MT234",
+			"MT235",
+			"MT236",
+			"MT237",
+			"MT238",
+			"MT239",
+			"MT240"
 		],
 		"floorPartitions": [
 			[
@@ -406,6 +416,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"cromwell.jpg",
 			"crusades.jpg",
 			"cunningham.jpg",
+			"cvairgroup.png",
+			"cvstrike.png",
 			"deutschland.jpg",
 			"donitz.png",
 			"dorsetshire.jpg",
@@ -485,6 +497,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"skill13.jpg",
 			"skill14.jpg",
 			"skill15.jpg",
+			"skill16.jpg",
 			"skill3.jpg",
 			"skill4.jpg",
 			"skill5.jpg",
@@ -668,6 +681,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"crash.mp3",
 			"crash2.mp3",
 			"cursor.mp3",
+			"cvstrike.mp3",
 			"dogfight.mp3",
 			"door.mp3",
 			"equip.mp3",
