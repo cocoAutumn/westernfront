@@ -25,7 +25,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"yellowKing": {"name":"黄衣魔王","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"greenKing": {"name":"凯赛林","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"redKing": {"name":"古德里安","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
-	"blueKing": {"name":"阿尼姆","hp":100,"atk":120,"def":0,"money":17,"exp":0,"point":0,"special":16},
+	"blueKing": {"name":"阿尼姆","hp":100,"atk":120,"def":0,"money":0,"exp":0,"point":0,"special":[25,38,40,55,57,63],"ap":123,"arm":80,"type":"中坦","gro":0,"dod":0,"bom":0,"tpn":0,"top":0},
 	"keiskeiFairy": {"name":"铃兰花妖","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"tulipFairy": {"name":"郁金香花妖","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"bearDown": {"name":"熊出没","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"faceIds":{"down":"bearDown","left":"bearLeft","right":"bearRight","up":"bearUp"},"bigImage":"bear.png"},
@@ -146,5 +146,5 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"val": {"name":"D3A九九舰爆","hp":240,"atk":10,"def":0,"money":0,"exp":0,"point":0,"special":[28,36],"type":"俯冲轰炸机","description":"主武器：2×7.7mm前射机枪、1×7.7mm自卫机枪\n挂载：1×250kg炸弹、2×60kg炸弹","ammo":1,"spd":4,"ap":0,"arm":0,"top":0,"bom":3000},
 	"kate": {"name":"B5N九七舰攻","hp":300,"atk":10,"def":0,"money":0,"exp":0,"point":0,"special":[29],"type":"鱼雷轰炸机","description":"自卫武器：1×7.7mm机枪\n挂载：1×91式鱼雷","ap":0,"arm":0,"top":5000,"bom":0,"tpn":1,"dod":0,"gro":0,"cd":5,"ammo":1,"spd":5},
 	"badoglio": {"name":"巴多格里奥","hp":20000,"atk":25000,"def":0,"money":0,"exp":0,"point":0,"special":[15,25,38,57],"type":"榴弹炮","gro":0,"dod":0,"tpn":0,"bom":0,"top":0,"arm":2,"ap":999,"zone":20000,"range":2,"zoneSquare":true,"hpBuff":40,"atkBuff":0,"defBuff":10},
-	"zeppelin": {"name":"齐柏林伯爵级航空母舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"航母","gro":0,"dod":2,"tpn":0,"bom":0,"top":0,"arm":0,"ap":0}
+	"zeppelin": {"name":"齐柏林伯爵号航空母舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"航母","gro":0,"dod":2,"tpn":0,"bom":0,"top":0,"arm":0,"ap":0,"description":"防御武器：16×150mm主炮、12×105mm防空炮、22×37mm机炮、28×20mm机炮。\n舰载机：12×ME109T战斗机、30×JU87C俯冲轰炸机"}
 }
