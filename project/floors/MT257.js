@@ -333,9 +333,9 @@ main.floors.MT257=
                                 "floorId": "MT259",
                                 "loc": [
                                     7,
-                                    7
+                                    13
                                 ],
-                                "direction": "down"
+                                "direction": "up"
                             }
                         ],
                         "no": [

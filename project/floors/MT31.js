@@ -327,7 +327,7 @@ main.floors.MT31=
                 "yes": [
                     {
                         "type": "win",
-                        "reason": "Stage1 法国战役"
+                        "reason": "Stage1 法国战役 新"
                     }
                 ],
                 "no": [

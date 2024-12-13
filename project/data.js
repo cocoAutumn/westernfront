@@ -448,6 +448,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"brave.png",
 			"c200.jpg",
 			"c202.jpg",
+			"casablanca.jpg",
 			"chapter1.jpg",
 			"chapter10.jpg",
 			"chapter11.jpg",
@@ -460,6 +461,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"chapter8.jpg",
 			"chapter9.jpg",
 			"churchill3.jpg",
+			"clark.png",
 			"classe.jpg",
 			"classj.jpg",
 			"classv.jpg",
@@ -501,6 +503,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"hurricanemk1.jpg",
 			"hurricanemk2.png",
 			"illustrious.jpg",
+			"independence.jpg",
 			"iowa.jpg",
 			"kasselring.png",
 			"kinggeorgev.jpg",
@@ -582,6 +585,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"title5.png",
 			"typhoon.jpg",
 			"uboat.png",
+			"unicorn.jpg",
 			"v1.jpg",
 			"valentine.jpg",
 			"veneto.jpg",
@@ -3568,7 +3572,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "乔治五世号战列舰（5000）",
+						"text": "乔治五世号战列舰（7000）",
 						"need": "true",
 						"icon": "kinggeorge5",
 						"condition": "!core.hasEquip('kinggeorge5')&&!core.hasItem('kinggeorge5')",
@@ -3585,7 +3589,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=5000)",
+										"condition": "(status:money>=7000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -3595,7 +3599,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "5000"
+												"value": "7000"
 											},
 											{
 												"type": "setValue",
@@ -3616,7 +3620,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "光辉号航空母舰（4500）",
+						"text": "光辉号航空母舰（8000）",
 						"need": "true",
 						"icon": "illustrious",
 						"condition": "!core.hasEquip('illustrious')&&!core.hasItem('illustrious')",
@@ -3633,7 +3637,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=4500)",
+										"condition": "(status:money>=8000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -3643,7 +3647,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "4500"
+												"value": "8000"
 											},
 											{
 												"type": "setValue",
@@ -4108,7 +4112,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "北卡罗莱纳号战列舰（7500）",
+						"text": "北卡罗莱纳号战列舰（10000）",
 						"need": "true",
 						"icon": "northcarolina",
 						"condition": "!core.hasEquip('northcarolina')&&!core.hasItem('northcarolina')",
@@ -4125,7 +4129,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=7500)",
+										"condition": "(status:money>=10000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -4135,7 +4139,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "7500"
+												"value": "10000"
 											},
 											{
 												"type": "setValue",
@@ -4166,7 +4170,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[f6f.jpg,170,50]F6F“地狱猫”(hellcat，又译为泼妇)战斗机是美国在二战时期功绩最大的舰载战斗机，1943年9月服役，最大时速达到612km/h，配备6挺12.7mm机枪，后期型改为4挺机枪和2门20mm机炮，而且坚固耐用可靠性好。太平洋战争初期，日本零式战斗机在天空中嚣张跋扈，无人能挡，但地狱猫的出现完美克制了零式，一夜之间就将这些“空中恶魔”变成了“飞行的经验包”。在马里亚纳海战中，地狱猫战斗机更是来了一场酣畅淋漓的“空中猎火鸡大赛”，以26架的损失击落315架日机。2年的服役时间内，F6F地狱猫击落了5155架敌机，占美国海军和海军陆战飞行队击坠数的80%。",
-							"\f[f6f.jpg,170,50]装备属性：攻+250后额外＋20%，挂载6火箭弹和2炸弹。与陆军或水面舰艇战斗时可以先后分别使用火箭弹和炸弹攻击：\n首回合抢先发射火箭弹，每枚火箭弹伤害为0.2倍攻击力。仅第2回合投弹，每颗炸弹伤害为4倍攻击力\n被动：\n火鸡猎手：敌方战斗机的每一点连击数都会额外增加我方20%的回合普攻伤害。（无连击时视为1连击，仍有20%保底加成）\n安全返航：战斗中我方血量低于30%时，受到伤害减半。",
+							"\f[f6f.jpg,170,50]装备属性：攻+250后额外＋20%，挂载6火箭弹和2炸弹。与陆军或水面舰艇战斗时可以先后使用火箭弹和炸弹攻击：\n首回合抢先发射火箭弹，每枚火箭弹伤害为0.2倍攻击力。仅第2回合投弹，每颗炸弹伤害为4倍攻击力\n被动：\n火鸡猎手：敌方战斗机的每一点连击数都会额外增加我方20%的回合普攻伤害。（无连击时视为1连击，仍有20%保底加成）\n安全返航：战斗结束时，如果剩余血量小于30%，额外回复5%。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -4204,7 +4208,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "蚊式重型(?)战斗机（4000）",
+						"text": "蚊式重型(?)战斗机（5000）",
 						"need": "true",
 						"icon": "mosquito",
 						"condition": "!core.hasEquip('mosquito')&&!core.hasItem('mosquito')",
@@ -4214,55 +4218,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[mosquito.jpg,170,50]DH98蚊式战斗机由英国的德·哈维兰公司设计制造。在钢铁和铝合金战机满天飞的时代，德·哈维兰却另辟蹊径，用木头制作了这款优秀的战机，使其被人称为“木制奇迹”。由于是木头制作，蚊式身轻如燕，价格低廉，同时具有十分优良的性能，速度也丝毫不差，两个发动机关掉其一的情况下仍能快过美国B26轰炸机。在欧洲上空，蚊式正如其名，经常在夜间灵活穿梭在德军上空，时不时“叮”上一口然后快速逃脱，多数德军战斗机又拿他们毫无办法，直到喷气机出现以后才有了速度优势。像极了夏天那些讨厌的蚊子，只不过不吸血，改扔炸弹了。",
-							"\f[mosquito.jpg,170,50]装备属性：攻击+450后额外加10%。挂载6枚火箭弹。\n与陆军和水面舰艇作战时抢先发射一轮火箭弹，每枚火箭弹伤害为0.2倍攻击力\n被动：\n木制奇迹：与敌方战斗机作战时，如果对方不是喷气战斗机，获得3回合无敌状态。\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n高效侦察：以50%倍率免疫领域类技能伤害。",
-							{
-								"type": "confirm",
-								"text": "确定购买？",
-								"yes": [
-									{
-										"type": "if",
-										"condition": "(status:money>=4000)",
-										"true": [
-											{
-												"type": "playSound",
-												"name": "fighter1.mp3"
-											},
-											{
-												"type": "setValue",
-												"name": "status:money",
-												"operator": "-=",
-												"value": "4000"
-											},
-											{
-												"type": "setValue",
-												"name": "item:mosquito",
-												"operator": "+=",
-												"value": "1"
-											}
-										],
-										"false": [
-											"大炮一响，黄金万两。再多去赚点钱吧！"
-										]
-									}
-								],
-								"no": [
-									"已取消购买"
-								]
-							}
-						]
-					},
-					{
-						"text": "TBF“复仇者”鱼雷轰炸机（舰）（5000）",
-						"need": "true",
-						"icon": "tbf",
-						"condition": "!core.hasEquip('tbf')&&!core.hasItem('tbf')",
-						"action": [
-							{
-								"type": "comment",
-								"text": "新版商店中需要手动扣减金币和增加访问次数"
-							},
-							"\f[tbf.jpg,170,50]格鲁曼TBF“复仇者”式鱼雷轰炸机是二战时期美国最好的鱼雷轰炸机，主要活跃于太平洋战场。在中途岛海战后，TBF很快便替换了被认定为落后的TBD轰炸机，使美国鱼雷机的整体水平得到了提升。TBF的速度更快，性能更好，除了进行鱼雷攻击以外还可以挂载大量炸弹或火箭弹。在围绕瓜岛进行的一系列战役中，TBF复仇者击沉了比睿号战列舰，这是美军太平洋战争中击沉的第一艘战列舰。之后凡是美军航母参与的战役，都有TBF的出击，一直打到冲绳岛。TBF取得的最大的战果就是击沉了日军“大和”号和“武藏”号两艘超级战列舰。",
-							"\f[tbf.jpg,170,50]装备属性：攻击+100，雷击+70%。挂载：4×500磅炸弹或1×MK13鱼雷\n对地攻击时，每4回合投掷1轮炸弹，每颗炸弹伤害为1倍攻击力。对舰攻击时，每4回合投放10枚鱼雷。\n被动：\n巨舰猎手：攻击重巡或战列舰等大型战舰时，鱼雷伤害增加100%\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n哑弹：发射的鱼雷不会爆炸。",
+							"\f[mosquito.jpg,170,50]装备属性：攻击+450后额外加10%。挂载6枚火箭弹。\n与陆军和水面舰艇作战时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力\n被动：\n木制奇迹：与敌方战斗机作战时，如果对方不是喷气战斗机，先手造成3倍攻击力伤害。\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n高效侦察：以50%倍率免疫领域类技能伤害。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -4283,7 +4239,199 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 											},
 											{
 												"type": "setValue",
+												"name": "item:mosquito",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "TBF“复仇者”鱼雷轰炸机（舰）（6000）",
+						"need": "true",
+						"icon": "tbf",
+						"condition": "!core.hasEquip('tbf')&&!core.hasItem('tbf')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[tbf.jpg,170,50]格鲁曼TBF“复仇者”式鱼雷轰炸机是二战时期美国最好的鱼雷轰炸机，主要活跃于太平洋战场。在中途岛海战后，TBF很快便替换了被认定为落后的TBD轰炸机，使美国鱼雷机的整体水平得到了提升。TBF的速度更快，性能更好，除了进行鱼雷攻击以外还可以挂载大量炸弹或火箭弹。在围绕瓜岛进行的一系列战役中，TBF复仇者击沉了比睿号战列舰，这是美军太平洋战争中击沉的第一艘战列舰。之后凡是美军航母参与的战役，都有TBF的出击，一直打到冲绳岛。TBF取得的最大的战果就是击沉了日军“大和”号和“武藏”号两艘超级战列舰。",
+							"\f[tbf.jpg,170,50]装备属性：攻击+100，雷击+70%。挂载：4×500磅炸弹或1×MK13鱼雷\n对地攻击时，每4回合投掷1轮炸弹，每颗炸弹伤害为1倍攻击力。对舰攻击时，每4回合投放10枚鱼雷。\n被动：\n巨舰猎手：攻击重巡或战列舰等大型战舰时，鱼雷伤害增加100%\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n哑弹：发射的鱼雷不会爆炸。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=6000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "6000"
+											},
+											{
+												"type": "setValue",
 												"name": "item:tbf",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "独角兽号轻型航母（3000）",
+						"need": "true",
+						"icon": "unicorn",
+						"condition": "!core.hasItem('unicorn')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[unicorn.jpg,170,50]英国皇家海军“独角兽”号航空母舰于1943年3月服役，是该型舰的“独苗”。其并非是为了作战而设计，而是作为一艘维护舰为正规航母提供有效的航空后勤支援。当然，作为一艘航母，放出舰载机空袭的能力还是有的。服役后，该舰几乎是一直跟随“光辉”号航母行动，先后参加过西西里岛战役、萨莱诺登陆、冲绳岛战役等，主要负责飞机维修、运输、训练等工作。朝鲜战争爆发时，独角兽号也作为飞机运输舰参与战争。1959年拆解。",
+							"\f[unicorn.jpg,170,50]永久道具类，无需装备。仅在海洋和浅滩生效。\n每次作战后，如果伤害不高于0，回血效果增加20%。此外，如果装备了航母，获得10%战斗减伤。如果是光辉号航母，减伤效果改为20%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=3000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "3000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:unicorn",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "独立级轻型航母（5000）",
+						"need": "true",
+						"icon": "independence",
+						"condition": "!core.hasItem('independence')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[independence.jpg,170,50]在与日本海军的作战中，航母的潜能被逐渐发掘出来，美国海军希望建造更多的航母用于战争。建造大型正规航母需要大量时间和资源，不能满足前线需求，于是美国海军建造了许多轻型航母和护航航母。战争结束时，整个美国海军共有大小航母百余艘。“独立”级就是其中一个型号，共建造9艘，均由克利夫兰级巡洋舰改造而来。与正规航母相比，独立级战斗力并不强，但也不弱，能够满足前线作战需求。9艘船均参与了太平洋战争，其中，除“普林斯顿”号在莱特湾海战中被空袭击沉外，其余8艘均带着赫赫战功存活到战后。",
+							"\f[independence.jpg,170,50]舰载机：F6F地狱猫、SBD无畏、TBF复仇者\n永久道具类，无需装备。仅在海洋和浅滩生效。战斗机仅保留属性加成，没有特殊效果。\n没有装备航母时，舰载机将参与战斗，但自身空袭效果减半（不影响其他飞机）。\n装备航母时，效果改为：所有空袭伤害提升30%（陆基飞机也可获得加成）",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=5000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "5000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:independence",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "卡萨布兰卡级护航航母（2000）",
+						"need": "true",
+						"icon": "casablanca",
+						"condition": "!core.hasItem('casablanca')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[casablanca.jpg,170,50]护航航空母舰是一种小型航母，通常用商船改装而成，舰载机很少，也没有防护，一般不直接参与战斗，而是作为其他舰船的护航队成员。仅在二战时期出现，现已绝迹。卡萨布兰卡级是美国海军的一型护航航母，共建造50艘，多数时候担任商船护航、反潜巡逻、对岸轰炸等任务。其中6艘还在莱特湾海战中，以弱胜强，击退了以大和号战列舰为首的日本主力舰队。战争结束时，卡萨布兰卡级共5艘被击沉，其余陆续被退役拆解。",
+							"\f[casablanca.jpg,170,50]永久道具类，无需装备。仅在海洋、浅滩和天空生效。\n存在需保护的友军时，友军受到伤害减少30%。与潜艇作战时，首回合即可造成1倍攻击力的深水炸弹伤害。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:casablanca",
 												"operator": "+=",
 												"value": "1"
 											}

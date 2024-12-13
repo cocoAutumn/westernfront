@@ -948,7 +948,7 @@ main.floors.MT99=
                                                 "yes": [
                                                     {
                                                         "type": "win",
-                                                        "reason": "Stage 3 惊涛骇浪"
+                                                        "reason": "Stage 3 惊涛骇浪 新"
                                                     }
                                                 ],
                                                 "no": [

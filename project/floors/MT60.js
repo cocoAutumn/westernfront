@@ -290,7 +290,7 @@ main.floors.MT60=
                 "yes": [
                     {
                         "type": "win",
-                        "reason": "Stage2 不列颠之鹰"
+                        "reason": "Stage2 不列颠之鹰 新"
                     }
                 ],
                 "no": [

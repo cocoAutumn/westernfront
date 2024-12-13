@@ -2006,5 +2006,20 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"name": "xinxinbazhe.mp3"
 			}
 		]
+	},
+	"unicorn": {
+		"cls": "constants",
+		"name": "独角兽号轻航母",
+		"canUseItemEffect": "true"
+	},
+	"independence": {
+		"cls": "constants",
+		"name": "独立级轻航母",
+		"canUseItemEffect": "true"
+	},
+	"casablanca": {
+		"cls": "constants",
+		"name": "卡萨布兰卡级护航航母",
+		"canUseItemEffect": "true"
 	}
 }

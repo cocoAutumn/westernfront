@@ -350,7 +350,7 @@ main.floors.MT141=
                 "yes": [
                     {
                         "type": "win",
-                        "reason": "间章 夏威夷之殇"
+                        "reason": "间章 夏威夷之殇 新"
                     }
                 ],
                 "no": [

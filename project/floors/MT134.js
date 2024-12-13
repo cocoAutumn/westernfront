@@ -422,7 +422,7 @@ main.floors.MT134=
                 "yes": [
                     {
                         "type": "win",
-                        "reason": "Stage 4 绝命沙原"
+                        "reason": "Stage 4 绝命沙原 新"
                     }
                 ],
                 "no": [

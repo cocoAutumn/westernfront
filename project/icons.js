@@ -555,7 +555,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"bigdarkbluePotion": 191,
 		"bigdarkredPotion": 192,
 		"biggoldPotion": 193,
-		"medal5": 196
+		"medal5": 196,
+		"unicorn": 197,
+		"independence": 198,
+		"casablanca": 199
 	},
 	"autotile": {
 		"autotile": 0,
