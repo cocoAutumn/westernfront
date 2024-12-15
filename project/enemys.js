@@ -51,7 +51,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"ab41": {"name":"AB41装甲车","hp":300,"atk":30,"def":0,"money":2,"exp":2,"point":0,"special":[6],"type":"轻坦","ap":27,"arm":8,"top":0,"bom":0,"tpn":0,"gro":0,"dod":0,"n":5,"description":"主武器：20mm机炮"},
 	"transcar": {"name":"武装押运车","hp":1000,"atk":100,"def":0,"money":20,"exp":20,"point":0,"special":0,"type":"轻坦","ap":10,"arm":2,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"panzer3e": {"name":"三号E型","hp":800,"atk":100,"def":0,"money":4,"exp":4,"point":0,"special":0,"type":"中坦","ap":30,"arm":15,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：37mm坦克炮"},
-	"panzer5d": {"name":"豹式坦克D型","hp":500,"atk":200,"def":0,"money":0,"exp":0,"point":0,"special":[7],"type":"中坦","description":"主武器：75mm长管坦克炮","ap":173,"arm":120},
+	"panzer5d": {"name":"豹式坦克D型","hp":500,"atk":200,"def":0,"money":0,"exp":0,"point":0,"special":[7],"type":"中坦","description":"主武器：75mm长管坦克炮","ap":173,"arm":130},
 	"panzer5g": {"name":"豹式坦克G型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"中坦","ap":173,"arm":120},
 	"panzer3f": {"name":"三号坦克F型","hp":10000,"atk":6000,"def":0,"money":6,"exp":6,"point":0,"special":[55],"type":"中坦","description":"主武器：50mm坦克炮","arm":30,"ap":83,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"aceinf": {"name":"维京团","hp":60000,"atk":5000,"def":0,"money":5,"exp":5,"point":0,"special":[38,55],"type":"步兵","description":"主武器：MG42重机枪、MG34轻机枪、手榴弹、反坦克火箭筒、突击步枪","ap":60,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},

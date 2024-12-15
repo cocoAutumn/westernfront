@@ -539,6 +539,8 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"626": {"cls":"items","id":"unicorn"},
 	"627": {"cls":"items","id":"independence"},
 	"628": {"cls":"items","id":"casablanca"},
+	"629": {"cls":"items","id":"nuke"},
+	"630": {"cls":"items","id":"penicillin"},
 	"20104": {"cls":"tileset","id":"X20104","canPass":true},
 	"20105": {"cls":"tileset","id":"X20105","canPass":true},
 	"20107": {"cls":"tileset","id":"X20107","canPass":true},

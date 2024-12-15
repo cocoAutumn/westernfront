@@ -558,7 +558,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"medal5": 196,
 		"unicorn": 197,
 		"independence": 198,
-		"casablanca": 199
+		"casablanca": 199,
+		"nuke": 200,
+		"penicillin": 201
 	},
 	"autotile": {
 		"autotile": 0,

@@ -515,10 +515,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"m26.jpg",
 			"m3grant.jpg",
 			"m4.jpg",
+			"m4a176.jpg",
 			"m4a2.jpg",
 			"m4a3e2.jpg",
 			"macarthur.png",
 			"mahan.jpg",
+			"manhattan.jpg",
 			"manstein.png",
 			"matilda.jpg",
 			"messer.png",
@@ -529,6 +531,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"nimitz.png",
 			"norfolk.jpg",
 			"northcarolina.jpg",
+			"nuke.jpg",
 			"p38.jpg",
 			"p40c.jpg",
 			"p40e.jpg",
@@ -538,6 +541,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"p61.jpg",
 			"patton.png",
 			"pearlharbor.jpg",
+			"penicillin.jpg",
 			"petain.png",
 			"pq17.jpg",
 			"raider.jpg",
@@ -2361,7 +2365,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "飓风MK2C战斗机（900/1200）",
+						"text": "飓风MK2C战斗机（880/1200）",
 						"need": "true",
 						"icon": "hurricanemk2",
 						"condition": "!core.hasEquip('hurricanemk2')&&!core.hasItem('hurricanemk2')",
@@ -2381,7 +2385,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下两种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "替换手中的“飓风MK1型”（900）",
+												"text": "替换手中的“飓风MK1型”（880）",
 												"icon": "hurricanemk1",
 												"action": [
 													{
@@ -2390,7 +2394,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=900)",
+																"condition": "(status:money>=880)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -2400,7 +2404,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "900"
+																		"value": "880"
 																	},
 																	{
 																		"type": "setValue",
@@ -3161,7 +3165,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "喷火MK5战斗机（1900/2500）",
+						"text": "喷火MK5战斗机（1940/2500）",
 						"need": "true",
 						"icon": "spitfiremk5",
 						"condition": "!core.hasEquip('spitfiremk5')&&!core.hasItem('spitfiremk5')",
@@ -3181,7 +3185,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下两种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "替换手中的“喷火MK1型”（1900）",
+												"text": "替换手中的“喷火MK1型”（1940）",
 												"icon": "spitfiremk1",
 												"action": [
 													{
@@ -3190,7 +3194,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=1900)",
+																"condition": "(status:money>=1940)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -3200,7 +3204,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "1900"
+																		"value": "1400"
 																	},
 																	{
 																		"type": "setValue",
@@ -3371,7 +3375,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "M4A2谢尔曼（1200/3500）",
+						"text": "M4A2谢尔曼（1500/3500）",
 						"need": "true",
 						"icon": "m4a2",
 						"condition": "!core.hasEquip('m4a2')&&!core.hasItem('m4a2')",
@@ -3391,7 +3395,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下两种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "替换手中的“M4谢尔曼”（1200）",
+												"text": "替换手中的“M4谢尔曼”（1500）",
 												"icon": "m4",
 												"action": [
 													{
@@ -3400,7 +3404,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=1200)",
+																"condition": "(status:money>=1500)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -3410,7 +3414,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "1200"
+																		"value": "1500"
 																	},
 																	{
 																		"type": "setValue",
@@ -3668,7 +3672,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "喷火MK9战斗机（1300/2900/3500）",
+						"text": "喷火MK9战斗机（1500/2940/3500）",
 						"need": "true",
 						"icon": "spitfiremk9",
 						"condition": "!core.hasEquip('spitfiremk9')&&!core.hasItem('spitfiremk9')",
@@ -3688,7 +3692,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下三种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "替换手中的“喷火MK1型”（2900）",
+												"text": "替换手中的“喷火MK1型”（2940）",
 												"icon": "spitfiremk1",
 												"action": [
 													{
@@ -3697,7 +3701,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=2900)",
+																"condition": "(status:money>=2940)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -3707,7 +3711,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "2900"
+																		"value": "2940"
 																	},
 																	{
 																		"type": "setValue",
@@ -3734,7 +3738,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												]
 											},
 											{
-												"text": "替换手中的“喷火MK5型”（1300）",
+												"text": "替换手中的“喷火MK5型”（1500）",
 												"icon": "spitfiremk5",
 												"action": [
 													{
@@ -3743,7 +3747,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=1300)",
+																"condition": "(status:money>=1500)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -3753,7 +3757,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "1300"
+																		"value": "1500"
 																	},
 																	{
 																		"type": "setValue",
@@ -4112,6 +4116,157 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
+						"text": "M4A1（76W）谢尔曼（2700/3500/5500）",
+						"need": "true",
+						"icon": "m4a3",
+						"condition": "!core.hasEquip('m4a3')&&!core.hasItem('m4a3')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[m4a176.jpg,170,50]最先换装了76毫米主炮的谢尔曼坦克，穿甲能力和炮弹稳定性得到了更大提升，可以更轻松的击穿末期型四号坦克。但面对虎豹坦克仍略显乏力。",
+							"\f[m4a176.jpg,170,50]装备属性：攻+500后额外加50%，穿120，装105。\n被动技能：\n工业底蕴：战后额外加5黄金。判定在“工业潜能”之前触发。\n血之训诫：战后获得的经验翻倍。\n数量碾压：被敌人单向击穿时，攻击力额外加15%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "choices",
+										"text": "你可以从以下三种购买方案中选择一种",
+										"choices": [
+											{
+												"text": "替换手中的“M4A2谢尔曼”（2700）",
+												"icon": "m4a2",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:m4a2>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=2700)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "move2.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "2700"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:m4a2",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:m4a3",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "替换手中的“M4谢尔曼”（3500）",
+												"icon": "m4",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:m4>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=3500)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "move2.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "3500"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:m4",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:m4a3",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=5500)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "move2.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "5500"
+															},
+															{
+																"type": "setValue",
+																"name": "item:m4a3",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
 						"text": "北卡罗莱纳号战列舰（10000）",
 						"need": "true",
 						"icon": "northcarolina",
@@ -4432,6 +4587,1313 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 											{
 												"type": "setValue",
 												"name": "item:casablanca",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "shop8",
+				"text": "\t[1944级商店]请选择购买项",
+				"textInList": "1944级商店",
+				"mustEnable": true,
+				"disablePreview": true,
+				"choices": [
+					{
+						"text": "M4A3E2“巨无霸”（15600/20000）",
+						"need": "true",
+						"icon": "m4a3e2",
+						"condition": "!core.hasEquip('m4a3e2')&&!core.hasItem('m4a3e2')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[m4a3e2.jpg,170,50]M4A3E2是谢尔曼坦克的装甲升级版，其正面装甲等效厚度甚至能硬抗德军的88毫米炮。但由于使用的是75毫米主炮，穿甲能力略显不足。其进一步改型：M4A3E8，作为电影《狂怒》的主角座驾出场。",
+							"\f[m4a3e2.jpg,170,50]装备属性：攻+800后额外加60%，穿78，装175。\n被动技能：\n工业底蕴：战后额外加5黄金。判定在“工业潜能”之前触发。\n血之训诫：战后获得的经验翻倍。\n互相刮痧：双方互不击穿时，减少敌人20%伤害。\n（只能由M4A1（76W）型改装或直接购买）",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "choices",
+										"text": "你可以从以下三种购买方案中选择一种",
+										"choices": [
+											{
+												"text": "替换手中的“M4A1(76W)谢尔曼”（15600）",
+												"icon": "m4a3",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:m4a3>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=15600)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "move2.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "15600"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:m4a3",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:m4a3e2",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=20000)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "move2.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "20000"
+															},
+															{
+																"type": "setValue",
+																"name": "item:m4a3e2",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "谢尔曼“萤火虫”坦克（20600/25000）",
+						"need": "true",
+						"icon": "firefly",
+						"condition": "!core.hasEquip('firefly')&&!core.hasItem('firefly')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[firefly.jpg,170,50]由英国制造，换装了17磅反坦克炮作为主炮的“谢尔曼”MK5C坦克，又名“萤火虫”。能够与德军虎豹坦克正面一决高下，主要供给英国、加拿大、波兰等装甲部队。虽然因为数量不足，只占编制的很少一部分，但也发挥了不小的作用，每当其他部队遭遇无法击穿的重甲敌人时，就会呼叫“萤火虫”坦克支援。其最大的战果是在圣·埃格南伏击战中击毁了德军头号坦克王牌——米歇尔·魏特曼的虎式坦克，魏特曼本人当场阵亡。",
+							"\f[firefly.jpg,170,50]装备属性：攻+1000后额外加60%，穿155，装110。\n被动技能：\n精准狙击：与“精锐”或“主将”作战时，伤害提升40%。\n（只能由M4A1（76W）型改装或直接购买）",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "choices",
+										"text": "你可以从以下三种购买方案中选择一种",
+										"choices": [
+											{
+												"text": "替换手中的“M4A1(76W)谢尔曼”（20600）",
+												"icon": "m4a3",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:m4a3>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=20600)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "move2.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "20600"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:m4a3",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:firefly",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=25000)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "move2.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "25000"
+															},
+															{
+																"type": "setValue",
+																"name": "item:firefly",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "弗莱彻级驱逐舰（15000）",
+						"need": "true",
+						"icon": "flecher",
+						"condition": "!core.hasEquip('flecher')&&!core.hasItem('flecher')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[flecher.jpg,170,50]弗莱彻级驱逐舰是美国海军在战争后期的主力驱逐舰，共建造175艘。在同时期驱逐舰中，弗莱彻级是相对最优秀的一个型号，无论是防护能力、雷达系统、武器设备等，都非常先进，配备了5门127毫米主炮、10具鱼雷发射管，还有不错的防空火力，最高航速37节。弗莱彻级驱逐舰中也诞生了一个传奇：约翰斯顿号（DD-557）在莱特湾海战中，一马当先冲进以大和号为首的日军舰队，像个战列舰一样与整个日军舰队周旋，即便身中数弹也没有停止冲锋。其他驱逐舰也受到鼓舞，纷纷加入自杀式冲锋的队伍，用一切能用的武器向日军开火。最终，约翰斯顿号为掩护受伤的航母撤离而遭日舰围攻击沉。",
+							"\f[flecher.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。\n被动：\n数量优势：我方海军发射鱼雷时，额外发射一轮。\n勇气迸发：面对重巡和战列舰时，提前5回合发射鱼雷。\n哑弹：发射的鱼雷不会爆炸。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=10000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "10000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:flecher",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "巴尔的摩级重巡洋舰（15000）",
+						"need": "true",
+						"icon": "baltimore",
+						"condition": "!core.hasEquip('baltimore')&&!core.hasItem('baltimore')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[baltimore.jpg,170,50]巴尔的摩级是美国在二战中建成的重型巡洋舰，也是美国摆脱条约限制后最先建造的在武装和防护上比较合理的重巡，1943年开始服役。配备了9门203毫米主炮，12门127毫米副炮，72门防空炮，最大航速33节。14艘同级舰在战争中全员存活，仅堪培拉号在1945年的一次空袭中受伤。",
+							"\f[baltimore.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。\n被动：\n数量优势：我方海军发射鱼雷时，额外发射一轮。\n勇气迸发：面对重巡和战列舰时，提前5回合发射鱼雷。\n哑弹：发射的鱼雷不会爆炸。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=10000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "10000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:baltimore",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "衣阿华级战列舰（15000）",
+						"need": "true",
+						"icon": "iowa",
+						"condition": "!core.hasEquip('iowa')&&!core.hasItem('iowa')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[iowa.jpg,170,50]衣阿华级战列舰是美国的末代战列舰，其性能仅次于大和级，共建造4艘（衣阿华号、新泽西号、密苏里号、威斯康星号），全部在战争中存活。是世界上舰体最长、主机功率最大、航速最高（33节）、最晚退役（1992年退役封存）的战列舰，4艘同型舰仍保存至今。配备9门406毫米主炮，20门127毫米副炮以及不计其数的高射炮。其中，密苏里号在战争结束时，停在东京湾里作为日本无条件投降签字仪式的地点。冷战期间，四艘船进行了现代化改装，导弹、直升机、无人机等现代武器登上了这些老式战列舰，并参与了海湾战争。在某部科幻电影中，“密苏里”号甚至还跟外星人交过手。",
+							"\f[iowa.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。\n被动：\n主炮轰击：每4回合额外发射一轮主炮，对敌方水面战舰造成10倍攻击力的伤害（为防止误伤友军，地面战时不会开炮）。\n末代战列：减免40%伤害，对轻巡和驱逐舰时效果改为80%。\n空袭掩护：在海上与敌机交战时，增伤80%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=10000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "10000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:iowa",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "埃塞克斯级航空母舰（15000）",
+						"need": "true",
+						"icon": "essex",
+						"condition": "!core.hasEquip('essex')&&!core.hasItem('essex')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[essex.jpg,170,50]埃塞克斯级航空母舰是美国海军历来所建数量最多的一级航空母舰，共建造17艘，战后还建了7艘，最大航速33节，可搭载100架飞机，没有一艘损失。由于建造很快而且数量很多，像下饺子一样，也被网友戏称为“饺子”级。埃塞克斯级从1943年开始服役后，参与了许多战役，击沉大量日军航母以及“大和”、“武藏”两艘超级战列舰，一手葬送了几乎整个日本海军。此外，埃塞克斯级表现出较高的防护能力和船员素养，共有14艘次遭受鱼雷、炸弹和神风飞机的攻击，其中富兰克林号和邦克山号最为严重，几乎整艘船被火焰吞噬，但仍然救了回来。战后，埃塞克斯级仍然具有可供喷气战机起降的能力，得以继续服役，参与了朝鲜战争和古巴导弹危机。1969年，最后一艘埃塞克斯级退役。",
+							"\f[essex.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。舰载机：F6F地狱猫战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机。\n被动：\n远程空袭：无视敌军战列舰主炮伤害，且可以支援我军在陆地上的行动。\n制海权：与除潜艇外的敌方海军交战时，伤害提升50%，受伤降低30%。\n先发制人：航母机群在首回合即可投放炸弹和鱼雷。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=10000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "10000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:essex",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "喷火MK16战斗机（4000）",
+						"need": "true",
+						"icon": "spitfiremk16",
+						"condition": "!core.hasEquip('spitfiremk16')&&!core.hasItem('spitfiremk16')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[spitfiremk16.jpg,170,50]喷火MK16是喷火战斗机的最后一款梅林发动机变体型号，机翼改为裁剪翼型，具有强劲的低空性能以及堪比FW190的滚动、俯冲和速度。",
+							"\f[spitfiremk16.jpg,170,50]装备属性：攻+250后额外＋20%，挂载6火箭弹和2炸弹。与陆军或水面舰艇战斗时可以先后使用火箭弹和炸弹攻击：\n首回合抢先发射火箭弹，每枚火箭弹伤害为0.2倍攻击力。仅第2回合投弹，每颗炸弹伤害为4倍攻击力\n被动：\n最后的喷火：与敌机作战时，伤害提升100%。\n（只能用喷火MK9改装或直接购买）",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "choices",
+										"text": "你可以从以下三种购买方案中选择一种",
+										"choices": [
+											{
+												"text": "改造手中的“喷火MK9”（20600）",
+												"icon": "spitfiremk9",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:spitfiremk9>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=20600)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "fighter1.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "20600"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:spitfiremk9",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:spitfiremk16",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=25000)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "fighter1.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "25000"
+															},
+															{
+																"type": "setValue",
+																"name": "item:spitfiremk16",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "F4U“海盗”战斗机（舰）（4000）",
+						"need": "true",
+						"icon": "f4u",
+						"condition": "!core.hasEquip('f4u')&&!core.hasItem('f4u')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[f4u.jpg,170,50]F4U“海盗”战斗机是美国第一种速度超过640千米/时的战斗机，也是速度最快的活塞式战斗机之一，加速性能好，火力强大，爬升快，坚固耐用，还能挂载重型炸弹当轰炸机用。太平洋战场上，F4U与F6F并为美国海军战斗机主力，日军称其为“死亡口哨”。据统计，F4U的击落比率为11:1，即每击落11架敌机才有1架被击落。二战后，即便天空已经属于喷气战斗机，F4U仍然参加了朝鲜战争。看到这标志性的倒海鸥机翼，你是否感觉好像在哪里见过它们？提示：《金刚川》",
+							"\f[f4u.jpg,170,50]装备属性：攻+250后额外＋20%，挂载：6火箭弹和2炸弹。\n与陆军和海军作战时抢先发射2轮火箭弹，每枚火箭弹伤害为0.4倍攻击力。仅第2回合投弹，每颗炸弹伤害为4倍攻击力。\n被动：\n死亡口哨：战斗开始前，削减敌人20%血量和攻击力。\n制空权：当前地图没有敌军战斗机时，我军一切空袭伤害提高50%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=4000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "4000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:f4u",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "P51D“野马”战斗机（4000）",
+						"need": "true",
+						"icon": "p51d",
+						"condition": "!core.hasEquip('p51d')&&!core.hasItem('p51d')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[p51.jpg,170,50]P51“野马”战斗机是美国陆航在二战期间最有名的战斗机之一，也是美国海陆两军所使用的单引擎战斗机当中航程最长，对于欧洲与太平洋战区轰炸机护航最重要的机种。起初的P51只是一款性能中规中矩的普通战斗机，但换装了英国梅林发动机的P51D型出现后，航程和性能得到了极大提升，完全能护送轰炸机深入敌军腹地，把敌军的拦截战斗机痛扁一顿后，顺路扫射一下地面目标再飞回来。P51是战争后期欧洲空战的主角，二战中盟军最优秀的全能活塞动力战斗机之一，也是盟军空权的象征，击落了4950架敌机，击毁4131个地面目标，另外还击落了超过230枚V1飞弹，甚至还击落了德国空军最精锐的喷气式战斗机。新中国开国大典时，9架缴获的P51战斗机飞过天安门广场参与庆典——还飞了两遍。朝鲜战争是P51战斗机参与的最后一战。",
+							"\f[p51.jpg,170,50]装备属性：攻+250后额外＋20%，挂载：10×HVAR火箭弹\n与陆军和水面舰艇战斗时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力。\n被动：\n长途护航：受到的所有战斗伤害减少30%。\n制空霸权：与敌方空军战斗时，战斗方式改为3连击。对喷气机不生效。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=4000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "4000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:p51d",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "P47D“雷电”攻击机（5000）",
+						"need": "true",
+						"icon": "p47d",
+						"condition": "!core.hasEquip('p47d')&&!core.hasItem('p47d')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[p47d.jpg,170,50]D型是P47战斗机第一种大批量生产型号，具有更加完善的装甲和可靠性，可挂载至多3枚炸弹，除了可以进行空战外，还能当作对地攻击机使用。",
+							"\f[p47d.jpg,170,50]装备属性：攻击+450后额外加10%。挂载：3×500磅炸弹\n每3回合投掷炸弹，每颗炸弹伤害为1.5倍攻击力。\n被动：\n铜墙铁壁：与空军和高射炮作战时，获得20%减伤。\n舔地狂魔：与地面单位作战时，P47D投掷的炸弹数量翻倍。\n（装备类型为攻击机，不是战斗机）",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "choices",
+										"text": "你可以从以下三种购买方案中选择一种",
+										"choices": [
+											{
+												"text": "改造手中的“P47B雷电”（20600）",
+												"icon": "p47b",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:p47b>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=20600)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "fighter1.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "20600"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:p47b",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:p47d",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=25000)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "fighter1.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "25000"
+															},
+															{
+																"type": "setValue",
+																"name": "item:p47d",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "SB2C“地狱俯冲者”俯冲轰炸机（舰）（4000）",
+						"need": "true",
+						"icon": "sb2c",
+						"condition": "!core.hasEquip('sb2c')&&!core.hasItem('sb2c')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[sb2c.jpg,170,50]SB2C轰炸机是美国SBD轰炸机的继任者，是当时载弹量最大的舰载俯冲轰炸机。纸面数据来看，SB2C速度更快，前射火力更强，可以挂载火箭弹、2000磅的炸弹，甚至还能挂鱼雷，性能全方位领先于老式SBD无畏。但从1943年11月投入实战起，SB2C就有一个无论如何也改不掉的致命缺陷——操纵性太差，以至于降落时摔在航母甲板上的飞机比战斗损失的都多，飞行员们给它起名叫“怪兽”，顺便起了个笑话：Son of a Bitch, 2nd Class(SB2C)。尽管如此，在战争后期，“地狱俯冲者”负责摧毁的目标还是比其他任何美国俯冲轰炸机都多。",
+							"\f[sb2c.jpg,170,50]装备属性：攻+250后额外＋20%，挂载：8×火箭弹和1×2000磅炸弹或1×MK13鱼雷\n与陆军和水面舰艇作战时抢先发射火箭弹，每枚火箭弹伤害为0.2倍攻击力。每4回合投弹，每颗炸弹伤害为8倍攻击力。\n被动：\n地狱咆哮：敌人攻击力减少15%，闪避-2。对重巡和战列舰造成的炸弹伤害增加50%。\n双重打击：攻击军舰时，可以在投弹的同时发射3枚鱼雷攻击。\n哑弹：发射的鱼雷不会爆炸。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=4000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "4000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:sb2c",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "P61“黑寡妇”重型战斗机（6000）",
+						"need": "true",
+						"icon": "p61",
+						"condition": "!core.hasEquip('p61')&&!core.hasItem('p61')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[p61.jpg,170,50]P61“黑寡妇”战斗机是美国设计的第一架夜间战斗机，装有雷达导航系统，可在夜间进行空中格斗，1943年11月开始服役。P61通体被涂成了亮黑色，在漆黑的夜空中几乎趋近于隐身。此外，其性能也比较出色，虽然与轻型战斗机相比没那么好，但相比P38、“蚊”式等已经在执行夜战任务的战斗机相比，P61明显更加高效。P61出现很晚，只在战争最后一年发挥了作用，但很好的遏制了敌人的夜间空袭。驻中国的P61战斗机有效打击了日本夜间空袭的嚣张气焰，迫使它们偃旗息鼓后甚至还倒过来夜袭它们。诺曼底登陆后，许多“黑寡妇”转移到法国，主要任务是在夜间攻击火车、装甲车、以及其他地面目标，也猎杀过一些在夜间飞行的德国飞机。时至今日，有4架“黑寡妇”被保留下来，其中一架位于北京航空航天大学。",
+							"\f[p61.jpg,170,50]装备属性：攻击+100，雷击+70%。挂载：4×500磅炸弹\n每4个回合投弹，每颗炸弹伤害为1倍攻击力。\n被动：\n夜行者：每进行5场战斗后获得2层“夜袭”，每经过一场战斗解除一层，期间免疫对手50%的伤害。“夜袭”存在期间不会积累战斗次数。每个区域通关时消除所有“夜袭”层数。\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=6000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "6000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:p61",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "“兰开斯特”重型轰炸机（6000）",
+						"need": "true",
+						"icon": "lancaster",
+						"condition": "!core.hasEquip('lancaster')&&!core.hasItem('lancaster')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[lancaster.jpg,170,50]英国“兰开斯特”轰炸机是用于取代“曼彻斯特”轰炸机的四引擎重轰。最大速度每小时462公里，可挂载22000磅（9988公斤）炸弹。1942年起，“兰开斯特”经常与美国B17和B24轰炸机一同轰炸德国，美军白天轰炸，英军夜晚轰炸，24小时轮番折磨，让德军的战争机器几近停摆。不仅如此，“兰开斯特”还进行了好几次特殊袭击任务，比如使用新型圆柱形弹跳炸弹轰炸德军水坝，以及使用“高脚柜”炸弹击沉德军“提尔皮茨”号战列舰等。1956年，“兰开斯特”正式退役。",
+							"\f[lancaster.jpg,170,50]装备属性：攻击+100，雷击+70%。挂载：14×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，减少敌人40%血量，且战后主角周围8格内陆军血量减少20%，可叠加。\n特别行动：该飞机可挂载特定的超重型炸弹。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=6000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "bomber1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "6000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:lancaster",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "盟军科技研发成果LV3（3000）",
+						"need": "true",
+						"condition": "flags.technology===3",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"3级研发。研发项目：新型药物在战场治疗方面的应用。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "009-System09.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2000"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:technology",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "道具：青霉素（1000）",
+						"need": "true",
+						"icon": "penicillin",
+						"condition": "flags.technology===4&&!core.hasItem('penicillin')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\t[青霉素]持有时，血限提升15%，“一杯茶”治疗效果改为40%。",
+							"\t[历史来源]\f[penicillin.jpg,170,50]青霉素，又名盘尼西林，是一种抗生素。1928年，英国科学家弗莱明最先发现了青霉素，但在当时并未引起重视。直到1940年，德国科学家钱恩提炼出了一点青霉素，是一个重大突破，但还不能临床应用。1941年开始，英国科学家弗洛里在美国军方的协助下开始研究青霉素的医疗用途，最终于1943年末开始批量生产，拯救了前线数以万计的生命。到1944年，药物的供应已经足够治疗所有参战的盟军士兵。因这项伟大发明，1945年，弗莱明、弗洛里和钱恩因“发现青霉素及其临床效用”而共同荣获了诺贝尔生理学或医学奖。直至今天，青霉素仍在不断挽救更多人的生命。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=500)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "technology.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "500"
+											},
+											{
+												"type": "setValue",
+												"name": "item:penicillin",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "shop9",
+				"text": "\t[1945级商店]请选择购买项",
+				"textInList": "1945级商店",
+				"mustEnable": true,
+				"disablePreview": true,
+				"choices": [
+					{
+						"text": "M26“潘兴”重型坦克（15600/20000）",
+						"need": "true",
+						"icon": "m26pershing",
+						"condition": "!core.hasEquip('m26pershing')&&!core.hasItem('m26pershing')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[m26.jpg,170,50]M26“潘兴”重型坦克是美国在二战中服役的唯一一种重型坦克，装备90毫米口径主炮，正面装甲等效厚度153毫米。1945年定型并于二战末期装备美军，只在二战的最后一段时间里发挥过作用，而在1950年的朝鲜战争中被大量使用，与朝鲜军队和中国人民志愿军交战。之后被重新定义为中型坦克。总体而言，M26是一种成功的中型坦克，仅用40吨的重量就全面超过了60吨的虎式。",
+							"\f[m26.jpg,170,50]装备属性：攻+800后额外加60%，穿160装160。\n被动：\n横扫千军：与敌方步兵和火炮战斗时，伤害增加50%，受到伤害减少40%。\n驯兽师：与虎式和豹式坦克作战时，攻击力再增加30%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=20000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move3.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "20000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:m26pershing",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "丘吉尔MK7步兵坦克（20600/25000）",
+						"need": "true",
+						"icon": "churchillmk7",
+						"condition": "!core.hasEquip('churchillmk7')&&!core.hasItem('churchillmk7')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[churchill3.jpg,170,50]丘吉尔MK7型采用了75mm火炮，改进装甲防护，车体前部的装甲厚度增大到152mm。于1943年提供给英国陆军使用，和“萤火虫”坦克一道，成为诺曼底登陆以后英军装甲兵的主力坦克，丘吉尔MK7坦克主要服役于各独立装甲旅。甚至在朝鲜战争中，也在继续使用。",
+							"\f[firefly.jpg,170,50]装备属性：攻+1000后额外加60%，穿78，装170。\n被动技能：\n笨重：被敌人单向击穿时，敌人额外先攻10回合。\n绝对防御：单向击穿敌人陆军时，无伤赢得战斗。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "choices",
+										"text": "你可以从以下三种购买方案中选择一种",
+										"choices": [
+											{
+												"text": "改造手中的“丘吉尔MK3”（20600）",
+												"icon": "churchillmk3",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:churchillmk3>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=20600)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "move3.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "20600"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:churchillmk3",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:churchillmk7",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=25000)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "move2.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "25000"
+															},
+															{
+																"type": "setValue",
+																"name": "item:churchillmk7",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "企业号航空母舰（200000）",
+						"need": "true",
+						"icon": "enterprise",
+						"condition": "!core.hasEquip('enterprise')&&!core.hasItem('enterprise')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[enterprise.jpg,170,50]约克城级二号舰，CV-6“企业号”航空母舰，绰号“幸运E”或“灰色幽灵”，是迄今为止世界上最功勋卓著的军舰。企业号全程参与了太平洋战争，期间一直以幸运著称，不仅杀敌无数，还数次与死神擦肩而过。战争结束时，企业号获得了20颗战星，击沉敌舰71艘，击伤192艘，击落敌机911架，是美国海军全场MVP。战争期间，她躲过了珍珠港的浩劫，护航大黄蜂号空袭东京，中途岛一战歼灭3艘航母，瓜岛战役身受重伤多次返港维修，单挑7艘日军航母不落下风，要不是1945年被一架神风飞机命中要害，被迫返回本土维修，恐怕在东京湾接受签字仪式的就是她了。最后，由于舰体设计老旧，无法支持喷气飞机起降，又没钱维护，企业号于1947年退役，1958年拆解出售，连一根桅杆都没有保存下来。为纪念企业号航母，美国将第一艘核动力航母CVN-65命名为“企业号”。",
+							"\f[enterprise.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。舰载机：F4U海盗式战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机\n被动：\n灰色幽灵：我军一切空袭伤害×250%，与除潜艇外的敌方海军交战时，伤害提升50%，受伤降低30%。\n远程空袭：无视敌军战列舰主炮伤害，且可以支援我军在陆地上的行动。\n幸运E：与能够致死的敌人战斗时，企业号将作为替身，抗下本次战斗的所有伤害，战斗结束后卸除装备，当前区域无法再使用。\n先发制人：舰载机在战斗首回合即可投放炸弹和鱼雷。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=10000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "ship.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "10000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:enterprise",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "B29“超级空中堡垒”（15000）",
+						"need": "true",
+						"icon": "b29",
+						"condition": "!core.hasEquip('b29')&&!core.hasItem('b29')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[b29.jpg,170,50]B29“超级空中堡垒”轰炸机是二战期间服役的最大轰炸机，1943年末服役，1960年退役。B29最大速度可达574km/h，可以飞到一万米高空，作战半径接近3000km，最多可搭载9072千克炸弹。B29始终在太平洋战场作战，对日本本土进行轰炸。美国李梅将军针对日本建筑多木制结构的特点，让B29挂载凝固汽油弹轰炸日本本土，效果绝佳，整个日本到处都是“熟人”，而且因为飞的太高，战斗机和高射炮都打不到。1945年8月6日，B29轰炸机“艾诺拉盖伊”号在广岛上空投下“小男孩”原子弹，3天后，“伯克之车”号在长崎又投下了“胖子”，以两朵壮观的蘑菇云为这场夺取了数千万生命的战争划上休止符。",
+							"\f[b29.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，减少敌人50%血量，且战后主角周围8格内陆军血量减少30%，可叠加。\n平流层飞行：敌人的防空技能失效，战斗机伤害减少50%。\n末日审判：该机可以挂载核武器。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=10000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "bomber1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "10000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:b29",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "盟军科技研发成果LV4（3000）",
+						"need": "true",
+						"condition": "flags.technology===4",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"4级研发。研发项目：\r[red]绝密文件！\r",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "009-System09.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2000"
+											},
+											{
+												"type": "setValue",
+												"name": "flag:technology",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "曼哈顿计划（500000）",
+						"need": "true",
+						"icon": "nuke",
+						"condition": "flags.technology===5",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\t[曼哈顿计划]一次性道具。必须装备着具有投放核武器能力的轰炸机时才能使用。\n在当前地图投放一枚原子弹，清除全图非boss敌人和可破墙壁，并留下永久辐射效果：boss全阶段血量降低90%，且若有新敌人出现，新敌人血量为0。主角在当前地图不可以任何形式回复血量。",
+							"\t[历史来源]\f[manhattan.jpg,170,50]美国陆军部于1942年6月开始实施利用核裂变反应来研制原子弹的计划，亦称曼哈顿计划。该工程集中了当时西方国家（除德国外）最优秀的核科学家，动员了10万多人参加这一工程，历时3年，耗资20亿美元，于1945年7月16日成功地进行了世界上第一次核爆炸，并按计划制造出两颗实用的原子弹——小男孩和胖子。至于这之后发生了什么……那天，广岛6000℃的高温，没一个人喊热。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=500000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "technology.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "500000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:nuke",
 												"operator": "+=",
 												"value": "1"
 											}
