@@ -16,7 +16,24 @@ main.floors.MT235=
     "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
+    "events": {
+        "11,11": [
+            {
+                "type": "playSound",
+                "name": "technology.mp3"
+            },
+            {
+                "type": "function",
+                "function": "function(){\nflags.learned[17]=true\n}"
+            },
+            "\t[系统提示]习得新技能：潜行",
+            "\t[系统提示]潜行（60指挥点）：进入潜行状态，回避领域类伤害，并在进入战斗后额外获得1回合先攻和20%减伤。可主动解除，或在触碰地雷、进入战斗或进入下一区域时被动解除。注意：开启时或持续期间被“点杀”敌人攻击，也会被直接解除。",
+            {
+                "type": "hide",
+                "remove": true
+            }
+        ]
+    },
     "changeFloor": {
         "0,7": {
             "floorId": "MT234",

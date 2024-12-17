@@ -89,7 +89,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"hole2": 57,
 		"hole3": 58,
 		"harbour": 59,
-		"airport": 60
+		"airport": 60,
+		"T631": 61
 	},
 	"animates": {
 		"star": 0,
@@ -346,7 +347,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"val": 137,
 		"kate": 138,
 		"badoglio": 22,
-		"zeppelin": 37
+		"zeppelin": 37,
+		"E632": 139
 	},
 	"enemy48": {
 		"angel": 0,

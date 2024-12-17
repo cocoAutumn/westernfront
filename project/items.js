@@ -1467,9 +1467,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "5阶红宝石",
 		"canUseItemEffect": "true",
-		"text": ",攻击+20",
+		"text": ",攻击+50",
 		"itemEffectTip": ",攻击+20",
-		"itemEffect": "core.status.hero.atk += 20;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}"
+		"itemEffect": "core.status.hero.atk += 50;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}"
 	},
 	"blue2Gem": {
 		"cls": "items",
@@ -1999,7 +1999,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，全属性提升",
 		"itemEffectTip": "，全属性提升",
-		"itemEffect": "core.status.hero.hpmax += 3000;\ncore.status.hero.hp += 3000;\ncore.status.hero.mana += 200;\ncore.status.hero.atk += 20;\ncore.status.hero.top += 500;\ncore.status.hero.mdef += 150;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}",
+		"itemEffect": "core.status.hero.hpmax += 3000;\ncore.status.hero.hp += 3000;\ncore.status.hero.mana += 200;\ncore.status.hero.atk += 50;\ncore.status.hero.top += 500;\ncore.status.hero.mdef += 150;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}",
 		"useItemEvent": [
 			{
 				"type": "playSound",

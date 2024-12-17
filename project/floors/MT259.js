@@ -46,7 +46,7 @@ main.floors.MT259=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：德国陆军居多，少量空军，有地雷，存在新敌人。\n推荐携带技能：空战王牌、扫雷、破译、空中打击、补给线、C-47空中列车、潜行\n推荐出战装备：M4A2谢尔曼，海军尽可能带，空军喷火9或地狱猫、英俊战士或蚊式，B17或B25轰炸机。"
+            "\t[系统提示]当前区域敌人特点：德国陆军居多，少量空军，有地雷，存在新敌人。\n推荐携带技能：空战王牌、扫雷、破译、空中打击、补给线、C-47空中列车、潜行\n推荐出战装备：M4A1（76W），海军尽可能带，空军喷火9或地狱猫、英俊战士或蚊式，B17或B25轰炸机。"
         ],
         "12,14": [
             "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]接下来的这一章难度会稍微有点高，注意多用技能减伤！",
@@ -716,12 +716,12 @@ main.floors.MT259=
                             },
                             {
                                 "type": "changeFloor",
-                                "floorId": "MT249",
+                                "floorId": "MT260",
                                 "loc": [
-                                    10,
-                                    7
+                                    7,
+                                    12
                                 ],
-                                "direction": "left"
+                                "direction": "up"
                             }
                         ]
                     }
@@ -753,7 +753,7 @@ main.floors.MT259=
                                 "type": "setValue",
                                 "name": "status:money",
                                 "operator": "+=",
-                                "value": "50"
+                                "value": "60"
                             }
                         ]
                     },
@@ -777,7 +777,7 @@ main.floors.MT259=
                                 "type": "setValue",
                                 "name": "status:money",
                                 "operator": "+=",
-                                "value": "100"
+                                "value": "120"
                             }
                         ]
                     },
@@ -801,7 +801,7 @@ main.floors.MT259=
                                 "type": "setValue",
                                 "name": "status:money",
                                 "operator": "+=",
-                                "value": "600"
+                                "value": "720"
                             }
                         ]
                     },
@@ -825,7 +825,7 @@ main.floors.MT259=
                                 "type": "setValue",
                                 "name": "status:money",
                                 "operator": "+=",
-                                "value": "700"
+                                "value": "840"
                             }
                         ]
                     },
@@ -849,7 +849,7 @@ main.floors.MT259=
                                 "type": "setValue",
                                 "name": "status:money",
                                 "operator": "+=",
-                                "value": "900"
+                                "value": "1080"
                             }
                         ]
                     },
@@ -873,7 +873,7 @@ main.floors.MT259=
                                 "type": "setValue",
                                 "name": "status:money",
                                 "operator": "+=",
-                                "value": "1100"
+                                "value": "1320"
                             }
                         ]
                     },
@@ -884,20 +884,27 @@ main.floors.MT259=
                         "condition": "core.hasItem('m4')&&!core.hasEquip('m4')",
                         "action": [
                             {
-                                "type": "playSound",
-                                "name": "shop.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:m4",
-                                "operator": "-=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "operator": "+=",
-                                "value": "1600"
+                                "type": "confirm",
+                                "text": "该装备可改造，确定直接出售？",
+                                "yes": [
+                                    {
+                                        "type": "playSound",
+                                        "name": "shop.mp3"
+                                    },
+                                    {
+                                        "type": "setValue",
+                                        "name": "item:m4",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "setValue",
+                                        "name": "status:money",
+                                        "operator": "+=",
+                                        "value": "1000"
+                                    }
+                                ],
+                                "no": []
                             }
                         ]
                     },
@@ -908,20 +915,27 @@ main.floors.MT259=
                         "condition": "core.hasItem('m4a2')&&!core.hasEquip('m4a2')",
                         "action": [
                             {
-                                "type": "playSound",
-                                "name": "shop.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:m4a2",
-                                "operator": "-=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "operator": "+=",
-                                "value": "1900"
+                                "type": "confirm",
+                                "text": "该装备可改造，确定直接出售？",
+                                "yes": [
+                                    {
+                                        "type": "playSound",
+                                        "name": "shop.mp3"
+                                    },
+                                    {
+                                        "type": "setValue",
+                                        "name": "item:m4a2",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "setValue",
+                                        "name": "status:money",
+                                        "operator": "+=",
+                                        "value": "1400"
+                                    }
+                                ],
+                                "no": []
                             }
                         ]
                     },
@@ -932,20 +946,27 @@ main.floors.MT259=
                         "condition": "core.hasItem('churchillmk3')&&!core.hasEquip('churchillmk3')",
                         "action": [
                             {
-                                "type": "playSound",
-                                "name": "shop.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:churchillmk3",
-                                "operator": "-=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "operator": "+=",
-                                "value": "2100"
+                                "type": "confirm",
+                                "text": "该装备可改造，确定直接出售？",
+                                "yes": [
+                                    {
+                                        "type": "playSound",
+                                        "name": "shop.mp3"
+                                    },
+                                    {
+                                        "type": "setValue",
+                                        "name": "item:churchillmk3",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "setValue",
+                                        "name": "status:money",
+                                        "operator": "+=",
+                                        "value": "1200"
+                                    }
+                                ],
+                                "no": []
                             }
                         ]
                     },
@@ -976,7 +997,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "250"
+                                                "value": "300"
                                             }
                                         ]
                                     },
@@ -1000,7 +1021,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "300"
+                                                "value": "360"
                                             }
                                         ]
                                     },
@@ -1024,7 +1045,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "260"
+                                                "value": "312"
                                             }
                                         ]
                                     },
@@ -1048,7 +1069,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "325"
+                                                "value": "450"
                                             }
                                         ]
                                     },
@@ -1072,7 +1093,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "2200"
+                                                "value": "2100"
                                             }
                                         ]
                                     },
@@ -1096,7 +1117,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "600"
+                                                "value": "720"
                                             }
                                         ]
                                     },
@@ -1120,7 +1141,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "750"
+                                                "value": "900"
                                             }
                                         ]
                                     },
@@ -1144,7 +1165,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "1900"
+                                                "value": "1500"
                                             }
                                         ]
                                     },
@@ -1192,7 +1213,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "1600"
+                                                "value": "1500"
                                             }
                                         ]
                                     },
@@ -1264,7 +1285,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "1000"
+                                                "value": "1200"
                                             }
                                         ]
                                     },
@@ -1288,7 +1309,7 @@ main.floors.MT259=
                                                 "type": "setValue",
                                                 "name": "status:money",
                                                 "operator": "+=",
-                                                "value": "2500"
+                                                "value": "2400"
                                             }
                                         ]
                                     },
@@ -1343,7 +1364,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "32"
+                                                                "value": "45"
                                                             }
                                                         ]
                                                     },
@@ -1354,20 +1375,27 @@ main.floors.MT259=
                                                         "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
                                                         "action": [
                                                             {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:spitfiremk1",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "350"
+                                                                "type": "confirm",
+                                                                "text": "该装备可改造，确定直接出售？",
+                                                                "yes": [
+                                                                    {
+                                                                        "type": "playSound",
+                                                                        "name": "shop.mp3"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "item:spitfiremk1",
+                                                                        "operator": "-=",
+                                                                        "value": "1"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "status:money",
+                                                                        "operator": "+=",
+                                                                        "value": "280"
+                                                                    }
+                                                                ],
+                                                                "no": []
                                                             }
                                                         ]
                                                     },
@@ -1378,20 +1406,27 @@ main.floors.MT259=
                                                         "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
                                                         "action": [
                                                             {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:hurricanemk1",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "200"
+                                                                "type": "confirm",
+                                                                "text": "该装备可改造，确定直接出售？",
+                                                                "yes": [
+                                                                    {
+                                                                        "type": "playSound",
+                                                                        "name": "shop.mp3"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "item:hurricanemk1",
+                                                                        "operator": "-=",
+                                                                        "value": "1"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "status:money",
+                                                                        "operator": "+=",
+                                                                        "value": "160"
+                                                                    }
+                                                                ],
+                                                                "no": []
                                                             }
                                                         ]
                                                     },
@@ -1415,7 +1450,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "175"
+                                                                "value": "210"
                                                             }
                                                         ]
                                                     },
@@ -1439,7 +1474,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "600"
+                                                                "value": "720"
                                                             }
                                                         ]
                                                     },
@@ -1463,7 +1498,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "600"
+                                                                "value": "720"
                                                             }
                                                         ]
                                                     },
@@ -1474,20 +1509,27 @@ main.floors.MT259=
                                                         "condition": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
                                                         "action": [
                                                             {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:spitfiremk5",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "1900"
+                                                                "type": "confirm",
+                                                                "text": "该装备可改造，确定直接出售？",
+                                                                "yes": [
+                                                                    {
+                                                                        "type": "playSound",
+                                                                        "name": "shop.mp3"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "item:spitfiremk5",
+                                                                        "operator": "-=",
+                                                                        "value": "1"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "status:money",
+                                                                        "operator": "+=",
+                                                                        "value": "1000"
+                                                                    }
+                                                                ],
+                                                                "no": []
                                                             }
                                                         ]
                                                     },
@@ -1498,20 +1540,27 @@ main.floors.MT259=
                                                         "condition": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
                                                         "action": [
                                                             {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:p47b",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "1600"
+                                                                "type": "confirm",
+                                                                "text": "该装备可改造，确定直接出售？",
+                                                                "yes": [
+                                                                    {
+                                                                        "type": "playSound",
+                                                                        "name": "shop.mp3"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "item:p47b",
+                                                                        "operator": "-=",
+                                                                        "value": "1"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "status:money",
+                                                                        "operator": "+=",
+                                                                        "value": "1000"
+                                                                    }
+                                                                ],
+                                                                "no": []
                                                             }
                                                         ]
                                                     },
@@ -1522,20 +1571,27 @@ main.floors.MT259=
                                                         "condition": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
                                                         "action": [
                                                             {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:spitfiremk9",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "1900"
+                                                                "type": "confirm",
+                                                                "text": "该装备可改造，确定直接出售？",
+                                                                "yes": [
+                                                                    {
+                                                                        "type": "playSound",
+                                                                        "name": "shop.mp3"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "item:spitfiremk9",
+                                                                        "operator": "-=",
+                                                                        "value": "1"
+                                                                    },
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "status:money",
+                                                                        "operator": "+=",
+                                                                        "value": "1400"
+                                                                    }
+                                                                ],
+                                                                "no": []
                                                             }
                                                         ]
                                                     },
@@ -1583,7 +1639,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "150"
+                                                                "value": "180"
                                                             }
                                                         ]
                                                     },
@@ -1607,7 +1663,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "500"
+                                                                "value": "600"
                                                             }
                                                         ]
                                                     },
@@ -1631,7 +1687,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "2200"
+                                                                "value": "1800"
                                                             }
                                                         ]
                                                     },
@@ -1655,7 +1711,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "2400"
+                                                                "value": "1920"
                                                             }
                                                         ]
                                                     },
@@ -1679,7 +1735,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "1600"
+                                                                "value": "1500"
                                                             }
                                                         ]
                                                     },
@@ -1727,7 +1783,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "350"
+                                                                "value": "280"
                                                             }
                                                         ]
                                                     },
@@ -1751,7 +1807,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "125"
+                                                                "value": "150"
                                                             }
                                                         ]
                                                     },
@@ -1775,7 +1831,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "400"
+                                                                "value": "480"
                                                             }
                                                         ]
                                                     },
@@ -1847,7 +1903,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "1900"
+                                                                "value": "1500"
                                                             }
                                                         ]
                                                     },
@@ -1871,7 +1927,7 @@ main.floors.MT259=
                                                                 "type": "setValue",
                                                                 "name": "status:money",
                                                                 "operator": "+=",
-                                                                "value": "4000"
+                                                                "value": "3900"
                                                             }
                                                         ]
                                                     },
@@ -1927,7 +1983,7 @@ main.floors.MT259=
     "bgmap": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,556,  0,  0,559,  0,  0,556,  0,  0,  0,  0],
+    [  0,  0,  0,  0,556,  0,  0,  0,  0,  0,556,  0,  0,  0,  0],
     [  0,  0,  0,  0,90666,  0,  0,90666,  0,  0,90666,  0,  0,  0,  0],
     [  0,  0,  0,  0,90674,  0,  0,90674,  0,  0,90674,  0,  0,  0,  0],
     [  0,  0,90668,  0,  0,  0,  0,  0,  0,  0,  0,  0,90669,  0,  0],

@@ -267,7 +267,27 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT257",
 			"MT258",
 			"MT259",
-			"MT260"
+			"MT260",
+			"MT261",
+			"MT262",
+			"MT263",
+			"MT264",
+			"MT265",
+			"MT266",
+			"MT267",
+			"MT268",
+			"MT269",
+			"MT270",
+			"MT271",
+			"MT272",
+			"MT273",
+			"MT274",
+			"MT275",
+			"MT276",
+			"MT277",
+			"MT278",
+			"MT279",
+			"MT280"
 		],
 		"floorPartitions": [
 			[
@@ -557,6 +577,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"skill14.jpg",
 			"skill15.jpg",
 			"skill16.jpg",
+			"skill18.jpg",
 			"skill3.jpg",
 			"skill4.jpg",
 			"skill5.jpg",
@@ -3204,7 +3225,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "1400"
+																		"value": "1940"
 																	},
 																	{
 																		"type": "setValue",
