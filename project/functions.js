@@ -389,7 +389,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.status.hero.hp -= damage;
 	core.status.hero.statistics.battleDamage += damage;
 	core.status.hero.statistics.battle++;
-	if (flags.skill === 13 && hero.hp * 10 < hero.hpmax && core.status.thisMap.area === "海洋") hero.hp = hero.hpmax; // 金牌损管
+	if (flags.skill === 13 && hero.hp * 10 / 3 < hero.hpmax && core.status.thisMap.area === "海洋") hero.hp = hero.hpmax; // 金牌损管
 
 	// 计算当前怪物的支援怪物
 	var guards = [];
@@ -663,7 +663,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[65, "抗破", "秒杀类技能无法对该敌人生效", "#d3d3d3"],
 		[66, "点杀", "主角在当前地图使用即时战略技能时（例如扫雷），以2倍攻击力攻击主角一次，可被后勤值抵消", "#c677dd"],
 		[67, "好战", "主角经过该敌人周围4格时，以120%攻击力与主角发生强制战斗,但如果是被隐蔽状态下的主角主动攻击，则自身攻击力减少20%，主角额外先攻一次", "#ff8c00"],
-		[68, "尖啸死神", "斯图卡轰炸机专属技能。投弹命中主角后，施加3层“惊慌”debuff，每层debuff会使主角攻击力减少10%，每过一次战斗减少一层，可无限叠加", "#dc143c"]
+		[68, "尖啸死神", "斯图卡轰炸机专属技能。投弹命中主角后，施加3层“惊慌”debuff，每层debuff会使主角攻击力减少10%，每过一次战斗减少一层，可无限叠加", "#dc143c"],
+		[69, "迂回包抄", "主角进行楼层切换操作时，进行强制战斗（为防止不必要的错误，每个区域最后一张地图不会出现）"],
+		[70, "直掩", "主角在当前地图中每主动进行一场战斗后，会遭到全体直掩战斗机的一次普攻（攻击×连击），无视后勤值"],
+		[71, "观测", "存在期间，全图领域伤害提升20%，不可叠加"],
+		[72, "火力覆盖", "主角每次战斗结束后，以3倍攻击力轰炸主角一次"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {

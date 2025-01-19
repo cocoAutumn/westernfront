@@ -351,6 +351,18 @@ main.floors.MT259=
                         ]
                     },
                     {
+                        "text": "装备 F6F地狱猫战斗机",
+                        "icon": "f6f5",
+                        "need": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
+                        "condition": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "f6f5"
+                            }
+                        ]
+                    },
+                    {
                         "text": "装备 P47B雷电战斗机",
                         "icon": "p47b",
                         "need": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
@@ -663,6 +675,18 @@ main.floors.MT259=
                             {
                                 "type": "loadEquip",
                                 "id": "m4a2"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 M4A1（76W）谢尔曼",
+                        "icon": "m4a3",
+                        "need": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
+                        "condition": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "m4a3"
                             }
                         ]
                     },
