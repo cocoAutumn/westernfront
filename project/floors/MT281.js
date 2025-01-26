@@ -299,6 +299,12 @@ main.floors.MT281=
                 "pos": 6
             },
             {
+                "type": "setValue",
+                "name": "item:kinggeorge5",
+                "operator": "-=",
+                "value": "1"
+            },
+            {
                 "type": "function",
                 "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
             },

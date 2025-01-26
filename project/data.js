@@ -453,6 +453,22 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT247",
 				"MT257"
+			],
+			[
+				"MT258",
+				"MT264"
+			],
+			[
+				"MT265",
+				"MT274"
+			],
+			[
+				"MT275",
+				"MT281"
+			],
+			[
+				"MT282",
+				"MT293"
 			]
 		],
 		"images": [
@@ -5210,7 +5226,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "P51D“野马”战斗机（4000）",
+						"text": "P51“野马”战斗机D型（4000）",
 						"need": "true",
 						"icon": "p51d",
 						"condition": "!core.hasEquip('p51d')&&!core.hasItem('p51d')",

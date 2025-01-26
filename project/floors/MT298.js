@@ -1,31 +1,60 @@
 main.floors.MT298=
 {
-"floorId": "MT298",
-"title": "主塔 298 层",
-"name": "298",
-"width": 15,
-"height": 15,
-"canFlyTo": true,
-"canFlyFrom": true,
-"canUseQuickShop": true,
-"cannotViewMap": false,
-"images": [],
-"ratio": 1,
-"defaultGround": "X10000",
-"bgm": "cao1.mp3",
-"firstArrive": [],
-"eachArrive": [],
-"parallelDo": "",
-"events": {},
-"changeFloor": {},
-"beforeBattle": {},
-"afterBattle": {},
-"afterGetItem": {},
-"afterOpenDoor": {},
-"autoEvent": {},
-"cannotMove": {},
-"cannotMoveIn": {},
-"map": [
+    "floorId": "MT298",
+    "title": "德国",
+    "name": "德国",
+    "width": 15,
+    "height": 15,
+    "canFlyTo": true,
+    "canFlyFrom": true,
+    "canUseQuickShop": true,
+    "cannotViewMap": false,
+    "images": [
+        {
+            "name": "sky.jpg",
+            "canvas": "bg",
+            "x": 0,
+            "y": 0
+        }
+    ],
+    "ratio": 1,
+    "defaultGround": "grass",
+    "bgm": "europe4.mp3",
+    "firstArrive": [
+        "\t[系统提示]已深入德军腹地。除P51战斗机外，其他战斗机将因为到达航程极限而撤退。（重型战斗机和攻击机必定撤退）",
+        {
+            "type": "unloadEquip",
+            "pos": 5
+        },
+        {
+            "type": "if",
+            "condition": "(!core.hasEquip('p51d'))",
+            "true": [
+                {
+                    "type": "unloadEquip",
+                    "pos": 4
+                },
+                "\t[德军王牌飞行员,fw190a3]他们的护航战斗机撤退了，像以前一样把这些轰炸机都干掉！",
+                "\t[系统提示]德军战斗机的攻击更加肆无忌惮，全体敌军攻击力提升80%！"
+            ],
+            "false": [
+                "\t[德军王牌飞行员,fw190a3]怎么回事？往常这个时候，他们的战斗机应该到航程了才对！为什么他们还在继续作战？"
+            ]
+        }
+    ],
+    "eachArrive": [],
+    "parallelDo": "",
+    "events": {},
+    "changeFloor": {},
+    "beforeBattle": {},
+    "afterBattle": {},
+    "afterGetItem": {},
+    "afterOpenDoor": {},
+    "autoEvent": {},
+    "cannotMove": {},
+    "cannotMoveIn": {},
+    "map": [
+    [  0,  0,  0,  0,  0,  0,  0, 91,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
@@ -39,7 +68,13 @@ main.floors.MT298=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+    [  0,  0,  0,  0,  0,  0,  0, 93,  0,  0,  0,  0,  0,  0,  0]
 ],
+    "bgmap": [
+
+],
+    "fgmap": [
+
+],
+    "area": "天空"
 }
