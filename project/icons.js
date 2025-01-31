@@ -349,7 +349,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"kate": 138,
 		"badoglio": 22,
 		"zeppelin": 37,
-		"E632": 139
+		"E632": 139,
+		"acepilot": 140
 	},
 	"enemy48": {
 		"angel": 0,

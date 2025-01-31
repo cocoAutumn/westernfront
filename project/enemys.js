@@ -91,13 +91,13 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"fw190a1": {"name":"FW190A-1","hp":7000,"atk":450,"def":0,"money":3,"exp":3,"point":0,"special":[6],"type":"战斗机","dod":0,"tpn":0,"top":0,"arm":0,"ap":0,"gro":0,"n":4,"description":"主武器：4×7.92mm机枪和2×20mm机炮","bom":0},
 	"fw190a3": {"name":"FW190A-4","hp":50000,"atk":4500,"def":0,"money":3,"exp":3,"point":0,"special":[6,30],"type":"战斗机","description":"主武器：2×7.92mm机枪和4×20mm机炮","ap":0,"arm":0,"top":0,"tpn":0,"dod":0,"gro":0,"bom":0,"n":5},
 	"fw190f8": {"name":"FW190F-8","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：2×13mm机枪和2×20mm机炮\n可能的额外挂载：1×1000kg炸弹"},
-	"do335": {"name":"Do335箭式","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：3×30mm机炮和2×20mm机炮\n可能的额外挂载：2×250kg炸弹和1×500kg炸弹"},
+	"do335": {"name":"Do335箭式","hp":0,"atk":0,"def":0,"money":4,"exp":4,"point":0,"special":[1,30,64],"type":"战斗机","description":"主武器：3×30mm机炮和2×20mm机炮\n可能的额外挂载：2×250kg炸弹和1×500kg炸弹","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"ta152": {"name":"Ta152","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：1×30mm机炮和2×20mm机炮"},
-	"me262": {"name":"ME262飞燕","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：4×30mm机炮\n可能的额外挂载：24×R4M火箭弹"},
+	"me262": {"name":"ME262雨燕","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：4×30mm机炮\n可能的额外挂载：24×R4M火箭弹"},
 	"me163": {"name":"ME163彗星","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：2×30mm机炮"},
 	"ju88c6": {"name":"JU88C-6","hp":25000,"atk":3500,"def":0,"money":4,"exp":4,"point":0,"special":[55],"type":"重型战斗机","description":"主武器：3×7.92mm机枪和3×20mm机炮\n自卫武器：4×7.92mm机枪","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"me410": {"name":"ME410大黄蜂","hp":20000,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[30,51,64],"type":"重型战斗机","description":"主武器：2×7.92mm机枪和4×20mm机炮\n自卫武器：2×13mm机枪"},
-	"he219": {"name":"HE219猫头鹰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"重型战斗机"},
+	"he219": {"name":"HE219猫头鹰","hp":0,"atk":0,"def":0,"money":4,"exp":4,"point":0,"special":[30,64],"type":"重型战斗机","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"he111": {"name":"HE111","hp":3000,"atk":40,"def":0,"money":5,"exp":5,"point":0,"special":[29],"type":"中型轰炸机","description":"自卫武器：1×20mm机枪、1×13mm机枪和5×7.92mm机枪\n挂载：8×250kg炸弹 或 2×F5W鱼雷","ammo":8,"spd":6,"bom":300,"ap":0,"arm":0,"top":1500,"tpn":4,"dod":0,"gro":0,"cd":6},
 	"ju88a": {"name":"JU88A","hp":2500,"atk":100,"def":0,"money":5,"exp":5,"point":0,"special":[28],"type":"中型轰炸机","description":"自卫武器：4×7.92mm机枪\n挂载：4×250kg炸弹","ap":0,"arm":0,"top":0,"bom":300,"tpn":0,"dod":0,"gro":0,"cd":0,"ammo":4,"spd":5},
 	"do17z": {"name":"Do17z","hp":1800,"atk":40,"def":0,"money":5,"exp":5,"point":0,"special":[29],"type":"中型轰炸机","description":"自卫武器：6×7.92mm机枪\n挂载：2×250kg炸弹 或 1×F5W鱼雷","ap":0,"arm":0,"top":2000,"bom":500,"tpn":2,"dod":0,"gro":0,"cd":4,"ammo":2,"spd":4},
@@ -147,5 +147,6 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"kate": {"name":"B5N九七舰攻","hp":300,"atk":10,"def":0,"money":0,"exp":0,"point":0,"special":[29],"type":"鱼雷轰炸机","description":"自卫武器：1×7.7mm机枪\n挂载：1×91式鱼雷","ap":0,"arm":0,"top":5000,"bom":0,"tpn":1,"dod":0,"gro":0,"cd":5,"ammo":1,"spd":5},
 	"badoglio": {"name":"巴多格里奥","hp":20000,"atk":25000,"def":0,"money":0,"exp":0,"point":0,"special":[15,25,38,57],"type":"榴弹炮","gro":0,"dod":0,"tpn":0,"bom":0,"top":0,"arm":2,"ap":999,"zone":20000,"range":2,"zoneSquare":true,"hpBuff":40,"atkBuff":0,"defBuff":10},
 	"zeppelin": {"name":"齐柏林伯爵号航空母舰","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"航母","gro":0,"dod":2,"tpn":0,"bom":0,"top":0,"arm":0,"ap":0,"description":"防御武器：16×150mm主炮、12×105mm防空炮、22×37mm机炮、28×20mm机炮。\n舰载机：12×ME109T战斗机、30×JU87C俯冲轰炸机"},
-	"E632": {"name":"四号H型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"description":"主武器：75mm长管坦克炮","type":"中坦","ap":130,"arm":80}
+	"E632": {"name":"四号H型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"description":"主武器：75mm长管坦克炮","type":"中坦","ap":130,"arm":80},
+	"acepilot": {"name":"王牌飞行员","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[6,25,30,38,57,70],"type":"战斗机","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0}
 }

@@ -544,6 +544,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"631": {"cls":"terrains","id":"T631","canBreak":true},
 	"632": {"cls":"enemys","id":"E632"},
 	"633": {"cls":"npcs","id":"N633"},
+	"634": {"cls":"enemys","id":"acepilot"},
 	"10014": {"cls":"tileset","id":"X10014","canBreak":true},
 	"10015": {"cls":"tileset","id":"X10015","canBreak":true},
 	"20004": {"cls":"tileset","id":"X20004","canBreak":true},
