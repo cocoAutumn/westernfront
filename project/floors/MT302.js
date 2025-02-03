@@ -21,7 +21,7 @@ main.floors.MT302=
     "defaultGround": "grass",
     "bgm": "europe2.mp3",
     "firstArrive": [
-        "\t[赫尔曼·戈林]没有任何一架盟军轰炸机能够抵达鲁尔。如果有，我就不叫戈林，你可以叫我迈耶！",
+        "\t[赫尔曼·戈林]没有一架轰炸机能到达鲁尔，如果到了鲁尔我就不叫戈林，你可以叫我迈耶（德语中的下等贱人姓氏）",
         {
             "type": "setCurtain",
             "time": 500
@@ -908,7 +908,7 @@ main.floors.MT302=
                         },
                         {
                             "type": "sleep",
-                            "time": 2000
+                            "time": 3000
                         },
                         {
                             "type": "setCurtain",
@@ -932,7 +932,7 @@ main.floors.MT302=
                         },
                         {
                             "type": "changeFloor",
-                            "floorId": "MT258",
+                            "floorId": "MT303",
                             "loc": [
                                 -1,
                                 -1

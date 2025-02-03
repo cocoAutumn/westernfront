@@ -282,8 +282,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"coin": {
 		"cls": "constants",
-		"name": "幸运金币",
-		"text": "持有时打败怪物可得双倍金币"
+		"name": "战争财",
+		"text": "美国可以说是二战最大的受益国，依靠各种手段大发战争财，并奠定战后金融霸权地位。\n持有时，战斗获得三倍黄金和经验（可与其他增收手段叠加或叠乘）。"
 	},
 	"freezeBadge": {
 		"cls": "constants",
@@ -1351,7 +1351,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "自卫武器：5×12.7mm机枪。挂载：12×500磅炸弹。\n被动:\n战略轰炸：无法对舰攻击。对地攻击时，敌方血量减少20%，且战后主角周围8格陆军血量减少10%，可叠加。\n反潜巡逻：对潜艇攻击时，抢先投放深水炸弹，造成5倍攻击力的伤害"
 	},
 	"lancaster": {
-		"cls": "items",
+		"cls": "equips",
 		"name": "兰开斯特轰炸机",
 		"canUseItemEffect": "true",
 		"text": "自卫武器：8×7.7mm机枪。挂载：14×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，减少敌人40%血量，且战后主角周围8格内陆军血量减少20%，可叠加。\n特别行动：该飞机可挂载特定的超重型炸弹。"
@@ -1381,7 +1381,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "tools",
 		"name": "可乐",
 		"canUseItemEffect": "core.status.hero.hp < core.status.hero.hpmax",
-		"text": "美国大兵的最爱，不过喝太多了会导致一些健康问题。\n饮用后恢复50%血量，下一场战斗中额外增加等同于血限5%的后勤值,可叠加。",
+		"text": "美国大兵的最爱。由于作者没有获得广告费赞助，因此这款可乐并没注明品牌。\n饮用后恢复50%血量，下一场战斗中额外增加等同于血限5%的后勤值,可叠加。",
 		"useItemEvent": [
 			{
 				"type": "animate",
@@ -1468,7 +1468,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "5阶红宝石",
 		"canUseItemEffect": "true",
 		"text": ",攻击+50",
-		"itemEffectTip": ",攻击+20",
+		"itemEffectTip": ",攻击+50",
 		"itemEffect": "core.status.hero.atk += 50;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}"
 	},
 	"blue2Gem": {
@@ -1791,7 +1791,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 								]
 							},
 							{
-								"text": "宝石动画：[${flags.anime?'ON':'OFF'}]",
+								"text": "动画效果：[${flags.anime?'ON':'OFF'}]",
 								"action": [
 									{
 										"type": "setValue",
@@ -2033,5 +2033,149 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "青霉素",
 		"canUseItemEffect": "true",
 		"text": "持有时，血限提升15%，“一杯茶”治疗效果改为40%。"
+	},
+	"red6Gem": {
+		"cls": "items",
+		"name": "6阶红宝石",
+		"canUseItemEffect": "true",
+		"text": ",攻击+100",
+		"itemEffectTip": ",攻击+100",
+		"itemEffect": "core.status.hero.atk += 100;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}"
+	},
+	"blue6Gem": {
+		"cls": "items",
+		"name": "6阶蓝宝石",
+		"canUseItemEffect": "true",
+		"text": "，指挥点数+300",
+		"itemEffectTip": "，指挥点数+300",
+		"itemEffect": "core.status.hero.mana += 300;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('manaup');\n}"
+	},
+	"green6Gem": {
+		"cls": "items",
+		"name": "6阶绿宝石",
+		"canUseItemEffect": "true",
+		"text": "，后勤+500",
+		"itemEffectTip": "，后勤+500",
+		"itemEffect": "core.status.hero.mdef += 500;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('mdefup');\n}"
+	},
+	"yellow6Gem": {
+		"cls": "items",
+		"name": "6阶黄宝石",
+		"canUseItemEffect": "true",
+		"text": ",血量及血限+10000",
+		"itemEffectTip": ",血量及血限+10000",
+		"itemEffect": "core.status.hero.hpmax += 10000;\ncore.status.hero.hp += 10000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('hpmaxup');\n}"
+	},
+	"orange6Gem": {
+		"cls": "items",
+		"name": "6阶橙宝石",
+		"canUseItemEffect": "true",
+		"text": "，增加1500雷击",
+		"itemEffectTip": "，增加1500雷击",
+		"itemEffect": "core.status.hero.top += 1500;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('topup');\n}"
+	},
+	"red7Gem": {
+		"cls": "items",
+		"name": "7阶红宝石",
+		"canUseItemEffect": "true",
+		"text": ",攻击+200",
+		"itemEffectTip": ",攻击+200",
+		"itemEffect": "core.status.hero.atk += 200;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}"
+	},
+	"blue7Gem": {
+		"cls": "items",
+		"name": "7阶蓝宝石",
+		"canUseItemEffect": "true",
+		"text": "，指挥点数+400",
+		"itemEffectTip": "，指挥点数+400",
+		"itemEffect": "core.status.hero.mana += 400;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('manaup');\n}"
+	},
+	"green7Gem": {
+		"cls": "items",
+		"name": "7阶绿宝石",
+		"canUseItemEffect": "true",
+		"text": "，后勤+1000",
+		"itemEffectTip": "，后勤+1000",
+		"itemEffect": "core.status.hero.mdef += 1000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('mdefup');\n}"
+	},
+	"yellow7Gem": {
+		"cls": "items",
+		"name": "7阶黄宝石",
+		"canUseItemEffect": "true",
+		"text": ",血量及血限+20000",
+		"itemEffectTip": ",血量及血限+20000",
+		"itemEffect": "core.status.hero.hpmax += 20000;\ncore.status.hero.hp += 20000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('hpmaxup');\n}"
+	},
+	"orange7Gem": {
+		"cls": "items",
+		"name": "7阶橙宝石",
+		"canUseItemEffect": "true",
+		"text": "，增加5000雷击",
+		"itemEffectTip": "，增加50500雷击",
+		"itemEffect": "core.status.hero.top += 5000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('topup');\n}"
+	},
+	"red8Gem": {
+		"cls": "items",
+		"name": "8阶红宝石",
+		"canUseItemEffect": "true",
+		"text": ",攻击+500",
+		"itemEffectTip": ",攻击+500",
+		"itemEffect": "core.status.hero.atk += 500;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('atkup');\n}"
+	},
+	"blue8Gem": {
+		"cls": "items",
+		"name": "8阶蓝宝石",
+		"canUseItemEffect": "true",
+		"text": "，指挥点数+500",
+		"itemEffectTip": "，指挥点数+500",
+		"itemEffect": "core.status.hero.mana += 500;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('manaup');\n}"
+	},
+	"green8Gem": {
+		"cls": "items",
+		"name": "8阶绿宝石",
+		"canUseItemEffect": "true",
+		"text": "，后勤+2000",
+		"itemEffectTip": "，后勤+2000",
+		"itemEffect": "core.status.hero.mdef += 2000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('mdefup');\n}"
+	},
+	"yellow8Gem": {
+		"cls": "items",
+		"name": "8阶黄宝石",
+		"canUseItemEffect": "true",
+		"text": ",血量及血限+50000",
+		"itemEffectTip": ",血量及血限+50000",
+		"itemEffect": "core.status.hero.hpmax += 50000;\ncore.status.hero.hp += 50000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('hpmaxup');\n}"
+	},
+	"orange8Gem": {
+		"cls": "items",
+		"name": "8阶橙宝石",
+		"canUseItemEffect": "true",
+		"text": "，增加15000雷击",
+		"itemEffectTip": "，增加15000雷击",
+		"itemEffect": "core.status.hero.top += 15000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('topup');\n}"
+	},
+	"medal6": {
+		"cls": "items",
+		"name": "6级勋章",
+		"canUseItemEffect": "true",
+		"text": "，全属性提升",
+		"itemEffectTip": "，全属性提升",
+		"itemEffect": "core.status.hero.hpmax += 10000;\ncore.status.hero.hp += 10000;\ncore.status.hero.mana += 300;\ncore.status.hero.atk += 100;\ncore.status.hero.top += 1500;\ncore.status.hero.mdef += 500;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}"
+	},
+	"medal7": {
+		"cls": "items",
+		"name": "7级勋章",
+		"canUseItemEffect": "true",
+		"text": "，全属性提升",
+		"itemEffectTip": "，全属性提升",
+		"itemEffect": "core.status.hero.hpmax += 20000;\ncore.status.hero.hp += 20000;\ncore.status.hero.mana += 400;\ncore.status.hero.atk += 200;\ncore.status.hero.top += 5000;\ncore.status.hero.mdef += 1000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}"
+	},
+	"medal8": {
+		"cls": "items",
+		"name": "8级勋章",
+		"canUseItemEffect": "true",
+		"text": "，全属性提升",
+		"itemEffectTip": "，全属性提升",
+		"itemEffect": "core.status.hero.hpmax += 50000;\ncore.status.hero.hp += 50000;\ncore.status.hero.mana += 500;\ncore.status.hero.atk += 500;\ncore.status.hero.top += 15000;\ncore.status.hero.mdef += 2000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}"
 	}
 }

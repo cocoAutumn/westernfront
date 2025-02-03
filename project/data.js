@@ -317,7 +317,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT307",
 			"MT308",
 			"MT309",
-			"MT310"
+			"MT310",
+			"MT311",
+			"MT312",
+			"MT313",
+			"MT314",
+			"MT315",
+			"MT316",
+			"MT317",
+			"MT318",
+			"MT319",
+			"MT320"
 		],
 		"floorPartitions": [
 			[
@@ -479,6 +489,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT282",
 				"MT293"
+			],
+			[
+				"MT294",
+				"MT302"
 			]
 		],
 		"images": [
@@ -527,6 +541,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"chapter8.jpg",
 			"chapter9.jpg",
 			"churchill3.jpg",
+			"churchill7.jpg",
 			"clark.png",
 			"classe.jpg",
 			"classj.jpg",
@@ -852,6 +867,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"item.mp3",
 			"jet.mp3",
 			"jump.mp3",
+			"katyusha.mp3",
 			"knife.mp3",
 			"load.mp3",
 			"move1.mp3",
@@ -4024,7 +4040,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=5500)",
+										"condition": "(status:money>=6500)",
 										"true": [
 											{
 												"type": "playSound",
@@ -4034,7 +4050,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "5500"
+												"value": "6500"
 											},
 											{
 												"type": "setValue",
@@ -4700,7 +4716,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "M4A3E2“巨无霸”（15600/20000）",
+						"text": "M4A3E2“巨无霸”（5600/10000）",
 						"need": "true",
 						"icon": "m4a3e2",
 						"condition": "!core.hasEquip('m4a3e2')&&!core.hasItem('m4a3e2')",
@@ -4720,7 +4736,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下三种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "替换手中的“M4A1(76W)谢尔曼”（15600）",
+												"text": "替换手中的“M4A1(76W)谢尔曼”（5600）",
 												"icon": "m4a3",
 												"action": [
 													{
@@ -4729,7 +4745,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=15600)",
+																"condition": "(status:money>=5600)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -4739,7 +4755,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "15600"
+																		"value": "5600"
 																	},
 																	{
 																		"type": "setValue",
@@ -4770,7 +4786,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"action": [
 													{
 														"type": "if",
-														"condition": "(status:money>=20000)",
+														"condition": "(status:money>=10000)",
 														"true": [
 															{
 																"type": "playSound",
@@ -4780,7 +4796,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																"type": "setValue",
 																"name": "status:money",
 																"operator": "-=",
-																"value": "20000"
+																"value": "10000"
 															},
 															{
 																"type": "setValue",
@@ -4805,7 +4821,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "谢尔曼“萤火虫”坦克（20600/25000）",
+						"text": "谢尔曼“萤火虫”坦克（10600/15000）",
 						"need": "true",
 						"icon": "firefly",
 						"condition": "!core.hasEquip('firefly')&&!core.hasItem('firefly')",
@@ -4825,7 +4841,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下三种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "替换手中的“M4A1(76W)谢尔曼”（20600）",
+												"text": "替换手中的“M4A1(76W)谢尔曼”（10600）",
 												"icon": "m4a3",
 												"action": [
 													{
@@ -4834,7 +4850,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=20600)",
+																"condition": "(status:money>=10600)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -4844,7 +4860,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "20600"
+																		"value": "10600"
 																	},
 																	{
 																		"type": "setValue",
@@ -4875,7 +4891,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"action": [
 													{
 														"type": "if",
-														"condition": "(status:money>=25000)",
+														"condition": "(status:money>=15000)",
 														"true": [
 															{
 																"type": "playSound",
@@ -4885,7 +4901,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																"type": "setValue",
 																"name": "status:money",
 																"operator": "-=",
-																"value": "25000"
+																"value": "15000"
 															},
 															{
 																"type": "setValue",
@@ -4927,7 +4943,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=10000)",
+										"condition": "(status:money>=15000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -4937,7 +4953,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "10000"
+												"value": "15000"
 											},
 											{
 												"type": "setValue",
@@ -4958,7 +4974,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "巴尔的摩级重巡洋舰（15000）",
+						"text": "巴尔的摩级重巡洋舰（20000）",
 						"need": "true",
 						"icon": "baltimore",
 						"condition": "!core.hasEquip('baltimore')&&!core.hasItem('baltimore')",
@@ -4975,7 +4991,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=10000)",
+										"condition": "(status:money>=20000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -4985,7 +5001,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "10000"
+												"value": "20000"
 											},
 											{
 												"type": "setValue",
@@ -5006,7 +5022,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "衣阿华级战列舰（15000）",
+						"text": "衣阿华级战列舰（30000）",
 						"need": "true",
 						"icon": "iowa",
 						"condition": "!core.hasEquip('iowa')&&!core.hasItem('iowa')",
@@ -5023,7 +5039,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=10000)",
+										"condition": "(status:money>=30000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5033,7 +5049,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "10000"
+												"value": "30000"
 											},
 											{
 												"type": "setValue",
@@ -5054,7 +5070,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "埃塞克斯级航空母舰（15000）",
+						"text": "埃塞克斯级航空母舰（35000）",
 						"need": "true",
 						"icon": "essex",
 						"condition": "!core.hasEquip('essex')&&!core.hasItem('essex')",
@@ -5071,7 +5087,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=10000)",
+										"condition": "(status:money>=35000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5081,7 +5097,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "10000"
+												"value": "35000"
 											},
 											{
 												"type": "setValue",
@@ -5102,7 +5118,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "喷火MK16战斗机（4000）",
+						"text": "喷火MK16战斗机（10000）",
 						"need": "true",
 						"icon": "spitfiremk16",
 						"condition": "!core.hasEquip('spitfiremk16')&&!core.hasItem('spitfiremk16')",
@@ -5122,7 +5138,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下三种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "改造手中的“喷火MK9”（20600）",
+												"text": "改造手中的“喷火MK9”（7200）",
 												"icon": "spitfiremk9",
 												"action": [
 													{
@@ -5131,7 +5147,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=20600)",
+																"condition": "(status:money>=7200)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -5141,7 +5157,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "20600"
+																		"value": "7200"
 																	},
 																	{
 																		"type": "setValue",
@@ -5172,7 +5188,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"action": [
 													{
 														"type": "if",
-														"condition": "(status:money>=25000)",
+														"condition": "(status:money>=10000)",
 														"true": [
 															{
 																"type": "playSound",
@@ -5182,7 +5198,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																"type": "setValue",
 																"name": "status:money",
 																"operator": "-=",
-																"value": "25000"
+																"value": "10000"
 															},
 															{
 																"type": "setValue",
@@ -5207,7 +5223,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "F4U“海盗”战斗机（舰）（4000）",
+						"text": "F4U“海盗”战斗机（舰）（12000）",
 						"need": "true",
 						"icon": "f4u",
 						"condition": "!core.hasEquip('f4u')&&!core.hasItem('f4u')",
@@ -5224,7 +5240,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=4000)",
+										"condition": "(status:money>=12000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5234,7 +5250,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "4000"
+												"value": "12000"
 											},
 											{
 												"type": "setValue",
@@ -5255,7 +5271,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "P51“野马”战斗机D型（4000）",
+						"text": "P51“野马”战斗机D型（15000）",
 						"need": "true",
 						"icon": "p51d",
 						"condition": "!core.hasEquip('p51d')&&!core.hasItem('p51d')",
@@ -5272,7 +5288,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=4000)",
+										"condition": "(status:money>=15000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5282,7 +5298,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "4000"
+												"value": "15000"
 											},
 											{
 												"type": "setValue",
@@ -5303,7 +5319,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "P47D“雷电”攻击机（5000）",
+						"text": "P47D“雷电”攻击机（10000/12000）",
 						"need": "true",
 						"icon": "p47d",
 						"condition": "!core.hasEquip('p47d')&&!core.hasItem('p47d')",
@@ -5313,7 +5329,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[p47d.jpg,170,50]D型是P47战斗机第一种大批量生产型号，具有更加完善的装甲和可靠性，可挂载至多3枚炸弹，除了可以进行空战外，还能当作对地攻击机使用。",
-							"\f[p47d.jpg,170,50]装备属性：攻击+450后额外加10%。挂载：3×500磅炸弹\n每3回合投掷炸弹，每颗炸弹伤害为1.5倍攻击力。\n被动：\n铜墙铁壁：与空军和高射炮作战时，获得20%减伤。\n舔地狂魔：与地面单位作战时，P47D投掷的炸弹数量翻倍。\n（装备类型为攻击机，不是战斗机）",
+							"\f[p47d.jpg,170,50]装备属性：攻击+450后额外加10%。挂载：3×500磅炸弹\n每3回合投掷2轮炸弹，每颗炸弹伤害为1.5倍攻击力。\n被动：\n铜墙铁壁：与空军和高射炮作战时，获得20%减伤。\n舔地狂魔：与地面单位作战时，P47D投掷的炸弹数量翻倍。\n（装备类型为攻击机，不是战斗机）",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -5323,7 +5339,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下三种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "改造手中的“P47B雷电”（20600）",
+												"text": "改造手中的“P47B雷电”（10000）",
 												"icon": "p47b",
 												"action": [
 													{
@@ -5332,7 +5348,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=20600)",
+																"condition": "(status:money>=10000)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -5342,7 +5358,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "20600"
+																		"value": "10000"
 																	},
 																	{
 																		"type": "setValue",
@@ -5373,7 +5389,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"action": [
 													{
 														"type": "if",
-														"condition": "(status:money>=25000)",
+														"condition": "(status:money>=12000)",
 														"true": [
 															{
 																"type": "playSound",
@@ -5383,7 +5399,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																"type": "setValue",
 																"name": "status:money",
 																"operator": "-=",
-																"value": "25000"
+																"value": "12000"
 															},
 															{
 																"type": "setValue",
@@ -5408,7 +5424,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "SB2C“地狱俯冲者”俯冲轰炸机（舰）（4000）",
+						"text": "SB2C“地狱俯冲者”俯冲轰炸机（舰）（12000）",
 						"need": "true",
 						"icon": "sb2c",
 						"condition": "!core.hasEquip('sb2c')&&!core.hasItem('sb2c')",
@@ -5425,7 +5441,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=4000)",
+										"condition": "(status:money>=12000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5435,7 +5451,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "4000"
+												"value": "12000"
 											},
 											{
 												"type": "setValue",
@@ -5456,7 +5472,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "P61“黑寡妇”重型战斗机（6000）",
+						"text": "P61“黑寡妇”重型战斗机（18000）",
 						"need": "true",
 						"icon": "p61",
 						"condition": "!core.hasEquip('p61')&&!core.hasItem('p61')",
@@ -5473,7 +5489,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=6000)",
+										"condition": "(status:money>=18000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5483,7 +5499,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "6000"
+												"value": "18000"
 											},
 											{
 												"type": "setValue",
@@ -5504,7 +5520,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "“兰开斯特”重型轰炸机（6000）",
+						"text": "“兰开斯特”重型轰炸机（8500）",
 						"need": "true",
 						"icon": "lancaster",
 						"condition": "!core.hasEquip('lancaster')&&!core.hasItem('lancaster')",
@@ -5521,7 +5537,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=6000)",
+										"condition": "(status:money>=8500)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5531,7 +5547,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "6000"
+												"value": "8500"
 											},
 											{
 												"type": "setValue",
@@ -5552,7 +5568,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "盟军科技研发成果LV3（3000）",
+						"text": "盟军科技研发成果LV3（5000）",
 						"need": "true",
 						"condition": "flags.technology===3",
 						"action": [
@@ -5567,7 +5583,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=2000)",
+										"condition": "(status:money>=5000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5577,7 +5593,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "2000"
+												"value": "5000"
 											},
 											{
 												"type": "setValue",
@@ -5598,7 +5614,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "道具：青霉素（1000）",
+						"text": "道具：青霉素（10000）",
 						"need": "true",
 						"icon": "penicillin",
 						"condition": "flags.technology===4&&!core.hasItem('penicillin')",
@@ -5615,7 +5631,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=500)",
+										"condition": "(status:money>=10000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5625,7 +5641,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "500"
+												"value": "10000"
 											},
 											{
 												"type": "setValue",
@@ -5655,7 +5671,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "M26“潘兴”重型坦克（15600/20000）",
+						"text": "M26“潘兴”重型坦克（20000）",
 						"need": "true",
 						"icon": "m26pershing",
 						"condition": "!core.hasEquip('m26pershing')&&!core.hasItem('m26pershing')",
@@ -5703,7 +5719,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "丘吉尔MK7步兵坦克（20600/25000）",
+						"text": "丘吉尔MK7步兵坦克（18500/20000）",
 						"need": "true",
 						"icon": "churchillmk7",
 						"condition": "!core.hasEquip('churchillmk7')&&!core.hasItem('churchillmk7')",
@@ -5712,8 +5728,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"type": "comment",
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
-							"\f[churchill3.jpg,170,50]丘吉尔MK7型采用了75mm火炮，改进装甲防护，车体前部的装甲厚度增大到152mm。于1943年提供给英国陆军使用，和“萤火虫”坦克一道，成为诺曼底登陆以后英军装甲兵的主力坦克，丘吉尔MK7坦克主要服役于各独立装甲旅。甚至在朝鲜战争中，也在继续使用。",
-							"\f[firefly.jpg,170,50]装备属性：攻+1000后额外加60%，穿78，装170。\n被动技能：\n笨重：被敌人单向击穿时，敌人额外先攻10回合。\n绝对防御：单向击穿敌人陆军时，无伤赢得战斗。",
+							"\f[churchill7.jpg,170,50]丘吉尔MK7型采用了75mm火炮，改进装甲防护，车体前部的装甲厚度增大到152mm。于1943年提供给英国陆军使用，和“萤火虫”坦克一道，成为诺曼底登陆以后英军装甲兵的主力坦克，丘吉尔MK7坦克主要服役于各独立装甲旅。甚至在朝鲜战争中，也在继续使用。",
+							"\f[churchill7.jpg,170,50]装备属性：攻+1000后额外加60%，穿78，装170。\n被动技能：\n笨重：被敌人单向击穿时，敌人额外先攻10回合。\n绝对防御：单向击穿敌人陆军时，无伤赢得战斗。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -5723,7 +5739,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下三种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "改造手中的“丘吉尔MK3”（20600）",
+												"text": "改造手中的“丘吉尔MK3”（18500）",
 												"icon": "churchillmk3",
 												"action": [
 													{
@@ -5732,7 +5748,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=20600)",
+																"condition": "(status:money>=18500)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -5742,7 +5758,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "20600"
+																		"value": "18500"
 																	},
 																	{
 																		"type": "setValue",
@@ -5773,7 +5789,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"action": [
 													{
 														"type": "if",
-														"condition": "(status:money>=25000)",
+														"condition": "(status:money>=20000)",
 														"true": [
 															{
 																"type": "playSound",
@@ -5783,7 +5799,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																"type": "setValue",
 																"name": "status:money",
 																"operator": "-=",
-																"value": "25000"
+																"value": "20000"
 															},
 															{
 																"type": "setValue",
@@ -5808,7 +5824,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "企业号航空母舰（200000）",
+						"text": "企业号航空母舰（50000）",
 						"need": "true",
 						"icon": "enterprise",
 						"condition": "!core.hasEquip('enterprise')&&!core.hasItem('enterprise')",
@@ -5817,15 +5833,15 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"type": "comment",
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
-							"\f[enterprise.jpg,170,50]约克城级二号舰，CV-6“企业号”航空母舰，绰号“幸运E”或“灰色幽灵”，是迄今为止世界上最功勋卓著的军舰。企业号全程参与了太平洋战争，期间一直以幸运著称，杀敌无数的同时，数次与死神擦肩而过。战争结束时，企业号获得了20颗战星，击沉敌舰71艘，击伤192艘，击落敌机911架，是美国海军全场MVP。战争期间，她躲过了珍珠港的浩劫，护航大黄蜂号空袭东京，中途岛一战歼灭3艘航母，瓜岛战役身受重伤多次返港维修，单挑7艘日军航母不落下风。战争的最后一段时间里，因为被一架神风飞机命中要害不得不回本土维修，而遗憾缺席东京湾投降仪式。最后，由于舰体设计老旧，无法支持喷气飞机起降，又没钱维护，企业号于1947年退役，1958年拆解出售，连一根桅杆都没有保存下来。为纪念企业号航母表现出的精神与贡献，也为安抚那些为此愤愤不平的老兵们，美国最终决定将第一艘核动力航母CVN-65命名为“企业号”。",
-							"\f[enterprise.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。舰载机：F4U海盗式战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机\n被动：\n灰色幽灵：我军一切空袭伤害×250%，与除潜艇外的敌方海军交战时，伤害提升50%，受伤降低30%。\n远程空袭：无视敌军战列舰主炮伤害，且可以支援我军在陆地上的行动。\nLucky E：装备企业号时，“海上霸主”技能花费改为2500，效果改为“当前地图所有除潜艇外的敌舰和飞机损失90%血量”。\n先发制人：舰载机在战斗首回合即可投放炸弹和鱼雷。",
+							"\f[enterprise.jpg,170,50]约克城级二号舰，CV-6“企业号”航空母舰，绰号“幸运E”或“灰色幽灵”，是迄今为止世界上最功勋卓著的军舰。企业号全程参与了太平洋战争，期间一直以幸运著称，杀敌无数的同时，数次与死神擦肩而过。战争结束时，企业号获得了20颗战星，击沉敌舰71艘，击伤192艘，击落敌机911架，是美国海军全场MVP。战争期间，她躲过了珍珠港的浩劫，护航大黄蜂号空袭东京，中途岛一战歼灭3艘航母，瓜岛战役身受重伤多次返港维修，单挑7艘日军航母不落下风。战争的最后一段时间里，因为被一架神风飞机命中要害不得不回本土维修，而遗憾缺席东京湾投降仪式。最后，由于舰体设计老旧，无法支持喷气飞机起降，又没钱维护，企业号于1947年退役，1958年拆解出售，连一根桅杆都没有保存下来。为纪念企业号航母表现出的精神与贡献，也为安抚那些为此愤愤不平的老兵们，美国最终决定将第一艘核动力航母CVN-65命名为“企业号”，同时也加强了对退役武器的保护——她直到被拆解后都能为正义事业做贡献。",
+							"\f[enterprise.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。舰载机：F4U海盗式战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机\n被动：\n灰色幽灵：我军一切空袭伤害×250%，与除潜艇外的敌方海军交战时，伤害提升50%，受伤降低30%。\n远程空袭：无视敌军战列舰主炮伤害，且可以支援我军在陆地上的行动。\nLucky E：装备企业号时，“海上霸主”技能花费改为2500，效果改为“当前地图所有除潜艇外的敌舰和飞机损失90%血量，陆军损失30%血量”。\n先发制人：舰载机在战斗首回合即可投放炸弹和鱼雷。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=10000)",
+										"condition": "(status:money>=50000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5835,7 +5851,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "10000"
+												"value": "50000"
 											},
 											{
 												"type": "setValue",
@@ -5856,7 +5872,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "B29“超级空中堡垒”（15000）",
+						"text": "B29“超级空中堡垒”（35000）",
 						"need": "true",
 						"icon": "b29",
 						"condition": "!core.hasEquip('b29')&&!core.hasItem('b29')",
@@ -5866,14 +5882,14 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[b29.jpg,170,50]B29“超级空中堡垒”轰炸机是二战期间服役的最大轰炸机，1943年末服役，1960年退役。B29最大速度可达574km/h，可以飞到一万米高空，作战半径接近3000km，最多可搭载9072千克炸弹。B29始终在太平洋战场作战，对日本本土进行轰炸。美国李梅将军针对日本建筑多木制结构的特点，让B29挂载凝固汽油弹轰炸日本本土，效果绝佳，整个日本到处都是“熟人”，而且因为飞的太高，战斗机和高射炮都打不到。1945年8月6日，B29轰炸机“艾诺拉盖伊”号在广岛上空投下“小男孩”原子弹，3天后，“伯克之车”号在长崎又投下了“胖子”，以两朵壮观的蘑菇云为这场夺取了数千万生命的战争划上休止符。",
-							"\f[b29.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，减少敌人50%血量，且战后主角周围8格内陆军血量减少30%，可叠加。\n平流层飞行：敌人的防空技能失效，战斗机伤害减少50%。\n末日审判：该机可以挂载核武器。",
+							"\f[b29.jpg,170,50]装备属性：攻击+1000后额外加30%。后勤+2000后额外加20%。闪避鱼雷数-2。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，减少敌人50%血量，且战后主角周围8格内陆军血量减少30%，可叠加。\n平流层飞行：敌人的防空技能失效，战斗机伤害减少50%。\n李梅之怒：与敌方陆军战斗期间，敌方每回合额外受到等同于原有生命值5%的燃烧伤害。对日军单位效果为10%。\n末日审判：该机可以挂载核武器。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=10000)",
+										"condition": "(status:money>=35000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5883,7 +5899,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "10000"
+												"value": "35000"
 											},
 											{
 												"type": "setValue",
@@ -5904,7 +5920,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "盟军科技研发成果LV4（3000）",
+						"text": "盟军科技研发成果LV4（10000）",
 						"need": "true",
 						"condition": "flags.technology===4",
 						"action": [
@@ -5919,7 +5935,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=2000)",
+										"condition": "(status:money>=10000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5929,7 +5945,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "2000"
+												"value": "10000"
 											},
 											{
 												"type": "setValue",
@@ -5950,7 +5966,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "曼哈顿计划（500000）",
+						"text": "曼哈顿计划（100000）",
 						"need": "true",
 						"icon": "nuke",
 						"condition": "flags.technology===5",
@@ -5967,7 +5983,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=500000)",
+										"condition": "(status:money>=100000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5977,7 +5993,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "500000"
+												"value": "100000"
 											},
 											{
 												"type": "setValue",
