@@ -103,7 +103,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			{ "type": "sleep", "time": 500 },
 			{ "type": "setCurtain", "color": [0, 0, 0, 1], "time": 500, "keep": true },
 			{ "type": "showImage", "code": 1, "image": "failure.png", "loc": [0, 0], "opacity": 1, "time": 0 },
-			{ "type": "playBgm", "name": "failed.mp3", "keep": true },
+			{ "type": "playBgm", "name": "failed.mp3", "keep": false },
 			{ "type": "setCurtain", "color": [0, 0, 0, 0], "time": 1000 },
 			{ "type": "sleep", "time": 2000 },
 		].concat(arr), null, null, function () {

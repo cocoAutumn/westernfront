@@ -70,7 +70,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"tigere": {"name":"虎式E型","hp":100000,"atk":35000,"def":0,"money":10,"exp":10,"point":0,"special":[38,51,55,65],"type":"重坦","ap":151,"arm":144,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：88mm坦克炮","notBomb":false},
 	"stug3a": {"name":"三号突击炮A型","hp":15000,"atk":15000,"def":0,"money":6,"exp":6,"point":0,"special":[55,56],"type":"坦歼","ap":45,"arm":30,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：75mm短管炮"},
 	"stug3f": {"name":"三号突击炮F型","hp":40000,"atk":28000,"def":0,"money":6,"exp":6,"point":0,"special":[55,56,59],"type":"坦歼","ap":123,"arm":75,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"zone":20000,"description":"主武器：75mm反坦克炮"},
-	"attankinf": {"name":"德国反坦克排","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"步兵"},
+	"attankinf": {"name":"德国反坦克排","hp":0,"atk":0,"def":0,"money":1,"exp":1,"point":0,"special":[56],"type":"步兵","description":"主要武器：“铁拳”反坦克火箭筒","ap":200,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"me110g": {"name":"ME110G破坏者","hp":60000,"atk":9000,"def":0,"money":4,"exp":4,"point":0,"special":[30,64],"type":"重型战斗机","ap":0,"arm":0,"top":0,"bom":20000,"tpn":0,"dod":0,"gro":0,"description":"主武器：4×7.62mm机枪、2×20mm机炮和2×30mm机炮\n可能的额外挂载：2×1000kg炸弹"},
 	"tigerking": {"name":"兴登堡级战列舰","hp":150,"atk":100,"def":0,"money":0,"exp":0,"point":0,"special":[1,5,7,8],"type":"战列"},
 	"pak44": {"name":"Pak44反坦克炮","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"反坦克炮"},
