@@ -283,12 +283,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"stug3f": 65,
 		"attankinf": 66,
 		"me110g": 67,
-		"tigerking": 68,
 		"pak44": 69,
 		"veneto": 73,
 		"scharnhost": 74,
 		"bismark": 75,
-		"E412": 127,
 		"italyinf1": 76,
 		"italyinf2": 77,
 		"italyinf3": 78,
@@ -358,8 +356,14 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"kate": 138,
 		"badoglio": 22,
 		"zeppelin": 37,
-		"E632": 139,
-		"acepilot": 140
+		"acepilot": 140,
+		"E666": 144,
+		"stug4": 141,
+		"h39": 68,
+		"tigerking": 127,
+		"jagpanzer": 142,
+		"jagtiger": 143,
+		"panzer4h": 139
 	},
 	"enemy48": {
 		"angel": 0,
@@ -591,7 +595,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"orange8Gem": 216,
 		"medal6": 217,
 		"medal7": 218,
-		"medal8": 219
+		"medal8": 219,
+		"rocketLauncher": 220
 	},
 	"autotile": {
 		"autotile": 0,

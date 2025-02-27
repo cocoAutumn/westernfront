@@ -1,8 +1,8 @@
 main.floors.MT313=
 {
     "floorId": "MT313",
-    "title": "诺曼底-宝剑海滩",
-    "name": "诺曼底-宝剑海滩",
+    "title": "诺曼底-朱诺海滩",
+    "name": "诺曼底-朱诺海滩",
     "width": 15,
     "height": 15,
     "canFlyTo": true,

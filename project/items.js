@@ -2026,7 +2026,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "曼哈顿计划",
 		"canUseItemEffect": "true",
-		"text": "一次性道具。必须装备着具有投放核武器能力的轰炸机时才能使用。\n在当前地图投放一枚原子弹，清除全图非boss敌人和可破墙壁，并留下永久辐射效果：boss全阶段血量降低90%，且若有新敌人出现，新敌人血量为0。主角在当前地图不可以任何形式回复血量。"
+		"text": "一次性道具。必须装备着具有投放核武器能力的轰炸机（特指B29）时才能使用。\n在当前地图投放一枚原子弹，清除当前及相邻战斗层非boss敌人和可破墙壁，并留下永久辐射效果：boss全阶段血量降低90%，且若有新敌人出现，新敌人血量为0。"
 	},
 	"penicillin": {
 		"cls": "constants",
@@ -2177,5 +2177,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "，全属性提升",
 		"itemEffectTip": "，全属性提升",
 		"itemEffect": "core.status.hero.hpmax += 50000;\ncore.status.hero.hp += 50000;\ncore.status.hero.mana += 500;\ncore.status.hero.atk += 500;\ncore.status.hero.top += 15000;\ncore.status.hero.mdef += 2000;\nif (flags.anime === true) {\n\tcore.drawHeroAnimate('allup');\n}"
+	},
+	"rocketLauncher": {
+		"cls": "constants",
+		"name": "巴祖卡火箭筒",
+		"canUseItemEffect": "false",
+		"text": "步兵武器，无需装备。\n地面战时，被对方单向击穿，对方的20%减伤将失效。\n对建筑增伤10%，对火炮20%，对坦克5%。"
 	}
 }
