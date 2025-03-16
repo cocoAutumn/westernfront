@@ -577,6 +577,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"664": {"cls":"enemys","id":"jagpanzer"},
 	"665": {"cls":"enemys","id":"jagtiger"},
 	"666": {"cls":"enemys","id":"E666"},
+	"667": {"cls":"items","id":"I667"},
 	"10014": {"cls":"tileset","id":"X10014","canBreak":true},
 	"10015": {"cls":"tileset","id":"X10015","canBreak":true},
 	"10295": {"cls":"tileset","id":"X10295","canBreak":true},

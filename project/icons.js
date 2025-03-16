@@ -596,7 +596,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"medal6": 217,
 		"medal7": 218,
 		"medal8": 219,
-		"rocketLauncher": 220
+		"rocketLauncher": 220,
+		"I667": 221
 	},
 	"autotile": {
 		"autotile": 0,

@@ -337,7 +337,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT327",
 			"MT328",
 			"MT329",
-			"MT330"
+			"MT330",
+			"MT331",
+			"MT332",
+			"MT333",
+			"MT334",
+			"MT335",
+			"MT336",
+			"MT337",
+			"MT338",
+			"MT339",
+			"MT340"
 		],
 		"floorPartitions": [
 			[
@@ -825,6 +835,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"sounds": [
 			"005-System05.mp3",
 			"009-System09.mp3",
+			"048-Explosion01.mp3",
 			"049-Explosion02.mp3",
 			"050-Explosion03.mp3",
 			"094-Attack06.mp3",
@@ -866,6 +877,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"flak.mp3",
 			"floor.mp3",
 			"gem.mp3",
+			"getarea.mp3",
 			"gun.mp3",
 			"gunfire.mp3",
 			"heal.mp3",
