@@ -91,7 +91,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"fw190f8": {"name":"FW190F-8","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：2×13mm机枪和2×20mm机炮\n可能的额外挂载：1×1000kg炸弹"},
 	"do335": {"name":"Do335箭式","hp":0,"atk":0,"def":0,"money":4,"exp":4,"point":0,"special":[1,30,64],"type":"战斗机","description":"主武器：3×30mm机炮和2×20mm机炮\n可能的额外挂载：2×250kg炸弹和1×500kg炸弹","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"ta152": {"name":"Ta152","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：1×30mm机炮和2×20mm机炮"},
-	"me262": {"name":"ME262雨燕","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：4×30mm机炮\n可能的额外挂载：24×R4M火箭弹"},
+	"me262": {"name":"ME262雨燕","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[30,51,64,73],"type":"战斗机","description":"主武器：4×30mm机炮\n可能的额外挂载：24×R4M火箭弹"},
 	"me163": {"name":"ME163彗星","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"战斗机","description":"主武器：2×30mm机炮"},
 	"ju88c6": {"name":"JU88C-6","hp":25000,"atk":3500,"def":0,"money":4,"exp":4,"point":0,"special":[55],"type":"重型战斗机","description":"主武器：3×7.92mm机枪和3×20mm机炮\n自卫武器：4×7.92mm机枪","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"me410": {"name":"ME410大黄蜂","hp":20000,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[30,51,64],"type":"重型战斗机","description":"主武器：2×7.92mm机枪和4×20mm机炮\n自卫武器：2×13mm机枪"},
@@ -152,5 +152,9 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"tigerking": {"name":"虎式B型“虎王”","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[38,43,51,56,65],"type":"重坦","ap":222,"arm":200,"description":"主武器：88mm长管坦克炮"},
 	"jagpanzer": {"name":"猎豹歼击车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"坦歼"},
 	"jagtiger": {"name":"猎虎歼击车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"坦歼"},
-	"panzer4h": {"name":"四号H型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"description":"主武器：75mm长管坦克炮","type":"中坦","ap":130,"arm":80}
+	"panzer4h": {"name":"四号H型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"description":"主武器：75mm长管坦克炮","type":"中坦","ap":130,"arm":80},
+	"v1missile": {"name":"V1巡航导弹","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[48],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"v2missile": {"name":"V2弹道导弹","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[22],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"fritzx": {"name":"弗利茨X","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[49],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"sakura": {"name":"樱花","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0}
 }

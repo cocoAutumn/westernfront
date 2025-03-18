@@ -27,7 +27,14 @@ main.floors.MT324=
         {
             "type": "setCurtain",
             "time": 500
-        }
+        },
+        {
+            "type": "function",
+            "function": "function(){\nflags.learned[22]=true\n}"
+        },
+        "\t[系统提示]习得新技能：地毯式轰炸",
+        "\t[系统提示]\f[skill22.png,170,50]地毯式轰炸（3000指挥点）：仅可在地面使用。呼叫大规模轰炸机群展开全图轰炸，全体敌方陆军损失70%生命值，空军损失15%生命值。",
+        "\t[历史来源]\f[skill22.png,170,50]地毯式轰炸指像在地板上铺地毯一样地使用大量炸弹覆盖轰炸某一地域，杀伤和摧毁该地域的人员、装备。当地毯式轰炸的目标为人口或工业聚集区时，意在达成打击对方的士气和战争潜力这一战略目的。二战后期，盟军凭借着绝对的制空权，使用大规模重型轰炸机群对德国和日本进行大量地毯式轰炸，彻底摧毁轴心国的战争潜能，为二战的胜利奠定基础。但地毯式轰炸通常会造成大量平民伤亡，尤其是使用集束炸弹，现已被认定为非人道武器而被大部分国家禁用。"
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -80,650 +87,6 @@ main.floors.MT324=
             "你被地雷炸飞了出去，眨眼间没了踪影。最后士兵们只找到了你的其中一只胳膊。下辈子走路的时候看着点吧！",
             {
                 "type": "restart"
-            }
-        ],
-        "9,1": [
-            "\t[机场后勤,N516]长官，我方空军已就绪！",
-            {
-                "type": "choices",
-                "text": "\t[机场后勤,N516]请选择出战空军",
-                "choices": [
-                    {
-                        "text": "装备 P40C战斧",
-                        "icon": "p40c",
-                        "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
-                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "p40c"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 喷火MK1型",
-                        "icon": "spitfiremk1",
-                        "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
-                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "spitfiremk1"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 飓风MK2型",
-                        "icon": "hurricanemk2",
-                        "need": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
-                        "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "hurricanemk2"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 F4F野猫战斗机",
-                        "icon": "f4f3",
-                        "need": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
-                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "f4f3"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 喷火MK5战斗机",
-                        "icon": "spitfiremk5",
-                        "need": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
-                        "condition": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "spitfiremk5"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 喷火MK9战斗机",
-                        "icon": "spitfiremk9",
-                        "need": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
-                        "condition": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "spitfiremk9"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 F6F地狱猫战斗机",
-                        "icon": "f6f5",
-                        "need": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
-                        "condition": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "f6f5"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 P47B雷电战斗机",
-                        "icon": "p47b",
-                        "need": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
-                        "condition": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "p47b"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 F6F地狱猫战斗机",
-                        "icon": "f6f5",
-                        "need": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
-                        "condition": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "f6f5"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 喷火MK16战斗机",
-                        "icon": "spitfiremk16",
-                        "need": "core.hasItem('spitfiremk16')&&!core.hasEquip('spitfiremk16')",
-                        "condition": "core.hasItem('spitfiremk16')&&!core.hasEquip('spitfiremk16')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "spitfiremk16"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 F4U海盗战斗机",
-                        "icon": "f4u",
-                        "need": "core.hasItem('f4u')&&!core.hasEquip('f4u')",
-                        "condition": "core.hasItem('f4u')&&!core.hasEquip('f4u')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "f4u"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 P51野马战斗机",
-                        "icon": "p51d",
-                        "need": "core.hasItem('p51d')&&!core.hasEquip('p51d')",
-                        "condition": "core.hasItem('p51d')&&!core.hasEquip('p51d')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "p51d"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 SBD无畏式轰炸机",
-                        "icon": "sbd3",
-                        "need": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
-                        "condition": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "sbd3"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 英俊战士重型战斗机",
-                        "icon": "beautifighter",
-                        "need": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
-                        "condition": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "beautifighter"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 P38闪电重型战斗机",
-                        "icon": "p38",
-                        "need": "core.hasItem('p38')&&!core.hasEquip('p38')",
-                        "condition": "core.hasItem('p38')&&!core.hasEquip('p38')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "p38"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 台风攻击机",
-                        "icon": "typhoon",
-                        "need": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
-                        "condition": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "typhoon"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 蚊式战斗机",
-                        "icon": "mosquito",
-                        "need": "core.hasItem('mosquito')&&!core.hasEquip('mosquito')",
-                        "condition": "core.hasItem('mosquito')&&!core.hasEquip('mosquito')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "mosquito"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 P47D雷电攻击机",
-                        "icon": "p47d",
-                        "need": "core.hasItem('p47d')&&!core.hasEquip('p47d')",
-                        "condition": "core.hasItem('p47d')&&!core.hasEquip('p47d')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "p47d"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 SB2C地狱俯冲者",
-                        "icon": "sb2c",
-                        "need": "core.hasItem('sb2c')&&!core.hasEquip('sb2c')",
-                        "condition": "core.hasItem('sb2c')&&!core.hasEquip('sb2c')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "sb2c"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 P61黑寡妇",
-                        "icon": "p61",
-                        "need": "core.hasItem('p61')&&!core.hasEquip('p61')",
-                        "condition": "core.hasItem('p61')&&!core.hasEquip('p61')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "p61"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 剑鱼式鱼雷机",
-                        "icon": "swordfish",
-                        "need": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
-                        "condition": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "swordfish"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 TBD蹂躏者鱼雷机",
-                        "icon": "tbd",
-                        "need": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
-                        "condition": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "tbd"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 梭鱼式鱼雷机",
-                        "icon": "barracuda",
-                        "need": "core.hasItem('barracuda')&&!core.hasEquip('barracuda')",
-                        "condition": "core.hasItem('barracuda')&&!core.hasEquip('barracuda')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "barracuda"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 布伦海姆轰炸机",
-                        "icon": "blenheim",
-                        "need": "core.hasItem('blenheim')&&!core.hasEquip('blenheim')",
-                        "condition": "core.hasItem('blenheim')&&!core.hasEquip('blenheim')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "blenheim"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 B25米切尔轰炸机",
-                        "icon": "b25",
-                        "need": "core.hasItem('b25')&&!core.hasEquip('b25')",
-                        "condition": "core.hasItem('b25')&&!core.hasEquip('b25')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "b25"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 TBF复仇者",
-                        "icon": "tbf",
-                        "need": "core.hasItem('tbf')&&!core.hasEquip('tbf')",
-                        "condition": "core.hasItem('tbf')&&!core.hasEquip('tbf')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "tbf"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 B17空中堡垒",
-                        "icon": "b17",
-                        "need": "core.hasItem('b17')&&!core.hasEquip('b17')",
-                        "condition": "core.hasItem('b17')&&!core.hasEquip('b17')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "b17"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 兰开斯特轰炸机",
-                        "icon": "lancaster",
-                        "need": "core.hasItem('lancaster')&&!core.hasEquip('lancaster')",
-                        "condition": "core.hasItem('lancaster')&&!core.hasEquip('lancaster')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "lancaster"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前战斗机",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 4
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前攻击机",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 5
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前轰炸机",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 6
-                            }
-                        ]
-                    },
-                    {
-                        "text": "返回",
-                        "action": []
-                    }
-                ]
-            }
-        ],
-        "5,4": [
-            "\t[海军参谋,N515]长官，所有军舰待命中！",
-            {
-                "type": "choices",
-                "text": "\t[海军参谋,N515]请选择出战海军舰艇",
-                "choices": [
-                    {
-                        "text": "装备 E级驱逐舰",
-                        "icon": "classe",
-                        "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
-                        "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "classe"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 V级驱逐舰",
-                        "icon": "classv",
-                        "need": "core.hasItem('classv')&&!core.hasEquip('classv')",
-                        "condition": "core.hasItem('classv')&&!core.hasEquip('classv')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "classv"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 马汉级驱逐舰",
-                        "icon": "mahan",
-                        "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
-                        "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "mahan"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 本森级驱逐舰",
-                        "icon": "benson",
-                        "need": "core.hasItem('benson')&&!core.hasEquip('benson')",
-                        "condition": "core.hasItem('benson')&&!core.hasEquip('benson')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "benson"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 J级驱逐舰",
-                        "icon": "classj",
-                        "need": "core.hasItem('classj')&&!core.hasEquip('classj')",
-                        "condition": "core.hasItem('classj')&&!core.hasEquip('classj')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "classj"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 弗莱彻级驱逐舰",
-                        "icon": "flecher",
-                        "need": "core.hasItem('flecher')&&!core.hasEquip('flecher')",
-                        "condition": "core.hasItem('flecher')&&!core.hasEquip('flecher')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "flecher"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 爱丁堡号轻巡洋舰",
-                        "icon": "edinburgh",
-                        "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
-                        "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "edinburgh"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 谢菲尔德号轻巡洋舰",
-                        "icon": "sheffield",
-                        "need": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
-                        "condition": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "sheffield"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 克利夫兰号轻巡洋舰",
-                        "icon": "cleveland",
-                        "need": "core.hasItem('cleveland')&&!core.hasEquip('cleveland')",
-                        "condition": "core.hasItem('cleveland')&&!core.hasEquip('cleveland')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "cleveland"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 诺福克号重巡洋舰",
-                        "icon": "norfolk",
-                        "need": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                        "condition": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "norfolk"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 巴尔的摩级重巡洋舰",
-                        "icon": "baltimore",
-                        "need": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
-                        "condition": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "baltimore"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 厌战号战列舰",
-                        "icon": "warspite",
-                        "need": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
-                        "condition": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "warspite"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 乔治五世号战列舰",
-                        "icon": "kinggeorge5",
-                        "need": "core.hasItem('kinggeorge5')&&!core.hasEquip('kinggeorge5')",
-                        "condition": "core.hasItem('kinggeorge5')&&!core.hasEquip('kinggeorge5')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "kinggeorge5"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 北卡罗莱纳号战列舰",
-                        "icon": "northcarolina",
-                        "need": "core.hasItem('northcarolina')&&!core.hasEquip('northcarolina')",
-                        "condition": "core.hasItem('northcarolina')&&!core.hasEquip('northcarolina')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "northcarolina"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 衣阿华级战列舰",
-                        "icon": "iowa",
-                        "need": "core.hasItem('iowa')&&!core.hasEquip('iowa')",
-                        "condition": "core.hasItem('iowa')&&!core.hasEquip('iowa')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "iowa"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 鹰号航空母舰",
-                        "icon": "eagle",
-                        "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                        "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "eagle"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 突击者号航空母舰",
-                        "icon": "raider",
-                        "need": "core.hasItem('raider')&&!core.hasEquip('raider')",
-                        "condition": "core.hasItem('raider')&&!core.hasEquip('raider')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "raider"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 光辉号航空母舰",
-                        "icon": "illustrious",
-                        "need": "core.hasItem('illustrious')&&!core.hasEquip('illustrious')",
-                        "condition": "core.hasItem('illustrious')&&!core.hasEquip('illustrious')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "illustrious"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 埃塞克斯级航空母舰",
-                        "icon": "essex",
-                        "need": "core.hasItem('essex')&&!core.hasEquip('essex')",
-                        "condition": "core.hasItem('essex')&&!core.hasEquip('essex')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "essex"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前驱逐舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 1
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前巡洋舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 2
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前主力舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 3
-                            }
-                        ]
-                    },
-                    {
-                        "text": "返回",
-                        "action": []
-                    }
-                ]
             }
         ],
         "7,10": [
@@ -919,6 +282,30 @@ main.floors.MT324=
                             {
                                 "type": "loadEquip",
                                 "id": "firefly"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 巴尔的摩级重巡洋舰",
+                        "icon": "baltimore",
+                        "need": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
+                        "condition": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "baltimore"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 埃塞克斯级航空母舰",
+                        "icon": "essex",
+                        "need": "core.hasItem('essex')&&!core.hasEquip('essex')",
+                        "condition": "core.hasItem('essex')&&!core.hasEquip('essex')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "essex"
                             }
                         ]
                     },
@@ -2520,6 +1907,389 @@ main.floors.MT324=
                     }
                 ]
             }
+        ],
+        "8,10": [
+            {
+                "type": "playSound",
+                "name": "xinxinmagic.mp3"
+            },
+            "\t[系统提示]当前区域敌人特点：大量陆军伴随少量空军，有重型坦克出没。\n推荐携带技能：扫雷、破译、T34谢尔曼风琴、空中打击、补给线、潜行、地毯式轰炸\n推荐出战装备：谢尔曼萤火虫、埃塞克斯级航母、P51野马、P47D雷电、B17空中堡垒。"
+        ],
+        "5,4": [
+            "\t[机场后勤,N516]长官，我方空军已就绪！",
+            {
+                "type": "choices",
+                "text": "\t[机场后勤,N516]请选择出战空军",
+                "choices": [
+                    {
+                        "text": "装备 P40C战斧",
+                        "icon": "p40c",
+                        "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
+                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p40c"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 喷火MK1型",
+                        "icon": "spitfiremk1",
+                        "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "spitfiremk1"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 飓风MK2型",
+                        "icon": "hurricanemk2",
+                        "need": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
+                        "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "hurricanemk2"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 F4F野猫战斗机",
+                        "icon": "f4f3",
+                        "need": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "f4f3"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 喷火MK5战斗机",
+                        "icon": "spitfiremk5",
+                        "need": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
+                        "condition": "core.hasItem('spitfiremk5')&&!core.hasEquip('spitfiremk5')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "spitfiremk5"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 喷火MK9战斗机",
+                        "icon": "spitfiremk9",
+                        "need": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
+                        "condition": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "spitfiremk9"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 F6F地狱猫战斗机",
+                        "icon": "f6f5",
+                        "need": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
+                        "condition": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "f6f5"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 P47B雷电战斗机",
+                        "icon": "p47b",
+                        "need": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
+                        "condition": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p47b"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 F6F地狱猫战斗机",
+                        "icon": "f6f5",
+                        "need": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
+                        "condition": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "f6f5"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 喷火MK16战斗机",
+                        "icon": "spitfiremk16",
+                        "need": "core.hasItem('spitfiremk16')&&!core.hasEquip('spitfiremk16')",
+                        "condition": "core.hasItem('spitfiremk16')&&!core.hasEquip('spitfiremk16')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "spitfiremk16"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 F4U海盗战斗机",
+                        "icon": "f4u",
+                        "need": "core.hasItem('f4u')&&!core.hasEquip('f4u')",
+                        "condition": "core.hasItem('f4u')&&!core.hasEquip('f4u')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "f4u"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 P51野马战斗机",
+                        "icon": "p51d",
+                        "need": "core.hasItem('p51d')&&!core.hasEquip('p51d')",
+                        "condition": "core.hasItem('p51d')&&!core.hasEquip('p51d')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p51d"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 SBD无畏式轰炸机",
+                        "icon": "sbd3",
+                        "need": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
+                        "condition": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "sbd3"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 英俊战士重型战斗机",
+                        "icon": "beautifighter",
+                        "need": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
+                        "condition": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "beautifighter"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 P38闪电重型战斗机",
+                        "icon": "p38",
+                        "need": "core.hasItem('p38')&&!core.hasEquip('p38')",
+                        "condition": "core.hasItem('p38')&&!core.hasEquip('p38')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p38"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 台风攻击机",
+                        "icon": "typhoon",
+                        "need": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
+                        "condition": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "typhoon"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 蚊式战斗机",
+                        "icon": "mosquito",
+                        "need": "core.hasItem('mosquito')&&!core.hasEquip('mosquito')",
+                        "condition": "core.hasItem('mosquito')&&!core.hasEquip('mosquito')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "mosquito"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 P47D雷电攻击机",
+                        "icon": "p47d",
+                        "need": "core.hasItem('p47d')&&!core.hasEquip('p47d')",
+                        "condition": "core.hasItem('p47d')&&!core.hasEquip('p47d')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p47d"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 SB2C地狱俯冲者",
+                        "icon": "sb2c",
+                        "need": "core.hasItem('sb2c')&&!core.hasEquip('sb2c')",
+                        "condition": "core.hasItem('sb2c')&&!core.hasEquip('sb2c')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "sb2c"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 P61黑寡妇",
+                        "icon": "p61",
+                        "need": "core.hasItem('p61')&&!core.hasEquip('p61')",
+                        "condition": "core.hasItem('p61')&&!core.hasEquip('p61')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p61"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 剑鱼式鱼雷机",
+                        "icon": "swordfish",
+                        "need": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
+                        "condition": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "swordfish"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 TBD蹂躏者鱼雷机",
+                        "icon": "tbd",
+                        "need": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
+                        "condition": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "tbd"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 梭鱼式鱼雷机",
+                        "icon": "barracuda",
+                        "need": "core.hasItem('barracuda')&&!core.hasEquip('barracuda')",
+                        "condition": "core.hasItem('barracuda')&&!core.hasEquip('barracuda')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "barracuda"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 布伦海姆轰炸机",
+                        "icon": "blenheim",
+                        "need": "core.hasItem('blenheim')&&!core.hasEquip('blenheim')",
+                        "condition": "core.hasItem('blenheim')&&!core.hasEquip('blenheim')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "blenheim"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 B25米切尔轰炸机",
+                        "icon": "b25",
+                        "need": "core.hasItem('b25')&&!core.hasEquip('b25')",
+                        "condition": "core.hasItem('b25')&&!core.hasEquip('b25')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "b25"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 TBF复仇者",
+                        "icon": "tbf",
+                        "need": "core.hasItem('tbf')&&!core.hasEquip('tbf')",
+                        "condition": "core.hasItem('tbf')&&!core.hasEquip('tbf')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "tbf"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 B17空中堡垒",
+                        "icon": "b17",
+                        "need": "core.hasItem('b17')&&!core.hasEquip('b17')",
+                        "condition": "core.hasItem('b17')&&!core.hasEquip('b17')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "b17"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 兰开斯特轰炸机",
+                        "icon": "lancaster",
+                        "need": "core.hasItem('lancaster')&&!core.hasEquip('lancaster')",
+                        "condition": "core.hasItem('lancaster')&&!core.hasEquip('lancaster')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "lancaster"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前战斗机",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 4
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前攻击机",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 5
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前轰炸机",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 6
+                            }
+                        ]
+                    },
+                    {
+                        "text": "返回",
+                        "action": []
+                    }
+                ]
+            }
         ]
     },
     "changeFloor": {},
@@ -2532,10 +2302,10 @@ main.floors.MT324=
     "cannotMoveIn": {},
     "map": [
     [30509,30509,30509,30509,30509,30509,  0,  0,  0,631,30509,30509,631,  0,  0],
-    [631,  0,  0,631,  0,  0,631,  0,  0,516,30509,30509,  0,  0,631],
+    [631,  0,  0,631,  0,  0,631,  0,  0,  0,30509,30509,  0,  0,631],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [599,  0,631,  0,  0,631,  0,  0,  0,631,30509,30509,30509,631,  0],
-    [  0,  0,  0,  0,30509,515,30509,  0,  0,  0,30509,30509,30509,  0,  0],
+    [  0,  0,  0,  0,30509,516,30509,  0,  0,  0,30509,30509,30509,  0,  0],
     [  0,631,  0,631,  0,  0,  0,  0,  0,  0,30509,514,30509,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,631,  0,  0,  0,  0,  0,631,  0],
     [631,  0,  0,  0,  0,631,  0,  0,  0,631,  0,  0,  0,  0,  0],
@@ -2549,7 +2319,7 @@ main.floors.MT324=
 ],
     "bgmap": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,558,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 11],

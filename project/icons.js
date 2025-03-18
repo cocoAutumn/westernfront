@@ -363,7 +363,11 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"tigerking": 127,
 		"jagpanzer": 142,
 		"jagtiger": 143,
-		"panzer4h": 139
+		"panzer4h": 139,
+		"v1missile": 145,
+		"v2missile": 146,
+		"fritzx": 147,
+		"sakura": 148
 	},
 	"enemy48": {
 		"angel": 0,

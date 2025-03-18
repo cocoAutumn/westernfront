@@ -1,17 +1,17 @@
-main.floors.MT331=
+main.floors.MT342=
 {
-    "floorId": "MT331",
-    "title": "旗舰指挥室",
-    "name": "旗舰指挥室",
+    "floorId": "MT342",
+    "title": "法国—前线阵地",
+    "name": "法国—前线阵地",
     "width": 15,
     "height": 15,
-    "canFlyTo": false,
-    "canFlyFrom": false,
+    "canFlyTo": true,
+    "canFlyFrom": true,
     "canUseQuickShop": true,
-    "cannotViewMap": true,
+    "cannotViewMap": false,
     "images": [],
     "ratio": 1,
-    "defaultGround": "ground6",
+    "defaultGround": "grass3",
     "bgm": "cao6.mp3",
     "firstArrive": [
         {
@@ -32,7 +32,243 @@ main.floors.MT331=
     "eachArrive": [],
     "parallelDo": "",
     "events": {
-        "3,6": [
+        "7,9": [
+            "\t[参谋,N517]长官，请下达指示！",
+            "\t[系统提示]即将进入存档界面",
+            {
+                "type": "callSave"
+            },
+            {
+                "type": "insert",
+                "name": "选择技能"
+            },
+            {
+                "type": "choices",
+                "text": "是否立即前往战场？",
+                "choices": [
+                    {
+                        "text": "还没准备好",
+                        "action": []
+                    },
+                    {
+                        "text": "现在出发",
+                        "action": [
+                            {
+                                "type": "setCurtain",
+                                "color": [
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "time": 500,
+                                "keep": true
+                            },
+                            {
+                                "type": "changeFloor",
+                                "floorId": "MT343",
+                                "loc": [
+                                    0,
+                                    7
+                                ],
+                                "direction": "right"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "2,4": [
+            "\t[维修人员,N514]长官，所有战车准备就绪！",
+            {
+                "type": "choices",
+                "text": "\t[维修人员,N514]请选择出战坦克",
+                "choices": [
+                    {
+                        "text": "装备 雷诺FT17",
+                        "icon": "ft17",
+                        "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
+                        "condition": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "ft17"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 哈奇开斯H35",
+                        "icon": "h35",
+                        "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
+                        "condition": "core.hasItem('h35')&&!core.hasEquip('h35')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "h35"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 十字军巡洋坦克",
+                        "icon": "crusades",
+                        "need": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
+                        "condition": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "crusades"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 瓦伦丁步兵坦克",
+                        "icon": "valentine",
+                        "need": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
+                        "condition": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "valentine"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 玛蒂尔达步兵坦克",
+                        "icon": "matilda",
+                        "need": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
+                        "condition": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "matilda"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 M3格兰特中型坦克",
+                        "icon": "m3grant",
+                        "need": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
+                        "condition": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "m3grant"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 M4谢尔曼中型坦克",
+                        "icon": "m4",
+                        "need": "core.hasItem('m4')&&!core.hasEquip('m4')",
+                        "condition": "core.hasItem('m4')&&!core.hasEquip('m4')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "m4"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 丘吉尔MK3步兵坦克",
+                        "icon": "churchillmk3",
+                        "need": "core.hasItem('churchillmk3')&&!core.hasEquip('churchillmk3')",
+                        "condition": "core.hasItem('churchillmk3')&&!core.hasEquip('churchillmk3')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "churchillmk3"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 M4A2谢尔曼",
+                        "icon": "m4a2",
+                        "need": "core.hasItem('m4a2')&&!core.hasEquip('m4a2')",
+                        "condition": "core.hasItem('m4a2')&&!core.hasEquip('m4a2')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "m4a2"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 M4A1（76W）谢尔曼",
+                        "icon": "m4a3",
+                        "need": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
+                        "condition": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "m4a3"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 M4A3E2巨无霸",
+                        "icon": "m4a3e2",
+                        "need": "core.hasItem('m4a3e2')&&!core.hasEquip('m4a3e2')",
+                        "condition": "core.hasItem('m4a3e2')&&!core.hasEquip('m4a3e2')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "m4a3e2"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 谢尔曼“萤火虫”",
+                        "icon": "firefly",
+                        "need": "core.hasItem('firefly')&&!core.hasEquip('firefly')",
+                        "condition": "core.hasItem('firefly')&&!core.hasEquip('firefly')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "firefly"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 巴尔的摩级重巡洋舰",
+                        "icon": "baltimore",
+                        "need": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
+                        "condition": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "baltimore"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 埃塞克斯级航空母舰",
+                        "icon": "essex",
+                        "need": "core.hasItem('essex')&&!core.hasEquip('essex')",
+                        "condition": "core.hasItem('essex')&&!core.hasEquip('essex')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "essex"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前坦克",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 0
+                            }
+                        ]
+                    },
+                    {
+                        "text": "返回",
+                        "action": []
+                    }
+                ]
+            }
+        ],
+        "12,4": [
             "\t[机场后勤,N516]长官，我方空军已就绪！",
             {
                 "type": "choices",
@@ -408,511 +644,14 @@ main.floors.MT331=
                 ]
             }
         ],
+        "8,10": [
+            {
+                "type": "playSound",
+                "name": "xinxinmagic.mp3"
+            },
+            "\t[系统提示]当前区域敌人特点：地面战斗强度较低，但存在少量重型坦克和导弹。\n推荐携带技能：扫雷、破译、T34谢尔曼风琴、空中打击、补给线、地毯式轰炸、铝箔条\n推荐出战装备：谢尔曼萤火虫、巴尔的摩号重巡、埃塞克斯级航母、P51野马、P47D雷电、B17空中堡垒。"
+        ],
         "3,8": [
-            "\t[海军参谋,N515]长官，所有军舰待命中！",
-            {
-                "type": "choices",
-                "text": "\t[海军参谋,N515]请选择出战海军舰艇",
-                "choices": [
-                    {
-                        "text": "装备 E级驱逐舰",
-                        "icon": "classe",
-                        "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
-                        "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "classe"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 V级驱逐舰",
-                        "icon": "classv",
-                        "need": "core.hasItem('classv')&&!core.hasEquip('classv')",
-                        "condition": "core.hasItem('classv')&&!core.hasEquip('classv')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "classv"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 马汉级驱逐舰",
-                        "icon": "mahan",
-                        "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
-                        "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "mahan"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 本森级驱逐舰",
-                        "icon": "benson",
-                        "need": "core.hasItem('benson')&&!core.hasEquip('benson')",
-                        "condition": "core.hasItem('benson')&&!core.hasEquip('benson')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "benson"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 J级驱逐舰",
-                        "icon": "classj",
-                        "need": "core.hasItem('classj')&&!core.hasEquip('classj')",
-                        "condition": "core.hasItem('classj')&&!core.hasEquip('classj')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "classj"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 弗莱彻级驱逐舰",
-                        "icon": "flecher",
-                        "need": "core.hasItem('flecher')&&!core.hasEquip('flecher')",
-                        "condition": "core.hasItem('flecher')&&!core.hasEquip('flecher')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "flecher"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 爱丁堡号轻巡洋舰",
-                        "icon": "edinburgh",
-                        "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
-                        "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "edinburgh"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 谢菲尔德号轻巡洋舰",
-                        "icon": "sheffield",
-                        "need": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
-                        "condition": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "sheffield"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 克利夫兰号轻巡洋舰",
-                        "icon": "cleveland",
-                        "need": "core.hasItem('cleveland')&&!core.hasEquip('cleveland')",
-                        "condition": "core.hasItem('cleveland')&&!core.hasEquip('cleveland')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "cleveland"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 诺福克号重巡洋舰",
-                        "icon": "norfolk",
-                        "need": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                        "condition": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "norfolk"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 巴尔的摩级重巡洋舰",
-                        "icon": "baltimore",
-                        "need": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
-                        "condition": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "baltimore"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 厌战号战列舰",
-                        "icon": "warspite",
-                        "need": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
-                        "condition": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "warspite"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 乔治五世号战列舰",
-                        "icon": "kinggeorge5",
-                        "need": "core.hasItem('kinggeorge5')&&!core.hasEquip('kinggeorge5')",
-                        "condition": "core.hasItem('kinggeorge5')&&!core.hasEquip('kinggeorge5')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "kinggeorge5"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 北卡罗莱纳号战列舰",
-                        "icon": "northcarolina",
-                        "need": "core.hasItem('northcarolina')&&!core.hasEquip('northcarolina')",
-                        "condition": "core.hasItem('northcarolina')&&!core.hasEquip('northcarolina')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "northcarolina"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 衣阿华级战列舰",
-                        "icon": "iowa",
-                        "need": "core.hasItem('iowa')&&!core.hasEquip('iowa')",
-                        "condition": "core.hasItem('iowa')&&!core.hasEquip('iowa')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "iowa"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 鹰号航空母舰",
-                        "icon": "eagle",
-                        "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                        "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "eagle"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 突击者号航空母舰",
-                        "icon": "raider",
-                        "need": "core.hasItem('raider')&&!core.hasEquip('raider')",
-                        "condition": "core.hasItem('raider')&&!core.hasEquip('raider')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "raider"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 光辉号航空母舰",
-                        "icon": "illustrious",
-                        "need": "core.hasItem('illustrious')&&!core.hasEquip('illustrious')",
-                        "condition": "core.hasItem('illustrious')&&!core.hasEquip('illustrious')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "illustrious"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 埃塞克斯级航空母舰",
-                        "icon": "essex",
-                        "need": "core.hasItem('essex')&&!core.hasEquip('essex')",
-                        "condition": "core.hasItem('essex')&&!core.hasEquip('essex')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "essex"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前驱逐舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 1
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前巡洋舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 2
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前主力舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 3
-                            }
-                        ]
-                    },
-                    {
-                        "text": "返回",
-                        "action": []
-                    }
-                ]
-            }
-        ],
-        "11,8": [
-            "\t[参谋,N517]长官，请下达指示！",
-            "\t[系统提示]即将进入存档界面",
-            {
-                "type": "callSave"
-            },
-            {
-                "type": "insert",
-                "name": "选择技能"
-            },
-            {
-                "type": "choices",
-                "text": "是否立即前往战场？",
-                "choices": [
-                    {
-                        "text": "还没准备好",
-                        "action": []
-                    },
-                    {
-                        "text": "现在出发",
-                        "action": [
-                            {
-                                "type": "setCurtain",
-                                "color": [
-                                    0,
-                                    0,
-                                    0,
-                                    1
-                                ],
-                                "time": 500,
-                                "keep": true
-                            },
-                            {
-                                "type": "changeFloor",
-                                "floorId": "MT332",
-                                "loc": [
-                                    7,
-                                    13
-                                ],
-                                "direction": "up"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "11,6": [
-            "\t[维修人员,N514]长官，所有战车准备就绪！",
-            {
-                "type": "choices",
-                "text": "\t[维修人员,N514]请选择出战坦克",
-                "choices": [
-                    {
-                        "text": "装备 雷诺FT17",
-                        "icon": "ft17",
-                        "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
-                        "condition": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "ft17"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 哈奇开斯H35",
-                        "icon": "h35",
-                        "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
-                        "condition": "core.hasItem('h35')&&!core.hasEquip('h35')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "h35"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 十字军巡洋坦克",
-                        "icon": "crusades",
-                        "need": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
-                        "condition": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "crusades"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 瓦伦丁步兵坦克",
-                        "icon": "valentine",
-                        "need": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
-                        "condition": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "valentine"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 玛蒂尔达步兵坦克",
-                        "icon": "matilda",
-                        "need": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
-                        "condition": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "matilda"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 M3格兰特中型坦克",
-                        "icon": "m3grant",
-                        "need": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
-                        "condition": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "m3grant"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 M4谢尔曼中型坦克",
-                        "icon": "m4",
-                        "need": "core.hasItem('m4')&&!core.hasEquip('m4')",
-                        "condition": "core.hasItem('m4')&&!core.hasEquip('m4')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "m4"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 丘吉尔MK3步兵坦克",
-                        "icon": "churchillmk3",
-                        "need": "core.hasItem('churchillmk3')&&!core.hasEquip('churchillmk3')",
-                        "condition": "core.hasItem('churchillmk3')&&!core.hasEquip('churchillmk3')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "churchillmk3"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 M4A2谢尔曼",
-                        "icon": "m4a2",
-                        "need": "core.hasItem('m4a2')&&!core.hasEquip('m4a2')",
-                        "condition": "core.hasItem('m4a2')&&!core.hasEquip('m4a2')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "m4a2"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 M4A1（76W）谢尔曼",
-                        "icon": "m4a3",
-                        "need": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
-                        "condition": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "m4a3"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 M4A3E2巨无霸",
-                        "icon": "m4a3e2",
-                        "need": "core.hasItem('m4a3e2')&&!core.hasEquip('m4a3e2')",
-                        "condition": "core.hasItem('m4a3e2')&&!core.hasEquip('m4a3e2')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "m4a3e2"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 谢尔曼“萤火虫”",
-                        "icon": "firefly",
-                        "need": "core.hasItem('firefly')&&!core.hasEquip('firefly')",
-                        "condition": "core.hasItem('firefly')&&!core.hasEquip('firefly')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "firefly"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 巴尔的摩级重巡洋舰",
-                        "icon": "baltimore",
-                        "need": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
-                        "condition": "core.hasItem('baltimore')&&!core.hasEquip('baltimore')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "baltimore"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 埃塞克斯级航空母舰",
-                        "icon": "essex",
-                        "need": "core.hasItem('essex')&&!core.hasEquip('essex')",
-                        "condition": "core.hasItem('essex')&&!core.hasEquip('essex')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "essex"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前坦克",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 0
-                            }
-                        ]
-                    },
-                    {
-                        "text": "返回",
-                        "action": []
-                    }
-                ]
-            }
-        ],
-        "1,13": [
             {
                 "type": "choices",
                 "text": "\t[退役装备,N599]破烂换钱~收破烂嘞~",
@@ -2494,17 +2233,6 @@ main.floors.MT331=
                     }
                 ]
             }
-        ],
-        "13,13": [
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]这一关推荐把弃置已久的“抵抗运动”带上，因为这个技能会得到强化。",
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]另外，海军推荐带航母，不然没打多久就给你卸了！"
-        ],
-        "7,4": [
-            {
-                "type": "playSound",
-                "name": "xinxinmagic.mp3"
-            },
-            "\t[系统提示]当前区域敌人特点：地面战斗，强度不高，有空军支援。\n推荐携带技能：扫雷、抵抗运动、破译、T34谢尔曼风琴、空中打击、补给线、地毯式轰炸\n推荐出战装备：谢尔曼萤火虫、埃塞克斯级航母、P51野马、P47D雷电、B17空中堡垒。"
         ]
     },
     "changeFloor": {},
@@ -2516,55 +2244,55 @@ main.floors.MT331=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [30243,30576,30577,30577,30577,30577,30577,30577,30577,30577,30577,30577,30577,30578,30243],
-    [30251,30584,30585,30585,30585,30585,30585,30585,30585,30585,30585,30585,30585,30586,30251],
-    [30251,90673,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,90250,30251],
-    [30251,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,90258,30251],
-    [30251,  0,  0,  0,10136,10137,10137,10137,10137,10137,10138,  0,  0,  0,30251],
-    [30251,  0,  0,  0,10144,10145,10145,10145,10145,10145,10146,  0,  0,  0,30251],
-    [30251,  0,  0,516,10144,10145,10145,10145,10145,10145,10146,514,  0,  0,30251],
-    [30251,  0,  0,  0,10144,10145,10145,10145,10145,10145,10146,  0,  0,  0,30251],
-    [30251,  0,  0,515,10144,10145,10145,10145,10145,10145,10146,517,  0,  0,30251],
-    [30251,  0,  0,  0,10144,10145,10145,10145,10145,10145,10146,  0,  0,  0,30251],
-    [30251,  0,  0,  0,10144,10145,10145,10145,10145,10145,10146,  0,  0,  0,30251],
-    [30251,  0,  0,  0,10144,10145,10145,10145,10145,10145,10146,  0,  0,  0,30251],
-    [30251,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,30251],
-    [30251,599,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,601,30251],
-    [30259,90673,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,90673,30259]
+    [  0,  0,  0,  0,  0,  0,141,  0,141,  0,  0,  0,  0,  0,  0],
+    [  0,  0,20114,  0,  0,  0,141,  0,141,  0,  0,  0,20114,  0,  0],
+    [20120,20121,20122,20123,20124,  0,141,141,141,  0,20120,20121,20122,20123,20124],
+    [20128,20129,20130,20131,20132,  0,  0,  0,  0,  0,20128,20129,20130,20131,20132],
+    [20136,20137,514,20139,20140,  0,  0,  0,  0,  0,20136,20137,516,20139,20140],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,20114,  0,  0,  0,  0,  0,  0,  0],
+    [141,141,141,  0,  0,20120,20121,20122,20123,20124,  0,  0,  0,  0,  0],
+    [  0,  0,141,599,  0,20128,20129,20130,20131,20132,  0,  0,30509,30509,30509],
+    [  0,  0,141,  0,  0,20136,20137,517,20139,20140,  0,  0,30509,505,30509],
+    [141,141,141,  0,  0,  0,  0,  0,129,  0,  0,  0,30509,30509,30509],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [30509,  0,549,  0,30509,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [30509,549,  0,549,30509,  0,30509,30509,30509,30509,30509,  0,30509,30509,30509],
+    [30509,30509,30509,30509,30509,  0,30509,30509,30509,30509,30509,  0,30509,504,504]
 ],
     "bgmap": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,556,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,90666,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,90674,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,90668,  0,  0,  0,  0,  0,  0,  0,90669,  0,  0,  0],
-    [  0,  0,558,90676,  0,  0,  0,  0,  0,  0,  0,90677,557,  0,  0],
-    [  0,  0,  0,90668,  0,  0,  0,  0,  0,  0,  0,90669,  0,  0,  0],
-    [  0,  0,558,90676,  0,  0,  0,  0,  0,  0,  0,90677,557,  0,  0],
-    [  0,  0,  0,90668,  0,  0,  0,  0,  0,  0,  0,90669,  0,  0,  0],
-    [  0,  0,  0,90676,  0,  0,  0,  0,  0,  0,  0,90677,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,10152,10153,10153,10153,10153,10153,10154,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,90667,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,20138,  0,  0,  0,  0,  0,  0,  0,  0,  0,20138,  0,  0],
+    [  0,  0,559,  0,  0,  0,  0,  0,  0,  0,  0,  0,559,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,559,  0,  0,  0,20138,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,559,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,559,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
 ],
     "fgmap": [
-    [  0,  0,  0,90265,  0,  0,30485,30486,30487,  0,  0,90267,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,30493,30494,30495,  0,  0,  0,  0,  0,  0],
+    [  0,20105,20106,20107,  0,  0,  0,  0,  0,  0,  0,20105,20106,20107,  0],
+    [20112,20113,  0,20115,20116,  0,  0,  0,  0,  0,20112,20113,  0,20115,20116],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,90268,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,90268,  0,80678,  0,80678,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,80626,  0,  0,90268,  0,  0,  0,  0],
-    [  0,  0,  0,  0,90268,80678,  0,  0,80678,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,20105,20106,20107,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,20112,20113,  0,20115,20116,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,90268,  0,80678,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
 ],
-    "area": "海洋"
+    "area": "陆地"
 }

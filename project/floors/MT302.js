@@ -850,10 +850,10 @@ main.floors.MT302=
                             "type": "changeFloor",
                             "floorId": "MT304",
                             "loc": [
-                                -1,
-                                -1
+                                7,
+                                7
                             ],
-                            "direction": "up"
+                            "direction": "down"
                         }
                     ],
                     "no": [
