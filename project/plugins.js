@@ -501,8 +501,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				damage *= 1.3;
 			if (core.hasEquip('p47b')) //P47B雷电
 				damage *= 0.8;
-			if (core.hasSpecial(mon_special, 30) && nthTurn > 0 && nthTurn % 2 === 0) { //航炮
-				damage += mon_atk * 2;
+			if (core.hasSpecial(mon_special, 30)) { //航炮
+				damage += mon_atk * 0.3;
 			}
 			// 航弹
 			if (core.hasSpecial(mon_special, 28) && nthTurn > 0 && nthTurn % mon_spd === 0) {
