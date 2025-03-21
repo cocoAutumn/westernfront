@@ -234,7 +234,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"evilPrincess": 50,
 		"blademaster": 48,
 		"evilFairy": 51,
-		"greenGateKeeper": 70,
 		"evilHero": 40,
 		"blackKing": 28,
 		"yellowKing": 29,
@@ -367,7 +366,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"v1missile": 145,
 		"v2missile": 146,
 		"fritzx": 147,
-		"sakura": 148
+		"sakura": 148,
+		"model": 70
 	},
 	"enemy48": {
 		"angel": 0,
@@ -621,6 +621,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"autotile14": 0,
 		"autotile15": 0,
 		"autotile16": 0,
-		"autotile17": 0
+		"autotile17": 0,
+		"autotile18": 0,
+		"autotile19": 0,
+		"autotile20": 0
 	}
 }

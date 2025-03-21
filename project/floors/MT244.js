@@ -66,7 +66,24 @@ main.floors.MT244=
     "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
-    "autoEvent": {},
+    "autoEvent": {
+        "6,0": {
+            "0": {
+                "condition": "!core.hasEnemyLeft(undefined,['MT241','MT242','MT243','MT244'])",
+                "currentFloor": false,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.mission[35][2]=true\n}"
+                    }
+                ]
+            },
+            "1": null
+        }
+    },
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [

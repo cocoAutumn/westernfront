@@ -1951,47 +1951,74 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"bigbluePotion": {
 		"cls": "items",
 		"name": "大蓝血瓶",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，生命+50w",
+		"itemEffectTip": "，生命+50w",
+		"itemEffect": "core.status.hero.hp += 500000;"
 	},
 	"bigyellowPotion": {
 		"cls": "items",
 		"name": "大黄血瓶",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，生命+100w",
+		"itemEffectTip": "，生命+100w",
+		"itemEffect": "core.status.hero.hp += 1000000;"
 	},
 	"biggreenPotion": {
 		"cls": "items",
 		"name": "大绿血瓶",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，生命+250w",
+		"itemEffectTip": "，生命+250w",
+		"itemEffect": "core.status.hero.hp += 2500000;"
 	},
 	"bigorangePotion": {
 		"cls": "items",
 		"name": "大橙血瓶",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，生命+500w",
+		"itemEffectTip": "，生命+500w",
+		"itemEffect": "core.status.hero.hp += 5000000;"
 	},
 	"bigpurplePotion": {
 		"cls": "items",
 		"name": "大紫血瓶",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，生命+1000w",
+		"itemEffectTip": "，生命+1000w",
+		"itemEffect": "core.status.hero.hp += 10000000;"
 	},
 	"bigcyanPotion": {
 		"cls": "items",
 		"name": "大青血瓶",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，生命+2500w",
+		"itemEffectTip": "，生命+2500w",
+		"itemEffect": "core.status.hero.hp += 25000000;"
 	},
 	"bigdarkbluePotion": {
 		"cls": "items",
 		"name": "大深蓝血瓶",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，生命+5000w",
+		"itemEffectTip": "，生命+5000w",
+		"itemEffect": "core.status.hero.hp += 50000000;"
 	},
 	"bigdarkredPotion": {
 		"cls": "items",
 		"name": "大赤血瓶",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，生命+1e",
+		"itemEffectTip": "，生命+1e",
+		"itemEffect": "core.status.hero.hp += 100000000;"
 	},
 	"biggoldPotion": {
 		"cls": "items",
 		"name": "大金血瓶",
-		"canUseItemEffect": "true"
+		"canUseItemEffect": "true",
+		"text": "，生命+2e",
+		"itemEffectTip": "，生命+2e",
+		"itemEffect": "core.status.hero.hp += 200000000;"
 	},
 	"medal5": {
 		"cls": "items",

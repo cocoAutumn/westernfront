@@ -279,10 +279,10 @@ main.floors.MT363=
                         "type": "changeFloor",
                         "floorId": "MT365",
                         "loc": [
-                            7,
+                            3,
                             7
                         ],
-                        "direction": "down"
+                        "direction": "right"
                     }
                 ],
                 "no": [

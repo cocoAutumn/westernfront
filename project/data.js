@@ -377,7 +377,27 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT367",
 			"MT368",
 			"MT369",
-			"MT370"
+			"MT370",
+			"MT371",
+			"MT372",
+			"MT373",
+			"MT374",
+			"MT375",
+			"MT376",
+			"MT377",
+			"MT378",
+			"MT379",
+			"MT380",
+			"MT381",
+			"MT382",
+			"MT383",
+			"MT384",
+			"MT385",
+			"MT386",
+			"MT387",
+			"MT388",
+			"MT389",
+			"MT390"
 		],
 		"floorPartitions": [
 			[
@@ -667,7 +687,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"nuke.jpg",
 			"p38.jpg",
 			"p40c.jpg",
-			"p40e.jpg",
 			"p47.jpg",
 			"p47d.jpg",
 			"p51.jpg",
@@ -724,6 +743,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"tassigne.png",
 			"tbd.jpg",
 			"tbf.jpg",
+			"tirpitzsunk.jpg",
 			"title1.png",
 			"title10.png",
 			"title11.png",
@@ -755,6 +775,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"warspite.jpg",
 			"win.png",
 			"winskin.png",
+			"wittmann.png",
 			"wrestler.jpg",
 			"z1007.jpg",
 			"zeppelin.jpg"
@@ -769,7 +790,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"Egito.png",
 			"vxmota.png",
 			"Holy.png",
-			"017-MineTown01.png"
+			"017-MineTown01.png",
+			"008-Snowfield01.png"
 		],
 		"animates": [
 			"aim",
@@ -6035,7 +6057,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"type": "comment",
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
-							"\t[曼哈顿计划]一次性道具。必须装备着具有投放核武器能力的轰炸机时才能使用。\n在当前地图投放一枚原子弹，清除全图非boss敌人和可破墙壁，并留下永久辐射效果：boss全阶段血量降低90%，且若有新敌人出现，新敌人血量为0。主角在当前地图不可以任何形式回复血量。",
+							"\t[曼哈顿计划]一次性道具。必须装备着具有投放核武器能力的轰炸机时才能使用。\n在当前地图投放一枚原子弹，抹除当前以及相邻两个战斗层中所有非boss敌人和可破墙壁（不获得金经），并留下永久辐射效果：boss全阶段血量降低90%，且若有新敌人出现，新敌人血量为0。",
 							"\t[历史来源]\f[manhattan.jpg,170,50]美国陆军部于1942年6月开始实施利用核裂变反应来研制原子弹的计划，亦称曼哈顿计划。该工程集中了当时西方国家（除德国外）最优秀的核科学家，动员了10万多人参加这一工程，历时3年，耗资20亿美元，于1945年7月16日成功地进行了世界上第一次核爆炸，并按计划制造出两颗实用的原子弹——小男孩和胖子。至于这之后发生了什么……那天，广岛6000℃的高温，没一个人喊热。",
 							{
 								"type": "confirm",

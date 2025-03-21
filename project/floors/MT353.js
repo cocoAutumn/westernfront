@@ -20,7 +20,24 @@ main.floors.MT353=
     "ratio": 1,
     "defaultGround": "ground6",
     "bgm": "europe3.mp3",
-    "firstArrive": [],
+    "firstArrive": [
+        "\t[系统提示]已深入德军腹地。航程不够的空军类装备将撤退。",
+        {
+            "type": "unloadEquip",
+            "pos": 5
+        },
+        {
+            "type": "if",
+            "condition": "(!core.hasEquip('p51d'))",
+            "true": [
+                {
+                    "type": "unloadEquip",
+                    "pos": 4
+                }
+            ],
+            "false": []
+        }
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},

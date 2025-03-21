@@ -20,7 +20,6 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"evilPrincess": {"name":"痛苦魔女","hp":1000,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[10]},
 	"blademaster": {"name":"剑圣","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"evilFairy": {"name":"黑暗仙子","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
-	"greenGateKeeper": {"name":"龙德施泰特","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"blackKing": {"name":"曼施坦因","hp":1000,"atk":500,"def":0,"money":1000,"exp":1000,"point":0,"special":0,"notBomb":true},
 	"yellowKing": {"name":"黄衣魔王","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
 	"greenKing": {"name":"凯赛林","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0},
@@ -148,7 +147,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"acepilot": {"name":"王牌飞行员","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[6,25,30,38,57,70],"type":"战斗机","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"E666": {"name":"突击虎","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"坦歼"},
 	"stug4": {"name":"四号坦克歼击车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"坦歼"},
-	"h39": {"name":"兴登堡级战列舰","hp":150,"atk":100,"def":0,"money":0,"exp":0,"point":0,"special":[1,5,7,8],"type":"战列"},
+	"h39": {"name":"米歇尔·魏特曼","hp":150,"atk":100,"def":0,"money":200,"exp":200,"point":0,"special":[1,38,42,43,57,59,63,71,72],"type":"重坦","description":"座驾：虎王重型坦克","gro":0,"dod":0,"tpn":0,"bom":0,"top":0,"arm":200,"ap":222},
 	"tigerking": {"name":"虎式B型“虎王”","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[38,43,51,56,65],"type":"重坦","ap":222,"arm":200,"description":"主武器：88mm长管坦克炮"},
 	"jagpanzer": {"name":"猎豹歼击车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"坦歼"},
 	"jagtiger": {"name":"猎虎歼击车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"坦歼"},
@@ -156,5 +155,6 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"v1missile": {"name":"V1巡航导弹","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[48],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"v2missile": {"name":"V2弹道导弹","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[22,65],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"fritzx": {"name":"弗里茨X","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[49,65],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"sakura": {"name":"樱花","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[65],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0}
+	"sakura": {"name":"樱花","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[65],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"model": {"name":"莫德尔","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[25,42,57,59,63,71],"type":"重坦"}
 }
