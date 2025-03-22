@@ -46,7 +46,7 @@ main.floors.MT380=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量强力地面部队，有导弹。\n推荐携带技能：破译、补给线、C47空中列车、T34谢尔曼风琴、地毯式轰炸、铝箔条、翼尖挑衅\n推荐出战装备：谢尔曼萤火虫、巴尔的摩号重巡、埃塞克斯级航母、P51野马、P47D雷电、兰开斯特。"
+            "\t[系统提示]当前区域敌人特点：大量强力地面部队。\n推荐携带技能：破译、补给线、空中打击、C47空中列车、T34谢尔曼风琴、地毯式轰炸、铝箔条\n推荐出战装备：谢尔曼萤火虫、巴尔的摩号重巡、埃塞克斯级航母、P51野马、P47D雷电、兰开斯特。"
         ],
         "7,4": [
             "\t[维修人员,N514]长官，所有战车准备就绪！",
@@ -684,33 +684,24 @@ main.floors.MT380=
                         "text": "现在出发",
                         "action": [
                             {
-                                "type": "if",
-                                "condition": "core.hasEquip('lancaster')",
-                                "true": [
-                                    {
-                                        "type": "setCurtain",
-                                        "color": [
-                                            0,
-                                            0,
-                                            0,
-                                            1
-                                        ],
-                                        "time": 500,
-                                        "keep": true
-                                    },
-                                    {
-                                        "type": "changeFloor",
-                                        "floorId": "MT381",
-                                        "loc": [
-                                            2,
-                                            7
-                                        ],
-                                        "direction": "right"
-                                    }
+                                "type": "setCurtain",
+                                "color": [
+                                    0,
+                                    0,
+                                    0,
+                                    1
                                 ],
-                                "false": [
-                                    "必须装备兰开斯特轰炸机才可执行任务！（作者技术不够，不会检测你选择的技能，请自觉装备高脚柜炸弹，否则会卡关）"
-                                ]
+                                "time": 500,
+                                "keep": true
+                            },
+                            {
+                                "type": "changeFloor",
+                                "floorId": "MT381",
+                                "loc": [
+                                    2,
+                                    7
+                                ],
+                                "direction": "right"
                             }
                         ]
                     }

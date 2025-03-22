@@ -235,9 +235,7 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"blademaster": 48,
 		"evilFairy": 51,
 		"evilHero": 40,
-		"blackKing": 28,
 		"yellowKing": 29,
-		"greenKing": 30,
 		"redKing": 44,
 		"blueKing": 45,
 		"keiskeiFairy": 71,
@@ -356,7 +354,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"badoglio": 22,
 		"zeppelin": 37,
 		"acepilot": 140,
-		"E666": 144,
 		"stug4": 141,
 		"h39": 68,
 		"tigerking": 127,
@@ -367,7 +364,10 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"v2missile": 146,
 		"fritzx": 147,
 		"sakura": 148,
-		"model": 70
+		"model": 70,
+		"stugtiger": 144,
+		"manstein": 28,
+		"rundstedt": 30
 	},
 	"enemy48": {
 		"angel": 0,
