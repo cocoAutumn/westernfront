@@ -13,7 +13,22 @@ main.floors.MT387=
     "ratio": 1,
     "defaultGround": "snow",
     "bgm": "cao6.mp3",
-    "firstArrive": [],
+    "firstArrive": [
+        {
+            "type": "setHeroOpacity",
+            "opacity": 1
+        },
+        {
+            "type": "showStatusBar"
+        },
+        {
+            "type": "update"
+        },
+        {
+            "type": "setCurtain",
+            "time": 500
+        }
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
