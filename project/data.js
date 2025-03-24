@@ -417,7 +417,17 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT407",
 			"MT408",
 			"MT409",
-			"MT410"
+			"MT410",
+			"MT411",
+			"MT412",
+			"MT413",
+			"MT414",
+			"MT415",
+			"MT416",
+			"MT417",
+			"MT418",
+			"MT419",
+			"MT420"
 		],
 		"floorPartitions": [
 			[
@@ -678,6 +688,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"illustrious.jpg",
 			"independence.jpg",
 			"iowa.jpg",
+			"joinforces.jpg",
 			"kasselring.png",
 			"kinggeorgev.jpg",
 			"lancaster.jpg",
@@ -798,7 +809,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"wittmann.png",
 			"wrestler.jpg",
 			"z1007.jpg",
-			"zeppelin.jpg"
+			"zeppelin.jpg",
+			"zhukov.png"
 		],
 		"tilesets": [
 			"magictower.png",
