@@ -427,7 +427,27 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"MT417",
 			"MT418",
 			"MT419",
-			"MT420"
+			"MT420",
+			"MT421",
+			"MT422",
+			"MT423",
+			"MT424",
+			"MT425",
+			"MT426",
+			"MT427",
+			"MT428",
+			"MT429",
+			"MT430",
+			"MT431",
+			"MT432",
+			"MT433",
+			"MT434",
+			"MT435",
+			"MT436",
+			"MT437",
+			"MT438",
+			"MT439",
+			"MT440"
 		],
 		"floorPartitions": [
 			[
@@ -593,6 +613,74 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			[
 				"MT294",
 				"MT302"
+			],
+			[
+				"MT303",
+				"MT308"
+			],
+			[
+				"MT309",
+				"MT316"
+			],
+			[
+				"MT317",
+				"MT322"
+			],
+			[
+				"MT323",
+				"MT329"
+			],
+			[
+				"MT330",
+				"MT340"
+			],
+			[
+				"MT341",
+				"MT347"
+			],
+			[
+				"MT348",
+				"MT356"
+			],
+			[
+				"MT357",
+				"MT363"
+			],
+			[
+				"MT364",
+				"MT371"
+			],
+			[
+				"MT372",
+				"MT378"
+			],
+			[
+				"MT379",
+				"MT385"
+			],
+			[
+				"MT386",
+				"MT393"
+			],
+			[
+				"MT394",
+				"MT400"
+			],
+			[
+				"MT401",
+				"MT407"
+			],
+			[
+				"MT408",
+				"MT414"
+			],
+			[
+				"MT415",
+				"MT421"
+			],
+			[
+				"MT422",
+				"MT429"
 			]
 		],
 		"images": [
@@ -688,6 +776,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"illustrious.jpg",
 			"independence.jpg",
 			"iowa.jpg",
+			"itagaki.jpg",
 			"joinforces.jpg",
 			"kasselring.png",
 			"kinggeorgev.jpg",
@@ -716,6 +805,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"norfolk.jpg",
 			"northcarolina.jpg",
 			"nuke.jpg",
+			"ozawa.jpg",
 			"p38.jpg",
 			"p40c.jpg",
 			"p47.jpg",
@@ -808,6 +898,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"winskin.png",
 			"wittmann.png",
 			"wrestler.jpg",
+			"yamashita.jpg",
 			"z1007.jpg",
 			"zeppelin.jpg",
 			"zhukov.png"
