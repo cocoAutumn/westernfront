@@ -272,10 +272,10 @@ main.floors.MT428=
                 "yes": [
                     {
                         "type": "changeFloor",
-                        "floorId": "MT430",
+                        "floorId": "MT431",
                         "loc": [
                             7,
-                            7
+                            3
                         ],
                         "direction": "down"
                     }

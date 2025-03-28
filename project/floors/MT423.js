@@ -12,8 +12,23 @@ main.floors.MT423=
     "images": [],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "bgm4.mp3",
-    "firstArrive": [],
+    "bgm": "cao6.mp3",
+    "firstArrive": [
+        {
+            "type": "setHeroOpacity",
+            "opacity": 1
+        },
+        {
+            "type": "showStatusBar"
+        },
+        {
+            "type": "update"
+        },
+        {
+            "type": "setCurtain",
+            "time": 500
+        }
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {

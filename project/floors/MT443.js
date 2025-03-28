@@ -1,8 +1,8 @@
-main.floors.MT436=
+main.floors.MT443=
 {
-    "floorId": "MT436",
-    "title": "大阪",
-    "name": "大阪",
+    "floorId": "MT443",
+    "title": "东京",
+    "name": "东京",
     "width": 15,
     "height": 15,
     "canFlyTo": true,
@@ -12,15 +12,29 @@ main.floors.MT436=
     "images": [],
     "ratio": 1,
     "defaultGround": "ground",
-    "bgm": "cao7.mp3",
+    "bgm": "hiaction2.mp3",
     "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
-        "7,0": [
+        "7,4": [
             {
                 "type": "function",
-                "function": "function(){\nflags.mission[59][0]=true\n}"
+                "function": "function(){\nflags.mission[60][0]=true\n}"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:clearcommunist===13)",
+                "true": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.mission[60][1]=true\n}"
+                    }
+                ]
+            },
+            {
+                "type": "function",
+                "function": "function(){\nif(core.searchBlock('japinf6',['MT439','MT440','MT441','MT442','MT443']).length>=1)flags.mission[60][2]=true\n}"
             },
             {
                 "type": "unloadEquip",
@@ -249,66 +263,22 @@ main.floors.MT436=
                 "opacity": 0
             },
             {
+                "type": "playSound",
+                "name": "xinxinmagic.mp3"
+            },
+            "\t[世界消息]\r[aqua]日本 战败！\r",
+            {
                 "type": "pauseBgm"
             },
             {
-                "type": "setValue",
-                "name": "flag:stage",
-                "value": "60"
-            },
-            {
-                "type": "choices",
-                "text": "\t[战斗即将接近尾声]只能有一支部队来给这场旷日持久的战争画上句号。你选择？（提示：有时候，红色的选项未必代表着错误）",
-                "choices": [
-                    {
-                        "text": "美国",
-                        "color": [
-                            0,
-                            0,
-                            255,
-                            1
-                        ],
-                        "action": [
-                            {
-                                "type": "setValue",
-                                "name": "flag:final",
-                                "value": "1"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "苏联",
-                        "color": [
-                            255,
-                            0,
-                            0,
-                            1
-                        ],
-                        "action": [
-                            {
-                                "type": "setValue",
-                                "name": "flag:final",
-                                "value": "2"
-                            },
-                            {
-                                "type": "setHeroIcon",
-                                "name": "hero2.png"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "type": "confirm",
-                "text": "跳过剧情吗？",
-                "yes": [],
-                "no": []
+                "type": "win",
+                "reason": "EX Stage 日暮途穷（余烬复燃）"
             }
         ]
     },
     "changeFloor": {
         "7,14": {
-            "floorId": "MT435",
+            "floorId": "MT442",
             "loc": [
                 7,
                 0
@@ -316,34 +286,179 @@ main.floors.MT436=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {},
+    "afterBattle": {
+        "5,5": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "6,5": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "8,5": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "9,5": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "5,6": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "6,6": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "7,6": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "8,6": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "9,6": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "5,7": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "6,7": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "7,7": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "8,7": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "9,7": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "5,8": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "6,8": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "7,8": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "8,8": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "9,8": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT443_7_5",
+                "operator": "+=",
+                "value": "1"
+            }
+        ]
+    },
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
-        "6,0": {
+        "7,5": {
             "0": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['步兵','反坦克炮','榴弹炮','高射炮','轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[x?.event?.id]?.type),['MT432','MT433','MT434','MT435','MT436']).length===0",
-                "currentFloor": false,
+                "condition": "flag:door_MT443_7_5==19",
+                "currentFloor": true,
                 "priority": 0,
                 "delayExecute": false,
                 "multiExecute": false,
                 "data": [
                     {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[59][1]=true\n}"
-                    }
-                ]
-            },
-            "1": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['战斗机','重型战斗机','俯冲轰炸机','鱼雷轰炸机','中型轰炸机'].includes(core.material.enemys[x?.event?.id]?.type),['MT432','MT433','MT434','MT435','MT436']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
+                        "type": "openDoor"
+                    },
                     {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[59][2]=true\n}"
+                        "type": "setValue",
+                        "name": "flag:door_MT443_7_5",
+                        "operator": "=",
+                        "value": "null"
                     }
                 ]
             }
@@ -352,21 +467,21 @@ main.floors.MT436=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [ 21, 21,  2,  0,648,645,  2, 89,  2,645,648,  0,  2, 21, 21],
-    [  2,687, 82,705,648,645,  2,694,  2,645,648,705, 82,687,  2],
-    [710,  0,  2,  0,648,645,  2,694,  2,645,648,  0,  2,  0,710],
-    [ 81,  2,  2,  2,  2,  2,  2,693,  2,  2,  2,  2,  2,  2, 81],
-    [684,  0,691,  0,  2,647,  2,693,  2,647,  2,  0,691,  0,684],
-    [  2,  2,  2,687,  2,647,  2,692,  2,647,  2,687,  2,  2,  2],
-    [646,  0,  2,  0,  2,647,687,  0,687,647,  2,  0,  2,  0,646],
-    [646,700, 81,684,  2,  2,  2, 82,  2,  2,  2,684, 81,700,646],
-    [646,  0,  2,691,  0,  0,695,702,695,  0,  0,691,  2,  0,646],
-    [  2,  2,  2, 81,  2,  2,  2, 81,  2,  2,  2, 81,  2,  2,  2],
-    [  0,701,  0,691,686,685,  2, 21,  2,685,686,691,  0,701,  0],
-    [687,  2,  2,  2,  2, 21,  2,695,  2, 21,  2,  2,  2,  2,687],
-    [  0,  2,524,524,  2, 21,  2,695,  2, 21,  2,524,524,  2,  0],
-    [684,  2,518,518,  2, 22,  2,  0,  2, 22,  2,518,518,  2,684],
-    [  0, 81,692,  0,  2, 22,  2, 93,  2, 22,  2,  0,692, 81,  0]
+    [109,109,109,109,109,109,109,109,109,109,109,109,109,109,109],
+    [109,109,109,109,109,109,109,109,109,109,109,109,109,109,109],
+    [109,109,109,109,109,109,109,109,109,109,109,109,109,109,109],
+    [109,109,109,109,109,109,109,109,109,109,109,109,109,109,109],
+    [109,109,109,109,109,109,  2, 89,  2,109,109,109,109,109,109],
+    [109,109,109,109,109,694,694, 85,694,694,109,109,109,109,109],
+    [645,645,648,702,  2,693,693,705,693,693,  2,645,645,648,702],
+    [  2,  2,  2, 82,  2,692,692,705,692,692,  2,  2,  2,  2, 82],
+    [  0,691,518,519,  2,687,687,688,687,687,  2,687, 81,518,691],
+    [687,  2,  2,  2,  2,  2,  2, 83,  2,  2,  2,  0,  2,687,  2],
+    [  0, 81,687,  0,  2,613,  2,686,  2,  0,685,  0,  2,518,518],
+    [691,  2,  0,518,685,  0, 81,686, 81,  0,  2,  2,  2,  2,688],
+    [518,  2,  2,  2,  2, 81,  2,685,  2,695,  2,646,  2,  0,  0],
+    [646,  2,647,648,695,695,  2,  0,  2,518,  2,518,691,695,  2],
+    [646,  2,647,648,524,695,  2, 93,  2,518, 81,646,  2,518,519]
 ],
     "bgmap": [
 

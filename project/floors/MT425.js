@@ -13,7 +13,14 @@ main.floors.MT425=
     "ratio": 1,
     "defaultGround": "water",
     "bgm": "medaction1.mp3",
-    "firstArrive": [],
+    "firstArrive": [
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]出现新敌人：“樱花”特攻机。实际上是一个导弹，只不过是神风制导。",
+        "\t[系统提示]“樱花”具有“追踪”属性，并且无法以任何形式规避，只能在它撞上你之前将其击落。在攻击力足够之前还是躲着点走吧！"
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
